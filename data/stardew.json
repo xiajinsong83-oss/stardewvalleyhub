@@ -3,5 +3,14 @@
   "crops": 47,
   "fish": 77,
   "bundles": 52,
-  "boss": 10
+  "boss": 10,
+  "recipes": 81,
+  "museum": 95,
+  "festivals": 12,
+  "events": 31,
+  "tools": 17,
+  "unlocks": 24,
+  "achievements": 49,
+  "orders": 28,
+  "pets": 19
 }
