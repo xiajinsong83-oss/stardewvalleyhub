@@ -1,0 +1,115 @@
+{{ define "main" }}
+<div class="content-col">
+  {{ partial "breadcrumb.html" . }}
+  <div class="page-head">
+    <h1>{{ .Title }}</h1>
+    {{ with .Description }}<p class="lead">{{ . }}</p>{{ end }}
+  </div>
+
+  <!-- 进度条 -->
+  <div class="bundle-progress">
+    <div class="bp-info">
+      <span><strong id="doneCount">0</strong> / {{ len .Pages }} bundles completed</span>
+      <button class="bp-reset" id="resetBtn">Reset all</button>
+    </div>
+    <div class="bp-bar"><div class="bp-fill" id="bpFill"></div></div>
+  </div>
+
+  <div class="pals-toolbar">
+    <div class="pals-search">
+      <input type="search" id="cardSearch" placeholder="Search bundles…" aria-label="Search">
+      <span class="pals-count"><span id="cardCount">{{ len .Pages }}</span> / {{ len .Pages }}</span>
+    </div>
+    <select id="filterType" class="pals-select" aria-label="Filter by room">
+      <option value="">All rooms</option>
+      <option value="crafts-room">Crafts Room</option>
+      <option value="pantry">Pantry</option>
+      <option value="fish-tank">Fish Tank</option>
+      <option value="boiler-room">Boiler Room</option>
+      <option value="bulletin-board">Bulletin Board</option>
+      <option value="vault">Vault</option>
+    </select>
+  </div>
+
+  <div class="card-grid pals-grid" id="cardGrid">
+    {{ range .Pages.ByTitle }}
+    {{ $proom := .Params.bundle_room | default "" }}
+    <label class="card pal-card bundle-item" data-search="{{ .Title | lower }}" data-type="{{ $proom }}">
+      <input type="checkbox" class="bundle-check" data-bundle="{{ .File.ContentBaseName }}">
+      <div class="card-icon"><img src="{{ .Params.icon | relURL }}" alt="" loading="lazy"></div>
+      <h3>{{ .Title | replaceRE " – Community Center.*" "" }}</h3>
+      <div class="pals-badges">
+        {{ with $proom }}<span class="badge badge-season">{{ replace $proom "-" " " | title }}</span>{{ end }}
+      </div>
+    </label>
+    {{ end }}
+  </div>
+
+  <script>
+  (function(){
+    var box = document.getElementById('cardGrid');
+    var checks = box.querySelectorAll('.bundle-check');
+    var done = document.getElementById('doneCount');
+    var fill = document.getElementById('bpFill');
+    var saved = JSON.parse(localStorage.getItem('svbundles') || '{}');
+
+    checks.forEach(function(c){
+      if (saved[c.dataset.bundle]) { c.checked = true; c.closest('.bundle-item').classList.add('done'); }
+      c.addEventListener('change', function(){
+        saved[c.dataset.bundle] = c.checked;
+        localStorage.setItem('svbundles', JSON.stringify(saved));
+        c.closest('.bundle-item').classList.toggle('done', c.checked);
+        update();
+      });
+    });
+
+    function update(){
+      var n = box.querySelectorAll('.bundle-check:checked').length;
+      done.textContent = n;
+      fill.style.width = (n / checks.length * 100) + '%';
+    }
+    update();
+
+    document.getElementById('resetBtn').addEventListener('click', function(){
+      if (confirm('Reset all bundle progress?')) {
+        saved = {}; localStorage.removeItem('svbundles');
+        checks.forEach(function(c){ c.checked = false; c.closest('.bundle-item').classList.remove('done'); });
+        update();
+      }
+    });
+
+    // 搜索+筛选
+    var input = document.getElementById('cardSearch');
+    var fType = document.getElementById('filterType');
+    var count = document.getElementById('cardCount');
+    function apply(){
+      var q = input.value.trim().toLowerCase(), shown = 0;
+      var t = fType ? fType.value : '';
+      checks.forEach(function(c){
+        var item = c.closest('.bundle-item');
+        var ok = (!q || item.dataset.search.indexOf(q) > -1) && (!t || item.dataset.type === t);
+        item.classList.toggle('hide', !ok);
+        if (ok) shown++;
+      });
+      count.textContent = shown;
+    }
+    input.addEventListener('input', apply);
+    if (fType) fType.addEventListener('change', apply);
+  })();
+  </script>
+
+  <style>
+  .bundle-progress { background: #1a2540; border: 1px solid #2a3a55; border-radius: 12px; padding: 16px; margin: 16px 0; }
+  .bp-info { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+  .bp-info span { color: #9aa8bf; }
+  .bp-info strong { color: #3ddc97; font-size: 18px; }
+  .bp-reset { background: #a33; color: #fff; border: 0; padding: 6px 12px; border-radius: 6px; cursor: pointer; font-size: 12px; }
+  .bp-bar { height: 10px; background: #0d1a2d; border-radius: 5px; overflow: hidden; }
+  .bp-fill { height: 100%; background: #3ddc97; width: 0%; transition: width .3s; }
+  .bundle-item { cursor: pointer; position: relative; padding-left: 40px; }
+  .bundle-check { position: absolute; left: 12px; top: 16px; width: 20px; height: 20px; cursor: pointer; }
+  .bundle-item.done { opacity: 0.5; }
+  .bundle-item.done h3 { text-decoration: line-through; }
+  </style>
+</div>
+{{ end }}
