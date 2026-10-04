@@ -453,3 +453,10 @@ html { background: #0a0f1e; }
 .quick-tools .tool-card h3 { color: #fff !important; font-size: 18px !important; margin: 0 0 8px !important; }
 .quick-tools .tool-card p { color: #9aa8bf !important; font-size: 14px !important; line-height: 1.5 !important; margin: 0 0 14px !important; }
 .quick-tools .tool-cta { color: #3ddc97 !important; font-size: 14px !important; font-weight: 600 !important; }
+
+/* Quick Tools CSS 图标（不用 emoji） */
+.tool-icon { width: 48px; height: 48px; border-radius: 10px; margin-bottom: 12px; }
+.ti-map { background: linear-gradient(135deg, #4a9fd4, #6bbf8a); }
+.ti-gift { background: linear-gradient(135deg, #e85a71, #f0b429); }
+.ti-crop { background: linear-gradient(135deg, #3ddc97, #8bc34a); }
+.ti-box { background: linear-gradient(135deg, #8b5a2b, #c68642); }

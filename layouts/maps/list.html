@@ -1,0 +1,177 @@
+{{ define "main" }}
+<div class="planner-wrap">
+  <!-- 左侧工具栏 -->
+  <aside class="planner-tools">
+    <h3>BUILD PALETTE</h3>
+    <p class="planner-sub">Choose a tile <span class="planner-badge">7 TOOLS</span></p>
+    <div class="planner-tools-grid">
+      <button class="tool-btn active" data-tool="soil">🟫 Soil</button>
+      <button class="tool-btn" data-tool="crop">🌱 Crop</button>
+      <button class="tool-btn" data-tool="building">🏠 Building</button>
+      <button class="tool-btn" data-tool="tree">🌳 Tree</button>
+      <button class="tool-btn" data-tool="path">⬜ Path</button>
+      <button class="tool-btn" data-tool="water">🌊 Water</button>
+      <button class="tool-btn tool-erase" data-tool="erase">✕ Erase</button>
+    </div>
+    <div class="planner-planname">
+      <label>Plan name</label>
+      <input type="text" id="planName" value="Year 1 layout">
+    </div>
+  </aside>
+
+  <!-- 中间网格 -->
+  <main class="planner-board">
+    <div class="planner-board-head">
+      <h2 id="boardTitle">Year 1 layout</h2>
+      <div class="planner-head-right">
+        <span class="planner-counter"><strong id="filledCount">0</strong> / 96 filled</span>
+        <button class="planner-export" id="exportBtn">⬇ Export JSON</button>
+      </div>
+    </div>
+    <div class="planner-hint">
+      <span class="dot"></span> <strong id="toolLabel">Soil</strong> ACTIVE — Click a plot to place
+    </div>
+    <div class="grid-board" id="gridBoard"></div>
+  </main>
+
+  <!-- 右侧统计 -->
+  <aside class="planner-summary">
+    <h3>BOARD SUMMARY</h3>
+    <p class="planner-sub">Farm footprint</p>
+    <ul class="planner-stats">
+      <li><span class="s-dot s-soil"></span> Soil <strong id="statSoil">0</strong></li>
+      <li><span class="s-dot s-crop"></span> Crops <strong id="statCrop">0</strong></li>
+      <li><span class="s-dot s-building"></span> Buildings <strong id="statBuilding">0</strong></li>
+      <li><span class="s-dot s-tree"></span> Trees <strong id="statTree">0</strong></li>
+      <li><span class="s-dot s-path"></span> Paths <strong id="statPath">0</strong></li>
+      <li><span class="s-dot s-water"></span> Water <strong id="statWater">0</strong></li>
+    </ul>
+    <div class="planner-note">
+      <strong>💡 Planning note</strong>
+      <p>Confirm exact footprints and collision rules in-game before building.</p>
+    </div>
+    <button class="planner-clear" id="clearBtn">Clear board</button>
+  </aside>
+</div>
+
+<style>
+.planner-wrap { display: grid; grid-template-columns: 260px 1fr 260px; gap: 16px; margin: 20px 0; }
+.planner-tools, .planner-summary, .planner-board { background: rgba(24,35,56,.9); border: 1px solid var(--border); border-radius: 14px; padding: 18px; }
+.planner-tools h3, .planner-summary h3 { font-size: 13px; letter-spacing: 1px; color: var(--muted); margin: 0 0 4px; }
+.planner-sub { color: var(--muted); font-size: 13px; margin: 0 0 14px; }
+.planner-badge { background: var(--surface-2); padding: 2px 8px; border-radius: 6px; font-size: 11px; color: var(--accent); }
+.planner-tools-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 18px; }
+.tool-btn { background: var(--surface-2); border: 1px solid var(--border); color: #fff; padding: 10px; border-radius: 8px; cursor: pointer; font-size: 13px; text-align: left; }
+.tool-btn.active { border-color: var(--accent); background: rgba(61,220,151,.12); }
+.tool-erase { border-color: #e55; color: #e55; }
+.planner-planname label { display: block; font-size: 12px; color: var(--muted); margin-bottom: 6px; }
+.planner-planname input { width: 100%; background: var(--surface-2); border: 1px solid var(--border); color: #fff; padding: 8px; border-radius: 6px; font-size: 14px; box-sizing: border-box; }
+.planner-board-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
+.planner-head-right { display: flex; align-items: center; gap: 14px; }
+.planner-export { background: var(--gold); color: #1a1a1a; border: 0; padding: 8px 16px; border-radius: 8px; cursor: pointer; font-weight: 600; font-size: 13px; }
+.planner-board-head h2 { margin: 0; font-size: 22px; }
+.planner-counter { color: var(--muted); font-size: 14px; }
+.planner-counter strong { color: var(--accent); font-size: 20px; }
+.planner-hint { background: var(--surface-2); padding: 10px 14px; border-radius: 8px; margin-bottom: 14px; font-size: 14px; }
+.planner-hint .dot { display: inline-block; width: 10px; height: 10px; border-radius: 50%; background: var(--gold); margin-right: 8px; }
+.grid-board { display: grid; grid-template-columns: repeat(12, 1fr); gap: 4px; }
+.grid-cell { aspect-ratio: 1; background: #1a2540; border: 1px solid var(--border); border-radius: 6px; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 16px; transition: transform .1s; }
+.grid-cell:hover { border-color: var(--accent); transform: scale(1.05); }
+.grid-cell.t-soil { background: #6b4423; }
+.grid-cell.t-crop { background: #3a7d3a; }
+.grid-cell.t-building { background: #8a5a2b; }
+.grid-cell.t-tree { background: #2d5a2d; }
+.grid-cell.t-path { background: #555; }
+.grid-cell.t-water { background: #2a5a8a; }
+.planner-stats { list-style: none; padding: 0; margin: 10px 0 20px; }
+.planner-stats li { display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid var(--border); font-size: 14px; }
+.s-dot { display: inline-block; width: 10px; height: 10px; border-radius: 3px; margin-right: 8px; }
+.s-soil { background: #6b4423; } .s-crop { background: #3a7d3a; }
+.s-building { background: #8a5a2b; } .s-tree { background: #2d5a2d; }
+.s-path { background: #555; } .s-water { background: #2a5a8a; }
+.planner-note { background: var(--surface-2); padding: 12px; border-radius: 8px; font-size: 13px; color: var(--muted); }
+.planner-note p { margin: 6px 0 0; }
+.planner-clear { width: 100%; margin-top: 14px; background: #a33; color: #fff; border: 0; padding: 10px; border-radius: 8px; cursor: pointer; }
+@media (max-width: 1000px) { .planner-wrap { grid-template-columns: 1fr; } }
+</style>
+
+<script>
+(function(){
+  var ROWS = 8, COLS = 12, TOTAL = ROWS * COLS;
+  var board = document.getElementById('gridBoard');
+  var cells = [];
+  var currentTool = 'soil';
+  var icons = {soil:'🟫', crop:'🌱', building:'🏠', tree:'🌳', path:'⬜', water:'🌊'};
+  var saved = JSON.parse(localStorage.getItem('svfarm') || '{}');
+
+  for (var r = 0; r < ROWS; r++) {
+    for (var c = 0; c < COLS; c++) {
+      var cell = document.createElement('div');
+      cell.className = 'grid-cell';
+      cell.dataset.idx = r * COLS + c;
+      board.appendChild(cell);
+      cells.push(cell);
+    }
+  }
+
+  function render() {
+    var counts = {soil:0, crop:0, building:0, tree:0, path:0, water:0};
+    var filled = 0;
+    cells.forEach(function(cell){
+      var idx = cell.dataset.idx;
+      var t = saved[idx] || '';
+      cell.className = 'grid-cell' + (t ? ' t-' + t : '');
+      cell.textContent = t ? icons[t] : '+';
+      if (t) { counts[t]++; filled++; }
+    });
+    document.getElementById('filledCount').textContent = filled;
+    document.getElementById('statSoil').textContent = counts.soil;
+    document.getElementById('statCrop').textContent = counts.crop;
+    document.getElementById('statBuilding').textContent = counts.building;
+    document.getElementById('statTree').textContent = counts.tree;
+    document.getElementById('statPath').textContent = counts.path;
+    document.getElementById('statWater').textContent = counts.water;
+  }
+
+  cells.forEach(function(cell){
+    cell.addEventListener('click', function(){
+      var idx = cell.dataset.idx;
+      if (currentTool === 'erase') delete saved[idx];
+      else saved[idx] = currentTool;
+      localStorage.setItem('svfarm', JSON.stringify(saved));
+      render();
+    });
+  });
+
+  document.querySelectorAll('.tool-btn').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      document.querySelectorAll('.tool-btn').forEach(function(b){ b.classList.remove('active'); });
+      btn.classList.add('active');
+      currentTool = btn.dataset.tool;
+      document.getElementById('toolLabel').textContent = btn.textContent.trim();
+    });
+  });
+
+  document.getElementById('clearBtn').addEventListener('click', function(){
+    if (confirm('Clear the whole board?')) { saved = {}; localStorage.removeItem('svfarm'); render(); }
+  });
+
+  // 标题同步
+  document.getElementById('planName').addEventListener('input', function(){
+    document.getElementById('boardTitle').textContent = this.value;
+  });
+
+  // 导出 JSON
+  document.getElementById('exportBtn').addEventListener('click', function(){
+    var data = { plan: document.getElementById('planName').value, rows: 8, cols: 12, tiles: saved };
+    var blob = new Blob([JSON.stringify(data, null, 2)], {type: 'application/json'});
+    var a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = 'farm-layout.json';
+    a.click();
+  });
+
+  render();
+})();
+</script>
+{{ end }}
