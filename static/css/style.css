@@ -369,3 +369,20 @@ body {
 .hero .container, .hero .hero-inner {
   max-width: 1100px; margin: 0 auto; padding: 0 24px;
 }
+
+/* Logo 图标 */
+.logo-icon { width: 22px; height: 22px; vertical-align: middle; margin-right: 6px; image-rendering: pixelated; }
+
+/* ---------- 手机端汉堡菜单 ---------- */
+.nav-toggle { display: none; background: var(--surface-2); border: 1px solid var(--border); color: #fff; font-size: 22px; width: 42px; height: 42px; border-radius: 10px; cursor: pointer; align-items: center; justify-content: center; flex-shrink: 0; }
+@media (max-width: 820px) {
+  .nav-toggle { display: flex; }
+  .main-nav {
+    display: none; position: absolute; top: 60px; left: 0; right: 0;
+    flex-direction: column; background: #14202f; border-bottom: 1px solid var(--border);
+    padding: 12px 16px; gap: 4px; box-shadow: 0 10px 30px rgba(0,0,0,.4);
+  }
+  .main-nav.open { display: flex; }
+  .main-nav a { padding: 12px 14px; font-size: 16px; border-radius: 8px; }
+  .site-header { position: relative; }
+}
