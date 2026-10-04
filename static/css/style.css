@@ -431,3 +431,17 @@ html { background: #0a0f1e; }
 .site-logo { font-size: 17px !important; margin-right: 10px !important; }
 .main-nav { gap: 6px !important; }
 .main-nav a { padding: 5px 7px !important; font-size: 13px !important; }
+
+/* ---------- Quick Tools 区 ---------- */
+.quick-tools { margin: 40px 0; }
+.quick-tools h2 { font-size: 28px; margin: 0 0 6px; }
+.quick-sub { color: var(--muted); margin: 0 0 20px; }
+.tools-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.tool-card { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 22px; text-decoration: none; color: inherit; transition: transform .15s, border-color .15s; display: block; }
+.tool-card:hover { transform: translateY(-4px); border-color: var(--accent); }
+.tool-icon { font-size: 36px; margin-bottom: 12px; }
+.tool-card h3 { margin: 0 0 8px; font-size: 18px; color: #fff; }
+.tool-card p { color: var(--muted); font-size: 14px; line-height: 1.5; margin: 0 0 14px; }
+.tool-cta { color: var(--accent); font-size: 14px; font-weight: 600; }
+@media (max-width: 900px) { .tools-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 500px) { .tools-grid { grid-template-columns: 1fr; } }
