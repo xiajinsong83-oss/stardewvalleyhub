@@ -1,0 +1,74 @@
+baseURL = "https://stardewvalleyhub.wiki/"
+title = "Stardew Valley Hub – Unofficial Fan Guides"
+enableRobotsTXT = true
+defaultContentLanguage = "en"
+defaultContentLanguageInSubdir = false
+disableKinds = ["taxonomy", "taxonomyTerm"]
+pygmentsUseClasses = true
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+[outputs]
+  home = ["HTML"]
+  section = ["HTML"]
+  page = ["HTML"]
+
+# 多语言：默认英语 + 8 种附加语言，共 9 套版本
+[languages.en]
+  weight = 1
+  languageName = "English"
+  contentDir = "content/en"
+  title = "Stardew Valley Hub – Unofficial Fan Guides"
+[languages.zh-hans]
+  weight = 2
+  languageName = "简体中文"
+  contentDir = "content/zh-hans"
+  title = "星露谷物语攻略站（非官方粉丝站）"
+[languages.zh-hant]
+  weight = 3
+  languageName = "繁體中文"
+  contentDir = "content/zh-hant"
+  title = "星露谷物語攻略站（非官方粉絲站）"
+[languages.de]
+  weight = 4
+  languageName = "Deutsch"
+  contentDir = "content/de"
+  title = "Stardew Valley Hub – Inoffizielle Fan-Guides"
+[languages.ja]
+  weight = 5
+  languageName = "日本語"
+  contentDir = "content/ja"
+  title = "スターデューバレー攻略（非公式ファンサイト）"
+[languages.ko]
+  weight = 6
+  languageName = "한국어"
+  contentDir = "content/ko"
+  title = "스타듀밸리 허브 – 비공식 팬 가이드"
+[languages.fr]
+  weight = 7
+  languageName = "Français"
+  contentDir = "content/fr"
+  title = "Stardew Valley Hub – Guides de fans non officiels"
+[languages.pt]
+  weight = 8
+  languageName = "Português"
+  contentDir = "content/pt"
+  title = "Stardew Valley Hub – Guias de fãs não oficiais"
+[languages.ru]
+  weight = 9
+  languageName = "Русский"
+  contentDir = "content/ru"
+  title = "Stardew Valley Hub – Неофициальный фан-гид"
+
+[params]
+  description = "Data-driven unofficial Stardew Valley guides: NPC gifts, crops, fish, community center bundles, FAQs and update news. Powered by open-source game data."
+  email = "39918849@qq.com"
+  adsenseClient = "ca-pub-3866829862674413"
+  adsenseInArticleSlot = "0000000000"
+  adsenseSidebarSlot = "0000000000"
+  cookieConsent = true
+  githubRepo = "https://github.com/"
+  # 数据源（开源结构化数据，非官方）
+  dataSource = "https://www.npmjs.com/package/stardew-valley-data"
+  dataSourceNote = "All game data on this site comes from machine-readable open-source community data. This is an unofficial fan resource, not affiliated with ConcernedApe."
