@@ -49,7 +49,7 @@ def front(title, desc, **extra):
     if d.get("intro"):
         lines.append('intro: %s' % json.dumps(d["intro"], ensure_ascii=False))
     if d.get("type"): lines.append("type: %s" % d["type"])
-    for _k in ("marriageable", "birthday_season", "weapon_type", "monster_loc", "fish_season"):
+    for _k in ("marriageable", "birthday_season", "weapon_type", "monster_loc", "fish_season", "bundle_room"):
         if d.get(_k) is not None:
             _v = d[_k]
             lines.append("%s: %s" % (_k, ("true" if _v is True else "false" if _v is False else json.dumps(_v, ensure_ascii=False))))
@@ -342,10 +342,14 @@ for b in bundles:
         rs = slugify(r["name"])
         if not rs.endswith("bundle"): rs += "-bundle"
         rel.append({"title": r["name"] + " Bundle", "url": f"/bundles/{rs}/"})
+    _b_icon = "/" + (b.get("image") or "").lstrip("/")
+    if not os.path.exists(os.path.join(SITE, "static", _b_icon)):
+        _b_icon = icon_for("bundles", nm)
     body = front(
         f"{nm} – Community Center Bundle Guide",
         f"{nm}: required items, quantities and reward in Stardew Valley (Community Center, {room_label}).",
-        type="bundles", faq=faq, related=rel)
+        type="bundles", icon=_b_icon, faq=faq, related=rel,
+        bundle_room=b["room"])
     body += f"\nThe **{nm}** is a bundle in the **{room_label}** room of the Community Center.\n\n"
     body += f"**Items required:** {b.get('itemsRequired')} of " + str(b.get("numItemsAvailable")) + "\n\n"
     body += "<div class=\"table-wrap\">\n\n| Item | Quantity |\n| --- | --- |\n" + items_md + "</div>\n\n"
@@ -944,7 +948,7 @@ for wp in weapons:
         _wp_img = icon_for("weapons", nm)
     body = front(f"{nm} – Stardew Valley Weapon",
                  f"{nm} weapon guide: damage {wp.get('damageMin')}-{wp.get('damageMax')}, crit chance, obtain and sell price.",
-                 type="weapons", icon=_wp_img, faq=faq)
+                 type="weapons", icon=_wp_img, faq=faq, weapon_type=wt)
     body += f"\nThe **{nm}** is a {wt} in Stardew Valley.\n\n"
     body += "<div class=\"table-wrap\">\n\n| Attribute | Value |\n| --- | --- |\n"
     body += f"| Type | {wt} |\n| Damage | {wp.get('damageMin')}-{wp.get('damageMax')} |\n"
@@ -961,10 +965,18 @@ w(os.path.join(mo_c, "_index.md"),
         "All 46 monsters in Stardew Valley: HP, damage, XP, locations and drops.", type="monsters") + "\nOpen-source game data.\n")
 for mo in monsters:
     nm = mo["name"]; slug = slugify(nm)
-    locs = ", ".join(mo.get("locations") or []) or "n/a"
+    locs_raw = mo.get("locations") or []
+    locs = ", ".join(locs_raw) or "n/a"
+    # 简化归类用于筛选
+    ml = "other"
+    if any("Dangerous" in l for l in locs_raw): ml = "dangerous"
+    elif any("Volcano" in l for l in locs_raw): ml = "volcano"
+    elif any("Skull" in l for l in locs_raw): ml = "skull-cavern"
+    elif any("Mines" in l for l in locs_raw): ml = "mines"
+    elif any("Farm" in l for l in locs_raw): ml = "farm"
     body = front(f"{nm} – Stardew Valley Monster",
                  f"{nm} monster guide: {mo.get('hp')} HP, {mo.get('damage')} damage, locations and drops.",
-                 type="monsters", icon=icon_for("boss", nm))
+                 type="monsters", icon=icon_for("boss", nm), monster_loc=ml)
     body += f"\nThe **{nm}** has **{mo.get('hp')} HP** and **{mo.get('damage')} damage**.\n\n"
     body += "<div class=\"table-wrap\">\n\n| Attribute | Value |\n| --- | --- |\n"
     body += f"| HP | {mo.get('hp')} |\n| Damage | {mo.get('damage')} |\n| XP | {mo.get('xp')} |\n| Locations | {locs} |\n"

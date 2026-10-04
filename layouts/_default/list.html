@@ -28,22 +28,59 @@
       <option value="winter">Winter birthdays</option>
     </select>
     {{ end }}
+    {{ if eq .Type "bundles" }}
+    <select id="filterType" class="pals-select" aria-label="Filter by room">
+      <option value="">All rooms</option>
+      <option value="crafts-room">Crafts Room</option>
+      <option value="pantry">Pantry</option>
+      <option value="fish-tank">Fish Tank</option>
+      <option value="boiler-room">Boiler Room</option>
+      <option value="bulletin-board">Bulletin Board</option>
+      <option value="vault">Vault</option>
+    </select>
+    {{ end }}
+    {{ if eq .Type "weapons" }}
+    <select id="filterType" class="pals-select" aria-label="Filter by weapon type">
+      <option value="">All types</option>
+      <option value="sword">Swords</option>
+      <option value="dagger">Daggers</option>
+      <option value="club">Clubs</option>
+      <option value="slingshot">Slingshots</option>
+    </select>
+    {{ end }}
+    {{ if eq .Type "monsters" }}
+    <select id="filterType" class="pals-select" aria-label="Filter by location">
+      <option value="">All locations</option>
+      <option value="mines">The Mines</option>
+      <option value="skull-cavern">Skull Cavern</option>
+      <option value="volcano">Volcano Dungeon</option>
+      <option value="dangerous">Dangerous</option>
+      <option value="farm">Farm</option>
+    </select>
+    {{ end }}
   </div>
   <div class="card-grid pals-grid" id="cardGrid">
     {{ range $pages }}
     {{ $pt := "normal" }}{{ if .Params.marriageable }}{{ $pt = "marriageable" }}{{ end }}
     {{ $ps := .Params.birthday_season | default "" }}
+    {{ $proom := .Params.bundle_room | default "" }}
+    {{ $wtype := .Params.weapon_type | default "" }}
+    {{ $mloc := .Params.monster_loc | default "" }}
+    {{ $dtype := $proom }}{{ if not $dtype }}{{ $dtype = $wtype }}{{ end }}{{ if not $dtype }}{{ $dtype = $mloc }}{{ end }}{{ if not $dtype }}{{ $dtype = $pt }}{{ end }}
     <a class="card pal-card" href="{{ .RelPermalink }}"
        data-search="{{ .Title | lower }} {{ .Description | lower }}"
-       data-type="{{ $pt }}"
+       data-type="{{ $dtype }}"
        data-season="{{ $ps }}">
       {{ with .Params.icon }}
       <div class="card-icon"><img src="{{ . | relURL }}" alt="" loading="lazy"></div>
       {{ end }}
-      <h3>{{ .Title | replaceRE " Loved Gifts in Stardew Valley" "" | replaceRE " – Stardew Valley.*" "" }}</h3>
+      <h3>{{ .Title | replaceRE " Loved Gifts in Stardew Valley" "" | replaceRE " – Stardew Valley.*" "" | replaceRE " – Community Center.*" "" }}</h3>
       {{ with .Params.intro }}<p class="pal-desc">{{ . }}</p>{{ end }}
       <div class="pals-badges">
-        {{ if .Params.marriageable }}<span class="badge badge-gold">Marriage</span>{{ else }}<span class="badge badge-normal">Villager</span>{{ end }}
+        {{ if .Params.marriageable }}<span class="badge badge-gold">Marriage</span>{{ else if not $proom }}{{ if not $wtype }}{{ if not $mloc }}<span class="badge badge-normal">Guide</span>{{ end }}{{ end }}{{ end }}
+        {{ with $proom }}<span class="badge badge-season">{{ replace $proom "-" " " | title }}</span>{{ end }}
+        {{ with $wtype }}<span class="badge badge-season">{{ $wtype | title }}</span>{{ end }}
+        {{ with $mloc }}<span class="badge badge-normal">{{ replace $mloc "-" " " | title }}</span>{{ end }}
         {{ with .Params.birthday_season }}<span class="badge badge-season">{{ . }}</span>{{ end }}
       </div>
     </a>
