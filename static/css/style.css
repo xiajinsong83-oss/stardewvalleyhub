@@ -278,3 +278,32 @@ footer.site-footer {
 .map-card img { width: 100%; border-radius: 10px; border: 1px solid var(--border); image-rendering: pixelated; }
 .map-card h3 { color: #fff; margin: 12px 0 6px; }
 .map-card p { color: var(--muted); margin: 0; }
+
+/* ---------- palworld.gg 风格 pals 工具栏 ---------- */
+.pals-toolbar {
+  display: flex; gap: 12px; flex-wrap: wrap;
+  align-items: center; margin: 20px 0 24px;
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: 14px; padding: 14px 16px;
+}
+.pals-search { flex: 1; min-width: 260px; display: flex; align-items: center; gap: 10px; position: relative; }
+.pals-search-icon { color: var(--muted); font-size: 15px; }
+.pals-search input {
+  flex: 1; background: var(--surface-2); border: 1px solid var(--border);
+  border-radius: 10px; padding: 10px 12px; color: #fff; font-size: 14.5px;
+}
+.pals-search input:focus { outline: none; border-color: var(--accent); }
+.pals-count { color: var(--muted); font-size: 13.5px; white-space: nowrap; }
+.pals-select {
+  background: var(--surface-2); border: 1px solid var(--border); color: #fff;
+  border-radius: 10px; padding: 10px 12px; font-size: 14px; cursor: pointer;
+}
+.pals-select:focus { outline: none; border-color: var(--accent); }
+.pals-badges { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 8px; }
+.badge { font-size: 11.5px; padding: 3px 9px; border-radius: 99px; font-weight: 600; }
+.badge-gold { background: rgba(240,180,41,.18); color: var(--gold); }
+.badge-normal { background: rgba(100,116,139,.25); color: #94a3b8; }
+.badge-season { background: rgba(61,220,151,.15); color: var(--accent); }
+.pal-card { padding: 18px; text-align: center; }
+.pal-card .card-icon { margin: 0 auto 10px; }
+.pal-card h3 { font-size: 16px; }

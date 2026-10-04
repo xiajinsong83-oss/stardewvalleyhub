@@ -8,18 +8,43 @@
 
   {{ $pages := .Pages.ByTitle }}
   {{ if gt (len $pages) 0 }}
-  <div class="filter-bar">
-    <input type="search" id="cardSearch" placeholder="Search {{ .Title | lower }}…" aria-label="Search">
-    <span class="filter-count"><span id="cardCount">{{ len $pages }}</span> entries</span>
+  <div class="pals-toolbar">
+    <div class="pals-search">
+      <span class="pals-search-icon">🔍</span>
+      <input type="search" id="cardSearch" placeholder="Search {{ .Title | lower }}…" aria-label="Search">
+      <span class="pals-count"><span id="cardCount">{{ len $pages }}</span> / {{ len $pages }}</span>
+    </div>
+    {{ if eq .Type "npc" }}
+    <select id="filterType" class="pals-select" aria-label="Filter by type">
+      <option value="">All villagers</option>
+      <option value="marriageable">Marriage candidates</option>
+      <option value="normal">Regular villagers</option>
+    </select>
+    <select id="filterSeason" class="pals-select" aria-label="Filter by birthday season">
+      <option value="">All seasons</option>
+      <option value="spring">Spring birthdays</option>
+      <option value="summer">Summer birthdays</option>
+      <option value="fall">Fall birthdays</option>
+      <option value="winter">Winter birthdays</option>
+    </select>
+    {{ end }}
   </div>
-  <div class="card-grid" id="cardGrid">
+  <div class="card-grid pals-grid" id="cardGrid">
     {{ range $pages }}
-    <a class="card" href="{{ .RelPermalink }}" data-search="{{ .Title | lower }} {{ .Description | lower }}">
+    {{ $pt := "normal" }}{{ if .Params.marriageable }}{{ $pt = "marriageable" }}{{ end }}
+    {{ $ps := .Params.birthday_season | default "" }}
+    <a class="card pal-card" href="{{ .RelPermalink }}"
+       data-search="{{ .Title | lower }} {{ .Description | lower }}"
+       data-type="{{ $pt }}"
+       data-season="{{ $ps }}">
       {{ with .Params.icon }}
       <div class="card-icon"><img src="{{ . | relURL }}" alt="" loading="lazy"></div>
       {{ end }}
-      <h3>{{ .Title }}</h3>
-      {{ with .Description }}<p>{{ . }}</p>{{ end }}
+      <h3>{{ .Title | replaceRE " Loved Gifts in Stardew Valley" "" | replaceRE " – Stardew Valley.*" "" }}</h3>
+      <div class="pals-badges">
+        {{ if .Params.marriageable }}<span class="badge badge-gold">Marriage</span>{{ else }}<span class="badge badge-normal">Villager</span>{{ end }}
+        {{ with .Params.birthday_season }}<span class="badge badge-season">{{ . }}</span>{{ end }}
+      </div>
     </a>
     {{ end }}
   </div>
@@ -28,16 +53,24 @@
     var input = document.getElementById('cardSearch'),
         grid = document.getElementById('cardGrid'),
         count = document.getElementById('cardCount'),
-        cards = grid.querySelectorAll('.card');
-    input.addEventListener('input', function(){
+        cards = grid.querySelectorAll('.card'),
+        fType = document.getElementById('filterType'),
+        fSeason = document.getElementById('filterSeason');
+    function apply(){
       var q = input.value.trim().toLowerCase(), shown = 0;
+      var t = fType ? fType.value : '', s = fSeason ? fSeason.value : '';
       cards.forEach(function(c){
-        var ok = !q || c.dataset.search.indexOf(q) > -1;
+        var ok = (!q || c.dataset.search.indexOf(q) > -1)
+              && (!t || c.dataset.type === t)
+              && (!s || c.dataset.season === s);
         c.classList.toggle('hide', !ok);
         if (ok) shown++;
       });
       count.textContent = shown;
-    });
+    }
+    input.addEventListener('input', apply);
+    if (fType) fType.addEventListener('change', apply);
+    if (fSeason) fSeason.addEventListener('change', apply);
   })();
   </script>
   {{ end }}
