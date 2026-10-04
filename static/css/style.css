@@ -308,10 +308,11 @@ footer.site-footer {
 .pal-card .card-icon { margin: 0 auto 10px; }
 .pal-card h3 { font-size: 16px; }
 
-/* ---------- pals 工具栏移动端修复 ---------- */
+/* ---------- pals 工具栏桌面布局 ---------- */
+.pals-toolbar { flex-wrap: nowrap; gap: 10px; }
+.pals-search { min-width: 0; flex: 1 1 auto; }
 .pals-search-icon { display: none; }
-.pals-search { min-width: 0; }
-.pals-select { flex: 1; min-width: 140px; }
+.pals-select { flex: 0 0 auto; width: auto; min-width: 0; }
 
 @media (max-width: 820px) {
   .pals-toolbar {
