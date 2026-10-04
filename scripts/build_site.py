@@ -49,7 +49,7 @@ def front(title, desc, **extra):
     if d.get("intro"):
         lines.append('intro: %s' % json.dumps(d["intro"], ensure_ascii=False))
     if d.get("type"): lines.append("type: %s" % d["type"])
-    for _k in ("marriageable", "birthday_season", "weapon_type", "monster_loc", "fish_season", "bundle_room"):
+    for _k in ("marriageable", "birthday_season", "weapon_type", "monster_loc", "fish_season", "bundle_room", "crop_season", "grow_days", "sell_price", "profit_day"):
         if d.get(_k) is not None:
             _v = d[_k]
             lines.append("%s: %s" % (_k, ("true" if _v is True else "false" if _v is False else json.dumps(_v, ensure_ascii=False))))
@@ -242,10 +242,12 @@ for c in crops:
     ]
     rel = [{"title": r["name"] + " Guide", "url": f"/crops/{slugify(r['name'])}/"}
            for r in [x for x in crops if x["id"] != c["id"]][:3]]
+    _cseason = (c.get("seasons") or [""])[0].lower()
     body = front(
         f"{nm} Growing Guide – Stardew Valley",
         f"{nm} crop guide: season, growth time ({c.get('growDays')} days), seed source, sell price and profit in Stardew Valley.",
-        type="crops", icon=icon_for("crops", nm), faq=faq, related=rel)
+        type="crops", icon=icon_for("crops", nm), faq=faq, related=rel, crop_season=_cseason,
+        grow_days=c.get("growDays") or 0, sell_price=sell, profit_day=per_day)
     body += f"\n{nm} is a crop in Stardew Valley. Below is the complete growing data.\n\n"
     body += "<div class=\"table-wrap\">\n\n| Attribute | Value |\n| --- | --- |\n"
     body += f"| Season | {c_seasons} |\n"
