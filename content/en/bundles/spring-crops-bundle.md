@@ -1,0 +1,41 @@
+---
+title: "Spring Crops Bundle – Community Center Bundle Guide"
+description: "Spring Crops Bundle: required items, quantities and reward in Stardew Valley (Community Center, Pantry)."
+date: 2026-10-04
+type: bundles
+faq:
+  - q: "What items do I need for the Spring Crops Bundle?"
+    a: "The Spring Crops Bundle requires 1x Parsnip, 1x Green Bean, 1x Cauliflower, 1x Potato."
+  - q: "What is the reward for the Spring Crops Bundle?"
+    a: "Completing the Spring Crops Bundle rewards you with 20x Speed-Gro."
+  - q: "Which room is the Spring Crops Bundle in?"
+    a: "The Spring Crops Bundle is part of the Pantry room in the Community Center."
+related:
+  - title: "Spring Crops Bundle Bundle"
+    url: "/bundles/spring-crops-bundle/"
+  - title: "Summer Crops Bundle Bundle"
+    url: "/bundles/summer-crops-bundle/"
+  - title: "Summer Crops Bundle Bundle"
+    url: "/bundles/summer-crops-bundle/"
+---
+
+The **Spring Crops Bundle** is a bundle in the **Pantry** room of the Community Center.
+
+**Items required:** 4 of 4
+
+<div class="table-wrap">
+
+| Item | Quantity |
+| --- | --- |
+| Parsnip | 1 |
+| Green Bean | 1 |
+| Cauliflower | 1 |
+| Potato | 1 |
+</div>
+
+**Reward:** 20x Speed-Gro
+
+## Tips
+
+- Collect required items across all seasons; check each item's source before the season ends.
+- Completing all bundles in a room unlocks room-specific rewards (e.g. greenhouse, quarry, minecarts).
