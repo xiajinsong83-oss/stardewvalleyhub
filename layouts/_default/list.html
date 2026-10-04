@@ -57,6 +57,23 @@
       <option value="winter">Winter</option>
     </select>
     {{ end }}
+    {{ if eq .Type "fish" }}
+    <select id="filterType" class="pals-select" aria-label="Filter by location">
+      <option value="">All locations</option>
+      <option value="ocean">Ocean / Beach</option>
+      <option value="river">River</option>
+      <option value="lake">Lake / Pond</option>
+      <option value="woods">Secret Woods</option>
+      <option value="island">Ginger Island</option>
+    </select>
+    <select id="filterSeason" class="pals-select" aria-label="Filter by season">
+      <option value="">All seasons</option>
+      <option value="spring">Spring</option>
+      <option value="summer">Summer</option>
+      <option value="fall">Fall</option>
+      <option value="winter">Winter</option>
+    </select>
+    {{ end }}
     {{ if eq .Type "monsters" }}
     <select id="filterType" class="pals-select" aria-label="Filter by location">
       <option value="">All locations</option>
@@ -76,11 +93,14 @@
     {{ $wtype := .Params.weapon_type | default "" }}
     {{ $mloc := .Params.monster_loc | default "" }}
     {{ $cseason := .Params.crop_season | default "" }}
-    {{ $dtype := $proom }}{{ if not $dtype }}{{ $dtype = $wtype }}{{ end }}{{ if not $dtype }}{{ $dtype = $mloc }}{{ end }}{{ if not $dtype }}{{ $dtype = $cseason }}{{ end }}{{ if not $dtype }}{{ $dtype = $pt }}{{ end }}
+    {{ $floc := .Params.fish_loc | default "" }}
+    {{ $fseason := .Params.fish_season | default "" }}
+    {{ $dtype := $proom }}{{ if not $dtype }}{{ $dtype = $wtype }}{{ end }}{{ if not $dtype }}{{ $dtype = $mloc }}{{ end }}{{ if not $dtype }}{{ $dtype = $cseason }}{{ end }}{{ if not $dtype }}{{ $dtype = $floc }}{{ end }}{{ if not $dtype }}{{ $dtype = $pt }}{{ end }}
+    {{ $dseason := $ps }}{{ if not $dseason }}{{ $dseason = $fseason }}{{ end }}
     <a class="card pal-card" href="{{ .RelPermalink }}"
        data-search="{{ .Title | lower }} {{ .Description | lower }}"
        data-type="{{ $dtype }}"
-       data-season="{{ $ps }}">
+       data-season="{{ $dseason }}">
       {{ with .Params.icon }}
       <div class="card-icon"><img src="{{ . | relURL }}" alt="" loading="lazy"></div>
       {{ end }}
@@ -92,6 +112,7 @@
         {{ with $wtype }}<span class="badge badge-season">{{ $wtype | title }}</span>{{ end }}
         {{ with $mloc }}<span class="badge badge-normal">{{ replace $mloc "-" " " | title }}</span>{{ end }}
         {{ with $cseason }}<span class="badge badge-season">{{ $cseason | title }}</span>{{ end }}
+        {{ with $floc }}<span class="badge badge-normal">{{ replace $floc "-" " " | title }}</span>{{ end }}
         {{ with .Params.birthday_season }}<span class="badge badge-season">{{ . }}</span>{{ end }}
       </div>
     </a>

@@ -49,7 +49,7 @@ def front(title, desc, **extra):
     if d.get("intro"):
         lines.append('intro: %s' % json.dumps(d["intro"], ensure_ascii=False))
     if d.get("type"): lines.append("type: %s" % d["type"])
-    for _k in ("marriageable", "birthday_season", "weapon_type", "monster_loc", "fish_season", "bundle_room", "crop_season", "grow_days", "sell_price", "profit_day"):
+    for _k in ("marriageable", "birthday_season", "weapon_type", "monster_loc", "fish_season", "bundle_room", "crop_season", "grow_days", "sell_price", "profit_day", "fish_loc"):
         if d.get(_k) is not None:
             _v = d[_k]
             lines.append("%s: %s" % (_k, ("true" if _v is True else "false" if _v is False else json.dumps(_v, ensure_ascii=False))))
@@ -288,10 +288,19 @@ for f in fish:
     ]
     rel = [{"title": r["name"] + " Guide", "url": f"/fish/{slugify(r['name'])}/"}
            for r in [x for x in fish if x["id"] != f["id"]][:3]]
+    _fseason = (f.get("seasons") or [""])[0].lower()
+    _floc_raw = (f.get("location") or "").lower()
+    if "ocean" in _floc_raw or "beach" in _floc_raw: _floc = "ocean"
+    elif "river" in _floc_raw: _floc = "river"
+    elif "lake" in _floc_raw or "pond" in _floc_raw: _floc = "lake"
+    elif "secret" in _floc_raw or "woods" in _floc_raw: _floc = "woods"
+    elif "island" in _floc_raw or "volcano" in _floc_raw: _floc = "island"
+    else: _floc = "other"
     body = front(
         f"Where to Catch {nm} in Stardew Valley",
         f"{nm} location guide: season, time, weather, difficulty and sell price in Stardew Valley.",
-        type="fish", icon=icon_for("fish", nm), faq=faq, related=rel)
+        type="fish", icon=icon_for("fish", nm), faq=faq, related=rel,
+        fish_season=_fseason, fish_loc=_floc)
     cat = f.get("category") or "regular"
     body += f"\n{nm} ({f.get('description', '')}). Below is the complete catch data.\n\n"
     body += "<div class=\"table-wrap\">\n\n| Attribute | Value |\n| --- | --- |\n"
