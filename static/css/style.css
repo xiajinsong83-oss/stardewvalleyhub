@@ -411,7 +411,7 @@ body {
 /* ---------- 整页游戏地图背景（低透明度平铺） ---------- */
 body {
   background:
-    linear-gradient(180deg, rgba(10,15,30,.92) 0%, rgba(13,26,45,.90) 50%, rgba(15,37,64,.92) 100%),
+    linear-gradient(180deg, rgba(10,15,30,.72) 0%, rgba(13,26,45,.68) 50%, rgba(15,37,64,.75) 100%),
     url("/images/maps/full-image/Standard Farm Map.png") center / cover fixed no-repeat,
     linear-gradient(180deg, #0a0f1e 0%, #0f2540 100%);
 }
