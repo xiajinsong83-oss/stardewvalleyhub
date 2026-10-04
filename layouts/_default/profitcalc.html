@@ -1,0 +1,149 @@
+{{ define "main" }}
+<div class="calc-wrap">
+  <div class="calc-head">
+    <p class="calc-eyebrow">透明计算器</p>
+    <h1>作物利润计算器</h1>
+    <p class="calc-desc">输入自己的假设，或加载版本化的基础游戏预设。结果只来自可见输入的算术计算，不是隐藏的推荐。</p>
+  </div>
+
+  <div class="calc-body">
+    <!-- 左：输入 -->
+    <div class="calc-input">
+      <h3>加载参考作物</h3>
+      <select id="cropSelect" class="calc-select">
+        <option value="">手动输入</option>
+      </select>
+      <p class="calc-ver" id="cropMeta">1.6.15 · 校验日期 2026-08-11</p>
+
+      <div class="calc-field">
+        <label>种子成本</label>
+        <input type="number" id="seedCost" value="80" min="0">
+        <small>每株作物的金币</small>
+      </div>
+      <div class="calc-field">
+        <label>售卖价格</label>
+        <input type="number" id="sellPrice" value="200" min="0">
+        <small>每次收获的金币</small>
+      </div>
+      <div class="calc-field">
+        <label>生长天数</label>
+        <input type="number" id="growDays" value="13" min="1">
+        <small>首次收获所需天数</small>
+      </div>
+      <div class="calc-field">
+        <label>收获次数</label>
+        <input type="number" id="harvestTimes" value="1" min="1">
+        <small>本规划中的总收获次数</small>
+      </div>
+      <div class="calc-field">
+        <label>额外成本</label>
+        <input type="number" id="extraCost" value="0" min="0">
+        <small>肥料或其他成本</small>
+      </div>
+      <button class="calc-btn" id="calcBtn">计算利润</button>
+    </div>
+
+    <!-- 右：结果 -->
+    <div class="calc-result">
+      <span class="calc-status" id="calcStatus">已就绪</span>
+      <div class="calc-big">
+        <span id="netProfit">0</span>
+        <small>金币净利润</small>
+      </div>
+      <div class="calc-row">
+        <div><span>总收入</span><strong id="gross">0g</strong></div>
+        <div><span>总成本</span><strong id="cost">0g</strong></div>
+        <div><span>每日利润</span><strong id="perDay">0g</strong></div>
+      </div>
+      <p class="calc-note">公式：总收入减去种子和额外成本；每日利润等于净利润除以生长天数。除非你把相关数值加入输入，否则不包含加工、职业、品质和重复生长。</p>
+    </div>
+  </div>
+</div>
+
+<style>
+.calc-wrap { max-width: 1200px; margin: 0 auto; padding: 20px; }
+.calc-head { margin-bottom: 24px; }
+.calc-eyebrow { color: #3ddc97; font-size: 13px; letter-spacing: 1px; margin: 0 0 8px; }
+.calc-head h1 { font-size: 36px; margin: 0 0 10px; }
+.calc-desc { color: #9aa8bf; max-width: 600px; margin: 0; }
+.calc-body { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.calc-input, .calc-result { background: #1a2540; border: 1px solid #2a3a55; border-radius: 14px; padding: 24px; }
+.calc-input h3 { margin: 0 0 12px; font-size: 16px; }
+.calc-select { width: 100%; background: #0d1a2d; border: 1px solid #2a3a55; color: #fff; padding: 10px; border-radius: 8px; font-size: 14px; margin-bottom: 8px; }
+.calc-ver { color: #6b7a90; font-size: 12px; margin: 0 0 20px; }
+.calc-field { margin-bottom: 14px; }
+.calc-field label { display: block; font-size: 13px; color: #9aa8bf; margin-bottom: 4px; }
+.calc-field input { width: 100%; background: #0d1a2d; border: 1px solid #2a3a55; color: #fff; padding: 10px; border-radius: 8px; font-size: 16px; box-sizing: border-box; }
+.calc-field small { color: #6b7a90; font-size: 11px; }
+.calc-btn { width: 100%; background: #f0b429; color: #1a1a1a; border: 0; padding: 14px; border-radius: 8px; font-size: 16px; font-weight: 600; cursor: pointer; margin-top: 8px; }
+.calc-status { display: inline-block; background: #1a3a2a; color: #3ddc97; padding: 4px 12px; border-radius: 6px; font-size: 12px; float: right; }
+.calc-big { margin: 24px 0; }
+.calc-big span { font-size: 64px; font-weight: 700; color: #f0b429; }
+.calc-big small { color: #9aa8bf; margin-left: 8px; }
+.calc-row { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin-bottom: 20px; }
+.calc-row div { border-top: 1px solid #2a3a55; padding-top: 12px; }
+.calc-row span { display: block; color: #9aa8bf; font-size: 13px; margin-bottom: 4px; }
+.calc-row strong { font-size: 20px; color: #fff; }
+.calc-note { color: #6b7a90; font-size: 13px; line-height: 1.5; }
+@media (max-width: 800px) { .calc-body { grid-template-columns: 1fr; } }
+</style>
+
+<script>
+(function(){
+  var crops = {{ .Site.Data.crops_json | safeJS | default "[]" }};
+  // 从 build_site.py 生成的 data/stardew.json 读不到，直接内联常见作物
+  var PRESETS = [
+    {n:"Parsnip", seed:20, sell:35, days:4},
+    {n:"Green Bean", seed:60, sell:40, days:10},
+    {n:"Cauliflower", seed:80, sell:175, days:12},
+    {n:"Potato", seed:50, sell:80, days:6},
+    {n:"Kale", seed:70, sell:110, days:6},
+    {n:"Blue Jazz", seed:30, sell:50, days:7},
+    {n:"Strawberry", seed:100, sell:120, days:8},
+    {n:"Melon", seed:80, sell:250, days:12},
+    {n:"Blueberry", seed:40, sell:50, days:13},
+    {n:"Tomato", seed:50, sell:60, days:11},
+    {n:"Hot Pepper", seed:40, sell:40, days:5},
+    {n:"Corn", seed:150, sell:50, days:14},
+    {n:"Pumpkin", seed:100, sell:320, days:13},
+    {n:"Cranberry", seed:240, sell:75, days:7},
+    {n:"Eggplant", seed:20, sell:60, days:5},
+    {n:"Artifact Trove", seed:0, sell:0, days:0}
+  ];
+  var sel = document.getElementById('cropSelect');
+  PRESETS.forEach(function(c){
+    var o = document.createElement('option');
+    o.value = c.n; o.textContent = c.n;
+    sel.appendChild(o);
+  });
+  sel.addEventListener('change', function(){
+    var c = PRESETS.find(function(x){ return x.n === sel.value; });
+    if (!c) return;
+    document.getElementById('seedCost').value = c.seed;
+    document.getElementById('sellPrice').value = c.sell;
+    document.getElementById('growDays').value = c.days;
+    calc();
+  });
+  function calc(){
+    var seed = +document.getElementById('seedCost').value || 0;
+    var sell = +document.getElementById('sellPrice').value || 0;
+    var days = +document.getElementById('growDays').value || 1;
+    var times = +document.getElementById('harvestTimes').value || 1;
+    var extra = +document.getElementById('extraCost').value || 0;
+    var gross = sell * times;
+    var cost = seed + extra;
+    var net = gross - cost;
+    var perDay = Math.round(net / days * 10) / 10;
+    document.getElementById('gross').textContent = gross + 'g';
+    document.getElementById('cost').textContent = cost + 'g';
+    document.getElementById('netProfit').textContent = net;
+    document.getElementById('perDay').textContent = perDay + 'g';
+  }
+  document.getElementById('calcBtn').addEventListener('click', calc);
+  ['seedCost','sellPrice','growDays','harvestTimes','extraCost'].forEach(function(id){
+    document.getElementById(id).addEventListener('input', calc);
+  });
+  calc();
+})();
+</script>
+{{ end }}
