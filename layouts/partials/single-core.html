@@ -1,0 +1,56 @@
+{{ $adType := "inarticle" }}
+{{ if .Site.Params.adsenseClient }}
+  {{ if eq 1 (mod (crypto.FNV32a .RelPermalink) 2) }}{{ $adType = "sidebar" }}{{ end }}
+{{ end }}
+
+{{ if ne $adType "sidebar" }}
+<div class="content-col">
+  <article class="page">
+    {{ partial "breadcrumb.html" . }}
+    <h1>{{ .Title }}</h1>
+    <div class="page-meta">
+      {{ if .Date }}<time datetime="{{ .Date.Format "2006-01-02" }}">Updated: {{ .Date.Format "Jan 2, 2006" }}</time>{{ end }}
+      <span class="data-note">{{ .Site.Params.dataSourceNote }}</span>
+    </div>
+    <div class="content">{{ .Content }}</div>
+    {{ if .Params.faq }}{{ partial "faq.html" . }}{{ end }}
+    {{ if .Params.related }}
+    <section class="related">
+      <h2>Related Guides</h2>
+      <div class="card-grid">
+        {{ range .Params.related }}
+        <a class="card" href="{{ .url | relURL }}"><h3>{{ .title }}</h3></a>
+        {{ end }}
+      </div>
+    </section>
+    {{ end }}
+    {{ partial "ad-inarticle.html" . }}
+  </article>
+</div>
+{{ else }}
+<div class="content-with-sidebar">
+  <div class="content-col">
+    <article class="page">
+      {{ partial "breadcrumb.html" . }}
+      <h1>{{ .Title }}</h1>
+      <div class="page-meta">
+        {{ if .Date }}<time datetime="{{ .Date.Format "2006-01-02" }}">Updated: {{ .Date.Format "Jan 2, 2006" }}</time>{{ end }}
+        <span class="data-note">{{ .Site.Params.dataSourceNote }}</span>
+      </div>
+      <div class="content">{{ .Content }}</div>
+      {{ if .Params.faq }}{{ partial "faq.html" . }}{{ end }}
+      {{ if .Params.related }}
+      <section class="related">
+        <h2>Related Guides</h2>
+        <div class="card-grid">
+          {{ range .Params.related }}
+          <a class="card" href="{{ .url | relURL }}"><h3>{{ .title }}</h3></a>
+          {{ end }}
+        </div>
+      </section>
+      {{ end }}
+    </article>
+  </div>
+  <aside class="sidebar">{{ partial "ad-sidebar.html" . }}</aside>
+</div>
+{{ end }}

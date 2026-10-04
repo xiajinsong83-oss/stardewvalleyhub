@@ -1,0 +1,9 @@
+{{ with .Site.Params.adsenseClient }}
+<!-- 文章内通栏广告（AdSense 单元：请在后台创建 In-Article 单元后替换 slot） -->
+<ins class="adsbygoogle ad-inarticle"
+     style="display:block"
+     data-ad-client="{{ . }}"
+     data-ad-slot="{{ $.Site.Params.adsenseInArticleSlot }}"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+{{ end }}

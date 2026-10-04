@@ -1,0 +1,28 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
+{{ with .Description }}<meta name="description" content="{{ . }}">{{ else }}<meta name="description" content="{{ .Site.Params.description }}">{{ end }}
+<link rel="canonical" href="{{ .Permalink }}">
+{{ range .Translations }}
+<link rel="alternate" hreflang="{{ .Lang }}" href="{{ .Permalink }}">
+{{ end }}
+{{ with .Site.Home.AllTranslations }}
+{{ range . }}<link rel="alternate" hreflang="{{ .Lang }}" href="{{ .Permalink }}">{{ end }}
+{{ end }}
+<link rel="alternate" hreflang="x-default" href="{{ .Site.Home.Permalink }}">
+<meta property="og:title" content="{{ .Title }}">
+<meta property="og:type" content="website">
+<meta property="og:url" content="{{ .Permalink }}">
+<meta property="og:site_name" content="{{ .Site.Title }}">
+<meta name="robots" content="index, follow">
+<link rel="stylesheet" href="{{ "css/style.css" | relURL }}">
+
+<!-- Google AdSense：受 Cookie 同意控制（见 cookie-consent.js），未同意不加载 -->
+{{ if .Site.Params.adsenseClient }}
+<script>
+window.adsenseAllowed = false;
+window.__adsenseClient = "{{ .Site.Params.adsenseClient }}";
+window.__inArticleSlot = "{{ .Site.Params.adsenseInArticleSlot }}";
+window.__sidebarSlot = "{{ .Site.Params.adsenseSidebarSlot }}";
+</script>
+{{ end }}

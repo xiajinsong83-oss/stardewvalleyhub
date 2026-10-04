@@ -1,0 +1,21 @@
+{{ define "main" }}
+<div class="content-col">
+  {{ partial "breadcrumb.html" . }}
+  <h1>{{ .Title }}</h1>
+  {{ with .Description }}<p class="lead">{{ . }}</p>{{ end }}
+  <div class="content">{{ .Content }}</div>
+
+  {{ $pages := .Pages.ByDate.Reverse }}
+  {{ if gt (len $pages) 0 }}
+  <div class="updates-list">
+    {{ range $pages }}
+    <a class="update-item" href="{{ .RelPermalink }}">
+      <time>{{ .Date.Format "2006-01-02" }}</time>
+      <h3>{{ .Title }}</h3>
+      {{ with .Description }}<p>{{ . }}</p>{{ end }}
+    </a>
+    {{ end }}
+  </div>
+  {{ end }}
+</div>
+{{ end }}

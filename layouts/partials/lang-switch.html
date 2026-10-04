@@ -1,0 +1,13 @@
+{{ $current := . }}
+{{ if gt (len .Site.Home.AllTranslations) 1 }}
+<div class="lang-switch">
+  <details>
+    <summary>{{ .Language.LanguageName }} ▾</summary>
+    <ul>
+      {{ range .Site.Home.AllTranslations }}
+      <li><a href="{{ .RelPermalink }}" lang="{{ .Lang }}"{{ if eq .Lang $current.Lang }} class="active"{{ end }}>{{ .Language.LanguageName }}</a></li>
+      {{ end }}
+    </ul>
+  </details>
+</div>
+{{ end }}

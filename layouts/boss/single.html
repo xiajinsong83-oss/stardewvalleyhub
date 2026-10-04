@@ -1,0 +1,9 @@
+{{ define "main" }}
+{{ partial "breadcrumb.html" . }}
+<div class="container page">
+  <h1>{{ .Title }}</h1>
+  <p class="page-desc">{{ .Description }}</p>
+  {{ partial "single-core.html" . }}
+  {{ partial "ad-inarticle.html" . }}
+</div>
+{{ end }}

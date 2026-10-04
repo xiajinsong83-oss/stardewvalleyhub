@@ -1,0 +1,11 @@
+<!-- GDPR 合规：未同意前不加载任何广告脚本；同意后按需注入 AdSense -->
+{{ if .Site.Params.cookieConsent }}
+<div id="cookie-banner" role="dialog" aria-label="Cookie consent">
+  <p>We use cookies and Google AdSense to keep this site free. By clicking "Accept", you agree to our <a href="/privacy/">Privacy Policy</a> and allow personalized ads. You can decline; the site remains fully usable.</p>
+  <div class="cookie-actions">
+    <button id="cookie-accept">Accept</button>
+    <button id="cookie-decline">Decline</button>
+  </div>
+</div>
+<script src="{{ "js/cookie-consent.js" | relURL }}"></script>
+{{ end }}

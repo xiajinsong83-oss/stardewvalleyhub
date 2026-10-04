@@ -1,0 +1,28 @@
+{{ with .Params.faq }}
+{{ $faqs := . }}
+{{ $last := sub (len $faqs) 1 }}
+<section class="faq">
+  <h2>Frequently Asked Questions</h2>
+  {{ range $i, $f := $faqs }}
+  <details class="faq-item">
+    <summary>{{ $f.q }}</summary>
+    <p>{{ $f.a }}</p>
+  </details>
+  {{ end }}
+</section>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {{ range $i, $f := $faqs }}
+    {
+      "@type": "Question",
+      "name": {{ $f.q | jsonify }},
+      "acceptedAnswer": { "@type": "Answer", "text": {{ $f.a | jsonify }} }
+    }{{ if ne $i $last }},{{ end }}
+    {{ end }}
+  ]
+}
+</script>
+{{ end }}

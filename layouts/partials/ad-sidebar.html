@@ -1,0 +1,9 @@
+{{ with .Site.Params.adsenseClient }}
+<!-- 侧边竖屏广告（AdSense 单元：请在后台创建 Vertical Sidebar 单元后替换 slot） -->
+<ins class="adsbygoogle ad-sidebar"
+     style="display:block"
+     data-ad-client="{{ . }}"
+     data-ad-slot="{{ $.Site.Params.adsenseSidebarSlot }}"
+     data-ad-format="vertical"
+     data-full-width-responsive="false"></ins>
+{{ end }}
