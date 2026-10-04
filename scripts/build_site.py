@@ -44,6 +44,8 @@ def front(title, desc, **extra):
     lines.append("title: %s" % json.dumps(title, ensure_ascii=False))
     lines.append("description: %s" % json.dumps(desc, ensure_ascii=False))
     lines.append("date: %s" % TODAY)
+    if d.get("icon"):
+        lines.append('icon: %s' % json.dumps(d["icon"], ensure_ascii=False))
     if d.get("type"): lines.append("type: %s" % d["type"])
     faq = d.get("faq")
     if faq:
@@ -88,6 +90,48 @@ buildings, artisan_goods, seasons = data["buildings"], data["artisan_goods"], da
 # 第十七章栏目：博物馆捐赠物品 = 文物 + 矿物类（矿点/矿石/条/资源/晶球为材料，非展品）
 museum_items = [{"kind": "artifact", **x} for x in artifacts] + [{"kind": "mineral", **x} for x in minerals if x.get("kind") == "mineral"]
 festivals = [{"season": s["name"], **f} for s in seasons for f in s.get("festivals", [])]
+
+# ---------- 像素图标库索引（static/images 已由 data-src/package/images 复制） ----------
+IMG_ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "data-src", "package", "images")
+def _norm(s):
+    return re.sub(r"[^a-z0-9]", "", str(s).lower())
+_ICON_IDX = {}
+for _cat in os.listdir(IMG_ROOT):
+    _cdir = os.path.join(IMG_ROOT, _cat)
+    if not os.path.isdir(_cdir):
+        continue
+    _m = {}
+    for _root, _, _files in os.walk(_cdir):
+        for _f in _files:
+            if _f.endswith(".png"):
+                _rel = os.path.relpath(os.path.join(_root, _f), IMG_ROOT)
+                _m.setdefault(_norm(os.path.splitext(_f)[0]), _rel)
+    _ICON_IDX[_cat] = _m
+
+_SECTION_ICON_CAT = {
+    "npc": "villagers", "cooking": "cooking", "recipes": "cooking",
+    "fish": "fish", "boss": "monsters", "monsters": "monsters",
+    "tools": "tools", "buildings": "buildings", "unlocks": "buildings",
+    "achievements": "achievements", "orders": "special-items",
+    "pets": "animals", "animals": "animals", "bundles": "bundles",
+    "artifacts": "artifacts", "weapons": "weapons",
+}
+def icon_for(section, name):
+    n = _norm(name)
+    if section == "crops":
+        p = os.path.join(IMG_ROOT, "crops", slugify(name), "crop.png")
+        return "/images/crops/%s/crop.png" % slugify(name) if os.path.exists(p) else ""
+    if section in ("museum",):
+        for cat in ("artifacts", "minerals"):
+            hit = _ICON_IDX.get(cat, {}).get(n)
+            if hit:
+                return "/images/" + hit
+        return ""
+    cat = _SECTION_ICON_CAT.get(section)
+    if not cat:
+        return ""
+    hit = _ICON_IDX.get(cat, {}).get(n)
+    return "/images/" + hit if hit else ""
 
 def make_related(items, current, section, n=3, extra=None):
     rel = []
@@ -147,7 +191,7 @@ for v in npc:
     body = front(
         f"{nm} Loved Gifts in Stardew Valley",
         f"Complete gift guide for {nm}: loved, liked, neutral, disliked and hated gifts in Stardew Valley, plus birthday ({bday_str}) and marriage info.",
-        type="npc", faq=faq, related=rel)
+        type="npc", icon=icon_for("npc", nm), faq=faq, related=rel)
     body += f"\n{intro}\n\n**Birthday:** {bday_str}\n\n**Marriage candidate:** {'Yes' if v.get('marriageable') else 'No'}\n\n"
     groups = [("Loved Gifts", v.get("loves", [])), ("Liked Gifts", v.get("likes", [])),
               ("Neutral Gifts", v.get("neutrals", [])), ("Disliked Gifts", v.get("dislikes", [])),
@@ -193,7 +237,7 @@ for c in crops:
     body = front(
         f"{nm} Growing Guide – Stardew Valley",
         f"{nm} crop guide: season, growth time ({c.get('growDays')} days), seed source, sell price and profit in Stardew Valley.",
-        type="crops", faq=faq, related=rel)
+        type="crops", icon=icon_for("crops", nm), faq=faq, related=rel)
     body += f"\n{nm} is a crop in Stardew Valley. Below is the complete growing data.\n\n"
     body += "<div class=\"table-wrap\">\n\n| Attribute | Value |\n| --- | --- |\n"
     body += f"| Season | {c_seasons} |\n"
@@ -237,7 +281,7 @@ for f in fish:
     body = front(
         f"Where to Catch {nm} in Stardew Valley",
         f"{nm} location guide: season, time, weather, difficulty and sell price in Stardew Valley.",
-        type="fish", faq=faq, related=rel)
+        type="fish", icon=icon_for("fish", nm), faq=faq, related=rel)
     cat = f.get("category") or "regular"
     body += f"\n{nm} ({f.get('description', '')}). Below is the complete catch data.\n\n"
     body += "<div class=\"table-wrap\">\n\n| Attribute | Value |\n| --- | --- |\n"
@@ -457,7 +501,7 @@ for m in boss_list:
     rel = [{"title": o["name"] + " Guide", "url": f"/boss/{slugify(o['name'])}/"} for o in boss_list if o["id"] != m["id"]][:3]
     body = front(f"How to Beat the {nm} – Stardew Valley",
                  f"{nm} boss guide: HP {hp}, damage {dmg}, drops and the best weapons to beat it in Stardew Valley.",
-                 type="boss", faq=faq, related=rel)
+                 type="boss", icon=icon_for("boss", nm), faq=faq, related=rel)
     body += f"\nThe **{nm}** is one of Stardew Valley's toughest enemies — a boss-like challenge with **{hp} HP** and **{dmg} damage** per hit.\n\n"
     body += f"**Stats:**\n\n<div class=\"table-wrap\">\n\n| HP | Damage | Speed | XP | Dangerous variant |\n| --- | --- | --- | --- | --- |\n| {hp} | {dmg} | {m.get('speed')} | {m.get('xp')} | {'Yes' if m.get('dangerous') else 'No'} |\n</div>\n\n"
     body += "**Where to find it**\n\n" + locs_md + "\n\n"
@@ -497,7 +541,7 @@ for r in cooking:
     ]
     rel = [{"title": o["name"] + " Recipe", "url": f"/recipes/{slugify(o['name'])}/"} for o in sorted(cooking, key=lambda x: abs(x.get('sellPrice',0)-r.get('sellPrice',0))) if o["id"] != r["id"]][:3]
     body = front(f"{nm} – Stardew Valley Recipe",
-                 f"{nm} recipe: ingredients, energy, buffs and sell price in Stardew Valley.", type="recipes", faq=faq, related=rel)
+                 f"{nm} recipe: ingredients, energy, buffs and sell price in Stardew Valley.", type="recipes", icon=icon_for("cooking", nm), faq=faq, related=rel)
     body += f"\nThe **{nm}** is a cooking recipe in Stardew Valley (sells for **{r.get('sellPrice')}g**).\n\n"
     body += "**Ingredients**\n\n<div class=\"table-wrap\">\n\n| Ingredient | Quantity |\n| --- | --- |\n" + ing + "</div>\n\n"
     body += f"**Energy / Health:** {eh.get('energy','-')} / {eh.get('health','-')}\n\n**Buffs:** {buffs}\n\n**Recipe source:** {src_txt}\n\n"
@@ -525,7 +569,7 @@ for i in museum_items:
     ]
     rel = [{"title": o["name"], "url": f"/museum/{slugify(o['name'])}/"} for o in museum_items if o["id"] != i["id"]][:3]
     body = front(f"{nm} – Museum Donation Guide",
-                 f"{nm}: where to find it, sell price and museum donation info in Stardew Valley.", type="museum", faq=faq, related=rel)
+                 f"{nm}: where to find it, sell price and museum donation info in Stardew Valley.", type="museum", icon=icon_for("museum", nm), faq=faq, related=rel)
     body += f"\nThe **{nm}** is a {i['kind']} that can be donated to the Stardew Valley Museum.\n\n"
     body += f"**Sell price:** {i.get('sellPrice')}g\n\n**Found in:** " + (", ".join(loc) if loc else "n/a") + "\n\n"
     body += f"**Donation note:** {note}\n\n## Tips\n\n- Donate the first of each item, then sell duplicates.\n- Minerals sell for more with the Gemologist profession when applicable.\n"
@@ -602,7 +646,7 @@ for t in tools:
         {"q": f"What does the {nm} do?", "a": t.get("description","")[:160]},
     ]
     body = front(f"{nm} – Stardew Valley Tool Guide",
-                 f"{nm} tool: uses and full upgrade costs in Stardew Valley.", type="tools", faq=faq)
+                 f"{nm} tool: uses and full upgrade costs in Stardew Valley.", type="tools", icon=icon_for("tools", nm), faq=faq)
     body += f"\nThe **{nm}** is a tool in Stardew Valley.\n\n{t.get('description','')}\n\n"
     body += f"**Upgrades**\n\n<div class=\"table-wrap\">\n\n| Level | Cost (g) | Material | Effect |\n| --- | --- | --- | --- |\n" + up_rows + "</div>\n\n"
     body += f"**Enchantable:** {'Yes' if t.get('canEnchant') else 'No'}\n\n## Tips\n\n- Upgrade tools at Clint's Blacksmith with bars and gold.\n- Higher levels allow charged actions (hoe, watering can).\n"
@@ -626,7 +670,7 @@ for b in buildings:
         {"q": f"What materials do I need for the {nm}?", "a": "Materials: " + (", ".join(f"{m.get('quantity')}x {m.get('item')}" for m in b.get("materials", [])) if b.get("materials") else "none recorded") + "."},
     ]
     body = front(f"{nm} – Stardew Valley Building Guide",
-                 f"{nm} building: cost, materials, upgrades and purpose in Stardew Valley.", type="unlocks", faq=faq)
+                 f"{nm} building: cost, materials, upgrades and purpose in Stardew Valley.", type="unlocks", icon=icon_for("buildings", nm), faq=faq)
     body += f"\nThe **{nm}** is a building on your farm.\n\n{b.get('description','')}\n\n"
     body += f"**Cost:** {b.get('buildCost')}g · **Build time:** {b.get('buildDays')} days · **Builder:** {b.get('builder')}\n\n"
     body += f"**Materials**\n\n<div class=\"table-wrap\">\n\n| Material | Quantity |\n| --- | --- |\n" + (mats or "| - | - |\n") + "</div>\n\n"
@@ -650,7 +694,7 @@ for a in achievements:
         {"q": f"What is the reward for {nm}?", "a": f"The reward is {a.get('reward') or 'none recorded'}." + (" This is a secret achievement." if a.get('secret') else "")},
     ]
     body = front(f"{nm} – Stardew Valley Achievement",
-                 f"{nm} achievement: how to unlock it and the reward.", type="achievements", faq=faq)
+                 f"{nm} achievement: how to unlock it and the reward.", type="achievements", icon=icon_for("achievements", nm), faq=faq)
     body += f"\n**{nm}**\n\n{a.get('description','')}\n\n"
     body += f"**Reward:** {a.get('reward') or 'none'} · **Secret:** {'Yes' if a.get('secret') else 'No'}\n\n## Tips\n\n- Secret achievements still appear in the list once unlocked.\n- Many achievements unlock naturally through normal play.\n"
     w(os.path.join(ac, f"{slug}.md"), body)
@@ -672,7 +716,7 @@ for o in orders:
         {"q": f"What are the rewards for {nm}?", "a": o.get("rewards") or "Reward details are in-game."},
     ]
     body = front(f"{nm} – Special Order Guide",
-                 f"{nm}: requester, requirements and rewards in Stardew Valley.", type="orders", faq=faq)
+                 f"{nm}: requester, requirements and rewards in Stardew Valley.", type="orders", icon=icon_for("orders", nm), faq=faq)
     body += f"\n**{nm}** — requested by **{o.get('requester')}**\n\n{o.get('text','')}\n\n"
     body += f"**Timeframe:** {o.get('timeframe')} days\n\n**Requirements:** {o.get('requirements') or 'n/a'}\n\n"
     body += f"**Rewards:** {o.get('rewards') or 'n/a'}\n\n## Tips\n\n- Check the special order board after completing the Community Center (or Joja route).\n- Gather required items before the deadline; failed orders can reappear.\n"
@@ -698,7 +742,7 @@ for a in farm_animals:
         {"q": f"What does the {nm} produce?", "a": f"It produces {prod.get('name','n/a')} every {a.get('daysToProduce')} day(s) once mature ({a.get('daysToMature')} days to mature)."},
     ]
     body = front(f"{nm} – Stardew Valley Animal Guide",
-                 f"{nm}: cost, produce and care in Stardew Valley.", type="pets", faq=faq)
+                 f"{nm}: cost, produce and care in Stardew Valley.", type="pets", icon=icon_for("pets", nm), faq=faq)
     body += f"\nThe **{nm}** is a farm animal.\n\n{a.get('description','')}\n\n"
     body += f"**Housing:** {a.get('building')} · **Purchase:** {a.get('purchasePrice')}g · **Sell:** {a.get('sellPrice')}g\n\n"
     body += f"**Produce:** {prod.get('name','-')} (sells for {prod.get('sellPrice','-')}g) · every {a.get('daysToProduce')} day(s)\n\n## Tips\n\n- Feed animals daily (hay in the silo or grass outside).\n- Deluxe produce unlocks with the Coopmaster/Shepherd profession and high friendship.\n"

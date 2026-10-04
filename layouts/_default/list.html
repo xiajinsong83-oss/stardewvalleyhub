@@ -1,20 +1,47 @@
 {{ define "main" }}
 <div class="content-col">
   {{ partial "breadcrumb.html" . }}
-  <h1>{{ .Title }}</h1>
-  {{ with .Description }}<p class="lead">{{ . }}</p>{{ end }}
-  <div class="content">{{ .Content }}</div>
+  <div class="page-head">
+    <h1>{{ .Title }}</h1>
+    {{ with .Description }}<p class="lead">{{ . }}</p>{{ end }}
+  </div>
 
   {{ $pages := .Pages.ByTitle }}
   {{ if gt (len $pages) 0 }}
-  <div class="card-grid">
+  <div class="filter-bar">
+    <input type="search" id="cardSearch" placeholder="Search {{ .Title | lower }}…" aria-label="Search">
+    <span class="filter-count"><span id="cardCount">{{ len $pages }}</span> entries</span>
+  </div>
+  <div class="card-grid" id="cardGrid">
     {{ range $pages }}
-    <a class="card" href="{{ .RelPermalink }}">
+    <a class="card" href="{{ .RelPermalink }}" data-search="{{ .Title | lower }} {{ .Description | lower }}">
+      {{ with .Params.icon }}
+      <div class="card-icon"><img src="{{ . | relURL }}" alt="" loading="lazy"></div>
+      {{ end }}
       <h3>{{ .Title }}</h3>
       {{ with .Description }}<p>{{ . }}</p>{{ end }}
     </a>
     {{ end }}
   </div>
+  <script>
+  (function(){
+    var input = document.getElementById('cardSearch'),
+        grid = document.getElementById('cardGrid'),
+        count = document.getElementById('cardCount'),
+        cards = grid.querySelectorAll('.card');
+    input.addEventListener('input', function(){
+      var q = input.value.trim().toLowerCase(), shown = 0;
+      cards.forEach(function(c){
+        var ok = !q || c.dataset.search.indexOf(q) > -1;
+        c.classList.toggle('hide', !ok);
+        if (ok) shown++;
+      });
+      count.textContent = shown;
+    });
+  })();
+  </script>
   {{ end }}
+
+  <div class="content">{{ .Content }}</div>
 </div>
 {{ end }}

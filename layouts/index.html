@@ -1,46 +1,85 @@
 {{ define "main" }}
 <section class="hero">
   <div class="container hero-inner">
-    <h1>{{ .Title }}</h1>
-    <p class="lead">{{ .Site.Params.description }}</p>
-    <p class="hero-note">100% data-driven · Auto-updated · Unofficial fan resource · Powered by open-source Stardew Valley data</p>
+    <p class="kicker">★ Stardew Valley Tool Hub</p>
+    <h1>Every Stardew Valley Guide,<br><span class="hl">One Data-Driven Place.</span></h1>
+    <p class="lead">NPC loved gifts, crop profit, fishing spots, community center bundles, boss fights and FAQs — all from open-source game data, auto-updated with every patch.</p>
+    <p class="hero-note">100% data-driven · auto-updated · unofficial fan resource</p>
+    <div class="hero-cards">
+      <a class="btn btn-primary" href="/npc/">Browse NPC Gifts</a>
+      <a class="btn btn-ghost" href="/crops/">Best Crops</a>
+    </div>
   </div>
 </section>
 
 <section class="container">
   <div class="card-grid home-grid">
     <a class="card big" href="/npc/">
+      <div class="card-icon"><img src="/images/villagers/Abigail.png" alt=""></div>
       <h3>NPC Gift Guides</h3>
       <p>Loved, liked, neutral and hated gifts for all 34 villagers, including marriage candidates and birthdays.</p>
+      <div class="tags"><span class="tag">34 villagers</span><span class="tag gold">Marriage</span></div>
     </a>
     <a class="card big" href="/crops/">
+      <div class="card-icon"><img src="/images/crops/parsnip/crop.png" alt=""></div>
       <h3>Crop Guides</h3>
       <p>Season, growth time, seed source, sell price and profit for every crop.</p>
+      <div class="tags"><span class="tag">Profit / day</span><span class="tag gold">4 seasons</span></div>
     </a>
     <a class="card big" href="/fish/">
+      <div class="card-icon"><img src="/images/fish/Legend.png" alt=""></div>
       <h3>Fish Guides</h3>
       <p>Where to catch every fish: season, weather, time, location, difficulty and sell price.</p>
+      <div class="tags"><span class="tag">77 fish</span><span class="tag pink">Legendary</span></div>
     </a>
     <a class="card big" href="/bundles/">
+      <div class="card-icon"><img src="/images/bundles/icons/Bundle Green.png" alt="" onerror="this.parentNode.style.display='none'"></div>
       <h3>Community Center Bundles</h3>
       <p>Complete bundle requirements, items, quantities and rewards for every room.</p>
+      <div class="tags"><span class="tag">5 rooms</span><span class="tag gold">Rewards</span></div>
     </a>
     <a class="card big" href="/boss/">
+      <div class="card-icon"><img src="/images/monsters/Green Slime.png" alt="" onerror="this.parentNode.style.display='none'"></div>
       <h3>Bosses &amp; Elite Enemies</h3>
       <p>How to beat Prismatic Slime, Tiger Slime and every dangerous mine enemy, with stats, drops and weapon picks.</p>
+      <div class="tags"><span class="tag pink">Elite</span></div>
     </a>
     <a class="card big" href="/faq/">
+      <div class="card-icon"><img src="/images/misc/Golden Pumpkin.png" alt="" onerror="this.parentNode.style.display='none'"></div>
       <h3>FAQs</h3>
       <p>Quick answers to the most searched Stardew Valley questions: unlocks, tools, events and more.</p>
+      <div class="tags"><span class="tag">Quick answers</span></div>
     </a>
     <a class="card big" href="/updates/">
+      <div class="card-icon"><img src="/images/misc/Stardew Valley Fair.png" alt="" onerror="this.parentNode.style.display='none'"></div>
       <h3>Game Updates</h3>
       <p>Latest Stardew Valley patches and official news, summarized automatically from official sources.</p>
+      <div class="tags"><span class="tag gold">Patch notes</span></div>
     </a>
     <a class="card big" href="/feedback/">
+      <div class="card-icon"><img src="/images/villagers/Krobus.png" alt="" onerror="this.parentNode.style.display='none'"></div>
       <h3>Player Feedback &amp; Community</h3>
       <p>Official forums, Discord, Reddit and bug-report channels — where to give feedback and join the community.</p>
+      <div class="tags"><span class="tag">Community</span></div>
     </a>
+  </div>
+
+  <h2 class="section-title">High-Priority Guides</h2>
+  <div class="card-grid home-grid">
+    <a class="card" href="/recipes/"><div class="card-icon"><img src="/images/cooking/Cookie.png" alt="" onerror="this.parentNode.style.display='none'"></div><h3>Cooking Recipes</h3><p>81 recipes with ingredients, energy, buffs and sell price.</p></a>
+    <a class="card" href="/museum/"><div class="card-icon"><img src="/images/artifacts/Ancient Doll.png" alt="" onerror="this.parentNode.style.display='none'"></div><h3>Museum Donations</h3><p>95 artifacts and minerals: where to find them and what they're worth.</p></a>
+    <a class="card" href="/festivals/"><div class="card-icon"><img src="/images/villagers/Leo.png" alt="" onerror="this.parentNode.style.display='none'"></div><h3>Festivals</h3><p>12 seasonal festivals with exact dates on the in-game calendar.</p></a>
+    <a class="card" href="/events/"><div class="card-icon"><img src="/images/villagers/Emily.png" alt="" onerror="this.parentNode.style.display='none'"></div><h3>Heart Events</h3><p>All 31 villagers' heart events and the friendship hearts required.</p></a>
+    <a class="card" href="/money/"><div class="card-icon"><img src="/images/misc/Gold.png" alt="" onerror="this.parentNode.style.display='none'"></div><h3>Money Making</h3><p>Top-profit crops, artisan goods and valuable minerals — data-driven.</p></a>
+  </div>
+
+  <h2 class="section-title">More Guides</h2>
+  <div class="card-grid home-grid">
+    <a class="card" href="/tools/"><div class="card-icon"><img src="/images/tools/axe/Axe.png" alt="" onerror="this.parentNode.style.display='none'"></div><h3>Tools</h3><p>17 tools with full upgrade costs and materials.</p></a>
+    <a class="card" href="/unlocks/"><div class="card-icon"><img src="/images/buildings/Silo.png" alt="" onerror="this.parentNode.style.display='none'"></div><h3>Buildings &amp; Unlocks</h3><p>24 farm buildings with cost, materials and upgrades.</p></a>
+    <a class="card" href="/achievements/"><div class="card-icon"><img src="/images/achievements/Achievement_Artisan.jpg" alt="" onerror="this.parentNode.style.display='none'"></div><h3>Achievements</h3><p>49 achievements with requirements and rewards.</p></a>
+    <a class="card" href="/orders/"><div class="card-icon"><img src="/images/villagers/Lewis.png" alt="" onerror="this.parentNode.style.display='none'"></div><h3>Special Orders</h3><p>28 special orders: requester, requirements and rewards.</p></a>
+    <a class="card" href="/pets/"><div class="card-icon"><img src="/images/animals/Dog 1.png" alt="" onerror="this.parentNode.style.display='none'"></div><h3>Pets &amp; Farm Animals</h3><p>Farm animals and pets with purchase price and produce.</p></a>
   </div>
 
   {{ $stats := site.Data.stardew }}
@@ -51,6 +90,9 @@
     <div class="stat"><strong>{{ $stats.fish }}</strong><span>Fish guides</span></div>
     <div class="stat"><strong>{{ $stats.bundles }}</strong><span>Bundle guides</span></div>
     <div class="stat"><strong>{{ $stats.boss }}</strong><span>Boss guides</span></div>
+    <div class="stat"><strong>{{ $stats.recipes }}</strong><span>Recipes</span></div>
+    <div class="stat"><strong>{{ $stats.museum }}</strong><span>Museum items</span></div>
+    <div class="stat"><strong>{{ $stats.events }}</strong><span>Event guides</span></div>
   </section>
   {{ end }}
 

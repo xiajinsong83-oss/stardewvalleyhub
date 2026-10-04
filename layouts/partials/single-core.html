@@ -1,6 +1,6 @@
 {{ $adType := "inarticle" }}
 {{ if .Site.Params.adsenseClient }}
-  {{/* 版本无关的确定性二选一：页面内容字节数 + permalink 长度，Hugo 0.128 与 0.147 均可用 */}}
+  {{/* 版本无关的确定性二选一：页面内容字节数 + permalink 长度 */}}
   {{ $seed := add (len .Content) (len .RelPermalink) }}
   {{ if eq 1 (mod $seed 2) }}{{ $adType = "sidebar" }}{{ end }}
 {{ end }}
@@ -9,10 +9,17 @@
 <div class="content-col">
   <article class="page">
     {{ partial "breadcrumb.html" . }}
-    <h1>{{ .Title }}</h1>
-    <div class="page-meta">
-      {{ if .Date }}<time datetime="{{ .Date.Format "2006-01-02" }}">Updated: {{ .Date.Format "Jan 2, 2006" }}</time>{{ end }}
-      <span class="data-note">{{ .Site.Params.dataSourceNote }}</span>
+    <div class="page-head-row">
+      {{ with .Params.icon }}
+      <div class="page-icon"><img src="{{ . | relURL }}" alt="{{ $.Title }}" loading="lazy"></div>
+      {{ end }}
+      <div>
+        <h1>{{ .Title }}</h1>
+        <div class="page-meta">
+          {{ if .Date }}<time datetime="{{ .Date.Format "2006-01-02" }}">Updated: {{ .Date.Format "Jan 2, 2006" }}</time>{{ end }}
+          <span class="data-note">{{ .Site.Params.dataSourceNote }}</span>
+        </div>
+      </div>
     </div>
     <div class="content">{{ .Content }}</div>
     {{ if .Params.faq }}{{ partial "faq.html" . }}{{ end }}
@@ -34,10 +41,17 @@
   <div class="content-col">
     <article class="page">
       {{ partial "breadcrumb.html" . }}
-      <h1>{{ .Title }}</h1>
-      <div class="page-meta">
-        {{ if .Date }}<time datetime="{{ .Date.Format "2006-01-02" }}">Updated: {{ .Date.Format "Jan 2, 2006" }}</time>{{ end }}
-        <span class="data-note">{{ .Site.Params.dataSourceNote }}</span>
+      <div class="page-head-row">
+        {{ with .Params.icon }}
+        <div class="page-icon"><img src="{{ . | relURL }}" alt="{{ $.Title }}" loading="lazy"></div>
+        {{ end }}
+        <div>
+          <h1>{{ .Title }}</h1>
+          <div class="page-meta">
+            {{ if .Date }}<time datetime="{{ .Date.Format "2006-01-02" }}">Updated: {{ .Date.Format "Jan 2, 2006" }}</time>{{ end }}
+            <span class="data-note">{{ .Site.Params.dataSourceNote }}</span>
+          </div>
+        </div>
       </div>
       <div class="content">{{ .Content }}</div>
       {{ if .Params.faq }}{{ partial "faq.html" . }}{{ end }}
