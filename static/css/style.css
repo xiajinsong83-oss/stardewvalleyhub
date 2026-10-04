@@ -445,3 +445,21 @@ html { background: #0a0f1e; }
 .tool-cta { color: var(--accent); font-size: 14px; font-weight: 600; }
 @media (max-width: 900px) { .tools-grid { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 500px) { .tools-grid { grid-template-columns: 1fr; } }
+
+/* 强制修复 Quick Tools 卡片 */
+.quick-tools .tools-grid { display: grid !important; grid-template-columns: repeat(4, 1fr) !important; gap: 16px !important; }
+.quick-tools .tool-card {
+  display: block !important;
+  background: #182338 !important;
+  border: 1px solid #2a3a55 !important;
+  border-radius: 14px !important;
+  padding: 24px !important;
+  text-decoration: none !important;
+  color: #fff !important;
+  transition: transform .15s, border-color .15s !important;
+}
+.quick-tools .tool-card:hover { transform: translateY(-4px) !important; border-color: #3ddc97 !important; }
+.quick-tools .tool-icon { font-size: 32px !important; margin-bottom: 12px !important; line-height: 1; }
+.quick-tools .tool-card h3 { color: #fff !important; font-size: 18px !important; margin: 0 0 8px !important; }
+.quick-tools .tool-card p { color: #9aa8bf !important; font-size: 14px !important; line-height: 1.5 !important; margin: 0 0 14px !important; }
+.quick-tools .tool-cta { color: #3ddc97 !important; font-size: 14px !important; font-weight: 600 !important; }
