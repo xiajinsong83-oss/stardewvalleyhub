@@ -1,6 +1,8 @@
 {{ $adType := "inarticle" }}
 {{ if .Site.Params.adsenseClient }}
-  {{ if eq 1 (mod (crypto.FNV32a .RelPermalink) 2) }}{{ $adType = "sidebar" }}{{ end }}
+  {{/* 版本无关的确定性二选一：页面内容字节数 + permalink 长度，Hugo 0.128 与 0.147 均可用 */}}
+  {{ $seed := add (len .Content) (len .RelPermalink) }}
+  {{ if eq 1 (mod $seed 2) }}{{ $adType = "sidebar" }}{{ end }}
 {{ end }}
 
 {{ if ne $adType "sidebar" }}
