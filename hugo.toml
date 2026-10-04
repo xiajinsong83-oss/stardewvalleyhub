@@ -3,7 +3,7 @@ title = "Stardew Valley Hub – Unofficial Fan Guides"
 enableRobotsTXT = true
 defaultContentLanguage = "en"
 defaultContentLanguageInSubdir = false
-disableKinds = ["taxonomy", "taxonomyTerm"]
+disableKinds = ["taxonomy"]
 pygmentsUseClasses = true
 [markup]
   [markup.goldmark]
