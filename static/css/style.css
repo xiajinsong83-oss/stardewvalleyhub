@@ -491,3 +491,10 @@ html { background: #0a0f1e; }
 /* 农场地图图片 */
 .farm-map-img { background: #1a2540; border: 1px solid #2a3a55; border-radius: 12px; padding: 16px; margin: 16px 0; }
 .farm-map-img img { width: 100%; height: auto; border-radius: 8px; display: block; }
+
+/* 8 张农场地图网格 */
+.farm-maps-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 20px 0; }
+.farm-map-card { background: #1a2540; border: 1px solid #2a3a55; border-radius: 12px; padding: 12px; }
+.farm-map-card h3 { margin: 0 0 10px; font-size: 16px; }
+.farm-map-card img { width: 100%; height: auto; border-radius: 8px; }
+@media (max-width: 700px) { .farm-maps-grid { grid-template-columns: 1fr; } }
