@@ -132,6 +132,58 @@
     </div>
   </section>
 
+  <!-- 首页内嵌农场规划器 -->
+  <section class="home-planner">
+    <h2>Farm Layout Planner</h2>
+    <p class="quick-sub">Sketch your farm layout right here — 12×8 grid, auto-saved in your browser.</p>
+    <div class="planner-wrap home-planner-wrap">
+      <aside class="planner-tools">
+        <h3>BUILD PALETTE</h3>
+        <p class="planner-sub">Choose a tile <span class="planner-badge">7 TOOLS</span></p>
+        <div class="planner-tools-grid">
+          <button class="tool-btn active" data-tool="soil">Soil</button>
+          <button class="tool-btn" data-tool="crop">Crop</button>
+          <button class="tool-btn" data-tool="building">Building</button>
+          <button class="tool-btn" data-tool="tree">Tree</button>
+          <button class="tool-btn" data-tool="path">Path</button>
+          <button class="tool-btn" data-tool="water">Water</button>
+          <button class="tool-btn tool-erase" data-tool="erase">Erase</button>
+        </div>
+        <div class="planner-planname">
+          <label>Plan name</label>
+          <input type="text" id="planName" value="Year 1 layout">
+        </div>
+      </aside>
+      <main class="planner-board">
+        <div class="planner-board-head">
+          <h2 id="boardTitle">Year 1 layout</h2>
+          <div class="planner-head-right">
+            <span class="planner-counter"><strong id="filledCount">0</strong> / 96 filled</span>
+            <button class="planner-export" id="exportBtn">Export JSON</button>
+          </div>
+        </div>
+        <div class="planner-hint">
+          <span class="dot"></span> <strong id="toolLabel">Soil</strong> ACTIVE — Click a plot to place
+        </div>
+        <div class="planner-grid" id="gridBoard"></div>
+        <button class="planner-clear" id="clearBtn">Clear board</button>
+      </main>
+      <aside class="planner-summary">
+        <h3>BOARD SUMMARY</h3>
+        <p class="planner-sub">Farm footprint</p>
+        <div class="planner-stat-row"><span>Filled</span><strong id="statFilled">0</strong></div>
+        <div class="planner-stat-row"><span>Available</span><strong>96</strong></div>
+        <hr>
+        <div class="planner-stat-row"><span>Soil</span><strong id="statSoil">0</strong></div>
+        <div class="planner-stat-row"><span>Crops</span><strong id="statCrop">0</strong></div>
+        <div class="planner-stat-row"><span>Buildings</span><strong id="statBuilding">0</strong></div>
+        <div class="planner-stat-row"><span>Trees</span><strong id="statTree">0</strong></div>
+        <div class="planner-stat-row"><span>Paths</span><strong id="statPath">0</strong></div>
+        <div class="planner-stat-row"><span>Water</span><strong id="statWater">0</strong></div>
+      </aside>
+    </div>
+  </section>
+
   <section class="latest">
     <h2>Latest Updates</h2>
     <ul>
@@ -142,4 +194,83 @@
     </ul>
   </section>
 </section>
+
+<script>
+(function(){
+  var ROWS = 8, COLS = 12;
+  var board = document.getElementById('gridBoard');
+  if (!board) return;
+  var cells = [];
+  var currentTool = 'soil';
+  var saved = JSON.parse(localStorage.getItem('svfarm') || '{}');
+
+  for (var r = 0; r < ROWS; r++) {
+    for (var c = 0; c < COLS; c++) {
+      var cell = document.createElement('div');
+      cell.className = 'grid-cell';
+      cell.dataset.idx = r * COLS + c;
+      board.appendChild(cell);
+      cells.push(cell);
+    }
+  }
+
+  function render() {
+    var counts = {soil:0, crop:0, building:0, tree:0, path:0, water:0};
+    var filled = 0;
+    cells.forEach(function(cell){
+      var idx = cell.dataset.idx;
+      var t = saved[idx] || '';
+      cell.className = 'grid-cell' + (t ? ' t-' + t : '');
+      cell.textContent = t ? '' : '+';
+      if (t) { counts[t]++; filled++; }
+    });
+    document.getElementById('filledCount').textContent = filled;
+    document.getElementById('statFilled').textContent = filled;
+    document.getElementById('statSoil').textContent = counts.soil;
+    document.getElementById('statCrop').textContent = counts.crop;
+    document.getElementById('statBuilding').textContent = counts.building;
+    document.getElementById('statTree').textContent = counts.tree;
+    document.getElementById('statPath').textContent = counts.path;
+    document.getElementById('statWater').textContent = counts.water;
+  }
+
+  cells.forEach(function(cell){
+    cell.addEventListener('click', function(){
+      var idx = cell.dataset.idx;
+      if (currentTool === 'erase') delete saved[idx];
+      else saved[idx] = currentTool;
+      localStorage.setItem('svfarm', JSON.stringify(saved));
+      render();
+    });
+  });
+
+  document.querySelectorAll('.home-planner .tool-btn').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      document.querySelectorAll('.home-planner .tool-btn').forEach(function(b){ b.classList.remove('active'); });
+      btn.classList.add('active');
+      currentTool = btn.dataset.tool;
+      document.getElementById('toolLabel').textContent = btn.textContent.trim();
+    });
+  });
+
+  document.getElementById('clearBtn').addEventListener('click', function(){
+    if (confirm('Clear the whole board?')) { saved = {}; localStorage.removeItem('svfarm'); render(); }
+  });
+
+  document.getElementById('planName').addEventListener('input', function(){
+    document.getElementById('boardTitle').textContent = this.value;
+  });
+
+  document.getElementById('exportBtn').addEventListener('click', function(){
+    var data = { plan: document.getElementById('planName').value, rows: 8, cols: 12, tiles: saved };
+    var blob = new Blob([JSON.stringify(data, null, 2)], {type: 'application/json'});
+    var a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = 'farm-layout.json';
+    a.click();
+  });
+
+  render();
+})();
+</script>
 {{ end }}
