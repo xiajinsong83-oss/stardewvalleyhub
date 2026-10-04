@@ -244,3 +244,37 @@ footer.site-footer {
   .main-nav { order: 3; width: 100%; overflow-x: auto; flex-wrap: nowrap; }
   .page-head h1 { font-size: 28px; }
 }
+
+/* ---------- Tier 排行榜 ---------- */
+.tier-board { margin: 20px 0; }
+.tier-row {
+  display: flex; align-items: center; gap: 14px;
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: 12px; padding: 10px 14px; margin-bottom: 8px;
+}
+.tier-badge {
+  width: 34px; height: 34px; border-radius: 8px; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 800; font-size: 16px; color: #fff;
+}
+.tier-s { background: #f43f5e; }
+.tier-a { background: #fb923c; }
+.tier-b { background: #3ddc97; color: #06281c; }
+.tier-c { background: #64748b; }
+.tier-icon {
+  width: 44px; height: 44px; border-radius: 10px; background: var(--surface-2);
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.tier-icon img { width: 34px; height: 34px; }
+.tier-name { font-size: 16px; font-weight: 700; color: #fff; flex: 1; }
+.tier-name:hover { color: var(--accent); }
+.tier-extra { color: var(--muted); font-size: 13.5px; }
+
+/* ---------- 地图卡片 ---------- */
+.map-card {
+  background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
+  padding: 16px; margin: 16px 0;
+}
+.map-card img { width: 100%; border-radius: 10px; border: 1px solid var(--border); image-rendering: pixelated; }
+.map-card h3 { color: #fff; margin: 12px 0 6px; }
+.map-card p { color: var(--muted); margin: 0; }

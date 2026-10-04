@@ -916,6 +916,128 @@ w(os.path.join(CONTENT_EN, "_index.md"), front(
 for lang, (title, desc) in LANG_HOMES.items():
     w(os.path.join(SITE, "content", lang, "_index.md"), front(title, desc, type="home", date=TODAY) + "\n" + desc + "\n")
 
+# ---------- 武器数据库 ----------
+wp_c = os.path.join(CONTENT_EN, "weapons")
+w(os.path.join(wp_c, "_index.md"),
+  front("Weapon Database – Stardew Valley",
+        "All 62 weapons in Stardew Valley: swords, slingshots, hammers and daggers with damage, crit chance, obtain source and sell price.", type="weapons") +
+  "\nAll weapon data comes from open-source machine-readable game data.\n")
+for wp in weapons:
+    nm = wp["name"]; slug = slugify(nm)
+    wt = wp.get("type", "weapon")
+    faq = [
+        {"q": f"How much damage does the {nm} do?",
+         "a": f"{nm} deals {wp.get('damageMin')}-{wp.get('damageMax')} damage, crit chance {wp.get('critChance')}."},
+        {"q": f"Where do I get the {nm}?",
+         "a": wp.get("obtain") or "Source not recorded in open data."},
+    ]
+    body = front(f"{nm} – Stardew Valley Weapon",
+                 f"{nm} weapon guide: damage {wp.get('damageMin')}-{wp.get('damageMax')}, crit chance, obtain and sell price.",
+                 type="weapons", icon=icon_for("weapons", nm), faq=faq)
+    body += f"\nThe **{nm}** is a {wt} in Stardew Valley.\n\n"
+    body += "<div class=\"table-wrap\">\n\n| Attribute | Value |\n| --- | --- |\n"
+    body += f"| Type | {wt} |\n| Damage | {wp.get('damageMin')}-{wp.get('damageMax')} |\n"
+    body += f"| Speed | {wp.get('speed')} |\n| Crit chance | {wp.get('critChance')} |\n"
+    body += f"| Obtain | {wp.get('obtain') or 'n/a'} |\n| Sell price | {wp.get('sellPrice')}g |\n"
+    body += "</div>\n\n## Tips\n\n- Upgrade weapons at the Adventurer's Guild.\n"
+    w(os.path.join(wp_c, f"{slug}.md"), body)
+print("Weapon pages:", len(weapons))
+
+# ---------- 怪物数据库 ----------
+mo_c = os.path.join(CONTENT_EN, "monsters")
+w(os.path.join(mo_c, "_index.md"),
+  front("Monster Database – Stardew Valley",
+        "All 46 monsters in Stardew Valley: HP, damage, XP, locations and drops.", type="monsters") + "\nOpen-source game data.\n")
+for mo in monsters:
+    nm = mo["name"]; slug = slugify(nm)
+    locs = ", ".join(mo.get("locations") or []) or "n/a"
+    body = front(f"{nm} – Stardew Valley Monster",
+                 f"{nm} monster guide: {mo.get('hp')} HP, {mo.get('damage')} damage, locations and drops.",
+                 type="monsters", icon=icon_for("boss", nm))
+    body += f"\nThe **{nm}** has **{mo.get('hp')} HP** and **{mo.get('damage')} damage**.\n\n"
+    body += "<div class=\"table-wrap\">\n\n| Attribute | Value |\n| --- | --- |\n"
+    body += f"| HP | {mo.get('hp')} |\n| Damage | {mo.get('damage')} |\n| XP | {mo.get('xp')} |\n| Locations | {locs} |\n"
+    body += "</div>\n"
+    w(os.path.join(mo_c, f"{slug}.md"), body)
+print("Monster pages:", len(monsters))
+
+# ---------- Tier 排行榜 ----------
+tier_c = os.path.join(CONTENT_EN, "tier")
+def _profit_per_day(c):
+    seed = 0
+    for p in c.get("seedBuyPrices") or []:
+        seed = p["price"]; break
+    sell = c.get("cropSellPrice") or 0
+    qty = (c.get("harvestQuantity") or {}).get("min", 1) or 1
+    return round((sell * qty - seed) / (c.get("growDays") or 1), 1)
+
+def _grade(val, sorted_vals):
+    n = len(sorted_vals)
+    idx = sorted_vals.index(val)
+    if idx < max(1, n * 0.15): return "S"
+    if idx < max(1, n * 0.35): return "A"
+    if idx < max(1, n * 0.65): return "B"
+    return "C"
+
+crops_by_profit = sorted(crops, key=_profit_per_day, reverse=True)
+profit_vals = [_profit_per_day(c) for c in crops_by_profit]
+tier_html = '<div class="tier-board">\n'
+for c in crops_by_profit:
+    nm = c["name"]; g = _grade(_profit_per_day(c), profit_vals)
+    icon = icon_for("crops", nm) or "/images/misc/Gold.png"
+    slug = slugify(nm)
+    tier_html += (f'<div class="tier-row"><span class="tier-badge tier-{g.lower()}">{g}</span>'
+                  f'<span class="tier-icon"><img src="{icon}" alt=""></span>'
+                  f'<a class="tier-name" href="/crops/{slug}/">{nm}</a>'
+                  f'<span class="tier-extra">{_profit_per_day(c)}g/day · {season_label(c["seasons"])}</span></div>\n')
+tier_html += '</div>'
+w(os.path.join(tier_c, "crop-profit.md"),
+  front("Best Crops Profit Tier List – Stardew Valley",
+        "Ranked best crops by profit per day in Stardew Valley: S/A/B/C tier list with icons and season info.",
+        type="tier", date=TODAY) +
+  "\n## Crop Profit Tier List (g/day)\n\nCrops ranked by estimated profit per growing day, basic quality, before profession bonuses.\n\n" + tier_html)
+
+fish_by_sell = sorted(fish, key=lambda f: f.get("sellPrice") or 0, reverse=True)
+sell_vals = [f.get("sellPrice") or 0 for f in fish_by_sell]
+tier_html2 = '<div class="tier-board">\n'
+for f in fish_by_sell:
+    nm = f["name"]; g = _grade(f.get("sellPrice") or 0, sell_vals)
+    icon = icon_for("fish", nm) or "/images/fish/Legend.png"
+    slug = slugify(nm)
+    tier_html2 += (f'<div class="tier-row"><span class="tier-badge tier-{g.lower()}">{g}</span>'
+                   f'<span class="tier-icon"><img src="{icon}" alt=""></span>'
+                   f'<a class="tier-name" href="/fish/{slug}/">{nm}</a>'
+                   f'<span class="tier-extra">{f.get("sellPrice")}g · {season_label(f.get("seasons"))}</span></div>\n')
+tier_html2 += '</div>'
+w(os.path.join(tier_c, "fish.md"),
+  front("Fish Tier List – Stardew Valley",
+        "Ranked best fish by sell price in Stardew Valley: S/A/B/C tier list with icons, season and sell price.",
+        type="tier", date=TODAY) +
+  "\n## Fish Tier List (by sell price)\n\nLegendary and high-value fish ranked.\n\n" + tier_html2)
+print("Tier pages: 2")
+
+# ---------- 农场地图页 ----------
+maps_c = os.path.join(CONTENT_EN, "maps")
+farm_maps = [
+    ("Standard Farm", "The default open-field farm. Most space for crops and buildings."),
+    ("Beach Farm", "Tidal beach farm; foraging, shells and fishing focus."),
+    ("Forest Farm", "Foraging spots, hardwood stumps and a forest pond."),
+    ("Hilltop Farm", "A river and a quarry area for forging and mining."),
+    ("Riverland Farm", "Wetland layout; heavy fishing focus."),
+    ("Wilderness Farm", "Monsters spawn at night; combat and exploration focus."),
+    ("Four Corners Farm", "Divided into four areas; great for co-op."),
+    ("Meadowlands Farm", "New 1.6 farm: starts with chickens and a grassy meadow."),
+]
+maps_md = front("Farm Maps – Stardew Valley",
+                "All 8 Stardew Valley farm maps with preview images and what each layout is best for.",
+                type="maps", date=TODAY)
+maps_md += "\n## Choose Your Farm Map\n\n"
+for name, desc in farm_maps:
+    img = f"/images/maps/full-image/{name} Map.png"
+    maps_md += f'<div class="map-card"><img src="{img}" alt="{name}"><h3>{name}</h3><p>{desc}</p></div>\n\n'
+w(os.path.join(maps_c, "_index.md"), maps_md)
+print("Maps page: 1")
+
 # ---------- 核心统计数据 ----------
 stats = {"npc": len(npc), "crops": len(crops), "fish": len(fish), "bundles": len(bundles), "boss": len(boss_list),
          "recipes": len(cooking), "museum": len(museum_items), "festivals": len(festivals),
