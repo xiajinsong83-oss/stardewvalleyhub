@@ -1,2 +1,11 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><sitemap><loc>https://stardewvalleyhub.wiki/en/sitemap.xml</loc><lastmod>2026-10-04T00:00:00+00:00</lastmod></sitemap><sitemap><loc>https://stardewvalleyhub.wiki/zh-hans/sitemap.xml</loc><lastmod>2026-10-04T00:00:00+00:00</lastmod></sitemap></sitemapindex>
-<!-- （注：内容由AI生成） -->
+<?xml version="1.0" encoding="UTF-8"?>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <sitemap>
+    <loc>https://stardewvalleyhub.wiki/en/sitemap.xml</loc>
+    <lastmod>2026-10-04</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://stardewvalleyhub.wiki/zh-hans/sitemap.xml</loc>
+    <lastmod>2026-10-04</lastmod>
+  </sitemap>
+</sitemapindex>
