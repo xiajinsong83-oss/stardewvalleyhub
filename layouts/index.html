@@ -90,14 +90,14 @@
   {{ $stats := site.Data.stardew }}
   {{ if $stats }}
   <section class="stats">
-    <div class="stat"><strong>{{ $stats.npc }}</strong><span>NPC guides</span></div>
-    <div class="stat"><strong>{{ $stats.crops }}</strong><span>Crop guides</span></div>
-    <div class="stat"><strong>{{ $stats.fish }}</strong><span>Fish guides</span></div>
-    <div class="stat"><strong>{{ $stats.bundles }}</strong><span>Bundle guides</span></div>
-    <div class="stat"><strong>{{ $stats.boss }}</strong><span>Boss guides</span></div>
-    <div class="stat"><strong>{{ $stats.recipes }}</strong><span>Recipes</span></div>
-    <div class="stat"><strong>{{ $stats.museum }}</strong><span>Museum items</span></div>
-    <div class="stat"><strong>{{ $stats.events }}</strong><span>Event guides</span></div>
+    <a class="stat" href="/npc/"><strong>{{ $stats.npc }}</strong><span>NPC guides</span></a>
+    <a class="stat" href="/crops/"><strong>{{ $stats.crops }}</strong><span>Crop guides</span></a>
+    <a class="stat" href="/fish/"><strong>{{ $stats.fish }}</strong><span>Fish guides</span></a>
+    <a class="stat" href="/bundles/"><strong>{{ $stats.bundles }}</strong><span>Bundle guides</span></a>
+    <a class="stat" href="/boss/"><strong>{{ $stats.boss }}</strong><span>Boss guides</span></a>
+    <a class="stat" href="/recipes/"><strong>{{ $stats.recipes }}</strong><span>Recipes</span></a>
+    <a class="stat" href="/museum/"><strong>{{ $stats.museum }}</strong><span>Museum items</span></a>
+    <a class="stat" href="/events/"><strong>{{ $stats.events }}</strong><span>Event guides</span></a>
   </section>
   {{ end }}
 
