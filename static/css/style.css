@@ -487,3 +487,7 @@ html { background: #0a0f1e; }
 .home-planner-wrap .dot { display: inline-block; width: 8px; height: 8px; background: #f0b429; border-radius: 50%; margin-right: 6px; }
 .home-planner-wrap .planner-planname input { width: 100%; background: #0d1a2d; border: 1px solid #2a3a55; color: #fff; padding: 6px; border-radius: 6px; margin-top: 4px; box-sizing: border-box; }
 @media (max-width: 900px) { .home-planner-wrap { grid-template-columns: 1fr; } }
+
+/* 农场地图图片 */
+.farm-map-img { background: #1a2540; border: 1px solid #2a3a55; border-radius: 12px; padding: 16px; margin: 16px 0; }
+.farm-map-img img { width: 100%; height: auto; border-radius: 8px; display: block; }
