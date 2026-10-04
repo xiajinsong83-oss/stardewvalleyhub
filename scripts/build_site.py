@@ -8,21 +8,15 @@ Stardew Valley Hub — 全站内容生成器（阶段一：英文全站 + 9 语�
 """
 import json, os, re, sys, unicodedata, datetime
 
-DATA_DIR = sys.argv[1] if len(sys.argv) > 1 else "/tmp/svd/package/data"
+DATA_DIR = sys.argv[1] if len(sys.argv) > 1 else os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "data-src", "package", "data")
 SITE = sys.argv[2] if len(sys.argv) > 2 else "."
 CONTENT_EN = os.path.join(SITE, "content", "en")
 TODAY = "2026-10-04"
 
 LANG_HOMES = {
     "zh-hans": ("星露谷物语攻略站（非官方粉丝站）", "本站为非官方粉丝攻略站，全部页面由开源游戏数据自动生成。当前英语版本已完整上线，本语言内容将由自动化流水线分批生成。"),
-    "zh-hant": ("星露谷物語攻略站（非官方粉絲站）", "本站為非官方粉絲攻略站，全部頁面由開源遊戲數據自動生成。當前英語版本已完整上線，本語言內容將由自動化流水線分批生成。"),
-    "de": ("Stardew Valley Hub – Inoffizielle Fan-Guides", "Dies ist eine inoffizielle Fan-Seite, die vollständig aus Open-Source-Spieldaten automatisch erstellt wird. Die englische Version ist vollständig online; Inhalte in dieser Sprache werden nach und nach durch die automatisierte Pipeline generiert."),
-    "ja": ("スターデューバレー攻略（非公式ファンサイト）", "当サイトは非公式ファンサイトで、すべてのページはオープンソースのゲームデータから自動生成されています。英語版は完全に公開中です。この言語のコンテンツは自動パイプラインで順次生成されます。"),
-    "ko": ("스타듀밸리 허브 – 비공식 팬 가이드", "이 사이트는 비공식 팬 사이트로, 모든 페이지는 오픈소스 게임 데이터에서 자동 생성됩니다. 영어 버전이 완전히 공개되어 있으며, 이 언어의 콘텐츠는 자동 파이프라인을 통해 단계적으로 생성됩니다."),
-    "fr": ("Stardew Valley Hub – Guides de fans non officiels", "Site de fans non officiel entièrement généré automatiquement à partir de données de jeu open source. La version anglaise est entièrement en ligne ; le contenu de cette langue sera généré progressivement par le pipeline automatisé."),
-    "pt": ("Stardew Valley Hub – Guias de fãs não oficiais", "Site de fãs não oficial, totalmente gerado automaticamente a partir de dados de jogo de código aberto. A versão em inglês está totalmente online; o conteúdo neste idioma será gerado gradualmente pelo pipeline automatizado."),
-    "ru": ("Stardew Valley Hub – Неофициальный фан-гид", "Неофициальный фанатский сайт, полностью создаваемый автоматически на основе открытых игровых данных. Английская версия полностью опубликована; контент на этом языке будет постепенно генерироваться автоматическим конвейером."),
 }
+
 
 def slugify(name):
     s = unicodedata.normalize("NFKD", name).encode("ascii", "ignore").decode()
@@ -72,7 +66,13 @@ for key, fn in [("npc", "villagers.json"), ("crops", "crops.json"), ("fish", "fi
                 ("bundles", "bundles.json"), ("universal", "universal-gifts.json"),
                 ("stardrops", "stardrops.json"), ("monsters", "monsters.json"),
                 ("monster_loot", "monster-loot.json"), ("weapons", "weapons.json"),
-                ("slayer", "monster-slayer-goals.json")]:
+                ("slayer", "monster-slayer-goals.json"),
+                ("cooking", "cooking.json"), ("artifacts", "artifacts.json"),
+                ("minerals", "minerals.json"), ("tools", "tools.json"),
+                ("achievements", "achievements.json"), ("orders", "special-orders.json"),
+                ("animals", "animals.json"), ("events", "events.json"),
+                ("buildings", "buildings.json"), ("artisan_goods", "artisan-goods.json"),
+                ("seasons", "seasons.json")]:
     data[key] = json.load(open(os.path.join(DATA_DIR, fn), encoding="utf-8"))
 
 npc, crops, fish = data["npc"], data["crops"], data["fish"]
@@ -82,6 +82,12 @@ bundles = [b for b in data["bundles"] if b.get("type") == "items" and b.get("roo
 monsters, monster_loot, weapons, slayer = data["monsters"], data["monster_loot"], data["weapons"], data["slayer"]
 # 怪物掉落映射：monsters.lootIds(物品id) -> monster-loot 条目
 LOOT_BY_ID = {str(l["id"]): l for l in monster_loot}
+cooking, artifacts, minerals, tools = data["cooking"], data["artifacts"], data["minerals"], data["tools"]
+achievements, orders, animals, events = data["achievements"], data["orders"], data["animals"], data["events"]
+buildings, artisan_goods, seasons = data["buildings"], data["artisan_goods"], data["seasons"]
+# 第十七章栏目：博物馆捐赠物品 = 文物 + 矿物类（矿点/矿石/条/资源/晶球为材料，非展品）
+museum_items = [{"kind": "artifact", **x} for x in artifacts] + [{"kind": "mineral", **x} for x in minerals if x.get("kind") == "mineral"]
+festivals = [{"season": s["name"], **f} for s in seasons for f in s.get("festivals", [])]
 
 def make_related(items, current, section, n=3, extra=None):
     rel = []
@@ -164,7 +170,7 @@ w(os.path.join(crops_c, "_index.md"),
         "Every Stardew Valley crop: season, growth time, seed source, sell price and profit.", type="crops") + "\nAll crop data is generated from open-source machine-readable game data.\n")
 for c in crops:
     nm = c["name"]; slug = slugify(nm)
-    seasons = season_label(c["seasons"])
+    c_seasons = season_label(c["seasons"])
     seed = 0
     for p in c.get("seedBuyPrices") or []:
         seed = p["price"]; break
@@ -174,7 +180,7 @@ for c in crops:
     per_day = round((sell * (qty.get("min", 1) or 1) - seed) / (c.get("growDays") or 1), 1)
     faq = [
         {"q": f"What season does {nm} grow in Stardew Valley?",
-         "a": f"{nm} grows in {seasons}."},
+         "a": f"{nm} grows in {c_seasons}."},
         {"q": f"How long does {nm} take to grow?",
          "a": f"{nm} takes {c.get('growDays')} days to grow" + (f" and regrows every {regrow} days after harvest." if regrow else ".")},
         {"q": f"Where can I buy {c.get('seedName')}?",
@@ -190,7 +196,7 @@ for c in crops:
         type="crops", faq=faq, related=rel)
     body += f"\n{nm} is a crop in Stardew Valley. Below is the complete growing data.\n\n"
     body += "<div class=\"table-wrap\">\n\n| Attribute | Value |\n| --- | --- |\n"
-    body += f"| Season | {seasons} |\n"
+    body += f"| Season | {c_seasons} |\n"
     body += f"| Growth time | {c.get('growDays')} days" + (f" (regrows every {regrow} days)" if regrow else "") + " |\n"
     body += f"| Seed source | {fmt_sources(c.get('seedBuyPrices'))} |\n"
     body += f"| Seed price | {seed}g |\n"
@@ -203,7 +209,7 @@ for c in crops:
     artisan = [k for k, v in (c.get("artisanUses") or {}).items() if v]
     if artisan:
         body += f"**Artisan uses:** {', '.join(k.capitalize() for k in artisan)}.\n\n"
-    body += "## Tips\n\n- Plant after the last frost in " + seasons.lower() + ".\n"
+    body += "## Tips\n\n- Plant after the last frost in " + c_seasons.lower() + ".\n"
     body += "- Use Quality Fertilizer for higher quality harvests and more profit.\n"
     body += "- Note that crops die when the season changes, except multi-season crops.\n"
     w(os.path.join(crops_c, f"{slug}.md"), body)
@@ -461,6 +467,277 @@ for m in boss_list:
     w(os.path.join(boss_c, f"{slug}.md"), body)
 print("Boss pages:", len(boss_list))
 
+# ---------- 第十七章：扩充栏目（高优先 + 中优先） ----------
+
+def ingr_md(ingredients):
+    if not ingredients:
+        return "None"
+    return "".join(f"| {i.get('name','?')} | {i.get('quantity','1')} |\n" for i in ingredients)
+
+# 1) recipes 食谱（高优先）
+rc = os.path.join(CONTENT_EN, "recipes")
+w(os.path.join(rc, "_index.md"),
+  front("Cooking Recipes – Stardew Valley",
+        f"All {len(cooking)} cooking recipes with ingredients, energy, buffs and sell price.", type="recipes")
+  + "\nComplete cooking data generated from open-source machine-readable game data.\n\n"
+  + "<div class=\"table-wrap\">\n\n| Recipe | Sell price (g) | Energy | Buffs |\n| --- | --- | --- | --- |\n"
+  + "".join(f"| [{r['name']}]({f'/recipes/{slugify(r["name"])}/'}) | {r.get('sellPrice')} | {r.get('energyHealth',{}).get('energy','-')} | {', '.join(b.get('name','') for b in r.get('buffs',[])) or 'none'} |\n" for r in sorted(cooking, key=lambda x: -x.get('sellPrice',0)))
+  + "</div>\n")
+for r in cooking:
+    slug = slugify(r["name"]); nm = r["name"]
+    ing = ingr_md(r.get("ingredients"))
+    eh = r.get("energyHealth") or {}
+    buffs = ", ".join(f"{b.get('name')} (+{b.get('amount')})" for b in r.get("buffs", [])) or "none"
+    src = r.get("recipeSources") or []
+    src_txt = "; ".join(dict.fromkeys(x.get("type","") for x in src)) or "Unknown"
+    faq = [
+        {"q": f"What ingredients do I need for {nm}?", "a": f"{nm} requires: " + (", ".join(f"{i.get('quantity')}x {i.get('name')}" for i in r.get("ingredients", [])) if r.get("ingredients") else "no ingredients recorded") + "."},
+        {"q": f"How much does {nm} sell for?", "a": f"{nm} sells for {r.get('sellPrice')}g ({r.get('energyHealth',{}).get('energy')} energy / {r.get('energyHealth',{}).get('health')} health when consumed)."},
+        {"q": f"How do I unlock the {nm} recipe?", "a": "Recorded recipe source type: " + src_txt + "."},
+    ]
+    rel = [{"title": o["name"] + " Recipe", "url": f"/recipes/{slugify(o['name'])}/"} for o in sorted(cooking, key=lambda x: abs(x.get('sellPrice',0)-r.get('sellPrice',0))) if o["id"] != r["id"]][:3]
+    body = front(f"{nm} – Stardew Valley Recipe",
+                 f"{nm} recipe: ingredients, energy, buffs and sell price in Stardew Valley.", type="recipes", faq=faq, related=rel)
+    body += f"\nThe **{nm}** is a cooking recipe in Stardew Valley (sells for **{r.get('sellPrice')}g**).\n\n"
+    body += "**Ingredients**\n\n<div class=\"table-wrap\">\n\n| Ingredient | Quantity |\n| --- | --- |\n" + ing + "</div>\n\n"
+    body += f"**Energy / Health:** {eh.get('energy','-')} / {eh.get('health','-')}\n\n**Buffs:** {buffs}\n\n**Recipe source:** {src_txt}\n\n"
+    body += "## Tips\n\n- Cooking restores more energy than eating raw ingredients in most cases.\n- Buffs from cooked meals are used before mining and fishing trips.\n"
+    w(os.path.join(rc, f"{slug}.md"), body)
+print("Recipe pages:", len(cooking))
+
+# 2) museum 博物馆（高优先）
+mc = os.path.join(CONTENT_EN, "museum")
+w(os.path.join(mc, "_index.md"),
+  front("Museum Donations – Stardew Valley",
+        f"Complete museum donation guide: {len(museum_items)} artifacts and minerals with locations and values.", type="museum")
+  + "\nEvery item below can be donated to the Museum in Stardew Valley. Data from open-source game data.\n\n"
+  + "<div class=\"table-wrap\">\n\n| Item | Type | Sell price (g) | Found in |\n| --- | --- | --- | --- |\n"
+  + "".join(f"| [{i['name']}]({f'/museum/{slugify(i["name"])}/'}) | {i['kind']} | {i.get('sellPrice')} | {', '.join(i.get('locations',[])[:2]) or 'n/a'} |\n" for i in museum_items)
+  + "</div>\n")
+for i in museum_items:
+    slug = slugify(i["name"]); nm = i["name"]
+    loc = i.get("locations") or []
+    note = i.get("donationNotes") or "No extra donation note is recorded in the open data."
+    faq = [
+        {"q": f"Where can I find the {nm}?", "a": ("The " + nm + " can be found in: " + ", ".join(loc) + ".") if loc else f"Location data for {nm} is not recorded in the open dataset."},
+        {"q": f"How much does the {nm} sell for?", "a": f"The {nm} sells for {i.get('sellPrice')}g" + (f" ({i.get('gemologistPrice')}g with the Gemologist profession)" if i.get('gemologistPrice') else "") + "."},
+        {"q": f"Should I donate the {nm} to the Museum?", "a": "Donations unlock museum rewards; duplicates can be sold. Donation note: " + note[:120]},
+    ]
+    rel = [{"title": o["name"], "url": f"/museum/{slugify(o['name'])}/"} for o in museum_items if o["id"] != i["id"]][:3]
+    body = front(f"{nm} – Museum Donation Guide",
+                 f"{nm}: where to find it, sell price and museum donation info in Stardew Valley.", type="museum", faq=faq, related=rel)
+    body += f"\nThe **{nm}** is a {i['kind']} that can be donated to the Stardew Valley Museum.\n\n"
+    body += f"**Sell price:** {i.get('sellPrice')}g\n\n**Found in:** " + (", ".join(loc) if loc else "n/a") + "\n\n"
+    body += f"**Donation note:** {note}\n\n## Tips\n\n- Donate the first of each item, then sell duplicates.\n- Minerals sell for more with the Gemologist profession when applicable.\n"
+    w(os.path.join(mc, f"{slug}.md"), body)
+print("Museum pages:", len(museum_items))
+
+# 3) festivals 节日（高优先）
+fc = os.path.join(CONTENT_EN, "festivals")
+w(os.path.join(fc, "_index.md"),
+  front("Festivals – Stardew Valley Calendar",
+        f"All {len(festivals)} Stardew Valley festivals by season and day of the month.", type="festivals")
+  + "\nThe festival calendar is generated from open-source game data.\n\n"
+  + "<div class=\"table-wrap\">\n\n| Festival | Season | Day(s) |\n| --- | --- | --- |\n"
+  + "".join(f"| [{f['name']}]({f'/festivals/{slugify(f["name"])}/'}) | {f['season']} | {f['startDay']}" + (f"–{f['endDay']}" if f['endDay'] != f['startDay'] else "") + " |\n" for f in festivals)
+  + "</div>\n")
+for f in festivals:
+    slug = slugify(f["name"]); nm = f["name"]
+    days = f"{f['startDay']}" + (f"–{f['endDay']}" if f['endDay'] != f['startDay'] else "")
+    faq = [
+        {"q": f"When is the {nm} in Stardew Valley?", "a": f"The {nm} takes place on day {days} of {f['season']} (a {f['season'].lower()} festival)."},
+        {"q": f"Is the {nm} on a specific day?", "a": f"Yes, it starts on day {f['startDay']}" + (f" and runs through day {f['endDay']}." if f['endDay'] != f['startDay'] else " of the season.")},
+    ]
+    body = front(f"{nm} – Festival Date & Guide",
+                 f"{nm} festival date in Stardew Valley: day {days} of {f['season']}.", type="festivals", faq=faq)
+    body += f"\nThe **{nm}** is a {f['season']} festival in Stardew Valley.\n\n"
+    body += f"**When:** Day **{days}** of {f['season']} (month lasts {[s for s in seasons if s['name']==f['season']][0].get('totalDays')} days).\n\n"
+    body += "## Tips\n\n- Festivals last from morning until evening (typically 9am–2pm in-game).\n- Bring gifts and tools: some festivals include contests, fishing and minigames.\n"
+    w(os.path.join(fc, f"{slug}.md"), body)
+print("Festival pages:", len(festivals))
+
+# 4) events 心事件（高优先）
+ec = os.path.join(CONTENT_EN, "events")
+villagers_ev = sorted(set(e["villager"] for e in events))
+w(os.path.join(ec, "_index.md"),
+  front("Heart Events – Stardew Valley",
+        f"Heart events for {len(villagers_ev)} villagers: how many events each villager has and when they unlock.", type="events")
+  + "\nHeart event data from open-source game data. Events unlock as friendship hearts increase.\n\n"
+  + "<div class=\"table-wrap\">\n\n| Villager | Heart events |\n| --- | --- |\n"
+  + "".join(f"| [{v}]({f'/events/{slugify(v)}-heart-events/'}) | {sum(1 for e in events if e['villager']==v)} |\n" for v in villagers_ev)
+  + "</div>\n")
+for v in villagers_ev:
+    evs = sorted([e for e in events if e["villager"] == v], key=lambda x: x.get("hearts", 0))
+    slug = slugify(v) + "-heart-events"
+    faq = [
+        {"q": f"How many heart events does {v} have?", "a": f"{v} has {len(evs)} recorded heart events in the open data."},
+        {"q": f"When do {v}'s heart events unlock?", "a": "The events unlock at " + ", ".join(str(e.get('hearts')) for e in evs) + " hearts respectively (friendship level)."},
+        {"q": f"Can I miss a heart event with {v}?", "a": "Events trigger when you enter the right location at the right time at the required hearts; check the heart thresholds above."},
+    ]
+    rows = "".join(f"| {e.get('hearts')} | {e.get('description','')} |\n" for e in evs)
+    rel = [{"title": o + " Heart Events", "url": f"/events/{slugify(o)}-heart-events/"} for o in villagers_ev if o != v][:3]
+    body = front(f"{v} Heart Events – Stardew Valley",
+                 f"All {len(evs)} heart events for {v}: heart requirement and event description.", type="events", faq=faq, related=rel)
+    body += f"\n{v} has **{len(evs)}** recorded heart events. Enter the correct location with the required friendship to trigger them.\n\n"
+    body += "<div class=\"table-wrap\">\n\n| Hearts | Event |\n| --- | --- |\n" + rows + "</div>\n\n"
+    body += "## Tips\n\n- Events usually trigger by entering a specific location between certain in-game times.\n- Friendship gifts and loved gifts speed up heart progress.\n"
+    w(os.path.join(ec, f"{slug}.md"), body)
+print("Event pages:", len(villagers_ev))
+
+# 5) tools 工具（中优先）
+tc = os.path.join(CONTENT_EN, "tools")
+w(os.path.join(tc, "_index.md"),
+  front("Tools – Stardew Valley",
+        f"All {len(tools)} tools with upgrade costs and materials.", type="tools")
+  + "\nTool data from open-source game data.\n\n"
+  + "<div class=\"table-wrap\">\n\n| Tool | Type | Upgradable |\n| --- | --- | --- |\n"
+  + "".join(f"| [{t['name']}]({f'/tools/{slugify(t["name"])}/'}) | {t.get('type','')} | {'Yes' if (t.get('levels') or [{}])[-1].get('upgradeCost') else 'No'} |\n" for t in tools)
+  + "</div>\n")
+for t in tools:
+    slug = slugify(t["name"]); nm = t["name"]
+    lv = t.get("levels") or []
+    up_rows = "".join(f"| {l.get('level','')} | {l.get('upgradeCost') if l.get('upgradeCost') else '-'} | {l.get('materialName') or '-'} {l.get('materialQuantity') or ''} | {l.get('description','')[:70]} |\n" for l in lv)
+    faq = [
+        {"q": f"What are the upgrade costs for the {nm}?", "a": "Upgrades: " + "; ".join(f"{l.get('level')} – {l.get('upgradeCost')}g {l.get('materialName') or ''} x{l.get('materialQuantity') or '-'}" for l in lv if l.get('upgradeCost')) + "."},
+        {"q": f"What does the {nm} do?", "a": t.get("description","")[:160]},
+    ]
+    body = front(f"{nm} – Stardew Valley Tool Guide",
+                 f"{nm} tool: uses and full upgrade costs in Stardew Valley.", type="tools", faq=faq)
+    body += f"\nThe **{nm}** is a tool in Stardew Valley.\n\n{t.get('description','')}\n\n"
+    body += f"**Upgrades**\n\n<div class=\"table-wrap\">\n\n| Level | Cost (g) | Material | Effect |\n| --- | --- | --- | --- |\n" + up_rows + "</div>\n\n"
+    body += f"**Enchantable:** {'Yes' if t.get('canEnchant') else 'No'}\n\n## Tips\n\n- Upgrade tools at Clint's Blacksmith with bars and gold.\n- Higher levels allow charged actions (hoe, watering can).\n"
+    w(os.path.join(tc, f"{slug}.md"), body)
+print("Tool pages:", len(tools))
+
+# 6) unlocks 建筑与解锁（中优先）
+uc = os.path.join(CONTENT_EN, "unlocks")
+w(os.path.join(uc, "_index.md"),
+  front("Buildings & Unlocks – Stardew Valley",
+        f"All {len(buildings)} farm buildings with cost, materials and purpose.", type="unlocks")
+  + "\nBuilding data from open-source game data.\n\n"
+  + "<div class=\"table-wrap\">\n\n| Building | Cost (g) | Days | Builder |\n| --- | --- | --- | --- |\n"
+  + "".join(f"| [{b['name']}]({f'/unlocks/{slugify(b["name"])}/'}) | {b.get('buildCost')} | {b.get('buildDays')} | {b.get('builder')} |\n" for b in buildings)
+  + "</div>\n")
+for b in buildings:
+    slug = slugify(b["name"]); nm = b["name"]
+    mats = "".join(f"| {m.get('item')} | {m.get('quantity')} |\n" for m in b.get("materials", []))
+    faq = [
+        {"q": f"How much does the {nm} cost to build?", "a": f"The {nm} costs {b.get('buildCost')}g and takes {b.get('buildDays')} days to build by {b.get('builder')}."},
+        {"q": f"What materials do I need for the {nm}?", "a": "Materials: " + (", ".join(f"{m.get('quantity')}x {m.get('item')}" for m in b.get("materials", [])) if b.get("materials") else "none recorded") + "."},
+    ]
+    body = front(f"{nm} – Stardew Valley Building Guide",
+                 f"{nm} building: cost, materials, upgrades and purpose in Stardew Valley.", type="unlocks", faq=faq)
+    body += f"\nThe **{nm}** is a building on your farm.\n\n{b.get('description','')}\n\n"
+    body += f"**Cost:** {b.get('buildCost')}g · **Build time:** {b.get('buildDays')} days · **Builder:** {b.get('builder')}\n\n"
+    body += f"**Materials**\n\n<div class=\"table-wrap\">\n\n| Material | Quantity |\n| --- | --- |\n" + (mats or "| - | - |\n") + "</div>\n\n"
+    body += f"**Upgrade from:** {b.get('upgradeFrom') or 'None'} · **Animal capacity:** {b.get('animalCapacity') or '-'} · **Magical:** {'Yes' if b.get('magical') else 'No'}\n\n## Tips\n\n- Buildings are placed by Robin (or the Wizard for magical buildings).\n- Upgrading unlocks more animals and processing options.\n"
+    w(os.path.join(uc, f"{slug}.md"), body)
+print("Unlock pages:", len(buildings))
+
+# 7) achievements 成就（中优先）
+ac = os.path.join(CONTENT_EN, "achievements")
+w(os.path.join(ac, "_index.md"),
+  front("Achievements – Stardew Valley",
+        f"All {len(achievements)} achievements with requirements and rewards.", type="achievements")
+  + "\nAchievement data from open-source game data.\n\n"
+  + "<div class=\"table-wrap\">\n\n| Achievement | Secret | Reward |\n| --- | --- | --- |\n"
+  + "".join(f"| [{a['name']}]({f'/achievements/{slugify(a["name"])}/'}) | {'Yes' if a.get('secret') else 'No'} | {a.get('reward') or '-'} |\n" for a in achievements)
+  + "</div>\n")
+for a in achievements:
+    slug = slugify(a["name"]); nm = a["name"]
+    faq = [
+        {"q": f"How do I unlock the {nm} achievement?", "a": a.get("description","")[:160]},
+        {"q": f"What is the reward for {nm}?", "a": f"The reward is {a.get('reward') or 'none recorded'}." + (" This is a secret achievement." if a.get('secret') else "")},
+    ]
+    body = front(f"{nm} – Stardew Valley Achievement",
+                 f"{nm} achievement: how to unlock it and the reward.", type="achievements", faq=faq)
+    body += f"\n**{nm}**\n\n{a.get('description','')}\n\n"
+    body += f"**Reward:** {a.get('reward') or 'none'} · **Secret:** {'Yes' if a.get('secret') else 'No'}\n\n## Tips\n\n- Secret achievements still appear in the list once unlocked.\n- Many achievements unlock naturally through normal play.\n"
+    w(os.path.join(ac, f"{slug}.md"), body)
+print("Achievement pages:", len(achievements))
+
+# 8) orders 特殊订单（中优先）
+oc = os.path.join(CONTENT_EN, "orders")
+w(os.path.join(oc, "_index.md"),
+  front("Special Orders – Stardew Valley",
+        f"All {len(orders)} special orders with requester, requirements and rewards.", type="orders")
+  + "\nSpecial order data from open-source game data.\n\n"
+  + "<div class=\"table-wrap\">\n\n| Order | Requester | Timeframe |\n| --- | --- | --- |\n"
+  + "".join(f"| [{o['name']}]({f'/orders/{slugify(o["name"])}/'}) | {o.get('requester')} | {o.get('timeframe')} days |\n" for o in orders)
+  + "</div>\n")
+for o in orders:
+    slug = slugify(o["name"]); nm = o["name"]
+    faq = [
+        {"q": f"What do I need to do for the {nm} order?", "a": f"{o.get('requirements') or 'See the order text'}."},
+        {"q": f"What are the rewards for {nm}?", "a": o.get("rewards") or "Reward details are in-game."},
+    ]
+    body = front(f"{nm} – Special Order Guide",
+                 f"{nm}: requester, requirements and rewards in Stardew Valley.", type="orders", faq=faq)
+    body += f"\n**{nm}** — requested by **{o.get('requester')}**\n\n{o.get('text','')}\n\n"
+    body += f"**Timeframe:** {o.get('timeframe')} days\n\n**Requirements:** {o.get('requirements') or 'n/a'}\n\n"
+    body += f"**Rewards:** {o.get('rewards') or 'n/a'}\n\n## Tips\n\n- Check the special order board after completing the Community Center (or Joja route).\n- Gather required items before the deadline; failed orders can reappear.\n"
+    w(os.path.join(oc, f"{slug}.md"), body)
+print("Order pages:", len(orders))
+
+# 9) pets 宠物与农场动物（中优先）
+pc = os.path.join(CONTENT_EN, "pets")
+farm_animals = [a for a in animals if a.get("type") == "farm-animal"]
+pet_names = sorted(set(a["name"] for a in animals if a.get("type") == "pet"))
+w(os.path.join(pc, "_index.md"),
+  front("Pets & Farm Animals – Stardew Valley",
+        f"{len(farm_animals)} farm animals and {len(pet_names)} pets with purchase price and produce.", type="pets")
+  + "\nAnimal data from open-source game data.\n\n"
+  + "<div class=\"table-wrap\">\n\n| Animal | Type | Purchase (g) | Sell (g) | Produce |\n| --- | --- | --- | --- | --- |\n"
+  + "".join(f"| [{a['name']}]({f'/pets/{slugify(a["name"])}/'}) | {a.get('type')} | {a.get('purchasePrice')} | {a.get('sellPrice')} | {a.get('produce',{}).get('name','-')} |\n" for a in farm_animals + [{"type":"pet","name":n,"purchasePrice":None,"sellPrice":None,"produce":{}} for n in pet_names])
+  + "</div>\n")
+for a in farm_animals:
+    slug = slugify(a["name"]); nm = a["name"]
+    prod = a.get("produce") or {}
+    faq = [
+        {"q": f"How much does a {nm} cost?", "a": f"A {nm} costs {a.get('purchasePrice')}g and sells for {a.get('sellPrice')}g."},
+        {"q": f"What does the {nm} produce?", "a": f"It produces {prod.get('name','n/a')} every {a.get('daysToProduce')} day(s) once mature ({a.get('daysToMature')} days to mature)."},
+    ]
+    body = front(f"{nm} – Stardew Valley Animal Guide",
+                 f"{nm}: cost, produce and care in Stardew Valley.", type="pets", faq=faq)
+    body += f"\nThe **{nm}** is a farm animal.\n\n{a.get('description','')}\n\n"
+    body += f"**Housing:** {a.get('building')} · **Purchase:** {a.get('purchasePrice')}g · **Sell:** {a.get('sellPrice')}g\n\n"
+    body += f"**Produce:** {prod.get('name','-')} (sells for {prod.get('sellPrice','-')}g) · every {a.get('daysToProduce')} day(s)\n\n## Tips\n\n- Feed animals daily (hay in the silo or grass outside).\n- Deluxe produce unlocks with the Coopmaster/Shepherd profession and high friendship.\n"
+    w(os.path.join(pc, f"{slug}.md"), body)
+for n in pet_names:
+    slug = slugify(n)
+    n_variants = len([a for a in animals if a.get("type") == "pet" and a.get("name") == n])
+    body = front(f"{n} – Stardew Valley Pet Guide",
+                 f"{n} pet: adoption and care in Stardew Valley.", type="pets",
+                 faq=[{"q": f"How do I get a {n} in Stardew Valley?", "a": f"Choose the {n} at character creation, or adopt from Marnie's for the base cost once unlocked."},
+                      {"q": f"Are there different {n} breeds?", "a": f"The open data records {n_variants} {n} variant(s) with different appearances."}])
+    body += f"\nThe **{n}** is a pet in Stardew Valley.\n\nPets give friendship over time; water them daily and they follow you around the farm.\n\n"
+    body += f"**Variants recorded:** {n_variants}\n\n## Tips\n\n- Pets do not need feeding, only affection (petting/watering).\n- A fully befriended pet can be made your farm's companion.\n"
+    w(os.path.join(pc, f"{slug}.md"), body)
+print("Pet pages:", len(farm_animals) + len(pet_names))
+
+# 10) money 赚钱攻略（高优先，聚合页）
+mc2 = os.path.join(CONTENT_EN, "money")
+top_crops = sorted(profit_rows, key=lambda x: -x[2])[:6]
+top_money_md = "<div class=\"table-wrap\">\n\n| Crop | Season | Approx. profit / day (g) |\n| --- | --- | --- |\n" + "".join(f"| {n} | {', '.join(s.capitalize() for s in se).strip() or 'All'} | {p} |\n" for n, se, p in top_crops) + "</div>\n"
+top_artisan = sorted(artisan_goods, key=lambda x: -(x.get("sellPrice") or 0))[:6]
+art_md = "<div class=\"table-wrap\">\n\n| Artisan good | Equipment | Sell price (g) |\n| --- | --- | --- |\n" + "".join(f"| {a['name']} | {a.get('equipment')} | {a.get('sellPrice')} |\n" for a in top_artisan) + "</div>\n"
+top_gems = sorted([m for m in minerals if m.get("sellPrice")], key=lambda x: -x["sellPrice"])[:6]
+gem_md = "<div class=\"table-wrap\">\n\n| Mineral | Sell price (g) |\n| --- | --- |\n" + "".join(f"| {g['name']} | {g.get('sellPrice')} |\n" for g in top_gems) + "</div>\n"
+money_faq = [
+    {"q": "What is the fastest way to make money in Stardew Valley?", "a": "The highest daily-profit crops in the open data are " + ", ".join(n for n, _, _ in top_crops[:3]) + "; artisan processing and mining gems also pay well (see tables below)."},
+    {"q": "Are crops or artisan goods more profitable?", "a": "Artisan goods multiply crop value (e.g. " + ", ".join(a['name'] for a in top_artisan[:3]) + "); check the artisan table for the highest sellers."},
+    {"q": "Which minerals are worth the most?", "a": "The most valuable minerals are " + ", ".join(g['name'] for g in top_gems[:3]) + "."},
+]
+body = front("Money Making Guide – Stardew Valley",
+             "Fastest ways to make money: top-profit crops, artisan goods and valuable minerals.", type="money", faq=money_faq)
+body += "\nData-driven money guide: every table comes from open-source game data.\n\n"
+body += "## Most profitable crops\n\n" + top_money_md + "\n"
+body += "## Top artisan goods\n\n" + art_md + "\n"
+body += "## Most valuable minerals\n\n" + gem_md + "\n"
+body += "## Tips\n\n- Use Quality Fertilizer and the Tiller/Artisan professions to multiply profit.\n- Keg and Preserves Jar processing multiplies crop value several times.\n- Replant high-profit crops immediately to keep daily income.\n"
+w(os.path.join(mc2, "_index.md"), body)
+print("Money pages: 1")
+
 # ---------- 生成玩家反馈页面 ----------
 fb_c = os.path.join(CONTENT_EN, "feedback")
 faq_fb = [
@@ -596,7 +873,10 @@ for lang, (title, desc) in LANG_HOMES.items():
     w(os.path.join(SITE, "content", lang, "_index.md"), front(title, desc, type="home", date=TODAY) + "\n" + desc + "\n")
 
 # ---------- 核心统计数据 ----------
-stats = {"npc": len(npc), "crops": len(crops), "fish": len(fish), "bundles": len(bundles), "boss": len(boss_list)}
+stats = {"npc": len(npc), "crops": len(crops), "fish": len(fish), "bundles": len(bundles), "boss": len(boss_list),
+         "recipes": len(cooking), "museum": len(museum_items), "festivals": len(festivals),
+         "events": len(villagers_ev), "tools": len(tools), "unlocks": len(buildings),
+         "achievements": len(achievements), "orders": len(orders), "pets": len(farm_animals) + len(pet_names)}
 w(os.path.join(SITE, "data", "stardew.json"), json.dumps(stats, ensure_ascii=False, indent=2))
 print("stardew.json stats:", stats)
 print("DONE")
