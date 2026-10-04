@@ -408,14 +408,6 @@ body {
 .stats .stat { text-decoration: none; color: inherit; transition: transform .15s, border-color .15s; }
 .stats .stat:hover { transform: translateY(-3px); border-color: var(--accent); }
 
-/* ---------- 整页游戏地图背景（低透明度平铺） ---------- */
-body {
-  background:
-    linear-gradient(180deg, rgba(10,15,30,.72) 0%, rgba(13,26,45,.68) 50%, rgba(15,37,64,.75) 100%),
-    url("/images/maps/full-image/Standard Farm Map.png") center / cover fixed no-repeat,
-    linear-gradient(180deg, #0a0f1e 0%, #0f2540 100%);
-}
-
 html { background: #0a0f1e; }
 
 /* 强制关闭汉堡，导航横向紧凑 */
