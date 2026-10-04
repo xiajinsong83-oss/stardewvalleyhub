@@ -41,6 +41,7 @@
       <div class="card-icon"><img src="{{ . | relURL }}" alt="" loading="lazy"></div>
       {{ end }}
       <h3>{{ .Title | replaceRE " Loved Gifts in Stardew Valley" "" | replaceRE " – Stardew Valley.*" "" }}</h3>
+      {{ with .Params.intro }}<p class="pal-desc">{{ . }}</p>{{ end }}
       <div class="pals-badges">
         {{ if .Params.marriageable }}<span class="badge badge-gold">Marriage</span>{{ else }}<span class="badge badge-normal">Villager</span>{{ end }}
         {{ with .Params.birthday_season }}<span class="badge badge-season">{{ . }}</span>{{ end }}

@@ -46,6 +46,8 @@ def front(title, desc, **extra):
     lines.append("date: %s" % TODAY)
     if d.get("icon"):
         lines.append('icon: %s' % json.dumps(d["icon"], ensure_ascii=False))
+    if d.get("intro"):
+        lines.append('intro: %s' % json.dumps(d["intro"], ensure_ascii=False))
     if d.get("type"): lines.append("type: %s" % d["type"])
     for _k in ("marriageable", "birthday_season", "weapon_type", "monster_loc", "fish_season"):
         if d.get(_k) is not None:
@@ -196,7 +198,8 @@ for v in npc:
         f"{nm} Loved Gifts in Stardew Valley",
         f"Complete gift guide for {nm}: loved, liked, neutral, disliked and hated gifts in Stardew Valley, plus birthday ({bday_str}) and marriage info.",
         type="npc", icon=icon_for("npc", nm), faq=faq, related=rel,
-        marriageable=bool(v.get("marriageable")), birthday_season=bday.get("season", ""))
+        marriageable=bool(v.get("marriageable")), birthday_season=bday.get("season", ""),
+        intro=v.get("description") or f"{nm} lives in Pelican Town.")
     body += f"\n{intro}\n\n**Birthday:** {bday_str}\n\n**Marriage candidate:** {'Yes' if v.get('marriageable') else 'No'}\n\n"
     groups = [("Loved Gifts", v.get("loves", [])), ("Liked Gifts", v.get("likes", [])),
               ("Neutral Gifts", v.get("neutrals", [])), ("Disliked Gifts", v.get("dislikes", [])),

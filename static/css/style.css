@@ -350,3 +350,11 @@ body {
   background-size: 200px 200px;
   background-attachment: fixed;
 }
+
+/* NPC 卡片人物介绍 */
+.pal-card { display: flex; flex-direction: column; }
+.pal-desc {
+  font-size: 13px; line-height: 1.45; color: #9fb0c8; margin: 6px 0 10px;
+  display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;
+  word-break: break-word;
+}
