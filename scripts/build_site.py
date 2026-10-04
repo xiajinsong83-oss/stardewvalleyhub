@@ -936,9 +936,12 @@ for wp in weapons:
         {"q": f"Where do I get the {nm}?",
          "a": wp.get("obtain") or "Source not recorded in open data."},
     ]
+    _wp_img = "/" + (wp.get("image") or "").lstrip("/")
+    if not os.path.exists(os.path.join(SITE, "static", _wp_img)):
+        _wp_img = icon_for("weapons", nm)
     body = front(f"{nm} – Stardew Valley Weapon",
                  f"{nm} weapon guide: damage {wp.get('damageMin')}-{wp.get('damageMax')}, crit chance, obtain and sell price.",
-                 type="weapons", icon=icon_for("weapons", nm), faq=faq)
+                 type="weapons", icon=_wp_img, faq=faq)
     body += f"\nThe **{nm}** is a {wt} in Stardew Valley.\n\n"
     body += "<div class=\"table-wrap\">\n\n| Attribute | Value |\n| --- | --- |\n"
     body += f"| Type | {wt} |\n| Damage | {wp.get('damageMin')}-{wp.get('damageMax')} |\n"
