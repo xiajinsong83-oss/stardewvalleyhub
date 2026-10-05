@@ -583,3 +583,11 @@ html { background: transparent; }
 .planner-info-box p { color: #9aa8bf; font-size: 13px; line-height: 1.6; margin: 0; }
 
 @media (max-width: 900px) { .home-planner-wrap { grid-template-columns: 1fr; } .planner-info-row { grid-template-columns: 1fr; } }
+
+/* Hero 左右两栏 */
+.hero-inner { display: grid; grid-template-columns: 1.2fr 1fr; gap: 40px; align-items: center; }
+.hero-visual { position: relative; }
+.hero-farm-img { width: 100%; border-radius: 16px; border: 4px solid rgba(10,15,30,.6); box-shadow: 0 20px 60px rgba(0,0,0,.4); }
+.hero-visual-caption { display: flex; justify-content: space-between; margin-top: 10px; font-size: 11px; color: rgba(255,255,255,.7); padding: 0 4px; }
+.hero-visual-tag { color: #f0b429; }
+@media (max-width: 800px) { .hero-inner { grid-template-columns: 1fr; } }
