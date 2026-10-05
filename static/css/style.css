@@ -525,21 +525,21 @@ html { background: transparent; }
 .planner-badge { display: inline-block; background: #1a2540; border: 1px solid #2a3a55; border-radius: 6px; padding: 2px 8px; font-size: 11px; color: #3ddc97; margin-left: 6px; }
 .planner-active-tool { background: #0f1828; border: 1px solid #2a3a55; border-radius: 8px; padding: 10px; margin-bottom: 12px; }
 .active-tool-box { display: flex; align-items: center; gap: 10px; }
-.active-tool-icon { width: 28px; height: 28px; border-radius: 6px; background: #8b5a2b; }
+.active-tool-icon { width: 32px; height: 32px; border-radius: 6px; background: url("/images/tools/hoe/Hoe.png") center/cover no-repeat; }
 .active-tool-box small { display: block; font-size: 10px; color: #8896b0; }
 .active-tool-box strong { font-size: 14px; }
 .planner-tools-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 14px; }
 .tool-btn { display: flex; align-items: center; gap: 6px; background: #1a2540; border: 1px solid #2a3a55; border-radius: 8px; padding: 8px; color: #c8d4e8; font-size: 12px; cursor: pointer; }
 .tool-btn.active { background: #f0b429; color: #1a2540; border-color: #f0b429; }
 .tool-btn.tool-erase { border-color: #c64040; color: #c64040; }
-.tool-icon { width: 16px; height: 16px; border-radius: 4px; display: inline-block; }
-.tool-icon.soil { background: #8b5a2b; }
-.tool-icon.crop { background: #3ddc97; }
-.tool-icon.building { background: #c64040; }
-.tool-icon.tree { background: #2d6a3f; }
-.tool-icon.path { background: #9a9a9a; }
-.tool-icon.water { background: #4a9fd4; }
-.tool-icon.erase { background: transparent; border: 2px solid #c64040; }
+.tool-icon { width: 24px; height: 24px; border-radius: 4px; display: inline-block; background-size: cover; background-position: center; background-repeat: no-repeat; flex-shrink: 0; }
+.tool-icon.soil { background-image: url("/images/tools/hoe/Hoe.png"); }
+.tool-icon.crop { background-image: url("/images/crops/parsnip/crop.png"); }
+.tool-icon.building { background-image: url("/images/buildings/house/House (tier 1).png"); }
+.tool-icon.tree { background-image: url("/images/tools/axe/Steel Axe.png"); }
+.tool-icon.path { background-image: url("/images/craftable/decor/Wood Path.png"); }
+.tool-icon.water { background-image: url("/images/buildings/Fish Pond.png"); }
+.tool-icon.erase { background: transparent; border: 2px solid #c64040; color: #c64040; font-size: 14px; text-align: center; line-height: 20px; font-weight: bold; }
 .planner-planname label { display: block; font-size: 12px; color: #8896b0; margin-bottom: 4px; }
 .planner-planname input { width: 100%; background: #0f1828; border: 1px solid #2a3a55; border-radius: 6px; padding: 8px; color: #fff; font-size: 13px; box-sizing: border-box; }
 .planner-save, .planner-clear { width: 100%; padding: 10px; border-radius: 8px; font-size: 13px; cursor: pointer; margin-top: 8px; }
