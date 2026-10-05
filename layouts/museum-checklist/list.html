@@ -2,19 +2,19 @@
 <div class="content-col">
   {{ partial "breadcrumb.html" . }}
   <div class="progress-tracker">
-    <p class="pt-eyebrow">收集追踪</p>
-    <h1>博物馆捐赠清单</h1>
-    <p class="pt-side">勾选你已经捐赠给博物馆的文物和矿物。95 个全收集解锁完美奖杯。</p>
+    <p class="pt-eyebrow">Collection Tracker</p>
+    <h1>Museum Donation Checklist</h1>
+    <p class="pt-side">Check off artifacts and minerals you've donated to the museum. Donate all 95 items to unlock the perfection trophy.</p>
   </div>
 
   <div class="bundle-layout">
     <div class="bundle-left">
       <div class="bundle-toolbar">
-        <label>显示
+        <label>Show
           <select id="filterType" class="pals-select">
-            <option value="">全部物品</option>
-            <option value="artifact">文物</option>
-            <option value="mineral">矿物</option>
+            <option value="">All items</option>
+            <option value="artifact">Artifacts</option>
+            <option value="mineral">Minerals</option>
           </select>
         </label>
         <span class="bundle-count">95 items</span>
@@ -25,9 +25,9 @@
           <input type="checkbox" class="museum-check" data-id="{{ .name | lower }}">
           <div class="bundle-row-body">
             <h4>{{ .name }}</h4>
-            <p class="bundle-meta">文物 · {{ .item_type | default "挖掘" }}</p>
+            <p class="bundle-meta">Artifact · {{ .item_type | default "Archaeology dig" }}</p>
           </div>
-          <span class="bundle-source-tag">文物</span>
+          <span class="bundle-source-tag">Artifact</span>
         </label>
         {{ end }}
         {{ range .Site.Data.minerals }}
@@ -35,23 +35,23 @@
           <input type="checkbox" class="museum-check" data-id="{{ .name | lower }}">
           <div class="bundle-row-body">
             <h4>{{ .name }}</h4>
-            <p class="bundle-meta">矿物 · 敲矿石获得</p>
+            <p class="bundle-meta">Mineral · Geode / rock</p>
           </div>
-          <span class="bundle-source-tag">矿物</span>
+          <span class="bundle-source-tag">Mineral</span>
         </label>
         {{ end }}
       </div>
       <div class="bundle-progress">
-        <span><strong id="doneCount">0</strong>% 已捐赠</span>
+        <span><strong id="doneCount">0</strong>% donated</span>
       </div>
     </div>
     <div class="bundle-right">
-      <img src="/images/artifacts/Ancient Doll.png" alt="博物馆" class="bundle-ref-img" onerror="this.style.display='none'">
+      <img src="/images/artifacts/Ancient Doll.png" alt="Museum" class="bundle-ref-img" onerror="this.style.display='none'">
       <div class="bundle-right-text">
-        <p class="br-eyebrow">博物馆参考</p>
-        <h3>≡ 捐赠规划</h3>
-        <p>文物通过锄头挖地图蠕虫点获得，矿物通过敲矿石和晶洞获得。每捐赠一件获得奖励。</p>
-        <p>勾选已捐赠物品，进度自动保存。</p>
+        <p class="br-eyebrow">Museum reference</p>
+        <h3>≡ Donation planning</h3>
+        <p>Artifacts are found by digging worm spots on the map. Minerals come from smashing rocks and geodes. Each donation earns a reward.</p>
+        <p>Check off items you've donated — progress saves automatically.</p>
       </div>
     </div>
   </div>
@@ -81,5 +81,11 @@
     });
   })();
   </script>
+  <style>
+  .bundle-row input[type=checkbox] { position: absolute; opacity: 0; width: 0; height: 0; }
+  .bundle-row { position: relative; padding-left: 32px; }
+  .bundle-row::before { content: ""; position: absolute; left: 8px; top: 14px; width: 18px; height: 18px; border: 2px solid #3ddc97; border-radius: 4px; background: #0d1a2d; }
+  .bundle-row.done::before { content: "✓"; background: #3ddc97; color: #0d1a2d; font-size: 13px; line-height: 18px; text-align: center; font-weight: bold; }
+  </style>
 </div>
 {{ end }}

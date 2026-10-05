@@ -3,24 +3,24 @@
   {{ partial "breadcrumb.html" . }}
 
   <div class="progress-tracker">
-    <p class="pt-eyebrow">进度追踪</p>
-    <h1>社区中心清单</h1>
-    <p class="pt-side">规划季节时，可以把标准清单组作为版本化参考。混合变奏和平台差异暂不包含在第一版数据中。</p>
+    <p class="pt-eyebrow">Progress Tracker</p>
+    <h1>Community Center Checklist</h1>
+    <p class="pt-side">Use standard bundle groups as a versioned reference when planning your season. Mixed variants and platform differences are not included in this first version.</p>
   </div>
 
   <div class="bundle-layout">
     <!-- 左：清单列表 -->
     <div class="bundle-left">
       <div class="bundle-toolbar">
-        <label>显示
+        <label>Show
           <select id="filterType" class="pals-select">
-            <option value="">所有参考清单</option>
-            <option value="crafts-room">采集室</option>
-            <option value="pantry">储藏室</option>
-            <option value="fish-tank">鱼缸</option>
-            <option value="boiler-room">锅炉房</option>
-            <option value="bulletin-board">布告栏</option>
-            <option value="vault">金库</option>
+            <option value="">All bundles</option>
+            <option value="crafts-room">Crafts Room</option>
+            <option value="pantry">Pantry</option>
+            <option value="fish-tank">Fish Tank</option>
+            <option value="boiler-room">Boiler Room</option>
+            <option value="bulletin-board">Bulletin Board</option>
+            <option value="vault">Vault</option>
           </select>
         </label>
         <span class="bundle-count">{{ len .Pages }} bundles</span>
@@ -39,28 +39,28 @@
               {{ range $items }}{{ $names = $names | append .name }}{{ end }}
               {{ delimit $names " / " }}
             </p>
-            <p class="bundle-meta">1.6.15 · 核验日期 2026-08-11</p>
+            <p class="bundle-meta">v1.6.15 · Verified 2026-08-11</p>
           </div>
-          <span class="bundle-source-tag">来源 {{ replace $proom "-" " " | title }}</span>
+          <span class="bundle-source-tag">{{ replace $proom "-" " " | title }}</span>
         </label>
         {{ end }}
       </div>
 
       <div class="bundle-progress">
-        <span><strong id="doneCount">0</strong>% 的参事已标记</span>
-        <p class="bundle-version">版本化参考: Stardew Valley 1.6.15 · 已核验 2026-08-11 · 来源: <a href="https://stardewvalleywiki.com/Bundles" target="_blank">Stardew Valley Wiki 清单页面</a></p>
+        <span><strong id="doneCount">0</strong>% tracked</span>
+        <p class="bundle-version">Versioned reference: Stardew Valley 1.6.15 · Verified 2026-08-11 · Source: <a href="https://stardewvalleywiki.com/Bundles" target="_blank">Stardew Valley Wiki bundles page</a></p>
       </div>
     </div>
 
     <!-- 右：图片+说明 -->
     <div class="bundle-right">
-      <img src="/images/community-center-hero.webp" alt="社区中心清单参考图" class="bundle-ref-img" onerror="this.style.display='none'">
+      <img src="/images/community-center-hero.webp" alt="Community Center reference" class="bundle-ref-img" onerror="this.style.display='none'">
       <div class="bundle-right-text">
-        <p class="br-eyebrow">按季节参考</p>
-        <h3>≡ 按季节规划</h3>
-        <p>清单天然适合规划，因为同一件物品可能受到季节、天气、时间、地点或另一条生产链的限制。实用的清单不应该只说"收集这件物品"，还应该显示它何时可获得，以及哪些目标会争用同一块空间。</p>
-        <p>这个预览版本限定了数据范围。它用容易识别的例子验证交互，同时在来源说明中明确：正式版本需要带版本号的完整物品表、混合清单规则和最后核验日期。</p>
-        <p><a href="https://stardewvalleywiki.com/Bundles" target="_blank">与社区参考资料对比 ↗</a></p>
+        <p class="br-eyebrow">Seasonal reference</p>
+        <h3>≡ Plan by season</h3>
+        <p>Bundles naturally fit planning because the same item may be limited by season, weather, time, location, or another production chain. A useful checklist doesn't just say "collect this item" — it shows when it's available and which goals compete for the same space.</p>
+        <p>This preview version is scoped to a manageable data range. It validates the interaction with easy-to-recognize examples and states the source: the full version needs a complete item table with version numbers, mixed bundle rules, and a last-verified date.</p>
+        <p><a href="https://stardewvalleywiki.com/Bundles" target="_blank">Compare with official reference ↗</a></p>
       </div>
     </div>
   </div>
@@ -110,7 +110,10 @@
   .bundle-count { font-size: 13px; color: #3ddc97; }
   .bundle-list { max-height: 500px; overflow-y: auto; }
   .bundle-row { display: flex; gap: 10px; align-items: flex-start; padding: 12px; border-bottom: 1px solid #1e2a40; cursor: pointer; }
-  .bundle-row input[type=checkbox] { width: 18px; height: 18px; margin-top: 4px; flex-shrink: 0; }
+  .bundle-row input[type=checkbox] { position: absolute; opacity: 0; width: 0; height: 0; }
+  .bundle-row { position: relative; padding-left: 32px; }
+  .bundle-row::before { content: ""; position: absolute; left: 8px; top: 14px; width: 18px; height: 18px; border: 2px solid #3ddc97; border-radius: 4px; background: #0d1a2d; }
+  .bundle-row.done::before { content: "✓"; background: #3ddc97; color: #0d1a2d; font-size: 13px; line-height: 18px; text-align: center; font-weight: bold; }
   .bundle-row-body { flex: 1; }
   .bundle-row-body h4 { margin: 0 0 4px; font-size: 14px; }
   .bundle-items { color: #9aa8bf; font-size: 12px; margin: 0 0 4px; }

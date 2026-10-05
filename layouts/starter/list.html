@@ -2,24 +2,24 @@
 <div class="content-col">
   {{ partial "breadcrumb.html" . }}
   <div class="page-head">
-    <p class="pt-eyebrow">随机开局推荐</p>
-    <h1>第一年开局推荐器</h1>
-    <p class="lead">点一下按钮，随机生成第一年种什么、先建什么、优先解锁谁。纯浏览器本地生成。</p>
+    <p class="pt-eyebrow">Random Starter</p>
+    <h1>Year 1 Starter Planner</h1>
+    <p class="lead">Click the button to generate a random Year 1 plan: what to plant, what to build first, and which villagers to prioritize.</p>
   </div>
 
   <div class="starter-box">
-    <button id="genBtn" class="starter-gen-btn">🎲 生成随机开局方案</button>
+    <button id="genBtn" class="starter-gen-btn">🎲 Generate Random Plan</button>
     <div id="starterResult" class="starter-result" style="display:none">
       <div class="starter-col">
-        <h3>🌱 春季优先作物</h3>
+        <h3>🌱 Spring Crops</h3>
         <ul id="cropList"></ul>
       </div>
       <div class="starter-col">
-        <h3>🏠 优先建筑</h3>
+        <h3>🏠 Priority Buildings</h3>
         <ul id="buildList"></ul>
       </div>
       <div class="starter-col">
-        <h3>💝 优先送礼村民</h3>
+        <h3>💝 Priority Villagers</h3>
         <ul id="npcList"></ul>
       </div>
     </div>
