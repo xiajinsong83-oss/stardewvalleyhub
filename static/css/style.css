@@ -482,31 +482,10 @@ html { background: transparent; }
 @media (max-width: 700px) { .farm-maps-grid { grid-template-columns: 1fr; } }
 
 /* BUILD PALETTE 按钮图标 */
-.home-planner-wrap .tool-btn { display: flex; align-items: center; gap: 6px; }
-.home-planner-wrap .tool-btn::before {
-  content: '';
-  display: inline-block;
-  width: 14px; height: 14px;
-  border-radius: 3px;
-  flex-shrink: 0;
-}
-.home-planner-wrap .tool-btn[data-tool="soil"]::before { background: #8b5a2b; }
-.home-planner-wrap .tool-btn[data-tool="crop"]::before { background: #3ddc97; }
-.home-planner-wrap .tool-btn[data-tool="building"]::before { background: #c64040; }
-.home-planner-wrap .tool-btn[data-tool="tree"]::before { background: #2d6a3f; }
-.home-planner-wrap .tool-btn[data-tool="path"]::before { background: #9a9a9a; }
-.home-planner-wrap .tool-btn[data-tool="water"]::before { background: #4a9fd4; }
-.home-planner-wrap .tool-btn[data-tool="erase"]::before { background: transparent; border: 1px solid #c64040; }
+.home-planner-wrap .tool-btn { display: flex; align-items: center; gap: 6px; padding: 8px 6px; font-size: 12px; white-space: nowrap; overflow: hidden; }
 
 /* BOARD SUMMARY 图标 */
-.home-planner-wrap .planner-stat-row span::before {
-  content: '';
-  display: inline-block;
-  width: 10px; height: 10px;
-  border-radius: 2px;
-  margin-right: 6px;
-  vertical-align: middle;
-}
+.home-planner-wrap .planner-stat-row span { display: flex; align-items: center; gap: 6px; }
 .home-planner-wrap .planner-stat-row span:has-text("Soil")::before { background: #8b5a2b; }
 
 /* 农场规划器 hero 图文行 */
