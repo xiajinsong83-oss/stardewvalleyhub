@@ -179,6 +179,10 @@
         </div>
       </aside>
     </div>
+    <div class="planner-footer">
+      <span>⌨ Placement mode · <kbd>Arrow keys</kbd> move focus</span>
+      <span>◎ Sketch only</span>
+    </div>
     <div class="planner-info-row">
       <div class="planner-info-box">
         <h4>Why a grid first?</h4>
@@ -228,7 +232,7 @@
       var idx = cell.dataset.idx;
       var t = saved[idx] || '';
       cell.className = 'grid-cell' + (t ? ' ' + t : '');
-      cell.textContent = t ? '' : '+';
+      cell.innerHTML = t ? '' : '+';
       if (t) { counts[t]++; filled++; }
     });
     document.getElementById('filledCount').textContent = filled;
@@ -265,7 +269,16 @@
   });
 
   document.getElementById('clearBtn').addEventListener('click', function(){
-    if (confirm('Clear the whole board?')) { saved = {}; localStorage.removeItem('svfarm'); render(); }
+    saved = {}; localStorage.removeItem('svfarm'); render();
+    document.getElementById('saveStatus').textContent = 'Board cleared.';
+  });
+
+  document.getElementById('saveBtn').addEventListener('click', function(){
+    localStorage.setItem('svfarm', JSON.stringify(saved));
+    var d = new Date();
+    var hh = String(d.getHours()).padStart(2,'0');
+    var mm = String(d.getMinutes()).padStart(2,'0');
+    document.getElementById('saveStatus').textContent = 'Draft saved ' + (d.getMonth()+1) + '/' + d.getDate() + ' ' + hh + ':' + mm;
   });
 
   document.getElementById('planName').addEventListener('input', function(){
