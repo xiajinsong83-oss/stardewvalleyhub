@@ -680,3 +680,7 @@ select { background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='h
 .section-head .section-title { margin: 0; }
 .section-more { color: #3ddc97; font-size: 14px; font-weight: 600; white-space: nowrap; }
 .section-more:hover { text-decoration: underline; }
+
+/* ---------- View more 文字说明 ---------- */
+.section-more-wrap { text-align: right; }
+.section-more-sub { color: #6a7a95; font-size: 12px; margin: 4px 0 0; }
