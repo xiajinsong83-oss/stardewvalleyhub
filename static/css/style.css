@@ -629,3 +629,12 @@ select { background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='h
 .card.view-more h3 { color: #3ddc97; margin-bottom: 6px; }
 .card.view-more p { color: #6a7a95; font-size: 13px; }
 .card.view-more:hover { border-color: #3ddc97; }
+
+/* ---------- CC Checklist 首页预览 ---------- */
+.cc-preview { margin: 40px 0; }
+.cc-preview-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; align-items: center; background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 28px; }
+.cc-preview-text h2 { margin: 8px 0 12px; }
+.cc-preview-text p { color: #9aa8bf; line-height: 1.6; margin-bottom: 16px; }
+.cc-preview-btn { display: inline-block; background: var(--gold); color: #1a1a2e; padding: 10px 20px; border-radius: 8px; font-weight: 600; }
+.cc-preview-img img { width: 100%; border-radius: 12px; }
+@media (max-width: 768px) { .cc-preview-inner { grid-template-columns: 1fr; } }
