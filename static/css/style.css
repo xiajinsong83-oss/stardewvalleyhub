@@ -205,8 +205,9 @@ img { image-rendering: pixelated; max-width: 100%; }
 footer.site-footer {
   border-top: 1px solid var(--border); background: var(--bg-2);
   padding: 28px 0; margin-top: 40px; color: var(--muted-2); font-size: 13.5px;
+  text-align: center;
 }
-.footer-links { display: flex; gap: 18px; flex-wrap: wrap; margin-bottom: 10px; }
+.footer-links { display: flex; gap: 18px; flex-wrap: wrap; margin-bottom: 10px; justify-content: center; }
 .footer-links a { color: var(--muted); }
 
 /* ---------- 统计条 ---------- */
