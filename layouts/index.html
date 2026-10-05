@@ -227,12 +227,13 @@
     cells.forEach(function(cell){
       var idx = cell.dataset.idx;
       var t = saved[idx] || '';
-      cell.className = 'grid-cell' + (t ? ' t-' + t : '');
+      cell.className = 'grid-cell' + (t ? ' ' + t : '');
       cell.textContent = t ? '' : '+';
       if (t) { counts[t]++; filled++; }
     });
     document.getElementById('filledCount').textContent = filled;
-    document.getElementById('statFilled').textContent = filled;
+    document.getElementById('statFilled2').textContent = filled;
+    document.getElementById('statFillBar').style.width = (filled/96*100) + '%';
     document.getElementById('statSoil').textContent = counts.soil;
     document.getElementById('statCrop').textContent = counts.crop;
     document.getElementById('statBuilding').textContent = counts.building;
