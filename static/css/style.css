@@ -489,12 +489,13 @@ html { background: transparent; }
 .home-planner-wrap .planner-stat-row span:has-text("Soil")::before { background: #8b5a2b; }
 
 /* 农场规划器 hero 图文行 */
-.planner-hero-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 16px 0; align-items: center; }
-.planner-hero-img { width: 100%; border-radius: 12px; display: block; }
+.planner-hero-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 16px 0; align-items: stretch; }
+.planner-hero-img { width: 100%; height: 100%; object-fit: cover; border-radius: 12px; display: block; }
+.planner-hero-text { display: flex; flex-direction: column; justify-content: center; }
 .planner-hero-text h3 { font-size: 28px; margin: 0 0 12px; }
 .planner-hero-text p { color: #9aa8bf; line-height: 1.6; margin: 0; }
 .planner-eyebrow { color: #3ddc97; font-size: 13px; letter-spacing: 1px; margin-bottom: 8px; }
-@media (max-width: 800px) { .planner-hero-row { grid-template-columns: 1fr; } }
+@media (max-width: 800px) { .planner-hero-row { grid-template-columns: 1fr; } .planner-hero-img { height: auto; } }
 
 /* 农场规划器样式复刻 stardewplanner.xyz */
 .home-planner-wrap { display: grid; grid-template-columns: 220px 1fr 240px; gap: 16px; margin: 16px 0; }
