@@ -619,3 +619,7 @@ select { background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='h
 /* ---------- 规划器底部提示 ---------- */
 .planner-footer { display: flex; justify-content: space-between; margin-top: 12px; padding: 0 4px; color: #6a7a95; font-size: 12px; }
 .planner-footer kbd { background: #141e30; border: 1px solid #2a3a55; border-radius: 4px; padding: 1px 6px; font-size: 11px; color: #cdd7e5; }
+
+/* ---------- 规划器格子底部提示 ---------- */
+.planner-board-footer { display: flex; justify-content: space-between; margin-top: 10px; padding: 8px 4px 0; color: #6a7a95; font-size: 12px; }
+.planner-board-footer kbd { background: #141e30; border: 1px solid #2a3a55; border-radius: 4px; padding: 1px 6px; font-size: 11px; color: #cdd7e5; }
