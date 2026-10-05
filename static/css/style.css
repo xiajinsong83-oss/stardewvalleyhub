@@ -511,7 +511,8 @@ html { background: transparent; }
 .active-tool-icon.tree { background-image: url("/images/tools/axe/Steel Axe.png"); }
 .active-tool-icon.path { background-image: url("/images/flooring/Wood Path.png"); }
 .active-tool-icon.water { background-image: url("/images/maps/Farm Map.png"); }
-.active-tool-icon.erase { background: #a33; }
+.active-tool-icon.erase { background: #a33; position: relative; }
+.active-tool-icon.erase::before { content: "✕"; position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 18px; font-weight: bold; }
 .active-tool-box small { display: block; font-size: 10px; color: #8896b0; }
 .active-tool-box strong { font-size: 14px; }
 .planner-tools-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 14px; }
@@ -525,7 +526,8 @@ html { background: transparent; }
 .tool-icon.tree { background-image: url("/images/tools/axe/Steel Axe.png"); }
 .tool-icon.path { background-image: url("/images/craftable/decor/Wood Path.png"); }
 .tool-icon.water { background-image: url("/images/buildings/Fish Pond.png"); }
-.tool-icon.erase { background: transparent; border: 2px solid #c64040; color: #c64040; font-size: 14px; text-align: center; line-height: 20px; font-weight: bold; }
+.tool-icon.erase { background: transparent; position: relative; }
+.tool-icon.erase::before { content: "✕"; position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; color: #c64040; font-size: 18px; font-weight: bold; }
 .planner-planname label { display: block; font-size: 12px; color: #8896b0; margin-bottom: 4px; }
 .planner-planname input { width: 100%; background: #0f1828; border: 1px solid #2a3a55; border-radius: 6px; padding: 8px; color: #fff; font-size: 13px; box-sizing: border-box; }
 .planner-save, .planner-clear { width: 100%; padding: 10px; border-radius: 8px; font-size: 13px; cursor: pointer; margin-top: 8px; }
