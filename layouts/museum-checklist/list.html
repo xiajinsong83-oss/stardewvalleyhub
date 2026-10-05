@@ -1,0 +1,85 @@
+{{ define "main" }}
+<div class="content-col">
+  {{ partial "breadcrumb.html" . }}
+  <div class="progress-tracker">
+    <p class="pt-eyebrow">收集追踪</p>
+    <h1>博物馆捐赠清单</h1>
+    <p class="pt-side">勾选你已经捐赠给博物馆的文物和矿物。95 个全收集解锁完美奖杯。</p>
+  </div>
+
+  <div class="bundle-layout">
+    <div class="bundle-left">
+      <div class="bundle-toolbar">
+        <label>显示
+          <select id="filterType" class="pals-select">
+            <option value="">全部物品</option>
+            <option value="artifact">文物</option>
+            <option value="mineral">矿物</option>
+          </select>
+        </label>
+        <span class="bundle-count">95 items</span>
+      </div>
+      <div class="bundle-list" id="bundleList">
+        {{ range .Site.Data.artifacts }}
+        <label class="bundle-row" data-type="artifact">
+          <input type="checkbox" class="museum-check" data-id="{{ .name | lower }}">
+          <div class="bundle-row-body">
+            <h4>{{ .name }}</h4>
+            <p class="bundle-meta">文物 · {{ .item_type | default "挖掘" }}</p>
+          </div>
+          <span class="bundle-source-tag">文物</span>
+        </label>
+        {{ end }}
+        {{ range .Site.Data.minerals }}
+        <label class="bundle-row" data-type="mineral">
+          <input type="checkbox" class="museum-check" data-id="{{ .name | lower }}">
+          <div class="bundle-row-body">
+            <h4>{{ .name }}</h4>
+            <p class="bundle-meta">矿物 · 敲矿石获得</p>
+          </div>
+          <span class="bundle-source-tag">矿物</span>
+        </label>
+        {{ end }}
+      </div>
+      <div class="bundle-progress">
+        <span><strong id="doneCount">0</strong>% 已捐赠</span>
+      </div>
+    </div>
+    <div class="bundle-right">
+      <img src="/images/artifacts/Ancient Doll.png" alt="博物馆" class="bundle-ref-img" onerror="this.style.display='none'">
+      <div class="bundle-right-text">
+        <p class="br-eyebrow">博物馆参考</p>
+        <h3>≡ 捐赠规划</h3>
+        <p>文物通过锄头挖地图蠕虫点获得，矿物通过敲矿石和晶洞获得。每捐赠一件获得奖励。</p>
+        <p>勾选已捐赠物品，进度自动保存。</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+  (function(){
+    var checks = document.querySelectorAll('.museum-check');
+    var done = document.getElementById('doneCount');
+    var saved = JSON.parse(localStorage.getItem('svmuseum') || '{}');
+    checks.forEach(function(c){
+      if (saved[c.dataset.id]) { c.checked = true; c.closest('.bundle-row').classList.add('done'); }
+      c.addEventListener('change', function(){
+        saved[c.dataset.id] = c.checked;
+        localStorage.setItem('svmuseum', JSON.stringify(saved));
+        c.closest('.bundle-row').classList.toggle('done', c.checked);
+        update();
+      });
+    });
+    function update(){ var n = document.querySelectorAll('.museum-check:checked').length; done.textContent = Math.round(n/checks.length*100); }
+    update();
+    document.getElementById('filterType').addEventListener('change', function(){
+      var t = this.value;
+      checks.forEach(function(c){
+        var row = c.closest('.bundle-row');
+        row.classList.toggle('hide', t && row.dataset.type !== t);
+      });
+    });
+  })();
+  </script>
+</div>
+{{ end }}

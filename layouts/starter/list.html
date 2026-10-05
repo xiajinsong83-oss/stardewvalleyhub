@@ -1,0 +1,57 @@
+---
+title: "Stardew Valley Starter Planner - Year 1 Guide"
+description: "Randomized Year 1 starter plan for Stardew Valley. Click generate to get crop, building and villager priorities."
+type: starter
+---
+{{ define "main" }}
+<div class="content-col">
+  {{ partial "breadcrumb.html" . }}
+  <div class="page-head">
+    <p class="pt-eyebrow">随机开局推荐</p>
+    <h1>第一年开局推荐器</h1>
+    <p class="lead">点一下按钮，随机生成第一年种什么、先建什么、优先解锁谁。纯浏览器本地生成。</p>
+  </div>
+
+  <div class="starter-box">
+    <button id="genBtn" class="starter-gen-btn">🎲 生成随机开局方案</button>
+    <div id="starterResult" class="starter-result" style="display:none">
+      <div class="starter-col">
+        <h3>🌱 春季优先作物</h3>
+        <ul id="cropList"></ul>
+      </div>
+      <div class="starter-col">
+        <h3>🏠 优先建筑</h3>
+        <ul id="buildList"></ul>
+      </div>
+      <div class="starter-col">
+        <h3>💝 优先送礼村民</h3>
+        <ul id="npcList"></ul>
+      </div>
+    </div>
+  </div>
+
+  <script>
+  var crops = ["Parsnip","Cauliflower","Potato","Kale","Green Bean","Strawberry","Blueberry","Cranberry","Pumpkin","Melon","Summer Spangle","Red Cabbage"];
+  var builds = ["Coop（4只鸡）","Barn（牛）","Shed（储物）","Slime Hutch（后期）","Mill（加工）","Stable（骑马）","Well（浇水）","Fish Pond"];
+  var npcs = ["Caroline","Demetrius","Dwarf","Elliot","Emily","Evelyn","George","Gus","Jas","Jodi","Kent","Krobus","Leah","Leo","Lewis","Linus","Marnie","Maru","Pam","Penny","Pierre","Robin","Sandy","Sebastian","Shane","Vincent","Willy","Wizard","Abigail","Alex","Elliott","Harvey","Sam"];
+  document.getElementById('genBtn').addEventListener('click', function(){
+    function pick(arr,n){ var s=[...arr]; var r=[]; for(var i=0;i<n;i++){ var idx=Math.floor(Math.random()*s.length); r.push(s.splice(idx,1)[0]); } return r; }
+    document.getElementById('cropList').innerHTML = pick(crops,4).map(c=>'<li>'+c+'</li>').join('');
+    document.getElementById('buildList').innerHTML = pick(builds,3).map(c=>'<li>'+c+'</li>').join('');
+    document.getElementById('npcList').innerHTML = pick(npcs,5).map(c=>'<li>'+c+'</li>').join('');
+    document.getElementById('starterResult').style.display='grid';
+  });
+  </script>
+
+  <style>
+  .starter-box { max-width: 900px; margin: 30px auto; text-align: center; }
+  .starter-gen-btn { background: #f0b429; color: #1a1405; border: 0; padding: 14px 28px; border-radius: 10px; font-size: 16px; font-weight: 700; cursor: pointer; }
+  .starter-gen-btn:hover { background: #ffc94d; }
+  .starter-result { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; margin-top: 24px; text-align: left; }
+  .starter-col { background: #141e30; border: 1px solid #2a3a55; border-radius: 12px; padding: 16px; }
+  .starter-col h3 { margin: 0 0 10px; font-size: 15px; }
+  .starter-col ul { margin: 0; padding-left: 18px; color: #9aa8bf; font-size: 13px; line-height: 1.8; }
+  @media (max-width: 800px) { .starter-result { grid-template-columns: 1fr; } }
+  </style>
+</div>
+{{ end }}

@@ -1,0 +1,78 @@
+{{ define "main" }}
+<div class="content-col">
+  {{ partial "breadcrumb.html" . }}
+  <div class="progress-tracker">
+    <p class="pt-eyebrow">收集追踪</p>
+    <h1>鱼类图鉴清单</h1>
+    <p class="pt-side">勾选你已经钓到的鱼，进度自动保存在浏览器。77 条鱼全收集后完成水族箱收集包。</p>
+  </div>
+
+  <div class="bundle-layout">
+    <div class="bundle-left">
+      <div class="bundle-toolbar">
+        <label>显示
+          <select id="filterType" class="pals-select">
+            <option value="">全部鱼类</option>
+            <option value="spring">春季</option>
+            <option value="summer">夏季</option>
+            <option value="fall">秋季</option>
+            <option value="winter">冬季</option>
+            <option value="legendary">传说鱼</option>
+          </select>
+        </label>
+        <span class="bundle-count" id="totalCount">77 fish</span>
+      </div>
+      <div class="bundle-list" id="bundleList">
+        {{ range $i, $fish := .Site.Data.fish }}
+        <label class="bundle-row" data-type="{{ $fish.season | default "" }}">
+          <input type="checkbox" class="fish-check" data-id="{{ $fish.name | lower }}">
+          <div class="bundle-row-body">
+            <h4>{{ $fish.name }}</h4>
+            <p class="bundle-meta">{{ $fish.location | default "" }} · {{ $fish.time | default "" }}</p>
+          </div>
+          <span class="bundle-source-tag">{{ $fish.season | default "全年" }}</span>
+        </label>
+        {{ end }}
+      </div>
+      <div class="bundle-progress">
+        <span><strong id="doneCount">0</strong>% 已收集</span>
+      </div>
+    </div>
+    <div class="bundle-right">
+      <img src="/images/fish/Lionfish.png" alt="鱼类图鉴" class="bundle-ref-img" onerror="this.style.display='none'">
+      <div class="bundle-right-text">
+        <p class="br-eyebrow">钓鱼参考</p>
+        <h3>≡ 按季节钓鱼</h3>
+        <p>鱼的出没受季节、天气、时间和地点限制。传说鱼每条只能钓一次，需要雨天和特定位置。</p>
+        <p>勾选已钓到的鱼，进度自动保存。</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+  (function(){
+    var checks = document.querySelectorAll('.fish-check');
+    var done = document.getElementById('doneCount');
+    var saved = JSON.parse(localStorage.getItem('svfish') || '{}');
+    checks.forEach(function(c){
+      if (saved[c.dataset.id]) { c.checked = true; c.closest('.bundle-row').classList.add('done'); }
+      c.addEventListener('change', function(){
+        saved[c.dataset.id] = c.checked;
+        localStorage.setItem('svfish', JSON.stringify(saved));
+        c.closest('.bundle-row').classList.toggle('done', c.checked);
+        update();
+      });
+    });
+    function update(){ var n = document.querySelectorAll('.fish-check:checked').length; done.textContent = Math.round(n/checks.length*100); }
+    update();
+    document.getElementById('filterType').addEventListener('change', function(){
+      var t = this.value;
+      checks.forEach(function(c){
+        var row = c.closest('.bundle-row');
+        row.classList.toggle('hide', t && row.dataset.type !== t);
+      });
+    });
+  })();
+  </script>
+</div>
+{{ end }}

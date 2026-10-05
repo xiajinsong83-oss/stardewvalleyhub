@@ -2,15 +2,32 @@
   <div class="container header-inner">
     <a class="logo" href="{{ .Site.Home.RelPermalink }}"><img src="/favicon.png" alt="" class="logo-icon">Stardew Valley <span>Hub</span></a>
     <nav class="main-nav" id="mainNav" aria-label="Main navigation">
-      <a href="/npc/">NPC Gifts</a>
-      <a href="/crops/">Crops</a>
-      <a href="/fish/">Fish</a>
-      <a href="/bundles/">Bundles</a>
+      <div class="nav-dropdown">
+        <button class="nav-drop-btn">Guides ▾</button>
+        <div class="nav-drop-menu">
+          <a href="/npc/">NPC Gifts</a>
+          <a href="/crops/">Crops</a>
+          <a href="/fish/">Fish</a>
+          <a href="/bundles/">Bundles</a>
+          <a href="/boss/">Bosses</a>
+          <a href="/weapons/">Weapons</a>
+          <a href="/monsters/">Monsters</a>
+          <a href="/museum/">Museum</a>
+        </div>
+      </div>
+      <div class="nav-dropdown">
+        <button class="nav-drop-btn">Tools ▾</button>
+        <div class="nav-drop-menu">
+          <a href="/#planner">Farm Planner</a>
+          <a href="/gift/">Gift Lookup</a>
+          <a href="/bundles/">Community Center Checklist</a>
+          <a href="/starter/">Starter Planner</a>
+          <a href="/fish-checklist/">Fish Checklist</a>
+          <a href="/museum-checklist/">Museum Checklist</a>
+        </div>
+      </div>
       <a href="/tier/crop-profit/">Tier</a>
       <a href="/maps/">Maps</a>
-      <a href="/boss/">Bosses</a>
-      <a href="/weapons/">Weapons</a>
-      <a href="/monsters/">Monsters</a>
       <a href="/faq/">FAQ</a>
       <a href="/updates/">Updates</a>
     </nav>
