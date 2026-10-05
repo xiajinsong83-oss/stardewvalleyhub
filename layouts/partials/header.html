@@ -2,8 +2,8 @@
   <div class="container header-inner">
     <a class="logo" href="{{ .Site.Home.RelPermalink }}"><img src="/favicon.png" alt="" class="logo-icon">Stardew Valley <span>Hub</span></a>
     <nav class="main-nav" id="mainNav" aria-label="Main navigation">
-      <div class="nav-dropdown">
-        <button class="nav-drop-btn">Guides ▾</button>
+      <div class="nav-dropdown" id="guidesDrop">
+        <button class="nav-drop-btn" onclick="toggleDrop('guidesDrop')">Guides ▾</button>
         <div class="nav-drop-menu">
           <a href="/npc/">NPC Gifts</a>
           <a href="/crops/">Crops</a>
@@ -14,6 +14,7 @@
           <a href="/monsters/">Monsters</a>
           <a href="/museum/">Museum</a>
           <a href="/tier/crop-profit/">Tier</a>
+          <a href="/maps/">Maps</a>
         </div>
       </div>
       <!-- 桌面端展开的 Tools 链接 -->
@@ -26,8 +27,8 @@
         <a href="/museum-checklist/">Museum Check</a>
       </div>
       <!-- 手机端收起的 Tools 下拉 -->
-      <div class="nav-dropdown tools-collapsed">
-        <button class="nav-drop-btn">Tools ▾</button>
+      <div class="nav-dropdown tools-collapsed" id="toolsDrop">
+        <button class="nav-drop-btn" onclick="toggleDrop('toolsDrop')">Tools ▾</button>
         <div class="nav-drop-menu">
           <a href="/#planner">Farm Planner</a>
           <a href="/gift/">Gift Lookup</a>
@@ -37,10 +38,22 @@
           <a href="/museum-checklist/">Museum Check</a>
         </div>
       </div>
-      <a href="/maps/">Maps</a>
       <a href="/faq/">FAQ</a>
       <a href="/updates/">Updates</a>
     </nav>
     {{ partial "lang-switch.html" . }}
   </div>
 </header>
+<script>
+function toggleDrop(id){
+  var d = document.getElementById(id);
+  var wasOpen = d.classList.contains('open');
+  document.querySelectorAll('.nav-dropdown.open').forEach(function(el){ el.classList.remove('open'); });
+  if(!wasOpen) d.classList.add('open');
+}
+document.addEventListener('click', function(e){
+  if(!e.target.closest('.nav-dropdown')){
+    document.querySelectorAll('.nav-dropdown.open').forEach(function(el){ el.classList.remove('open'); });
+  }
+});
+</script>
