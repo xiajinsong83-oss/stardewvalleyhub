@@ -506,6 +506,12 @@ html { background: transparent; }
 .planner-active-tool { background: #0f1828; border: 1px solid #2a3a55; border-radius: 8px; padding: 10px; margin-bottom: 12px; }
 .active-tool-box { display: flex; align-items: center; gap: 10px; }
 .active-tool-icon { width: 32px; height: 32px; border-radius: 6px; background: url("/images/tools/hoe/Hoe.png") center/cover no-repeat; }
+.active-tool-icon.crop { background-image: url("/images/objects/Parsnip.png"); }
+.active-tool-icon.building { background-image: url("/images/buildings/Buildable Farmhouse.png"); }
+.active-tool-icon.tree { background-image: url("/images/tools/axe/Steel Axe.png"); }
+.active-tool-icon.path { background-image: url("/images/flooring/Wood Path.png"); }
+.active-tool-icon.water { background-image: url("/images/maps/Farm Map.png"); }
+.active-tool-icon.erase { background: #a33; }
 .active-tool-box small { display: block; font-size: 10px; color: #8896b0; }
 .active-tool-box strong { font-size: 14px; }
 .planner-tools-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 14px; }

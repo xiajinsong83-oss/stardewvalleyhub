@@ -258,6 +258,9 @@
       btn.classList.add('active');
       currentTool = btn.dataset.tool;
       document.getElementById('toolLabel').textContent = btn.textContent.trim();
+      document.getElementById('activeToolName').textContent = btn.textContent.trim();
+      var icon = btn.querySelector('.tool-icon');
+      if (icon) document.getElementById('activeToolIcon').className = 'active-tool-icon ' + btn.dataset.tool;
     });
   });
 
