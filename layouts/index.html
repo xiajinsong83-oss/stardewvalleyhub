@@ -174,15 +174,62 @@
     </div>
   </section>
 
-  <section class="cc-preview">
-    <div class="cc-preview-inner">
-      <div class="cc-preview-text">
-        <p class="planner-eyebrow">Progress Tracker</p>
-        <h2>Community Center Checklist</h2>
-        <p>Track every bundle: required items, rooms and rewards — check off what you've collected.</p>
-        <a href="/bundles/" class="cc-preview-btn">Open checklist →</a>
+  <!-- 首页社区中心清单 -->
+  <section class="home-cc-checklist">
+    <div class="progress-tracker">
+      <p class="pt-eyebrow">Progress Tracker</p>
+      <h2>Community Center Checklist</h2>
+      <p class="pt-side">Use standard bundle groups as a versioned reference when planning your season.</p>
+    </div>
+
+    <div class="bundle-layout">
+      <div class="bundle-left">
+        <div class="bundle-toolbar">
+          <label>Show
+            <select id="homeFilterType" class="pals-select">
+              <option value="">All bundles</option>
+              <option value="crafts-room">Crafts Room</option>
+              <option value="pantry">Pantry</option>
+              <option value="fish-tank">Fish Tank</option>
+              <option value="boiler-room">Boiler Room</option>
+              <option value="bulletin-board">Bulletin Board</option>
+              <option value="vault">Vault</option>
+            </select>
+          </label>
+          <span class="bundle-count">{{ len (site.GetPage "/bundles").Pages }} bundles</span>
+        </div>
+
+        <div class="bundle-list" id="homeBundleList">
+          {{ range (site.GetPage "/bundles").Pages.ByTitle }}
+          {{ $proom := .Params.bundle_room | default "" }}
+          {{ $items := .Params.bundle_items | default slice }}
+          <label class="bundle-row" data-type="{{ $proom }}">
+            <input type="checkbox" class="bundle-check" data-bundle="{{ .File.ContentBaseName }}">
+            <div class="bundle-row-body">
+              <h4>{{ .Title | replaceRE " – Community Center.*" "" }}</h4>
+              <p class="bundle-items">{{ $names := slice }}{{ range $items }}{{ $names = $names | append .name }}{{ end }}{{ delimit $names " / " }}</p>
+              <p class="bundle-meta">v1.6.15 · Verified 2026-08-11</p>
+            </div>
+            <span class="bundle-source-tag">{{ replace $proom "-" " " | title }}</span>
+          </label>
+          {{ end }}
+        </div>
+
+        <div class="bundle-progress">
+          <span><strong id="homeDoneCount">0</strong>% tracked</span>
+          <p class="bundle-version">Versioned reference: Stardew Valley 1.6.15 · Source: <a href="https://stardewvalleywiki.com/Bundles" target="_blank">Stardew Valley Wiki bundles page</a></p>
+        </div>
       </div>
-      <div class="cc-preview-img"><img src="/images/community-center-hero.webp" alt="Community Center Bundles"></div>
+
+      <div class="bundle-right">
+        <img src="/images/community-center-hero.webp" alt="Community Center reference" class="bundle-ref-img" onerror="this.style.display='none'">
+        <div class="bundle-right-text">
+          <p class="br-eyebrow">Seasonal reference</p>
+          <h3>≡ Plan by season</h3>
+          <p>Bundles naturally fit planning because the same item may be limited by season, weather, time, location, or another production chain.</p>
+          <p><a href="/bundles/">View full checklist →</a></p>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -288,4 +335,34 @@
   render();
 })();
 </script>
-{{ end }}
+
+<script>
+(function(){
+  var box = document.getElementById('homeBundleList');
+  if (!box) return;
+  var checks = box.querySelectorAll('.bundle-check');
+  var done = document.getElementById('homeDoneCount');
+  var saved = JSON.parse(localStorage.getItem('svbundles') || '{}');
+  checks.forEach(function(c){
+    if (saved[c.dataset.bundle]) { c.checked = true; c.closest('.bundle-row').classList.add('done'); }
+    c.addEventListener('change', function(){
+      saved[c.dataset.bundle] = c.checked;
+      localStorage.setItem('svbundles', JSON.stringify(saved));
+      c.closest('.bundle-row').classList.toggle('done', c.checked);
+      update();
+    });
+  });
+  function update(){
+    var n = box.querySelectorAll('.bundle-check:checked').length;
+    done.textContent = Math.round(n / checks.length * 100);
+  }
+  update();
+  document.getElementById('homeFilterType').addEventListener('change', function(){
+    var t = this.value;
+    checks.forEach(function(c){
+      var row = c.closest('.bundle-row');
+      row.classList.toggle('hide', t && row.dataset.type !== t);
+    });
+  });
+})();
+</script>
