@@ -1,115 +1,136 @@
 {{ define "main" }}
 <div class="content-col">
   {{ partial "breadcrumb.html" . }}
-  <div class="page-head">
-    <h1>{{ .Title }}</h1>
-    {{ with .Description }}<p class="lead">{{ . }}</p>{{ end }}
+
+  <div class="progress-tracker">
+    <p class="pt-eyebrow">进度追踪</p>
+    <h1>社区中心清单</h1>
+    <p class="pt-side">规划季节时，可以把标准清单组作为版本化参考。混合变奏和平台差异暂不包含在第一版数据中。</p>
   </div>
 
-  <!-- 进度条 -->
-  <div class="bundle-progress">
-    <div class="bp-info">
-      <span><strong id="doneCount">0</strong> / {{ len .Pages }} bundles completed</span>
-      <button class="bp-reset" id="resetBtn">Reset all</button>
-    </div>
-    <div class="bp-bar"><div class="bp-fill" id="bpFill"></div></div>
-  </div>
-
-  <div class="pals-toolbar">
-    <div class="pals-search">
-      <input type="search" id="cardSearch" placeholder="Search bundles…" aria-label="Search">
-      <span class="pals-count"><span id="cardCount">{{ len .Pages }}</span> / {{ len .Pages }}</span>
-    </div>
-    <select id="filterType" class="pals-select" aria-label="Filter by room">
-      <option value="">All rooms</option>
-      <option value="crafts-room">Crafts Room</option>
-      <option value="pantry">Pantry</option>
-      <option value="fish-tank">Fish Tank</option>
-      <option value="boiler-room">Boiler Room</option>
-      <option value="bulletin-board">Bulletin Board</option>
-      <option value="vault">Vault</option>
-    </select>
-  </div>
-
-  <div class="card-grid pals-grid" id="cardGrid">
-    {{ range .Pages.ByTitle }}
-    {{ $proom := .Params.bundle_room | default "" }}
-    <label class="card pal-card bundle-item" data-search="{{ .Title | lower }}" data-type="{{ $proom }}">
-      <input type="checkbox" class="bundle-check" data-bundle="{{ .File.ContentBaseName }}">
-      <div class="card-icon"><img src="{{ .Params.icon | relURL }}" alt="" loading="lazy"></div>
-      <h3>{{ .Title | replaceRE " – Community Center.*" "" }}</h3>
-      <div class="pals-badges">
-        {{ with $proom }}<span class="badge badge-season">{{ replace $proom "-" " " | title }}</span>{{ end }}
+  <div class="bundle-layout">
+    <!-- 左：清单列表 -->
+    <div class="bundle-left">
+      <div class="bundle-toolbar">
+        <label>显示
+          <select id="filterType" class="pals-select">
+            <option value="">所有参考清单</option>
+            <option value="crafts-room">采集室</option>
+            <option value="pantry">储藏室</option>
+            <option value="fish-tank">鱼缸</option>
+            <option value="boiler-room">锅炉房</option>
+            <option value="bulletin-board">布告栏</option>
+            <option value="vault">金库</option>
+          </select>
+        </label>
+        <span class="bundle-count">{{ len .Pages }} bundles</span>
       </div>
-    </label>
-    {{ end }}
+
+      <div class="bundle-list" id="bundleList">
+        {{ range .Pages.ByTitle }}
+        {{ $proom := .Params.bundle_room | default "" }}
+        {{ $items := .Params.bundle_items | default slice }}
+        <label class="bundle-row" data-type="{{ $proom }}">
+          <input type="checkbox" class="bundle-check" data-bundle="{{ .File.ContentBaseName }}">
+          <div class="bundle-row-body">
+            <h4>{{ .Title | replaceRE " – Community Center.*" "" }}</h4>
+            <p class="bundle-items">
+              {{ $names := slice }}
+              {{ range $items }}{{ $names = $names | append .name }}{{ end }}
+              {{ delimit $names " / " }}
+            </p>
+            <p class="bundle-meta">1.6.15 · 核验日期 2026-08-11</p>
+          </div>
+          <span class="bundle-source-tag">来源 {{ replace $proom "-" " " | title }}</span>
+        </label>
+        {{ end }}
+      </div>
+
+      <div class="bundle-progress">
+        <span><strong id="doneCount">0</strong>% 的参事已标记</span>
+        <p class="bundle-version">版本化参考: Stardew Valley 1.6.15 · 已核验 2026-08-11 · 来源: <a href="https://stardewvalleywiki.com/Bundles" target="_blank">Stardew Valley Wiki 清单页面</a></p>
+      </div>
+    </div>
+
+    <!-- 右：图片+说明 -->
+    <div class="bundle-right">
+      <img src="/images/bundles/bundle-images/Spring Foraging Bundle.png" alt="社区中心清单参考图" class="bundle-ref-img" onerror="this.style.display='none'">
+      <div class="bundle-right-text">
+        <p class="br-eyebrow">按季节参考</p>
+        <h3>≡ 按季节规划</h3>
+        <p>清单天然适合规划，因为同一件物品可能受到季节、天气、时间、地点或另一条生产链的限制。实用的清单不应该只说"收集这件物品"，还应该显示它何时可获得，以及哪些目标会争用同一块空间。</p>
+        <p>这个预览版本限定了数据范围。它用容易识别的例子验证交互，同时在来源说明中明确：正式版本需要带版本号的完整物品表、混合清单规则和最后核验日期。</p>
+        <p><a href="https://stardewvalleywiki.com/Bundles" target="_blank">与社区参考资料对比 ↗</a></p>
+      </div>
+    </div>
   </div>
 
   <script>
   (function(){
-    var box = document.getElementById('cardGrid');
+    var box = document.getElementById('bundleList');
     var checks = box.querySelectorAll('.bundle-check');
     var done = document.getElementById('doneCount');
-    var fill = document.getElementById('bpFill');
     var saved = JSON.parse(localStorage.getItem('svbundles') || '{}');
 
     checks.forEach(function(c){
-      if (saved[c.dataset.bundle]) { c.checked = true; c.closest('.bundle-item').classList.add('done'); }
+      if (saved[c.dataset.bundle]) { c.checked = true; c.closest('.bundle-row').classList.add('done'); }
       c.addEventListener('change', function(){
         saved[c.dataset.bundle] = c.checked;
         localStorage.setItem('svbundles', JSON.stringify(saved));
-        c.closest('.bundle-item').classList.toggle('done', c.checked);
+        c.closest('.bundle-row').classList.toggle('done', c.checked);
         update();
       });
     });
 
     function update(){
       var n = box.querySelectorAll('.bundle-check:checked').length;
-      done.textContent = n;
-      fill.style.width = (n / checks.length * 100) + '%';
+      done.textContent = Math.round(n / checks.length * 100);
     }
     update();
 
-    document.getElementById('resetBtn').addEventListener('click', function(){
-      if (confirm('Reset all bundle progress?')) {
-        saved = {}; localStorage.removeItem('svbundles');
-        checks.forEach(function(c){ c.checked = false; c.closest('.bundle-item').classList.remove('done'); });
-        update();
-      }
-    });
-
-    // 搜索+筛选
-    var input = document.getElementById('cardSearch');
-    var fType = document.getElementById('filterType');
-    var count = document.getElementById('cardCount');
-    function apply(){
-      var q = input.value.trim().toLowerCase(), shown = 0;
-      var t = fType ? fType.value : '';
+    document.getElementById('filterType').addEventListener('change', function(){
+      var t = this.value;
       checks.forEach(function(c){
-        var item = c.closest('.bundle-item');
-        var ok = (!q || item.dataset.search.indexOf(q) > -1) && (!t || item.dataset.type === t);
-        item.classList.toggle('hide', !ok);
-        if (ok) shown++;
+        var row = c.closest('.bundle-row');
+        row.classList.toggle('hide', t && row.dataset.type !== t);
       });
-      count.textContent = shown;
-    }
-    input.addEventListener('input', apply);
-    if (fType) fType.addEventListener('change', apply);
+    });
   })();
   </script>
 
   <style>
-  .bundle-progress { background: #1a2540; border: 1px solid #2a3a55; border-radius: 12px; padding: 16px; margin: 16px 0; }
-  .bp-info { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
-  .bp-info span { color: #9aa8bf; }
-  .bp-info strong { color: #3ddc97; font-size: 18px; }
-  .bp-reset { background: #a33; color: #fff; border: 0; padding: 6px 12px; border-radius: 6px; cursor: pointer; font-size: 12px; }
-  .bp-bar { height: 10px; background: #0d1a2d; border-radius: 5px; overflow: hidden; }
-  .bp-fill { height: 100%; background: #3ddc97; width: 0%; transition: width .3s; }
-  .bundle-item { cursor: pointer; position: relative; padding-left: 40px; }
-  .bundle-check { position: absolute; left: 12px; top: 16px; width: 20px; height: 20px; cursor: pointer; }
-  .bundle-item.done { opacity: 0.5; }
-  .bundle-item.done h3 { text-decoration: line-through; }
+  .progress-tracker { margin-bottom: 20px; }
+  .pt-eyebrow { color: #3ddc97; font-size: 13px; letter-spacing: 1px; margin: 0 0 4px; }
+  .progress-tracker h1 { font-size: 36px; margin: 0 0 12px; }
+  .pt-side { color: #9aa8bf; font-size: 14px; max-width: 500px; margin-left: auto; float: right; margin-top: -60px; }
+  .bundle-layout { display: grid; grid-template-columns: 1.2fr 1fr; gap: 20px; margin-top: 40px; }
+  .bundle-left { background: #141e30; border: 1px solid #2a3a55; border-radius: 12px; padding: 16px; }
+  .bundle-toolbar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
+  .bundle-toolbar label { font-size: 13px; color: #9aa8bf; }
+  .bundle-count { font-size: 13px; color: #3ddc97; }
+  .bundle-list { max-height: 500px; overflow-y: auto; }
+  .bundle-row { display: flex; gap: 10px; align-items: flex-start; padding: 12px; border-bottom: 1px solid #1e2a40; cursor: pointer; }
+  .bundle-row input[type=checkbox] { width: 18px; height: 18px; margin-top: 4px; flex-shrink: 0; }
+  .bundle-row-body { flex: 1; }
+  .bundle-row-body h4 { margin: 0 0 4px; font-size: 14px; }
+  .bundle-items { color: #9aa8bf; font-size: 12px; margin: 0 0 4px; }
+  .bundle-meta { color: #6a7a95; font-size: 11px; margin: 0; }
+  .bundle-source-tag { font-size: 11px; color: #f0b429; white-space: nowrap; flex-shrink: 0; }
+  .bundle-row.done { opacity: 0.5; }
+  .bundle-row.done h4 { text-decoration: line-through; }
+  .bundle-row.hide { display: none; }
+  .bundle-progress { margin-top: 12px; padding-top: 12px; border-top: 1px solid #2a3a55; }
+  .bundle-progress span { color: #3ddc97; font-size: 13px; }
+  .bundle-version { color: #6a7a95; font-size: 11px; margin: 4px 0 0; }
+  .bundle-version a { color: #f0b429; }
+  .bundle-right { display: flex; flex-direction: column; gap: 16px; }
+  .bundle-ref-img { width: 100%; border-radius: 12px; display: block; }
+  .bundle-right-text { background: #141e30; border: 1px solid #2a3a55; border-radius: 12px; padding: 16px; }
+  .br-eyebrow { color: #9aa8bf; font-size: 12px; margin: 0 0 4px; }
+  .bundle-right-text h3 { margin: 0 0 10px; font-size: 18px; }
+  .bundle-right-text p { color: #9aa8bf; font-size: 13px; line-height: 1.6; margin: 0 0 10px; }
+  .bundle-right-text a { color: #f0b429; }
+  @media (max-width: 900px) { .bundle-layout { grid-template-columns: 1fr; } .pt-side { float: none; margin: 0; } }
   </style>
 </div>
 {{ end }}
