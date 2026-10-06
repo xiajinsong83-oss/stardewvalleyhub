@@ -760,3 +760,27 @@ select { background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='h
 .wf-card h4 { margin: 0 0 8px; font-size: 15px; }
 .wf-card p { color: #9aa8bf; font-size: 13px; line-height: 1.6; margin: 0; }
 @media (max-width: 900px) { .workflow-grid { grid-template-columns: repeat(2, 1fr); } .workflow-side-note { float: none; margin: 0; } }
+
+/* ---------- Trust and Scope ---------- */
+.home-trust { margin: 40px 0; }
+.home-trust h2 { font-size: 32px; margin: 0 0 20px; }
+.trust-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.trust-card { background: linear-gradient(135deg, #1a3a4a, #1a4a3a); border: 1px solid #2a5a4a; border-radius: 12px; padding: 20px; }
+.trust-icon { font-size: 24px; margin-bottom: 10px; }
+.trust-card h4 { margin: 0 0 8px; font-size: 16px; }
+.trust-card p { color: #9ab8b0; font-size: 13px; line-height: 1.6; margin: 0; }
+.trust-foot { color: #6a8a80; font-size: 12px; margin-top: 16px; }
+.trust-foot a { color: #f0b429; }
+
+/* ---------- FAQ ---------- */
+.home-faq { margin: 40px 0; }
+.faq-layout { display: grid; grid-template-columns: 1fr 1.5fr; gap: 30px; }
+.faq-left h2 { font-size: 40px; margin: 0 0 12px; line-height: 1.1; }
+.faq-side-note { color: #9aa8bf; font-size: 14px; max-width: 300px; }
+.faq-right { display: flex; flex-direction: column; gap: 8px; }
+.faq-item { background: #141e30; border: 1px solid #2a3a55; border-radius: 8px; padding: 14px 18px; }
+.faq-item summary { cursor: pointer; font-size: 14px; font-weight: 600; list-style: none; }
+.faq-item summary::before { content: "▸ "; color: #3ddc97; }
+.faq-item[open] summary::before { content: "▾ "; }
+.faq-item p { color: #9aa8bf; font-size: 13px; line-height: 1.6; margin: 10px 0 0; }
+@media (max-width: 900px) { .trust-grid { grid-template-columns: 1fr; } .faq-layout { grid-template-columns: 1fr; } .faq-left h2 { font-size: 28px; } }
