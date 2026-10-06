@@ -22,7 +22,7 @@
             <option value="legendary">Legendary</option>
           </select>
         </label>
-        <span class="fish-count" id="totalCount">77 fish</span>
+        <span class="fish-count" id="totalCount">{{ len .Site.Data.fish }} fish</span>
       </div>
 
       <div class="fish-search-box">
@@ -31,11 +31,12 @@
 
       <div class="fish-list" id="fishList">
         {{ range $i, $fish := .Site.Data.fish }}
-        {{ $season := $fish.season | default "all" }}
-        <label class="fish-row" data-type="{{ $season }}" data-search="{{ $fish.name | lower }}">
+        {{ $season := index ($fish.seasons | default (slice "all")) 0 }}
+        {{ $cat := $fish.category | default "regular" }}
+        <label class="fish-row" data-type="{{ $season }}" data-cat="{{ $cat }}" data-search="{{ $fish.name | lower }}">
           <input type="checkbox" class="fish-check" data-id="{{ $fish.name | lower }}">
           <div class="fish-row-icon">
-            <img src="/images/fish/{{ $fish.name }}.png" alt="{{ $fish.name }}" onerror="this.style.display='none'">
+            <img src="/{{ $fish.image | default (printf "images/fish/%s.png" $fish.name) }}" alt="{{ $fish.name }}" onerror="this.style.display='none'">
           </div>
           <div class="fish-row-body">
             <h4>{{ $fish.name }}</h4>
@@ -100,7 +101,13 @@
       var t = this.value;
       checks.forEach(function(c){
         var row = c.closest('.fish-row');
-        row.classList.toggle('hide', t && row.dataset.type !== t);
+        var show = true;
+        if (t === 'legendary') {
+          show = row.dataset.cat === 'legendary' || row.dataset.cat === 'legendary-2';
+        } else if (t) {
+          show = row.dataset.type === t;
+        }
+        row.classList.toggle('hide', !show);
       });
     });
 
