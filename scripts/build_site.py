@@ -1079,4 +1079,42 @@ stats = {"npc": len(npc), "crops": len(crops), "fish": len(fish), "bundles": len
          "achievements": len(achievements), "orders": len(orders), "pets": len(farm_animals) + len(pet_names)}
 w(os.path.join(SITE, "data", "stardew.json"), json.dumps(stats, ensure_ascii=False, indent=2))
 print("stardew.json stats:", stats)
+
+# ---------- 自动生成 sitemap.xml ----------
+import datetime
+BASE = "https://www.stardewvalleyhub.wiki"
+today = datetime.date.today().isoformat()
+
+urls = []
+# 遍历 content/en 和 content/zh-hans 下所有 .md 文件
+for lang in ["en", "zh-hans"]:
+    content_dir = os.path.join(SITE, "content", lang)
+    if not os.path.isdir(content_dir):
+        continue
+    for root, dirs, files in os.walk(content_dir):
+        for f in files:
+            if f != "_index.md":
+                continue
+            rel = os.path.relpath(root, os.path.join(content_dir, ".."))
+            # rel 格式: en/npc 或 zh-hans/crops
+            parts = rel.split(os.sep)
+            if len(parts) == 1:
+                # 根目录首页
+                path = "/" if lang == "en" else f"/{lang}/"
+            else:
+                slug = "/".join(parts[1:])
+                path = f"/{lang}/{slug}/" if lang != "en" else f"/{slug}/"
+            urls.append((path, today))
+
+# 去重排序
+urls = sorted(set(urls))
+
+lines = ['<?xml version="1.0" encoding="UTF-8"?>']
+lines.append('<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">')
+for path, lm in urls:
+    lines.append(f'  <url><loc>{BASE}{path}</loc><lastmod>{lm}</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>')
+lines.append('</urlset>')
+
+w(os.path.join(SITE, "static", "sitemap.xml"), "\n".join(lines) + "\n")
+print(f"sitemap.xml generated: {len(urls)} URLs")
 print("DONE")
