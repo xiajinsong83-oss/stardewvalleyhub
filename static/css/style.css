@@ -749,3 +749,14 @@ select { background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='h
 .gift-tag.liked { background: rgba(240,180,41,.15); color: #f0b429; }
 .gift-footnotes { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 20px; }
 @media (max-width: 900px) { .gift-layout { grid-template-columns: 1fr; } .gift-grid { grid-template-columns: 1fr; } .gift-footnotes { grid-template-columns: 1fr; } .gift-side-note, .gift-full-link { float: none; margin: 0; } }
+
+/* ---------- 工作流步骤 ---------- */
+.home-workflow { margin: 40px 0; }
+.home-workflow h2 { font-size: 32px; margin: 0 0 8px; }
+.workflow-side-note { color: #9aa8bf; font-size: 14px; max-width: 400px; margin-left: auto; float: right; margin-top: -50px; }
+.workflow-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 30px; }
+.wf-card { background: #141e30; border: 1px solid #2a3a55; border-radius: 12px; padding: 20px; }
+.wf-num { font-size: 28px; font-weight: 800; color: #3ddc97; display: block; margin-bottom: 8px; }
+.wf-card h4 { margin: 0 0 8px; font-size: 15px; }
+.wf-card p { color: #9aa8bf; font-size: 13px; line-height: 1.6; margin: 0; }
+@media (max-width: 900px) { .workflow-grid { grid-template-columns: repeat(2, 1fr); } .workflow-side-note { float: none; margin: 0; } }
