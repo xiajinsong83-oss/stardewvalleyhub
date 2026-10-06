@@ -243,6 +243,103 @@
     </div>
   </section>
 
+  <!-- Crop Profit Calculator -->
+  <section class="home-crop-calculator">
+    <p class="section-eyebrow">Profit Calculator</p>
+    <h2>Crop Profit Calculator</h2>
+    <p class="calc-side-note">Input your own assumptions, or load a versioned base-game preset. Results come only from visible arithmetic, not hidden recommendations.</p>
+
+    <div class="calc-layout">
+      <div class="calc-left">
+        <label class="calc-label">Load reference crop
+          <select id="cropSelect" class="calc-select">
+            <option value="manual">Manual input</option>
+            <option data-seed="20" data-sell="100" data-days="4" data-harvest="1" data-extra="0">Parsnip</option>
+            <option data-seed="80" data-sell="200" data-days="13" data-harvest="1" data-extra="0">Cauliflower</option>
+            <option data-seed="50" data-sell="80" data-days="6" data-harvest="1" data-extra="0">Potato</option>
+            <option data-seed="60" data-sell="120" data-days="10" data-harvest="1" data-extra="0">Green Bean</option>
+            <option data-seed="30" data-sell="60" data-days="8" data-harvest="1" data-extra="0">Kale</option>
+            <option data-seed="40" data-sell="90" data-days="5" data-harvest="1" data-extra="0">Blue Jazz</option>
+            <option data-seed="80" data-sell="140" data-days="12" data-harvest="1" data-extra="0">Tulip</option>
+            <option data-seed="50" data-sell="110" data-days="8" data-harvest="1" data-extra="0">Garlic</option>
+            <option data-seed="35" data-sell="50" data-days="4" data-harvest="1" data-extra="0">Parsnip</option>
+            <option data-seed="60" data-sell="120" data-days="10" data-harvest="1" data-extra="0">Coffee Bean</option>
+            <option data-seed="40" data-sell="80" data-days="4" data-harvest="4" data-extra="0">Blueberry</option>
+            <option data-seed="30" data-sell="60" data-days="8" data-harvest="1" data-extra="0">Melon</option>
+            <option data-seed="50" data-sell="100" data-days="12" data-harvest="1" data-extra="0">Tomato</option>
+            <option data-seed="40" data-sell="70" data-days="5" data-harvest="1" data-extra="0">Hot Pepper</option>
+            <option data-seed="60" data-sell="150" data-days="11" data-harvest="1" data-extra="0">Summer Spangle</option>
+            <option data-seed="200" data-sell="220" data-days="13" data-harvest="1" data-extra="0">Hops</option>
+            <option data-seed="100" data-sell="250" data-days="13" data-harvest="1" data-extra="0">Starfruit</option>
+            <option data-seed="60" data-sell="160" data-days="5" data-harvest="1" data-extra="0">Cranberries</option>
+            <option data-seed="80" data-sell="120" data-days="7" data-harvest="1" data-extra="0">Eggplant</option>
+            <option data-seed="50" data-sell="90" data-days="5" data-harvest="1" data-extra="0">Pumpkin</option>
+            <option data-seed="100" data-sell="200" data-days="4" data-harvest="1" data-extra="0">Yam</option>
+            <option data-seed="30" data-sell="60" data-days="8" data-harvest="1" data-extra="0">Bok Choy</option>
+            <option data-seed="20" data-sell="40" data-days="4" data-harvest="1" data-extra="0">Fairy Rose</option>
+          </select>
+        </label>
+        <p class="calc-version">v1.6.15 · Verified 2026-08-11 · Source: <a href="https://stardewvalleywiki.com/Crops" target="_blank">Stardew Valley Wiki</a></p>
+
+        <div class="calc-inputs">
+          <div class="calc-input">
+            <label>Seed cost</label>
+            <input type="number" id="seedCost" value="80" min="0">
+            <span>g per crop</span>
+          </div>
+          <div class="calc-input">
+            <label>Sell price</label>
+            <input type="number" id="sellPrice" value="200" min="0">
+            <span>g per harvest</span>
+          </div>
+          <div class="calc-input">
+            <label>Growth days</label>
+            <input type="number" id="growthDays" value="13" min="1">
+            <span>days to first harvest</span>
+          </div>
+          <div class="calc-input">
+            <label>Harvests</label>
+            <input type="number" id="harvests" value="1" min="1">
+            <span>total harvests this season</span>
+          </div>
+          <div class="calc-input">
+            <label>Extra cost</label>
+            <input type="number" id="extraCost" value="0" min="0">
+            <span>fertilizer or other</span>
+          </div>
+        </div>
+
+        <button class="calc-btn" onclick="calcProfit()">Calculate profit</button>
+        <p class="calc-hint">Visible input arithmetic only.</p>
+      </div>
+
+      <div class="calc-right">
+        <div class="calc-result-card">
+          <span class="calc-status">Ready</span>
+          <div class="calc-big-number"><span id="profitResult">0</span> <span class="calc-unit">g net profit</span></div>
+          <div class="calc-breakdown">
+            <div><span>Revenue</span><strong id="revenueOut">0g</strong></div>
+            <div><span>Costs</span><strong id="costOut">0g</strong></div>
+            <div><span>Per day</span><strong id="perDayOut">0.0g</strong></div>
+          </div>
+          <p class="calc-formula">Formula: revenue minus seed and extra costs; daily profit equals net profit divided by growth days. Excludes processing, profession, quality and repeat growth.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="calc-footnotes">
+      <div class="fn-box">
+        <h4>Use it to compare</h4>
+        <p>Compare two crops by repeating this calculator twice. Confirm which assumptions matter before comparing expected profit per day.</p>
+        <p><a href="/tier/crop-profit/">See full crop tier list →</a></p>
+      </div>
+      <div class="fn-box">
+        <h4>Know the bounds</h4>
+        <p>Results may change with profession, quality, artisan goods, processing and modded crops. This tool is a visible calculator, not a hidden recommendation.</p>
+      </div>
+    </div>
+  </section>
+
   <section class="latest">
     <h2>Latest Updates</h2>
     <ul>
@@ -375,5 +472,39 @@
     });
   });
 })();
+</script>
+
+<script>
+(function(){
+  var sel = document.getElementById('cropSelect');
+  if (!sel) return;
+  sel.addEventListener('change', function(){
+    var opt = sel.options[sel.selectedIndex];
+    if (opt.dataset.seed) {
+      document.getElementById('seedCost').value = opt.dataset.seed;
+      document.getElementById('sellPrice').value = opt.dataset.sell;
+      document.getElementById('growthDays').value = opt.dataset.days;
+      document.getElementById('harvests').value = opt.dataset.harvest;
+      document.getElementById('extraCost').value = opt.dataset.extra;
+      calcProfit();
+    }
+  });
+  calcProfit();
+})();
+function calcProfit(){
+  var seed = parseFloat(document.getElementById('seedCost').value) || 0;
+  var sell = parseFloat(document.getElementById('sellPrice').value) || 0;
+  var days = parseFloat(document.getElementById('growthDays').value) || 1;
+  var harvests = parseFloat(document.getElementById('harvests').value) || 1;
+  var extra = parseFloat(document.getElementById('extraCost').value) || 0;
+  var revenue = sell * harvests;
+  var cost = seed + extra;
+  var profit = revenue - cost;
+  var perDay = profit / days;
+  document.getElementById('profitResult').textContent = profit;
+  document.getElementById('revenueOut').textContent = revenue + 'g';
+  document.getElementById('costOut').textContent = cost + 'g';
+  document.getElementById('perDayOut').textContent = perDay.toFixed(2) + 'g';
+}
 </script>
 {{ end }}
