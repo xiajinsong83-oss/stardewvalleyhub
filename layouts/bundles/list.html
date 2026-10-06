@@ -5,7 +5,7 @@
   <div class="progress-tracker">
     <p class="pt-eyebrow">Progress Tracker</p>
     <h1>Community Center Checklist</h1>
-    <p class="pt-side">Use standard bundle groups as a versioned reference when planning your season. Mixed variants and platform differences are not included in this first version.</p>
+    <p class="pt-side">Plan by season: use standard bundle groups as a versioned reference when planning your season. Mixed variants and platform differences are not included in this first version.</p>
   </div>
 
   <div class="bundle-layout">
@@ -14,36 +14,276 @@
       <div class="bundle-toolbar">
         <label>Show
           <select id="filterType" class="pals-select">
-            <option value="">All bundles</option>
-            <option value="crafts-room">Crafts Room</option>
-            <option value="pantry">Pantry</option>
-            <option value="fish-tank">Fish Tank</option>
-            <option value="boiler-room">Boiler Room</option>
-            <option value="bulletin-board">Bulletin Board</option>
-            <option value="vault">Vault</option>
+            <option value="">All reference lists</option>
+            <option value="spring">Spring</option>
+            <option value="summer">Summer</option>
+            <option value="fall">Fall</option>
+            <option value="any">Any season</option>
           </select>
         </label>
-        <span class="bundle-count">{{ len .Pages }} bundles</span>
+        <span class="bundle-count">26 bundles</span>
       </div>
 
       <div class="bundle-list" id="bundleList">
-        {{ range .Pages.ByTitle }}
-        {{ $proom := .Params.bundle_room | default "" }}
-        {{ $items := .Params.bundle_items | default slice }}
-        <label class="bundle-row" data-type="{{ $proom }}">
-          <input type="checkbox" class="bundle-check" data-bundle="{{ .File.ContentBaseName }}">
+        <label class="bundle-row" data-type="spring">
+          <input type="checkbox" class="bundle-check" data-bundle="spring-crops">
           <div class="bundle-row-body">
-            <h4>{{ .Title | replaceRE " – Community Center.*" "" }}</h4>
-            <p class="bundle-items">
-              {{ $names := slice }}
-              {{ range $items }}{{ $names = $names | append .name }}{{ end }}
-              {{ delimit $names " / " }}
-            </p>
+            <h4>Spring Crops</h4>
+            <p class="bundle-items">Parsnip / Green Bean / Cauliflower / Potato</p>
             <p class="bundle-meta">v1.6.15 · Verified 2026-08-11</p>
           </div>
-          <span class="bundle-source-tag">{{ replace $proom "-" " " | title }}</span>
+          <span class="bundle-source-tag">Source: Spring</span>
         </label>
-        {{ end }}
+
+        <label class="bundle-row" data-type="summer">
+          <input type="checkbox" class="bundle-check" data-bundle="summer-crops">
+          <div class="bundle-row-body">
+            <h4>Summer Crops</h4>
+            <p class="bundle-items">Tomato / Blueberry / Melon</p>
+            <p class="bundle-meta">v1.6.15 · Verified 2026-08-11</p>
+          </div>
+          <span class="bundle-source-tag">Source: Summer</span>
+        </label>
+
+        <label class="bundle-row" data-type="fall">
+          <input type="checkbox" class="bundle-check" data-bundle="fall-crops">
+          <div class="bundle-row-body">
+            <h4>Fall Crops</h4>
+            <p class="bundle-items">Corn / Eggplant / Pumpkin / Yam</p>
+            <p class="bundle-meta">v1.6.15 · Verified 2026-08-11</p>
+          </div>
+          <span class="bundle-source-tag">Source: Fall</span>
+        </label>
+
+        <label class="bundle-row" data-type="any">
+          <input type="checkbox" class="bundle-check" data-bundle="quality-crops">
+          <div class="bundle-row-body">
+            <h4>Quality Crops</h4>
+            <p class="bundle-items">5 Gold Parsnips / 5 Gold Melons / 5 Gold Pumpkins / 3 Gold Corn</p>
+            <p class="bundle-meta">v1.6.15 · Verified 2026-08-11</p>
+          </div>
+          <span class="bundle-source-tag">Source: Any season</span>
+        </label>
+
+        <label class="bundle-row" data-type="spring">
+          <input type="checkbox" class="bundle-check" data-bundle="spring-forage">
+          <div class="bundle-row-body">
+            <h4>Spring Foraging</h4>
+            <p class="bundle-items">Wild Horseradish / Daffodil / Leek / Dandelion</p>
+            <p class="bundle-meta">v1.6.15 · Verified 2026-08-11</p>
+          </div>
+          <span class="bundle-source-tag">Source: Spring</span>
+        </label>
+
+        <label class="bundle-row" data-type="summer">
+          <input type="checkbox" class="bundle-check" data-bundle="summer-forage">
+          <div class="bundle-row-body">
+            <h4>Summer Foraging</h4>
+            <p class="bundle-items">Grape / Spice Berry / Sweet Pea</p>
+            <p class="bundle-meta">v1.6.15 · Verified 2026-08-11</p>
+          </div>
+          <span class="bundle-source-tag">Source: Summer</span>
+        </label>
+
+        <label class="bundle-row" data-type="fall">
+          <input type="checkbox" class="bundle-check" data-bundle="fall-forage">
+          <div class="bundle-row-body">
+            <h4>Fall Foraging</h4>
+            <p class="bundle-items">Common Mushroom / Wild Plum / Hazelnut / Blackberry</p>
+            <p class="bundle-meta">v1.6.15 · Verified 2026-08-11</p>
+          </div>
+          <span class="bundle-source-tag">Source: Fall</span>
+        </label>
+
+        <label class="bundle-row" data-type="winter">
+          <input type="checkbox" class="bundle-check" data-bundle="winter-forage">
+          <div class="bundle-row-body">
+            <h4>Winter Foraging</h4>
+            <p class="bundle-items">Crystal Fruit / Crocus / Holly / Snow Yam</p>
+            <p class="bundle-meta">v1.6.15 · Verified 2026-08-11</p>
+          </div>
+          <span class="bundle-source-tag">Source: Winter</span>
+        </label>
+
+        <label class="bundle-row" data-type="any">
+          <input type="checkbox" class="bundle-check" data-bundle="river-fish">
+          <div class="bundle-row-body">
+            <h4>River Fish</h4>
+            <p class="bundle-items">Catfish / Shad / Rainbow Trout</p>
+            <p class="bundle-meta">v1.6.15 · Verified 2026-08-11</p>
+          </div>
+          <span class="bundle-source-tag">Source: Any season</span>
+        </label>
+
+        <label class="bundle-row" data-type="any">
+          <input type="checkbox" class="bundle-check" data-bundle="lake-fish">
+          <div class="bundle-row-body">
+            <h4>Lake Fish</h4>
+            <p class="bundle-items">Largemouth Bass / Carp / Bullhead</p>
+            <p class="bundle-meta">v1.6.15 · Verified 2026-08-11</p>
+          </div>
+          <span class="bundle-source-tag">Source: Any season</span>
+        </label>
+
+        <label class="bundle-row" data-type="any">
+          <input type="checkbox" class="bundle-check" data-bundle="ocean-fish">
+          <div class="bundle-row-body">
+            <h4>Ocean Fish</h4>
+            <p class="bundle-items">Sardine / Tuna / Red Mullet</p>
+            <p class="bundle-meta">v1.6.15 · Verified 2026-08-11</p>
+          </div>
+          <span class="bundle-source-tag">Source: Any season</span>
+        </label>
+
+        <label class="bundle-row" data-type="any">
+          <input type="checkbox" class="bundle-check" data-bundle="night-fish">
+          <div class="bundle-row-body">
+            <h4>Night Fishing</h4>
+            <p class="bundle-items">Walleye / Bream / Eel</p>
+            <p class="bundle-meta">v1.6.15 · Verified 2026-08-11</p>
+          </div>
+          <span class="bundle-source-tag">Source: Any season</span>
+        </label>
+
+        <label class="bundle-row" data-type="any">
+          <input type="checkbox" class="bundle-check" data-bundle="rare-crops">
+          <div class="bundle-row-body">
+            <h4>Rare Crops</h4>
+            <p class="bundle-items">Pomegranate / Mango / Coconut / Cactus Fruit</p>
+            <p class="bundle-meta">v1.6.15 · Verified 2026-08-11</p>
+          </div>
+          <span class="bundle-source-tag">Source: Any season</span>
+        </label>
+
+        <label class="bundle-row" data-type="any">
+          <input type="checkbox" class="bundle-check" data-bundle="translucent">
+          <div class="bundle-row-body">
+            <h4>Translucent</h4>
+            <p class="bundle-items">Slimejack / Bug Steak / Slime</p>
+            <p class="bundle-meta">v1.6.15 · Verified 2026-08-11</p>
+          </div>
+          <span class="bundle-source-tag">Source: Any season</span>
+        </label>
+
+        <label class="bundle-row" data-type="any">
+          <input type="checkbox" class="bundle-check" data-bundle="chef">
+          <div class="bundle-row-body">
+            <h4>Chef's Bundle</h4>
+            <p class="bundle-items">Maple Syrup / Fiddlehead Risotto / Poppyseed Muffin / Pancakes</p>
+            <p class="bundle-meta">v1.6.15 · Verified 2026-08-11</p>
+          </div>
+          <span class="bundle-source-tag">Source: Any season</span>
+        </label>
+
+        <label class="bundle-row" data-type="any">
+          <input type="checkbox" class="bundle-check" data-bundle="field-research">
+          <div class="bundle-row-body">
+            <h4>Field Research</h4>
+            <p class="bundle-items">Purple Mushroom / Nautilus Fossil / Sea Jelly / Frozen Tear</p>
+            <p class="bundle-meta">v1.6.15 · Verified 2026-08-11</p>
+          </div>
+          <span class="bundle-source-tag">Source: Any season</span>
+        </label>
+
+        <label class="bundle-row" data-type="any">
+          <input type="checkbox" class="bundle-check" data-bundle="enchanter">
+          <div class="bundle-row-body">
+            <h4>Enchanter's Bundle</h4>
+            <p class="bundle-items">Oak Resin / Wine / Morel / Ruby</p>
+            <p class="bundle-meta">v1.6.15 · Verified 2026-08-11</p>
+          </div>
+          <span class="bundle-source-tag">Source: Any season</span>
+        </label>
+
+        <label class="bundle-row" data-type="any">
+          <input type="checkbox" class="bundle-check" data-bundle="dwarf">
+          <div class="bundle-row-body">
+            <h4>Dwarf Bundle</h4>
+            <p class="bundle-items">Dwarf Scroll I / II / III / IV</p>
+            <p class="bundle-meta">v1.6.15 · Verified 2026-08-11</p>
+          </div>
+          <span class="bundle-source-tag">Source: Any season</span>
+        </label>
+
+        <label class="bundle-row" data-type="any">
+          <input type="checkbox" class="bundle-check" data-bundle="engineer">
+          <div class="bundle-row-body">
+            <h4>Engineer's Bundle</h4>
+            <p class="bundle-items">Copper Bar / Iron Bar / Refined Quartz</p>
+            <p class="bundle-meta">v1.6.15 · Verified 2026-08-11</p>
+          </div>
+          <span class="bundle-source-tag">Source: Any season</span>
+        </label>
+
+        <label class="bundle-row" data-type="any">
+          <input type="checkbox" class="bundle-check" data-bundle="restaurant">
+          <div class="bundle-row-body">
+            <h4>Restaurant Bundle</h4>
+            <p class="bundle-items">Maple Bar / Bread / Fried Calamari / Risotto</p>
+            <p class="bundle-meta">v1.6.15 · Verified 2026-08-11</p>
+          </div>
+          <span class="bundle-source-tag">Source: Any season</span>
+        </label>
+
+        <label class="bundle-row" data-type="any">
+          <input type="checkbox" class="bundle-check" data-bundle="child">
+          <div class="bundle-row-body">
+            <h4>Child's Bundle</h4>
+            <p class="bundle-items">Cookies / Pancakes / Cake / Rhubarb Pie</p>
+            <p class="bundle-meta">v1.6.15 · Verified 2026-08-11</p>
+          </div>
+          <span class="bundle-source-tag">Source: Any season</span>
+        </label>
+
+        <label class="bundle-row" data-type="any">
+          <input type="checkbox" class="bundle-check" data-bundle="reindeer">
+          <div class="bundle-row-body">
+            <h4>Reindeer Bundle</h4>
+            <p class="bundle-items">Cookie / Pumpkin Pie / Yams / Mulled Wine</p>
+            <p class="bundle-meta">v1.6.15 · Verified 2026-08-11</p>
+          </div>
+          <span class="bundle-source-tag">Source: Any season</span>
+        </label>
+
+        <label class="bundle-row" data-type="any">
+          <input type="checkbox" class="bundle-check" data-bundle="geologist">
+          <div class="bundle-row-body">
+            <h4>Geologist's Bundle</h4>
+            <p class="bundle-items">Quartz / Earth Crystal / Frozen Tear / Fire Quartz</p>
+            <p class="bundle-meta">v1.6.15 · Verified 2026-08-11</p>
+          </div>
+          <span class="bundle-source-tag">Source: Any season</span>
+        </label>
+
+        <label class="bundle-row" data-type="any">
+          <input type="checkbox" class="bundle-check" data-bundle="adventurer">
+          <div class="bundle-row-body">
+            <h4>Adventurer's Bundle</h4>
+            <p class="bundle-items">Slime / Bat Wing / Bug Meat</p>
+            <p class="bundle-meta">v1.6.15 · Verified 2026-08-11</p>
+          </div>
+          <span class="bundle-source-tag">Source: Any season</span>
+        </label>
+
+        <label class="bundle-row" data-type="any">
+          <input type="checkbox" class="bundle-check" data-bundle="forgotten">
+          <div class="bundle-row-body">
+            <h4>Forgotten Bundle</h4>
+            <p class="bundle-items">Prismatic Shard / Ancient Seed / Dwarf Scroll III</p>
+            <p class="bundle-meta">v1.6.15 · Verified 2026-08-11</p>
+          </div>
+          <span class="bundle-source-tag">Source: Any season</span>
+        </label>
+
+        <label class="bundle-row" data-type="any">
+          <input type="checkbox" class="bundle-check" data-bundle="vault">
+          <div class="bundle-row-body">
+            <h4>Vault Bundle</h4>
+            <p class="bundle-items">2,500g / 5,000g / 10,000g / 25,000g</p>
+            <p class="bundle-meta">v1.6.15 · Verified 2026-08-11</p>
+          </div>
+          <span class="bundle-source-tag">Source: Any season</span>
+        </label>
       </div>
 
       <div class="bundle-progress">
