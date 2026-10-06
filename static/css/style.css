@@ -553,10 +553,10 @@ body {
 .grid-cell { aspect-ratio: 1; background: #0f1828; border: 1px solid #2a3a55; border-radius: 6px; cursor: pointer; display: flex; align-items: center; justify-content: center; color: #4a5a75; font-size: 16px; background-size: contain; background-position: center; background-repeat: no-repeat; }
 .grid-cell.soil { background-color: #8b5a2b; background-image: url("/images/tools/hoe/Hoe.png"); }
 .grid-cell.crop { background-color: #3ddc97; background-image: url("/images/crops/parsnip/crop.png"); }
-.grid-cell.building { background-color: #c64040; background-image: url("/images/buildings/house/House (tier 1).png"); }
-.grid-cell.tree { background-color: #2d6a3f; background-image: url("/images/tools/axe/Steel Axe.png"); }
-.grid-cell.path { background-color: #9a9a9a; background-image: url("/images/craftable/decor/Wood Path.png"); }
-.grid-cell.water { background-color: #4a9fd4; background-image: url("/images/buildings/Fish Pond.png"); }
+.grid-cell.building { background-color: #c64040; background-image: url("/images/buildings/house/House%20(tier%201).png"); }
+.grid-cell.tree { background-color: #2d6a3f; background-image: url("/images/tools/axe/Steel%20Axe.png"); }
+.grid-cell.path { background-color: #9a9a9a; background-image: url("/images/craftable/decor/Wood%20Path.png"); }
+.grid-cell.water { background-color: #4a9fd4; background-image: url("/images/buildings/Fish%20Pond.png"); }
 
 .planner-summary { background: #141e30; border: 1px solid #2a3a55; border-radius: 12px; padding: 16px; }
 .planner-summary h3 { margin: 0 0 4px; font-size: 14px; }
