@@ -785,30 +785,5 @@ select { background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='h
 .faq-item p { color: #9aa8bf; font-size: 13px; line-height: 1.6; margin: 10px 0 0; }
 @media (max-width: 900px) { .trust-grid { grid-template-columns: 1fr; } .faq-layout { grid-template-columns: 1fr; } .faq-left h2 { font-size: 28px; } }
 
-/* ---------- Hero farm image English overlay ---------- */
 .hero-farm-wrap { position: relative; display: inline-block; }
-.hero-farm-wrap::before {
-  content: "FARM PLAN";
-  position: absolute;
-  top: 12px;
-  left: 20px;
-  font-family: 'Press Start 2P', cursive;
-  font-size: 16px;
-  color: #f0e6c8;
-  text-shadow: 2px 2px 0 #5a3a1a;
-  z-index: 2;
-  letter-spacing: 2px;
-}
 .planner-hero-img-wrap { position: relative; display: inline-block; }
-.planner-hero-img-wrap::before {
-  content: "FARM PLAN";
-  position: absolute;
-  top: 12px;
-  left: 20px;
-  font-family: 'Press Start 2P', cursive;
-  font-size: 16px;
-  color: #f0e6c8;
-  text-shadow: 2px 2px 0 #5a3a1a;
-  z-index: 2;
-  letter-spacing: 2px;
-}
