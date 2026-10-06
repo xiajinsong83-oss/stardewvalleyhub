@@ -1,0 +1,42 @@
+name: Auto-update game data
+
+on:
+  schedule:
+    - cron: '0 0 */3 * *'
+  workflow_dispatch:
+
+jobs:
+  update-data:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - run: |
+          mkdir -p /tmp/svd && cd /tmp/svd && npm init -y && npm install stardew-valley-data
+      - run: |
+          OLD_VER=$(cat data-src/package/package.json | grep version | head -1 | cut -d'"' -f4)
+          rm -rf data-src/package
+          cp -r /tmp/svd/node_modules/stardew-valley-data data-src/package
+          mkdir -p data
+          cp data-src/package/data/fish.json data/fish.json
+          cp data-src/package/data/artifacts.json data/artifacts.json
+          cp data-src/package/data/minerals.json data/minerals.json
+          NEW_VER=$(cat data-src/package/package.json | grep version | head -1 | cut -d'"' -f4)
+          echo "OLD_VER=$OLD_VER" >> $GITHUB_ENV
+          echo "NEW_VER=$NEW_VER" >> $GITHUB_ENV
+      - id: diff
+        run: |
+          if git diff --quiet data-src/ data/; then
+            echo "changed=false" >> $GITHUB_OUTPUT
+          else
+            echo "changed=true" >> $GITHUB_OUTPUT
+          fi
+      - if: steps.diff.outputs.changed == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data-src/ data/
+          git commit -m "chore: auto-update game data ${{ env.OLD_VER }} → ${{ env.NEW_VER }}"
+          git push
