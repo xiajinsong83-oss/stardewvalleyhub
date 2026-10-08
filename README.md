@@ -33,11 +33,12 @@
 ```
 
 ## 已实现（阶段一）
-- 英文全站 257 页：首页、34 NPC、47 作物、77 鱼、52 收集包、10 BOSS、12 FAQ、2 更新资讯、5 法律页、1 玩家反馈页
-- 真实开源数据：npm `stardew-valley-data` v1.1.1（机器可读、无版权文本）；BOSS 栏目数据来自 monsters.json / monster-loot.json / weapons.json / monster-slayer-goals.json（HP、伤害、掉落、武器建议均由数据可复算推导并标注估算）
-- 新增栏目（本轮）：
+- 英文全站 623 页：34 NPC、47 作物、77 鱼、52 收集包、10 BOSS、81 食谱、95 博物馆展品、12 节日、31 心事件、17 工具、24 建筑、49 成就、28 特殊订单、19 宠物、12 FAQ、2 更新资讯、5 法律页、1 玩家反馈页、1 赚钱攻略页
+- 真实开源数据：npm `stardew-valley-data` v1.1.0（机器可读、无版权文本），数据源已固化在工程内 `data-src/package/data/`（自包含，不依赖临时目录）；BOSS 栏目数据来自 monsters.json / monster-loot.json / weapons.json / monster-slayer-goals.json（HP、伤害、掉落、武器建议均由数据可复算推导并标注估算）
+- 新增栏目：
   - `/boss/`：BOSS & 精英怪攻略（Prismatic Slime、Tiger Slime、Big Slime + 7 种危险矿井强化怪），含数据表/掉落表/武器命中估算/FAQ
   - `/feedback/`：玩家反馈页（官方论坛、Discord、Reddit、Steam 社区、官方联系页等公开渠道链接 + 反馈指南，静态站不采集用户数据）
+  - 第十七章全 10 栏目：recipes(81) / museum(95) / festivals(12) / events(31) / money(1) 高优先；tools(17) / unlocks(24) / achievements(49) / orders(28) / pets(19) 中优先，全部数据驱动（cooking / artifacts / minerals / seasons / events / tools / buildings / achievements / special-orders / animals / artisan-goods JSON），每页含数据表 + FAQ + Schema + 相关链接
 - SEO：每页独立 Title/Description、FAQPage + BreadcrumbList JSON-LD、面包屑、hreflang、每语言独立 sitemap、robots.txt
 - 合规：Cookie 同意弹窗（未同意不加载 AdSense）、广告随机二选一（通栏/侧边，基于页面哈希）、ads.txt、DMCA/Privacy/Terms/About/Contact
 - 多语言框架：9 套语言配置 + 语言切换器 + 各语言 sitemap
@@ -62,7 +63,7 @@
 ```bash
 # 1) 获取数据（已核实的开源源，替换计划书待核实源）
 #    npm pack stardew-valley-data 并解压，或 cd 到包含 data/*.json 的目录
-python3 scripts/build_site.py <data_dir> .
+python3 scripts/build_site.py            # 默认读取 data-src/package/data
 hugo --minify        # 输出 public/
 ```
 
@@ -72,7 +73,7 @@ hugo --minify        # 输出 public/
 3. Cloudflare 接入域名 stardewvalleyhub.wiki：A/AAAA 指向 GitHub Pages（或 CNAME），开启 HTTPS、缓存规则（ads.txt 绕过缓存）、关闭 github.io 收录；
 4. 在仓库 Secrets 配置 `CLOUDFLARE_API_TOKEN`、`CLOUDFLARE_ZONE_ID`（可选，用于构建后清 CDN 缓存）；
 5. AdSense 后台创建 In-Article 与 Vertical Sidebar 广告单元，替换 `hugo.toml` 中 `adsenseInArticleSlot` / `adsenseSidebarSlot`；
-6. 提交 Google/Bing 收录（sitemap: https://stardewvalleyhub.wiki/sitemap.xml）。
+6. 提交 Google/Bing 收录（sitemap: https://www.stardewvalleyhub.wiki/sitemap.xml）。
 
 ## 待接入（阶段二剩余）
 - 配置 LLM_API_KEY 后运行 ai_pipeline.py 生成 8 套语言全量正文（脚本与 workflow 已就绪，见上）；
