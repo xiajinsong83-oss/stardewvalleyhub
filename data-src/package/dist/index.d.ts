@@ -8,39 +8,9 @@ interface Achievement {
     secret: boolean;
 }
 
-interface AnimalProduce {
-    id: string;
-    name: string;
-    sellPrice: number;
-    image: string;
-}
-interface Pet {
-    type: 'pet';
-    id: string;
-    name: string;
-    variant?: number;
-    image: string;
-}
-interface FarmAnimal {
-    type: 'farm-animal';
-    id: string;
-    name: string;
-    description: string;
-    building: string;
-    purchasePrice: number | null;
-    sellPrice: number;
-    daysToMature: number;
-    daysToProduce: number;
-    harvestMethod: 'drop' | 'tool' | 'dig';
-    harvestTool: string | null;
-    produce: AnimalProduce;
-    deluxeProduce: AnimalProduce | null;
-    image: string;
-}
-type Animal = Pet | FarmAnimal;
-
 type Season = 'spring' | 'summer' | 'fall' | 'winter' | 'ginger island';
 type Quality = 'silver' | 'gold' | 'iridium';
+type ItemQuality = 'base' | Quality;
 interface EnergyHealth {
     energy?: number;
     health?: number;
@@ -66,6 +36,69 @@ interface GiftPreferences {
     dislikes: string[];
     hates: string[];
 }
+type KnowledgeBonus = 'spring-onion-mastery' | 'bears-knowledge';
+type ProfessionBonus = 'artisan' | 'rancher' | 'tiller' | 'blacksmith' | 'gemologist' | 'tapper' | 'fisher' | 'angler';
+type DayOfWeek = 'Monday' | 'Tuesday' | 'Wednesday' | 'Thursday' | 'Friday' | 'Saturday' | 'Sunday';
+interface Buff {
+    stat: string;
+    value: number;
+}
+interface ArtisanUses {
+    honey: boolean;
+    wine: boolean;
+    juice: boolean;
+    pickles: boolean;
+    jelly: boolean;
+    driedMushrooms: boolean;
+    driedFruit: boolean;
+}
+interface TraderShopItem {
+    id: string;
+    name: string;
+    description: string;
+    image: string;
+    tradeItemId: string;
+    tradeItemName: string;
+    tradeItemImage: string;
+    tradeAmount: number;
+    day?: DayOfWeek;
+    isRecipe?: boolean;
+    availability?: string;
+}
+
+interface AnimalProduce {
+    id: string;
+    name: string;
+    sellPrice: number;
+    profession: ProfessionBonus[];
+    maxQuality: ItemQuality;
+    image: string;
+}
+interface Pet {
+    type: 'pet';
+    id: string;
+    name: string;
+    variant?: number;
+    purchasePrice: number | null;
+    image: string;
+}
+interface FarmAnimal {
+    type: 'farm-animal';
+    id: string;
+    name: string;
+    description: string;
+    building: string;
+    purchasePrice: number | null;
+    sellPrice: number;
+    daysToMature: number;
+    daysToProduce: number;
+    harvestMethod: 'drop' | 'tool' | 'dig';
+    harvestTool: string | null;
+    produce: AnimalProduce;
+    deluxeProduce: AnimalProduce | null;
+    image: string;
+}
+type Animal = Pet | FarmAnimal;
 
 type BundleRoom = 'crafts-room' | 'pantry' | 'fish-tank' | 'boiler-room' | 'bulletin-board' | 'vault' | 'abandoned-joja-mart';
 interface BundleItem {
@@ -112,6 +145,7 @@ interface JojaBundle {
 }
 type Bundle = ItemBundle | GoldBundle | JojaBundle;
 
+type ArtisanGoodBuff = Buff;
 interface ArtisanIngredient {
     name: string;
     id: string | null;
@@ -135,10 +169,16 @@ interface ArtisanGood {
     processingMinutes: number;
     processingDays: number;
     sellPrice: number | null;
+    profession: ProfessionBonus[];
     sellPriceFormula: string | null;
     priceFormula: PriceFormula | null;
     qualityLevels: boolean;
     cask: CaskAging | null;
+    energyHealthFormula: string | null;
+    energyHealth?: EnergyHealth | null;
+    buffs: ArtisanGoodBuff[];
+    buffDuration: number | null;
+    maxQuality: ItemQuality;
     image: string;
 }
 
@@ -150,6 +190,14 @@ interface QualityPrice {
 interface QualityEnergyHealth {
     quality: Quality;
     icon: string;
+    energy: number;
+    health: number;
+}
+interface ArtisanResult {
+    sellPrice: number;
+}
+interface ArtisanEnergyResult {
+    sellPrice: number;
     energy: number;
     health: number;
 }
@@ -170,6 +218,7 @@ interface Crop {
     seedBuyPrices: SeedBuyPrice[];
     seedSellPrice: number;
     cropSellPrice: number;
+    profession: ProfessionBonus[];
     harvestQuantity: HarvestQuantity;
     trellis: boolean;
     giant: boolean;
@@ -179,6 +228,8 @@ interface Crop {
     giantImage?: string;
     stages: Stage[];
     energyHealth?: EnergyHealth;
+    maxQuality: ItemQuality;
+    artisanUses: ArtisanUses;
     farmingXP?: number;
 }
 
@@ -250,7 +301,7 @@ interface MonsterSlayerGoal {
     reward: SlayerReward;
 }
 
-type SearchResultKind = 'crop' | 'crop-seed' | 'fruit-tree' | 'fruit-tree-produce' | 'wild-tree' | 'wild-tree-seed' | 'wild-tree-tapper' | 'animal' | 'animal-produce' | 'artisan-good' | 'monster' | 'monster-loot' | 'ring' | 'tool' | 'weapon' | 'hat' | 'footwear' | 'forageable' | 'fish' | 'bait' | 'tackle' | 'cooked-dish' | 'artifact' | 'mineral' | 'geode' | 'mining-node' | 'mineral-resource' | 'crafting-recipe';
+type SearchResultKind = 'crop' | 'crop-seed' | 'fruit-tree' | 'fruit-tree-produce' | 'wild-tree' | 'wild-tree-seed' | 'wild-tree-tapper' | 'animal' | 'animal-produce' | 'artisan-good' | 'monster' | 'monster-loot' | 'ring' | 'tool' | 'weapon' | 'hat' | 'footwear' | 'forageable' | 'fish' | 'bait' | 'tackle' | 'cooked-dish' | 'artifact' | 'mineral' | 'geode' | 'mining-node' | 'mineral-resource' | 'crafting-recipe' | 'rarecrow';
 interface SearchResult {
     kind: SearchResultKind;
     id: string;
@@ -266,6 +317,7 @@ interface SearchResult {
 interface SkillLevelRecipes {
     crafting: string[];
     cooking: string[];
+    additional: string[];
 }
 interface SkillLevel {
     level: number;
@@ -312,14 +364,22 @@ interface SeasonData {
     totalDays: number;
     image: string;
     festivals: Festival[];
+    bookseller: number[];
 }
 
+interface ChoppedTreeProduce {
+    id: string;
+    name: string;
+    image?: string;
+}
 interface FruitTreeProduce {
     id: string;
     name: string;
     sellPrice: number;
+    profession: ProfessionBonus[];
     image: string;
     energyHealth?: EnergyHealth;
+    artisanUses: ArtisanUses;
 }
 interface FruitTree {
     type: 'fruit-tree';
@@ -336,11 +396,13 @@ interface FruitTree {
     saplingImage: string;
     stages: Stage[];
     produce: FruitTreeProduce;
+    choppedProduce: ChoppedTreeProduce[];
 }
 interface WildTreeTapper {
     id: string;
     name: string;
     sellPrice: number;
+    profession: ProfessionBonus[];
     image: string;
     energyHealth?: EnergyHealth;
 }
@@ -348,13 +410,14 @@ interface WildTree {
     type: 'wild-tree';
     id: string;
     name: string;
-    seedId: string;
-    seedName: string;
+    seedId?: string;
+    seedName?: string;
     description: string;
     image: string;
-    seedImage: string;
+    seedImage?: string;
     stages: Stage[];
     tapper?: WildTreeTapper;
+    choppedProduce: ChoppedTreeProduce[];
 }
 type Tree = FruitTree | WildTree;
 
@@ -382,6 +445,12 @@ interface Quest {
     rewards: string;
 }
 
+interface HeartEvent {
+    heart: number;
+    id: number | number[] | null;
+    description: string;
+    details: string;
+}
 interface Villager extends GiftPreferences {
     id: string;
     name: string;
@@ -391,14 +460,16 @@ interface Villager extends GiftPreferences {
     };
     address: string;
     occupation: string;
+    description: string;
     marriageable: boolean;
-    image: string;
-    spouseImage?: string;
     hearts: {
         max: number;
         bouquetIncrease: number;
         spouseIncrease: number;
     };
+    events: HeartEvent[];
+    image: string;
+    spouseImage?: string;
 }
 
 interface Weather {
@@ -428,11 +499,8 @@ interface UpgradeableTool {
     canEnchant: boolean;
     levels: UpgradeLevel[];
 }
-interface FishingRod {
-    id: string;
-    type: 'fishing-rod';
+interface FishingRodLevel {
     name: string;
-    description: string;
     image: string;
     cost: number | null;
     fishingLevelRequired: number | null;
@@ -440,6 +508,15 @@ interface FishingRod {
     tackleSlots: number;
     canEnchant: boolean;
     obtain: string;
+    description: string;
+}
+interface FishingRod {
+    id: string;
+    type: 'fishing-rod';
+    name: string;
+    description: string;
+    canEnchant: boolean;
+    levels: FishingRodLevel[];
 }
 interface SimpleTool {
     id: string;
@@ -504,6 +581,7 @@ interface Hat {
     description: string;
     obtain: string;
     image: string;
+    price?: number;
 }
 
 interface Footwear {
@@ -513,6 +591,7 @@ interface Footwear {
     defense: number;
     immunity: number;
     obtain: string;
+    sellPrice: number;
     image: string;
 }
 
@@ -523,24 +602,45 @@ interface Forageable {
     seasons: Season[];
     locations: string;
     sellPrice: number;
+    profession: ProfessionBonus[];
+    knowledge: KnowledgeBonus[];
+    energyHealth?: EnergyHealth;
+    maxQuality: ItemQuality;
+    artisanUses: ArtisanUses;
     image: string;
 }
 
 type FishCatchType = 'rod' | 'crab-pot';
 type FishWeather = 'sunny' | 'rainy' | 'both';
+type FishRoe = 'roe' | 'caviar';
+type FishCategory = 'regular' | 'crab-pot' | 'night-market' | 'legendary' | 'legendary-2' | 'other';
+interface FishPondProduce {
+    product: string;
+    minPopulation: number;
+}
+interface FishPond {
+    produce: FishPondProduce[];
+}
 interface Fish {
     id: string;
     name: string;
     description: string;
     catchType: FishCatchType;
+    category: FishCategory;
     seasons: Season[];
     location: string;
     weather?: FishWeather;
     time?: string;
     difficulty?: number;
     sellPrice: number;
+    profession: ProfessionBonus[];
     fishTank: boolean;
+    canSmoke: boolean;
+    roe: FishRoe | null;
+    fishPond: FishPond | null;
     usedIn: string[];
+    energyHealth?: EnergyHealth;
+    maxQuality: ItemQuality;
     image: string;
 }
 
@@ -560,10 +660,7 @@ interface Tackle {
     image: string;
 }
 
-interface CookingBuff {
-    stat: string;
-    value: number;
-}
+type CookingBuff = Buff;
 type RecipeSource = {
     type: 'default';
 } | {
@@ -617,11 +714,7 @@ interface CollectionItem {
     image: string;
 }
 
-interface CraftingIngredient {
-    id: string;
-    name: string;
-    quantity: number;
-}
+type CraftingIngredient = Ingredient;
 interface CraftingOutput {
     id: string;
     name: string;
@@ -652,9 +745,16 @@ interface MineralItem {
     kind: 'mineral';
     description: string;
     sellPrice: number;
+    profession: ProfessionBonus[];
     gemologistPrice: number;
     locations: string[];
     image: string;
+}
+interface GeodeContent {
+    name: string;
+    image?: string;
+    quantity?: string;
+    chance?: string;
 }
 interface GeodeContainer {
     id: string;
@@ -662,8 +762,10 @@ interface GeodeContainer {
     kind: 'geode';
     description: string;
     sellPrice: number;
+    profession: ProfessionBonus[];
     locations: string[];
     image: string;
+    contents?: GeodeContent[];
 }
 interface OreItem {
     id: string;
@@ -671,6 +773,7 @@ interface OreItem {
     kind: 'ore';
     description: string;
     sellPrice: number;
+    profession: ProfessionBonus[];
     locations: string[];
     image: string;
 }
@@ -680,6 +783,7 @@ interface BarItem {
     kind: 'bar';
     description: string;
     sellPrice: number;
+    profession: ProfessionBonus[];
     smeltRecipes: SmeltRecipe[];
     image: string;
 }
@@ -704,6 +808,7 @@ interface ResourceItem {
     kind: 'resource';
     description: string;
     sellPrice: number;
+    profession: ProfessionBonus[];
     locations: string[];
     image: string;
 }
@@ -853,7 +958,7 @@ interface GuildItem {
 }
 
 type CarpenterCategory = 'material' | 'recipe' | 'furniture' | 'craftable';
-type CarpenterDay = 'Monday' | 'Tuesday' | 'Wednesday' | 'Thursday' | 'Friday' | 'Saturday' | 'Sunday';
+type CarpenterDay = DayOfWeek;
 interface CarpenterItem {
     id: string;
     name: string;
@@ -876,23 +981,11 @@ interface CasinoItem {
     category: CasinoCategory;
 }
 
-type DesertTraderDay = 'Monday' | 'Tuesday' | 'Wednesday' | 'Thursday' | 'Friday' | 'Saturday' | 'Sunday';
-interface DesertTraderItem {
-    id: string;
-    name: string;
-    description: string;
-    image: string;
-    tradeItemId: string;
-    tradeItemName: string;
-    tradeItemImage: string;
-    tradeAmount: number;
-    day?: DesertTraderDay;
-    isRecipe?: boolean;
-    availability?: string;
-}
+type DesertTraderDay = DayOfWeek;
+type DesertTraderItem = TraderShopItem;
 
 type OasisCategory = 'seed' | 'food' | 'furniture' | 'clothing' | 'special';
-type OasisDay = 'Monday' | 'Tuesday' | 'Wednesday' | 'Thursday' | 'Friday' | 'Saturday' | 'Sunday';
+type OasisDay = DayOfWeek;
 interface OasisItem {
     id: string;
     name: string;
@@ -917,20 +1010,8 @@ interface VolcanoShopItem {
     availability?: string;
 }
 
-type IslandTraderDay = 'Monday' | 'Tuesday' | 'Wednesday' | 'Thursday' | 'Friday' | 'Saturday' | 'Sunday';
-interface IslandTraderItem {
-    id: string;
-    name: string;
-    description: string;
-    image: string;
-    tradeItemId: string;
-    tradeItemName: string;
-    tradeItemImage: string;
-    tradeAmount: number;
-    day?: IslandTraderDay;
-    isRecipe?: boolean;
-    availability?: string;
-}
+type IslandTraderDay = DayOfWeek;
+type IslandTraderItem = TraderShopItem;
 
 type FieldOfficeCollection = 'large-animal' | 'snake' | 'mummified-frog' | 'mummified-bat';
 interface FieldOfficeReward {
@@ -995,7 +1076,7 @@ interface DwarfShopItem {
 }
 
 type LocationCategory = 'The Valley' | 'Beyond the Valley' | 'Pelican Town' | 'Cindersap Forest' | 'The Sewers' | 'The Beach' | 'The Mountain' | 'Railroad' | 'Quarry' | 'The Desert' | 'Ginger Island';
-type LocationDay = 'Monday' | 'Tuesday' | 'Wednesday' | 'Thursday' | 'Friday' | 'Saturday' | 'Sunday';
+type LocationDay = DayOfWeek;
 interface LocationHours {
     open: string;
     close: string;
@@ -1159,7 +1240,7 @@ interface BuildingMaterial {
     item: string;
     quantity: number;
 }
-type BuildingBuilder = 'Robin' | 'Wizard';
+type BuildingBuilder = 'Robin' | 'Wizard' | 'Community Center' | 'Joja';
 interface Building {
     id: string;
     name: string;
@@ -1170,7 +1251,16 @@ interface Building {
     materials: BuildingMaterial[];
     upgradeFrom: string | null;
     magical: boolean;
+    animalCapacity?: number;
     image: string;
+}
+
+interface Rarecrow {
+    id: string;
+    number: number;
+    name: string;
+    image: string;
+    obtain: string;
 }
 
 /**
@@ -1319,6 +1409,89 @@ declare class QualityCalculator {
 }
 /** Returns a QualityCalculator instance for computing quality-scaled prices and energy/health values. */
 declare function qualityCalculator(): QualityCalculator;
+/**
+ * Calculates sell prices and energy/health values for artisan goods.
+ * Each method accepts pre-computed base values for the source ingredient.
+ */
+declare class ArtisanCalculator {
+    /** Roe sell price: `30 + Math.floor(baseFishPrice / 2)` */
+    roe(baseFishPrice: number): ArtisanResult;
+    /** Aged Roe sell price: `60 + baseFishPrice` */
+    agedRoe(baseFishPrice: number): ArtisanResult;
+    /**
+     * Honey sell price: `100 + (baseFlowerPrice * 2)`.
+     * Pass `0` for wild honey (no nearby flower).
+     */
+    honey(baseFlowerPrice: number): ArtisanResult;
+    /** Wine sell price (`Math.floor(baseFruitPrice * 3)`) and energy/health (`×1.75`). */
+    wine(baseFruitPrice: number, baseEnergy: number, baseHealth: number): ArtisanEnergyResult;
+    /** Juice sell price (`Math.floor(basePrice * 2.25)`) and energy/health (`×2`). */
+    juice(basePrice: number, baseEnergy: number, baseHealth: number): ArtisanEnergyResult;
+    /** Pickles sell price (`Math.floor(basePrice * 2) + 50`) and energy/health (`×1.75`). */
+    pickles(basePrice: number, baseEnergy: number, baseHealth: number): ArtisanEnergyResult;
+    /** Jelly sell price (`Math.floor(baseFruitPrice * 2) + 50`) and energy/health (`×2`). */
+    jelly(baseFruitPrice: number, baseEnergy: number, baseHealth: number): ArtisanEnergyResult;
+    /** Dried Mushrooms sell price (`Math.floor(baseMushroomPrice * 7.5) + 25`) and energy/health (`×3`). */
+    driedMushrooms(baseMushroomPrice: number, baseEnergy: number, baseHealth: number): ArtisanEnergyResult;
+    /** Dried Fruit sell price (`Math.floor(baseFruitPrice * 7.5)`) and energy/health (`×3`). */
+    driedFruit(baseFruitPrice: number, baseEnergy: number, baseHealth: number): ArtisanEnergyResult;
+    /** Smoked Fish sell price (`Math.floor(baseFishPrice * 2)`) and energy/health (`×1.5`). */
+    smokedFish(baseFishPrice: number, baseEnergy: number, baseHealth: number): ArtisanEnergyResult;
+}
+/** Returns an ArtisanCalculator instance for computing artisan good sell prices and energy/health values. */
+declare function artisanCalculator(): ArtisanCalculator;
+/**
+ * Calculates sell prices with profession bonuses applied.
+ * Each method takes a base sell price and returns the adjusted value.
+ */
+declare class ProfessionCalculator {
+    /** Artisan profession bonus: `Math.floor(price * 1.4)` */
+    artisan(price: number): number;
+    /** Rancher profession bonus: `Math.floor(price * 1.2)` */
+    rancher(price: number): number;
+    /** Tiller profession bonus: `Math.floor(price * 1.1)` */
+    tiller(price: number): number;
+    /** Blacksmith profession bonus: `Math.floor(price * 1.5)` */
+    blacksmith(price: number): number;
+    /** Gemologist profession bonus: `Math.floor(price * 1.3)` */
+    gemologist(price: number): number;
+    /** Tapper profession bonus: `Math.floor(price * 1.25)` */
+    tapper(price: number): number;
+    /** Fisher profession bonus: `Math.floor(price * 1.25)` */
+    fisher(price: number): number;
+    /** Angler profession bonus: `Math.floor(price * 1.5)` */
+    angler(price: number): number;
+}
+/** Returns a ProfessionCalculator instance for computing profession-adjusted sell prices. */
+declare function professionCalculator(): ProfessionCalculator;
+/**
+ * Calculates sell prices with special knowledge bonuses applied.
+ * Each method takes a base sell price and returns the adjusted value.
+ */
+declare class KnowledgeCalculator {
+    /** Spring Onion Mastery bonus: `Math.floor(price * 5)` */
+    springOnionMastery(price: number): number;
+    /** Bear's Knowledge bonus: `Math.floor(price * 3)` */
+    bearsKnowledge(price: number): number;
+}
+/** Returns a KnowledgeCalculator instance for computing knowledge bonus sell prices. */
+declare function knowledgeCalculator(): KnowledgeCalculator;
+/**
+ * Calculates the cost to purchase remaining Golden Walnuts from the Joja Parrot.
+ * Each unfound walnut costs 10,000g. All remaining walnuts are delivered after sleeping.
+ */
+declare class JojaParrotCalculator {
+    /** Calculate the gold cost to buy all remaining walnuts. */
+    cost(walnutsFound: number): number;
+    /** Returns how many walnuts are still unfound. */
+    remaining(walnutsFound: number): number;
+    /** The total number of Golden Walnuts available in the game. */
+    get total(): number;
+    /** The cost per individual unfound walnut (10,000g). */
+    get costPerWalnut(): number;
+}
+/** Returns a JojaParrotCalculator instance for computing Golden Walnut purchase costs. */
+declare function jojaParrotCalculator(): JojaParrotCalculator;
 
 /** Query builder for crop data. All filter and sort methods return a new CropQuery for chaining. */
 declare class CropQuery extends QueryBase<Crop> {
@@ -1343,6 +1516,8 @@ declare class CropQuery extends QueryBase<Crop> {
     availableInShop(): CropQuery;
     /** Filter to crops with energy/health values (edible when consumed). */
     eatable(): CropQuery;
+    /** Filter to crops that can be used to produce the given artisan good (e.g. `'wine'`, `'honey'`). */
+    byArtisanUse(use: keyof ArtisanUses): CropQuery;
     /** Sort by crop sell price. Default: `'desc'` (most valuable first). */
     sortBySellPrice(order?: 'asc' | 'desc'): CropQuery;
     /** Sort by grow days. Default: `'asc'` (fastest first). */
@@ -1354,6 +1529,7 @@ declare function crops(source?: Crop[]): CropQuery;
 /** Query builder for farm map data. All filter methods return a new FarmMapQuery for chaining. */
 declare class FarmMapQuery extends QueryBase<FarmMap> {
     constructor(data?: FarmMap[]);
+    /** Filter to maps that grant a bonus to the given skill (case-insensitive). */
     bySkill(skill: string): FarmMapQuery;
 }
 /** Returns a FarmMapQuery for all farm map data. Pass `source` to wrap a pre-filtered array. */
@@ -1451,6 +1627,8 @@ declare class TreeQuery extends QueryBase<Tree> {
     wildTrees(): TreeQuery;
     /** Filter fruit trees by season they produce in. Wild trees are excluded. */
     bySeason(season: Season): TreeQuery;
+    /** Filter to fruit trees whose produce can be used for the given artisan good. Wild trees always return false for all uses. */
+    byArtisanUse(use: keyof ArtisanUses): TreeQuery;
     /** Filter to wild trees that can be tapped (have a `tapper` product). */
     tappable(): TreeQuery;
     /**
@@ -1536,8 +1714,11 @@ declare function villagers(source?: Villager[]): VillagerQuery;
 /** Query builder for weather data. All filter methods return a new WeatherQuery for chaining. */
 declare class WeatherQuery extends QueryBase<Weather> {
     constructor(data?: Weather[]);
+    /** Filter to weather events that can occur in the given season. */
     bySeason(season: Season): WeatherQuery;
+    /** Filter to weather events that water crops when they occur. */
     watersCrops(): WeatherQuery;
+    /** Filter to special weather events (e.g. Green Rain, Storm). */
     special(): WeatherQuery;
 }
 /** Returns a WeatherQuery for all weather data. Pass `source` to wrap a pre-filtered array. */
@@ -1616,6 +1797,7 @@ declare function weapons(source?: Weapon[]): WeaponQuery;
 /** Query builder for weapon stat data (Speed, Defense, Weight, Crit. Chance, Crit. Power). All sort methods return a new WeaponStatQuery for chaining. */
 declare class WeaponStatQuery extends QueryBase<WeaponStat> {
     constructor(data?: WeaponStat[]);
+    /** Sort alphabetically by name. Default: `'asc'`. */
     sortByName(order?: 'asc' | 'desc'): WeaponStatQuery;
 }
 /** Returns a WeaponStatQuery for all weapon stat data. Pass `source` to wrap a pre-filtered array. */
@@ -1624,6 +1806,7 @@ declare function weaponStats(source?: WeaponStat[]): WeaponStatQuery;
 /** Query builder for hat data. All sort methods return a new HatQuery for chaining. */
 declare class HatQuery extends QueryBase<Hat> {
     constructor(data?: Hat[]);
+    /** Sort alphabetically by name. Default: `'asc'`. */
     sortByName(order?: 'asc' | 'desc'): HatQuery;
 }
 /** Returns a HatQuery for all hat data. Pass `source` to wrap a pre-filtered array. */
@@ -1632,8 +1815,11 @@ declare function hats(source?: Hat[]): HatQuery;
 /** Query builder for footwear data. All sort methods return a new FootwearQuery for chaining. */
 declare class FootwearQuery extends QueryBase<Footwear> {
     constructor(data?: Footwear[]);
+    /** Sort alphabetically by name. Default: `'asc'`. */
     sortByName(order?: 'asc' | 'desc'): FootwearQuery;
+    /** Sort by defense value. Default: `'desc'` (highest first). */
     sortByDefense(order?: 'asc' | 'desc'): FootwearQuery;
+    /** Sort by immunity value. Default: `'desc'` (highest first). */
     sortByImmunity(order?: 'asc' | 'desc'): FootwearQuery;
 }
 /** Returns a FootwearQuery for all footwear data. Pass `source` to wrap a pre-filtered array. */
@@ -1644,6 +1830,8 @@ declare class ForageableQuery extends QueryBase<Forageable> {
     constructor(data?: Forageable[]);
     /** Filter to forageables available in the given season. */
     bySeason(season: Season): ForageableQuery;
+    /** Filter to forageables that can be used to produce the given artisan good (e.g. `'wine'`, `'driedMushrooms'`). */
+    byArtisanUse(use: keyof ArtisanUses): ForageableQuery;
     /** Sort alphabetically by name. Default: `'asc'`. */
     sortByName(order?: 'asc' | 'desc'): ForageableQuery;
     /** Sort by sell price. Default: `'desc'` (most valuable first). */
@@ -1657,12 +1845,20 @@ declare class FishQuery extends QueryBase<Fish> {
     constructor(data?: Fish[]);
     /** Filter to fish available in the given season. */
     bySeason(season: Season): FishQuery;
+    /** Filter by category (`'regular'`, `'crab-pot'`, `'night-market'`, `'legendary'`, `'legendary-2'`, or `'other'`). */
+    byCategory(category: FishCategory): FishQuery;
     /** Filter by catch type (`'rod'` or `'crab-pot'`). */
     byCatchType(type: FishCatchType): FishQuery;
     /** Filter by weather condition (`'sunny'`, `'rainy'`, or `'both'`). */
     byWeather(weather: 'sunny' | 'rainy' | 'both'): FishQuery;
     /** Filter by location name (case-insensitive substring match). */
     byLocation(location: string): FishQuery;
+    /** Filter to fish that can be smoked in a Fish Smoker. */
+    smokeable(): FishQuery;
+    /** Filter by roe type. Use `'roe'` for standard roe producers, `'caviar'` for Sturgeon. */
+    byRoe(type: FishRoe): FishQuery;
+    /** Filter to fish that can be placed in a Fish Pond (excludes algae and jellies). */
+    pondEligible(): FishQuery;
     /** Sort alphabetically by name. Default: `'asc'`. */
     sortByName(order?: 'asc' | 'desc'): FishQuery;
     /** Sort by sell price. Default: `'desc'` (most valuable first). */
@@ -1679,7 +1875,9 @@ declare function fish(source?: Fish[]): FishQuery;
 /** Query builder for fishing bait data. All sort methods return a new BaitQuery for chaining. */
 declare class BaitQuery extends QueryBase<Bait> {
     constructor(data?: Bait[]);
+    /** Sort alphabetically by name. Default: `'asc'`. */
     sortByName(order?: 'asc' | 'desc'): BaitQuery;
+    /** Sort by sell price. Default: `'desc'` (most valuable first). */
     sortBySellPrice(order?: 'asc' | 'desc'): BaitQuery;
 }
 /** Returns a BaitQuery for all bait data. Pass `source` to wrap a pre-filtered array. */
@@ -1688,7 +1886,9 @@ declare function bait(source?: Bait[]): BaitQuery;
 /** Query builder for fishing tackle data. All sort methods return a new TackleQuery for chaining. */
 declare class TackleQuery extends QueryBase<Tackle> {
     constructor(data?: Tackle[]);
+    /** Sort alphabetically by name. Default: `'asc'`. */
     sortByName(order?: 'asc' | 'desc'): TackleQuery;
+    /** Sort by sell price. Default: `'desc'` (most valuable first). */
     sortBySellPrice(order?: 'asc' | 'desc'): TackleQuery;
 }
 /** Returns a TackleQuery for all tackle data. Pass `source` to wrap a pre-filtered array. */
@@ -1697,6 +1897,8 @@ declare function tackle(source?: Tackle[]): TackleQuery;
 /** Query builder for cooked dish data. All filter and sort methods return a new CookingQuery for chaining. */
 declare class CookingQuery extends QueryBase<CookedDish> {
     constructor(data?: CookedDish[]);
+    /** Filter to dishes that require a specific ingredient by ID. */
+    withIngredient(ingredientId: string): CookingQuery;
     /** Sort alphabetically by name. Default: `'asc'`. */
     sortByName(order?: 'asc' | 'desc'): CookingQuery;
     /** Sort by sell price. Default: `'desc'` (most valuable first). */
@@ -1706,8 +1908,6 @@ declare class CookingQuery extends QueryBase<CookedDish> {
      * Default: `'desc'` (most energising first).
      */
     sortByEnergy(order?: 'asc' | 'desc'): CookingQuery;
-    /** Filter to dishes that require a specific ingredient by ID. */
-    withIngredient(ingredientId: string): CookingQuery;
 }
 /** Returns a CookingQuery for all cooked dish data. Pass `source` to wrap a pre-filtered array. */
 declare function cooking(source?: CookedDish[]): CookingQuery;
@@ -2452,6 +2652,15 @@ declare class BuildingQuery extends QueryBase<Building> {
 /** Returns a BuildingQuery for all building data. Pass `source` to wrap a pre-filtered array. */
 declare function buildings(source?: Building[]): BuildingQuery;
 
+/** Query builder for rarecrow data. All sort methods return a new RarecrowQuery for chaining. */
+declare class RarecrowQuery extends QueryBase<Rarecrow> {
+    constructor(data?: Rarecrow[]);
+    /** Sort by rarecrow number. Default: `'asc'`. */
+    sortByNumber(order?: 'asc' | 'desc'): RarecrowQuery;
+}
+/** Returns a RarecrowQuery for all rarecrow data. Pass `source` to wrap a pre-filtered array. */
+declare function rarecrows(source?: Rarecrow[]): RarecrowQuery;
+
 /** Top-level parsed save file containing all extracted game data. */
 interface SaveData {
     apiVersion: number;
@@ -2468,6 +2677,7 @@ interface SaveData {
     stardrops: SaveStardropEntry[];
     stats: SaveStats;
     animals: SaveAnimal[];
+    fishPonds: SaveFishPond[];
     buildings: SaveBuilding[];
     cookingRecipes: SaveRecipeEntry[];
     craftingRecipes: SaveRecipeEntry[];
@@ -2482,11 +2692,15 @@ interface SaveData {
     walnuts: SaveWalnuts;
     islandUpgrades: SaveIslandUpgrades;
     children: SaveChild[];
-    pet: SavePet | null;
+    pets: SavePet[];
+    horse: SaveHorse | null;
     powers: SavePowers;
     raccoons: SaveRaccoons;
+    rarecrows: SaveRarecrows;
     perfection: SavePerfection;
     mineProgress: SaveMineProgress;
+    communityCenter: SaveCommunityCenter;
+    joja: SaveJoja;
 }
 /** Core player profile including name, money, skills, and mastery progress. */
 interface SavePlayer {
@@ -2498,11 +2712,40 @@ interface SavePlayer {
     totalMoneyEarned: number;
     spouse: string | null;
     houseUpgradeLevel: number;
+    luckLevel: number;
+    maxItems: number;
     maxHealth: number;
     maxStamina: number;
     skills: SaveSkills;
     mastery: SaveMastery;
+    toolLevels: SaveToolLevels;
+    willyBackRoomInvitation: boolean;
+    lostBooksFound: number;
+    helpWantedQuests: number;
     gameVersion: string;
+    millisecondsPlayed: number;
+}
+/** A tool currently being upgraded at the blacksmith. */
+interface SaveUpgradingTool {
+    tool: 'wateringCan' | 'pan' | 'pickaxe' | 'axe' | 'hoe';
+    name: string;
+}
+/** Level and active enchantment for a single tool. Enchantment is null when none is applied. */
+interface SaveToolLevel {
+    level: number;
+    enchantment: string | null;
+}
+/** Upgrade levels and enchantments for the player's tools (level 0 = base, 1 = copper, 2 = steel, 3 = gold, 4 = iridium). */
+interface SaveToolLevels {
+    wateringCan: SaveToolLevel;
+    pan: SaveToolLevel;
+    pickaxe: SaveToolLevel;
+    axe: SaveToolLevel;
+    hoe: SaveToolLevel;
+    trashCan: SaveToolLevel;
+    fishingRod: SaveToolLevel;
+    /** The tool currently at the blacksmith being upgraded, or null if none. */
+    currentlyUpgrading: SaveUpgradingTool | null;
 }
 /** Mastery system progress including XP, levels spent, and unlocked perks. */
 interface SaveMastery {
@@ -2584,17 +2827,24 @@ interface SaveAnimal {
     id: string;
     name: string;
     type: string;
+    buildingId: string;
     buildingType: string;
     friendship: number;
     happiness: number;
     age: number;
     hasAnimalCracker: boolean;
 }
+/** A fish pond building with the fish species and population. */
+interface SaveFishPond {
+    buildingId: string;
+    fishType: number;
+    currentOccupants: number;
+    maxOccupants: number;
+}
 /** A farm building with its type, position, and current animal count. */
 interface SaveBuilding {
+    id: string;
     type: string;
-    tileX: number;
-    tileY: number;
     animalCount: number;
 }
 /** An active or completed quest with its title, description, and completion status. */
@@ -2616,9 +2866,8 @@ interface SaveRecipeEntry {
     name: string;
     timesMade: number;
 }
-/** Community Center bundle data including all bundles, room summaries, and Joja route status. */
+/** Community Center bundle data including rooms with nested bundles and Joja route status. */
 interface SaveBundleData {
-    bundles: SaveBundleStatus[];
     rooms: SaveBundleRoom[];
     isJojaRoute: boolean;
     isCCComplete: boolean;
@@ -2632,9 +2881,9 @@ interface SaveBundleRoom {
 }
 /** A single bundle with its required items, completion progress, and reward. */
 interface SaveBundleStatus {
+    id: string;
     bundleIndex: number;
     name: string;
-    room: string;
     items: SaveBundleItem[];
     itemsRequired: number;
     itemsCompleted: number;
@@ -2670,7 +2919,6 @@ interface SaveProfession {
 /** Completed special orders split by town board and Qi's Walnut Room. */
 interface SaveSpecialOrders {
     completed: string[];
-    townCompleted: string[];
     qiCompleted: string[];
 }
 /** Secret notes and journal scraps found, plus magnifying glass ownership. */
@@ -2678,38 +2926,39 @@ interface SaveSecretNotes {
     notesFound: number[];
     journalScrapsFound: number[];
     hasMagnifyingGlass: boolean;
+    hasSeenKrobus: boolean;
 }
 /** Golden walnut collection progress with total found and tracker entries. */
 interface SaveWalnuts {
     found: number;
     collected: string[];
 }
-/** Ginger Island upgrade and unlock status for each parrot-purchasable feature. */
-interface SaveIslandUpgrades {
-    firstParrot: boolean;
-    turtle: boolean;
-    house: boolean;
-    resort: boolean;
-    trader: boolean;
-    bridge: boolean;
-    parrotPlatforms: boolean;
-    mailbox: boolean;
-    obelisk: boolean;
-    volcanoBridge: boolean;
-    volcanoShortcut: boolean;
+/** A single Ginger Island parrot upgrade with unlock status. */
+interface SaveIslandUpgrade {
+    id: string;
+    unlocked: boolean;
 }
+/** Ginger Island upgrade and unlock status for each parrot-purchasable feature. */
+type SaveIslandUpgrades = SaveIslandUpgrade[];
 /** A player's child with name, age stage, and gender. */
 interface SaveChild {
     name: string;
     age: number;
     gender: string;
 }
-/** The player's pet with type, breed variant, and friendship level. */
+/** A pet owned by the player. `starter` is true for the pet chosen at game start. */
 interface SavePet {
     name: string;
     type: string;
     breed: number;
     friendship: number;
+    starter: boolean;
+}
+/** The player's horse with name and unique ID. */
+interface SaveHorse {
+    name: string;
+    type: 'horse';
+    id: string;
 }
 /** Powers and special items collection with acquisition status. */
 interface SavePowers {
@@ -2720,6 +2969,10 @@ interface SavePowerEntry {
     id: string;
     name: string;
     acquired: boolean;
+}
+/** Placed rarecrow item IDs found across all game locations. */
+interface SaveRarecrows {
+    placed: string[];
 }
 /** Raccoon quest progress including times fed and unlock milestones. */
 interface SaveRaccoons {
@@ -2734,6 +2987,35 @@ interface SavePerfection {
     waivers: number;
     hasGoldClock: boolean;
     obelisks: string[];
+}
+/** Community Center completion status including individual room progress. */
+interface SaveCommunityCenterRooms {
+    boilerRoom: boolean;
+    craftsRoom: boolean;
+    pantry: boolean;
+    fishTank: boolean;
+    vault: boolean;
+    bulletin: boolean;
+}
+/** Community Center unlock, completion, and Joja route status. */
+interface SaveCommunityCenter {
+    unlocked: boolean;
+    bundlesActive: boolean;
+    completed: boolean;
+    ceremonyAttended: boolean;
+    jojaAbandoned: boolean;
+    rooms: SaveCommunityCenterRooms;
+}
+/** A single Joja development project with purchase status. */
+interface SaveJojaDevelopment {
+    id: string;
+    purchased: boolean;
+}
+/** Joja membership, development project completion, and route status. */
+interface SaveJoja {
+    isMember: boolean;
+    completed: boolean;
+    developments: SaveJojaDevelopment[];
 }
 /** Mine and Skull Cavern progress including deepest levels reached and key ownership. */
 interface SaveMineProgress {
@@ -2785,4 +3067,4 @@ declare function resolveApiVersion(gameVersion: string): number;
  */
 declare function parseSaveFile(xml: string): SaveData;
 
-export { type Achievement, AchievementQuery, type Animal, type AnimalProduce, AnimalQuery, type Artifact, ArtifactQuery, type ArtisanGood, ArtisanGoodQuery, type ArtisanIngredient, type Backpack, type Bait, BaitQuery, type BarItem, type BlacksmithItem, BlacksmithQuery, type BooksellerAvailability, type BooksellerItem, BooksellerItemQuery, type BooksellerTrade, BooksellerTradeQuery, type Building, type BuildingBuilder, type BuildingMaterial, BuildingQuery, type Bundle, type BundleItem, BundleQuery, type BundleReward, type BundleRoom, type CarpenterCategory, type CarpenterDay, type CarpenterItem, CarpenterQuery, type CasinoCategory, type CasinoItem, CasinoQuery, type CaskAging, type CollectionItem, CollectionItemQuery, CollectionsQuery, type Concession, ConcessionQuery, type ConcessionTag, type CookedDish, type CookingBuff, CookingQuery, type CraftingIngredient, type CraftingOutput, CraftingQuery, type CraftingRecipe, type Crop, CropQuery, type DesertTraderDay, type DesertTraderItem, DesertTraderQuery, type DwarfShopCategory, type DwarfShopItem, DwarfShopQuery, type EnergyHealth, EventQuery, type FarmAnimal, type FarmMap, FarmMapQuery, type Festival, type FieldOfficeCollection, type FieldOfficeCollectionData, type FieldOfficeDonation, FieldOfficeDonationQuery, FieldOfficeQuery, type FieldOfficeReward, type Fish, type FishCatchType, FishQuery, type FishWeather, type FishingRod, type Footwear, FootwearQuery, type Forageable, ForageableQuery, type FruitTree, type FruitTreeProduce, type GameEvent, type GameLocation, type GeodeContainer, type GiftPreferences, type GoldBundle, type GoldenWalnut, GoldenWalnutQuery, type GoldenWalnutTrackingType, type GrandpaCategory, GrandpaEvaluator, type GrandpaInput, type GrandpaResult, type GrandpaScoreEntry, type GuildCategory, type GuildItem, GuildQuery, type GuildWeaponType, type HarvestQuantity, type Hat, HatQuery, type HouseRenovation, HouseRenovationQuery, type HouseUpgrade, type HouseUpgradeMaterial, HouseUpgradeQuery, type Ingredient, type IslandTraderDay, type IslandTraderItem, IslandTraderQuery, type ItemBundle, type JojaBundle, type JojaItem, JojaQuery, type KrobusDay, type KrobusItem, KrobusQuery, type KrobusStockType, LATEST_API_VERSION, type LocationCategory, type LocationDay, type LocationHours, LocationQuery, type LocationType, type LostBook, LostBookQuery, MASTERY_LEVELS, type MarnieCategory, type MarnieItem, MarnieQuery, type MasteryLevel, type MasterySkill, type MasteryUnlock, type MedicalSupply, MedicalSupplyQuery, type MeleeWeapon, type Mineral, type MineralItem, MineralQuery, type MixedSeed, type MixedSeedProduces, MixedSeedQuery, type Monster, type MonsterLoot, MonsterLootQuery, MonsterQuery, type MonsterSlayerGoal, MonsterSlayerGoalQuery, type MonsterVariant, type NodeDrop, type NodeItem, type OasisCategory, type OasisDay, type OasisItem, OasisQuery, type OreItem, type PerfectionCategory, PerfectionQuery, type Pet, type PierreCategory, type PierreItem, PierreQuery, type PriceFormula, type ProfessionData, ProfessionQuery, type ProfessionSkill, type QiCurrency, type QiStockItem, QiStockQuery, type Quality, QualityCalculator, type QualityEnergyHealth, type QualityPrice, type Quest, QuestQuery, type RecipeSource, type ResourceItem, type Ring, RingQuery, SKILL_TITLES, type SaloonCategory, type SaloonItem, SaloonQuery, type SaveAnimal, type SaveBuilding, type SaveBundleData, type SaveBundleItem, type SaveBundleReward, type SaveBundleRoom, type SaveBundleStatus, type SaveChild, type SaveCollectionEntry, type SaveData, type SaveDate, type SaveFarm, type SaveFishEntry, type SaveFriendship, type SaveIslandUpgrades, type SaveItem, type SaveMastery, type SaveMasteryPerk, type SaveMineProgress, type SaveMonsterKillEntry, type SaveMuseum, type SavePerfection, type SavePet, type SavePlayer, type SavePowerEntry, type SavePowers, type SaveProfession, type SaveQuest, type SaveRaccoons, type SaveRecipeEntry, type SaveSecretNotes, type SaveShippedEntry, type SaveSkillLevel, type SaveSkills, type SaveSpecialOrders, type SaveStardropEntry, type SaveStats, type SaveWalnuts, type SearchResult, type SearchResultKind, type Season, type SeasonData, SeasonQuery, type SecretNote, SecretNoteQuery, type SecretNoteType, type SeedBuyPrice, type SimpleTool, type Skill, type SkillLevel, type SkillLevelRecipes, type SkillMastery, SkillQuery, type SlayerReward, type Slingshot, type SmeltRecipe, type SpecialItem, SpecialItemQuery, type SpecialItemType, type SpecialOrderCategory, type SpecialOrderData, SpecialOrderQuery, type Stage, type StarDrop, StarDropQuery, type StarDropSource, type Tackle, TackleQuery, type TitleThreshold, type Tool, type ToolLevel, ToolQuery, type ToolType, type Tree, TreeQuery, type Trinket, TrinketQuery, type TrinketSource, type UniversalGifts, type UpgradeLevel, type UpgradeableTool, type VersionRange, type Villager, VillagerQuery, type VolcanoShopCategory, type VolcanoShopCurrency, type VolcanoShopItem, VolcanoShopQuery, type Weapon, WeaponQuery, type WeaponStat, WeaponStatQuery, type WeaponType, type Weather, WeatherQuery, type WildTree, type WildTreeTapper, type WillyCategory, type WillyItem, WillyQuery, type WizardBuilding, type WizardBuildingMaterial, WizardQuery, achievements, animals, applyPriceFormula, artifacts, artisanGoods, bait, blacksmith, booksellerShop, booksellerTrades, buildings, bundles, calculateArtisanPrice, carpenter, casino, collections, concessions, cooking, crafting, crops, desertTrader, dwarfShop, events, fieldOffice, fieldOfficeDonations, findFestival, fish, footwear, forageables, getMasteryLevel, getProfessionOptions, getTitle, getTitleScore, goldenWalnuts, grandpaEvaluator, guild, hats, houseRenovations, houseUpgrades, isFarmAnimal, isPet, islandTrader, joja, krobus, locations, lostBooks, maps, marnie, medicalSupplies, minerals, mixedSeeds, monsterLoot, monsterSlayerGoals, monsters, oasis, parseSaveFile, perfection, pierre, professions, qiStock, qualityCalculator, quests, resolveApiVersion, rings, saloon, search, seasons, secretNotes, skills, specialItems, specialOrders, starDrops, tackle, tools, trees, trinkets, universalGifts, villagers, volcanoShop, weaponStats, weapons, weather, willy, wizard };
+export { type Achievement, AchievementQuery, type Animal, type AnimalProduce, AnimalQuery, type Artifact, ArtifactQuery, ArtisanCalculator, type ArtisanEnergyResult, type ArtisanGood, type ArtisanGoodBuff, ArtisanGoodQuery, type ArtisanIngredient, type ArtisanResult, type ArtisanUses, type Backpack, type Bait, BaitQuery, type BarItem, type BlacksmithItem, BlacksmithQuery, type BooksellerAvailability, type BooksellerItem, BooksellerItemQuery, type BooksellerTrade, BooksellerTradeQuery, type Buff, type Building, type BuildingBuilder, type BuildingMaterial, BuildingQuery, type Bundle, type BundleItem, BundleQuery, type BundleReward, type BundleRoom, type CarpenterCategory, type CarpenterDay, type CarpenterItem, CarpenterQuery, type CasinoCategory, type CasinoItem, CasinoQuery, type CaskAging, type ChoppedTreeProduce, type CollectionItem, CollectionItemQuery, CollectionsQuery, type Concession, ConcessionQuery, type ConcessionTag, type CookedDish, type CookingBuff, CookingQuery, type CraftingIngredient, type CraftingOutput, CraftingQuery, type CraftingRecipe, type Crop, CropQuery, type DayOfWeek, type DesertTraderDay, type DesertTraderItem, DesertTraderQuery, type DwarfShopCategory, type DwarfShopItem, DwarfShopQuery, type EnergyHealth, EventQuery, type FarmAnimal, type FarmMap, FarmMapQuery, type Festival, type FieldOfficeCollection, type FieldOfficeCollectionData, type FieldOfficeDonation, FieldOfficeDonationQuery, FieldOfficeQuery, type FieldOfficeReward, type Fish, type FishCatchType, type FishCategory, type FishPond, type FishPondProduce, FishQuery, type FishRoe, type FishWeather, type FishingRod, type FishingRodLevel, type Footwear, FootwearQuery, type Forageable, ForageableQuery, type FruitTree, type FruitTreeProduce, type GameEvent, type GameLocation, type GeodeContainer, type GeodeContent, type GiftPreferences, type GoldBundle, type GoldenWalnut, GoldenWalnutQuery, type GoldenWalnutTrackingType, type GrandpaCategory, GrandpaEvaluator, type GrandpaInput, type GrandpaResult, type GrandpaScoreEntry, type GuildCategory, type GuildItem, GuildQuery, type GuildWeaponType, type HarvestQuantity, type Hat, HatQuery, type HeartEvent, type HouseRenovation, HouseRenovationQuery, type HouseUpgrade, type HouseUpgradeMaterial, HouseUpgradeQuery, type Ingredient, type IslandTraderDay, type IslandTraderItem, IslandTraderQuery, type ItemBundle, type ItemQuality, type JojaBundle, type JojaItem, JojaParrotCalculator, JojaQuery, type KnowledgeBonus, KnowledgeCalculator, type KrobusDay, type KrobusItem, KrobusQuery, type KrobusStockType, LATEST_API_VERSION, type LocationCategory, type LocationDay, type LocationHours, LocationQuery, type LocationType, type LostBook, LostBookQuery, MASTERY_LEVELS, type MarnieCategory, type MarnieItem, MarnieQuery, type MasteryLevel, type MasterySkill, type MasteryUnlock, type MedicalSupply, MedicalSupplyQuery, type MeleeWeapon, type Mineral, type MineralItem, MineralQuery, type MixedSeed, type MixedSeedProduces, MixedSeedQuery, type Monster, type MonsterLoot, MonsterLootQuery, MonsterQuery, type MonsterSlayerGoal, MonsterSlayerGoalQuery, type MonsterVariant, type NodeDrop, type NodeItem, type OasisCategory, type OasisDay, type OasisItem, OasisQuery, type OreItem, type PerfectionCategory, PerfectionQuery, type Pet, type PierreCategory, type PierreItem, PierreQuery, type PriceFormula, type ProfessionBonus, ProfessionCalculator, type ProfessionData, ProfessionQuery, type ProfessionSkill, type QiCurrency, type QiStockItem, QiStockQuery, type Quality, QualityCalculator, type QualityEnergyHealth, type QualityPrice, type Quest, QuestQuery, type Rarecrow, RarecrowQuery, type RecipeSource, type ResourceItem, type Ring, RingQuery, SKILL_TITLES, type SaloonCategory, type SaloonItem, SaloonQuery, type SaveAnimal, type SaveBuilding, type SaveBundleData, type SaveBundleItem, type SaveBundleReward, type SaveBundleRoom, type SaveBundleStatus, type SaveChild, type SaveCollectionEntry, type SaveData, type SaveDate, type SaveFarm, type SaveFishEntry, type SaveFriendship, type SaveIslandUpgrades, type SaveItem, type SaveMastery, type SaveMasteryPerk, type SaveMineProgress, type SaveMonsterKillEntry, type SaveMuseum, type SavePerfection, type SavePet, type SavePlayer, type SavePowerEntry, type SavePowers, type SaveProfession, type SaveQuest, type SaveRaccoons, type SaveRarecrows, type SaveRecipeEntry, type SaveSecretNotes, type SaveShippedEntry, type SaveSkillLevel, type SaveSkills, type SaveSpecialOrders, type SaveStardropEntry, type SaveStats, type SaveWalnuts, type SearchResult, type SearchResultKind, type Season, type SeasonData, SeasonQuery, type SecretNote, SecretNoteQuery, type SecretNoteType, type SeedBuyPrice, type SimpleTool, type Skill, type SkillLevel, type SkillLevelRecipes, type SkillMastery, SkillQuery, type SlayerReward, type Slingshot, type SmeltRecipe, type SpecialItem, SpecialItemQuery, type SpecialItemType, type SpecialOrderCategory, type SpecialOrderData, SpecialOrderQuery, type Stage, type StarDrop, StarDropQuery, type StarDropSource, type Tackle, TackleQuery, type TitleThreshold, type Tool, type ToolLevel, ToolQuery, type ToolType, type TraderShopItem, type Tree, TreeQuery, type Trinket, TrinketQuery, type TrinketSource, type UniversalGifts, type UpgradeLevel, type UpgradeableTool, type VersionRange, type Villager, VillagerQuery, type VolcanoShopCategory, type VolcanoShopCurrency, type VolcanoShopItem, VolcanoShopQuery, type Weapon, WeaponQuery, type WeaponStat, WeaponStatQuery, type WeaponType, type Weather, WeatherQuery, type WildTree, type WildTreeTapper, type WillyCategory, type WillyItem, WillyQuery, type WizardBuilding, type WizardBuildingMaterial, WizardQuery, achievements, animals, applyPriceFormula, artifacts, artisanCalculator, artisanGoods, bait, blacksmith, booksellerShop, booksellerTrades, buildings, bundles, calculateArtisanPrice, carpenter, casino, collections, concessions, cooking, crafting, crops, desertTrader, dwarfShop, events, fieldOffice, fieldOfficeDonations, findFestival, fish, footwear, forageables, getMasteryLevel, getProfessionOptions, getTitle, getTitleScore, goldenWalnuts, grandpaEvaluator, guild, hats, houseRenovations, houseUpgrades, isFarmAnimal, isPet, islandTrader, joja, jojaParrotCalculator, knowledgeCalculator, krobus, locations, lostBooks, maps, marnie, medicalSupplies, minerals, mixedSeeds, monsterLoot, monsterSlayerGoals, monsters, oasis, parseSaveFile, perfection, pierre, professionCalculator, professions, qiStock, qualityCalculator, quests, rarecrows, resolveApiVersion, rings, saloon, search, seasons, secretNotes, skills, specialItems, specialOrders, starDrops, tackle, tools, trees, trinkets, universalGifts, villagers, volcanoShop, weaponStats, weapons, weather, willy, wizard };

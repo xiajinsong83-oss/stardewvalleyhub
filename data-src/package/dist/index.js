@@ -23,6 +23,7 @@ __export(index_exports, {
   AchievementQuery: () => AchievementQuery,
   AnimalQuery: () => AnimalQuery,
   ArtifactQuery: () => ArtifactQuery,
+  ArtisanCalculator: () => ArtisanCalculator,
   ArtisanGoodQuery: () => ArtisanGoodQuery,
   BaitQuery: () => BaitQuery,
   BlacksmithQuery: () => BlacksmithQuery,
@@ -54,7 +55,9 @@ __export(index_exports, {
   HouseRenovationQuery: () => HouseRenovationQuery,
   HouseUpgradeQuery: () => HouseUpgradeQuery,
   IslandTraderQuery: () => IslandTraderQuery,
+  JojaParrotCalculator: () => JojaParrotCalculator,
   JojaQuery: () => JojaQuery,
+  KnowledgeCalculator: () => KnowledgeCalculator,
   KrobusQuery: () => KrobusQuery,
   LATEST_API_VERSION: () => LATEST_API_VERSION,
   LocationQuery: () => LocationQuery,
@@ -70,10 +73,12 @@ __export(index_exports, {
   OasisQuery: () => OasisQuery,
   PerfectionQuery: () => PerfectionQuery,
   PierreQuery: () => PierreQuery,
+  ProfessionCalculator: () => ProfessionCalculator,
   ProfessionQuery: () => ProfessionQuery,
   QiStockQuery: () => QiStockQuery,
   QualityCalculator: () => QualityCalculator,
   QuestQuery: () => QuestQuery,
+  RarecrowQuery: () => RarecrowQuery,
   RingQuery: () => RingQuery,
   SKILL_TITLES: () => SKILL_TITLES,
   SaloonQuery: () => SaloonQuery,
@@ -98,6 +103,7 @@ __export(index_exports, {
   animals: () => animals,
   applyPriceFormula: () => applyPriceFormula,
   artifacts: () => artifacts,
+  artisanCalculator: () => artisanCalculator,
   artisanGoods: () => artisanGoods,
   bait: () => bait,
   blacksmith: () => blacksmith,
@@ -136,6 +142,8 @@ __export(index_exports, {
   isPet: () => isPet,
   islandTrader: () => islandTrader,
   joja: () => joja,
+  jojaParrotCalculator: () => jojaParrotCalculator,
+  knowledgeCalculator: () => knowledgeCalculator,
   krobus: () => krobus,
   locations: () => locations,
   lostBooks: () => lostBooks,
@@ -151,10 +159,12 @@ __export(index_exports, {
   parseSaveFile: () => parseSaveFile,
   perfection: () => perfection,
   pierre: () => pierre,
+  professionCalculator: () => professionCalculator,
   professions: () => professions,
   qiStock: () => qiStock,
   qualityCalculator: () => qualityCalculator,
   quests: () => quests,
+  rarecrows: () => rarecrows,
   resolveApiVersion: () => resolveApiVersion,
   rings: () => rings,
   saloon: () => saloon,
@@ -694,6 +704,7 @@ var animals_default = [
     id: "cat-1",
     name: "Cat",
     variant: 1,
+    purchasePrice: 4e4,
     image: "images/animals/Cat 1.png"
   },
   {
@@ -701,6 +712,7 @@ var animals_default = [
     id: "cat-2",
     name: "Cat",
     variant: 2,
+    purchasePrice: 4e4,
     image: "images/animals/Cat 2.png"
   },
   {
@@ -708,6 +720,7 @@ var animals_default = [
     id: "cat-3",
     name: "Cat",
     variant: 3,
+    purchasePrice: 4e4,
     image: "images/animals/Cat 3.png"
   },
   {
@@ -715,6 +728,7 @@ var animals_default = [
     id: "cat-4",
     name: "Cat",
     variant: 4,
+    purchasePrice: 4e4,
     image: "images/animals/Cat 4.png"
   },
   {
@@ -722,6 +736,7 @@ var animals_default = [
     id: "cat-5",
     name: "Cat",
     variant: 5,
+    purchasePrice: 4e4,
     image: "images/animals/Cat 5.png"
   },
   {
@@ -729,6 +744,7 @@ var animals_default = [
     id: "dog-1",
     name: "Dog",
     variant: 1,
+    purchasePrice: 4e4,
     image: "images/animals/Dog 1.png"
   },
   {
@@ -736,6 +752,7 @@ var animals_default = [
     id: "dog-2",
     name: "Dog",
     variant: 2,
+    purchasePrice: 4e4,
     image: "images/animals/Dog 2.png"
   },
   {
@@ -743,6 +760,7 @@ var animals_default = [
     id: "dog-3",
     name: "Dog",
     variant: 3,
+    purchasePrice: 4e4,
     image: "images/animals/Dog 3.png"
   },
   {
@@ -750,6 +768,7 @@ var animals_default = [
     id: "dog-4",
     name: "Dog",
     variant: 4,
+    purchasePrice: 4e4,
     image: "images/animals/Dog 4.png"
   },
   {
@@ -757,6 +776,7 @@ var animals_default = [
     id: "dog-5",
     name: "Dog",
     variant: 5,
+    purchasePrice: 4e4,
     image: "images/animals/Dog 5.png"
   },
   {
@@ -764,6 +784,7 @@ var animals_default = [
     id: "turtle",
     name: "Turtle",
     variant: 1,
+    purchasePrice: 6e4,
     image: "images/animals/Turtle.png"
   },
   {
@@ -771,12 +792,14 @@ var animals_default = [
     id: "iridium-turtle",
     name: "Iridium Turtle",
     variant: 2,
+    purchasePrice: 5e5,
     image: "images/animals/Iridium Turtle.png"
   },
   {
     type: "pet",
     id: "horse",
     name: "Horse",
+    purchasePrice: null,
     image: "images/animals/horse.png"
   },
   {
@@ -795,13 +818,17 @@ var animals_default = [
       id: "176",
       name: "Egg",
       sellPrice: 50,
-      image: "images/animals/produce/Egg.png"
+      profession: ["rancher"],
+      image: "images/animals/produce/Egg.png",
+      maxQuality: "iridium"
     },
     deluxeProduce: {
       id: "174",
       name: "Large Egg",
       sellPrice: 95,
-      image: "images/animals/produce/Large Egg.png"
+      profession: ["rancher"],
+      image: "images/animals/produce/Large Egg.png",
+      maxQuality: "iridium"
     },
     image: "images/animals/White Chicken.png"
   },
@@ -821,13 +848,17 @@ var animals_default = [
       id: "180",
       name: "Brown Egg",
       sellPrice: 50,
-      image: "images/animals/produce/Brown Egg.png"
+      profession: ["rancher"],
+      image: "images/animals/produce/Brown Egg.png",
+      maxQuality: "iridium"
     },
     deluxeProduce: {
       id: "182",
       name: "Large Brown Egg",
       sellPrice: 95,
-      image: "images/animals/produce/Large Brown Egg.png"
+      profession: ["rancher"],
+      image: "images/animals/produce/Large Brown Egg.png",
+      maxQuality: "iridium"
     },
     image: "images/animals/Brown Chicken.png"
   },
@@ -847,13 +878,17 @@ var animals_default = [
       id: "176",
       name: "Egg",
       sellPrice: 50,
-      image: "images/animals/produce/Egg.png"
+      profession: ["rancher"],
+      image: "images/animals/produce/Egg.png",
+      maxQuality: "iridium"
     },
     deluxeProduce: {
       id: "174",
       name: "Large Egg",
       sellPrice: 95,
-      image: "images/animals/produce/Large Egg.png"
+      profession: ["rancher"],
+      image: "images/animals/produce/Large Egg.png",
+      maxQuality: "iridium"
     },
     image: "images/animals/Blue Chicken.png"
   },
@@ -873,7 +908,9 @@ var animals_default = [
       id: "305",
       name: "Void Egg",
       sellPrice: 65,
-      image: "images/animals/produce/Void Egg.png"
+      profession: ["rancher"],
+      image: "images/animals/produce/Void Egg.png",
+      maxQuality: "iridium"
     },
     deluxeProduce: null,
     image: "images/animals/Void Chicken.png"
@@ -894,7 +931,9 @@ var animals_default = [
       id: "928",
       name: "Golden Egg",
       sellPrice: 500,
-      image: "images/animals/produce/Golden Egg.png"
+      profession: ["rancher"],
+      image: "images/animals/produce/Golden Egg.png",
+      maxQuality: "iridium"
     },
     deluxeProduce: null,
     image: "images/animals/Golden Chicken.png"
@@ -915,13 +954,17 @@ var animals_default = [
       id: "442",
       name: "Duck Egg",
       sellPrice: 95,
-      image: "images/animals/produce/Duck Egg.png"
+      profession: ["rancher"],
+      image: "images/animals/produce/Duck Egg.png",
+      maxQuality: "iridium"
     },
     deluxeProduce: {
       id: "444",
       name: "Duck Feather",
       sellPrice: 250,
-      image: "images/animals/produce/Duck Feather.png"
+      profession: ["rancher"],
+      image: "images/animals/produce/Duck Feather.png",
+      maxQuality: "iridium"
     },
     image: "images/animals/Duck.png"
   },
@@ -941,13 +984,17 @@ var animals_default = [
       id: "440",
       name: "Wool",
       sellPrice: 340,
-      image: "images/animals/produce/Wool.png"
+      profession: ["rancher"],
+      image: "images/animals/produce/Wool.png",
+      maxQuality: "iridium"
     },
     deluxeProduce: {
       id: "446",
       name: "Rabbit's Foot",
       sellPrice: 565,
-      image: "images/animals/produce/Rabbit's Foot.png"
+      profession: ["rancher"],
+      image: "images/animals/produce/Rabbit's Foot.png",
+      maxQuality: "iridium"
     },
     image: "images/animals/Rabbit.png"
   },
@@ -967,7 +1014,9 @@ var animals_default = [
       id: "107",
       name: "Dinosaur Egg",
       sellPrice: 350,
-      image: "images/animals/produce/Dinosaur Egg.png"
+      profession: ["rancher"],
+      image: "images/animals/produce/Dinosaur Egg.png",
+      maxQuality: "iridium"
     },
     deluxeProduce: null,
     image: "images/animals/Dinosaur.png"
@@ -988,13 +1037,17 @@ var animals_default = [
       id: "184",
       name: "Milk",
       sellPrice: 125,
-      image: "images/animals/produce/Milk.png"
+      profession: ["rancher"],
+      image: "images/animals/produce/Milk.png",
+      maxQuality: "iridium"
     },
     deluxeProduce: {
       id: "186",
       name: "Large Milk",
       sellPrice: 190,
-      image: "images/animals/produce/Large Milk.png"
+      profession: ["rancher"],
+      image: "images/animals/produce/Large Milk.png",
+      maxQuality: "iridium"
     },
     image: "images/animals/White Cow.png"
   },
@@ -1014,13 +1067,17 @@ var animals_default = [
       id: "184",
       name: "Milk",
       sellPrice: 125,
-      image: "images/animals/produce/Milk.png"
+      profession: ["rancher"],
+      image: "images/animals/produce/Milk.png",
+      maxQuality: "iridium"
     },
     deluxeProduce: {
       id: "186",
       name: "Large Milk",
       sellPrice: 190,
-      image: "images/animals/produce/Large Milk.png"
+      profession: ["rancher"],
+      image: "images/animals/produce/Large Milk.png",
+      maxQuality: "iridium"
     },
     image: "images/animals/Brown Cow.png"
   },
@@ -1040,13 +1097,17 @@ var animals_default = [
       id: "436",
       name: "Goat Milk",
       sellPrice: 225,
-      image: "images/animals/produce/Goat Milk.png"
+      profession: ["rancher"],
+      image: "images/animals/produce/Goat Milk.png",
+      maxQuality: "iridium"
     },
     deluxeProduce: {
       id: "438",
       name: "Large Goat Milk",
       sellPrice: 345,
-      image: "images/animals/produce/Large Goat Milk.png"
+      profession: ["rancher"],
+      image: "images/animals/produce/Large Goat Milk.png",
+      maxQuality: "iridium"
     },
     image: "images/animals/Goat.png"
   },
@@ -1066,7 +1127,9 @@ var animals_default = [
       id: "440",
       name: "Wool",
       sellPrice: 340,
-      image: "images/animals/produce/Wool.png"
+      profession: ["rancher"],
+      image: "images/animals/produce/Wool.png",
+      maxQuality: "iridium"
     },
     deluxeProduce: null,
     image: "images/animals/Sheep.png"
@@ -1087,7 +1150,9 @@ var animals_default = [
       id: "430",
       name: "Truffle",
       sellPrice: 625,
-      image: "images/animals/produce/Truffle.png"
+      profession: ["rancher"],
+      image: "images/animals/produce/Truffle.png",
+      maxQuality: "iridium"
     },
     deluxeProduce: null,
     image: "images/animals/Pig.png"
@@ -1108,7 +1173,9 @@ var animals_default = [
       id: "289",
       name: "Ostrich Egg",
       sellPrice: 600,
-      image: "images/animals/produce/Ostrich Egg.png"
+      profession: ["rancher"],
+      image: "images/animals/produce/Ostrich Egg.png",
+      maxQuality: "iridium"
     },
     deluxeProduce: null,
     image: "images/animals/Ostrich.png"
@@ -3137,6 +3204,10 @@ var bundles_default = [
         name: "Void Salmon",
         quantity: 1,
         quality: "gold"
+      },
+      {
+        name: "Caviar",
+        quantity: 1
       }
     ],
     itemsRequired: 5,
@@ -3296,7 +3367,8 @@ var artisan_goods_default = [
     ],
     processingMinutes: 6400,
     processingDays: 4,
-    sellPrice: 100,
+    sellPrice: null,
+    profession: ["artisan"],
     sellPriceFormula: "100g for wild honey; 2\xD7 nearby flower base price + 100 for flower honey",
     priceFormula: {
       multiplier: 2,
@@ -3304,7 +3376,12 @@ var artisan_goods_default = [
     },
     qualityLevels: false,
     cask: null,
-    image: "images/artisan-goods/Honey.png"
+    energyHealthFormula: null,
+    energyHealth: null,
+    buffs: [],
+    buffDuration: null,
+    image: "images/artisan-goods/Honey.png",
+    maxQuality: "base"
   },
   {
     id: "348",
@@ -3321,6 +3398,7 @@ var artisan_goods_default = [
     processingMinutes: 1e4,
     processingDays: 6.25,
     sellPrice: null,
+    profession: ["artisan"],
     sellPriceFormula: "3\xD7 base fruit price",
     priceFormula: {
       multiplier: 3,
@@ -3332,7 +3410,17 @@ var artisan_goods_default = [
       goldDays: 28,
       iridiumDays: 56
     },
-    image: "images/artisan-goods/Wine.png"
+    energyHealthFormula: "1.75\xD7 base fruit energy & health",
+    energyHealth: null,
+    buffs: [
+      {
+        stat: "Speed",
+        value: -1
+      }
+    ],
+    buffDuration: null,
+    image: "images/artisan-goods/Wine.png",
+    maxQuality: "iridium"
   },
   {
     id: "350",
@@ -3349,6 +3437,7 @@ var artisan_goods_default = [
     processingMinutes: 6e3,
     processingDays: 3.75,
     sellPrice: null,
+    profession: ["artisan"],
     sellPriceFormula: "2.25\xD7 base vegetable price",
     priceFormula: {
       multiplier: 2.25,
@@ -3360,7 +3449,12 @@ var artisan_goods_default = [
       goldDays: 28,
       iridiumDays: 56
     },
-    image: "images/artisan-goods/Juice.png"
+    energyHealthFormula: "2\xD7 base vegetable energy & health",
+    energyHealth: null,
+    buffs: [],
+    buffDuration: null,
+    image: "images/artisan-goods/Juice.png",
+    maxQuality: "iridium"
   },
   {
     id: "303",
@@ -3377,6 +3471,7 @@ var artisan_goods_default = [
     processingMinutes: 2250,
     processingDays: 1.41,
     sellPrice: 300,
+    profession: ["artisan"],
     sellPriceFormula: null,
     priceFormula: null,
     qualityLevels: true,
@@ -3385,7 +3480,20 @@ var artisan_goods_default = [
       goldDays: 18,
       iridiumDays: 36
     },
-    image: "images/artisan-goods/Pale Ale.png"
+    energyHealthFormula: null,
+    energyHealth: {
+      energy: 50,
+      health: 22
+    },
+    buffs: [
+      {
+        stat: "Speed",
+        value: -1
+      }
+    ],
+    buffDuration: null,
+    image: "images/artisan-goods/Pale Ale.png",
+    maxQuality: "iridium"
   },
   {
     id: "346",
@@ -3402,6 +3510,7 @@ var artisan_goods_default = [
     processingMinutes: 1750,
     processingDays: 1.09,
     sellPrice: 200,
+    profession: ["artisan"],
     sellPriceFormula: null,
     priceFormula: null,
     qualityLevels: true,
@@ -3410,7 +3519,20 @@ var artisan_goods_default = [
       goldDays: 14,
       iridiumDays: 28
     },
-    image: "images/artisan-goods/Beer.png"
+    energyHealthFormula: null,
+    energyHealth: {
+      energy: 50,
+      health: 22
+    },
+    buffs: [
+      {
+        stat: "Speed",
+        value: -1
+      }
+    ],
+    buffDuration: null,
+    image: "images/artisan-goods/Beer.png",
+    maxQuality: "iridium"
   },
   {
     id: "459",
@@ -3427,6 +3549,7 @@ var artisan_goods_default = [
     processingMinutes: 600,
     processingDays: 0.38,
     sellPrice: 300,
+    profession: ["artisan"],
     sellPriceFormula: null,
     priceFormula: null,
     qualityLevels: true,
@@ -3435,7 +3558,20 @@ var artisan_goods_default = [
       goldDays: 14,
       iridiumDays: 28
     },
-    image: "images/artisan-goods/Mead.png"
+    energyHealthFormula: null,
+    energyHealth: {
+      energy: 75,
+      health: 33
+    },
+    buffs: [
+      {
+        stat: "Speed",
+        value: -1
+      }
+    ],
+    buffDuration: null,
+    image: "images/artisan-goods/Mead.png",
+    maxQuality: "iridium"
   },
   {
     id: "395",
@@ -3452,11 +3588,25 @@ var artisan_goods_default = [
     processingMinutes: 120,
     processingDays: 0.08,
     sellPrice: 150,
+    profession: [],
     sellPriceFormula: null,
     priceFormula: null,
     qualityLevels: false,
     cask: null,
-    image: "images/artisan-goods/Coffee.png"
+    energyHealthFormula: null,
+    energyHealth: {
+      energy: 3,
+      health: 1
+    },
+    buffs: [
+      {
+        stat: "Speed",
+        value: 1
+      }
+    ],
+    buffDuration: null,
+    image: "images/artisan-goods/Coffee.png",
+    maxQuality: "base"
   },
   {
     id: "419",
@@ -3473,11 +3623,20 @@ var artisan_goods_default = [
     processingMinutes: 600,
     processingDays: 0.38,
     sellPrice: 100,
+    profession: [],
     sellPriceFormula: null,
     priceFormula: null,
     qualityLevels: false,
     cask: null,
-    image: "images/artisan-goods/Vinegar.png"
+    energyHealthFormula: null,
+    energyHealth: {
+      energy: 13,
+      health: 5
+    },
+    buffs: [],
+    buffDuration: null,
+    image: "images/artisan-goods/Vinegar.png",
+    maxQuality: "base"
   },
   {
     id: "614",
@@ -3494,11 +3653,25 @@ var artisan_goods_default = [
     processingMinutes: 180,
     processingDays: 0.11,
     sellPrice: 100,
+    profession: [],
     sellPriceFormula: null,
     priceFormula: null,
     qualityLevels: false,
     cask: null,
-    image: "images/artisan-goods/Green Tea.png"
+    energyHealthFormula: null,
+    energyHealth: {
+      energy: 13,
+      health: 5
+    },
+    buffs: [
+      {
+        stat: "Speed",
+        value: 0.5
+      }
+    ],
+    buffDuration: null,
+    image: "images/artisan-goods/Green Tea.png",
+    maxQuality: "base"
   },
   {
     id: "344",
@@ -3515,6 +3688,7 @@ var artisan_goods_default = [
     processingMinutes: 4e3,
     processingDays: 2.5,
     sellPrice: null,
+    profession: ["artisan"],
     sellPriceFormula: "50 + 2\xD7 base fruit price",
     priceFormula: {
       multiplier: 2,
@@ -3522,7 +3696,12 @@ var artisan_goods_default = [
     },
     qualityLevels: false,
     cask: null,
-    image: "images/artisan-goods/Jelly.png"
+    energyHealthFormula: "2\xD7 base fruit energy & health",
+    energyHealth: null,
+    buffs: [],
+    buffDuration: null,
+    image: "images/artisan-goods/Jelly.png",
+    maxQuality: "base"
   },
   {
     id: "342",
@@ -3539,6 +3718,7 @@ var artisan_goods_default = [
     processingMinutes: 4e3,
     processingDays: 2.5,
     sellPrice: null,
+    profession: ["artisan"],
     sellPriceFormula: "50 + 2\xD7 base vegetable price",
     priceFormula: {
       multiplier: 2,
@@ -3546,7 +3726,12 @@ var artisan_goods_default = [
     },
     qualityLevels: false,
     cask: null,
-    image: "images/artisan-goods/Pickles.png"
+    energyHealthFormula: "1.75\xD7 base vegetable energy & health",
+    energyHealth: null,
+    buffs: [],
+    buffDuration: null,
+    image: "images/artisan-goods/Pickles.png",
+    maxQuality: "base"
   },
   {
     id: "447",
@@ -3563,6 +3748,7 @@ var artisan_goods_default = [
     processingMinutes: 4e3,
     processingDays: 2.5,
     sellPrice: null,
+    profession: ["artisan"],
     sellPriceFormula: "2\xD7 base roe price",
     priceFormula: {
       multiplier: 2,
@@ -3570,7 +3756,15 @@ var artisan_goods_default = [
     },
     qualityLevels: false,
     cask: null,
-    image: "images/artisan-goods/Aged Roe.png"
+    energyHealthFormula: null,
+    energyHealth: {
+      energy: 100,
+      health: 45
+    },
+    buffs: [],
+    buffDuration: null,
+    image: "images/artisan-goods/Aged Roe.png",
+    maxQuality: "base"
   },
   {
     id: "445",
@@ -3580,18 +3774,27 @@ var artisan_goods_default = [
     ingredients: [
       {
         name: "Sturgeon Roe",
-        id: "723",
+        id: "812S",
         quantity: 1
       }
     ],
     processingMinutes: 6e3,
     processingDays: 3.75,
     sellPrice: 500,
+    profession: ["artisan"],
     sellPriceFormula: null,
     priceFormula: null,
     qualityLevels: false,
     cask: null,
-    image: "images/artisan-goods/Caviar.png"
+    energyHealthFormula: null,
+    energyHealth: {
+      energy: 175,
+      health: 78
+    },
+    buffs: [],
+    buffDuration: null,
+    image: "images/artisan-goods/Caviar.png",
+    maxQuality: "base"
   },
   {
     id: "424",
@@ -3613,6 +3816,7 @@ var artisan_goods_default = [
     processingMinutes: 200,
     processingDays: 0.13,
     sellPrice: 230,
+    profession: ["artisan"],
     sellPriceFormula: "Large Milk produces Gold quality (345g)",
     priceFormula: null,
     qualityLevels: true,
@@ -3621,7 +3825,15 @@ var artisan_goods_default = [
       goldDays: 14,
       iridiumDays: 28
     },
-    image: "images/artisan-goods/Cheese.png"
+    energyHealthFormula: null,
+    energyHealth: {
+      energy: 125,
+      health: 56
+    },
+    buffs: [],
+    buffDuration: null,
+    image: "images/artisan-goods/Cheese.png",
+    maxQuality: "iridium"
   },
   {
     id: "426",
@@ -3643,6 +3855,7 @@ var artisan_goods_default = [
     processingMinutes: 200,
     processingDays: 0.13,
     sellPrice: 400,
+    profession: ["artisan"],
     sellPriceFormula: "Large Goat Milk produces Gold quality (600g)",
     priceFormula: null,
     qualityLevels: true,
@@ -3651,7 +3864,15 @@ var artisan_goods_default = [
       goldDays: 14,
       iridiumDays: 28
     },
-    image: "images/artisan-goods/Goat Cheese.png"
+    energyHealthFormula: null,
+    energyHealth: {
+      energy: 125,
+      health: 56
+    },
+    buffs: [],
+    buffDuration: null,
+    image: "images/artisan-goods/Goat Cheese.png",
+    maxQuality: "iridium"
   },
   {
     id: "428",
@@ -3668,11 +3889,16 @@ var artisan_goods_default = [
     processingMinutes: 240,
     processingDays: 0.15,
     sellPrice: 470,
+    profession: ["artisan"],
     sellPriceFormula: null,
     priceFormula: null,
     qualityLevels: false,
     cask: null,
-    image: "images/artisan-goods/Cloth.png"
+    energyHealthFormula: null,
+    buffs: [],
+    buffDuration: null,
+    image: "images/artisan-goods/Cloth.png",
+    maxQuality: "base"
   },
   {
     id: "432",
@@ -3689,11 +3915,20 @@ var artisan_goods_default = [
     processingMinutes: 360,
     processingDays: 0.23,
     sellPrice: 1065,
+    profession: ["artisan"],
     sellPriceFormula: null,
     priceFormula: null,
     qualityLevels: false,
     cask: null,
-    image: "images/artisan-goods/Truffle Oil.png"
+    energyHealthFormula: null,
+    energyHealth: {
+      energy: 38,
+      health: 17
+    },
+    buffs: [],
+    buffDuration: null,
+    image: "images/artisan-goods/Truffle Oil.png",
+    maxQuality: "base"
   },
   {
     id: "247",
@@ -3720,11 +3955,20 @@ var artisan_goods_default = [
     processingMinutes: 1e3,
     processingDays: 0.63,
     sellPrice: 100,
+    profession: ["artisan"],
     sellPriceFormula: null,
     priceFormula: null,
     qualityLevels: false,
     cask: null,
-    image: "images/artisan-goods/Oil.png"
+    energyHealthFormula: null,
+    energyHealth: {
+      energy: 13,
+      health: 5
+    },
+    buffs: [],
+    buffDuration: null,
+    image: "images/artisan-goods/Oil.png",
+    maxQuality: "base"
   },
   {
     id: "306",
@@ -3761,11 +4005,20 @@ var artisan_goods_default = [
     processingMinutes: 180,
     processingDays: 0.11,
     sellPrice: 190,
+    profession: ["artisan"],
     sellPriceFormula: "Large Egg produces 2\xD7 Mayonnaise; Golden Egg produces Gold quality",
     priceFormula: null,
     qualityLevels: false,
     cask: null,
-    image: "images/artisan-goods/Mayonnaise.png"
+    energyHealthFormula: null,
+    energyHealth: {
+      energy: 50,
+      health: 22
+    },
+    buffs: [],
+    buffDuration: null,
+    image: "images/artisan-goods/Mayonnaise.png",
+    maxQuality: "base"
   },
   {
     id: "307",
@@ -3782,11 +4035,20 @@ var artisan_goods_default = [
     processingMinutes: 180,
     processingDays: 0.11,
     sellPrice: 375,
+    profession: ["artisan"],
     sellPriceFormula: null,
     priceFormula: null,
     qualityLevels: false,
     cask: null,
-    image: "images/artisan-goods/Duck Mayonnaise.png"
+    energyHealthFormula: null,
+    energyHealth: {
+      energy: 75,
+      health: 33
+    },
+    buffs: [],
+    buffDuration: null,
+    image: "images/artisan-goods/Duck Mayonnaise.png",
+    maxQuality: "base"
   },
   {
     id: "308",
@@ -3803,11 +4065,21 @@ var artisan_goods_default = [
     processingMinutes: 180,
     processingDays: 0.11,
     sellPrice: 275,
+    profession: ["artisan"],
     sellPriceFormula: null,
     priceFormula: null,
     qualityLevels: false,
     cask: null,
-    image: "images/artisan-goods/Void Mayonnaise.png"
+    energyHealthFormula: null,
+    energyHealth: {
+      energy: -75,
+      health: 0,
+      poison: true
+    },
+    buffs: [],
+    buffDuration: null,
+    image: "images/artisan-goods/Void Mayonnaise.png",
+    maxQuality: "base"
   },
   {
     id: "807",
@@ -3824,11 +4096,20 @@ var artisan_goods_default = [
     processingMinutes: 180,
     processingDays: 0.11,
     sellPrice: 800,
+    profession: ["artisan"],
     sellPriceFormula: null,
     priceFormula: null,
     qualityLevels: false,
     cask: null,
-    image: "images/artisan-goods/Dinosaur Mayonnaise.png"
+    energyHealthFormula: null,
+    energyHealth: {
+      energy: 125,
+      health: 56
+    },
+    buffs: [],
+    buffDuration: null,
+    image: "images/artisan-goods/Dinosaur Mayonnaise.png",
+    maxQuality: "base"
   },
   {
     id: "Raisins",
@@ -3845,11 +4126,20 @@ var artisan_goods_default = [
     processingMinutes: 1600,
     processingDays: 1,
     sellPrice: 600,
+    profession: [],
     sellPriceFormula: null,
     priceFormula: null,
     qualityLevels: false,
     cask: null,
-    image: "images/artisan-goods/Raisins.png"
+    energyHealthFormula: null,
+    energyHealth: {
+      energy: 125,
+      health: 56
+    },
+    buffs: [],
+    buffDuration: null,
+    image: "images/artisan-goods/Raisins.png",
+    maxQuality: "base"
   },
   {
     id: "DriedFruit",
@@ -3866,6 +4156,7 @@ var artisan_goods_default = [
     processingMinutes: 1600,
     processingDays: 1,
     sellPrice: null,
+    profession: ["artisan"],
     sellPriceFormula: "2.5\xD7 base fruit price",
     priceFormula: {
       multiplier: 2.5,
@@ -3873,7 +4164,12 @@ var artisan_goods_default = [
     },
     qualityLevels: false,
     cask: null,
-    image: "images/artisan-goods/Dried Fruit.png"
+    energyHealthFormula: "3\xD7 base fruit energy & health",
+    energyHealth: null,
+    buffs: [],
+    buffDuration: null,
+    image: "images/artisan-goods/Dried Fruit.png",
+    maxQuality: "base"
   },
   {
     id: "DriedMushrooms",
@@ -3890,6 +4186,7 @@ var artisan_goods_default = [
     processingMinutes: 1600,
     processingDays: 1,
     sellPrice: null,
+    profession: ["artisan"],
     sellPriceFormula: "2.5\xD7 base mushroom price",
     priceFormula: {
       multiplier: 2.5,
@@ -3897,7 +4194,12 @@ var artisan_goods_default = [
     },
     qualityLevels: false,
     cask: null,
-    image: "images/artisan-goods/Dried Mushrooms.png"
+    energyHealthFormula: "3\xD7 base mushroom energy & health",
+    energyHealth: null,
+    buffs: [],
+    buffDuration: null,
+    image: "images/artisan-goods/Dried Mushrooms.png",
+    maxQuality: "base"
   },
   {
     id: "SmokedFish",
@@ -3914,6 +4216,7 @@ var artisan_goods_default = [
     processingMinutes: 50,
     processingDays: 0.03,
     sellPrice: null,
+    profession: ["fisher", "artisan", "angler"],
     sellPriceFormula: "2\xD7 base fish sell price",
     priceFormula: {
       multiplier: 2,
@@ -3921,7 +4224,12 @@ var artisan_goods_default = [
     },
     qualityLevels: false,
     cask: null,
-    image: "images/artisan-goods/Smoked Fish.png"
+    energyHealthFormula: "1.5\xD7 base fish energy & health",
+    energyHealth: null,
+    buffs: [],
+    buffDuration: null,
+    image: "images/artisan-goods/Smoked Fish.png",
+    maxQuality: "base"
   },
   {
     id: "MysticSyrup",
@@ -3938,11 +4246,102 @@ var artisan_goods_default = [
     processingMinutes: 10080,
     processingDays: 7,
     sellPrice: 1e3,
+    profession: ["tapper"],
     sellPriceFormula: null,
     priceFormula: null,
     qualityLevels: false,
     cask: null,
-    image: "images/artisan-goods/Mystic Syrup.png"
+    energyHealthFormula: null,
+    energyHealth: {
+      energy: 500,
+      health: 225
+    },
+    buffs: [],
+    buffDuration: null,
+    image: "images/artisan-goods/Mystic Syrup.png",
+    maxQuality: "base"
+  },
+  {
+    id: "724",
+    name: "Maple Syrup",
+    description: "A sweet syrup with a unique flavor.",
+    equipment: "Tapper",
+    ingredients: [
+      {
+        name: "Maple Tree",
+        id: "2",
+        quantity: 1
+      }
+    ],
+    processingMinutes: 14400,
+    processingDays: 9,
+    sellPrice: 200,
+    profession: ["tapper"],
+    sellPriceFormula: null,
+    priceFormula: null,
+    qualityLevels: false,
+    cask: null,
+    energyHealthFormula: null,
+    energyHealth: {
+      energy: 50,
+      health: 22
+    },
+    buffs: [],
+    buffDuration: null,
+    image: "images/forageables/Maple Syrup.png",
+    maxQuality: "base"
+  },
+  {
+    id: "725",
+    name: "Oak Resin",
+    description: "A sticky, fragrant substance obtained from oak trees.",
+    equipment: "Tapper",
+    ingredients: [
+      {
+        name: "Oak Tree",
+        id: "1",
+        quantity: 1
+      }
+    ],
+    processingMinutes: 11200,
+    processingDays: 7,
+    sellPrice: 150,
+    profession: ["tapper"],
+    sellPriceFormula: null,
+    priceFormula: null,
+    qualityLevels: false,
+    cask: null,
+    energyHealthFormula: null,
+    buffs: [],
+    buffDuration: null,
+    image: "images/forageables/Oak Resin.png",
+    maxQuality: "base"
+  },
+  {
+    id: "726",
+    name: "Pine Tar",
+    description: "A dark, sticky substance derived from pine trees.",
+    equipment: "Tapper",
+    ingredients: [
+      {
+        name: "Pine Tree",
+        id: "3",
+        quantity: 1
+      }
+    ],
+    processingMinutes: 8e3,
+    processingDays: 5,
+    sellPrice: 100,
+    profession: ["tapper"],
+    sellPriceFormula: null,
+    priceFormula: null,
+    qualityLevels: false,
+    cask: null,
+    energyHealthFormula: null,
+    buffs: [],
+    buffDuration: null,
+    image: "images/forageables/Pine Tar.png",
+    maxQuality: "base"
   }
 ];
 
@@ -4033,6 +4432,156 @@ var QualityCalculator = class {
 function qualityCalculator() {
   return new QualityCalculator();
 }
+var ArtisanCalculator = class {
+  /** Roe sell price: `30 + Math.floor(baseFishPrice / 2)` */
+  roe(baseFishPrice) {
+    return { sellPrice: 30 + Math.floor(baseFishPrice / 2) };
+  }
+  /** Aged Roe sell price: `60 + baseFishPrice` */
+  agedRoe(baseFishPrice) {
+    return { sellPrice: 60 + baseFishPrice };
+  }
+  /**
+   * Honey sell price: `100 + (baseFlowerPrice * 2)`.
+   * Pass `0` for wild honey (no nearby flower).
+   */
+  honey(baseFlowerPrice) {
+    return { sellPrice: 100 + baseFlowerPrice * 2 };
+  }
+  /** Wine sell price (`Math.floor(baseFruitPrice * 3)`) and energy/health (`×1.75`). */
+  wine(baseFruitPrice, baseEnergy, baseHealth) {
+    return {
+      sellPrice: Math.floor(baseFruitPrice * 3),
+      energy: Math.floor(baseEnergy * 1.75),
+      health: Math.floor(baseHealth * 1.75)
+    };
+  }
+  /** Juice sell price (`Math.floor(basePrice * 2.25)`) and energy/health (`×2`). */
+  juice(basePrice, baseEnergy, baseHealth) {
+    return {
+      sellPrice: Math.floor(basePrice * 2.25),
+      energy: Math.floor(baseEnergy * 2),
+      health: Math.floor(baseHealth * 2)
+    };
+  }
+  /** Pickles sell price (`Math.floor(basePrice * 2) + 50`) and energy/health (`×1.75`). */
+  pickles(basePrice, baseEnergy, baseHealth) {
+    return {
+      sellPrice: Math.floor(basePrice * 2) + 50,
+      energy: Math.floor(baseEnergy * 1.75),
+      health: Math.floor(baseHealth * 1.75)
+    };
+  }
+  /** Jelly sell price (`Math.floor(baseFruitPrice * 2) + 50`) and energy/health (`×2`). */
+  jelly(baseFruitPrice, baseEnergy, baseHealth) {
+    return {
+      sellPrice: Math.floor(baseFruitPrice * 2) + 50,
+      energy: Math.floor(baseEnergy * 2),
+      health: Math.floor(baseHealth * 2)
+    };
+  }
+  /** Dried Mushrooms sell price (`Math.floor(baseMushroomPrice * 7.5) + 25`) and energy/health (`×3`). */
+  driedMushrooms(baseMushroomPrice, baseEnergy, baseHealth) {
+    return {
+      sellPrice: Math.floor(baseMushroomPrice * 7.5) + 25,
+      energy: Math.floor(baseEnergy * 3),
+      health: Math.floor(baseHealth * 3)
+    };
+  }
+  /** Dried Fruit sell price (`Math.floor(baseFruitPrice * 7.5)`) and energy/health (`×3`). */
+  driedFruit(baseFruitPrice, baseEnergy, baseHealth) {
+    return {
+      sellPrice: Math.floor(baseFruitPrice * 7.5),
+      energy: Math.floor(baseEnergy * 3),
+      health: Math.floor(baseHealth * 3)
+    };
+  }
+  /** Smoked Fish sell price (`Math.floor(baseFishPrice * 2)`) and energy/health (`×1.5`). */
+  smokedFish(baseFishPrice, baseEnergy, baseHealth) {
+    return {
+      sellPrice: Math.floor(baseFishPrice * 2),
+      energy: Math.floor(baseEnergy * 1.5),
+      health: Math.floor(baseHealth * 1.5)
+    };
+  }
+};
+function artisanCalculator() {
+  return new ArtisanCalculator();
+}
+var ProfessionCalculator = class {
+  /** Artisan profession bonus: `Math.floor(price * 1.4)` */
+  artisan(price) {
+    return Math.floor(price * 1.4);
+  }
+  /** Rancher profession bonus: `Math.floor(price * 1.2)` */
+  rancher(price) {
+    return Math.floor(price * 1.2);
+  }
+  /** Tiller profession bonus: `Math.floor(price * 1.1)` */
+  tiller(price) {
+    return Math.floor(price * 1.1);
+  }
+  /** Blacksmith profession bonus: `Math.floor(price * 1.5)` */
+  blacksmith(price) {
+    return Math.floor(price * 1.5);
+  }
+  /** Gemologist profession bonus: `Math.floor(price * 1.3)` */
+  gemologist(price) {
+    return Math.floor(price * 1.3);
+  }
+  /** Tapper profession bonus: `Math.floor(price * 1.25)` */
+  tapper(price) {
+    return Math.floor(price * 1.25);
+  }
+  /** Fisher profession bonus: `Math.floor(price * 1.25)` */
+  fisher(price) {
+    return Math.floor(price * 1.25);
+  }
+  /** Angler profession bonus: `Math.floor(price * 1.5)` */
+  angler(price) {
+    return Math.floor(price * 1.5);
+  }
+};
+function professionCalculator() {
+  return new ProfessionCalculator();
+}
+var KnowledgeCalculator = class {
+  /** Spring Onion Mastery bonus: `Math.floor(price * 5)` */
+  springOnionMastery(price) {
+    return Math.floor(price * 5);
+  }
+  /** Bear's Knowledge bonus: `Math.floor(price * 3)` */
+  bearsKnowledge(price) {
+    return Math.floor(price * 3);
+  }
+};
+function knowledgeCalculator() {
+  return new KnowledgeCalculator();
+}
+var TOTAL_GOLDEN_WALNUTS = 130;
+var JOJA_PARROT_COST_PER_WALNUT = 1e4;
+var JojaParrotCalculator = class {
+  /** Calculate the gold cost to buy all remaining walnuts. */
+  cost(walnutsFound) {
+    const remaining = Math.max(0, TOTAL_GOLDEN_WALNUTS - walnutsFound);
+    return remaining * JOJA_PARROT_COST_PER_WALNUT;
+  }
+  /** Returns how many walnuts are still unfound. */
+  remaining(walnutsFound) {
+    return Math.max(0, TOTAL_GOLDEN_WALNUTS - walnutsFound);
+  }
+  /** The total number of Golden Walnuts available in the game. */
+  get total() {
+    return TOTAL_GOLDEN_WALNUTS;
+  }
+  /** The cost per individual unfound walnut (10,000g). */
+  get costPerWalnut() {
+    return JOJA_PARROT_COST_PER_WALNUT;
+  }
+};
+function jojaParrotCalculator() {
+  return new JojaParrotCalculator();
+}
 
 // data/crops.json
 var crops_default = [
@@ -4046,26 +4595,64 @@ var crops_default = [
     seedId: "472",
     seedName: "Parsnip Seeds",
     seedBuyPrices: [
-      { place: "Pierre's", price: 20 },
-      { place: "JojaMart", price: 25 }
+      {
+        place: "Pierre's",
+        price: 20
+      },
+      {
+        place: "JojaMart",
+        price: 25
+      }
     ],
     seedSellPrice: 10,
     cropSellPrice: 35,
-    harvestQuantity: { min: 1, max: 1 },
+    profession: ["tiller"],
+    harvestQuantity: {
+      min: 1,
+      max: 1
+    },
     trellis: false,
     giant: false,
     description: "A spring tuber closely related to the carrot. It has a sweet, fresh taste.",
     image: "images/crops/parsnip/crop.png",
     seedImage: "images/crops/parsnip/seed.png",
     stages: [
-      { name: "stage 1", image: "images/crops/parsnip/stage-1.png" },
-      { name: "stage 2", image: "images/crops/parsnip/stage-2.png" },
-      { name: "stage 3", image: "images/crops/parsnip/stage-3.png" },
-      { name: "stage 4", image: "images/crops/parsnip/stage-4.png" },
-      { name: "harvest", image: "images/crops/parsnip/stage-5.png" }
+      {
+        name: "stage 1",
+        image: "images/crops/parsnip/stage-1.png"
+      },
+      {
+        name: "stage 2",
+        image: "images/crops/parsnip/stage-2.png"
+      },
+      {
+        name: "stage 3",
+        image: "images/crops/parsnip/stage-3.png"
+      },
+      {
+        name: "stage 4",
+        image: "images/crops/parsnip/stage-4.png"
+      },
+      {
+        name: "harvest",
+        image: "images/crops/parsnip/stage-5.png"
+      }
     ],
-    energyHealth: { energy: 25, health: 11 },
-    farmingXP: 8
+    energyHealth: {
+      energy: 25,
+      health: 11
+    },
+    farmingXP: 8,
+    maxQuality: "iridium",
+    artisanUses: {
+      honey: false,
+      wine: false,
+      juice: true,
+      pickles: true,
+      jelly: false,
+      driedMushrooms: false,
+      driedFruit: false
+    }
   },
   {
     id: "188",
@@ -4077,28 +4664,72 @@ var crops_default = [
     seedId: "473",
     seedName: "Bean Starter",
     seedBuyPrices: [
-      { place: "Pierre's", price: 60 },
-      { place: "JojaMart", price: 75 }
+      {
+        place: "Pierre's",
+        price: 60
+      },
+      {
+        place: "JojaMart",
+        price: 75
+      }
     ],
     seedSellPrice: 30,
     cropSellPrice: 40,
-    harvestQuantity: { min: 1, max: 1 },
+    profession: ["tiller"],
+    harvestQuantity: {
+      min: 1,
+      max: 1
+    },
     trellis: true,
     giant: false,
     description: "A young, tender bean in the pod.",
     image: "images/crops/green-bean/crop.png",
     seedImage: "images/crops/green-bean/seed.png",
     stages: [
-      { name: "stage 1", image: "images/crops/green-bean/stage-1.png" },
-      { name: "stage 2", image: "images/crops/green-bean/stage-2.png" },
-      { name: "stage 3", image: "images/crops/green-bean/stage-3.png" },
-      { name: "stage 4", image: "images/crops/green-bean/stage-4.png" },
-      { name: "stage 5", image: "images/crops/green-bean/stage-5.png" },
-      { name: "harvest", image: "images/crops/green-bean/stage-6.png" },
-      { name: "regrowth", image: "images/crops/green-bean/stage-7.png" }
+      {
+        name: "stage 1",
+        image: "images/crops/green-bean/stage-1.png"
+      },
+      {
+        name: "stage 2",
+        image: "images/crops/green-bean/stage-2.png"
+      },
+      {
+        name: "stage 3",
+        image: "images/crops/green-bean/stage-3.png"
+      },
+      {
+        name: "stage 4",
+        image: "images/crops/green-bean/stage-4.png"
+      },
+      {
+        name: "stage 5",
+        image: "images/crops/green-bean/stage-5.png"
+      },
+      {
+        name: "harvest",
+        image: "images/crops/green-bean/stage-6.png"
+      },
+      {
+        name: "regrowth",
+        image: "images/crops/green-bean/stage-7.png"
+      }
     ],
-    energyHealth: { energy: 25, health: 11 },
-    farmingXP: 9
+    energyHealth: {
+      energy: 25,
+      health: 11
+    },
+    farmingXP: 9,
+    maxQuality: "iridium",
+    artisanUses: {
+      honey: false,
+      wine: false,
+      juice: true,
+      pickles: true,
+      jelly: false,
+      driedMushrooms: false,
+      driedFruit: false
+    }
   },
   {
     id: "190",
@@ -4110,12 +4741,22 @@ var crops_default = [
     seedId: "474",
     seedName: "Cauliflower Seeds",
     seedBuyPrices: [
-      { place: "Pierre's", price: 80 },
-      { place: "JojaMart", price: 100 }
+      {
+        place: "Pierre's",
+        price: 80
+      },
+      {
+        place: "JojaMart",
+        price: 100
+      }
     ],
     seedSellPrice: 40,
     cropSellPrice: 175,
-    harvestQuantity: { min: 1, max: 1 },
+    profession: ["tiller"],
+    harvestQuantity: {
+      min: 1,
+      max: 1
+    },
     trellis: false,
     giant: true,
     description: "It's actually a type of flower! A massive head of tightly packed white florets.",
@@ -4123,15 +4764,46 @@ var crops_default = [
     giantImage: "images/crops/cauliflower/giant.png",
     seedImage: "images/crops/cauliflower/seed.png",
     stages: [
-      { name: "stage 1", image: "images/crops/cauliflower/stage-1.png" },
-      { name: "stage 2", image: "images/crops/cauliflower/stage-2.png" },
-      { name: "stage 3", image: "images/crops/cauliflower/stage-3.png" },
-      { name: "stage 4", image: "images/crops/cauliflower/stage-4.png" },
-      { name: "stage 5", image: "images/crops/cauliflower/stage-5.png" },
-      { name: "harvest", image: "images/crops/cauliflower/stage-6.png" }
+      {
+        name: "stage 1",
+        image: "images/crops/cauliflower/stage-1.png"
+      },
+      {
+        name: "stage 2",
+        image: "images/crops/cauliflower/stage-2.png"
+      },
+      {
+        name: "stage 3",
+        image: "images/crops/cauliflower/stage-3.png"
+      },
+      {
+        name: "stage 4",
+        image: "images/crops/cauliflower/stage-4.png"
+      },
+      {
+        name: "stage 5",
+        image: "images/crops/cauliflower/stage-5.png"
+      },
+      {
+        name: "harvest",
+        image: "images/crops/cauliflower/stage-6.png"
+      }
     ],
-    energyHealth: { energy: 75, health: 33 },
-    farmingXP: 23
+    energyHealth: {
+      energy: 75,
+      health: 33
+    },
+    farmingXP: 23,
+    maxQuality: "iridium",
+    artisanUses: {
+      honey: false,
+      wine: false,
+      juice: true,
+      pickles: true,
+      jelly: false,
+      driedMushrooms: false,
+      driedFruit: false
+    }
   },
   {
     id: "192",
@@ -4143,27 +4815,68 @@ var crops_default = [
     seedId: "475",
     seedName: "Potato Seeds",
     seedBuyPrices: [
-      { place: "Pierre's", price: 50 },
-      { place: "JojaMart", price: 63 }
+      {
+        place: "Pierre's",
+        price: 50
+      },
+      {
+        place: "JojaMart",
+        price: 63
+      }
     ],
     seedSellPrice: 25,
     cropSellPrice: 80,
-    harvestQuantity: { min: 1, max: 4 },
+    profession: ["tiller"],
+    harvestQuantity: {
+      min: 1,
+      max: 4
+    },
     trellis: false,
     giant: false,
     description: "A widely cultivated plant, the potato is one of the most important food crops in the world.",
     image: "images/crops/potato/crop.png",
     seedImage: "images/crops/potato/seed.png",
     stages: [
-      { name: "stage 1", image: "images/crops/potato/stage-1.png" },
-      { name: "stage 2", image: "images/crops/potato/stage-2.png" },
-      { name: "stage 3", image: "images/crops/potato/stage-3.png" },
-      { name: "stage 4", image: "images/crops/potato/stage-4.png" },
-      { name: "stage 5", image: "images/crops/potato/stage-5.png" },
-      { name: "harvest", image: "images/crops/potato/stage-6.png" }
+      {
+        name: "stage 1",
+        image: "images/crops/potato/stage-1.png"
+      },
+      {
+        name: "stage 2",
+        image: "images/crops/potato/stage-2.png"
+      },
+      {
+        name: "stage 3",
+        image: "images/crops/potato/stage-3.png"
+      },
+      {
+        name: "stage 4",
+        image: "images/crops/potato/stage-4.png"
+      },
+      {
+        name: "stage 5",
+        image: "images/crops/potato/stage-5.png"
+      },
+      {
+        name: "harvest",
+        image: "images/crops/potato/stage-6.png"
+      }
     ],
-    energyHealth: { energy: 25, health: 11 },
-    farmingXP: 14
+    energyHealth: {
+      energy: 25,
+      health: 11
+    },
+    farmingXP: 14,
+    maxQuality: "iridium",
+    artisanUses: {
+      honey: false,
+      wine: false,
+      juice: true,
+      pickles: true,
+      jelly: false,
+      driedMushrooms: false,
+      driedFruit: false
+    }
   },
   {
     id: "248",
@@ -4175,26 +4888,64 @@ var crops_default = [
     seedId: "476",
     seedName: "Garlic Seeds",
     seedBuyPrices: [
-      { place: "Pierre's", price: 40 },
-      { place: "JojaMart", price: 50 }
+      {
+        place: "Pierre's",
+        price: 40
+      },
+      {
+        place: "JojaMart",
+        price: 50
+      }
     ],
     seedSellPrice: 20,
     cropSellPrice: 60,
-    harvestQuantity: { min: 1, max: 1 },
+    profession: ["tiller"],
+    harvestQuantity: {
+      min: 1,
+      max: 1
+    },
     trellis: false,
     giant: false,
     description: "A pungent herb used in cooking. The aroma is known to keep monsters at bay.",
     image: "images/crops/garlic/crop.png",
     seedImage: "images/crops/garlic/seed.png",
     stages: [
-      { name: "stage 1", image: "images/crops/garlic/stage-1.png" },
-      { name: "stage 2", image: "images/crops/garlic/stage-2.png" },
-      { name: "stage 3", image: "images/crops/garlic/stage-3.png" },
-      { name: "stage 4", image: "images/crops/garlic/stage-4.png" },
-      { name: "harvest", image: "images/crops/garlic/stage-5.png" }
+      {
+        name: "stage 1",
+        image: "images/crops/garlic/stage-1.png"
+      },
+      {
+        name: "stage 2",
+        image: "images/crops/garlic/stage-2.png"
+      },
+      {
+        name: "stage 3",
+        image: "images/crops/garlic/stage-3.png"
+      },
+      {
+        name: "stage 4",
+        image: "images/crops/garlic/stage-4.png"
+      },
+      {
+        name: "harvest",
+        image: "images/crops/garlic/stage-5.png"
+      }
     ],
-    energyHealth: { energy: 20, health: 9 },
-    farmingXP: 12
+    energyHealth: {
+      energy: 20,
+      health: 9
+    },
+    farmingXP: 12,
+    maxQuality: "iridium",
+    artisanUses: {
+      honey: false,
+      wine: false,
+      juice: true,
+      pickles: true,
+      jelly: false,
+      driedMushrooms: false,
+      driedFruit: false
+    }
   },
   {
     id: "250",
@@ -4206,26 +4957,64 @@ var crops_default = [
     seedId: "477",
     seedName: "Kale Seeds",
     seedBuyPrices: [
-      { place: "Pierre's", price: 70 },
-      { place: "JojaMart", price: 88 }
+      {
+        place: "Pierre's",
+        price: 70
+      },
+      {
+        place: "JojaMart",
+        price: 88
+      }
     ],
     seedSellPrice: 35,
     cropSellPrice: 110,
-    harvestQuantity: { min: 1, max: 1 },
+    profession: ["tiller"],
+    harvestQuantity: {
+      min: 1,
+      max: 1
+    },
     trellis: false,
     giant: false,
     description: "This dark leafy green is impressively healthy and grows quickly.",
     image: "images/crops/kale/crop.png",
     seedImage: "images/crops/kale/seed.png",
     stages: [
-      { name: "stage 1", image: "images/crops/kale/stage-1.png" },
-      { name: "stage 2", image: "images/crops/kale/stage-2.png" },
-      { name: "stage 3", image: "images/crops/kale/stage-3.png" },
-      { name: "stage 4", image: "images/crops/kale/stage-4.png" },
-      { name: "harvest", image: "images/crops/kale/stage-5.png" }
+      {
+        name: "stage 1",
+        image: "images/crops/kale/stage-1.png"
+      },
+      {
+        name: "stage 2",
+        image: "images/crops/kale/stage-2.png"
+      },
+      {
+        name: "stage 3",
+        image: "images/crops/kale/stage-3.png"
+      },
+      {
+        name: "stage 4",
+        image: "images/crops/kale/stage-4.png"
+      },
+      {
+        name: "harvest",
+        image: "images/crops/kale/stage-5.png"
+      }
     ],
-    energyHealth: { energy: 50, health: 22 },
-    farmingXP: 17
+    energyHealth: {
+      energy: 50,
+      health: 22
+    },
+    farmingXP: 17,
+    maxQuality: "iridium",
+    artisanUses: {
+      honey: false,
+      wine: false,
+      juice: true,
+      pickles: true,
+      jelly: false,
+      driedMushrooms: false,
+      driedFruit: false
+    }
   },
   {
     id: "252",
@@ -4236,24 +5025,61 @@ var crops_default = [
     regrowDays: null,
     seedId: "478",
     seedName: "Rhubarb Seeds",
-    seedBuyPrices: [{ place: "Oasis", price: 100 }],
+    seedBuyPrices: [
+      {
+        place: "Oasis",
+        price: 100
+      }
+    ],
     seedSellPrice: 50,
     cropSellPrice: 220,
-    harvestQuantity: { min: 1, max: 1 },
+    profession: ["tiller"],
+    harvestQuantity: {
+      min: 1,
+      max: 1
+    },
     trellis: false,
     giant: false,
     description: "A spring crop sold at the Oasis Shop. It's tart but flavorful when cooked.",
     image: "images/crops/rhubarb/crop.png",
     seedImage: "images/crops/rhubarb/seed.png",
     stages: [
-      { name: "stage 1", image: "images/crops/rhubarb/stage-1.png" },
-      { name: "stage 2", image: "images/crops/rhubarb/stage-2.png" },
-      { name: "stage 3", image: "images/crops/rhubarb/stage-3.png" },
-      { name: "stage 4", image: "images/crops/rhubarb/stage-4.png" },
-      { name: "stage 5", image: "images/crops/rhubarb/stage-5.png" },
-      { name: "harvest", image: "images/crops/rhubarb/stage-6.png" }
+      {
+        name: "stage 1",
+        image: "images/crops/rhubarb/stage-1.png"
+      },
+      {
+        name: "stage 2",
+        image: "images/crops/rhubarb/stage-2.png"
+      },
+      {
+        name: "stage 3",
+        image: "images/crops/rhubarb/stage-3.png"
+      },
+      {
+        name: "stage 4",
+        image: "images/crops/rhubarb/stage-4.png"
+      },
+      {
+        name: "stage 5",
+        image: "images/crops/rhubarb/stage-5.png"
+      },
+      {
+        name: "harvest",
+        image: "images/crops/rhubarb/stage-6.png"
+      }
     ],
-    farmingXP: 26
+    farmingXP: 26,
+    maxQuality: "iridium",
+    artisanUses: {
+      honey: false,
+      wine: true,
+      juice: false,
+      pickles: false,
+      jelly: true,
+      driedMushrooms: false,
+      driedFruit: true
+    }
   },
   {
     id: "400",
@@ -4264,26 +5090,69 @@ var crops_default = [
     regrowDays: 4,
     seedId: "745",
     seedName: "Strawberry Seeds",
-    seedBuyPrices: [{ place: "Egg Festival", price: 100 }],
+    seedBuyPrices: [
+      {
+        place: "Egg Festival",
+        price: 100
+      }
+    ],
     seedSellPrice: 0,
     cropSellPrice: 120,
-    harvestQuantity: { min: 1, max: 1 },
+    profession: ["tiller"],
+    harvestQuantity: {
+      min: 1,
+      max: 1
+    },
     trellis: false,
     giant: false,
     description: "This plump, delicious berry will continue to produce after the first harvest.",
     image: "images/crops/strawberry/crop.png",
     seedImage: "images/crops/strawberry/seed.png",
     stages: [
-      { name: "stage 1", image: "images/crops/strawberry/stage-1.png" },
-      { name: "stage 2", image: "images/crops/strawberry/stage-2.png" },
-      { name: "stage 3", image: "images/crops/strawberry/stage-3.png" },
-      { name: "stage 4", image: "images/crops/strawberry/stage-4.png" },
-      { name: "stage 5", image: "images/crops/strawberry/stage-5.png" },
-      { name: "harvest", image: "images/crops/strawberry/stage-6.png" },
-      { name: "regrowth", image: "images/crops/strawberry/stage-7.png" }
+      {
+        name: "stage 1",
+        image: "images/crops/strawberry/stage-1.png"
+      },
+      {
+        name: "stage 2",
+        image: "images/crops/strawberry/stage-2.png"
+      },
+      {
+        name: "stage 3",
+        image: "images/crops/strawberry/stage-3.png"
+      },
+      {
+        name: "stage 4",
+        image: "images/crops/strawberry/stage-4.png"
+      },
+      {
+        name: "stage 5",
+        image: "images/crops/strawberry/stage-5.png"
+      },
+      {
+        name: "harvest",
+        image: "images/crops/strawberry/stage-6.png"
+      },
+      {
+        name: "regrowth",
+        image: "images/crops/strawberry/stage-7.png"
+      }
     ],
-    energyHealth: { energy: 50, health: 22 },
-    farmingXP: 18
+    energyHealth: {
+      energy: 50,
+      health: 22
+    },
+    farmingXP: 18,
+    maxQuality: "iridium",
+    artisanUses: {
+      honey: false,
+      wine: true,
+      juice: false,
+      pickles: false,
+      jelly: true,
+      driedMushrooms: false,
+      driedFruit: true
+    }
   },
   {
     id: "271",
@@ -4295,26 +5164,64 @@ var crops_default = [
     seedId: "273",
     seedName: "Rice Shoot",
     seedBuyPrices: [
-      { place: "Pierre's", price: 40 },
-      { place: "JojaMart", price: 50 }
+      {
+        place: "Pierre's",
+        price: 40
+      },
+      {
+        place: "JojaMart",
+        price: 50
+      }
     ],
     seedSellPrice: 20,
     cropSellPrice: 30,
-    harvestQuantity: { min: 1, max: 1 },
+    profession: ["tiller"],
+    harvestQuantity: {
+      min: 1,
+      max: 1
+    },
     trellis: false,
     giant: false,
     description: "Needs to be milled before eating. Thrives in paddy conditions near water.",
     image: "images/crops/unmilled-rice/crop.png",
     seedImage: "images/crops/unmilled-rice/seed.png",
     stages: [
-      { name: "stage 1", image: "images/crops/unmilled-rice/stage-1.png" },
-      { name: "stage 2", image: "images/crops/unmilled-rice/stage-2.png" },
-      { name: "stage 3", image: "images/crops/unmilled-rice/stage-3.png" },
-      { name: "stage 4", image: "images/crops/unmilled-rice/stage-4.png" },
-      { name: "harvest", image: "images/crops/unmilled-rice/stage-5.png" }
+      {
+        name: "stage 1",
+        image: "images/crops/unmilled-rice/stage-1.png"
+      },
+      {
+        name: "stage 2",
+        image: "images/crops/unmilled-rice/stage-2.png"
+      },
+      {
+        name: "stage 3",
+        image: "images/crops/unmilled-rice/stage-3.png"
+      },
+      {
+        name: "stage 4",
+        image: "images/crops/unmilled-rice/stage-4.png"
+      },
+      {
+        name: "harvest",
+        image: "images/crops/unmilled-rice/stage-5.png"
+      }
     ],
-    energyHealth: { energy: 3, health: 1 },
-    farmingXP: 7
+    energyHealth: {
+      energy: 3,
+      health: 1
+    },
+    farmingXP: 7,
+    maxQuality: "iridium",
+    artisanUses: {
+      honey: false,
+      wine: false,
+      juice: false,
+      pickles: false,
+      jelly: false,
+      driedMushrooms: false,
+      driedFruit: false
+    }
   },
   {
     id: "591",
@@ -4326,26 +5233,64 @@ var crops_default = [
     seedId: "427",
     seedName: "Tulip Bulb",
     seedBuyPrices: [
-      { place: "Pierre's", price: 20 },
-      { place: "JojaMart", price: 25 }
+      {
+        place: "Pierre's",
+        price: 20
+      },
+      {
+        place: "JojaMart",
+        price: 25
+      }
     ],
     seedSellPrice: 10,
     cropSellPrice: 30,
-    harvestQuantity: { min: 1, max: 1 },
+    profession: ["tiller"],
+    harvestQuantity: {
+      min: 1,
+      max: 1
+    },
     trellis: false,
     giant: false,
     description: "A vivid spring flower that turns the meadow red and yellow.",
     image: "images/crops/tulip/crop.png",
     seedImage: "images/crops/tulip/seed.png",
     stages: [
-      { name: "stage 1", image: "images/crops/tulip/stage-1.png" },
-      { name: "stage 2", image: "images/crops/tulip/stage-2.png" },
-      { name: "stage 3", image: "images/crops/tulip/stage-3.png" },
-      { name: "stage 4", image: "images/crops/tulip/stage-4.png" },
-      { name: "harvest", image: "images/crops/tulip/stage-5.png" }
+      {
+        name: "stage 1",
+        image: "images/crops/tulip/stage-1.png"
+      },
+      {
+        name: "stage 2",
+        image: "images/crops/tulip/stage-2.png"
+      },
+      {
+        name: "stage 3",
+        image: "images/crops/tulip/stage-3.png"
+      },
+      {
+        name: "stage 4",
+        image: "images/crops/tulip/stage-4.png"
+      },
+      {
+        name: "harvest",
+        image: "images/crops/tulip/stage-5.png"
+      }
     ],
-    energyHealth: { energy: 45, health: 20 },
-    farmingXP: 7
+    energyHealth: {
+      energy: 45,
+      health: 20
+    },
+    farmingXP: 7,
+    maxQuality: "iridium",
+    artisanUses: {
+      honey: true,
+      wine: false,
+      juice: false,
+      pickles: false,
+      jelly: false,
+      driedMushrooms: false,
+      driedFruit: false
+    }
   },
   {
     id: "597",
@@ -4357,25 +5302,60 @@ var crops_default = [
     seedId: "429",
     seedName: "Jazz Seeds",
     seedBuyPrices: [
-      { place: "Pierre's", price: 30 },
-      { place: "JojaMart", price: 38 }
+      {
+        place: "Pierre's",
+        price: 30
+      },
+      {
+        place: "JojaMart",
+        price: 38
+      }
     ],
     seedSellPrice: 15,
     cropSellPrice: 50,
-    harvestQuantity: { min: 1, max: 1 },
+    profession: ["tiller"],
+    harvestQuantity: {
+      min: 1,
+      max: 1
+    },
     trellis: false,
     giant: false,
     description: "A delicate flower with a lovely blue hue.",
     image: "images/crops/blue-jazz/crop.png",
     seedImage: "images/crops/blue-jazz/seed.png",
     stages: [
-      { name: "stage 1", image: "images/crops/blue-jazz/stage-1.png" },
-      { name: "stage 2", image: "images/crops/blue-jazz/stage-2.png" },
-      { name: "stage 3", image: "images/crops/blue-jazz/stage-3.png" },
-      { name: "harvest", image: "images/crops/blue-jazz/stage-4.png" }
+      {
+        name: "stage 1",
+        image: "images/crops/blue-jazz/stage-1.png"
+      },
+      {
+        name: "stage 2",
+        image: "images/crops/blue-jazz/stage-2.png"
+      },
+      {
+        name: "stage 3",
+        image: "images/crops/blue-jazz/stage-3.png"
+      },
+      {
+        name: "harvest",
+        image: "images/crops/blue-jazz/stage-4.png"
+      }
     ],
-    energyHealth: { energy: 45, health: 20 },
-    farmingXP: 10
+    energyHealth: {
+      energy: 45,
+      health: 20
+    },
+    farmingXP: 10,
+    maxQuality: "iridium",
+    artisanUses: {
+      honey: true,
+      wine: false,
+      juice: false,
+      pickles: false,
+      jelly: false,
+      driedMushrooms: false,
+      driedFruit: false
+    }
   },
   {
     id: "Carrot",
@@ -4389,20 +5369,49 @@ var crops_default = [
     seedBuyPrices: [],
     seedSellPrice: 15,
     cropSellPrice: 35,
-    harvestQuantity: { min: 1, max: 1 },
+    profession: ["tiller"],
+    harvestQuantity: {
+      min: 1,
+      max: 1
+    },
     trellis: false,
     giant: false,
     description: "A bright orange root vegetable. Good for your eyesight.",
     image: "images/crops/carrot/crop.png",
     seedImage: "images/crops/carrot/seed.png",
     stages: [
-      { name: "stage 1", image: "images/crops/carrot/stage-1.png" },
-      { name: "stage 2", image: "images/crops/carrot/stage-2.png" },
-      { name: "stage 3", image: "images/crops/carrot/stage-3.png" },
-      { name: "harvest", image: "images/crops/carrot/stage-4.png" }
+      {
+        name: "stage 1",
+        image: "images/crops/carrot/stage-1.png"
+      },
+      {
+        name: "stage 2",
+        image: "images/crops/carrot/stage-2.png"
+      },
+      {
+        name: "stage 3",
+        image: "images/crops/carrot/stage-3.png"
+      },
+      {
+        name: "harvest",
+        image: "images/crops/carrot/stage-4.png"
+      }
     ],
-    energyHealth: { energy: 75, health: 33 },
-    farmingXP: 8
+    energyHealth: {
+      energy: 75,
+      health: 33
+    },
+    farmingXP: 8,
+    maxQuality: "iridium",
+    artisanUses: {
+      honey: false,
+      wine: false,
+      juice: true,
+      pickles: true,
+      jelly: false,
+      driedMushrooms: false,
+      driedFruit: false
+    }
   },
   {
     id: "433",
@@ -4413,25 +5422,65 @@ var crops_default = [
     regrowDays: 2,
     seedId: "433",
     seedName: "Coffee Bean",
-    seedBuyPrices: [{ place: "Traveling Cart", price: 2500 }],
+    seedBuyPrices: [
+      {
+        place: "Traveling Cart",
+        price: 2500
+      }
+    ],
     seedSellPrice: 15,
     cropSellPrice: 15,
-    harvestQuantity: { min: 4, max: 4 },
+    profession: ["tiller"],
+    harvestQuantity: {
+      min: 4,
+      max: 4
+    },
     trellis: false,
     giant: false,
     description: "It'll keep you buzzin'. Plant in spring or summer to harvest more beans.",
     image: "images/crops/coffee-bean/crop.png",
     seedImage: "images/crops/coffee-bean/seed.png",
     stages: [
-      { name: "stage 1", image: "images/crops/coffee-bean/stage-1.png" },
-      { name: "stage 2", image: "images/crops/coffee-bean/stage-2.png" },
-      { name: "stage 3", image: "images/crops/coffee-bean/stage-3.png" },
-      { name: "stage 4", image: "images/crops/coffee-bean/stage-4.png" },
-      { name: "stage 5", image: "images/crops/coffee-bean/stage-5.png" },
-      { name: "harvest", image: "images/crops/coffee-bean/stage-6.png" },
-      { name: "regrowth", image: "images/crops/coffee-bean/stage-7.png" }
+      {
+        name: "stage 1",
+        image: "images/crops/coffee-bean/stage-1.png"
+      },
+      {
+        name: "stage 2",
+        image: "images/crops/coffee-bean/stage-2.png"
+      },
+      {
+        name: "stage 3",
+        image: "images/crops/coffee-bean/stage-3.png"
+      },
+      {
+        name: "stage 4",
+        image: "images/crops/coffee-bean/stage-4.png"
+      },
+      {
+        name: "stage 5",
+        image: "images/crops/coffee-bean/stage-5.png"
+      },
+      {
+        name: "harvest",
+        image: "images/crops/coffee-bean/stage-6.png"
+      },
+      {
+        name: "regrowth",
+        image: "images/crops/coffee-bean/stage-7.png"
+      }
     ],
-    farmingXP: 4
+    farmingXP: 4,
+    maxQuality: "iridium",
+    artisanUses: {
+      honey: false,
+      wine: false,
+      juice: false,
+      pickles: false,
+      jelly: false,
+      driedMushrooms: false,
+      driedFruit: false
+    }
   },
   {
     id: "254",
@@ -4443,12 +5492,22 @@ var crops_default = [
     seedId: "479",
     seedName: "Melon Seeds",
     seedBuyPrices: [
-      { place: "Pierre's", price: 80 },
-      { place: "JojaMart", price: 100 }
+      {
+        place: "Pierre's",
+        price: 80
+      },
+      {
+        place: "JojaMart",
+        price: 100
+      }
     ],
     seedSellPrice: 40,
     cropSellPrice: 250,
-    harvestQuantity: { min: 1, max: 1 },
+    profession: ["tiller"],
+    harvestQuantity: {
+      min: 1,
+      max: 1
+    },
     trellis: false,
     giant: true,
     description: "A large sweet fruit that grows in summer. It's one of the most popular at festivals.",
@@ -4456,15 +5515,46 @@ var crops_default = [
     giantImage: "images/crops/melon/giant.png",
     seedImage: "images/crops/melon/seed.png",
     stages: [
-      { name: "stage 1", image: "images/crops/melon/stage-1.png" },
-      { name: "stage 2", image: "images/crops/melon/stage-2.png" },
-      { name: "stage 3", image: "images/crops/melon/stage-3.png" },
-      { name: "stage 4", image: "images/crops/melon/stage-4.png" },
-      { name: "stage 5", image: "images/crops/melon/stage-5.png" },
-      { name: "harvest", image: "images/crops/melon/stage-6.png" }
+      {
+        name: "stage 1",
+        image: "images/crops/melon/stage-1.png"
+      },
+      {
+        name: "stage 2",
+        image: "images/crops/melon/stage-2.png"
+      },
+      {
+        name: "stage 3",
+        image: "images/crops/melon/stage-3.png"
+      },
+      {
+        name: "stage 4",
+        image: "images/crops/melon/stage-4.png"
+      },
+      {
+        name: "stage 5",
+        image: "images/crops/melon/stage-5.png"
+      },
+      {
+        name: "harvest",
+        image: "images/crops/melon/stage-6.png"
+      }
     ],
-    energyHealth: { energy: 113, health: 50 },
-    farmingXP: 27
+    energyHealth: {
+      energy: 113,
+      health: 50
+    },
+    farmingXP: 27,
+    maxQuality: "iridium",
+    artisanUses: {
+      honey: false,
+      wine: true,
+      juice: false,
+      pickles: false,
+      jelly: true,
+      driedMushrooms: false,
+      driedFruit: true
+    }
   },
   {
     id: "256",
@@ -4476,26 +5566,64 @@ var crops_default = [
     seedId: "480",
     seedName: "Tomato Seeds",
     seedBuyPrices: [
-      { place: "Pierre's", price: 50 },
-      { place: "JojaMart", price: 63 }
+      {
+        place: "Pierre's",
+        price: 50
+      },
+      {
+        place: "JojaMart",
+        price: 63
+      }
     ],
     seedSellPrice: 25,
     cropSellPrice: 60,
-    harvestQuantity: { min: 1, max: 1 },
+    profession: ["tiller"],
+    harvestQuantity: {
+      min: 1,
+      max: 1
+    },
     trellis: true,
     giant: false,
     description: "A juicy, nutritious summer vegetable used in cooking worldwide.",
     image: "images/crops/tomato/crop.png",
     seedImage: "images/crops/tomato/seed.png",
     stages: [
-      { name: "stage 1", image: "images/crops/tomato/stage-1.png" },
-      { name: "stage 2", image: "images/crops/tomato/stage-2.png" },
-      { name: "stage 3", image: "images/crops/tomato/stage-3.png" },
-      { name: "harvest", image: "images/crops/tomato/stage-4.png" },
-      { name: "regrowth", image: "images/crops/tomato/stage-5.png" }
+      {
+        name: "stage 1",
+        image: "images/crops/tomato/stage-1.png"
+      },
+      {
+        name: "stage 2",
+        image: "images/crops/tomato/stage-2.png"
+      },
+      {
+        name: "stage 3",
+        image: "images/crops/tomato/stage-3.png"
+      },
+      {
+        name: "harvest",
+        image: "images/crops/tomato/stage-4.png"
+      },
+      {
+        name: "regrowth",
+        image: "images/crops/tomato/stage-5.png"
+      }
     ],
-    energyHealth: { energy: 20, health: 9 },
-    farmingXP: 12
+    energyHealth: {
+      energy: 20,
+      health: 9
+    },
+    farmingXP: 12,
+    maxQuality: "iridium",
+    artisanUses: {
+      honey: false,
+      wine: false,
+      juice: true,
+      pickles: true,
+      jelly: false,
+      driedMushrooms: false,
+      driedFruit: false
+    }
   },
   {
     id: "258",
@@ -4507,28 +5635,72 @@ var crops_default = [
     seedId: "481",
     seedName: "Blueberry Seeds",
     seedBuyPrices: [
-      { place: "Pierre's", price: 80 },
-      { place: "JojaMart", price: 100 }
+      {
+        place: "Pierre's",
+        price: 80
+      },
+      {
+        place: "JojaMart",
+        price: 100
+      }
     ],
     seedSellPrice: 40,
     cropSellPrice: 50,
-    harvestQuantity: { min: 3, max: 3 },
+    profession: ["tiller"],
+    harvestQuantity: {
+      min: 3,
+      max: 3
+    },
     trellis: false,
     giant: false,
     description: "A popular berry among the residents of Stardew Valley.",
     image: "images/crops/blueberry/crop.png",
     seedImage: "images/crops/blueberry/seed.png",
     stages: [
-      { name: "stage 1", image: "images/crops/blueberry/stage-1.png" },
-      { name: "stage 2", image: "images/crops/blueberry/stage-2.png" },
-      { name: "stage 3", image: "images/crops/blueberry/stage-3.png" },
-      { name: "stage 4", image: "images/crops/blueberry/stage-4.png" },
-      { name: "stage 5", image: "images/crops/blueberry/stage-5.png" },
-      { name: "harvest", image: "images/crops/blueberry/stage-6.png" },
-      { name: "regrowth", image: "images/crops/blueberry/stage-7.png" }
+      {
+        name: "stage 1",
+        image: "images/crops/blueberry/stage-1.png"
+      },
+      {
+        name: "stage 2",
+        image: "images/crops/blueberry/stage-2.png"
+      },
+      {
+        name: "stage 3",
+        image: "images/crops/blueberry/stage-3.png"
+      },
+      {
+        name: "stage 4",
+        image: "images/crops/blueberry/stage-4.png"
+      },
+      {
+        name: "stage 5",
+        image: "images/crops/blueberry/stage-5.png"
+      },
+      {
+        name: "harvest",
+        image: "images/crops/blueberry/stage-6.png"
+      },
+      {
+        name: "regrowth",
+        image: "images/crops/blueberry/stage-7.png"
+      }
     ],
-    energyHealth: { energy: 25, health: 11 },
-    farmingXP: 10
+    energyHealth: {
+      energy: 25,
+      health: 11
+    },
+    farmingXP: 10,
+    maxQuality: "iridium",
+    artisanUses: {
+      honey: false,
+      wine: true,
+      juice: false,
+      pickles: false,
+      jelly: true,
+      driedMushrooms: false,
+      driedFruit: true
+    }
   },
   {
     id: "260",
@@ -4540,28 +5712,72 @@ var crops_default = [
     seedId: "482",
     seedName: "Pepper Seeds",
     seedBuyPrices: [
-      { place: "Pierre's", price: 40 },
-      { place: "JojaMart", price: 50 }
+      {
+        place: "Pierre's",
+        price: 40
+      },
+      {
+        place: "JojaMart",
+        price: 50
+      }
     ],
     seedSellPrice: 20,
     cropSellPrice: 40,
-    harvestQuantity: { min: 1, max: 1 },
+    profession: ["tiller"],
+    harvestQuantity: {
+      min: 1,
+      max: 1
+    },
     trellis: false,
     giant: false,
     description: "Fiery hot! A perfect flavoring for spicy summer dishes.",
     image: "images/crops/hot-pepper/crop.png",
     seedImage: "images/crops/hot-pepper/seed.png",
     stages: [
-      { name: "stage 1", image: "images/crops/hot-pepper/stage-1.png" },
-      { name: "stage 2", image: "images/crops/hot-pepper/stage-2.png" },
-      { name: "stage 3", image: "images/crops/hot-pepper/stage-3.png" },
-      { name: "stage 4", image: "images/crops/hot-pepper/stage-4.png" },
-      { name: "stage 5", image: "images/crops/hot-pepper/stage-5.png" },
-      { name: "harvest", image: "images/crops/hot-pepper/stage-6.png" },
-      { name: "regrowth", image: "images/crops/hot-pepper/stage-7.png" }
+      {
+        name: "stage 1",
+        image: "images/crops/hot-pepper/stage-1.png"
+      },
+      {
+        name: "stage 2",
+        image: "images/crops/hot-pepper/stage-2.png"
+      },
+      {
+        name: "stage 3",
+        image: "images/crops/hot-pepper/stage-3.png"
+      },
+      {
+        name: "stage 4",
+        image: "images/crops/hot-pepper/stage-4.png"
+      },
+      {
+        name: "stage 5",
+        image: "images/crops/hot-pepper/stage-5.png"
+      },
+      {
+        name: "harvest",
+        image: "images/crops/hot-pepper/stage-6.png"
+      },
+      {
+        name: "regrowth",
+        image: "images/crops/hot-pepper/stage-7.png"
+      }
     ],
-    energyHealth: { energy: 13, health: 5 },
-    farmingXP: 9
+    energyHealth: {
+      energy: 13,
+      health: 5
+    },
+    farmingXP: 9,
+    maxQuality: "iridium",
+    artisanUses: {
+      honey: false,
+      wine: true,
+      juice: false,
+      pickles: false,
+      jelly: true,
+      driedMushrooms: false,
+      driedFruit: true
+    }
   },
   {
     id: "264",
@@ -4573,26 +5789,64 @@ var crops_default = [
     seedId: "484",
     seedName: "Radish Seeds",
     seedBuyPrices: [
-      { place: "Pierre's", price: 40 },
-      { place: "JojaMart", price: 50 }
+      {
+        place: "Pierre's",
+        price: 40
+      },
+      {
+        place: "JojaMart",
+        price: 50
+      }
     ],
     seedSellPrice: 20,
     cropSellPrice: 90,
-    harvestQuantity: { min: 1, max: 1 },
+    profession: ["tiller"],
+    harvestQuantity: {
+      min: 1,
+      max: 1
+    },
     trellis: false,
     giant: false,
     description: "A crisp, peppery vegetable used in many summer salads and dishes.",
     image: "images/crops/radish/crop.png",
     seedImage: "images/crops/radish/seed.png",
     stages: [
-      { name: "stage 1", image: "images/crops/radish/stage-1.png" },
-      { name: "stage 2", image: "images/crops/radish/stage-2.png" },
-      { name: "stage 3", image: "images/crops/radish/stage-3.png" },
-      { name: "stage 4", image: "images/crops/radish/stage-4.png" },
-      { name: "harvest", image: "images/crops/radish/stage-5.png" }
+      {
+        name: "stage 1",
+        image: "images/crops/radish/stage-1.png"
+      },
+      {
+        name: "stage 2",
+        image: "images/crops/radish/stage-2.png"
+      },
+      {
+        name: "stage 3",
+        image: "images/crops/radish/stage-3.png"
+      },
+      {
+        name: "stage 4",
+        image: "images/crops/radish/stage-4.png"
+      },
+      {
+        name: "harvest",
+        image: "images/crops/radish/stage-5.png"
+      }
     ],
-    energyHealth: { energy: 45, health: 20 },
-    farmingXP: 15
+    energyHealth: {
+      energy: 45,
+      health: 20
+    },
+    farmingXP: 15,
+    maxQuality: "iridium",
+    artisanUses: {
+      honey: false,
+      wine: false,
+      juice: true,
+      pickles: true,
+      jelly: false,
+      driedMushrooms: false,
+      driedFruit: false
+    }
   },
   {
     id: "266",
@@ -4604,27 +5858,68 @@ var crops_default = [
     seedId: "485",
     seedName: "Red Cabbage Seeds",
     seedBuyPrices: [
-      { place: "Pierre's", price: 100 },
-      { place: "JojaMart", price: 125 }
+      {
+        place: "Pierre's",
+        price: 100
+      },
+      {
+        place: "JojaMart",
+        price: 125
+      }
     ],
     seedSellPrice: 50,
     cropSellPrice: 260,
-    harvestQuantity: { min: 1, max: 1 },
+    profession: ["tiller"],
+    harvestQuantity: {
+      min: 1,
+      max: 1
+    },
     trellis: false,
     giant: false,
     description: "A blushing vegetable available from Pierre's starting in year two.",
     image: "images/crops/red-cabbage/crop.png",
     seedImage: "images/crops/red-cabbage/seed.png",
     stages: [
-      { name: "stage 1", image: "images/crops/red-cabbage/stage-1.png" },
-      { name: "stage 2", image: "images/crops/red-cabbage/stage-2.png" },
-      { name: "stage 3", image: "images/crops/red-cabbage/stage-3.png" },
-      { name: "stage 4", image: "images/crops/red-cabbage/stage-4.png" },
-      { name: "stage 5", image: "images/crops/red-cabbage/stage-5.png" },
-      { name: "harvest", image: "images/crops/red-cabbage/stage-6.png" }
+      {
+        name: "stage 1",
+        image: "images/crops/red-cabbage/stage-1.png"
+      },
+      {
+        name: "stage 2",
+        image: "images/crops/red-cabbage/stage-2.png"
+      },
+      {
+        name: "stage 3",
+        image: "images/crops/red-cabbage/stage-3.png"
+      },
+      {
+        name: "stage 4",
+        image: "images/crops/red-cabbage/stage-4.png"
+      },
+      {
+        name: "stage 5",
+        image: "images/crops/red-cabbage/stage-5.png"
+      },
+      {
+        name: "harvest",
+        image: "images/crops/red-cabbage/stage-6.png"
+      }
     ],
-    energyHealth: { energy: 75, health: 33 },
-    farmingXP: 28
+    energyHealth: {
+      energy: 75,
+      health: 33
+    },
+    farmingXP: 28,
+    maxQuality: "iridium",
+    artisanUses: {
+      honey: false,
+      wine: false,
+      juice: true,
+      pickles: true,
+      jelly: false,
+      driedMushrooms: false,
+      driedFruit: false
+    }
   },
   {
     id: "268",
@@ -4635,25 +5930,65 @@ var crops_default = [
     regrowDays: null,
     seedId: "486",
     seedName: "Starfruit Seeds",
-    seedBuyPrices: [{ place: "Oasis", price: 400 }],
+    seedBuyPrices: [
+      {
+        place: "Oasis",
+        price: 400
+      }
+    ],
     seedSellPrice: 200,
     cropSellPrice: 750,
-    harvestQuantity: { min: 1, max: 1 },
+    profession: ["tiller"],
+    harvestQuantity: {
+      min: 1,
+      max: 1
+    },
     trellis: false,
     giant: false,
     description: "A delicious fruit that is said to be the sweetest thing you can grow.",
     image: "images/crops/starfruit/crop.png",
     seedImage: "images/crops/starfruit/seed.png",
     stages: [
-      { name: "stage 1", image: "images/crops/starfruit/stage-1.png" },
-      { name: "stage 2", image: "images/crops/starfruit/stage-2.png" },
-      { name: "stage 3", image: "images/crops/starfruit/stage-3.png" },
-      { name: "stage 4", image: "images/crops/starfruit/stage-4.png" },
-      { name: "stage 5", image: "images/crops/starfruit/stage-5.png" },
-      { name: "harvest", image: "images/crops/starfruit/stage-6.png" }
+      {
+        name: "stage 1",
+        image: "images/crops/starfruit/stage-1.png"
+      },
+      {
+        name: "stage 2",
+        image: "images/crops/starfruit/stage-2.png"
+      },
+      {
+        name: "stage 3",
+        image: "images/crops/starfruit/stage-3.png"
+      },
+      {
+        name: "stage 4",
+        image: "images/crops/starfruit/stage-4.png"
+      },
+      {
+        name: "stage 5",
+        image: "images/crops/starfruit/stage-5.png"
+      },
+      {
+        name: "harvest",
+        image: "images/crops/starfruit/stage-6.png"
+      }
     ],
-    energyHealth: { energy: 125, health: 56 },
-    farmingXP: 43
+    energyHealth: {
+      energy: 125,
+      health: 56
+    },
+    farmingXP: 43,
+    maxQuality: "iridium",
+    artisanUses: {
+      honey: false,
+      wine: true,
+      juice: false,
+      pickles: false,
+      jelly: true,
+      driedMushrooms: false,
+      driedFruit: true
+    }
   },
   {
     id: "304",
@@ -4665,28 +6000,72 @@ var crops_default = [
     seedId: "302",
     seedName: "Hops Starter",
     seedBuyPrices: [
-      { place: "Pierre's", price: 60 },
-      { place: "JojaMart", price: 75 }
+      {
+        place: "Pierre's",
+        price: 60
+      },
+      {
+        place: "JojaMart",
+        price: 75
+      }
     ],
     seedSellPrice: 30,
     cropSellPrice: 25,
-    harvestQuantity: { min: 1, max: 1 },
+    profession: ["tiller"],
+    harvestQuantity: {
+      min: 1,
+      max: 1
+    },
     trellis: true,
     giant: false,
     description: "The flower clusters of the hops plant are used to brew beer.",
     image: "images/crops/hops/crop.png",
     seedImage: "images/crops/hops/seed.png",
     stages: [
-      { name: "stage 1", image: "images/crops/hops/stage-1.png" },
-      { name: "stage 2", image: "images/crops/hops/stage-2.png" },
-      { name: "stage 3", image: "images/crops/hops/stage-3.png" },
-      { name: "stage 4", image: "images/crops/hops/stage-4.png" },
-      { name: "stage 5", image: "images/crops/hops/stage-5.png" },
-      { name: "harvest", image: "images/crops/hops/stage-6.png" },
-      { name: "regrowth", image: "images/crops/hops/stage-7.png" }
+      {
+        name: "stage 1",
+        image: "images/crops/hops/stage-1.png"
+      },
+      {
+        name: "stage 2",
+        image: "images/crops/hops/stage-2.png"
+      },
+      {
+        name: "stage 3",
+        image: "images/crops/hops/stage-3.png"
+      },
+      {
+        name: "stage 4",
+        image: "images/crops/hops/stage-4.png"
+      },
+      {
+        name: "stage 5",
+        image: "images/crops/hops/stage-5.png"
+      },
+      {
+        name: "harvest",
+        image: "images/crops/hops/stage-6.png"
+      },
+      {
+        name: "regrowth",
+        image: "images/crops/hops/stage-7.png"
+      }
     ],
-    energyHealth: { energy: 45, health: 20 },
-    farmingXP: 6
+    energyHealth: {
+      energy: 45,
+      health: 20
+    },
+    farmingXP: 6,
+    maxQuality: "iridium",
+    artisanUses: {
+      honey: false,
+      wine: false,
+      juice: false,
+      pickles: true,
+      jelly: false,
+      driedMushrooms: false,
+      driedFruit: false
+    }
   },
   {
     id: "376",
@@ -4698,26 +6077,64 @@ var crops_default = [
     seedId: "453",
     seedName: "Poppy Seeds",
     seedBuyPrices: [
-      { place: "Pierre's", price: 100 },
-      { place: "JojaMart", price: 125 }
+      {
+        place: "Pierre's",
+        price: 100
+      },
+      {
+        place: "JojaMart",
+        price: 125
+      }
     ],
     seedSellPrice: 50,
     cropSellPrice: 140,
-    harvestQuantity: { min: 1, max: 1 },
+    profession: ["tiller"],
+    harvestQuantity: {
+      min: 1,
+      max: 1
+    },
     trellis: false,
     giant: false,
     description: "The poppy is a sweet, delicate flower with a bold and powerful flavor.",
     image: "images/crops/poppy/crop.png",
     seedImage: "images/crops/poppy/seed.png",
     stages: [
-      { name: "stage 1", image: "images/crops/poppy/stage-1.png" },
-      { name: "stage 2", image: "images/crops/poppy/stage-2.png" },
-      { name: "stage 3", image: "images/crops/poppy/stage-3.png" },
-      { name: "stage 4", image: "images/crops/poppy/stage-4.png" },
-      { name: "harvest", image: "images/crops/poppy/stage-5.png" }
+      {
+        name: "stage 1",
+        image: "images/crops/poppy/stage-1.png"
+      },
+      {
+        name: "stage 2",
+        image: "images/crops/poppy/stage-2.png"
+      },
+      {
+        name: "stage 3",
+        image: "images/crops/poppy/stage-3.png"
+      },
+      {
+        name: "stage 4",
+        image: "images/crops/poppy/stage-4.png"
+      },
+      {
+        name: "harvest",
+        image: "images/crops/poppy/stage-5.png"
+      }
     ],
-    energyHealth: { energy: 45, health: 20 },
-    farmingXP: 20
+    energyHealth: {
+      energy: 45,
+      health: 20
+    },
+    farmingXP: 20,
+    maxQuality: "iridium",
+    artisanUses: {
+      honey: true,
+      wine: false,
+      juice: false,
+      pickles: false,
+      jelly: false,
+      driedMushrooms: false,
+      driedFruit: false
+    }
   },
   {
     id: "593",
@@ -4729,26 +6146,64 @@ var crops_default = [
     seedId: "455",
     seedName: "Spangle Seeds",
     seedBuyPrices: [
-      { place: "Pierre's", price: 50 },
-      { place: "JojaMart", price: 63 }
+      {
+        place: "Pierre's",
+        price: 50
+      },
+      {
+        place: "JojaMart",
+        price: 63
+      }
     ],
     seedSellPrice: 25,
     cropSellPrice: 90,
-    harvestQuantity: { min: 1, max: 1 },
+    profession: ["tiller"],
+    harvestQuantity: {
+      min: 1,
+      max: 1
+    },
     trellis: false,
     giant: false,
     description: "A tropical bloom that thrives in the summer heat.",
     image: "images/crops/summer-spangle/crop.png",
     seedImage: "images/crops/summer-spangle/seed.png",
     stages: [
-      { name: "stage 1", image: "images/crops/summer-spangle/stage-1.png" },
-      { name: "stage 2", image: "images/crops/summer-spangle/stage-2.png" },
-      { name: "stage 3", image: "images/crops/summer-spangle/stage-3.png" },
-      { name: "stage 4", image: "images/crops/summer-spangle/stage-4.png" },
-      { name: "harvest", image: "images/crops/summer-spangle/stage-5.png" }
+      {
+        name: "stage 1",
+        image: "images/crops/summer-spangle/stage-1.png"
+      },
+      {
+        name: "stage 2",
+        image: "images/crops/summer-spangle/stage-2.png"
+      },
+      {
+        name: "stage 3",
+        image: "images/crops/summer-spangle/stage-3.png"
+      },
+      {
+        name: "stage 4",
+        image: "images/crops/summer-spangle/stage-4.png"
+      },
+      {
+        name: "harvest",
+        image: "images/crops/summer-spangle/stage-5.png"
+      }
     ],
-    energyHealth: { energy: 45, health: 20 },
-    farmingXP: 15
+    energyHealth: {
+      energy: 45,
+      health: 20
+    },
+    farmingXP: 15,
+    maxQuality: "iridium",
+    artisanUses: {
+      honey: true,
+      wine: false,
+      juice: false,
+      pickles: false,
+      jelly: false,
+      driedMushrooms: false,
+      driedFruit: false
+    }
   },
   {
     id: "SummerSquash",
@@ -4760,26 +6215,64 @@ var crops_default = [
     seedId: "SummerSquashSeeds",
     seedName: "Summer Squash Seeds",
     seedBuyPrices: [
-      { place: "Pierre's", price: 40 },
-      { place: "JojaMart", price: 50 }
+      {
+        place: "Pierre's",
+        price: 40
+      },
+      {
+        place: "JojaMart",
+        price: 50
+      }
     ],
     seedSellPrice: 20,
     cropSellPrice: 45,
-    harvestQuantity: { min: 1, max: 1 },
+    profession: ["tiller"],
+    harvestQuantity: {
+      min: 1,
+      max: 1
+    },
     trellis: false,
     giant: false,
     description: "A versatile summer squash that's great for cooking.",
     image: "images/crops/summer-squash/crop.png",
     seedImage: "images/crops/summer-squash/seed.png",
     stages: [
-      { name: "stage 1", image: "images/crops/summer-squash/stage-1.png" },
-      { name: "stage 2", image: "images/crops/summer-squash/stage-2.png" },
-      { name: "stage 3", image: "images/crops/summer-squash/stage-3.png" },
-      { name: "harvest", image: "images/crops/summer-squash/stage-4.png" },
-      { name: "regrowth", image: "images/crops/summer-squash/stage-5.png" }
+      {
+        name: "stage 1",
+        image: "images/crops/summer-squash/stage-1.png"
+      },
+      {
+        name: "stage 2",
+        image: "images/crops/summer-squash/stage-2.png"
+      },
+      {
+        name: "stage 3",
+        image: "images/crops/summer-squash/stage-3.png"
+      },
+      {
+        name: "harvest",
+        image: "images/crops/summer-squash/stage-4.png"
+      },
+      {
+        name: "regrowth",
+        image: "images/crops/summer-squash/stage-5.png"
+      }
     ],
-    energyHealth: { energy: 63, health: 28 },
-    farmingXP: 9
+    energyHealth: {
+      energy: 63,
+      health: 28
+    },
+    farmingXP: 9,
+    maxQuality: "iridium",
+    artisanUses: {
+      honey: false,
+      wine: false,
+      juice: true,
+      pickles: true,
+      jelly: false,
+      driedMushrooms: false,
+      driedFruit: false
+    }
   },
   {
     id: "830",
@@ -4793,20 +6286,49 @@ var crops_default = [
     seedBuyPrices: [],
     seedSellPrice: 20,
     cropSellPrice: 100,
-    harvestQuantity: { min: 1, max: 1 },
+    profession: ["tiller"],
+    harvestQuantity: {
+      min: 1,
+      max: 1
+    },
     trellis: false,
     giant: false,
     description: "A starchy root vegetable that grows best in wet, paddy conditions.",
     image: "images/crops/taro-root/crop.png",
     seedImage: "images/crops/taro-root/seed.png",
     stages: [
-      { name: "stage 1", image: "images/crops/taro-root/stage-1.png" },
-      { name: "stage 2", image: "images/crops/taro-root/stage-2.png" },
-      { name: "stage 3", image: "images/crops/taro-root/stage-3.png" },
-      { name: "harvest", image: "images/crops/taro-root/stage-4.png" }
+      {
+        name: "stage 1",
+        image: "images/crops/taro-root/stage-1.png"
+      },
+      {
+        name: "stage 2",
+        image: "images/crops/taro-root/stage-2.png"
+      },
+      {
+        name: "stage 3",
+        image: "images/crops/taro-root/stage-3.png"
+      },
+      {
+        name: "harvest",
+        image: "images/crops/taro-root/stage-4.png"
+      }
     ],
-    energyHealth: { energy: 38, health: 17 },
-    farmingXP: 16
+    energyHealth: {
+      energy: 38,
+      health: 17
+    },
+    farmingXP: 16,
+    maxQuality: "iridium",
+    artisanUses: {
+      honey: false,
+      wine: false,
+      juice: true,
+      pickles: true,
+      jelly: false,
+      driedMushrooms: false,
+      driedFruit: false
+    }
   },
   {
     id: "270",
@@ -4818,28 +6340,72 @@ var crops_default = [
     seedId: "487",
     seedName: "Corn Seeds",
     seedBuyPrices: [
-      { place: "Pierre's", price: 150 },
-      { place: "JojaMart", price: 188 }
+      {
+        place: "Pierre's",
+        price: 150
+      },
+      {
+        place: "JojaMart",
+        price: 188
+      }
     ],
     seedSellPrice: 75,
     cropSellPrice: 50,
-    harvestQuantity: { min: 1, max: 1 },
+    profession: ["tiller"],
+    harvestQuantity: {
+      min: 1,
+      max: 1
+    },
     trellis: false,
     giant: false,
     description: "A sweet and filling crop that grows in both summer and fall.",
     image: "images/crops/corn/crop.png",
     seedImage: "images/crops/corn/seed.png",
     stages: [
-      { name: "stage 1", image: "images/crops/corn/stage-1.png" },
-      { name: "stage 2", image: "images/crops/corn/stage-2.png" },
-      { name: "stage 3", image: "images/crops/corn/stage-3.png" },
-      { name: "stage 4", image: "images/crops/corn/stage-4.png" },
-      { name: "stage 5", image: "images/crops/corn/stage-5.png" },
-      { name: "harvest", image: "images/crops/corn/stage-6.png" },
-      { name: "regrowth", image: "images/crops/corn/stage-7.png" }
+      {
+        name: "stage 1",
+        image: "images/crops/corn/stage-1.png"
+      },
+      {
+        name: "stage 2",
+        image: "images/crops/corn/stage-2.png"
+      },
+      {
+        name: "stage 3",
+        image: "images/crops/corn/stage-3.png"
+      },
+      {
+        name: "stage 4",
+        image: "images/crops/corn/stage-4.png"
+      },
+      {
+        name: "stage 5",
+        image: "images/crops/corn/stage-5.png"
+      },
+      {
+        name: "harvest",
+        image: "images/crops/corn/stage-6.png"
+      },
+      {
+        name: "regrowth",
+        image: "images/crops/corn/stage-7.png"
+      }
     ],
-    energyHealth: { energy: 25, health: 11 },
-    farmingXP: 10
+    energyHealth: {
+      energy: 25,
+      health: 11
+    },
+    farmingXP: 10,
+    maxQuality: "iridium",
+    artisanUses: {
+      honey: false,
+      wine: false,
+      juice: true,
+      pickles: true,
+      jelly: false,
+      driedMushrooms: false,
+      driedFruit: false
+    }
   },
   {
     id: "262",
@@ -4851,24 +6417,56 @@ var crops_default = [
     seedId: "483",
     seedName: "Wheat Seeds",
     seedBuyPrices: [
-      { place: "Pierre's", price: 10 },
-      { place: "JojaMart", price: 13 }
+      {
+        place: "Pierre's",
+        price: 10
+      },
+      {
+        place: "JojaMart",
+        price: 13
+      }
     ],
     seedSellPrice: 5,
     cropSellPrice: 25,
-    harvestQuantity: { min: 1, max: 1 },
+    profession: ["tiller"],
+    harvestQuantity: {
+      min: 1,
+      max: 1
+    },
     trellis: false,
     giant: false,
     description: "A common grain used to make flour. Harvest with a scythe.",
     image: "images/crops/wheat/crop.png",
     seedImage: "images/crops/wheat/seed.png",
     stages: [
-      { name: "stage 1", image: "images/crops/wheat/stage-1.png" },
-      { name: "stage 2", image: "images/crops/wheat/stage-2.png" },
-      { name: "stage 3", image: "images/crops/wheat/stage-3.png" },
-      { name: "harvest", image: "images/crops/wheat/stage-4.png" }
+      {
+        name: "stage 1",
+        image: "images/crops/wheat/stage-1.png"
+      },
+      {
+        name: "stage 2",
+        image: "images/crops/wheat/stage-2.png"
+      },
+      {
+        name: "stage 3",
+        image: "images/crops/wheat/stage-3.png"
+      },
+      {
+        name: "harvest",
+        image: "images/crops/wheat/stage-4.png"
+      }
     ],
-    farmingXP: 6
+    farmingXP: 6,
+    maxQuality: "iridium",
+    artisanUses: {
+      honey: false,
+      wine: false,
+      juice: false,
+      pickles: true,
+      jelly: false,
+      driedMushrooms: false,
+      driedFruit: false
+    }
   },
   {
     id: "421",
@@ -4880,25 +6478,60 @@ var crops_default = [
     seedId: "431",
     seedName: "Sunflower Seeds",
     seedBuyPrices: [
-      { place: "Pierre's", price: 200 },
-      { place: "JojaMart", price: 250 }
+      {
+        place: "Pierre's",
+        price: 200
+      },
+      {
+        place: "JojaMart",
+        price: 250
+      }
     ],
     seedSellPrice: 20,
     cropSellPrice: 80,
-    harvestQuantity: { min: 1, max: 1 },
+    profession: ["tiller"],
+    harvestQuantity: {
+      min: 1,
+      max: 1
+    },
     trellis: false,
     giant: false,
     description: "A giant, warming flower that also produces useful seeds.",
     image: "images/crops/sunflower/crop.png",
     seedImage: "images/crops/sunflower/seed.png",
     stages: [
-      { name: "stage 1", image: "images/crops/sunflower/stage-1.png" },
-      { name: "stage 2", image: "images/crops/sunflower/stage-2.png" },
-      { name: "stage 3", image: "images/crops/sunflower/stage-3.png" },
-      { name: "harvest", image: "images/crops/sunflower/stage-4.png" }
+      {
+        name: "stage 1",
+        image: "images/crops/sunflower/stage-1.png"
+      },
+      {
+        name: "stage 2",
+        image: "images/crops/sunflower/stage-2.png"
+      },
+      {
+        name: "stage 3",
+        image: "images/crops/sunflower/stage-3.png"
+      },
+      {
+        name: "harvest",
+        image: "images/crops/sunflower/stage-4.png"
+      }
     ],
-    energyHealth: { energy: 45, health: 20 },
-    farmingXP: 5
+    energyHealth: {
+      energy: 45,
+      health: 20
+    },
+    farmingXP: 5,
+    maxQuality: "iridium",
+    artisanUses: {
+      honey: true,
+      wine: false,
+      juice: false,
+      pickles: false,
+      jelly: false,
+      driedMushrooms: false,
+      driedFruit: false
+    }
   },
   {
     id: "276",
@@ -4910,12 +6543,22 @@ var crops_default = [
     seedId: "490",
     seedName: "Pumpkin Seeds",
     seedBuyPrices: [
-      { place: "Pierre's", price: 100 },
-      { place: "JojaMart", price: 125 }
+      {
+        place: "Pierre's",
+        price: 100
+      },
+      {
+        place: "JojaMart",
+        price: 125
+      }
     ],
     seedSellPrice: 50,
     cropSellPrice: 320,
-    harvestQuantity: { min: 1, max: 1 },
+    profession: ["tiller"],
+    harvestQuantity: {
+      min: 1,
+      max: 1
+    },
     trellis: false,
     giant: true,
     description: "A fall favorite, grown for its flavor and its festive orange color.",
@@ -4923,13 +6566,38 @@ var crops_default = [
     giantImage: "images/crops/pumpkin/giant.png",
     seedImage: "images/crops/pumpkin/seed.png",
     stages: [
-      { name: "stage 1", image: "images/crops/pumpkin/stage-1.png" },
-      { name: "stage 2", image: "images/crops/pumpkin/stage-2.png" },
-      { name: "stage 3", image: "images/crops/pumpkin/stage-3.png" },
-      { name: "stage 4", image: "images/crops/pumpkin/stage-4.png" },
-      { name: "harvest", image: "images/crops/pumpkin/stage-5.png" }
+      {
+        name: "stage 1",
+        image: "images/crops/pumpkin/stage-1.png"
+      },
+      {
+        name: "stage 2",
+        image: "images/crops/pumpkin/stage-2.png"
+      },
+      {
+        name: "stage 3",
+        image: "images/crops/pumpkin/stage-3.png"
+      },
+      {
+        name: "stage 4",
+        image: "images/crops/pumpkin/stage-4.png"
+      },
+      {
+        name: "harvest",
+        image: "images/crops/pumpkin/stage-5.png"
+      }
     ],
-    farmingXP: 31
+    farmingXP: 31,
+    maxQuality: "iridium",
+    artisanUses: {
+      honey: false,
+      wine: false,
+      juice: true,
+      pickles: true,
+      jelly: false,
+      driedMushrooms: false,
+      driedFruit: false
+    }
   },
   {
     id: "272",
@@ -4941,26 +6609,64 @@ var crops_default = [
     seedId: "488",
     seedName: "Eggplant Seeds",
     seedBuyPrices: [
-      { place: "Pierre's", price: 20 },
-      { place: "JojaMart", price: 25 }
+      {
+        place: "Pierre's",
+        price: 20
+      },
+      {
+        place: "JojaMart",
+        price: 25
+      }
     ],
     seedSellPrice: 10,
     cropSellPrice: 60,
-    harvestQuantity: { min: 1, max: 1 },
+    profession: ["tiller"],
+    harvestQuantity: {
+      min: 1,
+      max: 1
+    },
     trellis: false,
     giant: false,
     description: "A purple vegetable most often used in cooking.",
     image: "images/crops/eggplant/crop.png",
     seedImage: "images/crops/eggplant/seed.png",
     stages: [
-      { name: "stage 1", image: "images/crops/eggplant/stage-1.png" },
-      { name: "stage 2", image: "images/crops/eggplant/stage-2.png" },
-      { name: "stage 3", image: "images/crops/eggplant/stage-3.png" },
-      { name: "harvest", image: "images/crops/eggplant/stage-4.png" },
-      { name: "regrowth", image: "images/crops/eggplant/stage-5.png" }
+      {
+        name: "stage 1",
+        image: "images/crops/eggplant/stage-1.png"
+      },
+      {
+        name: "stage 2",
+        image: "images/crops/eggplant/stage-2.png"
+      },
+      {
+        name: "stage 3",
+        image: "images/crops/eggplant/stage-3.png"
+      },
+      {
+        name: "harvest",
+        image: "images/crops/eggplant/stage-4.png"
+      },
+      {
+        name: "regrowth",
+        image: "images/crops/eggplant/stage-5.png"
+      }
     ],
-    energyHealth: { energy: 20, health: 9 },
-    farmingXP: 12
+    energyHealth: {
+      energy: 20,
+      health: 9
+    },
+    farmingXP: 12,
+    maxQuality: "iridium",
+    artisanUses: {
+      honey: false,
+      wine: false,
+      juice: true,
+      pickles: true,
+      jelly: false,
+      driedMushrooms: false,
+      driedFruit: false
+    }
   },
   {
     id: "274",
@@ -4972,26 +6678,64 @@ var crops_default = [
     seedId: "489",
     seedName: "Artichoke Seeds",
     seedBuyPrices: [
-      { place: "Pierre's", price: 30 },
-      { place: "JojaMart", price: 38 }
+      {
+        place: "Pierre's",
+        price: 30
+      },
+      {
+        place: "JojaMart",
+        price: 38
+      }
     ],
     seedSellPrice: 15,
     cropSellPrice: 160,
-    harvestQuantity: { min: 1, max: 1 },
+    profession: ["tiller"],
+    harvestQuantity: {
+      min: 1,
+      max: 1
+    },
     trellis: false,
     giant: false,
     description: "A hearty crop that takes a while to grow, but the rewards are worth the wait.",
     image: "images/crops/artichoke/crop.png",
     seedImage: "images/crops/artichoke/seed.png",
     stages: [
-      { name: "stage 1", image: "images/crops/artichoke/stage-1.png" },
-      { name: "stage 2", image: "images/crops/artichoke/stage-2.png" },
-      { name: "stage 3", image: "images/crops/artichoke/stage-3.png" },
-      { name: "stage 4", image: "images/crops/artichoke/stage-4.png" },
-      { name: "harvest", image: "images/crops/artichoke/stage-5.png" }
+      {
+        name: "stage 1",
+        image: "images/crops/artichoke/stage-1.png"
+      },
+      {
+        name: "stage 2",
+        image: "images/crops/artichoke/stage-2.png"
+      },
+      {
+        name: "stage 3",
+        image: "images/crops/artichoke/stage-3.png"
+      },
+      {
+        name: "stage 4",
+        image: "images/crops/artichoke/stage-4.png"
+      },
+      {
+        name: "harvest",
+        image: "images/crops/artichoke/stage-5.png"
+      }
     ],
-    energyHealth: { energy: 30, health: 13 },
-    farmingXP: 22
+    energyHealth: {
+      energy: 30,
+      health: 13
+    },
+    farmingXP: 22,
+    maxQuality: "iridium",
+    artisanUses: {
+      honey: false,
+      wine: false,
+      juice: true,
+      pickles: true,
+      jelly: false,
+      driedMushrooms: false,
+      driedFruit: false
+    }
   },
   {
     id: "300",
@@ -5003,25 +6747,60 @@ var crops_default = [
     seedId: "299",
     seedName: "Amaranth Seeds",
     seedBuyPrices: [
-      { place: "Pierre's", price: 70 },
-      { place: "JojaMart", price: 88 }
+      {
+        place: "Pierre's",
+        price: 70
+      },
+      {
+        place: "JojaMart",
+        price: 88
+      }
     ],
     seedSellPrice: 35,
     cropSellPrice: 150,
-    harvestQuantity: { min: 1, max: 1 },
+    profession: ["tiller"],
+    harvestQuantity: {
+      min: 1,
+      max: 1
+    },
     trellis: false,
     giant: false,
     description: "This grain has been cultivated by humans for thousands of years.",
     image: "images/crops/amaranth/crop.png",
     seedImage: "images/crops/amaranth/seed.png",
     stages: [
-      { name: "stage 1", image: "images/crops/amaranth/stage-1.png" },
-      { name: "stage 2", image: "images/crops/amaranth/stage-2.png" },
-      { name: "stage 3", image: "images/crops/amaranth/stage-3.png" },
-      { name: "harvest", image: "images/crops/amaranth/stage-4.png" }
+      {
+        name: "stage 1",
+        image: "images/crops/amaranth/stage-1.png"
+      },
+      {
+        name: "stage 2",
+        image: "images/crops/amaranth/stage-2.png"
+      },
+      {
+        name: "stage 3",
+        image: "images/crops/amaranth/stage-3.png"
+      },
+      {
+        name: "harvest",
+        image: "images/crops/amaranth/stage-4.png"
+      }
     ],
-    energyHealth: { energy: 50, health: 22 },
-    farmingXP: 21
+    energyHealth: {
+      energy: 50,
+      health: 22
+    },
+    farmingXP: 21,
+    maxQuality: "iridium",
+    artisanUses: {
+      honey: false,
+      wine: false,
+      juice: true,
+      pickles: true,
+      jelly: false,
+      driedMushrooms: false,
+      driedFruit: false
+    }
   },
   {
     id: "398",
@@ -5033,26 +6812,64 @@ var crops_default = [
     seedId: "301",
     seedName: "Grape Starter",
     seedBuyPrices: [
-      { place: "Pierre's", price: 60 },
-      { place: "JojaMart", price: 75 }
+      {
+        place: "Pierre's",
+        price: 60
+      },
+      {
+        place: "JojaMart",
+        price: 75
+      }
     ],
     seedSellPrice: 30,
     cropSellPrice: 80,
-    harvestQuantity: { min: 1, max: 1 },
+    profession: ["tiller"],
+    harvestQuantity: {
+      min: 1,
+      max: 1
+    },
     trellis: true,
     giant: false,
     description: "A sweet fruit that grows on a vine trellis in the fall.",
     image: "images/crops/grape/crop.png",
     seedImage: "images/crops/grape/seed.png",
     stages: [
-      { name: "stage 1", image: "images/crops/grape/stage-1.png" },
-      { name: "stage 2", image: "images/crops/grape/stage-2.png" },
-      { name: "stage 3", image: "images/crops/grape/stage-3.png" },
-      { name: "harvest", image: "images/crops/grape/stage-4.png" },
-      { name: "regrowth", image: "images/crops/grape/stage-5.png" }
+      {
+        name: "stage 1",
+        image: "images/crops/grape/stage-1.png"
+      },
+      {
+        name: "stage 2",
+        image: "images/crops/grape/stage-2.png"
+      },
+      {
+        name: "stage 3",
+        image: "images/crops/grape/stage-3.png"
+      },
+      {
+        name: "harvest",
+        image: "images/crops/grape/stage-4.png"
+      },
+      {
+        name: "regrowth",
+        image: "images/crops/grape/stage-5.png"
+      }
     ],
-    energyHealth: { energy: 38, health: 17 },
-    farmingXP: 14
+    energyHealth: {
+      energy: 38,
+      health: 17
+    },
+    farmingXP: 14,
+    maxQuality: "iridium",
+    artisanUses: {
+      honey: false,
+      wine: true,
+      juice: false,
+      pickles: false,
+      jelly: true,
+      driedMushrooms: false,
+      driedFruit: false
+    }
   },
   {
     id: "282",
@@ -5064,26 +6881,64 @@ var crops_default = [
     seedId: "493",
     seedName: "Cranberry Seeds",
     seedBuyPrices: [
-      { place: "Pierre's", price: 240 },
-      { place: "JojaMart", price: 300 }
+      {
+        place: "Pierre's",
+        price: 240
+      },
+      {
+        place: "JojaMart",
+        price: 300
+      }
     ],
     seedSellPrice: 120,
     cropSellPrice: 75,
-    harvestQuantity: { min: 2, max: 2 },
+    profession: ["tiller"],
+    harvestQuantity: {
+      min: 2,
+      max: 2
+    },
     trellis: false,
     giant: false,
     description: "A sharp, tangy red berry often used in fall cooking. Each plant bears multiple fruits.",
     image: "images/crops/cranberries/crop.png",
     seedImage: "images/crops/cranberries/seed.png",
     stages: [
-      { name: "stage 1", image: "images/crops/cranberries/stage-1.png" },
-      { name: "stage 2", image: "images/crops/cranberries/stage-2.png" },
-      { name: "stage 3", image: "images/crops/cranberries/stage-3.png" },
-      { name: "harvest", image: "images/crops/cranberries/stage-4.png" },
-      { name: "regrowth", image: "images/crops/cranberries/stage-5.png" }
+      {
+        name: "stage 1",
+        image: "images/crops/cranberries/stage-1.png"
+      },
+      {
+        name: "stage 2",
+        image: "images/crops/cranberries/stage-2.png"
+      },
+      {
+        name: "stage 3",
+        image: "images/crops/cranberries/stage-3.png"
+      },
+      {
+        name: "harvest",
+        image: "images/crops/cranberries/stage-4.png"
+      },
+      {
+        name: "regrowth",
+        image: "images/crops/cranberries/stage-5.png"
+      }
     ],
-    energyHealth: { energy: 38, health: 17 },
-    farmingXP: 14
+    energyHealth: {
+      energy: 38,
+      health: 17
+    },
+    farmingXP: 14,
+    maxQuality: "iridium",
+    artisanUses: {
+      honey: false,
+      wine: true,
+      juice: false,
+      pickles: false,
+      jelly: true,
+      driedMushrooms: false,
+      driedFruit: true
+    }
   },
   {
     id: "278",
@@ -5095,25 +6950,60 @@ var crops_default = [
     seedId: "491",
     seedName: "Bok Choy Seeds",
     seedBuyPrices: [
-      { place: "Pierre's", price: 50 },
-      { place: "JojaMart", price: 63 }
+      {
+        place: "Pierre's",
+        price: 50
+      },
+      {
+        place: "JojaMart",
+        price: 63
+      }
     ],
     seedSellPrice: 25,
     cropSellPrice: 80,
-    harvestQuantity: { min: 1, max: 1 },
+    profession: ["tiller"],
+    harvestQuantity: {
+      min: 1,
+      max: 1
+    },
     trellis: false,
     giant: false,
     description: "A type of cabbage with a firm texture and a mild, sweet flavor.",
     image: "images/crops/bok-choy/crop.png",
     seedImage: "images/crops/bok-choy/seed.png",
     stages: [
-      { name: "stage 1", image: "images/crops/bok-choy/stage-1.png" },
-      { name: "stage 2", image: "images/crops/bok-choy/stage-2.png" },
-      { name: "stage 3", image: "images/crops/bok-choy/stage-3.png" },
-      { name: "harvest", image: "images/crops/bok-choy/stage-4.png" }
+      {
+        name: "stage 1",
+        image: "images/crops/bok-choy/stage-1.png"
+      },
+      {
+        name: "stage 2",
+        image: "images/crops/bok-choy/stage-2.png"
+      },
+      {
+        name: "stage 3",
+        image: "images/crops/bok-choy/stage-3.png"
+      },
+      {
+        name: "harvest",
+        image: "images/crops/bok-choy/stage-4.png"
+      }
     ],
-    energyHealth: { energy: 25, health: 11 },
-    farmingXP: 14
+    energyHealth: {
+      energy: 25,
+      health: 11
+    },
+    farmingXP: 14,
+    maxQuality: "iridium",
+    artisanUses: {
+      honey: false,
+      wine: false,
+      juice: true,
+      pickles: true,
+      jelly: false,
+      driedMushrooms: false,
+      driedFruit: false
+    }
   },
   {
     id: "280",
@@ -5125,25 +7015,60 @@ var crops_default = [
     seedId: "492",
     seedName: "Yam Seeds",
     seedBuyPrices: [
-      { place: "Pierre's", price: 60 },
-      { place: "JojaMart", price: 75 }
+      {
+        place: "Pierre's",
+        price: 60
+      },
+      {
+        place: "JojaMart",
+        price: 75
+      }
     ],
     seedSellPrice: 30,
     cropSellPrice: 160,
-    harvestQuantity: { min: 1, max: 1 },
+    profession: ["tiller"],
+    harvestQuantity: {
+      min: 1,
+      max: 1
+    },
     trellis: false,
     giant: false,
     description: "It's a starchy yam. Looks like food...",
     image: "images/crops/yam/crop.png",
     seedImage: "images/crops/yam/seed.png",
     stages: [
-      { name: "stage 1", image: "images/crops/yam/stage-1.png" },
-      { name: "stage 2", image: "images/crops/yam/stage-2.png" },
-      { name: "stage 3", image: "images/crops/yam/stage-3.png" },
-      { name: "harvest", image: "images/crops/yam/stage-4.png" }
+      {
+        name: "stage 1",
+        image: "images/crops/yam/stage-1.png"
+      },
+      {
+        name: "stage 2",
+        image: "images/crops/yam/stage-2.png"
+      },
+      {
+        name: "stage 3",
+        image: "images/crops/yam/stage-3.png"
+      },
+      {
+        name: "harvest",
+        image: "images/crops/yam/stage-4.png"
+      }
     ],
-    energyHealth: { energy: 45, health: 20 },
-    farmingXP: 22
+    energyHealth: {
+      energy: 45,
+      health: 20
+    },
+    farmingXP: 22,
+    maxQuality: "iridium",
+    artisanUses: {
+      honey: false,
+      wine: false,
+      juice: true,
+      pickles: true,
+      jelly: false,
+      driedMushrooms: false,
+      driedFruit: false
+    }
   },
   {
     id: "284",
@@ -5154,23 +7079,57 @@ var crops_default = [
     regrowDays: null,
     seedId: "494",
     seedName: "Beet Seeds",
-    seedBuyPrices: [{ place: "Oasis", price: 20 }],
+    seedBuyPrices: [
+      {
+        place: "Oasis",
+        price: 20
+      }
+    ],
     seedSellPrice: 10,
     cropSellPrice: 100,
-    harvestQuantity: { min: 1, max: 1 },
+    profession: ["tiller"],
+    harvestQuantity: {
+      min: 1,
+      max: 1
+    },
     trellis: false,
     giant: false,
     description: "A sweet root vegetable. Can be used at the mill to make sugar.",
     image: "images/crops/beet/crop.png",
     seedImage: "images/crops/beet/seed.png",
     stages: [
-      { name: "stage 1", image: "images/crops/beet/stage-1.png" },
-      { name: "stage 2", image: "images/crops/beet/stage-2.png" },
-      { name: "stage 3", image: "images/crops/beet/stage-3.png" },
-      { name: "harvest", image: "images/crops/beet/stage-4.png" }
+      {
+        name: "stage 1",
+        image: "images/crops/beet/stage-1.png"
+      },
+      {
+        name: "stage 2",
+        image: "images/crops/beet/stage-2.png"
+      },
+      {
+        name: "stage 3",
+        image: "images/crops/beet/stage-3.png"
+      },
+      {
+        name: "harvest",
+        image: "images/crops/beet/stage-4.png"
+      }
     ],
-    energyHealth: { energy: 30, health: 13 },
-    farmingXP: 16
+    energyHealth: {
+      energy: 30,
+      health: 13
+    },
+    farmingXP: 16,
+    maxQuality: "iridium",
+    artisanUses: {
+      honey: false,
+      wine: false,
+      juice: true,
+      pickles: true,
+      jelly: false,
+      driedMushrooms: false,
+      driedFruit: false
+    }
   },
   {
     id: "417",
@@ -5181,23 +7140,57 @@ var crops_default = [
     regrowDays: null,
     seedId: "347",
     seedName: "Rare Seed",
-    seedBuyPrices: [{ place: "Traveling Cart", price: 1e3 }],
+    seedBuyPrices: [
+      {
+        place: "Traveling Cart",
+        price: 1e3
+      }
+    ],
     seedSellPrice: 200,
     cropSellPrice: 3e3,
-    harvestQuantity: { min: 1, max: 1 },
+    profession: ["tiller"],
+    harvestQuantity: {
+      min: 1,
+      max: 1
+    },
     trellis: false,
     giant: false,
     description: "The rarest of all gems in the known world. It's an extraordinary sweet fruit.",
     image: "images/crops/sweet-gem-berry/crop.png",
     seedImage: "images/crops/sweet-gem-berry/seed.png",
     stages: [
-      { name: "stage 1", image: "images/crops/sweet-gem-berry/stage-1.png" },
-      { name: "stage 2", image: "images/crops/sweet-gem-berry/stage-2.png" },
-      { name: "stage 3", image: "images/crops/sweet-gem-berry/stage-3.png" },
-      { name: "stage 4", image: "images/crops/sweet-gem-berry/stage-4.png" },
-      { name: "harvest", image: "images/crops/sweet-gem-berry/stage-5.png" }
+      {
+        name: "stage 1",
+        image: "images/crops/sweet-gem-berry/stage-1.png"
+      },
+      {
+        name: "stage 2",
+        image: "images/crops/sweet-gem-berry/stage-2.png"
+      },
+      {
+        name: "stage 3",
+        image: "images/crops/sweet-gem-berry/stage-3.png"
+      },
+      {
+        name: "stage 4",
+        image: "images/crops/sweet-gem-berry/stage-4.png"
+      },
+      {
+        name: "harvest",
+        image: "images/crops/sweet-gem-berry/stage-5.png"
+      }
     ],
-    farmingXP: 64
+    farmingXP: 64,
+    maxQuality: "iridium",
+    artisanUses: {
+      honey: false,
+      wine: false,
+      juice: false,
+      pickles: false,
+      jelly: false,
+      driedMushrooms: false,
+      driedFruit: false
+    }
   },
   {
     id: "595",
@@ -5209,25 +7202,60 @@ var crops_default = [
     seedId: "425",
     seedName: "Fairy Seeds",
     seedBuyPrices: [
-      { place: "Pierre's", price: 200 },
-      { place: "JojaMart", price: 250 }
+      {
+        place: "Pierre's",
+        price: 200
+      },
+      {
+        place: "JojaMart",
+        price: 250
+      }
     ],
     seedSellPrice: 100,
     cropSellPrice: 290,
-    harvestQuantity: { min: 1, max: 1 },
+    profession: ["tiller"],
+    harvestQuantity: {
+      min: 1,
+      max: 1
+    },
     trellis: false,
     giant: false,
     description: "An extremely rare flower with a powerful, sweet perfume.",
     image: "images/crops/fairy-rose/crop.png",
     seedImage: "images/crops/fairy-rose/seed.png",
     stages: [
-      { name: "stage 1", image: "images/crops/fairy-rose/stage-1.png" },
-      { name: "stage 2", image: "images/crops/fairy-rose/stage-2.png" },
-      { name: "stage 3", image: "images/crops/fairy-rose/stage-3.png" },
-      { name: "harvest", image: "images/crops/fairy-rose/stage-4.png" }
+      {
+        name: "stage 1",
+        image: "images/crops/fairy-rose/stage-1.png"
+      },
+      {
+        name: "stage 2",
+        image: "images/crops/fairy-rose/stage-2.png"
+      },
+      {
+        name: "stage 3",
+        image: "images/crops/fairy-rose/stage-3.png"
+      },
+      {
+        name: "harvest",
+        image: "images/crops/fairy-rose/stage-4.png"
+      }
     ],
-    energyHealth: { energy: 45, health: 20 },
-    farmingXP: 29
+    energyHealth: {
+      energy: 45,
+      health: 20
+    },
+    farmingXP: 29,
+    maxQuality: "iridium",
+    artisanUses: {
+      honey: true,
+      wine: false,
+      juice: false,
+      pickles: false,
+      jelly: false,
+      driedMushrooms: false,
+      driedFruit: false
+    }
   },
   {
     id: "Broccoli",
@@ -5239,27 +7267,68 @@ var crops_default = [
     seedId: "BroccoliSeeds",
     seedName: "Broccoli Seeds",
     seedBuyPrices: [
-      { place: "Pierre's", price: 80 },
-      { place: "JojaMart", price: 100 }
+      {
+        place: "Pierre's",
+        price: 80
+      },
+      {
+        place: "JojaMart",
+        price: 100
+      }
     ],
     seedSellPrice: 40,
     cropSellPrice: 70,
-    harvestQuantity: { min: 1, max: 1 },
+    profession: ["tiller"],
+    harvestQuantity: {
+      min: 1,
+      max: 1
+    },
     trellis: false,
     giant: false,
     description: "A dark green vegetable with many densely-packed florets.",
     image: "images/crops/broccoli/crop.png",
     seedImage: "images/crops/broccoli/seed.png",
     stages: [
-      { name: "stage 1", image: "images/crops/broccoli/stage-1.png" },
-      { name: "stage 2", image: "images/crops/broccoli/stage-2.png" },
-      { name: "stage 3", image: "images/crops/broccoli/stage-3.png" },
-      { name: "stage 4", image: "images/crops/broccoli/stage-4.png" },
-      { name: "harvest", image: "images/crops/broccoli/stage-5.png" },
-      { name: "regrowth", image: "images/crops/broccoli/stage-6.png" }
+      {
+        name: "stage 1",
+        image: "images/crops/broccoli/stage-1.png"
+      },
+      {
+        name: "stage 2",
+        image: "images/crops/broccoli/stage-2.png"
+      },
+      {
+        name: "stage 3",
+        image: "images/crops/broccoli/stage-3.png"
+      },
+      {
+        name: "stage 4",
+        image: "images/crops/broccoli/stage-4.png"
+      },
+      {
+        name: "harvest",
+        image: "images/crops/broccoli/stage-5.png"
+      },
+      {
+        name: "regrowth",
+        image: "images/crops/broccoli/stage-6.png"
+      }
     ],
-    energyHealth: { energy: 63, health: 28 },
-    farmingXP: 13
+    energyHealth: {
+      energy: 63,
+      health: 28
+    },
+    farmingXP: 13,
+    maxQuality: "iridium",
+    artisanUses: {
+      honey: false,
+      wine: false,
+      juice: true,
+      pickles: true,
+      jelly: false,
+      driedMushrooms: false,
+      driedFruit: false
+    }
   },
   {
     id: "Powdermelon",
@@ -5271,26 +7340,65 @@ var crops_default = [
     seedId: "PowdermelonSeeds",
     seedName: "Powdermelon Seeds",
     seedBuyPrices: [
-      { place: "Pierre's", price: 40 },
-      { place: "JojaMart", price: 50 }
+      {
+        place: "Pierre's",
+        price: 40
+      },
+      {
+        place: "JojaMart",
+        price: 50
+      }
     ],
     seedSellPrice: 20,
     cropSellPrice: 60,
-    harvestQuantity: { min: 1, max: 1 },
+    profession: ["tiller"],
+    harvestQuantity: {
+      min: 1,
+      max: 1
+    },
     trellis: false,
-    giant: false,
+    giant: true,
     description: "A mysterious pale melon that flourishes in winter.",
     image: "images/crops/powdermelon/crop.png",
     seedImage: "images/crops/powdermelon/seed.png",
     stages: [
-      { name: "stage 1", image: "images/crops/powdermelon/stage-1.png" },
-      { name: "stage 2", image: "images/crops/powdermelon/stage-2.png" },
-      { name: "stage 3", image: "images/crops/powdermelon/stage-3.png" },
-      { name: "stage 4", image: "images/crops/powdermelon/stage-4.png" },
-      { name: "harvest", image: "images/crops/powdermelon/stage-5.png" }
+      {
+        name: "stage 1",
+        image: "images/crops/powdermelon/stage-1.png"
+      },
+      {
+        name: "stage 2",
+        image: "images/crops/powdermelon/stage-2.png"
+      },
+      {
+        name: "stage 3",
+        image: "images/crops/powdermelon/stage-3.png"
+      },
+      {
+        name: "stage 4",
+        image: "images/crops/powdermelon/stage-4.png"
+      },
+      {
+        name: "harvest",
+        image: "images/crops/powdermelon/stage-5.png"
+      }
     ],
-    energyHealth: { energy: 63, health: 28 },
-    farmingXP: 12
+    energyHealth: {
+      energy: 63,
+      health: 28
+    },
+    farmingXP: 12,
+    maxQuality: "iridium",
+    artisanUses: {
+      honey: false,
+      wine: true,
+      juice: false,
+      pickles: false,
+      jelly: true,
+      driedMushrooms: false,
+      driedFruit: true
+    },
+    giantImage: "images/crops/powdermelon/giant.png"
   },
   {
     id: "454",
@@ -5304,20 +7412,49 @@ var crops_default = [
     seedBuyPrices: [],
     seedSellPrice: 30,
     cropSellPrice: 550,
-    harvestQuantity: { min: 1, max: 1 },
+    profession: ["tiller"],
+    harvestQuantity: {
+      min: 1,
+      max: 1
+    },
     trellis: false,
     giant: false,
     description: "A very rare fruit that has survived since ancient times. It's extraordinarily sweet.",
     image: "images/crops/ancient-fruit/crop.png",
     seedImage: "images/crops/ancient-fruit/seed.png",
     stages: [
-      { name: "stage 1", image: "images/crops/ancient-fruit/stage-1.png" },
-      { name: "stage 2", image: "images/crops/ancient-fruit/stage-2.png" },
-      { name: "stage 3", image: "images/crops/ancient-fruit/stage-3.png" },
-      { name: "harvest", image: "images/crops/ancient-fruit/stage-4.png" },
-      { name: "regrowth", image: "images/crops/ancient-fruit/stage-5.png" }
+      {
+        name: "stage 1",
+        image: "images/crops/ancient-fruit/stage-1.png"
+      },
+      {
+        name: "stage 2",
+        image: "images/crops/ancient-fruit/stage-2.png"
+      },
+      {
+        name: "stage 3",
+        image: "images/crops/ancient-fruit/stage-3.png"
+      },
+      {
+        name: "harvest",
+        image: "images/crops/ancient-fruit/stage-4.png"
+      },
+      {
+        name: "regrowth",
+        image: "images/crops/ancient-fruit/stage-5.png"
+      }
     ],
-    farmingXP: 38
+    farmingXP: 38,
+    maxQuality: "iridium",
+    artisanUses: {
+      honey: false,
+      wine: true,
+      juice: false,
+      pickles: false,
+      jelly: true,
+      driedMushrooms: false,
+      driedFruit: true
+    }
   },
   {
     id: "90",
@@ -5328,26 +7465,69 @@ var crops_default = [
     regrowDays: 3,
     seedId: "802",
     seedName: "Cactus Seeds",
-    seedBuyPrices: [{ place: "Oasis", price: 150 }],
+    seedBuyPrices: [
+      {
+        place: "Oasis",
+        price: 150
+      }
+    ],
     seedSellPrice: 0,
     cropSellPrice: 75,
-    harvestQuantity: { min: 1, max: 1 },
+    profession: ["tiller"],
+    harvestQuantity: {
+      min: 1,
+      max: 1
+    },
     trellis: false,
     giant: false,
     description: "The sweet fruit of a cactus. Grows year-round indoors or on Ginger Island.",
     image: "images/crops/cactus-fruit/crop.png",
     seedImage: "images/crops/cactus-fruit/seed.png",
     stages: [
-      { name: "stage 1", image: "images/crops/cactus-fruit/stage-1.png" },
-      { name: "stage 2", image: "images/crops/cactus-fruit/stage-2.png" },
-      { name: "stage 3", image: "images/crops/cactus-fruit/stage-3.png" },
-      { name: "stage 4", image: "images/crops/cactus-fruit/stage-4.png" },
-      { name: "stage 5", image: "images/crops/cactus-fruit/stage-5.png" },
-      { name: "harvest", image: "images/crops/cactus-fruit/stage-6.png" },
-      { name: "regrowth", image: "images/crops/cactus-fruit/stage-7.png" }
+      {
+        name: "stage 1",
+        image: "images/crops/cactus-fruit/stage-1.png"
+      },
+      {
+        name: "stage 2",
+        image: "images/crops/cactus-fruit/stage-2.png"
+      },
+      {
+        name: "stage 3",
+        image: "images/crops/cactus-fruit/stage-3.png"
+      },
+      {
+        name: "stage 4",
+        image: "images/crops/cactus-fruit/stage-4.png"
+      },
+      {
+        name: "stage 5",
+        image: "images/crops/cactus-fruit/stage-5.png"
+      },
+      {
+        name: "harvest",
+        image: "images/crops/cactus-fruit/stage-6.png"
+      },
+      {
+        name: "regrowth",
+        image: "images/crops/cactus-fruit/stage-7.png"
+      }
     ],
-    energyHealth: { energy: 75, health: 33 },
-    farmingXP: 14
+    energyHealth: {
+      energy: 75,
+      health: 33
+    },
+    farmingXP: 14,
+    maxQuality: "iridium",
+    artisanUses: {
+      honey: false,
+      wine: true,
+      juice: false,
+      pickles: false,
+      jelly: true,
+      driedMushrooms: false,
+      driedFruit: true
+    }
   },
   {
     id: "832",
@@ -5361,21 +7541,53 @@ var crops_default = [
     seedBuyPrices: [],
     seedSellPrice: 240,
     cropSellPrice: 300,
-    harvestQuantity: { min: 1, max: 1 },
+    profession: ["tiller"],
+    harvestQuantity: {
+      min: 1,
+      max: 1
+    },
     trellis: false,
     giant: false,
     description: "A prickly, succulent fruit found in tropical climates.",
     image: "images/crops/pineapple/crop.png",
     seedImage: "images/crops/pineapple/seed.png",
     stages: [
-      { name: "stage 1", image: "images/crops/pineapple/stage-1.png" },
-      { name: "stage 2", image: "images/crops/pineapple/stage-2.png" },
-      { name: "stage 3", image: "images/crops/pineapple/stage-3.png" },
-      { name: "harvest", image: "images/crops/pineapple/stage-4.png" },
-      { name: "regrowth", image: "images/crops/pineapple/stage-5.png" }
+      {
+        name: "stage 1",
+        image: "images/crops/pineapple/stage-1.png"
+      },
+      {
+        name: "stage 2",
+        image: "images/crops/pineapple/stage-2.png"
+      },
+      {
+        name: "stage 3",
+        image: "images/crops/pineapple/stage-3.png"
+      },
+      {
+        name: "harvest",
+        image: "images/crops/pineapple/stage-4.png"
+      },
+      {
+        name: "regrowth",
+        image: "images/crops/pineapple/stage-5.png"
+      }
     ],
-    energyHealth: { energy: 138, health: 62 },
-    farmingXP: 30
+    energyHealth: {
+      energy: 138,
+      health: 62
+    },
+    farmingXP: 30,
+    maxQuality: "iridium",
+    artisanUses: {
+      honey: false,
+      wine: true,
+      juice: false,
+      pickles: false,
+      jelly: true,
+      driedMushrooms: false,
+      driedFruit: true
+    }
   },
   {
     id: "889",
@@ -5389,7 +7601,11 @@ var crops_default = [
     seedBuyPrices: [],
     seedSellPrice: 1,
     cropSellPrice: 1,
-    harvestQuantity: { min: 1, max: 1 },
+    profession: ["tiller"],
+    harvestQuantity: {
+      min: 1,
+      max: 1
+    },
     trellis: false,
     giant: true,
     description: "A fruit imbued with the essence of Qi. Used to complete Qi's special orders.",
@@ -5397,12 +7613,94 @@ var crops_default = [
     giantImage: "images/crops/qi-fruit/giant.png",
     seedImage: "images/crops/qi-fruit/seed.png",
     stages: [
-      { name: "stage 1", image: "images/crops/qi-fruit/stage-1.png" },
-      { name: "stage 2", image: "images/crops/qi-fruit/stage-2.png" },
-      { name: "stage 3", image: "images/crops/qi-fruit/stage-3.png" },
-      { name: "harvest", image: "images/crops/qi-fruit/stage-4.png" }
+      {
+        name: "stage 1",
+        image: "images/crops/qi-fruit/stage-1.png"
+      },
+      {
+        name: "stage 2",
+        image: "images/crops/qi-fruit/stage-2.png"
+      },
+      {
+        name: "stage 3",
+        image: "images/crops/qi-fruit/stage-3.png"
+      },
+      {
+        name: "harvest",
+        image: "images/crops/qi-fruit/stage-4.png"
+      }
     ],
-    energyHealth: { energy: 3, health: 1 }
+    energyHealth: {
+      energy: 3,
+      health: 1
+    },
+    maxQuality: "iridium",
+    artisanUses: {
+      honey: false,
+      wine: true,
+      juice: false,
+      pickles: false,
+      jelly: true,
+      driedMushrooms: false,
+      driedFruit: true
+    }
+  },
+  {
+    id: "815",
+    name: "Tea Leaves",
+    category: "vegetable",
+    seasons: ["spring", "summer", "fall"],
+    growDays: 20,
+    regrowDays: 1,
+    seedId: "251",
+    seedName: "Tea Sapling",
+    seedBuyPrices: [
+      {
+        place: "Traveling Cart",
+        price: 750
+      }
+    ],
+    seedSellPrice: 250,
+    cropSellPrice: 50,
+    profession: ["tiller"],
+    harvestQuantity: {
+      min: 1,
+      max: 1
+    },
+    trellis: false,
+    giant: false,
+    description: "The young leaves of the tea plant. Can be brewed into the popular, energizing beverage.",
+    image: "images/crops/tea-leaves/crop.png",
+    seedImage: "images/crops/tea-leaves/seed.png",
+    stages: [
+      {
+        name: "stage 1",
+        image: "images/crops/tea-leaves/stage-1.png"
+      },
+      {
+        name: "stage 2",
+        image: "images/crops/tea-leaves/stage-2.png"
+      },
+      {
+        name: "harvest",
+        image: "images/crops/tea-leaves/harvest.png"
+      },
+      {
+        name: "regrowth",
+        image: "images/crops/tea-leaves/stage-3.png"
+      }
+    ],
+    maxQuality: "base",
+    artisanUses: {
+      honey: false,
+      wine: false,
+      juice: false,
+      pickles: true,
+      jelly: false,
+      driedMushrooms: false,
+      driedFruit: false
+    },
+    farmingXP: 11
   },
   {
     id: "771",
@@ -5416,19 +7714,48 @@ var crops_default = [
     seedBuyPrices: [],
     seedSellPrice: 5,
     cropSellPrice: 1,
-    harvestQuantity: { min: 4, max: 7 },
+    profession: ["tiller"],
+    harvestQuantity: {
+      min: 4,
+      max: 7
+    },
     trellis: false,
     giant: false,
     description: "Plant these in any season. Does not require watering. Harvest with the scythe.",
     image: "images/crops/fiber/crop.png",
     seedImage: "images/crops/fiber/seed.png",
     stages: [
-      { name: "stage 1", image: "images/crops/fiber/stage-1.png" },
-      { name: "stage 2", image: "images/crops/fiber/stage-2.png" },
-      { name: "stage 3", image: "images/crops/fiber/stage-3.png" },
-      { name: "stage 4", image: "images/crops/fiber/stage-4.png" },
-      { name: "harvest", image: "images/crops/fiber/stage-5.png" }
-    ]
+      {
+        name: "stage 1",
+        image: "images/crops/fiber/stage-1.png"
+      },
+      {
+        name: "stage 2",
+        image: "images/crops/fiber/stage-2.png"
+      },
+      {
+        name: "stage 3",
+        image: "images/crops/fiber/stage-3.png"
+      },
+      {
+        name: "stage 4",
+        image: "images/crops/fiber/stage-4.png"
+      },
+      {
+        name: "harvest",
+        image: "images/crops/fiber/stage-5.png"
+      }
+    ],
+    maxQuality: "base",
+    artisanUses: {
+      honey: false,
+      wine: false,
+      juice: false,
+      pickles: false,
+      jelly: false,
+      driedMushrooms: false,
+      driedFruit: false
+    }
   }
 ];
 
@@ -5481,6 +7808,10 @@ var CropQuery = class _CropQuery extends QueryBase {
   /** Filter to crops with energy/health values (edible when consumed). */
   eatable() {
     return new _CropQuery(this.data.filter((c) => c.energyHealth !== void 0));
+  }
+  /** Filter to crops that can be used to produce the given artisan good (e.g. `'wine'`, `'honey'`). */
+  byArtisanUse(use) {
+    return new _CropQuery(this.data.filter((c) => c.artisanUses[use]));
   }
   /** Sort by crop sell price. Default: `'desc'` (most valuable first). */
   sortBySellPrice(order = "desc") {
@@ -5635,6 +7966,7 @@ var FarmMapQuery = class _FarmMapQuery extends QueryBase {
   constructor(data = mapData) {
     super(data);
   }
+  /** Filter to maps that grant a bonus to the given skill (case-insensitive). */
   bySkill(skill) {
     return new _FarmMapQuery(
       this.data.filter((m) => m.skills.some((s) => s.toLowerCase() === skill.toLowerCase()))
@@ -5652,30 +7984,21 @@ var monster_loot_default = [
     name: "Bug Meat",
     sellPrice: 8,
     image: "images/monsters/monster-loot/Bug Meat.png",
-    droppedBy: ["bug", "grub", "cave-fly", "armored-bug", "mutant-fly", "mutant-grub"]
+    droppedBy: ["Bug", "Grub", "Fly"]
   },
   {
     id: "766",
     name: "Slime",
     sellPrice: 5,
     image: "images/monsters/monster-loot/Slime.png",
-    droppedBy: [
-      "green-slime",
-      "blue-slime",
-      "red-slime",
-      "big-slime",
-      "tiger-slime",
-      "copper-slime",
-      "iron-slime",
-      "purple-slime"
-    ]
+    droppedBy: ["Green Slime", "Big Slime", "Tiger Slime"]
   },
   {
     id: "767",
     name: "Bat Wing",
     sellPrice: 15,
     image: "images/monsters/monster-loot/Bat Wing.png",
-    droppedBy: ["bat", "frost-bat", "lava-bat"]
+    droppedBy: ["Bat", "Frost Bat", "Lava Bat"]
   },
   {
     id: "768",
@@ -5683,14 +8006,14 @@ var monster_loot_default = [
     sellPrice: 40,
     image: "images/monsters/monster-loot/Solar Essence.png",
     droppedBy: [
-      "ghost",
-      "squid-kid",
-      "metal-head",
-      "hot-head",
-      "mummy",
-      "iridium-bat",
-      "blue-squid",
-      "haunted-skull"
+      "Ghost",
+      "Squid Kid",
+      "Metal Head",
+      "Hot Head",
+      "Mummy",
+      "Iridium Bat",
+      "Blue Squid",
+      "Haunted Skull"
     ]
   },
   {
@@ -5699,14 +8022,21 @@ var monster_loot_default = [
     sellPrice: 50,
     image: "images/monsters/monster-loot/Void Essence.png",
     droppedBy: [
-      "shadow-brute",
-      "shadow-shaman",
-      "serpent",
-      "royal-serpent",
-      "spider",
-      "shadow-sniper",
-      "haunted-skull"
+      "Shadow Brute",
+      "Shadow Shaman",
+      "Serpent",
+      "Royal Serpent",
+      "Spider",
+      "Shadow Sniper",
+      "Haunted Skull"
     ]
+  },
+  {
+    id: "852",
+    name: "Dragon Tooth",
+    sellPrice: 500,
+    image: "images/monsters/monster-loot/Dragon Tooth.png",
+    droppedBy: ["Lava Lurk"]
   }
 ];
 
@@ -5724,17 +8054,6 @@ var monsters_default = [
     lootIds: ["766"],
     dangerous: false,
     variants: [
-      {
-        name: "Blue Slime",
-        hp: 106,
-        damage: 7,
-        speed: 0,
-        xp: 6,
-        image: "images/monsters/Blue Slime.png",
-        locations: ["The Mines (Floors 41-79)", "The Farm"],
-        lootIds: ["766"],
-        dangerous: false
-      },
       {
         name: "Red Slime",
         hp: 205,
@@ -5780,6 +8099,19 @@ var monsters_default = [
         dangerous: false
       }
     ]
+  },
+  {
+    id: "Frost Jelly",
+    name: "Frost Jelly",
+    hp: 106,
+    damage: 7,
+    speed: 0,
+    xp: 6,
+    image: "images/monsters/Blue Slime.png",
+    locations: ["The Mines (Floors 41-79)", "The Farm"],
+    lootIds: ["766"],
+    dangerous: false,
+    variants: []
   },
   {
     id: "Big Slime",
@@ -6335,6 +8667,19 @@ var monsters_default = [
     locations: ["Volcano Dungeon"],
     lootIds: [],
     dangerous: false
+  },
+  {
+    id: "Prismatic Slime",
+    name: "Prismatic Slime",
+    hp: 1e3,
+    damage: 35,
+    speed: 2,
+    xp: 10,
+    image: "images/monsters/Prismatic Slime.gif",
+    locations: ["The Mines", "Quarry Mine", "Skull Cavern"],
+    lootIds: ["766", "74"],
+    dangerous: false,
+    variants: []
   }
 ];
 
@@ -6399,7 +8744,7 @@ var monster_slayer_goals_default = [
     id: "Slimes",
     name: "Slime",
     killTarget: 1e3,
-    monsters: ["Green Slime", "Frost Jelly", "Sludge", "Tiger Slime"],
+    monsters: ["Green Slime", "Frost Jelly", "Big Slime", "Tiger Slime", "Prismatic Slime"],
     reward: {
       name: "Slime Charmer Ring",
       itemId: "(O)520",
@@ -6410,7 +8755,7 @@ var monster_slayer_goals_default = [
     id: "Shadows",
     name: "Void Spirits",
     killTarget: 150,
-    monsters: ["Shadow Guy", "Shadow Shaman", "Shadow Brute", "Shadow Sniper"],
+    monsters: ["Shadow Shaman", "Shadow Brute", "Shadow Sniper"],
     reward: {
       name: "Savage Ring",
       itemId: "(O)523",
@@ -6443,7 +8788,7 @@ var monster_slayer_goals_default = [
     id: "Insects",
     name: "Cave Insects",
     killTarget: 80,
-    monsters: ["Grub", "Fly", "Bug"],
+    monsters: ["Grub", "Cave Fly", "Bug"],
     reward: {
       name: "Insect Head",
       itemId: "(W)13",
@@ -7118,25 +9463,29 @@ var bait_default = [
 ];
 
 // src/modules/bait/index.ts
-var allBaitData = bait_default;
+var baitData = bait_default;
 var BaitQuery = class _BaitQuery extends QueryBase {
-  constructor(data = allBaitData) {
+  constructor(data = baitData) {
     super(data);
   }
+  /** Sort alphabetically by name. Default: `'asc'`. */
   sortByName(order = "asc") {
-    const sorted = [...this.data].sort(
-      (a, b) => order === "asc" ? a.name.localeCompare(b.name) : b.name.localeCompare(a.name)
+    return new _BaitQuery(
+      [...this.data].sort(
+        (a, b) => order === "asc" ? a.name.localeCompare(b.name) : b.name.localeCompare(a.name)
+      )
     );
-    return new _BaitQuery(sorted);
   }
+  /** Sort by sell price. Default: `'desc'` (most valuable first). */
   sortBySellPrice(order = "desc") {
-    const sorted = [...this.data].sort(
-      (a, b) => order === "asc" ? a.sellPrice - b.sellPrice : b.sellPrice - a.sellPrice
+    return new _BaitQuery(
+      [...this.data].sort(
+        (a, b) => order === "asc" ? a.sellPrice - b.sellPrice : b.sellPrice - a.sellPrice
+      )
     );
-    return new _BaitQuery(sorted);
   }
 };
-function bait(source = allBaitData) {
+function bait(source = baitData) {
   return new BaitQuery(source);
 }
 
@@ -8454,44 +10803,48 @@ var cooking_default = [
 ];
 
 // src/modules/cooking/index.ts
-var allCookingData = cooking_default;
+var cookingData = cooking_default;
 var CookingQuery = class _CookingQuery extends QueryBase {
-  constructor(data = allCookingData) {
+  constructor(data = cookingData) {
     super(data);
+  }
+  /** Filter to dishes that require a specific ingredient by ID. */
+  withIngredient(ingredientId) {
+    return new _CookingQuery(
+      this.data.filter((d) => d.ingredients.some((i) => i.id === ingredientId))
+    );
   }
   /** Sort alphabetically by name. Default: `'asc'`. */
   sortByName(order = "asc") {
-    const sorted = [...this.data].sort(
-      (a, b) => order === "asc" ? a.name.localeCompare(b.name) : b.name.localeCompare(a.name)
+    return new _CookingQuery(
+      [...this.data].sort(
+        (a, b) => order === "asc" ? a.name.localeCompare(b.name) : b.name.localeCompare(a.name)
+      )
     );
-    return new _CookingQuery(sorted);
   }
   /** Sort by sell price. Default: `'desc'` (most valuable first). */
   sortBySellPrice(order = "desc") {
-    const sorted = [...this.data].sort(
-      (a, b) => order === "asc" ? a.sellPrice - b.sellPrice : b.sellPrice - a.sellPrice
+    return new _CookingQuery(
+      [...this.data].sort(
+        (a, b) => order === "asc" ? a.sellPrice - b.sellPrice : b.sellPrice - a.sellPrice
+      )
     );
-    return new _CookingQuery(sorted);
   }
   /**
    * Sort by energy restored. Dishes with no energy value sort as 0.
    * Default: `'desc'` (most energising first).
    */
   sortByEnergy(order = "desc") {
-    const sorted = [...this.data].sort((a, b) => {
-      const ea = a.energyHealth.energy ?? 0;
-      const eb = b.energyHealth.energy ?? 0;
-      return order === "asc" ? ea - eb : eb - ea;
-    });
-    return new _CookingQuery(sorted);
-  }
-  /** Filter to dishes that require a specific ingredient by ID. */
-  withIngredient(ingredientId) {
-    const filtered = this.data.filter((d) => d.ingredients.some((i) => i.id === ingredientId));
-    return new _CookingQuery(filtered);
+    return new _CookingQuery(
+      [...this.data].sort((a, b) => {
+        const ea = a.energyHealth.energy ?? 0;
+        const eb = b.energyHealth.energy ?? 0;
+        return order === "asc" ? ea - eb : eb - ea;
+      })
+    );
   }
 };
-function cooking(source = allCookingData) {
+function cooking(source = cookingData) {
   return new CookingQuery(source);
 }
 
@@ -11713,7 +14066,7 @@ var crafting_default = [
         quantity: 5
       }
     ],
-    image: "images/craftable/seeds/Tea Sapling.png"
+    image: "images/crops/tea-leaves/seed.png"
   },
   {
     id: "Tree Fertilizer",
@@ -12694,57 +15047,171 @@ var fish_default = [
     name: "Pufferfish",
     description: "Inflates when threatened.",
     catchType: "rod",
+    category: "regular",
     seasons: ["summer"],
     location: "Ocean, Ginger Island",
     weather: "sunny",
     time: "12:00 PM \u2013 4:00 PM",
     difficulty: 80,
     sellPrice: 200,
+    profession: ["fisher", "angler"],
     fishTank: true,
     usedIn: ["Maki Roll", "Quality Fertilizer", "Sashimi", "Specialty Fish Bundle"],
-    image: "images/fish/Pufferfish.png"
+    energyHealth: {
+      energy: -100,
+      health: 0,
+      poison: true
+    },
+    maxQuality: "iridium",
+    image: "images/fish/Pufferfish.png",
+    canSmoke: true,
+    roe: "roe",
+    fishPond: {
+      produce: [
+        {
+          product: "Roe",
+          minPopulation: 1
+        },
+        {
+          product: "Clam",
+          minPopulation: 5
+        },
+        {
+          product: "Coral",
+          minPopulation: 5
+        },
+        {
+          product: "Aquamarine",
+          minPopulation: 7
+        },
+        {
+          product: "Mussel",
+          minPopulation: 7
+        },
+        {
+          product: "Sea Urchin",
+          minPopulation: 7
+        }
+      ]
+    }
   },
   {
     id: "129",
     name: "Anchovy",
     description: "A small silver fish found in the ocean.",
     catchType: "rod",
+    category: "regular",
     seasons: ["spring", "fall"],
     location: "Ocean",
     weather: "both",
     time: "6:00 AM \u2013 2:00 AM",
     difficulty: 30,
     sellPrice: 30,
+    profession: ["fisher", "angler"],
     fishTank: true,
     usedIn: ["Maki Roll", "Quality Fertilizer", "Sashimi"],
-    image: "images/fish/Anchovy.png"
+    energyHealth: {
+      energy: 13,
+      health: 5
+    },
+    maxQuality: "iridium",
+    image: "images/fish/Anchovy.png",
+    canSmoke: true,
+    roe: "roe",
+    fishPond: {
+      produce: [
+        {
+          product: "Roe",
+          minPopulation: 1
+        },
+        {
+          product: "Clam",
+          minPopulation: 5
+        },
+        {
+          product: "Coral",
+          minPopulation: 5
+        },
+        {
+          product: "Aquamarine",
+          minPopulation: 7
+        },
+        {
+          product: "Mussel",
+          minPopulation: 7
+        },
+        {
+          product: "Sea Urchin",
+          minPopulation: 7
+        }
+      ]
+    }
   },
   {
     id: "130",
     name: "Tuna",
     description: "A large fish that lives in the ocean.",
     catchType: "rod",
+    category: "regular",
     seasons: ["summer", "winter"],
     location: "Ocean, Ginger Island",
     weather: "both",
     time: "6:00 AM \u2013 7:00 PM",
     difficulty: 70,
     sellPrice: 100,
+    profession: ["fisher", "angler"],
     fishTank: true,
     usedIn: ["Fish Taco", "Maki Roll", "Quality Fertilizer", "Sashimi", "Ocean Fish Bundle"],
-    image: "images/fish/Tuna.png"
+    energyHealth: {
+      energy: 38,
+      health: 17
+    },
+    maxQuality: "iridium",
+    image: "images/fish/Tuna.png",
+    canSmoke: true,
+    roe: "roe",
+    fishPond: {
+      produce: [
+        {
+          product: "Roe",
+          minPopulation: 1
+        },
+        {
+          product: "Clam",
+          minPopulation: 5
+        },
+        {
+          product: "Coral",
+          minPopulation: 5
+        },
+        {
+          product: "Aquamarine",
+          minPopulation: 7
+        },
+        {
+          product: "Mussel",
+          minPopulation: 7
+        },
+        {
+          product: "Sea Urchin",
+          minPopulation: 7
+        }
+      ]
+    }
   },
   {
     id: "131",
     name: "Sardine",
     description: "A common ocean fish.",
     catchType: "rod",
+    category: "regular",
     seasons: ["spring", "summer", "fall", "winter"],
     location: "Ocean",
     weather: "both",
     time: "6:00 AM \u2013 7:00 PM",
     difficulty: 30,
     sellPrice: 40,
+    profession: ["fisher", "angler"],
     fishTank: true,
     usedIn: [
       "Dish O' The Sea",
@@ -12753,34 +15220,116 @@ var fish_default = [
       "Sashimi",
       "Ocean Fish Bundle"
     ],
-    image: "images/fish/Sardine.png"
+    energyHealth: {
+      energy: 13,
+      health: 5
+    },
+    maxQuality: "iridium",
+    image: "images/fish/Sardine.png",
+    canSmoke: true,
+    roe: "roe",
+    fishPond: {
+      produce: [
+        {
+          product: "Roe",
+          minPopulation: 1
+        },
+        {
+          product: "Clam",
+          minPopulation: 5
+        },
+        {
+          product: "Coral",
+          minPopulation: 5
+        },
+        {
+          product: "Aquamarine",
+          minPopulation: 7
+        },
+        {
+          product: "Mussel",
+          minPopulation: 7
+        },
+        {
+          product: "Sea Urchin",
+          minPopulation: 7
+        }
+      ]
+    }
   },
   {
     id: "132",
     name: "Bream",
     description: "A fairly common river fish that becomes active at night.",
     catchType: "rod",
+    category: "regular",
     seasons: ["spring", "summer", "fall", "winter"],
     location: "River",
     weather: "both",
     time: "6:00 PM \u2013 2:00 AM",
     difficulty: 35,
     sellPrice: 45,
+    profession: ["fisher", "angler"],
     fishTank: true,
     usedIn: ["Baked Fish", "Maki Roll", "Quality Fertilizer", "Sashimi", "Night Fishing Bundle"],
-    image: "images/fish/Bream.png"
+    energyHealth: {
+      energy: 13,
+      health: 5
+    },
+    maxQuality: "iridium",
+    image: "images/fish/Bream.png",
+    canSmoke: true,
+    roe: "roe",
+    fishPond: {
+      produce: [
+        {
+          product: "Roe",
+          minPopulation: 1
+        },
+        {
+          product: "Gold Ore",
+          minPopulation: 5
+        },
+        {
+          product: "Maple Syrup",
+          minPopulation: 5
+        },
+        {
+          product: "Mixed Seeds",
+          minPopulation: 5
+        },
+        {
+          product: "Crayfish",
+          minPopulation: 7
+        },
+        {
+          product: "Honey",
+          minPopulation: 7
+        },
+        {
+          product: "Jade",
+          minPopulation: 7
+        },
+        {
+          product: "Periwinkle",
+          minPopulation: 7
+        }
+      ]
+    }
   },
   {
     id: "136",
     name: "Largemouth Bass",
     description: "A popular fish that lives in lakes.",
     catchType: "rod",
+    category: "regular",
     seasons: ["spring", "summer", "fall", "winter"],
     location: "Mountain Lake",
     weather: "both",
     time: "6:00 AM \u2013 7:00 PM",
     difficulty: 50,
     sellPrice: 100,
+    profession: ["fisher", "angler"],
     fishTank: true,
     usedIn: [
       "Crispy Bass",
@@ -12790,64 +15339,220 @@ var fish_default = [
       "Lake Fish Bundle",
       "Quality Fish Bundle"
     ],
-    image: "images/fish/Largemouth Bass.png"
+    energyHealth: {
+      energy: 38,
+      health: 17
+    },
+    maxQuality: "iridium",
+    image: "images/fish/Largemouth Bass.png",
+    canSmoke: true,
+    roe: "roe",
+    fishPond: {
+      produce: [
+        {
+          product: "Roe",
+          minPopulation: 1
+        },
+        {
+          product: "Common Mushroom",
+          minPopulation: 5
+        },
+        {
+          product: "Earth Crystal",
+          minPopulation: 5
+        },
+        {
+          product: "Limestone",
+          minPopulation: 5
+        },
+        {
+          product: "Mudstone",
+          minPopulation: 7
+        },
+        {
+          product: "Snail",
+          minPopulation: 7
+        },
+        {
+          product: "Wild Bait",
+          minPopulation: 7
+        }
+      ]
+    }
   },
   {
     id: "137",
     name: "Smallmouth Bass",
     description: "A freshwater fish that is very sensitive to pollution.",
     catchType: "rod",
+    category: "regular",
     seasons: ["spring", "fall"],
     location: "River, Forest Pond",
     weather: "both",
     time: "6:00 AM \u2013 2:00 AM",
     difficulty: 28,
     sellPrice: 50,
+    profession: ["fisher", "angler"],
     fishTank: true,
     usedIn: ["Maki Roll", "Quality Fertilizer", "Sashimi"],
-    image: "images/fish/Smallmouth Bass.png"
+    energyHealth: {
+      energy: 25,
+      health: 11
+    },
+    maxQuality: "iridium",
+    image: "images/fish/Smallmouth Bass.png",
+    canSmoke: true,
+    roe: "roe",
+    fishPond: {
+      produce: [
+        {
+          product: "Roe",
+          minPopulation: 1
+        },
+        {
+          product: "Gold Ore",
+          minPopulation: 5
+        },
+        {
+          product: "Maple Syrup",
+          minPopulation: 5
+        },
+        {
+          product: "Mixed Seeds",
+          minPopulation: 5
+        },
+        {
+          product: "Crayfish",
+          minPopulation: 7
+        },
+        {
+          product: "Honey",
+          minPopulation: 7
+        },
+        {
+          product: "Jade",
+          minPopulation: 7
+        },
+        {
+          product: "Periwinkle",
+          minPopulation: 7
+        }
+      ]
+    }
   },
   {
     id: "138",
     name: "Rainbow Trout",
     description: "A freshwater trout with colorful markings.",
     catchType: "rod",
+    category: "regular",
     seasons: ["summer"],
     location: "River, Mountain Lake",
     weather: "sunny",
     time: "6:00 AM \u2013 7:00 PM",
     difficulty: 45,
     sellPrice: 65,
+    profession: ["fisher", "angler"],
     fishTank: true,
     usedIn: ["Maki Roll", "Quality Fertilizer", "Sashimi", "Trout Soup"],
-    image: "images/fish/Rainbow Trout.png"
+    energyHealth: {
+      energy: 25,
+      health: 11
+    },
+    maxQuality: "iridium",
+    image: "images/fish/Rainbow Trout.png",
+    canSmoke: true,
+    roe: "roe",
+    fishPond: {
+      produce: [
+        {
+          product: "Roe",
+          minPopulation: 1
+        },
+        {
+          product: "Rainbow Shell",
+          minPopulation: 9
+        },
+        {
+          product: "Prismatic Shard",
+          minPopulation: 9
+        }
+      ]
+    }
   },
   {
     id: "139",
     name: "Salmon",
     description: "Swims upstream to lay its eggs.",
     catchType: "rod",
+    category: "regular",
     seasons: ["fall"],
     location: "River",
     weather: "both",
     time: "6:00 AM \u2013 7:00 PM",
     difficulty: 50,
     sellPrice: 75,
+    profession: ["fisher", "angler"],
     fishTank: true,
     usedIn: ["Maki Roll", "Quality Fertilizer", "Salmon Dinner", "Sashimi"],
-    image: "images/fish/Salmon.png"
+    energyHealth: {
+      energy: 38,
+      health: 17
+    },
+    maxQuality: "iridium",
+    image: "images/fish/Salmon.png",
+    canSmoke: true,
+    roe: "roe",
+    fishPond: {
+      produce: [
+        {
+          product: "Roe",
+          minPopulation: 1
+        },
+        {
+          product: "Gold Ore",
+          minPopulation: 5
+        },
+        {
+          product: "Maple Syrup",
+          minPopulation: 5
+        },
+        {
+          product: "Mixed Seeds",
+          minPopulation: 5
+        },
+        {
+          product: "Crayfish",
+          minPopulation: 7
+        },
+        {
+          product: "Honey",
+          minPopulation: 7
+        },
+        {
+          product: "Jade",
+          minPopulation: 7
+        },
+        {
+          product: "Periwinkle",
+          minPopulation: 7
+        }
+      ]
+    }
   },
   {
     id: "140",
     name: "Walleye",
     description: "A freshwater fish caught at night.",
     catchType: "rod",
+    category: "regular",
     seasons: ["fall", "winter"],
     location: "River, Mountain Lake, Forest Pond",
     weather: "rainy",
     time: "12:00 PM \u2013 2:00 AM",
     difficulty: 45,
     sellPrice: 105,
+    profession: ["fisher", "angler"],
     fishTank: true,
     usedIn: [
       "Maki Roll",
@@ -12856,124 +15561,344 @@ var fish_default = [
       "Night Fishing Bundle",
       "Quality Fish Bundle"
     ],
-    image: "images/fish/Walleye.png"
+    energyHealth: {
+      energy: 30,
+      health: 13
+    },
+    maxQuality: "iridium",
+    image: "images/fish/Walleye.png",
+    canSmoke: true,
+    roe: "roe",
+    fishPond: {
+      produce: [
+        {
+          product: "Roe",
+          minPopulation: 1
+        },
+        {
+          product: "Gold Ore",
+          minPopulation: 5
+        },
+        {
+          product: "Maple Syrup",
+          minPopulation: 5
+        },
+        {
+          product: "Mixed Seeds",
+          minPopulation: 5
+        },
+        {
+          product: "Crayfish",
+          minPopulation: 7
+        },
+        {
+          product: "Honey",
+          minPopulation: 7
+        },
+        {
+          product: "Jade",
+          minPopulation: 7
+        },
+        {
+          product: "Periwinkle",
+          minPopulation: 7
+        }
+      ]
+    }
   },
   {
     id: "141",
     name: "Perch",
     description: "A freshwater fish of the winter.",
     catchType: "rod",
+    category: "regular",
     seasons: ["winter"],
     location: "River, Mountain Lake, Forest Pond",
     weather: "both",
     time: "6:00 AM \u2013 2:00 AM",
     difficulty: 35,
     sellPrice: 55,
+    profession: ["fisher", "angler"],
     fishTank: true,
     usedIn: ["Maki Roll", "Quality Fertilizer", "Sashimi"],
-    image: "images/fish/Perch.png"
+    energyHealth: {
+      energy: 25,
+      health: 11
+    },
+    maxQuality: "iridium",
+    image: "images/fish/Perch.png",
+    canSmoke: true,
+    roe: "roe",
+    fishPond: {
+      produce: [
+        {
+          product: "Roe",
+          minPopulation: 1
+        },
+        {
+          product: "Gold Ore",
+          minPopulation: 5
+        },
+        {
+          product: "Maple Syrup",
+          minPopulation: 5
+        },
+        {
+          product: "Mixed Seeds",
+          minPopulation: 5
+        },
+        {
+          product: "Crayfish",
+          minPopulation: 7
+        },
+        {
+          product: "Honey",
+          minPopulation: 7
+        },
+        {
+          product: "Jade",
+          minPopulation: 7
+        },
+        {
+          product: "Periwinkle",
+          minPopulation: 7
+        }
+      ]
+    }
   },
   {
     id: "142",
     name: "Carp",
     description: "A common pond fish.",
     catchType: "rod",
+    category: "regular",
     seasons: ["spring", "summer", "fall"],
     location: "Mountain Lake, Secret Woods, Sewers, Mutant Bug Lair",
     weather: "both",
     time: "6:00 AM \u2013 2:00 AM",
     difficulty: 15,
     sellPrice: 30,
+    profession: ["fisher", "angler"],
     fishTank: true,
     usedIn: ["Carp Surprise", "Maki Roll", "Quality Fertilizer", "Sashimi", "Lake Fish Bundle"],
-    image: "images/fish/Carp.png"
+    energyHealth: {
+      energy: 13,
+      health: 5
+    },
+    maxQuality: "iridium",
+    image: "images/fish/Carp.png",
+    canSmoke: true,
+    roe: "roe",
+    fishPond: {
+      produce: [
+        {
+          product: "Roe",
+          minPopulation: 1
+        }
+      ]
+    }
   },
   {
     id: "143",
     name: "Catfish",
     description: "An uncommon fish found in streams.",
     catchType: "rod",
+    category: "regular",
     seasons: ["spring", "fall", "winter"],
     location: "River, Secret Woods, Witch's Swamp",
     weather: "rainy",
     time: "6:00 AM \u2013 12:00 AM",
     difficulty: 75,
     sellPrice: 200,
+    profession: ["fisher", "angler"],
     fishTank: true,
     usedIn: ["Maki Roll", "Quality Fertilizer", "Sashimi", "River Fish Bundle"],
-    image: "images/fish/Catfish.png"
+    energyHealth: {
+      energy: 50,
+      health: 22
+    },
+    maxQuality: "iridium",
+    image: "images/fish/Catfish.png",
+    canSmoke: true,
+    roe: "roe",
+    fishPond: {
+      produce: [
+        {
+          product: "Roe",
+          minPopulation: 1
+        }
+      ]
+    }
   },
   {
     id: "144",
     name: "Pike",
     description: "A freshwater fish that's difficult to catch.",
     catchType: "rod",
+    category: "regular",
     seasons: ["summer", "winter"],
     location: "River, Forest Pond",
     weather: "both",
     time: "6:00 AM \u2013 2:00 AM",
     difficulty: 60,
     sellPrice: 100,
+    profession: ["fisher", "angler"],
     fishTank: true,
     usedIn: ["Maki Roll", "Quality Fertilizer", "Sashimi"],
-    image: "images/fish/Pike.png"
+    energyHealth: {
+      energy: 38,
+      health: 17
+    },
+    maxQuality: "iridium",
+    image: "images/fish/Pike.png",
+    canSmoke: true,
+    roe: "roe",
+    fishPond: {
+      produce: [
+        {
+          product: "Roe",
+          minPopulation: 1
+        },
+        {
+          product: "Bug Meat",
+          minPopulation: 9
+        }
+      ]
+    }
   },
   {
     id: "145",
     name: "Sunfish",
     description: "A common river fish.",
     catchType: "rod",
+    category: "regular",
     seasons: ["spring", "summer"],
     location: "River",
     weather: "sunny",
     time: "6:00 AM \u2013 7:00 PM",
     difficulty: 30,
     sellPrice: 30,
+    profession: ["fisher", "angler"],
     fishTank: true,
     usedIn: ["Baked Fish", "Maki Roll", "Quality Fertilizer", "Sashimi", "River Fish Bundle"],
-    image: "images/fish/Sunfish.png"
+    energyHealth: {
+      energy: 13,
+      health: 5
+    },
+    maxQuality: "iridium",
+    image: "images/fish/Sunfish.png",
+    canSmoke: true,
+    roe: "roe",
+    fishPond: {
+      produce: [
+        {
+          product: "Roe",
+          minPopulation: 1
+        },
+        {
+          product: "Solar Essence",
+          minPopulation: 10
+        }
+      ]
+    }
   },
   {
     id: "146",
     name: "Red Mullet",
     description: "Long ago these were kept as pets.",
     catchType: "rod",
+    category: "regular",
     seasons: ["summer", "winter"],
     location: "Ocean",
     weather: "both",
     time: "6:00 AM \u2013 7:00 PM",
     difficulty: 55,
     sellPrice: 75,
+    profession: ["fisher", "angler"],
     fishTank: true,
     usedIn: ["Maki Roll", "Quality Fertilizer", "Sashimi"],
-    image: "images/fish/Red Mullet.png"
+    energyHealth: {
+      energy: 25,
+      health: 11
+    },
+    maxQuality: "iridium",
+    image: "images/fish/Red Mullet.png",
+    canSmoke: true,
+    roe: "roe",
+    fishPond: {
+      produce: [
+        {
+          product: "Roe",
+          minPopulation: 1
+        },
+        {
+          product: "Clam",
+          minPopulation: 5
+        },
+        {
+          product: "Coral",
+          minPopulation: 5
+        },
+        {
+          product: "Aquamarine",
+          minPopulation: 7
+        },
+        {
+          product: "Mussel",
+          minPopulation: 7
+        },
+        {
+          product: "Sea Urchin",
+          minPopulation: 7
+        }
+      ]
+    }
   },
   {
     id: "147",
     name: "Herring",
     description: "A common ocean fish.",
     catchType: "rod",
+    category: "regular",
     seasons: ["spring", "winter"],
     location: "Ocean",
     weather: "both",
     time: "6:00 AM \u2013 2:00 AM",
     difficulty: 25,
     sellPrice: 30,
+    profession: ["fisher", "angler"],
     fishTank: true,
     usedIn: ["Maki Roll", "Quality Fertilizer", "Sashimi"],
-    image: "images/fish/Herring.png"
+    energyHealth: {
+      energy: 13,
+      health: 5
+    },
+    maxQuality: "iridium",
+    image: "images/fish/Herring.png",
+    canSmoke: true,
+    roe: "roe",
+    fishPond: {
+      produce: [
+        {
+          product: "Roe",
+          minPopulation: 1
+        }
+      ]
+    }
   },
   {
     id: "148",
     name: "Eel",
     description: "A long, slippery little fish.",
     catchType: "rod",
+    category: "regular",
     seasons: ["spring", "fall"],
     location: "Ocean",
     weather: "rainy",
     time: "4:00 PM \u2013 2:00 AM",
     difficulty: 70,
     sellPrice: 85,
+    profession: ["fisher", "angler"],
     fishTank: true,
     usedIn: [
       "Fried Eel",
@@ -12983,436 +15908,1186 @@ var fish_default = [
       "Spicy Eel",
       "Night Fishing Bundle"
     ],
-    image: "images/fish/Eel.png"
+    energyHealth: {
+      energy: 30,
+      health: 13
+    },
+    maxQuality: "iridium",
+    image: "images/fish/Eel.png",
+    canSmoke: true,
+    roe: "roe",
+    fishPond: {
+      produce: [
+        {
+          product: "Roe",
+          minPopulation: 1
+        },
+        {
+          product: "Clam",
+          minPopulation: 5
+        },
+        {
+          product: "Coral",
+          minPopulation: 5
+        },
+        {
+          product: "Aquamarine",
+          minPopulation: 7
+        },
+        {
+          product: "Mussel",
+          minPopulation: 7
+        },
+        {
+          product: "Sea Urchin",
+          minPopulation: 7
+        }
+      ]
+    }
   },
   {
     id: "149",
     name: "Octopus",
     description: "A mysterious and intelligent creature.",
     catchType: "rod",
+    category: "regular",
     seasons: ["summer"],
     location: "Ocean, Ginger Island, Night Market submarine",
     weather: "both",
     time: "6:00 AM \u2013 1:00 PM",
     difficulty: 95,
     sellPrice: 150,
+    profession: ["fisher", "angler"],
     fishTank: true,
     usedIn: ["Maki Roll", "Quality Fertilizer", "Sashimi", "Master Fisher's Bundle"],
-    image: "images/fish/Octopus.png"
+    maxQuality: "iridium",
+    image: "images/fish/Octopus.png",
+    canSmoke: true,
+    roe: "roe",
+    fishPond: {
+      produce: [
+        {
+          product: "Roe",
+          minPopulation: 1
+        },
+        {
+          product: "Omni Geode",
+          minPopulation: 9
+        }
+      ]
+    }
   },
   {
     id: "150",
     name: "Red Snapper",
     description: "A popular fish with a nice red color.",
     catchType: "rod",
+    category: "regular",
     seasons: ["summer", "fall", "winter"],
     location: "Ocean",
     weather: "rainy",
     time: "6:00 AM \u2013 7:00 PM",
     difficulty: 40,
     sellPrice: 50,
+    profession: ["fisher", "angler"],
     fishTank: true,
     usedIn: ["Maki Roll", "Quality Fertilizer", "Sashimi", "Ocean Fish Bundle"],
-    image: "images/fish/Red Snapper.png"
+    energyHealth: {
+      energy: 25,
+      health: 11
+    },
+    maxQuality: "iridium",
+    image: "images/fish/Red Snapper.png",
+    canSmoke: true,
+    roe: "roe",
+    fishPond: {
+      produce: [
+        {
+          product: "Roe",
+          minPopulation: 1
+        },
+        {
+          product: "Clam",
+          minPopulation: 5
+        },
+        {
+          product: "Coral",
+          minPopulation: 5
+        },
+        {
+          product: "Aquamarine",
+          minPopulation: 7
+        },
+        {
+          product: "Mussel",
+          minPopulation: 7
+        },
+        {
+          product: "Sea Urchin",
+          minPopulation: 7
+        }
+      ]
+    }
   },
   {
     id: "151",
     name: "Squid",
     description: "A deep sea creature that can grow to enormous size.",
     catchType: "rod",
+    category: "regular",
     seasons: ["winter"],
     location: "Ocean",
     weather: "both",
     time: "6:00 PM \u2013 2:00 AM",
     difficulty: 75,
     sellPrice: 80,
+    profession: ["fisher", "angler"],
     fishTank: true,
     usedIn: ["Fried Calamari", "Maki Roll", "Quality Fertilizer", "Sashimi"],
-    image: "images/fish/Squid.png"
+    energyHealth: {
+      energy: 25,
+      health: 11
+    },
+    maxQuality: "iridium",
+    image: "images/fish/Squid.png",
+    canSmoke: true,
+    roe: null,
+    fishPond: {
+      produce: [
+        {
+          product: "Squid Ink",
+          minPopulation: 1
+        }
+      ]
+    }
   },
   {
     id: "152",
     name: "Seaweed",
     description: "It can be used in cooking.",
     catchType: "rod",
+    category: "other",
     seasons: ["spring", "summer", "fall", "winter"],
     location: "Ocean",
     weather: "both",
     time: "6:00 AM \u2013 2:00 AM",
     difficulty: 5,
     sellPrice: 20,
+    profession: [],
     fishTank: false,
     usedIn: ["Maki Roll"],
-    image: "images/fish/Seaweed.png"
+    energyHealth: {
+      energy: 13,
+      health: 5
+    },
+    maxQuality: "base",
+    image: "images/fish/Seaweed.png",
+    canSmoke: false,
+    roe: null,
+    fishPond: null
   },
   {
     id: "153",
     name: "Green Algae",
     description: "It's really slimy.",
     catchType: "rod",
+    category: "other",
     seasons: ["spring", "summer", "fall", "winter"],
     location: "River, Mountain Lake",
     weather: "both",
     time: "6:00 AM \u2013 2:00 AM",
     difficulty: 5,
     sellPrice: 15,
+    profession: [],
     fishTank: false,
     usedIn: ["Algae Soup", "Trout Soup"],
-    image: "images/fish/Green Algae.png"
+    energyHealth: {
+      energy: 13,
+      health: 5
+    },
+    maxQuality: "base",
+    image: "images/fish/Green Algae.png",
+    canSmoke: false,
+    roe: null,
+    fishPond: null
   },
   {
     id: "154",
     name: "Sea Cucumber",
     description: "A slippery, slimy creature found on the ocean floor.",
     catchType: "rod",
+    category: "regular",
     seasons: ["fall", "winter"],
     location: "Ocean",
     weather: "both",
     time: "6:00 AM \u2013 7:00 PM",
     difficulty: 40,
     sellPrice: 75,
+    profession: ["fisher", "angler"],
     fishTank: true,
     usedIn: ["Lucky Lunch", "Maki Roll", "Quality Fertilizer", "Sashimi"],
-    image: "images/fish/Sea Cucumber.png"
+    energyHealth: {
+      energy: -25,
+      health: 0,
+      poison: true
+    },
+    maxQuality: "iridium",
+    image: "images/fish/Sea Cucumber.png",
+    canSmoke: true,
+    roe: "roe",
+    fishPond: {
+      produce: [
+        {
+          product: "Roe",
+          minPopulation: 1
+        },
+        {
+          product: "Clam",
+          minPopulation: 5
+        },
+        {
+          product: "Coral",
+          minPopulation: 5
+        },
+        {
+          product: "Aquamarine",
+          minPopulation: 7
+        },
+        {
+          product: "Mussel",
+          minPopulation: 7
+        },
+        {
+          product: "Sea Urchin",
+          minPopulation: 7
+        }
+      ]
+    }
   },
   {
     id: "155",
     name: "Super Cucumber",
     description: "A rare, purple variety of sea cucumber.",
     catchType: "rod",
+    category: "regular",
     seasons: ["summer", "winter"],
     location: "Ocean, Ginger Island",
     weather: "both",
     time: "6:00 PM \u2013 2:00 AM",
     difficulty: 80,
     sellPrice: 250,
+    profession: ["fisher", "angler"],
     fishTank: true,
     usedIn: ["Maki Roll", "Quality Fertilizer", "Sashimi"],
-    image: "images/fish/Super Cucumber.png"
+    energyHealth: {
+      energy: 125,
+      health: 56
+    },
+    maxQuality: "iridium",
+    image: "images/fish/Super Cucumber.png",
+    canSmoke: true,
+    roe: "roe",
+    fishPond: {
+      produce: [
+        {
+          product: "Roe",
+          minPopulation: 1
+        },
+        {
+          product: "Iridium Ore",
+          minPopulation: 9
+        },
+        {
+          product: "Amethyst",
+          minPopulation: 9
+        }
+      ]
+    }
   },
   {
     id: "156",
     name: "Ghostfish",
     description: "A pale, blind fish found in underground lakes.",
     catchType: "rod",
+    category: "regular",
     seasons: ["spring", "summer", "fall", "winter"],
     location: "Mines (Floors 20 & 60)",
     weather: "both",
     time: "6:00 AM \u2013 2:00 AM",
     difficulty: 50,
     sellPrice: 45,
+    profession: ["fisher", "angler"],
     fishTank: true,
     usedIn: ["Maki Roll", "Quality Fertilizer", "Sashimi", "Specialty Fish Bundle"],
-    image: "images/fish/Ghostfish.png"
+    energyHealth: {
+      energy: 38,
+      health: 17
+    },
+    maxQuality: "iridium",
+    image: "images/fish/Ghostfish.png",
+    canSmoke: true,
+    roe: "roe",
+    fishPond: {
+      produce: [
+        {
+          product: "Roe",
+          minPopulation: 1
+        },
+        {
+          product: "Quartz",
+          minPopulation: 3
+        },
+        {
+          product: "White Algae",
+          minPopulation: 9
+        },
+        {
+          product: "Refined Quartz",
+          minPopulation: 9
+        },
+        {
+          product: "Pale Broth",
+          minPopulation: 9
+        }
+      ]
+    }
   },
   {
     id: "157",
     name: "White Algae",
     description: "It's super slimy.",
     catchType: "rod",
+    category: "other",
     seasons: ["spring", "summer", "fall", "winter"],
     location: "Mines",
     weather: "both",
     time: "6:00 AM \u2013 2:00 AM",
     difficulty: 5,
     sellPrice: 25,
+    profession: [],
     fishTank: false,
     usedIn: ["Pale Broth", "Wild Medicine Bundle"],
-    image: "images/fish/White Algae.png"
+    energyHealth: {
+      energy: 20,
+      health: 9
+    },
+    maxQuality: "base",
+    image: "images/fish/White Algae.png",
+    canSmoke: false,
+    roe: null,
+    fishPond: null
   },
   {
     id: "158",
     name: "Stonefish",
     description: "A bizarre fish that's shaped like a brick.",
     catchType: "rod",
+    category: "regular",
     seasons: ["spring", "summer", "fall", "winter"],
     location: "Mines (Floor 20)",
     weather: "both",
     time: "6:00 AM \u2013 2:00 AM",
     difficulty: 65,
     sellPrice: 300,
+    profession: ["fisher", "angler"],
     fishTank: true,
     usedIn: ["Maki Roll", "Quality Fertilizer", "Sashimi"],
-    image: "images/fish/Stonefish.png"
+    maxQuality: "iridium",
+    image: "images/fish/Stonefish.png",
+    canSmoke: true,
+    roe: "roe",
+    fishPond: {
+      produce: [
+        {
+          product: "Roe",
+          minPopulation: 1
+        },
+        {
+          product: "Copper Ore",
+          minPopulation: 3
+        },
+        {
+          product: "Geode",
+          minPopulation: 9
+        },
+        {
+          product: "Stone",
+          minPopulation: 9
+        },
+        {
+          product: "Diamond",
+          minPopulation: 9
+        }
+      ]
+    }
   },
   {
     id: "159",
     name: "Crimsonfish",
     description: "Lives deep in the ocean but likes to lay its eggs in the warm summer water.",
     catchType: "rod",
+    category: "legendary",
     seasons: ["summer"],
     location: "Ocean",
     weather: "both",
     time: "6:00 AM \u2013 8:00 PM",
     difficulty: 95,
     sellPrice: 1500,
+    profession: ["fisher", "angler"],
     fishTank: true,
     usedIn: ["Maki Roll", "Quality Fertilizer", "Sashimi"],
-    image: "images/fish/Crimsonfish.png"
+    energyHealth: {
+      energy: 38,
+      health: 17
+    },
+    maxQuality: "iridium",
+    image: "images/fish/Crimsonfish.png",
+    canSmoke: true,
+    roe: "roe",
+    fishPond: {
+      produce: [
+        {
+          product: "Roe",
+          minPopulation: 1
+        }
+      ]
+    }
   },
   {
     id: "160",
     name: "Angler",
     description: "Uses a bioluminescent dangler to attract prey.",
     catchType: "rod",
+    category: "legendary",
     seasons: ["fall"],
     location: "River",
     weather: "both",
     time: "6:00 AM \u2013 2:00 AM",
     difficulty: 85,
     sellPrice: 900,
+    profession: ["fisher", "angler"],
     fishTank: true,
     usedIn: ["Maki Roll", "Quality Fertilizer", "Sashimi"],
-    image: "images/fish/Angler.png"
+    energyHealth: {
+      energy: 25,
+      health: 11
+    },
+    maxQuality: "iridium",
+    image: "images/fish/Angler.png",
+    canSmoke: true,
+    roe: "roe",
+    fishPond: {
+      produce: [
+        {
+          product: "Roe",
+          minPopulation: 1
+        }
+      ]
+    }
   },
   {
     id: "161",
     name: "Ice Pip",
     description: "A rare fish that thrives in extremely cold conditions.",
     catchType: "rod",
+    category: "regular",
     seasons: ["spring", "summer", "fall", "winter"],
     location: "Mines (Floor 60)",
     weather: "both",
     time: "6:00 AM \u2013 2:00 AM",
     difficulty: 85,
     sellPrice: 500,
+    profession: ["fisher", "angler"],
     fishTank: true,
     usedIn: ["Maki Roll", "Quality Fertilizer", "Sashimi"],
-    image: "images/fish/Ice Pip.png"
+    energyHealth: {
+      energy: 38,
+      health: 17
+    },
+    maxQuality: "iridium",
+    image: "images/fish/Ice Pip.png",
+    canSmoke: true,
+    roe: "roe",
+    fishPond: {
+      produce: [
+        {
+          product: "Roe",
+          minPopulation: 1
+        },
+        {
+          product: "Iron Ore",
+          minPopulation: 3
+        },
+        {
+          product: "Frozen Geode",
+          minPopulation: 9
+        },
+        {
+          product: "Frozen Tear",
+          minPopulation: 9
+        },
+        {
+          product: "Diamond",
+          minPopulation: 9
+        }
+      ]
+    }
   },
   {
     id: "162",
     name: "Lava Eel",
     description: "It can somehow survive in pools of red-hot lava.",
     catchType: "rod",
+    category: "regular",
     seasons: ["spring", "summer", "fall", "winter"],
     location: "Mines (Floor 100), Volcano Caldera",
     weather: "both",
     time: "6:00 AM \u2013 2:00 AM",
     difficulty: 90,
     sellPrice: 700,
+    profession: ["fisher", "angler"],
     fishTank: true,
     usedIn: ["Maki Roll", "Quality Fertilizer", "Sashimi", "Master Fisher's Bundle"],
-    image: "images/fish/Lava Eel.png"
+    energyHealth: {
+      energy: 50,
+      health: 22
+    },
+    maxQuality: "iridium",
+    image: "images/fish/Lava Eel.png",
+    canSmoke: true,
+    roe: "roe",
+    fishPond: {
+      produce: [
+        {
+          product: "Roe",
+          minPopulation: 1
+        },
+        {
+          product: "Gold Ore",
+          minPopulation: 3
+        },
+        {
+          product: "Cave Jelly",
+          minPopulation: 8
+        },
+        {
+          product: "Spicy Eel",
+          minPopulation: 9
+        },
+        {
+          product: "Magma Geode",
+          minPopulation: 9
+        }
+      ]
+    }
   },
   {
     id: "163",
     name: "Legend",
     description: "The king of all fish! They said he'd never be caught.",
     catchType: "rod",
+    category: "legendary",
     seasons: ["spring"],
     location: "Mountain Lake",
     weather: "rainy",
     time: "6:00 AM \u2013 8:00 PM",
     difficulty: 110,
     sellPrice: 5e3,
+    profession: ["fisher", "angler"],
     fishTank: true,
     usedIn: ["Maki Roll", "Quality Fertilizer", "Sashimi"],
-    image: "images/fish/Legend.png"
+    energyHealth: {
+      energy: 500,
+      health: 225
+    },
+    maxQuality: "iridium",
+    image: "images/fish/Legend.png",
+    canSmoke: true,
+    roe: "roe",
+    fishPond: {
+      produce: [
+        {
+          product: "Roe",
+          minPopulation: 1
+        }
+      ]
+    }
   },
   {
     id: "164",
     name: "Sandfish",
     description: "It tries to hide using camouflage.",
     catchType: "rod",
+    category: "regular",
     seasons: ["spring", "summer", "fall", "winter"],
     location: "Desert",
     weather: "both",
     time: "6:00 AM \u2013 8:00 PM",
     difficulty: 65,
     sellPrice: 75,
+    profession: ["fisher", "angler"],
     fishTank: true,
     usedIn: ["Maki Roll", "Quality Fertilizer", "Sashimi", "Specialty Fish Bundle"],
-    image: "images/fish/Sandfish.png"
+    energyHealth: {
+      energy: 13,
+      health: 5
+    },
+    maxQuality: "iridium",
+    image: "images/fish/Sandfish.png",
+    canSmoke: true,
+    roe: "roe",
+    fishPond: {
+      produce: [
+        {
+          product: "Roe",
+          minPopulation: 1
+        },
+        {
+          product: "Cactus Seeds",
+          minPopulation: 10
+        }
+      ]
+    }
   },
   {
     id: "165",
     name: "Scorpion Carp",
     description: "It's like a regular carp but with a sharp stinger.",
     catchType: "rod",
+    category: "regular",
     seasons: ["spring", "summer", "fall", "winter"],
     location: "Desert",
     weather: "both",
     time: "6:00 AM \u2013 8:00 PM",
     difficulty: 90,
     sellPrice: 150,
+    profession: ["fisher", "angler"],
     fishTank: true,
     usedIn: ["Maki Roll", "Quality Fertilizer", "Sashimi", "Master Fisher's Bundle"],
-    image: "images/fish/Scorpion Carp.png"
+    energyHealth: {
+      energy: -125,
+      health: 0,
+      poison: true
+    },
+    maxQuality: "iridium",
+    image: "images/fish/Scorpion Carp.png",
+    canSmoke: true,
+    roe: "roe",
+    fishPond: {
+      produce: [
+        {
+          product: "Roe",
+          minPopulation: 1
+        },
+        {
+          product: "Cactus Seeds",
+          minPopulation: 10
+        }
+      ]
+    }
   },
   {
     id: "267",
     name: "Flounder",
     description: "It lives on the bottom, so both eyes are on top of its head.",
     catchType: "rod",
+    category: "regular",
     seasons: ["spring", "summer"],
     location: "Ocean, Ginger Island",
     weather: "both",
     time: "6:00 AM \u2013 8:00 PM",
     difficulty: 50,
     sellPrice: 100,
+    profession: ["fisher", "angler"],
     fishTank: true,
     usedIn: ["Maki Roll", "Quality Fertilizer", "Sashimi", "Seafoam Pudding"],
-    image: "images/fish/Flounder.png"
+    energyHealth: {
+      energy: 38,
+      health: 17
+    },
+    maxQuality: "iridium",
+    image: "images/fish/Flounder.png",
+    canSmoke: true,
+    roe: "roe",
+    fishPond: {
+      produce: [
+        {
+          product: "Roe",
+          minPopulation: 1
+        },
+        {
+          product: "Sea Jelly",
+          minPopulation: 7
+        }
+      ]
+    }
   },
   {
     id: "269",
     name: "Midnight Carp",
     description: "This shy fish only feels comfortable at night.",
     catchType: "rod",
+    category: "regular",
     seasons: ["fall", "winter"],
     location: "Forest Pond, Mountain Lake, Ginger Island",
     weather: "both",
     time: "10:00 PM \u2013 2:00 AM",
     difficulty: 55,
     sellPrice: 150,
+    profession: ["fisher", "angler"],
     fishTank: true,
     usedIn: ["Maki Roll", "Quality Fertilizer", "Sashimi", "Seafoam Pudding"],
-    image: "images/fish/Midnight Carp.png"
+    energyHealth: {
+      energy: 50,
+      health: 22
+    },
+    maxQuality: "iridium",
+    image: "images/fish/Midnight Carp.png",
+    canSmoke: true,
+    roe: "roe",
+    fishPond: {
+      produce: [
+        {
+          product: "Roe",
+          minPopulation: 1
+        },
+        {
+          product: "River Jelly",
+          minPopulation: 7
+        }
+      ]
+    }
   },
   {
     id: "372",
     name: "Clam",
     description: "There's a chewy little guy in there...",
     catchType: "crab-pot",
+    category: "crab-pot",
     seasons: ["spring", "summer", "fall", "winter"],
     location: "Ocean (crab pot)",
     sellPrice: 50,
+    profession: ["fisher", "angler"],
     fishTank: true,
     usedIn: ["Chowder", "Maki Roll", "Quality Fertilizer", "Sashimi", "Crab Pot Bundle"],
-    image: "images/fish/Clam.png"
+    maxQuality: "iridium",
+    image: "images/fish/Clam.png",
+    canSmoke: false,
+    roe: null,
+    fishPond: {
+      produce: [
+        {
+          product: "Roe",
+          minPopulation: 1
+        },
+        {
+          product: "Seaweed",
+          minPopulation: 1
+        },
+        {
+          product: "Trash",
+          minPopulation: 1
+        },
+        {
+          product: "Driftwood",
+          minPopulation: 1
+        },
+        {
+          product: "Broken Glasses",
+          minPopulation: 1
+        },
+        {
+          product: "Broken CD",
+          minPopulation: 1
+        },
+        {
+          product: "Soggy Newspaper",
+          minPopulation: 1
+        },
+        {
+          product: "Coral",
+          minPopulation: 5
+        },
+        {
+          product: "Sea Urchin",
+          minPopulation: 5
+        },
+        {
+          product: "Warp Totem: Beach",
+          minPopulation: 9
+        },
+        {
+          product: "Nautilus Shell",
+          minPopulation: 9
+        }
+      ]
+    }
   },
   {
     id: "682",
     name: "Mutant Carp",
     description: "The strange waters of the sewer turned this carp into a monstrosity.",
     catchType: "rod",
+    category: "legendary",
     seasons: ["spring", "summer", "fall", "winter"],
     location: "Sewers",
     weather: "both",
     time: "6:00 AM \u2013 2:00 AM",
     difficulty: 80,
     sellPrice: 1e3,
+    profession: ["fisher", "angler"],
     fishTank: true,
     usedIn: ["Maki Roll", "Quality Fertilizer", "Sashimi"],
-    image: "images/fish/Mutant Carp.png"
+    energyHealth: {
+      energy: 25,
+      health: 11
+    },
+    maxQuality: "iridium",
+    image: "images/fish/Mutant Carp.png",
+    canSmoke: true,
+    roe: "roe",
+    fishPond: {
+      produce: [
+        {
+          product: "Roe",
+          minPopulation: 1
+        }
+      ]
+    }
   },
   {
     id: "698",
     name: "Sturgeon",
     description: "An ancient bottom-feeder with a dwindling population. Females can live up to 150 years.",
     catchType: "rod",
+    category: "regular",
     seasons: ["summer", "winter"],
     location: "Mountain Lake",
     weather: "both",
     time: "6:00 AM \u2013 7:00 PM",
     difficulty: 78,
     sellPrice: 200,
+    profession: ["fisher", "angler"],
     fishTank: true,
     usedIn: ["Maki Roll", "Quality Fertilizer", "Sashimi", "Lake Fish Bundle"],
-    image: "images/fish/Sturgeon.png"
+    energyHealth: {
+      energy: 25,
+      health: 11
+    },
+    maxQuality: "iridium",
+    image: "images/fish/Sturgeon.png",
+    canSmoke: true,
+    roe: "caviar",
+    fishPond: {
+      produce: [
+        {
+          product: "Roe",
+          minPopulation: 1
+        }
+      ]
+    }
   },
   {
     id: "699",
     name: "Tiger Trout",
     description: "A rare hybrid trout that cannot bear offspring of its own.",
     catchType: "rod",
+    category: "regular",
     seasons: ["spring", "summer", "fall", "winter"],
     location: "River",
     weather: "both",
     time: "6:00 AM \u2013 7:00 PM",
     difficulty: 60,
     sellPrice: 150,
+    profession: ["fisher", "angler"],
     fishTank: true,
     usedIn: ["Maki Roll", "Quality Fertilizer", "Sashimi", "River Fish Bundle"],
-    image: "images/fish/Tiger Trout.png"
+    energyHealth: {
+      energy: 25,
+      health: 11
+    },
+    maxQuality: "iridium",
+    image: "images/fish/Tiger Trout.png",
+    canSmoke: true,
+    roe: "roe",
+    fishPond: {
+      produce: [
+        {
+          product: "Roe",
+          minPopulation: 1
+        }
+      ]
+    }
   },
   {
     id: "700",
     name: "Bullhead",
     description: "A relative of the catfish that eats a variety of foods off the lake bottom.",
     catchType: "rod",
+    category: "regular",
     seasons: ["spring", "summer", "fall", "winter"],
     location: "Mountain Lake",
     weather: "both",
     time: "6:00 AM \u2013 2:00 AM",
     difficulty: 46,
     sellPrice: 75,
+    profession: ["fisher", "angler"],
     fishTank: true,
     usedIn: ["Maki Roll", "Quality Fertilizer", "Sashimi", "Lake Fish Bundle"],
-    image: "images/fish/Bullhead.png"
+    energyHealth: {
+      energy: 25,
+      health: 11
+    },
+    maxQuality: "iridium",
+    image: "images/fish/Bullhead.png",
+    canSmoke: true,
+    roe: "roe",
+    fishPond: {
+      produce: [
+        {
+          product: "Roe",
+          minPopulation: 1
+        },
+        {
+          product: "Common Mushroom",
+          minPopulation: 5
+        },
+        {
+          product: "Earth Crystal",
+          minPopulation: 5
+        },
+        {
+          product: "Limestone",
+          minPopulation: 5
+        },
+        {
+          product: "Mudstone",
+          minPopulation: 7
+        },
+        {
+          product: "Snail",
+          minPopulation: 7
+        },
+        {
+          product: "Wild Bait",
+          minPopulation: 7
+        }
+      ]
+    }
   },
   {
     id: "701",
     name: "Tilapia",
     description: "A primarily vegetarian fish that prefers warm water.",
     catchType: "rod",
+    category: "regular",
     seasons: ["summer", "fall"],
     location: "Ocean",
     weather: "both",
     time: "6:00 AM \u2013 2:00 PM",
     difficulty: 50,
     sellPrice: 75,
+    profession: ["fisher", "angler"],
     fishTank: true,
     usedIn: ["Maki Roll", "Quality Fertilizer", "Sashimi", "Ocean Fish Bundle"],
-    image: "images/fish/Tilapia.png"
+    energyHealth: {
+      energy: 25,
+      health: 11
+    },
+    maxQuality: "iridium",
+    image: "images/fish/Tilapia.png",
+    canSmoke: true,
+    roe: "roe",
+    fishPond: {
+      produce: [
+        {
+          product: "Roe",
+          minPopulation: 1
+        },
+        {
+          product: "Clam",
+          minPopulation: 5
+        },
+        {
+          product: "Coral",
+          minPopulation: 5
+        },
+        {
+          product: "Aquamarine",
+          minPopulation: 7
+        },
+        {
+          product: "Mussel",
+          minPopulation: 7
+        },
+        {
+          product: "Sea Urchin",
+          minPopulation: 7
+        }
+      ]
+    }
   },
   {
     id: "702",
     name: "Chub",
     description: "A common freshwater fish known for its voracious appetite.",
     catchType: "rod",
+    category: "regular",
     seasons: ["spring", "summer", "fall", "winter"],
     location: "River, Mountain Lake",
     weather: "both",
     time: "6:00 AM \u2013 2:00 AM",
     difficulty: 35,
     sellPrice: 50,
+    profession: ["fisher", "angler"],
     fishTank: true,
     usedIn: ["Maki Roll", "Quality Fertilizer", "Sashimi", "Field Research Bundle"],
-    image: "images/fish/Chub.png"
+    energyHealth: {
+      energy: 25,
+      health: 11
+    },
+    maxQuality: "iridium",
+    image: "images/fish/Chub.png",
+    canSmoke: true,
+    roe: "roe",
+    fishPond: {
+      produce: [
+        {
+          product: "Roe",
+          minPopulation: 1
+        },
+        {
+          product: "Gold Ore",
+          minPopulation: 5
+        },
+        {
+          product: "Maple Syrup",
+          minPopulation: 5
+        },
+        {
+          product: "Mixed Seeds",
+          minPopulation: 5
+        },
+        {
+          product: "Crayfish",
+          minPopulation: 7
+        },
+        {
+          product: "Honey",
+          minPopulation: 7
+        },
+        {
+          product: "Jade",
+          minPopulation: 7
+        },
+        {
+          product: "Periwinkle",
+          minPopulation: 7
+        }
+      ]
+    }
   },
   {
     id: "704",
     name: "Dorado",
     description: "A fierce carnivore with brilliant orange scales.",
     catchType: "rod",
+    category: "regular",
     seasons: ["summer"],
     location: "River",
     weather: "both",
     time: "6:00 AM \u2013 7:00 PM",
     difficulty: 78,
     sellPrice: 100,
+    profession: ["fisher", "angler"],
     fishTank: true,
     usedIn: ["Maki Roll", "Quality Fertilizer", "Sashimi"],
-    image: "images/fish/Dorado.png"
+    energyHealth: {
+      energy: 25,
+      health: 11
+    },
+    maxQuality: "iridium",
+    image: "images/fish/Dorado.png",
+    canSmoke: true,
+    roe: "roe",
+    fishPond: {
+      produce: [
+        {
+          product: "Roe",
+          minPopulation: 1
+        },
+        {
+          product: "Bug Meat",
+          minPopulation: 9
+        }
+      ]
+    }
   },
   {
     id: "705",
     name: "Albacore",
     description: "Prefers temperature 'edges' where cool and warm water meet.",
     catchType: "rod",
+    category: "regular",
     seasons: ["fall", "winter"],
     location: "Ocean",
     weather: "both",
     time: "6:00 AM \u2013 11:00 AM, 6:00 PM \u2013 2:00 AM",
     difficulty: 60,
     sellPrice: 75,
+    profession: ["fisher", "angler"],
     fishTank: true,
     usedIn: ["Maki Roll", "Quality Fertilizer", "Sashimi"],
-    image: "images/fish/Albacore.png"
+    energyHealth: {
+      energy: 25,
+      health: 11
+    },
+    maxQuality: "iridium",
+    image: "images/fish/Albacore.png",
+    canSmoke: true,
+    roe: "roe",
+    fishPond: {
+      produce: [
+        {
+          product: "Roe",
+          minPopulation: 1
+        },
+        {
+          product: "Clam",
+          minPopulation: 5
+        },
+        {
+          product: "Coral",
+          minPopulation: 5
+        },
+        {
+          product: "Aquamarine",
+          minPopulation: 7
+        },
+        {
+          product: "Mussel",
+          minPopulation: 7
+        },
+        {
+          product: "Sea Urchin",
+          minPopulation: 7
+        }
+      ]
+    }
   },
   {
     id: "706",
     name: "Shad",
     description: "Lives in a school at sea, but returns to the rivers to spawn.",
     catchType: "rod",
+    category: "regular",
     seasons: ["spring", "summer", "fall"],
     location: "River",
     weather: "rainy",
     time: "9:00 AM \u2013 2:00 AM",
     difficulty: 45,
     sellPrice: 60,
+    profession: ["fisher", "angler"],
     fishTank: true,
     usedIn: [
       "Maki Roll",
@@ -13421,106 +17096,466 @@ var fish_default = [
       "River Fish Bundle",
       "Quality Fish Bundle"
     ],
-    image: "images/fish/Shad.png"
+    energyHealth: {
+      energy: 25,
+      health: 11
+    },
+    maxQuality: "iridium",
+    image: "images/fish/Shad.png",
+    canSmoke: true,
+    roe: "roe",
+    fishPond: {
+      produce: [
+        {
+          product: "Roe",
+          minPopulation: 1
+        },
+        {
+          product: "Gold Ore",
+          minPopulation: 5
+        },
+        {
+          product: "Maple Syrup",
+          minPopulation: 5
+        },
+        {
+          product: "Mixed Seeds",
+          minPopulation: 5
+        },
+        {
+          product: "Crayfish",
+          minPopulation: 7
+        },
+        {
+          product: "Honey",
+          minPopulation: 7
+        },
+        {
+          product: "Jade",
+          minPopulation: 7
+        },
+        {
+          product: "Periwinkle",
+          minPopulation: 7
+        }
+      ]
+    }
   },
   {
     id: "707",
     name: "Lingcod",
     description: "A fearsome predator that will eat almost anything it can cram into its mouth.",
     catchType: "rod",
+    category: "regular",
     seasons: ["winter"],
     location: "River, Mountain Lake",
     weather: "both",
     time: "6:00 AM \u2013 2:00 AM",
     difficulty: 85,
     sellPrice: 120,
+    profession: ["fisher", "angler"],
     fishTank: true,
     usedIn: ["Maki Roll", "Quality Fertilizer", "Sashimi"],
-    image: "images/fish/Lingcod.png"
+    energyHealth: {
+      energy: 25,
+      health: 11
+    },
+    maxQuality: "iridium",
+    image: "images/fish/Lingcod.png",
+    canSmoke: true,
+    roe: "roe",
+    fishPond: {
+      produce: [
+        {
+          product: "Roe",
+          minPopulation: 1
+        },
+        {
+          product: "Bug Meat",
+          minPopulation: 9
+        }
+      ]
+    }
   },
   {
     id: "708",
     name: "Halibut",
     description: "A flat fish that lives on the ocean floor.",
     catchType: "rod",
+    category: "regular",
     seasons: ["spring", "summer", "winter"],
     location: "Ocean",
     weather: "both",
     time: "6:00 AM \u2013 11:00 AM, 7:00 PM \u2013 2:00 AM",
     difficulty: 50,
     sellPrice: 80,
+    profession: ["fisher", "angler"],
     fishTank: true,
     usedIn: ["Maki Roll", "Quality Fertilizer", "Sashimi"],
-    image: "images/fish/Halibut.png"
+    energyHealth: {
+      energy: 25,
+      health: 11
+    },
+    maxQuality: "iridium",
+    image: "images/fish/Halibut.png",
+    canSmoke: true,
+    roe: "roe",
+    fishPond: {
+      produce: [
+        {
+          product: "Roe",
+          minPopulation: 1
+        },
+        {
+          product: "Clam",
+          minPopulation: 5
+        },
+        {
+          product: "Coral",
+          minPopulation: 5
+        },
+        {
+          product: "Aquamarine",
+          minPopulation: 7
+        },
+        {
+          product: "Mussel",
+          minPopulation: 7
+        },
+        {
+          product: "Sea Urchin",
+          minPopulation: 7
+        }
+      ]
+    }
   },
   {
     id: "715",
     name: "Lobster",
     description: "A large ocean-dwelling crustacean with a strong tail.",
     catchType: "crab-pot",
+    category: "crab-pot",
     seasons: ["spring", "summer", "fall", "winter"],
     location: "Ocean (crab pot)",
     sellPrice: 120,
+    profession: ["fisher", "angler"],
     fishTank: true,
     usedIn: ["Lobster Bisque", "Maki Roll", "Quality Fertilizer", "Sashimi", "Crab Pot Bundle"],
-    image: "images/fish/Lobster.png"
+    maxQuality: "silver",
+    image: "images/fish/Lobster.png",
+    canSmoke: false,
+    roe: null,
+    fishPond: {
+      produce: [
+        {
+          product: "Roe",
+          minPopulation: 1
+        },
+        {
+          product: "Seaweed",
+          minPopulation: 1
+        },
+        {
+          product: "Trash",
+          minPopulation: 1
+        },
+        {
+          product: "Driftwood",
+          minPopulation: 1
+        },
+        {
+          product: "Broken Glasses",
+          minPopulation: 1
+        },
+        {
+          product: "Broken CD",
+          minPopulation: 1
+        },
+        {
+          product: "Soggy Newspaper",
+          minPopulation: 1
+        },
+        {
+          product: "Coral",
+          minPopulation: 5
+        },
+        {
+          product: "Sea Urchin",
+          minPopulation: 5
+        },
+        {
+          product: "Warp Totem: Beach",
+          minPopulation: 9
+        },
+        {
+          product: "Nautilus Shell",
+          minPopulation: 9
+        }
+      ]
+    }
   },
   {
     id: "716",
     name: "Crayfish",
     description: "A small freshwater relative of the lobster.",
     catchType: "crab-pot",
+    category: "crab-pot",
     seasons: ["spring", "summer", "fall", "winter"],
     location: "Freshwater (crab pot)",
     sellPrice: 75,
+    profession: ["fisher", "angler"],
     fishTank: true,
     usedIn: ["Fish Stew", "Maki Roll", "Quality Fertilizer", "Sashimi", "Crab Pot Bundle"],
-    image: "images/fish/Crayfish.png"
+    maxQuality: "silver",
+    image: "images/fish/Crayfish.png",
+    canSmoke: false,
+    roe: null,
+    fishPond: {
+      produce: [
+        {
+          product: "Roe",
+          minPopulation: 1
+        },
+        {
+          product: "Trash",
+          minPopulation: 1
+        },
+        {
+          product: "Green Algae",
+          minPopulation: 1
+        },
+        {
+          product: "Driftwood",
+          minPopulation: 1
+        },
+        {
+          product: "Broken Glasses",
+          minPopulation: 1
+        },
+        {
+          product: "Broken CD",
+          minPopulation: 1
+        },
+        {
+          product: "Soggy Newspaper",
+          minPopulation: 1
+        },
+        {
+          product: "Mixed Seeds",
+          minPopulation: 5
+        },
+        {
+          product: "Warp Totem: Mountains",
+          minPopulation: 9
+        }
+      ]
+    }
   },
   {
     id: "717",
     name: "Crab",
     description: "A marine crustacean with two powerful pincers.",
     catchType: "crab-pot",
+    category: "crab-pot",
     seasons: ["spring", "summer", "fall", "winter"],
     location: "Ocean (crab pot)",
     sellPrice: 100,
+    profession: ["fisher", "angler"],
     fishTank: true,
     usedIn: ["Crab Cakes", "Maki Roll", "Quality Fertilizer", "Sashimi", "Crab Pot Bundle"],
-    image: "images/fish/Crab.png"
+    maxQuality: "gold",
+    image: "images/fish/Crab.png",
+    canSmoke: false,
+    roe: null,
+    fishPond: {
+      produce: [
+        {
+          product: "Roe",
+          minPopulation: 1
+        },
+        {
+          product: "Seaweed",
+          minPopulation: 1
+        },
+        {
+          product: "Trash",
+          minPopulation: 1
+        },
+        {
+          product: "Driftwood",
+          minPopulation: 1
+        },
+        {
+          product: "Broken Glasses",
+          minPopulation: 1
+        },
+        {
+          product: "Broken CD",
+          minPopulation: 1
+        },
+        {
+          product: "Soggy Newspaper",
+          minPopulation: 1
+        },
+        {
+          product: "Coral",
+          minPopulation: 5
+        },
+        {
+          product: "Sea Urchin",
+          minPopulation: 5
+        },
+        {
+          product: "Warp Totem: Beach",
+          minPopulation: 9
+        },
+        {
+          product: "Nautilus Shell",
+          minPopulation: 9
+        }
+      ]
+    }
   },
   {
     id: "718",
     name: "Cockle",
     description: "A common saltwater clam.",
     catchType: "crab-pot",
+    category: "crab-pot",
     seasons: ["spring", "summer", "fall", "winter"],
     location: "Ocean (crab pot)",
     sellPrice: 50,
+    profession: ["fisher", "angler"],
     fishTank: true,
     usedIn: ["Maki Roll", "Quality Fertilizer", "Sashimi", "Crab Pot Bundle"],
-    image: "images/fish/Cockle.png"
+    maxQuality: "iridium",
+    image: "images/fish/Cockle.png",
+    canSmoke: false,
+    roe: null,
+    fishPond: {
+      produce: [
+        {
+          product: "Roe",
+          minPopulation: 1
+        },
+        {
+          product: "Seaweed",
+          minPopulation: 1
+        },
+        {
+          product: "Trash",
+          minPopulation: 1
+        },
+        {
+          product: "Driftwood",
+          minPopulation: 1
+        },
+        {
+          product: "Broken Glasses",
+          minPopulation: 1
+        },
+        {
+          product: "Broken CD",
+          minPopulation: 1
+        },
+        {
+          product: "Soggy Newspaper",
+          minPopulation: 1
+        },
+        {
+          product: "Coral",
+          minPopulation: 5
+        },
+        {
+          product: "Sea Urchin",
+          minPopulation: 5
+        },
+        {
+          product: "Warp Totem: Beach",
+          minPopulation: 9
+        },
+        {
+          product: "Nautilus Shell",
+          minPopulation: 9
+        }
+      ]
+    }
   },
   {
     id: "719",
     name: "Mussel",
     description: "A common bivalve that often lives in clusters.",
     catchType: "crab-pot",
+    category: "crab-pot",
     seasons: ["spring", "summer", "fall", "winter"],
     location: "Ocean (crab pot)",
     sellPrice: 30,
+    profession: ["fisher", "angler"],
     fishTank: true,
     usedIn: ["Fish Stew", "Maki Roll", "Quality Fertilizer", "Sashimi", "Crab Pot Bundle"],
-    image: "images/fish/Mussel.png"
+    maxQuality: "iridium",
+    image: "images/fish/Mussel.png",
+    canSmoke: false,
+    roe: null,
+    fishPond: {
+      produce: [
+        {
+          product: "Roe",
+          minPopulation: 1
+        },
+        {
+          product: "Seaweed",
+          minPopulation: 1
+        },
+        {
+          product: "Trash",
+          minPopulation: 1
+        },
+        {
+          product: "Driftwood",
+          minPopulation: 1
+        },
+        {
+          product: "Broken Glasses",
+          minPopulation: 1
+        },
+        {
+          product: "Broken CD",
+          minPopulation: 1
+        },
+        {
+          product: "Soggy Newspaper",
+          minPopulation: 1
+        },
+        {
+          product: "Coral",
+          minPopulation: 5
+        },
+        {
+          product: "Sea Urchin",
+          minPopulation: 5
+        },
+        {
+          product: "Warp Totem: Beach",
+          minPopulation: 9
+        },
+        {
+          product: "Nautilus Shell",
+          minPopulation: 9
+        }
+      ]
+    }
   },
   {
     id: "720",
     name: "Shrimp",
     description: "A scavenger that feeds off the ocean floor. Widely prized for its meat.",
     catchType: "crab-pot",
+    category: "crab-pot",
     seasons: ["spring", "summer", "fall", "winter"],
     location: "Ocean (crab pot)",
     sellPrice: 60,
+    profession: ["fisher", "angler"],
     fishTank: true,
     usedIn: [
       "Maki Roll",
@@ -13530,28 +17565,126 @@ var fish_default = [
       "Tom Kha Soup",
       "Crab Pot Bundle"
     ],
-    image: "images/fish/Shrimp.png"
+    maxQuality: "silver",
+    image: "images/fish/Shrimp.png",
+    canSmoke: false,
+    roe: null,
+    fishPond: {
+      produce: [
+        {
+          product: "Roe",
+          minPopulation: 1
+        },
+        {
+          product: "Seaweed",
+          minPopulation: 1
+        },
+        {
+          product: "Trash",
+          minPopulation: 1
+        },
+        {
+          product: "Driftwood",
+          minPopulation: 1
+        },
+        {
+          product: "Broken Glasses",
+          minPopulation: 1
+        },
+        {
+          product: "Broken CD",
+          minPopulation: 1
+        },
+        {
+          product: "Soggy Newspaper",
+          minPopulation: 1
+        },
+        {
+          product: "Coral",
+          minPopulation: 5
+        },
+        {
+          product: "Sea Urchin",
+          minPopulation: 5
+        },
+        {
+          product: "Warp Totem: Beach",
+          minPopulation: 9
+        },
+        {
+          product: "Nautilus Shell",
+          minPopulation: 9
+        }
+      ]
+    }
   },
   {
     id: "721",
     name: "Snail",
     description: "A wide-ranging mollusc that lives in a spiral shell.",
     catchType: "crab-pot",
+    category: "crab-pot",
     seasons: ["spring", "summer", "fall", "winter"],
     location: "Freshwater (crab pot)",
     sellPrice: 65,
+    profession: ["fisher", "angler"],
     fishTank: true,
     usedIn: ["Maki Roll", "Quality Fertilizer", "Sashimi", "Crab Pot Bundle"],
-    image: "images/fish/Snail.png"
+    maxQuality: "gold",
+    image: "images/fish/Snail.png",
+    canSmoke: false,
+    roe: null,
+    fishPond: {
+      produce: [
+        {
+          product: "Roe",
+          minPopulation: 1
+        },
+        {
+          product: "Trash",
+          minPopulation: 1
+        },
+        {
+          product: "Green Algae",
+          minPopulation: 1
+        },
+        {
+          product: "Driftwood",
+          minPopulation: 1
+        },
+        {
+          product: "Broken Glasses",
+          minPopulation: 1
+        },
+        {
+          product: "Broken CD",
+          minPopulation: 1
+        },
+        {
+          product: "Soggy Newspaper",
+          minPopulation: 1
+        },
+        {
+          product: "Mixed Seeds",
+          minPopulation: 5
+        },
+        {
+          product: "Warp Totem: Mountains",
+          minPopulation: 9
+        }
+      ]
+    }
   },
   {
     id: "722",
     name: "Periwinkle",
     description: "A tiny freshwater snail that lives in a blue shell.",
     catchType: "crab-pot",
+    category: "crab-pot",
     seasons: ["spring", "summer", "fall", "winter"],
     location: "Freshwater (crab pot)",
     sellPrice: 20,
+    profession: ["fisher", "angler"],
     fishTank: true,
     usedIn: [
       "Fish Stew",
@@ -13561,31 +17694,129 @@ var fish_default = [
       "Strange Bun",
       "Crab Pot Bundle"
     ],
-    image: "images/fish/Periwinkle.png"
+    maxQuality: "silver",
+    image: "images/fish/Periwinkle.png",
+    canSmoke: false,
+    roe: null,
+    fishPond: {
+      produce: [
+        {
+          product: "Roe",
+          minPopulation: 1
+        },
+        {
+          product: "Trash",
+          minPopulation: 1
+        },
+        {
+          product: "Green Algae",
+          minPopulation: 1
+        },
+        {
+          product: "Driftwood",
+          minPopulation: 1
+        },
+        {
+          product: "Broken Glasses",
+          minPopulation: 1
+        },
+        {
+          product: "Broken CD",
+          minPopulation: 1
+        },
+        {
+          product: "Soggy Newspaper",
+          minPopulation: 1
+        },
+        {
+          product: "Mixed Seeds",
+          minPopulation: 5
+        },
+        {
+          product: "Warp Totem: Mountains",
+          minPopulation: 9
+        }
+      ]
+    }
   },
   {
     id: "723",
     name: "Oyster",
     description: "Constantly filters water to find food. In the process, it removes dangerous toxins from the environment.",
     catchType: "crab-pot",
+    category: "crab-pot",
     seasons: ["spring", "summer", "fall", "winter"],
     location: "Ocean (crab pot)",
     sellPrice: 40,
+    profession: ["fisher", "angler"],
     fishTank: true,
     usedIn: ["Maki Roll", "Quality Fertilizer", "Sashimi", "Crab Pot Bundle"],
-    image: "images/fish/Oyster.png"
+    maxQuality: "iridium",
+    image: "images/fish/Oyster.png",
+    canSmoke: false,
+    roe: null,
+    fishPond: {
+      produce: [
+        {
+          product: "Roe",
+          minPopulation: 1
+        },
+        {
+          product: "Seaweed",
+          minPopulation: 1
+        },
+        {
+          product: "Trash",
+          minPopulation: 1
+        },
+        {
+          product: "Driftwood",
+          minPopulation: 1
+        },
+        {
+          product: "Broken Glasses",
+          minPopulation: 1
+        },
+        {
+          product: "Broken CD",
+          minPopulation: 1
+        },
+        {
+          product: "Soggy Newspaper",
+          minPopulation: 1
+        },
+        {
+          product: "Coral",
+          minPopulation: 5
+        },
+        {
+          product: "Sea Urchin",
+          minPopulation: 5
+        },
+        {
+          product: "Warp Totem: Beach",
+          minPopulation: 9
+        },
+        {
+          product: "Nautilus Shell",
+          minPopulation: 9
+        }
+      ]
+    }
   },
   {
     id: "734",
     name: "Woodskip",
     description: "A very sensitive fish that can only live in pools deep in the forest.",
     catchType: "rod",
+    category: "regular",
     seasons: ["spring", "summer", "fall", "winter"],
     location: "Secret Woods",
     weather: "both",
     time: "6:00 AM \u2013 2:00 AM",
     difficulty: 50,
     sellPrice: 75,
+    profession: ["fisher", "angler"],
     fishTank: true,
     usedIn: [
       "Maki Roll",
@@ -13594,286 +17825,703 @@ var fish_default = [
       "Lake Fish Bundle",
       "Specialty Fish Bundle"
     ],
-    image: "images/fish/Woodskip.png"
+    energyHealth: {
+      energy: 25,
+      health: 11
+    },
+    maxQuality: "iridium",
+    image: "images/fish/Woodskip.png",
+    canSmoke: true,
+    roe: "roe",
+    fishPond: {
+      produce: [
+        {
+          product: "Roe",
+          minPopulation: 1
+        },
+        {
+          product: "Wood",
+          minPopulation: 1
+        },
+        {
+          product: "Hardwood",
+          minPopulation: 6
+        },
+        {
+          product: "Acorn",
+          minPopulation: 9
+        },
+        {
+          product: "Maple Seed",
+          minPopulation: 9
+        },
+        {
+          product: "Pine Cone",
+          minPopulation: 9
+        }
+      ]
+    }
   },
   {
     id: "775",
     name: "Glacierfish",
     description: "Builds a nest on the underside of glaciers.",
     catchType: "rod",
+    category: "legendary",
     seasons: ["winter"],
     location: "Forest (Arrowhead Island)",
     weather: "sunny",
     time: "6:00 AM \u2013 8:00 PM",
     difficulty: 100,
     sellPrice: 1e3,
+    profession: ["fisher", "angler"],
     fishTank: true,
     usedIn: ["Maki Roll", "Quality Fertilizer", "Sashimi"],
-    image: "images/fish/Glacierfish.png"
+    energyHealth: {
+      energy: 25,
+      health: 11
+    },
+    maxQuality: "iridium",
+    image: "images/fish/Glacierfish.png",
+    canSmoke: true,
+    roe: "roe",
+    fishPond: {
+      produce: [
+        {
+          product: "Roe",
+          minPopulation: 1
+        }
+      ]
+    }
   },
   {
     id: "795",
     name: "Void Salmon",
     description: "A salmon, twisted by void energy. The fresh meat is jet black, but rapidly turns pink when exposed to air.",
     catchType: "rod",
+    category: "regular",
     seasons: ["spring", "summer", "fall", "winter"],
     location: "Witch's Swamp",
     weather: "both",
     time: "6:00 AM \u2013 2:00 AM",
     difficulty: 80,
     sellPrice: 150,
+    profession: ["fisher", "angler"],
     fishTank: true,
     usedIn: ["Maki Roll", "Quality Fertilizer", "Sashimi", "The Missing Bundle"],
-    image: "images/fish/Void Salmon.png"
+    energyHealth: {
+      energy: 63,
+      health: 28
+    },
+    maxQuality: "iridium",
+    image: "images/fish/Void Salmon.png",
+    canSmoke: true,
+    roe: "roe",
+    fishPond: {
+      produce: [
+        {
+          product: "Roe",
+          minPopulation: 1
+        },
+        {
+          product: "Void Essence",
+          minPopulation: 8
+        },
+        {
+          product: "Void Egg",
+          minPopulation: 9
+        }
+      ]
+    }
   },
   {
     id: "796",
     name: "Slimejack",
     description: "He's coated in a very thick layer of slime. He keeps slipping out of your hands!",
     catchType: "rod",
+    category: "regular",
     seasons: ["spring", "summer", "fall", "winter"],
     location: "Mutant Bug Lair",
     weather: "both",
     time: "6:00 AM \u2013 2:00 AM",
     difficulty: 55,
     sellPrice: 100,
+    profession: ["fisher", "angler"],
     fishTank: true,
     usedIn: ["Maki Roll", "Quality Fertilizer", "Sashimi"],
-    image: "images/fish/Slimejack.png"
+    energyHealth: {
+      energy: 38,
+      health: 17
+    },
+    maxQuality: "iridium",
+    image: "images/fish/Slimejack.png",
+    canSmoke: true,
+    roe: "roe",
+    fishPond: {
+      produce: [
+        {
+          product: "Roe",
+          minPopulation: 1
+        },
+        {
+          product: "Green Algae",
+          minPopulation: 3
+        },
+        {
+          product: "Slime",
+          minPopulation: 9
+        },
+        {
+          product: "Green Slime Egg",
+          minPopulation: 9
+        }
+      ]
+    }
   },
   {
     id: "798",
     name: "Midnight Squid",
     description: "A strange and mysterious denizen of the ocean's twilight depths.",
     catchType: "rod",
+    category: "night-market",
     seasons: ["spring", "summer", "fall", "winter"],
     location: "Night Market submarine",
     weather: "both",
     time: "6:00 AM \u2013 2:00 AM",
     difficulty: 55,
     sellPrice: 100,
+    profession: ["fisher", "angler"],
     fishTank: true,
     usedIn: ["Maki Roll", "Quality Fertilizer", "Sashimi"],
-    image: "images/fish/Midnight Squid.png"
+    energyHealth: {
+      energy: 38,
+      health: 17
+    },
+    maxQuality: "iridium",
+    image: "images/fish/Midnight Squid.png",
+    canSmoke: true,
+    roe: null,
+    fishPond: {
+      produce: [
+        {
+          product: "Squid Ink",
+          minPopulation: 1
+        }
+      ]
+    }
   },
   {
     id: "799",
     name: "Spook Fish",
     description: "The huge eyes can detect the faint silhouettes of prey.",
     catchType: "rod",
+    category: "night-market",
     seasons: ["spring", "summer", "fall", "winter"],
     location: "Night Market submarine",
     weather: "both",
     time: "6:00 AM \u2013 2:00 AM",
     difficulty: 60,
     sellPrice: 220,
+    profession: ["fisher", "angler"],
     fishTank: true,
     usedIn: ["Maki Roll", "Quality Fertilizer", "Sashimi"],
-    image: "images/fish/Spook Fish.png"
+    energyHealth: {
+      energy: 38,
+      health: 17
+    },
+    maxQuality: "iridium",
+    image: "images/fish/Spook Fish.png",
+    canSmoke: true,
+    roe: "roe",
+    fishPond: {
+      produce: [
+        {
+          product: "Roe",
+          minPopulation: 1
+        },
+        {
+          product: "Treasure Chest",
+          minPopulation: 9
+        }
+      ]
+    }
   },
   {
     id: "800",
     name: "Blobfish",
     description: "This odd creature floats above the ocean floor, consuming any edible material in its path.",
     catchType: "rod",
+    category: "night-market",
     seasons: ["spring", "summer", "fall", "winter"],
     location: "Night Market submarine",
     weather: "both",
     time: "6:00 AM \u2013 2:00 AM",
     difficulty: 75,
     sellPrice: 500,
+    profession: ["fisher", "angler"],
     fishTank: true,
     usedIn: ["Maki Roll", "Quality Fertilizer", "Sashimi", "Master Fisher's Bundle"],
-    image: "images/fish/Blobfish.png"
+    energyHealth: {
+      energy: 38,
+      health: 17
+    },
+    maxQuality: "iridium",
+    image: "images/fish/Blobfish.png",
+    canSmoke: true,
+    roe: "roe",
+    fishPond: {
+      produce: [
+        {
+          product: "Roe",
+          minPopulation: 1
+        },
+        {
+          product: "Pearl",
+          minPopulation: 9
+        },
+        {
+          product: "Warp Totem: Farm",
+          minPopulation: 9
+        }
+      ]
+    }
   },
   {
     id: "836",
     name: "Stingray",
     description: "Despite having a toxic stinger, these fish are shy and prefer to avoid humans.",
     catchType: "rod",
+    category: "regular",
     seasons: ["spring", "summer", "fall", "winter"],
     location: "Ginger Island (Pirate Cove)",
     weather: "both",
     time: "6:00 AM \u2013 2:00 AM",
     difficulty: 80,
     sellPrice: 180,
+    profession: ["fisher", "angler"],
     fishTank: true,
     usedIn: ["Maki Roll", "Quality Fertilizer", "Sashimi"],
-    image: "images/fish/Stingray.png"
+    energyHealth: {
+      energy: 38,
+      health: 17
+    },
+    maxQuality: "iridium",
+    image: "images/fish/Stingray.png",
+    canSmoke: true,
+    roe: "roe",
+    fishPond: {
+      produce: [
+        {
+          product: "Roe",
+          minPopulation: 1
+        },
+        {
+          product: "Magma Cap",
+          minPopulation: 4
+        },
+        {
+          product: "Cinder Shard",
+          minPopulation: 7
+        },
+        {
+          product: "Dragon Tooth",
+          minPopulation: 9
+        },
+        {
+          product: "Battery Pack",
+          minPopulation: 9
+        }
+      ]
+    }
   },
   {
     id: "837",
     name: "Lionfish",
     description: "An aggressive, predatory fish with venomous spines.",
     catchType: "rod",
+    category: "regular",
     seasons: ["spring", "summer", "fall", "winter"],
     location: "Ginger Island",
     weather: "both",
     time: "6:00 AM \u2013 2:00 AM",
     difficulty: 50,
     sellPrice: 100,
+    profession: ["fisher", "angler"],
     fishTank: true,
     usedIn: ["Maki Roll", "Quality Fertilizer", "Sashimi"],
-    image: "images/fish/Lionfish.png"
+    energyHealth: {
+      energy: 38,
+      health: 17
+    },
+    maxQuality: "iridium",
+    image: "images/fish/Lionfish.png",
+    canSmoke: true,
+    roe: "roe",
+    fishPond: {
+      produce: [
+        {
+          product: "Roe",
+          minPopulation: 1
+        },
+        {
+          product: "Taro Tuber",
+          minPopulation: 4
+        },
+        {
+          product: "Tiger Slime Egg",
+          minPopulation: 9
+        }
+      ]
+    }
   },
   {
     id: "838",
     name: "Blue Discus",
     description: "A brightly colored tropical fish that is popular in aquariums.",
     catchType: "rod",
+    category: "regular",
     seasons: ["spring", "summer", "fall", "winter"],
     location: "Ginger Island (freshwater)",
     weather: "both",
     time: "6:00 AM \u2013 2:00 AM",
     difficulty: 60,
     sellPrice: 120,
+    profession: ["fisher", "angler"],
     fishTank: true,
     usedIn: ["Maki Roll", "Quality Fertilizer", "Sashimi"],
-    image: "images/fish/Blue Discus.png"
+    energyHealth: {
+      energy: 38,
+      health: 17
+    },
+    maxQuality: "iridium",
+    image: "images/fish/Blue Discus.png",
+    canSmoke: true,
+    roe: "roe",
+    fishPond: {
+      produce: [
+        {
+          product: "Roe",
+          minPopulation: 1
+        },
+        {
+          product: "Banana",
+          minPopulation: 4
+        },
+        {
+          product: "Golden Coconut",
+          minPopulation: 9
+        }
+      ]
+    }
   },
   {
     id: "898",
     name: "Son of Crimsonfish",
     description: "He hatched in the warm summer water, and followed in the footsteps of his father.",
     catchType: "rod",
+    category: "legendary-2",
     seasons: ["winter"],
     location: "Ocean",
     weather: "both",
     time: "6:00 AM \u2013 8:00 PM",
     difficulty: 95,
     sellPrice: 1500,
+    profession: ["fisher", "angler"],
     fishTank: true,
     usedIn: ["Maki Roll", "Quality Fertilizer", "Sashimi"],
-    image: "images/fish/Son of Crimsonfish.png"
+    energyHealth: {
+      energy: 38,
+      health: 17
+    },
+    maxQuality: "iridium",
+    image: "images/fish/Son of Crimsonfish.png",
+    canSmoke: true,
+    roe: "roe",
+    fishPond: {
+      produce: [
+        {
+          product: "Roe",
+          minPopulation: 1
+        }
+      ]
+    }
   },
   {
     id: "899",
     name: "Ms. Angler",
     description: "Uses a bioluminescent dangler to attract prey.",
     catchType: "rod",
+    category: "legendary-2",
     seasons: ["spring", "summer", "fall", "winter"],
     location: "River",
     weather: "both",
     time: "6:00 AM \u2013 2:00 AM",
     difficulty: 85,
     sellPrice: 900,
+    profession: ["fisher", "angler"],
     fishTank: true,
     usedIn: ["Maki Roll", "Quality Fertilizer", "Sashimi"],
-    image: "images/fish/Ms. Angler.png"
+    energyHealth: {
+      energy: 25,
+      health: 11
+    },
+    maxQuality: "iridium",
+    image: "images/fish/Ms. Angler.png",
+    canSmoke: true,
+    roe: "roe",
+    fishPond: {
+      produce: [
+        {
+          product: "Roe",
+          minPopulation: 1
+        }
+      ]
+    }
   },
   {
     id: "900",
     name: "Legend II",
     description: "The successor to the original Legend.",
     catchType: "rod",
+    category: "legendary-2",
     seasons: ["spring", "summer", "fall", "winter"],
     location: "Mountain Lake",
     weather: "rainy",
     time: "6:00 AM \u2013 8:00 PM",
     difficulty: 110,
     sellPrice: 5e3,
+    profession: ["fisher", "angler"],
     fishTank: true,
     usedIn: ["Maki Roll", "Quality Fertilizer", "Sashimi"],
-    image: "images/fish/Legend II.png"
+    energyHealth: {
+      energy: 500,
+      health: 225
+    },
+    maxQuality: "iridium",
+    image: "images/fish/Legend II.png",
+    canSmoke: true,
+    roe: "roe",
+    fishPond: {
+      produce: [
+        {
+          product: "Roe",
+          minPopulation: 1
+        }
+      ]
+    }
   },
   {
     id: "901",
     name: "Radioactive Carp",
     description: "A carp that spent one too many years in toxic sludge.",
     catchType: "rod",
+    category: "legendary-2",
     seasons: ["spring", "summer", "fall", "winter"],
     location: "Sewers",
     weather: "both",
     time: "6:00 AM \u2013 2:00 AM",
     difficulty: 80,
     sellPrice: 1e3,
+    profession: ["fisher", "angler"],
     fishTank: true,
     usedIn: ["Maki Roll", "Quality Fertilizer", "Sashimi"],
-    image: "images/fish/Radioactive Carp.png"
+    energyHealth: {
+      energy: 25,
+      health: 11
+    },
+    maxQuality: "iridium",
+    image: "images/fish/Radioactive Carp.png",
+    canSmoke: true,
+    roe: "roe",
+    fishPond: {
+      produce: [
+        {
+          product: "Roe",
+          minPopulation: 1
+        }
+      ]
+    }
   },
   {
     id: "902",
     name: "Glacierfish Jr.",
     description: "The original Glacierfish had a son...",
     catchType: "rod",
+    category: "legendary-2",
     seasons: ["winter"],
     location: "Forest (Arrowhead Island)",
     weather: "sunny",
     time: "6:00 AM \u2013 8:00 PM",
     difficulty: 100,
     sellPrice: 1e3,
+    profession: ["fisher", "angler"],
     fishTank: true,
     usedIn: ["Maki Roll", "Quality Fertilizer", "Sashimi"],
-    image: "images/fish/Glacierfish Jr.png"
+    energyHealth: {
+      energy: 25,
+      health: 11
+    },
+    maxQuality: "iridium",
+    image: "images/fish/Glacierfish Jr.png",
+    canSmoke: true,
+    roe: "roe",
+    fishPond: {
+      produce: [
+        {
+          product: "Roe",
+          minPopulation: 1
+        }
+      ]
+    }
   },
   {
     id: "Goby",
     name: "Goby",
     description: "Some types of Gobies can climb up waterfalls.",
     catchType: "rod",
+    category: "regular",
     seasons: ["spring", "summer", "fall"],
     location: "Forest (waterfalls)",
     weather: "both",
     time: "8:00 AM \u2013 6:00 PM",
     difficulty: 55,
     sellPrice: 150,
+    profession: ["fisher", "angler"],
     fishTank: true,
     usedIn: ["Maki Roll", "Quality Fertilizer", "Sashimi"],
-    image: "images/fish/Goby.png"
+    energyHealth: {
+      energy: -62,
+      health: 0,
+      poison: true
+    },
+    maxQuality: "iridium",
+    image: "images/fish/Goby.png",
+    canSmoke: true,
+    roe: "roe",
+    fishPond: {
+      produce: [
+        {
+          product: "Roe",
+          minPopulation: 1
+        },
+        {
+          product: "Gold Ore",
+          minPopulation: 5
+        },
+        {
+          product: "Maple Syrup",
+          minPopulation: 5
+        },
+        {
+          product: "Mixed Seeds",
+          minPopulation: 5
+        },
+        {
+          product: "Crayfish",
+          minPopulation: 7
+        },
+        {
+          product: "Honey",
+          minPopulation: 7
+        },
+        {
+          product: "Jade",
+          minPopulation: 7
+        },
+        {
+          product: "Periwinkle",
+          minPopulation: 7
+        }
+      ]
+    }
   },
   {
     id: "SeaJelly",
     name: "Sea Jelly",
     description: "A rare jelly found in the ocean.",
     catchType: "rod",
+    category: "other",
     seasons: ["spring", "summer", "fall", "winter"],
     location: "Saltwater locations",
     weather: "both",
     time: "6:00 AM \u2013 2:00 AM",
     sellPrice: 200,
+    profession: [],
     fishTank: false,
     usedIn: [],
-    image: "images/fish/jelly/Sea Jelly.png"
+    energyHealth: {
+      energy: 88,
+      health: 39
+    },
+    maxQuality: "base",
+    image: "images/fish/jelly/Sea Jelly.png",
+    canSmoke: true,
+    roe: null,
+    fishPond: null
   },
   {
     id: "RiverJelly",
     name: "River Jelly",
     description: "A rare jelly found in freshwater.",
     catchType: "rod",
+    category: "other",
     seasons: ["spring", "summer", "fall", "winter"],
     location: "Freshwater locations",
     weather: "both",
     time: "6:00 AM \u2013 2:00 AM",
     sellPrice: 125,
+    profession: [],
     fishTank: false,
     usedIn: [],
-    image: "images/fish/jelly/River Jelly.png"
+    energyHealth: {
+      energy: 75,
+      health: 33
+    },
+    maxQuality: "base",
+    image: "images/fish/jelly/River Jelly.png",
+    canSmoke: true,
+    roe: null,
+    fishPond: null
   },
   {
     id: "CaveJelly",
     name: "Cave Jelly",
     description: "A rare jelly found in underground lakes.",
     catchType: "rod",
+    category: "other",
     seasons: ["spring", "summer", "fall", "winter"],
     location: "Mines (levels 20, 60, and 100)",
     weather: "both",
     time: "6:00 AM \u2013 2:00 AM",
     sellPrice: 180,
+    profession: [],
     fishTank: false,
     usedIn: [],
-    image: "images/fish/jelly/Cave Jelly.png"
+    energyHealth: {
+      energy: 75,
+      health: 33
+    },
+    maxQuality: "base",
+    image: "images/fish/jelly/Cave Jelly.png",
+    canSmoke: true,
+    roe: null,
+    fishPond: null
   }
 ];
 
 // src/modules/fish/index.ts
-var allFishData = fish_default;
+var fishData = fish_default;
 var FishQuery = class _FishQuery extends QueryBase {
-  constructor(data = allFishData) {
+  constructor(data = fishData) {
     super(data);
   }
   /** Filter to fish available in the given season. */
   bySeason(season) {
     return new _FishQuery(this.data.filter((f) => f.seasons.includes(season)));
+  }
+  /** Filter by category (`'regular'`, `'crab-pot'`, `'night-market'`, `'legendary'`, `'legendary-2'`, or `'other'`). */
+  byCategory(category) {
+    return new _FishQuery(this.data.filter((f) => f.category === category));
   }
   /** Filter by catch type (`'rod'` or `'crab-pot'`). */
   byCatchType(type) {
@@ -13887,6 +18535,18 @@ var FishQuery = class _FishQuery extends QueryBase {
   byLocation(location) {
     const q = location.toLowerCase();
     return new _FishQuery(this.data.filter((f) => f.location.toLowerCase().includes(q)));
+  }
+  /** Filter to fish that can be smoked in a Fish Smoker. */
+  smokeable() {
+    return new _FishQuery(this.data.filter((f) => f.canSmoke));
+  }
+  /** Filter by roe type. Use `'roe'` for standard roe producers, `'caviar'` for Sturgeon. */
+  byRoe(type) {
+    return new _FishQuery(this.data.filter((f) => f.roe === type));
+  }
+  /** Filter to fish that can be placed in a Fish Pond (excludes algae and jellies). */
+  pondEligible() {
+    return new _FishQuery(this.data.filter((f) => f.fishPond !== null));
   }
   /** Sort alphabetically by name. Default: `'asc'`. */
   sortByName(order = "asc") {
@@ -13918,7 +18578,7 @@ var FishQuery = class _FishQuery extends QueryBase {
     );
   }
 };
-function fish(source = allFishData) {
+function fish(source = fishData) {
   return new FishQuery(source);
 }
 
@@ -13931,6 +18591,7 @@ var footwear_default = [
     defense: 1,
     immunity: 0,
     obtain: "Purchased from Adventurer's Guild after Initiation quest; Special Item drops Floors 1-39 of The Mines; Fishing Treasure Chests",
+    sellPrice: 50,
     image: "images/footwear/Sneakers.png"
   },
   {
@@ -13940,6 +18601,7 @@ var footwear_default = [
     defense: 0,
     immunity: 1,
     obtain: "Special Item drops Floors 1-39 of The Mines; Fishing Treasure Chests",
+    sellPrice: 50,
     image: "images/footwear/Rubber Boots.png"
   },
   {
@@ -13949,6 +18611,7 @@ var footwear_default = [
     defense: 1,
     immunity: 1,
     obtain: "Reward from Chest Floor 10 of The Mines; Purchased from Adventurer's Guild after Floor 10; Fishing Treasure Chests",
+    sellPrice: 100,
     image: "images/footwear/Leather Boots.png"
   },
   {
@@ -13958,6 +18621,7 @@ var footwear_default = [
     defense: 2,
     immunity: 0,
     obtain: "Purchased from Adventurer's Guild after Floor 10; Possible Remixed Reward Floor 10; Fishing Treasure Chests",
+    sellPrice: 100,
     image: "images/footwear/Work Boots.png"
   },
   {
@@ -13967,6 +18631,7 @@ var footwear_default = [
     defense: 3,
     immunity: 0,
     obtain: "Purchased from Adventurer's Guild after Floor 40; Possible Remixed Reward Floor 50; Special Item drops Floors 61-79; Fishing Treasure Chests",
+    sellPrice: 150,
     image: "images/footwear/Combat Boots.png"
   },
   {
@@ -13976,6 +18641,7 @@ var footwear_default = [
     defense: 2,
     immunity: 1,
     obtain: "Reward from Chest Floor 50 of The Mines; Purchased from Adventurer's Guild after Floor 50; Fishing Treasure Chests",
+    sellPrice: 150,
     image: "images/footwear/Tundra Boots.png"
   },
   {
@@ -13985,6 +18651,7 @@ var footwear_default = [
     defense: 2,
     immunity: 1,
     obtain: "Found on Trains",
+    sellPrice: 150,
     image: "images/footwear/Leprechaun Shoes.png"
   },
   {
@@ -13994,6 +18661,7 @@ var footwear_default = [
     defense: 1,
     immunity: 2,
     obtain: "Possible Remixed Reward Floor 50; Special Item drops Floors 41-79; Fishing Treasure Chests",
+    sellPrice: 150,
     image: "images/footwear/Thermal Boots.png"
   },
   {
@@ -14003,6 +18671,7 @@ var footwear_default = [
     defense: 2,
     immunity: 2,
     obtain: "Unobtainable",
+    sellPrice: 200,
     image: "images/footwear/Cowboy Boots.png"
   },
   {
@@ -14012,6 +18681,7 @@ var footwear_default = [
     defense: 4,
     immunity: 2,
     obtain: "Purchased from Adventurer's Guild after Floor 80; Possible Remixed Reward Floor 80; Special Item drops Floors 81-119, Skull Cavern, Quarry Mine; Fishing Treasure Chests",
+    sellPrice: 300,
     image: "images/footwear/Dark Boots.png"
   },
   {
@@ -14021,6 +18691,7 @@ var footwear_default = [
     defense: 3,
     immunity: 3,
     obtain: "Reward from Chest Floor 80 of The Mines; Purchased from Adventurer's Guild after Floor 80; Fishing Treasure Chests",
+    sellPrice: 300,
     image: "images/footwear/Firewalker Boots.png"
   },
   {
@@ -14030,6 +18701,7 @@ var footwear_default = [
     defense: 1,
     immunity: 6,
     obtain: "Special Item drops Floors 81-119, Skull Cavern, Quarry Mine; Fishing Treasure Chests",
+    sellPrice: 350,
     image: "images/footwear/Genie Shoes.png"
   },
   {
@@ -14039,6 +18711,7 @@ var footwear_default = [
     defense: 4,
     immunity: 4,
     obtain: "Reward from Chest Floor 110 of The Mines; Purchased from Adventurer's Guild after Floor 110",
+    sellPrice: 400,
     image: "images/footwear/Space Boots.png"
   },
   {
@@ -14048,6 +18721,7 @@ var footwear_default = [
     defense: 3,
     immunity: 5,
     obtain: "Possible Remixed Reward Floor 110; Special Item drops in Skull Cavern and Quarry Mine",
+    sellPrice: 400,
     image: "images/footwear/Crystal Shoes.png"
   },
   {
@@ -14057,6 +18731,7 @@ var footwear_default = [
     defense: 4,
     immunity: 4,
     obtain: "Received during Emily's 14-heart event",
+    sellPrice: 400,
     image: "images/footwear/Emily's Magic Boots.png"
   },
   {
@@ -14066,6 +18741,7 @@ var footwear_default = [
     defense: 6,
     immunity: 5,
     obtain: "Volcano Dungeon Shop (100 Cinder Shards)",
+    sellPrice: 550,
     image: "images/footwear/Cinderclown Shoes.png"
   },
   {
@@ -14075,6 +18751,7 @@ var footwear_default = [
     defense: 5,
     immunity: 8,
     obtain: "From a Rare Chest in the Volcano Dungeon",
+    sellPrice: 650,
     image: "images/footwear/Mermaid Boots.png"
   },
   {
@@ -14084,16 +18761,18 @@ var footwear_default = [
     defense: 7,
     immunity: 0,
     obtain: "From a Rare Chest in the Volcano Dungeon",
+    sellPrice: 350,
     image: "images/footwear/Dragonscale Boots.png"
   }
 ];
 
 // src/modules/footwear/index.ts
-var allFootwearData = footwear_default;
+var footwearData = footwear_default;
 var FootwearQuery = class _FootwearQuery extends QueryBase {
-  constructor(data = allFootwearData) {
+  constructor(data = footwearData) {
     super(data);
   }
+  /** Sort alphabetically by name. Default: `'asc'`. */
   sortByName(order = "asc") {
     return new _FootwearQuery(
       [...this.data].sort(
@@ -14101,6 +18780,7 @@ var FootwearQuery = class _FootwearQuery extends QueryBase {
       )
     );
   }
+  /** Sort by defense value. Default: `'desc'` (highest first). */
   sortByDefense(order = "desc") {
     return new _FootwearQuery(
       [...this.data].sort(
@@ -14108,6 +18788,7 @@ var FootwearQuery = class _FootwearQuery extends QueryBase {
       )
     );
   }
+  /** Sort by immunity value. Default: `'desc'` (highest first). */
   sortByImmunity(order = "desc") {
     return new _FootwearQuery(
       [...this.data].sort(
@@ -14116,7 +18797,7 @@ var FootwearQuery = class _FootwearQuery extends QueryBase {
     );
   }
 };
-function footwear(source = allFootwearData) {
+function footwear(source = footwearData) {
   return new FootwearQuery(source);
 }
 
@@ -14129,7 +18810,23 @@ var forageables_default = [
     seasons: ["fall"],
     locations: "Cindersap Forest, Pelican Town, Railroad; Berry bushes during Fall 8-11",
     sellPrice: 20,
-    image: "images/forageables/Blackberry.png"
+    profession: ["tiller"],
+    knowledge: ["bears-knowledge"],
+    energyHealth: {
+      energy: 25,
+      health: 11
+    },
+    image: "images/forageables/Blackberry.png",
+    maxQuality: "iridium",
+    artisanUses: {
+      honey: false,
+      wine: true,
+      juice: false,
+      pickles: false,
+      jelly: true,
+      driedMushrooms: false,
+      driedFruit: true
+    }
   },
   {
     id: "78",
@@ -14138,7 +18835,23 @@ var forageables_default = [
     seasons: ["spring", "summer", "fall", "winter"],
     locations: "The Mines",
     sellPrice: 25,
-    image: "images/forageables/Cave Carrot.png"
+    profession: [],
+    knowledge: [],
+    energyHealth: {
+      energy: 30,
+      health: 13
+    },
+    image: "images/forageables/Cave Carrot.png",
+    maxQuality: "iridium",
+    artisanUses: {
+      honey: false,
+      wine: false,
+      juice: true,
+      pickles: true,
+      jelly: false,
+      driedMushrooms: false,
+      driedFruit: false
+    }
   },
   {
     id: "281",
@@ -14147,7 +18860,23 @@ var forageables_default = [
     seasons: ["fall"],
     locations: "Secret Woods, Forest Farm, Farm Cave (mushroom option)",
     sellPrice: 160,
-    image: "images/forageables/Chanterelle.png"
+    profession: [],
+    knowledge: [],
+    energyHealth: {
+      energy: 75,
+      health: 33
+    },
+    image: "images/forageables/Chanterelle.png",
+    maxQuality: "iridium",
+    artisanUses: {
+      honey: false,
+      wine: false,
+      juice: false,
+      pickles: true,
+      jelly: false,
+      driedMushrooms: true,
+      driedFruit: false
+    }
   },
   {
     id: "88",
@@ -14156,7 +18885,19 @@ var forageables_default = [
     seasons: ["spring", "summer", "fall", "winter"],
     locations: "Calico Desert (palm trees), Ginger Island",
     sellPrice: 100,
-    image: "images/forageables/Coconut.png"
+    profession: [],
+    knowledge: [],
+    image: "images/forageables/Coconut.png",
+    maxQuality: "iridium",
+    artisanUses: {
+      honey: false,
+      wine: true,
+      juice: false,
+      pickles: false,
+      jelly: true,
+      driedMushrooms: false,
+      driedFruit: true
+    }
   },
   {
     id: "404",
@@ -14165,7 +18906,23 @@ var forageables_default = [
     seasons: ["spring", "summer", "fall"],
     locations: "Secret Woods, Forest Farm, Farm Cave (mushroom option)",
     sellPrice: 40,
-    image: "images/forageables/Common Mushroom.png"
+    profession: [],
+    knowledge: [],
+    energyHealth: {
+      energy: 38,
+      health: 17
+    },
+    image: "images/forageables/Common Mushroom.png",
+    maxQuality: "iridium",
+    artisanUses: {
+      honey: false,
+      wine: false,
+      juice: false,
+      pickles: true,
+      jelly: false,
+      driedMushrooms: true,
+      driedFruit: false
+    }
   },
   {
     id: "718",
@@ -14174,7 +18931,19 @@ var forageables_default = [
     seasons: ["spring", "summer", "fall", "winter"],
     locations: "The Beach",
     sellPrice: 50,
-    image: "images/fish/Cockle.png"
+    profession: ["fisher", "angler"],
+    knowledge: [],
+    image: "images/fish/Cockle.png",
+    maxQuality: "iridium",
+    artisanUses: {
+      honey: false,
+      wine: false,
+      juice: false,
+      pickles: false,
+      jelly: false,
+      driedMushrooms: false,
+      driedFruit: false
+    }
   },
   {
     id: "372",
@@ -14183,7 +18952,19 @@ var forageables_default = [
     seasons: ["spring", "summer", "fall", "winter"],
     locations: "The Beach",
     sellPrice: 50,
-    image: "images/fish/Clam.png"
+    profession: ["fisher", "angler"],
+    knowledge: [],
+    image: "images/fish/Clam.png",
+    maxQuality: "iridium",
+    artisanUses: {
+      honey: false,
+      wine: false,
+      juice: false,
+      pickles: false,
+      jelly: false,
+      driedMushrooms: false,
+      driedFruit: false
+    }
   },
   {
     id: "393",
@@ -14192,7 +18973,19 @@ var forageables_default = [
     seasons: ["summer"],
     locations: "The Beach",
     sellPrice: 80,
-    image: "images/forageables/Coral.png"
+    profession: [],
+    knowledge: [],
+    image: "images/forageables/Coral.png",
+    maxQuality: "iridium",
+    artisanUses: {
+      honey: false,
+      wine: false,
+      juice: false,
+      pickles: false,
+      jelly: false,
+      driedMushrooms: false,
+      driedFruit: false
+    }
   },
   {
     id: "418",
@@ -14201,7 +18994,23 @@ var forageables_default = [
     seasons: ["winter"],
     locations: "Pelican Town, Railroad, Bus Stop, Mountain, Cindersap Forest, Backwoods",
     sellPrice: 60,
-    image: "images/forageables/Crocus.png"
+    profession: [],
+    knowledge: [],
+    energyHealth: {
+      energy: 0,
+      health: 0
+    },
+    image: "images/forageables/Crocus.png",
+    maxQuality: "iridium",
+    artisanUses: {
+      honey: false,
+      wine: false,
+      juice: false,
+      pickles: false,
+      jelly: false,
+      driedMushrooms: false,
+      driedFruit: false
+    }
   },
   {
     id: "414",
@@ -14210,7 +19019,23 @@ var forageables_default = [
     seasons: ["winter"],
     locations: "Railroad, Cindersap Forest, Mountain, Bus Stop, Backwoods, Pelican Town",
     sellPrice: 150,
-    image: "images/forageables/Crystal Fruit.png"
+    profession: [],
+    knowledge: [],
+    energyHealth: {
+      energy: 63,
+      health: 28
+    },
+    image: "images/forageables/Crystal Fruit.png",
+    maxQuality: "iridium",
+    artisanUses: {
+      honey: false,
+      wine: true,
+      juice: false,
+      pickles: false,
+      jelly: true,
+      driedMushrooms: false,
+      driedFruit: true
+    }
   },
   {
     id: "18",
@@ -14219,7 +19044,23 @@ var forageables_default = [
     seasons: ["spring"],
     locations: "Pelican Town, Bus Stop, Railroad",
     sellPrice: 30,
-    image: "images/forageables/Daffodil.png"
+    profession: [],
+    knowledge: [],
+    energyHealth: {
+      energy: 0,
+      health: 0
+    },
+    image: "images/forageables/Daffodil.png",
+    maxQuality: "iridium",
+    artisanUses: {
+      honey: false,
+      wine: false,
+      juice: false,
+      pickles: false,
+      jelly: false,
+      driedMushrooms: false,
+      driedFruit: false
+    }
   },
   {
     id: "22",
@@ -14228,7 +19069,23 @@ var forageables_default = [
     seasons: ["spring"],
     locations: "Cindersap Forest, Bus Stop, Railroad, Forest Farm",
     sellPrice: 40,
-    image: "images/forageables/Dandelion.png"
+    profession: [],
+    knowledge: [],
+    energyHealth: {
+      energy: 25,
+      health: 11
+    },
+    image: "images/forageables/Dandelion.png",
+    maxQuality: "iridium",
+    artisanUses: {
+      honey: false,
+      wine: false,
+      juice: true,
+      pickles: true,
+      jelly: false,
+      driedMushrooms: false,
+      driedFruit: false
+    }
   },
   {
     id: "259",
@@ -14237,7 +19094,23 @@ var forageables_default = [
     seasons: ["summer"],
     locations: "Secret Woods",
     sellPrice: 90,
-    image: "images/forageables/Fiddlehead Fern.png"
+    profession: [],
+    knowledge: [],
+    energyHealth: {
+      energy: 25,
+      health: 11
+    },
+    image: "images/forageables/Fiddlehead Fern.png",
+    maxQuality: "iridium",
+    artisanUses: {
+      honey: false,
+      wine: false,
+      juice: true,
+      pickles: true,
+      jelly: false,
+      driedMushrooms: false,
+      driedFruit: false
+    }
   },
   {
     id: "153",
@@ -14246,7 +19119,23 @@ var forageables_default = [
     seasons: ["spring", "summer", "fall", "winter"],
     locations: "Everywhere but the Farm Pond of the Standard Farm",
     sellPrice: 15,
-    image: "images/fish/Green Algae.png"
+    profession: [],
+    knowledge: [],
+    energyHealth: {
+      energy: 13,
+      health: 5
+    },
+    image: "images/fish/Green Algae.png",
+    maxQuality: "base",
+    artisanUses: {
+      honey: false,
+      wine: false,
+      juice: false,
+      pickles: false,
+      jelly: false,
+      driedMushrooms: false,
+      driedFruit: false
+    }
   },
   {
     id: "829",
@@ -14255,7 +19144,23 @@ var forageables_default = [
     seasons: ["spring", "summer", "fall", "winter"],
     locations: "Ginger Island West",
     sellPrice: 60,
-    image: "images/forageables/Ginger.png"
+    profession: [],
+    knowledge: [],
+    energyHealth: {
+      energy: 25,
+      health: 11
+    },
+    image: "images/forageables/Ginger.png",
+    maxQuality: "iridium",
+    artisanUses: {
+      honey: false,
+      wine: false,
+      juice: false,
+      pickles: false,
+      jelly: false,
+      driedMushrooms: false,
+      driedFruit: false
+    }
   },
   {
     id: "398",
@@ -14264,7 +19169,23 @@ var forageables_default = [
     seasons: ["summer"],
     locations: "Backwoods, Mountain, Bus Stop, Railroad, Forest Farm",
     sellPrice: 80,
-    image: "images/forageables/Grape.png"
+    profession: ["tiller"],
+    knowledge: [],
+    energyHealth: {
+      energy: 38,
+      health: 17
+    },
+    image: "images/crops/grape/crop.png",
+    maxQuality: "iridium",
+    artisanUses: {
+      honey: false,
+      wine: true,
+      juice: false,
+      pickles: false,
+      jelly: true,
+      driedMushrooms: false,
+      driedFruit: false
+    }
   },
   {
     id: "408",
@@ -14273,7 +19194,23 @@ var forageables_default = [
     seasons: ["fall"],
     locations: "Backwoods, Mountain, Bus Stop, Railroad",
     sellPrice: 90,
-    image: "images/forageables/Hazelnut.png"
+    profession: [],
+    knowledge: [],
+    energyHealth: {
+      energy: 30,
+      health: 13
+    },
+    image: "images/forageables/Hazelnut.png",
+    maxQuality: "iridium",
+    artisanUses: {
+      honey: false,
+      wine: false,
+      juice: true,
+      pickles: true,
+      jelly: false,
+      driedMushrooms: false,
+      driedFruit: false
+    }
   },
   {
     id: "283",
@@ -14282,7 +19219,24 @@ var forageables_default = [
     seasons: ["winter"],
     locations: "Secret Woods, Backwoods, Pelican Town, Bus Stop, Cindersap Forest, Mountain",
     sellPrice: 80,
-    image: "images/forageables/Holly.png"
+    profession: [],
+    knowledge: [],
+    energyHealth: {
+      energy: -37,
+      health: 0,
+      poison: true
+    },
+    image: "images/forageables/Holly.png",
+    maxQuality: "iridium",
+    artisanUses: {
+      honey: false,
+      wine: false,
+      juice: false,
+      pickles: false,
+      jelly: false,
+      driedMushrooms: false,
+      driedFruit: false
+    }
   },
   {
     id: "20",
@@ -14291,7 +19245,23 @@ var forageables_default = [
     seasons: ["spring"],
     locations: "Backwoods, Mountain, Forest Farm, Bus Stop, Railroad",
     sellPrice: 60,
-    image: "images/forageables/Leek.png"
+    profession: [],
+    knowledge: [],
+    energyHealth: {
+      energy: 40,
+      health: 18
+    },
+    image: "images/forageables/Leek.png",
+    maxQuality: "iridium",
+    artisanUses: {
+      honey: false,
+      wine: false,
+      juice: true,
+      pickles: true,
+      jelly: false,
+      driedMushrooms: false,
+      driedFruit: false
+    }
   },
   {
     id: "851",
@@ -14300,7 +19270,23 @@ var forageables_default = [
     seasons: ["spring", "summer", "fall", "winter"],
     locations: "Volcano Dungeon",
     sellPrice: 400,
-    image: "images/forageables/Magma Cap.png"
+    profession: [],
+    knowledge: [],
+    energyHealth: {
+      energy: 175,
+      health: 78
+    },
+    image: "images/forageables/Magma Cap.png",
+    maxQuality: "iridium",
+    artisanUses: {
+      honey: false,
+      wine: false,
+      juice: false,
+      pickles: true,
+      jelly: false,
+      driedMushrooms: true,
+      driedFruit: false
+    }
   },
   {
     id: "719",
@@ -14309,7 +19295,19 @@ var forageables_default = [
     seasons: ["spring", "summer", "fall", "winter"],
     locations: "The Beach",
     sellPrice: 30,
-    image: "images/fish/Mussel.png"
+    profession: ["fisher", "angler"],
+    knowledge: [],
+    image: "images/fish/Mussel.png",
+    maxQuality: "iridium",
+    artisanUses: {
+      honey: false,
+      wine: false,
+      juice: false,
+      pickles: false,
+      jelly: false,
+      driedMushrooms: false,
+      driedFruit: false
+    }
   },
   {
     id: "257",
@@ -14318,7 +19316,23 @@ var forageables_default = [
     seasons: ["spring"],
     locations: "Secret Woods, Forest Farm, Farm Cave (mushroom option)",
     sellPrice: 150,
-    image: "images/forageables/Morel.png"
+    profession: [],
+    knowledge: [],
+    energyHealth: {
+      energy: 20,
+      health: 9
+    },
+    image: "images/forageables/Morel.png",
+    maxQuality: "iridium",
+    artisanUses: {
+      honey: false,
+      wine: false,
+      juice: false,
+      pickles: true,
+      jelly: false,
+      driedMushrooms: true,
+      driedFruit: false
+    }
   },
   {
     id: "392",
@@ -14327,7 +19341,19 @@ var forageables_default = [
     seasons: ["winter"],
     locations: "The Beach",
     sellPrice: 120,
-    image: "images/forageables/Nautilus Shell.png"
+    profession: [],
+    knowledge: [],
+    image: "images/forageables/Nautilus Shell.png",
+    maxQuality: "iridium",
+    artisanUses: {
+      honey: false,
+      wine: false,
+      juice: false,
+      pickles: false,
+      jelly: false,
+      driedMushrooms: false,
+      driedFruit: false
+    }
   },
   {
     id: "422",
@@ -14336,7 +19362,23 @@ var forageables_default = [
     seasons: ["fall"],
     locations: "The Mines, Forest Farm, Farm Cave (mushroom option)",
     sellPrice: 250,
-    image: "images/forageables/Purple Mushroom.png"
+    profession: [],
+    knowledge: [],
+    energyHealth: {
+      energy: 125,
+      health: 56
+    },
+    image: "images/forageables/Purple Mushroom.png",
+    maxQuality: "iridium",
+    artisanUses: {
+      honey: false,
+      wine: false,
+      juice: false,
+      pickles: true,
+      jelly: false,
+      driedMushrooms: true,
+      driedFruit: false
+    }
   },
   {
     id: "723",
@@ -14345,7 +19387,19 @@ var forageables_default = [
     seasons: ["spring", "summer", "fall", "winter"],
     locations: "The Beach",
     sellPrice: 40,
-    image: "images/fish/Oyster.png"
+    profession: ["fisher", "angler"],
+    knowledge: [],
+    image: "images/fish/Oyster.png",
+    maxQuality: "iridium",
+    artisanUses: {
+      honey: false,
+      wine: false,
+      juice: false,
+      pickles: false,
+      jelly: false,
+      driedMushrooms: false,
+      driedFruit: false
+    }
   },
   {
     id: "394",
@@ -14354,7 +19408,19 @@ var forageables_default = [
     seasons: ["summer"],
     locations: "The Beach",
     sellPrice: 300,
-    image: "images/forageables/Rainbow Shell.png"
+    profession: [],
+    knowledge: [],
+    image: "images/forageables/Rainbow Shell.png",
+    maxQuality: "iridium",
+    artisanUses: {
+      honey: false,
+      wine: false,
+      juice: false,
+      pickles: false,
+      jelly: false,
+      driedMushrooms: false,
+      driedFruit: false
+    }
   },
   {
     id: "420",
@@ -14363,7 +19429,24 @@ var forageables_default = [
     seasons: ["summer", "fall"],
     locations: "Secret Woods, Farm Cave (mushroom option)",
     sellPrice: 75,
-    image: "images/forageables/Red Mushroom.png"
+    profession: [],
+    knowledge: [],
+    energyHealth: {
+      energy: -50,
+      health: 0,
+      poison: true
+    },
+    image: "images/forageables/Red Mushroom.png",
+    maxQuality: "iridium",
+    artisanUses: {
+      honey: false,
+      wine: false,
+      juice: false,
+      pickles: false,
+      jelly: false,
+      driedMushrooms: false,
+      driedFruit: false
+    }
   },
   {
     id: "296",
@@ -14372,7 +19455,23 @@ var forageables_default = [
     seasons: ["spring"],
     locations: "Bushes during Salmonberry Season (Spring 15-18)",
     sellPrice: 5,
-    image: "images/forageables/Salmonberry.png"
+    profession: ["tiller"],
+    knowledge: ["bears-knowledge"],
+    energyHealth: {
+      energy: 25,
+      health: 11
+    },
+    image: "images/forageables/Salmonberry.png",
+    maxQuality: "iridium",
+    artisanUses: {
+      honey: false,
+      wine: true,
+      juice: false,
+      pickles: false,
+      jelly: true,
+      driedMushrooms: false,
+      driedFruit: true
+    }
   },
   {
     id: "92",
@@ -14381,7 +19480,24 @@ var forageables_default = [
     seasons: ["spring", "summer", "fall", "winter"],
     locations: "From chopping trees",
     sellPrice: 2,
-    image: "images/forageables/Sap.png"
+    profession: [],
+    knowledge: [],
+    energyHealth: {
+      energy: -2,
+      health: 0,
+      poison: true
+    },
+    image: "images/forageables/Sap.png",
+    maxQuality: "base",
+    artisanUses: {
+      honey: false,
+      wine: false,
+      juice: false,
+      pickles: false,
+      jelly: false,
+      driedMushrooms: false,
+      driedFruit: false
+    }
   },
   {
     id: "397",
@@ -14390,7 +19506,19 @@ var forageables_default = [
     seasons: ["summer"],
     locations: "The Beach",
     sellPrice: 160,
-    image: "images/forageables/Sea Urchin.png"
+    profession: [],
+    knowledge: [],
+    image: "images/forageables/Sea Urchin.png",
+    maxQuality: "iridium",
+    artisanUses: {
+      honey: false,
+      wine: false,
+      juice: false,
+      pickles: false,
+      jelly: false,
+      driedMushrooms: false,
+      driedFruit: false
+    }
   },
   {
     id: "152",
@@ -14399,7 +19527,23 @@ var forageables_default = [
     seasons: ["spring", "summer", "fall", "winter"],
     locations: "The Beach",
     sellPrice: 20,
-    image: "images/fish/Seaweed.png"
+    profession: [],
+    knowledge: [],
+    energyHealth: {
+      energy: 13,
+      health: 5
+    },
+    image: "images/fish/Seaweed.png",
+    maxQuality: "base",
+    artisanUses: {
+      honey: false,
+      wine: false,
+      juice: false,
+      pickles: false,
+      jelly: false,
+      driedMushrooms: false,
+      driedFruit: false
+    }
   },
   {
     id: "416",
@@ -14408,7 +19552,23 @@ var forageables_default = [
     seasons: ["winter"],
     locations: "Underground artifact spots and tillable soil",
     sellPrice: 100,
-    image: "images/forageables/Snow Yam.png"
+    profession: [],
+    knowledge: [],
+    energyHealth: {
+      energy: 30,
+      health: 13
+    },
+    image: "images/forageables/Snow Yam.png",
+    maxQuality: "iridium",
+    artisanUses: {
+      honey: false,
+      wine: false,
+      juice: true,
+      pickles: true,
+      jelly: false,
+      driedMushrooms: false,
+      driedFruit: false
+    }
   },
   {
     id: "396",
@@ -14417,7 +19577,23 @@ var forageables_default = [
     seasons: ["summer"],
     locations: "Cindersap Forest, Backwoods, Mountain, Bus Stop, Railroad, Forest Farm",
     sellPrice: 80,
-    image: "images/forageables/Spice Berry.png"
+    profession: [],
+    knowledge: [],
+    energyHealth: {
+      energy: 25,
+      health: 11
+    },
+    image: "images/forageables/Spice Berry.png",
+    maxQuality: "iridium",
+    artisanUses: {
+      honey: false,
+      wine: true,
+      juice: false,
+      pickles: false,
+      jelly: true,
+      driedMushrooms: false,
+      driedFruit: true
+    }
   },
   {
     id: "399",
@@ -14426,7 +19602,23 @@ var forageables_default = [
     seasons: ["spring"],
     locations: "Cindersap Forest",
     sellPrice: 8,
-    image: "images/forageables/Spring Onion.png"
+    profession: [],
+    knowledge: ["spring-onion-mastery"],
+    energyHealth: {
+      energy: 13,
+      health: 5
+    },
+    image: "images/forageables/Spring Onion.png",
+    maxQuality: "iridium",
+    artisanUses: {
+      honey: false,
+      wine: false,
+      juice: true,
+      pickles: true,
+      jelly: false,
+      driedMushrooms: false,
+      driedFruit: false
+    }
   },
   {
     id: "402",
@@ -14435,7 +19627,23 @@ var forageables_default = [
     seasons: ["summer"],
     locations: "Pelican Town, Cindersap Forest, Bus Stop, Railroad, Forest Farm",
     sellPrice: 50,
-    image: "images/forageables/Sweet Pea.png"
+    profession: ["tiller"],
+    knowledge: [],
+    energyHealth: {
+      energy: 0,
+      health: 0
+    },
+    image: "images/forageables/Sweet Pea.png",
+    maxQuality: "iridium",
+    artisanUses: {
+      honey: false,
+      wine: false,
+      juice: false,
+      pickles: false,
+      jelly: false,
+      driedMushrooms: false,
+      driedFruit: false
+    }
   },
   {
     id: "16",
@@ -14444,7 +19652,23 @@ var forageables_default = [
     seasons: ["spring"],
     locations: "Cindersap Forest, Backwoods, Mountain, Forest Farm",
     sellPrice: 50,
-    image: "images/forageables/Wild Horseradish.png"
+    profession: [],
+    knowledge: [],
+    energyHealth: {
+      energy: 13,
+      health: 5
+    },
+    image: "images/forageables/Wild Horseradish.png",
+    maxQuality: "iridium",
+    artisanUses: {
+      honey: false,
+      wine: false,
+      juice: true,
+      pickles: true,
+      jelly: false,
+      driedMushrooms: false,
+      driedFruit: false
+    }
   },
   {
     id: "406",
@@ -14453,7 +19677,23 @@ var forageables_default = [
     seasons: ["fall"],
     locations: "Bus Stop, Railroad, Backwoods, Mountain",
     sellPrice: 80,
-    image: "images/forageables/Wild Plum.png"
+    profession: [],
+    knowledge: [],
+    energyHealth: {
+      energy: 25,
+      health: 11
+    },
+    image: "images/forageables/Wild Plum.png",
+    maxQuality: "iridium",
+    artisanUses: {
+      honey: false,
+      wine: true,
+      juice: false,
+      pickles: false,
+      jelly: true,
+      driedMushrooms: false,
+      driedFruit: true
+    }
   },
   {
     id: "157",
@@ -14462,7 +19702,23 @@ var forageables_default = [
     seasons: ["spring", "summer", "fall", "winter"],
     locations: "Mines, Sewers, Mutant Bug Lair, Witch's Swamp",
     sellPrice: 25,
-    image: "images/fish/White Algae.png"
+    profession: [],
+    knowledge: [],
+    energyHealth: {
+      energy: 20,
+      health: 9
+    },
+    image: "images/fish/White Algae.png",
+    maxQuality: "base",
+    artisanUses: {
+      honey: false,
+      wine: false,
+      juice: false,
+      pickles: false,
+      jelly: false,
+      driedMushrooms: false,
+      driedFruit: false
+    }
   },
   {
     id: "412",
@@ -14471,7 +19727,23 @@ var forageables_default = [
     seasons: ["winter"],
     locations: "Underground artifact spots and tillable soil",
     sellPrice: 70,
-    image: "images/forageables/Winter Root.png"
+    profession: [],
+    knowledge: [],
+    energyHealth: {
+      energy: 25,
+      health: 11
+    },
+    image: "images/forageables/Winter Root.png",
+    maxQuality: "iridium",
+    artisanUses: {
+      honey: false,
+      wine: false,
+      juice: true,
+      pickles: true,
+      jelly: false,
+      driedMushrooms: false,
+      driedFruit: false
+    }
   },
   {
     id: "388",
@@ -14480,7 +19752,19 @@ var forageables_default = [
     seasons: ["spring", "summer", "fall", "winter"],
     locations: "Felling trees and branches with an axe; Recycling Machine (from Driftwood)",
     sellPrice: 2,
-    image: "images/forageables/Wood.png"
+    profession: [],
+    knowledge: [],
+    image: "images/forageables/Wood.png",
+    maxQuality: "base",
+    artisanUses: {
+      honey: false,
+      wine: false,
+      juice: false,
+      pickles: false,
+      jelly: false,
+      driedMushrooms: false,
+      driedFruit: false
+    }
   },
   {
     id: "330",
@@ -14489,7 +19773,19 @@ var forageables_default = [
     seasons: ["spring", "summer", "fall", "winter"],
     locations: "Tilling dirt, sand, or Artifact Spots; Ginger Island Dig Site; Geodes",
     sellPrice: 20,
-    image: "images/forageables/Clay.png"
+    profession: [],
+    knowledge: [],
+    image: "images/forageables/Clay.png",
+    maxQuality: "base",
+    artisanUses: {
+      honey: false,
+      wine: false,
+      juice: true,
+      pickles: true,
+      jelly: false,
+      driedMushrooms: false,
+      driedFruit: false
+    }
   },
   {
     id: "709",
@@ -14498,7 +19794,19 @@ var forageables_default = [
     seasons: ["spring", "summer", "fall", "winter"],
     locations: "Chopping Mahogany Trees or Large Stumps; Secret Woods (6 stumps daily); Ginger Island",
     sellPrice: 15,
-    image: "images/forageables/Hardwood.png"
+    profession: [],
+    knowledge: [],
+    image: "images/forageables/Hardwood.png",
+    maxQuality: "base",
+    artisanUses: {
+      honey: false,
+      wine: false,
+      juice: false,
+      pickles: false,
+      jelly: false,
+      driedMushrooms: false,
+      driedFruit: false
+    }
   },
   {
     id: "787",
@@ -14507,7 +19815,19 @@ var forageables_default = [
     seasons: ["spring", "summer", "fall", "winter"],
     locations: "Lightning Rod during thunderstorms; Solar Panel after 7 sunny days; Iridium Bat drop (5%)",
     sellPrice: 500,
-    image: "images/forageables/Battery Pack.png"
+    profession: [],
+    knowledge: [],
+    image: "images/forageables/Battery Pack.png",
+    maxQuality: "base",
+    artisanUses: {
+      honey: false,
+      wine: false,
+      juice: false,
+      pickles: false,
+      jelly: false,
+      driedMushrooms: false,
+      driedFruit: false
+    }
   },
   {
     id: "812",
@@ -14516,7 +19836,48 @@ var forageables_default = [
     seasons: ["spring", "summer", "fall", "winter"],
     locations: "Fish Ponds; Fishing Treasure Chests (with Jewels of the Sea book)",
     sellPrice: 30,
-    image: "images/forageables/Roe.png"
+    profession: [],
+    knowledge: [],
+    energyHealth: {
+      energy: 50,
+      health: 22
+    },
+    image: "images/forageables/Roe.png",
+    maxQuality: "base",
+    artisanUses: {
+      honey: false,
+      wine: false,
+      juice: false,
+      pickles: false,
+      jelly: false,
+      driedMushrooms: false,
+      driedFruit: false
+    }
+  },
+  {
+    id: "812S",
+    name: "Sturgeon Roe",
+    description: "Fresh sturgeon eggs. These can be made into caviar in a preserves jar.",
+    seasons: ["spring", "summer", "fall", "winter"],
+    locations: "Fish Ponds (Sturgeon)",
+    sellPrice: 130,
+    profession: [],
+    knowledge: [],
+    energyHealth: {
+      energy: 50,
+      health: 22
+    },
+    image: "images/forageables/Sturgeon Roe.png",
+    maxQuality: "base",
+    artisanUses: {
+      honey: false,
+      wine: false,
+      juice: false,
+      pickles: false,
+      jelly: false,
+      driedMushrooms: false,
+      driedFruit: false
+    }
   },
   {
     id: "814",
@@ -14525,16 +19886,19 @@ var forageables_default = [
     seasons: ["spring", "summer", "fall", "winter"],
     locations: "Squid Kids in The Mines; Blue Squids in Dangerous Mines; Squid or Midnight Squid Fish Pond",
     sellPrice: 110,
-    image: "images/forageables/Squid Ink.png"
-  },
-  {
-    id: "815",
-    name: "Tea Leaves",
-    description: "The young leaves of the tea plant. Can be brewed into the popular, energizing beverage.",
-    seasons: ["spring", "summer", "fall"],
-    locations: "Tea Bush harvest (days 22-28 of Spring, Summer, Fall); year-round when grown indoors",
-    sellPrice: 50,
-    image: "images/forageables/Tea Leaves.png"
+    profession: [],
+    knowledge: [],
+    image: "images/forageables/Squid Ink.png",
+    maxQuality: "base",
+    artisanUses: {
+      honey: false,
+      wine: false,
+      juice: false,
+      pickles: false,
+      jelly: false,
+      driedMushrooms: false,
+      driedFruit: false
+    }
   },
   {
     id: "390",
@@ -14543,7 +19907,44 @@ var forageables_default = [
     seasons: ["spring", "summer", "fall", "winter"],
     locations: "Mining rocks throughout the world",
     sellPrice: 2,
-    image: "images/forageables/Stone.png"
+    profession: [],
+    knowledge: [],
+    image: "images/forageables/Stone.png",
+    maxQuality: "base",
+    artisanUses: {
+      honey: false,
+      wine: false,
+      juice: false,
+      pickles: false,
+      jelly: false,
+      driedMushrooms: false,
+      driedFruit: false
+    }
+  },
+  {
+    id: "90",
+    name: "Cactus Fruit",
+    description: "The sweet fruit of a cactus. Grows year-round indoors or on Ginger Island.",
+    seasons: ["spring", "summer", "fall", "winter"],
+    locations: "Calico Desert (ground spawn), Ginger Island",
+    sellPrice: 75,
+    profession: ["tiller"],
+    knowledge: [],
+    energyHealth: {
+      energy: 75,
+      health: 33
+    },
+    image: "images/crops/cactus-fruit/crop.png",
+    maxQuality: "iridium",
+    artisanUses: {
+      honey: false,
+      wine: true,
+      juice: false,
+      pickles: false,
+      jelly: true,
+      driedMushrooms: false,
+      driedFruit: true
+    }
   },
   {
     id: "Moss",
@@ -14552,19 +19953,35 @@ var forageables_default = [
     seasons: ["spring", "summer", "fall"],
     locations: "Foraging from trees with moss growing on them; Green Rain events",
     sellPrice: 5,
-    image: "images/forageables/Moss.png"
+    profession: [],
+    knowledge: [],
+    image: "images/forageables/Moss.png",
+    maxQuality: "base",
+    artisanUses: {
+      honey: false,
+      wine: false,
+      juice: false,
+      pickles: false,
+      jelly: false,
+      driedMushrooms: false,
+      driedFruit: false
+    }
   }
 ];
 
 // src/modules/forageables/index.ts
-var allForageableData = forageables_default;
+var forageableData = forageables_default;
 var ForageableQuery = class _ForageableQuery extends QueryBase {
-  constructor(data = allForageableData) {
+  constructor(data = forageableData) {
     super(data);
   }
   /** Filter to forageables available in the given season. */
   bySeason(season) {
     return new _ForageableQuery(this.data.filter((f) => f.seasons.includes(season)));
+  }
+  /** Filter to forageables that can be used to produce the given artisan good (e.g. `'wine'`, `'driedMushrooms'`). */
+  byArtisanUse(use) {
+    return new _ForageableQuery(this.data.filter((f) => f.artisanUses[use]));
   }
   /** Sort alphabetically by name. Default: `'asc'`. */
   sortByName(order = "asc") {
@@ -14583,7 +20000,7 @@ var ForageableQuery = class _ForageableQuery extends QueryBase {
     );
   }
 };
-function forageables(source = allForageableData) {
+function forageables(source = forageableData) {
   return new ForageableQuery(source);
 }
 
@@ -14608,7 +20025,8 @@ var hats_default = [
     name: "Archer's Cap",
     description: "Fashionable whether you're an archer or not.",
     obtain: "Cook every recipe (Gourmet Chef achievement)",
-    image: "images/hats/Archer's Cap.png"
+    image: "images/hats/Archer's Cap.png",
+    price: 4e3
   },
   {
     id: "53",
@@ -14629,7 +20047,8 @@ var hats_default = [
     name: "Blue Bonnet",
     description: "Harken back to simpler times with this prairie bonnet.",
     obtain: "Donate 40 items to Museum (Treasure Trove achievement)",
-    image: "images/hats/Blue Bonnet.png"
+    image: "images/hats/Blue Bonnet.png",
+    price: 1e3
   },
   {
     id: "BlueBow",
@@ -14650,7 +20069,8 @@ var hats_default = [
     name: "Blue Ribbon",
     description: "A lovely ribbon that sits behind the head.",
     obtain: "Get 1st place at Stardew Valley Fair competition",
-    image: "images/hats/Blue Ribbon.png"
+    image: "images/hats/Blue Ribbon.png",
+    price: 1e3
   },
   {
     id: "80",
@@ -14664,7 +20084,8 @@ var hats_default = [
     name: "Bowler Hat",
     description: "Made from smooth felt.",
     obtain: "Earn 1,000,000g (Millionaire achievement)",
-    image: "images/hats/Bowler Hat.png"
+    image: "images/hats/Bowler Hat.png",
+    price: 1e4
   },
   {
     id: "69",
@@ -14685,28 +20106,32 @@ var hats_default = [
     name: "Butterfly Bow",
     description: "This one is very soft.",
     obtain: "Reach 5-heart friendship level with someone (A New Friend achievement)",
-    image: "images/hats/Butterfly Bow.png"
+    image: "images/hats/Butterfly Bow.png",
+    price: 1e3
   },
   {
     id: "32",
     name: "Cat Ears",
     description: "Whiskers included.",
     obtain: "Reach 10-heart friendship with 8 people (The Beloved Farmer achievement)",
-    image: "images/hats/Cat Ears.png"
+    image: "images/hats/Cat Ears.png",
+    price: 5e3
   },
   {
     id: "61",
     name: "Chef Hat",
     description: "The traditional hat worn by a head chef.",
     obtain: "Cook every recipe (Gourmet Chef achievement)",
-    image: "images/hats/Chef Hat.png"
+    image: "images/hats/Chef Hat.png",
+    price: 1e4
   },
   {
     id: "10",
     name: "Chicken Mask",
     description: "You'll be sure to get them grinning with this one.",
     obtain: "Complete 40 Help Wanted requests (A Big Help achievement)",
-    image: "images/hats/Chicken Mask.png"
+    image: "images/hats/Chicken Mask.png",
+    price: 2e3
   },
   {
     id: "concerned-ape-hat",
@@ -14727,7 +20152,8 @@ var hats_default = [
     name: "Cool Cap",
     description: "It looks really faded, but it used to be a vibrant blue.",
     obtain: "Earn 250,000g (Homesteader achievement)",
-    image: "images/hats/Cool Cap.png"
+    image: "images/hats/Cool Cap.png",
+    price: 5e3
   },
   {
     id: "copper-pan-hat",
@@ -14741,28 +20167,32 @@ var hats_default = [
     name: "Cowboy Hat",
     description: "The leather is old and cracked, but surprisingly supple. It smells musty.",
     obtain: "Complete museum collection (A Complete Collection achievement)",
-    image: "images/hats/Cowboy Hat.png"
+    image: "images/hats/Cowboy Hat.png",
+    price: 1e4
   },
   {
     id: "33",
     name: "Cowgal Hat",
     description: "The band is studded with fake diamonds.",
     obtain: "Ship 300 of one crop (Monoculture achievement)",
-    image: "images/hats/Cowgal Hat.png"
+    image: "images/hats/Cowgal Hat.png",
+    price: 5e3
   },
   {
     id: "34",
     name: "Cowpoke Hat",
     description: "For dairy experts.",
     obtain: "Ship 15 of each crop (Polyculture achievement)",
-    image: "images/hats/Cowpoke Hat.png"
+    image: "images/hats/Cowpoke Hat.png",
+    price: 5e3
   },
   {
     id: "29",
     name: "Daisy",
     description: "A fresh spring daisy to put in your hair.",
     obtain: "Craft 15 different items (D.I.Y. achievement)",
-    image: "images/hats/Daisy.png"
+    image: "images/hats/Daisy.png",
+    price: 1e3
   },
   {
     id: "DarkBallcap",
@@ -14790,7 +20220,8 @@ var hats_default = [
     name: "Delicate Bow",
     description: "Little pink jewels glisten as you examine it.",
     obtain: "Cook 10 different recipes (Cook achievement)",
-    image: "images/hats/Delicate Bow.png"
+    image: "images/hats/Delicate Bow.png",
+    price: 1e3
   },
   {
     id: "81",
@@ -14818,14 +20249,16 @@ var hats_default = [
     name: "Earmuffs",
     description: "Keep your ears toasty. Lined with artisanal velvet from Castle Village.",
     obtain: "Reach 5-heart friendship with 20 people (Popular achievement)",
-    image: "images/hats/Earmuffs.png"
+    image: "images/hats/Earmuffs.png",
+    price: 4e3
   },
   {
     id: "64",
     name: "Elegant Turban",
     description: "A fine black silk turban with gold trim.",
     obtain: "Earn all other achievements",
-    image: "images/hats/Elegant Turban.png"
+    image: "images/hats/Elegant Turban.png",
+    price: 5e4
   },
   {
     id: "41",
@@ -14839,7 +20272,8 @@ var hats_default = [
     name: "Eye Patch",
     description: "You can't tell if it's real or just from a costume shop.",
     obtain: "Catch every fish (Master Angler achievement)",
-    image: "images/hats/Eye Patch.png"
+    image: "images/hats/Eye Patch.png",
+    price: 5e3
   },
   {
     id: "47",
@@ -14909,14 +20343,16 @@ var hats_default = [
     name: "Gnome's Cap",
     description: "This gnome had a very large head.",
     obtain: "Craft every item (Craft Master achievement)",
-    image: "images/hats/Gnome's Cap.png"
+    image: "images/hats/Gnome's Cap.png",
+    price: 5e3
   },
   {
     id: "9",
     name: "Goblin Mask",
     description: "Freak out the neighborhood with this creepy mask. Rubber ear joints for effect.",
     obtain: "Ship every item (Full Shipment achievement)",
-    image: "images/hats/Goblin Mask.png"
+    image: "images/hats/Goblin Mask.png",
+    price: 1e4
   },
   {
     id: "89",
@@ -14951,14 +20387,16 @@ var hats_default = [
     name: "Good Ol' Cap",
     description: "A floppy old topper with a creased bill. Looks like it's been through a lot.",
     obtain: "Earn 15,000g (Greenhorn achievement)",
-    image: "images/hats/Good Ol' Cap.png"
+    image: "images/hats/Good Ol' Cap.png",
+    price: 1e3
   },
   {
     id: "GovernorsHat",
     name: "Governor's Hat",
     description: "A replica of the Governor's iconic hat.",
     obtain: "Delight the Governor at Luau (An Unforgettable Soup achievement)",
-    image: "images/hats/Governor's Hat.png"
+    image: "images/hats/Governor's Hat.png",
+    price: 5e3
   },
   {
     id: "72",
@@ -14986,14 +20424,16 @@ var hats_default = [
     name: "Hunter's Cap",
     description: "The wool lining should stay warm deep into the forest.",
     obtain: "Upgrade house to maximum size (Living Large achievement)",
-    image: "images/hats/Hunter's Cap.png"
+    image: "images/hats/Hunter's Cap.png",
+    price: 5e3
   },
   {
     id: "InfinityCrown",
     name: "Infinity Crown",
     description: "It's made from an exotic metal you've never seen before.",
     obtain: "Obtain most powerful weapon (Infinite Power achievement)",
-    image: "images/hats/Infinity Crown.png"
+    image: "images/hats/Infinity Crown.png",
+    price: 2e4
   },
   {
     id: "iridium-pan-hat",
@@ -15007,7 +20447,8 @@ var hats_default = [
     name: "Jester Hat",
     description: "Put your inner clown on display.",
     obtain: "See a movie (Two Thumbs Up achievement)",
-    image: "images/hats/Jester Hat.png"
+    image: "images/hats/Jester Hat.png",
+    price: 25e3
   },
   {
     id: "JojaCap",
@@ -15021,7 +20462,8 @@ var hats_default = [
     name: "Junimo Hat",
     description: "To honor our little buddies...",
     obtain: "Reach Perfection and visit the Summit",
-    image: "images/hats/Junimo Hat.png"
+    image: "images/hats/Junimo Hat.png",
+    price: 25e3
   },
   {
     id: "50",
@@ -15063,7 +20505,8 @@ var hats_default = [
     name: "Lucky Bow",
     description: "The middle is made of solid gold.",
     obtain: "Earn 50,000g (Cowpoke achievement)",
-    image: "images/hats/Lucky Bow.png"
+    image: "images/hats/Lucky Bow.png",
+    price: 2e3
   },
   {
     id: "73",
@@ -15084,7 +20527,8 @@ var hats_default = [
     name: "Mouse Ears",
     description: "Made from synthetic fibers.",
     obtain: "Reach 10-heart friendship with someone (Best Friends achievement)",
-    image: "images/hats/Mouse Ears.png"
+    image: "images/hats/Mouse Ears.png",
+    price: 2e3
   },
   {
     id: "82",
@@ -15119,14 +20563,16 @@ var hats_default = [
     name: "Official Cap",
     description: "Looks like it belonged to a postman or policeman. Either way, it's still very soft and smells okay.",
     obtain: "Catch 24 different fish (Ol' Mariner achievement)",
-    image: "images/hats/Official Cap.png"
+    image: "images/hats/Official Cap.png",
+    price: 2e3
   },
   {
     id: "PageboyCap",
     name: "Pageboy Cap",
     description: "For some reason, it makes you want to sell newspapers.",
     obtain: "Read every book (Well-Read achievement)",
-    image: "images/hats/Pageboy Cap.png"
+    image: "images/hats/Pageboy Cap.png",
+    price: 5e3
   },
   {
     id: "36",
@@ -15140,7 +20586,8 @@ var hats_default = [
     name: "Paper Hat",
     description: "It's made out of special paper that won't disintegrate in the rain.",
     obtain: "Reach Ginger Island (A Distant Shore achievement)",
-    image: "images/hats/Paper Hat.png"
+    image: "images/hats/Paper Hat.png",
+    price: 1e4
   },
   {
     id: "party-hat-blue",
@@ -15182,14 +20629,16 @@ var hats_default = [
     name: "Plum Chapeau",
     description: "Looks alright.",
     obtain: "Cook 25 different recipes (Sous Chef achievement)",
-    image: "images/hats/Plum Chapeau.png"
+    image: "images/hats/Plum Chapeau.png",
+    price: 2e3
   },
   {
     id: "22",
     name: "Polka Bow",
     description: "This one's sure to turn heads.",
     obtain: "Complete 10 Help Wanted requests (Gofer achievement)",
-    image: "images/hats/Polka Bow.png"
+    image: "images/hats/Polka Bow.png",
+    price: 1e3
   },
   {
     id: "68",
@@ -15245,14 +20694,16 @@ var hats_default = [
     name: "Sailor's Cap",
     description: "It's fresh and starchy.",
     obtain: "Win fishing competition at Festival of Ice",
-    image: "images/hats/Sailor's Cap.png"
+    image: "images/hats/Sailor's Cap.png",
+    price: 1e3
   },
   {
     id: "25",
     name: "Santa Hat",
     description: "Celebrate the magical season.",
     obtain: "Reach 5-heart friendship with 10 people (Networking achievement)",
-    image: "images/hats/Santa Hat.png"
+    image: "images/hats/Santa Hat.png",
+    price: 2e3
   },
   {
     id: "8",
@@ -15273,28 +20724,32 @@ var hats_default = [
     name: "Sombrero",
     description: "A festively decorated hat made from woven straw.",
     obtain: "Earn 10,000,000g (Legend achievement)",
-    image: "images/hats/Sombrero.png"
+    image: "images/hats/Sombrero.png",
+    price: 25e3
   },
   {
     id: "28",
     name: "Sou'wester",
     description: "The shape helps to keep sailors dry during storms.",
     obtain: "Catch 10 different fish (Fisherman achievement)",
-    image: "images/hats/Sou'wester.png"
+    image: "images/hats/Sou'wester.png",
+    price: 1e3
   },
   {
     id: "SpaceHelmet",
     name: "Space Helmet",
     description: "Warning: This helmet has not actually been tested in outer space.",
     obtain: "Reach bottom of dangerous mines (Danger In The Deep achievement)",
-    image: "images/hats/Space Helmet.png"
+    image: "images/hats/Space Helmet.png",
+    price: 2e4
   },
   {
     id: "SportsCap",
     name: "Sports Cap",
     description: "The cap has a vintage team logo on it.",
     obtain: "Prize Machine at Mayor's Manor",
-    image: "images/hats/Sports Cap.png"
+    image: "images/hats/Sports Cap.png",
+    price: 1e3
   },
   {
     id: "52",
@@ -15336,7 +20791,8 @@ var hats_default = [
     name: "Straw Hat",
     description: "Light and cool, it's a farmer's delight.",
     obtain: "Win egg hunt at Egg Festival",
-    image: "images/hats/Straw Hat.png"
+    image: "images/hats/Straw Hat.png",
+    price: 1e3
   },
   {
     id: "88",
@@ -15357,7 +20813,8 @@ var hats_default = [
     name: "Tiara",
     description: "This one has a big amethyst encircled by gold.",
     obtain: "Reach 5-heart friendship with 4 people (Cliques achievement)",
-    image: "images/hats/Tiara.png"
+    image: "images/hats/Tiara.png",
+    price: 2e3
   },
   {
     id: "91",
@@ -15392,14 +20849,16 @@ var hats_default = [
     name: "Tropiclip",
     description: "It's shaped like a little palm tree.",
     obtain: "Upgrade your house (Moving Up achievement)",
-    image: "images/hats/Tropiclip.png"
+    image: "images/hats/Tropiclip.png",
+    price: 1e3
   },
   {
     id: "16",
     name: "Trucker Hat",
     description: "Mesh in the back to keep your head cool.",
     obtain: "Craft 30 different items (Artisan achievement)",
-    image: "images/hats/Trucker Hat.png"
+    image: "images/hats/Trucker Hat.png",
+    price: 2e3
   },
   {
     id: "93",
@@ -15413,7 +20872,8 @@ var hats_default = [
     name: "Watermelon Band",
     description: "The color scheme was inspired by the beloved summer melon.",
     obtain: "Catch 100 fish (Mother Catch achievement)",
-    image: "images/hats/Watermelon Band.png"
+    image: "images/hats/Watermelon Band.png",
+    price: 1e3
   },
   {
     id: "46",
@@ -15427,7 +20887,8 @@ var hats_default = [
     name: "White Bow",
     description: "A bow as white as snow.",
     obtain: "Help forest neighbors grow family (Good Neighbors achievement)",
-    image: "images/hats/White Bow.png"
+    image: "images/hats/White Bow.png",
+    price: 5e3
   },
   {
     id: "65",
@@ -15451,6 +20912,7 @@ var HatQuery = class _HatQuery extends QueryBase {
   constructor(data = hatsData) {
     super(data);
   }
+  /** Sort alphabetically by name. Default: `'asc'`. */
   sortByName(order = "asc") {
     return new _HatQuery(
       [...this.data].sort(
@@ -15471,6 +20933,7 @@ var minerals_default = [
     kind: "mineral",
     description: "A clear crystal commonly found in caves and mines.",
     sellPrice: 25,
+    profession: ["gemologist"],
     gemologistPrice: 32,
     locations: ["The Mines (Floors 1-120)", "Garbage Can", "Stone Golem (10%)"],
     image: "images/minerals/foraged-minerals/Quartz.png"
@@ -15481,6 +20944,7 @@ var minerals_default = [
     kind: "mineral",
     description: "A resinous substance found near the surface.",
     sellPrice: 50,
+    profession: ["gemologist"],
     gemologistPrice: 65,
     locations: ["The Mines (Floors 1-39)", "Duggy (10%)", "Geode", "Omni Geode", "Panning"],
     image: "images/minerals/foraged-minerals/Earth Crystal.png"
@@ -15491,6 +20955,7 @@ var minerals_default = [
     kind: "mineral",
     description: "A crystal fabled to be the frozen tears of a yeti.",
     sellPrice: 75,
+    profession: ["gemologist"],
     gemologistPrice: 97,
     locations: ["The Mines (Floors 40-79)", "Frozen Geode", "Omni Geode", "Panning"],
     image: "images/minerals/foraged-minerals/Frozen Tear.png"
@@ -15501,6 +20966,7 @@ var minerals_default = [
     kind: "mineral",
     description: "A glowing red crystal commonly found near hot lava.",
     sellPrice: 100,
+    profession: ["gemologist"],
     gemologistPrice: 130,
     locations: ["The Mines (Floors 80-120)", "Magma Geode", "Omni Geode", "Panning"],
     image: "images/minerals/foraged-minerals/Fire Quartz.png"
@@ -15511,6 +20977,7 @@ var minerals_default = [
     kind: "mineral",
     description: "A precious stone with a brilliant green color.",
     sellPrice: 250,
+    profession: ["gemologist"],
     gemologistPrice: 325,
     locations: [
       "Emerald Node",
@@ -15527,6 +20994,7 @@ var minerals_default = [
     kind: "mineral",
     description: "A shimmery blue-green gem.",
     sellPrice: 180,
+    profession: ["gemologist"],
     gemologistPrice: 234,
     locations: [
       "Aquamarine Node",
@@ -15543,6 +21011,7 @@ var minerals_default = [
     kind: "mineral",
     description: "A precious stone sought after for its rich color and beautiful luster.",
     sellPrice: 250,
+    profession: ["gemologist"],
     gemologistPrice: 325,
     locations: ["Ruby Node", "Gem Node", "Dwarvish Sentry", "Panning", "Fishing Treasure Chest"],
     image: "images/minerals/gems/Ruby.png"
@@ -15553,6 +21022,7 @@ var minerals_default = [
     kind: "mineral",
     description: "A purple variant of quartz.",
     sellPrice: 100,
+    profession: ["gemologist"],
     gemologistPrice: 130,
     locations: ["Amethyst Node", "Gem Node", "Green Slimes", "Dwarvish Sentry", "Panning"],
     image: "images/minerals/gems/Amethyst.png"
@@ -15563,6 +21033,7 @@ var minerals_default = [
     kind: "mineral",
     description: "Fairly common but still prized for its beauty.",
     sellPrice: 80,
+    profession: ["gemologist"],
     gemologistPrice: 104,
     locations: ["Topaz Node", "Gem Node", "Dwarvish Sentry", "Panning", "Fishing Treasure Chest"],
     image: "images/minerals/gems/Topaz.png"
@@ -15573,6 +21044,7 @@ var minerals_default = [
     kind: "mineral",
     description: "A pale green ornamental stone.",
     sellPrice: 200,
+    profession: ["gemologist"],
     gemologistPrice: 260,
     locations: [
       "Jade Node",
@@ -15589,6 +21061,7 @@ var minerals_default = [
     kind: "mineral",
     description: "A rare and valuable gem.",
     sellPrice: 750,
+    profession: ["gemologist"],
     gemologistPrice: 974,
     locations: [
       "Diamond Node",
@@ -15605,6 +21078,7 @@ var minerals_default = [
     kind: "mineral",
     description: "A very rare and powerful substance with unknown origins.",
     sellPrice: 2e3,
+    profession: ["gemologist"],
     gemologistPrice: 2600,
     locations: [
       "Iridium Node (4%)",
@@ -15621,6 +21095,7 @@ var minerals_default = [
     kind: "mineral",
     description: "A stripe of shimmering gold gives this gem a warm luster.",
     sellPrice: 275,
+    profession: ["gemologist"],
     gemologistPrice: 357,
     locations: ["Magma Geode", "Omni Geode"],
     image: "images/minerals/geode-minerals/Tigerseye.png"
@@ -15631,6 +21106,7 @@ var minerals_default = [
     kind: "mineral",
     description: "Its internal structure causes it to reflect a rainbow of light.",
     sellPrice: 150,
+    profession: ["gemologist"],
     gemologistPrice: 195,
     locations: ["Frozen Geode", "Omni Geode"],
     image: "images/minerals/geode-minerals/Opal.png"
@@ -15641,6 +21117,7 @@ var minerals_default = [
     kind: "mineral",
     description: "A rare variety of opal, named for its red spots.",
     sellPrice: 350,
+    profession: ["gemologist"],
     gemologistPrice: 455,
     locations: ["Magma Geode", "Omni Geode"],
     image: "images/minerals/geode-minerals/Fire Opal.png"
@@ -15651,6 +21128,7 @@ var minerals_default = [
     kind: "mineral",
     description: "Its distinctive fluorescence makes it a favorite among rock collectors.",
     sellPrice: 150,
+    profession: ["gemologist"],
     gemologistPrice: 195,
     locations: ["Geode", "Omni Geode"],
     image: "images/minerals/geode-minerals/Alamite.png"
@@ -15661,6 +21139,7 @@ var minerals_default = [
     kind: "mineral",
     description: "A dark metallic Mineral sought after for its cubic structure.",
     sellPrice: 300,
+    profession: ["gemologist"],
     gemologistPrice: 390,
     locations: ["Magma Geode", "Omni Geode", "Black Slime"],
     image: "images/minerals/geode-minerals/Bixite.png"
@@ -15671,6 +21150,7 @@ var minerals_default = [
     kind: "mineral",
     description: "The best specimens resemble a desert rose.",
     sellPrice: 50,
+    profession: ["gemologist"],
     gemologistPrice: 65,
     locations: ["Magma Geode", "Omni Geode"],
     image: "images/minerals/geode-minerals/Baryte.png"
@@ -15681,6 +21161,7 @@ var minerals_default = [
     kind: "mineral",
     description: "These crystals are curiously light.",
     sellPrice: 125,
+    profession: ["gemologist"],
     gemologistPrice: 162,
     locations: ["Frozen Geode", "Omni Geode"],
     image: "images/minerals/geode-minerals/Aerinite.png"
@@ -15691,6 +21172,7 @@ var minerals_default = [
     kind: "mineral",
     description: "This yellow crystal is speckled with shimmering nodules.",
     sellPrice: 75,
+    profession: ["gemologist"],
     gemologistPrice: 97,
     locations: ["Geode", "Omni Geode"],
     image: "images/minerals/geode-minerals/Calcite.png"
@@ -15701,6 +21183,7 @@ var minerals_default = [
     kind: "mineral",
     description: "It can occur in coral reefs, often near an underwater volcano.",
     sellPrice: 300,
+    profession: ["gemologist"],
     gemologistPrice: 390,
     locations: ["Magma Geode", "Omni Geode"],
     image: "images/minerals/geode-minerals/Dolomite.png"
@@ -15711,6 +21194,7 @@ var minerals_default = [
     kind: "mineral",
     description: "The crystals glow bright green when stimulated.",
     sellPrice: 100,
+    profession: ["gemologist"],
     gemologistPrice: 130,
     locations: ["Frozen Geode", "Omni Geode"],
     image: "images/minerals/geode-minerals/Esperite.png"
@@ -15721,6 +21205,7 @@ var minerals_default = [
     kind: "mineral",
     description: "Small amounts are found in human teeth.",
     sellPrice: 200,
+    profession: ["gemologist"],
     gemologistPrice: 260,
     locations: ["Frozen Geode", "Omni Geode"],
     image: "images/minerals/geode-minerals/Fluorapatite.png"
@@ -15731,6 +21216,7 @@ var minerals_default = [
     kind: "mineral",
     description: "Occurs in brilliant clusters.",
     sellPrice: 150,
+    profession: ["gemologist"],
     gemologistPrice: 195,
     locations: ["Frozen Geode", "Omni Geode"],
     image: "images/minerals/geode-minerals/Geminite.png"
@@ -15741,6 +21227,7 @@ var minerals_default = [
     kind: "mineral",
     description: "It grows in a triangular column.",
     sellPrice: 450,
+    profession: ["gemologist"],
     gemologistPrice: 585,
     locations: ["Magma Geode", "Omni Geode"],
     image: "images/minerals/geode-minerals/Helvite.png"
@@ -15751,6 +21238,7 @@ var minerals_default = [
     kind: "mineral",
     description: "The crystals are so tightly packed it almost looks fuzzy.",
     sellPrice: 150,
+    profession: ["gemologist"],
     gemologistPrice: 195,
     locations: ["Geode", "Omni Geode"],
     image: "images/minerals/geode-minerals/Jamborite.png"
@@ -15761,6 +21249,7 @@ var minerals_default = [
     kind: "mineral",
     description: "A high volume of tiny crystals makes it very glittery.",
     sellPrice: 115,
+    profession: ["gemologist"],
     gemologistPrice: 149,
     locations: ["Geode", "Omni Geode"],
     image: "images/minerals/geode-minerals/Jagoite.png"
@@ -15771,6 +21260,7 @@ var minerals_default = [
     kind: "mineral",
     description: "The geometric faces are as smooth as glass.",
     sellPrice: 250,
+    profession: ["gemologist"],
     gemologistPrice: 325,
     locations: ["Frozen Geode", "Omni Geode"],
     image: "images/minerals/geode-minerals/Kyanite.png"
@@ -15781,6 +21271,7 @@ var minerals_default = [
     kind: "mineral",
     description: "The cratered white orbs form a tight cluster.",
     sellPrice: 200,
+    profession: ["gemologist"],
     gemologistPrice: 260,
     locations: ["Frozen Geode", "Omni Geode"],
     image: "images/minerals/geode-minerals/Lunarite.png"
@@ -15791,6 +21282,7 @@ var minerals_default = [
     kind: "mineral",
     description: "A popular ornamental stone, used in sculpture and to make green paint.",
     sellPrice: 100,
+    profession: ["gemologist"],
     gemologistPrice: 130,
     locations: ["Geode", "Omni Geode"],
     image: "images/minerals/geode-minerals/Malachite.png"
@@ -15801,6 +21293,7 @@ var minerals_default = [
     kind: "mineral",
     description: "A jet-black crystal that is unusually reflective.",
     sellPrice: 400,
+    profession: ["gemologist"],
     gemologistPrice: 520,
     locations: ["Magma Geode", "Omni Geode", "Black Slime"],
     image: "images/minerals/geode-minerals/Neptunite.png"
@@ -15811,6 +21304,7 @@ var minerals_default = [
     kind: "mineral",
     description: "Some claim the powdered crystal is a dwarvish delicacy.",
     sellPrice: 200,
+    profession: ["gemologist"],
     gemologistPrice: 260,
     locations: ["Magma Geode", "Omni Geode"],
     image: "images/minerals/geode-minerals/Lemon Stone.png"
@@ -15821,6 +21315,7 @@ var minerals_default = [
     kind: "mineral",
     description: "The delicate shards form a tiny pink meadow.",
     sellPrice: 80,
+    profession: ["gemologist"],
     gemologistPrice: 104,
     locations: ["Geode", "Omni Geode"],
     image: "images/minerals/geode-minerals/Nekoite.png"
@@ -15831,6 +21326,7 @@ var minerals_default = [
     kind: "mineral",
     description: "Despite its high toxicity, used widely in manufacturing and folk medicine.",
     sellPrice: 80,
+    profession: ["gemologist"],
     gemologistPrice: 104,
     locations: ["Geode", "Omni Geode"],
     image: "images/minerals/geode-minerals/Orpiment.png"
@@ -15841,6 +21337,7 @@ var minerals_default = [
     kind: "mineral",
     description: "This little guy may be 100,000 years old.",
     sellPrice: 120,
+    profession: ["gemologist"],
     gemologistPrice: 156,
     locations: ["Geode", "Omni Geode", "Slime Ball"],
     image: "images/minerals/geode-minerals/Petrified Slime.png"
@@ -15851,6 +21348,7 @@ var minerals_default = [
     kind: "mineral",
     description: "According to legend, angry thunder spirits would throw these stones.",
     sellPrice: 100,
+    profession: ["gemologist"],
     gemologistPrice: 130,
     locations: ["Geode", "Omni Geode"],
     image: "images/minerals/geode-minerals/Thunder Egg.png"
@@ -15861,6 +21359,7 @@ var minerals_default = [
     kind: "mineral",
     description: `Commonly known as "Fool's Gold".`,
     sellPrice: 120,
+    profession: ["gemologist"],
     gemologistPrice: 156,
     locations: ["Frozen Geode", "Omni Geode"],
     image: "images/minerals/geode-minerals/Pyrite.png"
@@ -15871,6 +21370,7 @@ var minerals_default = [
     kind: "mineral",
     description: "An old legend claims these stones are the mosaics of ancient mermaids.",
     sellPrice: 220,
+    profession: ["gemologist"],
     gemologistPrice: 286,
     locations: ["Frozen Geode", "Omni Geode"],
     image: "images/minerals/geode-minerals/Ocean Stone.png"
@@ -15881,6 +21381,7 @@ var minerals_default = [
     kind: "mineral",
     description: "There is an aura of coldness around this crystal.",
     sellPrice: 200,
+    profession: ["gemologist"],
     gemologistPrice: 260,
     locations: ["Frozen Geode", "Omni Geode"],
     image: "images/minerals/geode-minerals/Ghost Crystal.png"
@@ -15891,6 +21392,7 @@ var minerals_default = [
     kind: "mineral",
     description: "When polished, becomes attractively luminous. Prized by ancient peoples.",
     sellPrice: 150,
+    profession: ["gemologist"],
     gemologistPrice: 195,
     locations: ["Magma Geode", "Omni Geode"],
     image: "images/minerals/geode-minerals/Jasper.png"
@@ -15901,6 +21403,7 @@ var minerals_default = [
     kind: "mineral",
     description: "Some early life forms had bones made from this.",
     sellPrice: 125,
+    profession: ["gemologist"],
     gemologistPrice: 162,
     locations: ["Geode", "Omni Geode"],
     image: "images/minerals/geode-minerals/Celestine.png"
@@ -15911,6 +21414,7 @@ var minerals_default = [
     kind: "mineral",
     description: "A very popular material for sculptures and construction.",
     sellPrice: 110,
+    profession: ["gemologist"],
     gemologistPrice: 143,
     locations: ["Frozen Geode", "Omni Geode"],
     image: "images/minerals/geode-minerals/Marble.png"
@@ -15921,6 +21425,7 @@ var minerals_default = [
     kind: "mineral",
     description: "A common type of stone with red and brown striations.",
     sellPrice: 60,
+    profession: ["gemologist"],
     gemologistPrice: 78,
     locations: ["Geode", "Omni Geode"],
     image: "images/minerals/geode-minerals/Sandstone.png"
@@ -15931,6 +21436,7 @@ var minerals_default = [
     kind: "mineral",
     description: "A speckled Mineral that is commonly used in construction.",
     sellPrice: 75,
+    profession: ["gemologist"],
     gemologistPrice: 97,
     locations: ["Geode", "Omni Geode"],
     image: "images/minerals/geode-minerals/Granite.png"
@@ -15941,6 +21447,7 @@ var minerals_default = [
     kind: "mineral",
     description: "Forms near searing hot magma.",
     sellPrice: 175,
+    profession: ["gemologist"],
     gemologistPrice: 227,
     locations: ["Magma Geode", "Omni Geode"],
     image: "images/minerals/geode-minerals/Basalt.png"
@@ -15951,6 +21458,7 @@ var minerals_default = [
     kind: "mineral",
     description: "A very common type of stone. It's not worth very much.",
     sellPrice: 15,
+    profession: ["gemologist"],
     gemologistPrice: 19,
     locations: ["Geode", "Omni Geode"],
     image: "images/minerals/geode-minerals/Limestone.png"
@@ -15961,6 +21469,7 @@ var minerals_default = [
     kind: "mineral",
     description: "Because of its soft consistency, very popular for carving.",
     sellPrice: 120,
+    profession: ["gemologist"],
     gemologistPrice: 156,
     locations: ["Frozen Geode", "Omni Geode"],
     image: "images/minerals/geode-minerals/Soapstone.png"
@@ -15971,6 +21480,7 @@ var minerals_default = [
     kind: "mineral",
     description: "An iron-based Mineral with interesting magnetic properties.",
     sellPrice: 150,
+    profession: ["gemologist"],
     gemologistPrice: 195,
     locations: ["Frozen Geode", "Omni Geode"],
     image: "images/minerals/geode-minerals/Hematite.png"
@@ -15981,6 +21491,7 @@ var minerals_default = [
     kind: "mineral",
     description: "A fine-grained rock made from ancient clay or mud.",
     sellPrice: 25,
+    profession: ["gemologist"],
     gemologistPrice: 32,
     locations: ["Geode", "Omni Geode"],
     image: "images/minerals/geode-minerals/Mudstone.png"
@@ -15991,6 +21502,7 @@ var minerals_default = [
     kind: "mineral",
     description: "A volcanic glass that forms when lava cools rapidly.",
     sellPrice: 200,
+    profession: ["gemologist"],
     gemologistPrice: 260,
     locations: ["Magma Geode", "Omni Geode"],
     image: "images/minerals/geode-minerals/Obsidian.png"
@@ -16001,6 +21513,7 @@ var minerals_default = [
     kind: "mineral",
     description: "It's extremely resistant to water, making it a good roofing material.",
     sellPrice: 85,
+    profession: ["gemologist"],
     gemologistPrice: 110,
     locations: ["Geode", "Omni Geode"],
     image: "images/minerals/geode-minerals/Slate.png"
@@ -16011,6 +21524,7 @@ var minerals_default = [
     kind: "mineral",
     description: "An old miner's song suggests these are made from ancient fairy bones.",
     sellPrice: 250,
+    profession: ["gemologist"],
     gemologistPrice: 325,
     locations: ["Frozen Geode", "Omni Geode"],
     image: "images/minerals/geode-minerals/Fairy Stone.png"
@@ -16021,6 +21535,7 @@ var minerals_default = [
     kind: "mineral",
     description: "No one knows how these form. Microscopic structure displays unnatural regularity.",
     sellPrice: 500,
+    profession: ["gemologist"],
     gemologistPrice: 650,
     locations: ["Magma Geode", "Omni Geode"],
     image: "images/minerals/geode-minerals/Star Shards.png"
@@ -16031,6 +21546,7 @@ var minerals_default = [
     kind: "geode",
     description: "A blacksmith can break this open for you.",
     sellPrice: 50,
+    profession: [],
     locations: ["The Mines (Floors 1-39)", "Duggy (25%)", "Tilling", "Fishing Treasure Chest"],
     image: "images/minerals/geodes/Geode.png"
   },
@@ -16040,6 +21556,7 @@ var minerals_default = [
     kind: "geode",
     description: "A blacksmith can break this open for you.",
     sellPrice: 100,
+    profession: [],
     locations: ["The Mines (Floors 41-79)", "Fishing Treasure Chest", "Winter Tilling"],
     image: "images/minerals/geodes/Frozen Geode.png"
   },
@@ -16049,6 +21566,7 @@ var minerals_default = [
     kind: "geode",
     description: "A blacksmith can break this open for you.",
     sellPrice: 150,
+    profession: [],
     locations: ["The Mines (Floors 81-120)", "Skull Cavern", "Fishing Treasure Chest"],
     image: "images/minerals/geodes/Magma Geode.png"
   },
@@ -16058,6 +21576,7 @@ var minerals_default = [
     kind: "geode",
     description: "A blacksmith can break this open for you. Contains a wide variety of minerals.",
     sellPrice: 0,
+    profession: [],
     locations: ["The Mines", "Skull Cavern", "Carbon Ghost", "Panning", "Oasis", "Krobus"],
     image: "images/minerals/geodes/Omni Geode.png"
   },
@@ -16067,6 +21586,7 @@ var minerals_default = [
     kind: "ore",
     description: "A common ore that can be smelted into bars.",
     sellPrice: 5,
+    profession: [],
     locations: ["The Mines (Floors 2-39)", "Quarry", "Skull Cavern", "Volcano Dungeon"],
     image: "images/minerals/ore/Copper Ore.png"
   },
@@ -16076,6 +21596,7 @@ var minerals_default = [
     kind: "ore",
     description: "A fairly common ore that can be smelted into bars.",
     sellPrice: 10,
+    profession: [],
     locations: ["The Mines (Floors 41-79)", "Quarry", "Skull Cavern", "Volcano Dungeon"],
     image: "images/minerals/ore/Iron Ore.png"
   },
@@ -16085,6 +21606,7 @@ var minerals_default = [
     kind: "ore",
     description: "A precious ore that can be smelted into bars.",
     sellPrice: 25,
+    profession: [],
     locations: ["The Mines (Floors 80+)", "Skull Cavern", "Quarry", "Volcano Dungeon"],
     image: "images/minerals/ore/Gold Ore.png"
   },
@@ -16094,6 +21616,7 @@ var minerals_default = [
     kind: "ore",
     description: "An exotic ore with many curious properties. Can be smelted into bars.",
     sellPrice: 100,
+    profession: [],
     locations: ["Skull Cavern", "Quarry", "Volcano Dungeon", "Mystic Stone (Mines Floor 100+)"],
     image: "images/minerals/ore/Iridium Ore.png"
   },
@@ -16103,6 +21626,7 @@ var minerals_default = [
     kind: "ore",
     description: "It's glowing with dangerous energy... Can be smelted into bars.",
     sellPrice: 300,
+    profession: [],
     locations: ["Dangerous Mines", "Dangerous Skull Cavern"],
     image: "images/minerals/ore/Radioactive Ore.png"
   },
@@ -16112,7 +21636,15 @@ var minerals_default = [
     kind: "bar",
     description: "A bar of pure copper.",
     sellPrice: 60,
-    smeltRecipes: [{ ore: "378", oreQty: 5, coalQty: 1, timeMinutes: 30 }],
+    profession: ["blacksmith"],
+    smeltRecipes: [
+      {
+        ore: "378",
+        oreQty: 5,
+        coalQty: 1,
+        timeMinutes: 30
+      }
+    ],
     image: "images/minerals/bars/Copper Bar.png"
   },
   {
@@ -16121,7 +21653,15 @@ var minerals_default = [
     kind: "bar",
     description: "A bar of pure iron.",
     sellPrice: 120,
-    smeltRecipes: [{ ore: "380", oreQty: 5, coalQty: 1, timeMinutes: 120 }],
+    profession: ["blacksmith"],
+    smeltRecipes: [
+      {
+        ore: "380",
+        oreQty: 5,
+        coalQty: 1,
+        timeMinutes: 120
+      }
+    ],
     image: "images/minerals/bars/Iron Bar.png"
   },
   {
@@ -16130,7 +21670,15 @@ var minerals_default = [
     kind: "bar",
     description: "A bar of pure gold.",
     sellPrice: 250,
-    smeltRecipes: [{ ore: "384", oreQty: 5, coalQty: 1, timeMinutes: 300 }],
+    profession: ["blacksmith"],
+    smeltRecipes: [
+      {
+        ore: "384",
+        oreQty: 5,
+        coalQty: 1,
+        timeMinutes: 300
+      }
+    ],
     image: "images/minerals/bars/Gold Bar.png"
   },
   {
@@ -16139,7 +21687,15 @@ var minerals_default = [
     kind: "bar",
     description: "A bar of pure iridium.",
     sellPrice: 1e3,
-    smeltRecipes: [{ ore: "386", oreQty: 5, coalQty: 1, timeMinutes: 480 }],
+    profession: ["blacksmith"],
+    smeltRecipes: [
+      {
+        ore: "386",
+        oreQty: 5,
+        coalQty: 1,
+        timeMinutes: 480
+      }
+    ],
     image: "images/minerals/bars/Iridium Bar.png"
   },
   {
@@ -16148,7 +21704,15 @@ var minerals_default = [
     kind: "bar",
     description: "Known by the Zuzu City Safety Commission to cause irreversible bodily harm.",
     sellPrice: 3e3,
-    smeltRecipes: [{ ore: "909", oreQty: 5, coalQty: 1, timeMinutes: 560 }],
+    profession: ["blacksmith"],
+    smeltRecipes: [
+      {
+        ore: "909",
+        oreQty: 5,
+        coalQty: 1,
+        timeMinutes: 560
+      }
+    ],
     image: "images/minerals/bars/Radioactive Bar.png"
   },
   {
@@ -16157,9 +21721,21 @@ var minerals_default = [
     kind: "bar",
     description: "A more pure form of quartz.",
     sellPrice: 50,
+    profession: [],
     smeltRecipes: [
-      { ore: "80", oreQty: 1, coalQty: 1, timeMinutes: 90 },
-      { ore: "82", oreQty: 1, coalQty: 1, timeMinutes: 90, outputQty: 3 }
+      {
+        ore: "80",
+        oreQty: 1,
+        coalQty: 1,
+        timeMinutes: 90
+      },
+      {
+        ore: "82",
+        oreQty: 1,
+        coalQty: 1,
+        timeMinutes: 90,
+        outputQty: 3
+      }
     ],
     image: "images/minerals/bars/Refined Quartz.png"
   },
@@ -16169,6 +21745,7 @@ var minerals_default = [
     kind: "resource",
     description: "A combustible rock that is useful for crafting and smelting.",
     sellPrice: 15,
+    profession: [],
     locations: [
       "Breaking rocks in The Mines",
       "Dust Sprites (50% drop, Floors 41-79)",
@@ -16188,7 +21765,12 @@ var minerals_default = [
     name: "Copper Node",
     kind: "node",
     description: "Ore-bearing stone containing copper.",
-    drops: [{ item: "Copper Ore", quantity: "1-3" }],
+    drops: [
+      {
+        item: "Copper Ore",
+        quantity: "1-3"
+      }
+    ],
     miningXP: 5,
     locations: [
       "The Mines (any floor)",
@@ -16205,7 +21787,12 @@ var minerals_default = [
     name: "Iron Node",
     kind: "node",
     description: "Ore-bearing stone containing iron.",
-    drops: [{ item: "Iron Ore", quantity: "1-3" }],
+    drops: [
+      {
+        item: "Iron Ore",
+        quantity: "1-3"
+      }
+    ],
     miningXP: 12,
     locations: [
       "The Mines (Floors 40-79)",
@@ -16222,7 +21809,12 @@ var minerals_default = [
     name: "Gold Node",
     kind: "node",
     description: "Ore-bearing stone containing gold.",
-    drops: [{ item: "Gold Ore", quantity: "1-3" }],
+    drops: [
+      {
+        item: "Gold Ore",
+        quantity: "1-3"
+      }
+    ],
     miningXP: 18,
     locations: [
       "The Mines (Floor 80+)",
@@ -16239,8 +21831,15 @@ var minerals_default = [
     kind: "node",
     description: "A rare ore deposit containing iridium.",
     drops: [
-      { item: "Iridium Ore", quantity: "1-3" },
-      { item: "Prismatic Shard", quantity: "1", chance: "3.5%" }
+      {
+        item: "Iridium Ore",
+        quantity: "1-3"
+      },
+      {
+        item: "Prismatic Shard",
+        quantity: "1",
+        chance: "3.5%"
+      }
     ],
     miningXP: 50,
     locations: [
@@ -16256,7 +21855,12 @@ var minerals_default = [
     name: "Radioactive Node",
     kind: "node",
     description: "A glowing, dangerous ore deposit.",
-    drops: [{ item: "Radioactive Ore", quantity: "1+" }],
+    drops: [
+      {
+        item: "Radioactive Ore",
+        quantity: "1+"
+      }
+    ],
     miningXP: 18,
     locations: ["Dangerous Mines", "Dangerous Skull Cavern"],
     image: "images/minerals/nodes/Radioactive Node.png"
@@ -16266,7 +21870,12 @@ var minerals_default = [
     name: "Amethyst Node",
     kind: "node",
     description: null,
-    drops: [{ item: "Amethyst", quantity: "1" }],
+    drops: [
+      {
+        item: "Amethyst",
+        quantity: "1"
+      }
+    ],
     miningXP: 16,
     locations: ["The Mines (any floor)", "Skull Cavern", "Quarry"],
     image: "images/minerals/nodes/Amethyst Node.png"
@@ -16276,7 +21885,12 @@ var minerals_default = [
     name: "Aquamarine Node",
     kind: "node",
     description: null,
-    drops: [{ item: "Aquamarine", quantity: "1" }],
+    drops: [
+      {
+        item: "Aquamarine",
+        quantity: "1"
+      }
+    ],
     miningXP: 40,
     locations: ["The Mines (Floor 40+)", "Skull Cavern", "Quarry"],
     image: "images/minerals/nodes/Aquamarine Node.png"
@@ -16286,7 +21900,12 @@ var minerals_default = [
     name: "Topaz Node",
     kind: "node",
     description: null,
-    drops: [{ item: "Topaz", quantity: "1" }],
+    drops: [
+      {
+        item: "Topaz",
+        quantity: "1"
+      }
+    ],
     miningXP: 16,
     locations: ["The Mines (any floor)", "Skull Cavern", "Quarry"],
     image: "images/minerals/nodes/Topaz Node.png"
@@ -16296,7 +21915,12 @@ var minerals_default = [
     name: "Jade Node",
     kind: "node",
     description: null,
-    drops: [{ item: "Jade", quantity: "1" }],
+    drops: [
+      {
+        item: "Jade",
+        quantity: "1"
+      }
+    ],
     miningXP: 40,
     locations: ["The Mines (Floor 40+)", "Skull Cavern", "Quarry"],
     image: "images/minerals/nodes/Jade Node.png"
@@ -16306,7 +21930,12 @@ var minerals_default = [
     name: "Emerald Node",
     kind: "node",
     description: null,
-    drops: [{ item: "Emerald", quantity: "1" }],
+    drops: [
+      {
+        item: "Emerald",
+        quantity: "1"
+      }
+    ],
     miningXP: 80,
     locations: ["The Mines (Floor 80+)", "Skull Cavern", "Quarry"],
     image: "images/minerals/nodes/Emerald Node.png"
@@ -16316,7 +21945,12 @@ var minerals_default = [
     name: "Ruby Node",
     kind: "node",
     description: null,
-    drops: [{ item: "Ruby", quantity: "1" }],
+    drops: [
+      {
+        item: "Ruby",
+        quantity: "1"
+      }
+    ],
     miningXP: 80,
     locations: ["The Mines (Floor 80+)", "Skull Cavern", "Quarry", "Volcano Dungeon"],
     image: "images/minerals/nodes/Ruby Node.png"
@@ -16326,7 +21960,12 @@ var minerals_default = [
     name: "Diamond Node",
     kind: "node",
     description: null,
-    drops: [{ item: "Diamond", quantity: "1" }],
+    drops: [
+      {
+        item: "Diamond",
+        quantity: "1"
+      }
+    ],
     miningXP: 150,
     locations: ["The Mines (Floor 50+)", "Skull Cavern", "Quarry", "Volcano Dungeon"],
     image: "images/minerals/nodes/Diamond Node.png"
@@ -16352,9 +21991,19 @@ var minerals_default = [
     kind: "node",
     description: "A rare and valuable deposit.",
     drops: [
-      { item: "Iridium Ore", quantity: "1-3" },
-      { item: "Gold Ore", quantity: "1-4" },
-      { item: "Prismatic Shard", quantity: "1", chance: "25%" }
+      {
+        item: "Iridium Ore",
+        quantity: "1-3"
+      },
+      {
+        item: "Gold Ore",
+        quantity: "1-4"
+      },
+      {
+        item: "Prismatic Shard",
+        quantity: "1",
+        chance: "25%"
+      }
     ],
     miningXP: 150,
     locations: ["The Mines (Floor 100+)", "Skull Cavern", "Quarry", "Volcano Dungeon"],
@@ -16365,7 +22014,12 @@ var minerals_default = [
     name: "Geode Node",
     kind: "node",
     description: null,
-    drops: [{ item: "Geode", quantity: "1" }],
+    drops: [
+      {
+        item: "Geode",
+        quantity: "1"
+      }
+    ],
     miningXP: 8,
     locations: ["Hill-top / Four Corners farm"],
     image: "images/minerals/nodes/Geode Node.png"
@@ -16375,7 +22029,12 @@ var minerals_default = [
     name: "Frozen Geode Node",
     kind: "node",
     description: null,
-    drops: [{ item: "Frozen Geode", quantity: "1" }],
+    drops: [
+      {
+        item: "Frozen Geode",
+        quantity: "1"
+      }
+    ],
     miningXP: 16,
     locations: ["Hill-top / Four Corners farm (Mining Level 5+)"],
     image: "images/minerals/nodes/Frozen Geode Node.png"
@@ -16385,7 +22044,12 @@ var minerals_default = [
     name: "Magma Geode Node",
     kind: "node",
     description: null,
-    drops: [{ item: "Magma Geode", quantity: "1" }],
+    drops: [
+      {
+        item: "Magma Geode",
+        quantity: "1"
+      }
+    ],
     miningXP: 32,
     locations: ["Hill-top / Four Corners farm (Mining Level 8+)"],
     image: "images/minerals/nodes/Magma Geode Node.png"
@@ -16395,7 +22059,12 @@ var minerals_default = [
     name: "Omni Geode Node",
     kind: "node",
     description: null,
-    drops: [{ item: "Omni Geode", quantity: "1" }],
+    drops: [
+      {
+        item: "Omni Geode",
+        quantity: "1"
+      }
+    ],
     miningXP: 64,
     locations: ["Volcano Dungeon"],
     image: "images/minerals/nodes/Omni Geode Node.png"
@@ -16405,7 +22074,12 @@ var minerals_default = [
     name: "Coal Node",
     kind: "node",
     description: "A deposit of coal fuel.",
-    drops: [{ item: "Coal", quantity: "1+" }],
+    drops: [
+      {
+        item: "Coal",
+        quantity: "1+"
+      }
+    ],
     miningXP: 10,
     locations: ["Quarry", "Quarry Mine", "Volcano Dungeon"],
     image: "images/minerals/nodes/Coal Node 1.png"
@@ -16415,7 +22089,12 @@ var minerals_default = [
     name: "Cinder Shard Node",
     kind: "node",
     description: null,
-    drops: [{ item: "Cinder Shard", quantity: "1+" }],
+    drops: [
+      {
+        item: "Cinder Shard",
+        quantity: "1+"
+      }
+    ],
     miningXP: 12,
     locations: ["Volcano Dungeon"],
     image: "images/minerals/nodes/Cinder Shard Node 1.png"
@@ -16425,7 +22104,12 @@ var minerals_default = [
     name: "Clay Node",
     kind: "node",
     description: null,
-    drops: [{ item: "Clay", quantity: "1" }],
+    drops: [
+      {
+        item: "Clay",
+        quantity: "1"
+      }
+    ],
     miningXP: 6,
     locations: ["Ginger Island Dig Site"],
     image: "images/minerals/nodes/Clay Node.png"
@@ -16436,8 +22120,15 @@ var minerals_default = [
     kind: "node",
     description: "Contains bone fragments and fossil artifacts.",
     drops: [
-      { item: "Bone Fragment", quantity: "1+" },
-      { item: "Fossil artifact", quantity: "1", chance: "varies" }
+      {
+        item: "Bone Fragment",
+        quantity: "1+"
+      },
+      {
+        item: "Fossil artifact",
+        quantity: "1",
+        chance: "varies"
+      }
     ],
     miningXP: 6,
     locations: ["Ginger Island Dig Site"],
@@ -16448,7 +22139,12 @@ var minerals_default = [
     name: "Mussel Node",
     kind: "node",
     description: null,
-    drops: [{ item: "Mussel", quantity: "1+" }],
+    drops: [
+      {
+        item: "Mussel",
+        quantity: "1+"
+      }
+    ],
     miningXP: 5,
     locations: ["Ginger Island West (beach)"],
     image: "images/minerals/nodes/Mussel Node.png"
@@ -16458,7 +22154,12 @@ var minerals_default = [
     name: "Calico Egg Node",
     kind: "node",
     description: null,
-    drops: [{ item: "Calico Egg", quantity: "1+" }],
+    drops: [
+      {
+        item: "Calico Egg",
+        quantity: "1+"
+      }
+    ],
     miningXP: 50,
     locations: ["Skull Cavern (Desert Festival only)"],
     image: "images/minerals/nodes/Calico Egg Node 1.png"
@@ -16469,8 +22170,15 @@ var minerals_default = [
     kind: "node",
     description: "A standard breakable rock found outdoors.",
     drops: [
-      { item: "Stone", quantity: "1+" },
-      { item: "Coal", quantity: "1", chance: "~5%" }
+      {
+        item: "Stone",
+        quantity: "1+"
+      },
+      {
+        item: "Coal",
+        quantity: "1",
+        chance: "~5%"
+      }
     ],
     miningXP: 1,
     locations: ["The Farm", "Various outdoor areas"],
@@ -16482,8 +22190,15 @@ var minerals_default = [
     kind: "node",
     description: "A standard breakable rock inside the mines.",
     drops: [
-      { item: "Stone", quantity: "1+" },
-      { item: "Coal", quantity: "1", chance: "small" }
+      {
+        item: "Stone",
+        quantity: "1+"
+      },
+      {
+        item: "Coal",
+        quantity: "1",
+        chance: "small"
+      }
     ],
     miningXP: 0,
     locations: ["The Mines (any floor)", "Volcano Dungeon"],
@@ -16495,6 +22210,7 @@ var minerals_default = [
     kind: "resource",
     description: "You can feel a warm glow from within this stone.",
     sellPrice: 50,
+    profession: [],
     locations: [
       "Volcano Dungeon (Cinder Shard Nodes)",
       "Magma Sprite, Magma Sparker, Magma Duggy, False Magma Cap drops",
@@ -16509,6 +22225,7 @@ var minerals_default = [
     kind: "resource",
     description: "A small piece of bone.",
     sellPrice: 12,
+    profession: [],
     locations: [
       "Skeleton and Lava Lurk drops",
       "Bone Nodes on Ginger Island",
@@ -16517,6 +22234,1004 @@ var minerals_default = [
       "Artifact Spots"
     ],
     image: "images/minerals/resources/Bone Fragment.png"
+  },
+  {
+    id: "275",
+    name: "Artifact Trove",
+    kind: "geode",
+    description: "A blacksmith can break this open for you. Contains a random artifact.",
+    sellPrice: 0,
+    profession: [],
+    locations: ["Desert Trader (3 Omni Geodes)", "Skeleton Drops", "Fishing Treasure Chest"],
+    image: "images/minerals/geodes/Artifact Trove.png",
+    contents: [
+      {
+        name: "Anchor",
+        image: "images/artifacts/Anchor.png",
+        chance: "~3.6%"
+      },
+      {
+        name: "Ancient Doll",
+        image: "images/artifacts/Ancient Doll.png",
+        chance: "~3.6%"
+      },
+      {
+        name: "Ancient Drum",
+        image: "images/artifacts/Ancient Drum.png",
+        chance: "~3.6%"
+      },
+      {
+        name: "Ancient Seed",
+        image: "images/artifacts/Ancient Seed.png",
+        chance: "~3.6%"
+      },
+      {
+        name: "Ancient Sword",
+        image: "images/artifacts/Ancient Sword.png",
+        chance: "~3.6%"
+      },
+      {
+        name: "Arrowhead",
+        image: "images/artifacts/Arrowhead.png",
+        chance: "~3.6%"
+      },
+      {
+        name: "Bone Flute",
+        image: "images/artifacts/Bone Flute.png",
+        chance: "~3.6%"
+      },
+      {
+        name: "Chewing Stick",
+        image: "images/artifacts/Chewing Stick.png",
+        chance: "~3.6%"
+      },
+      {
+        name: "Chicken Statue",
+        image: "images/artifacts/Chicken Statue.png",
+        chance: "~3.6%"
+      },
+      {
+        name: "Chipped Amphora",
+        image: "images/artifacts/Chipped Amphora.png",
+        chance: "~3.6%"
+      },
+      {
+        name: "Dried Starfish",
+        image: "images/artifacts/Dried Starfish.png",
+        chance: "~3.6%"
+      },
+      {
+        name: "Dwarf Gadget",
+        image: "images/artifacts/Dwarf Gadget.png",
+        chance: "~3.6%"
+      },
+      {
+        name: "Dwarvish Helm",
+        image: "images/artifacts/Dwarvish Helm.png",
+        chance: "~3.6%"
+      },
+      {
+        name: "Elvish Jewelry",
+        image: "images/artifacts/Elvish Jewelry.png",
+        chance: "~3.6%"
+      },
+      {
+        name: "Glass Shards",
+        image: "images/artifacts/Glass Shards.png",
+        chance: "~3.6%"
+      },
+      {
+        name: "Golden Mask",
+        image: "images/artifacts/Golden Mask.png",
+        chance: "~3.6%"
+      },
+      {
+        name: "Golden Pumpkin",
+        chance: "~3.6%",
+        image: "images/misc/Golden Pumpkin.png"
+      },
+      {
+        name: "Golden Relic",
+        image: "images/artifacts/Golden Relic.png",
+        chance: "~3.6%"
+      },
+      {
+        name: "Ornamental Fan",
+        image: "images/artifacts/Ornamental Fan.png",
+        chance: "~3.6%"
+      },
+      {
+        name: "Pearl",
+        image: "images/minerals/Pearl.png",
+        chance: "~3.6%"
+      },
+      {
+        name: "Prehistoric Handaxe",
+        image: "images/artifacts/Prehistoric Handaxe.png",
+        chance: "~3.6%"
+      },
+      {
+        name: "Prehistoric Tool",
+        image: "images/artifacts/Prehistoric Tool.png",
+        chance: "~3.6%"
+      },
+      {
+        name: "Rare Disc",
+        image: "images/artifacts/Rare Disc.png",
+        chance: "~3.6%"
+      },
+      {
+        name: "Rusty Cog",
+        image: "images/artifacts/Rusty Cog.png",
+        chance: "~3.6%"
+      },
+      {
+        name: "Rusty Spoon",
+        image: "images/artifacts/Rusty Spoon.png",
+        chance: "~3.6%"
+      },
+      {
+        name: "Rusty Spur",
+        image: "images/artifacts/Rusty Spur.png",
+        chance: "~3.6%"
+      },
+      {
+        name: "Treasure Appraisal Guide",
+        image: "images/special-items/Treasure Appraisal Guide.png",
+        chance: "~3.6%"
+      },
+      {
+        name: "Treasure Chest",
+        chance: "~3.6%",
+        image: "images/misc/Treasure Chest.png"
+      }
+    ]
+  },
+  {
+    id: "791",
+    name: "Golden Coconut",
+    kind: "geode",
+    description: "A blacksmith can crack this open. The first one always yields a Golden Walnut.",
+    sellPrice: 0,
+    profession: [],
+    locations: ["Ginger Island (dropped by enemies)", "Ginger Island (foraged)"],
+    image: "images/minerals/geodes/Golden Coconut.png",
+    contents: [
+      {
+        name: "Golden Walnut",
+        image: "images/misc/Golden Walnut.png",
+        quantity: "1",
+        chance: "100% (first only)"
+      },
+      {
+        name: "Banana Sapling",
+        image: "images/trees/banana/seed.png",
+        quantity: "1"
+      },
+      {
+        name: "Mango Sapling",
+        image: "images/trees/mango/seed.png",
+        quantity: "1"
+      },
+      {
+        name: "Pineapple Seeds",
+        image: "images/crops/pineapple/seed.png",
+        quantity: "5"
+      },
+      {
+        name: "Taro Tuber",
+        image: "images/crops/taro-root/seed.png",
+        quantity: "5"
+      },
+      {
+        name: "Mahogany Seed",
+        image: "images/trees/mahogany/seed.png",
+        quantity: "1"
+      },
+      {
+        name: "Fossilized Skull",
+        image: "images/artifacts/field-office/Fossilized Skull.png",
+        quantity: "1"
+      },
+      {
+        name: "Iridium Ore",
+        image: "images/minerals/ore/Iridium Ore.png",
+        quantity: "5"
+      },
+      {
+        name: "Golden Helmet",
+        image: "images/hats/Golden Helmet.png",
+        quantity: "1"
+      }
+    ]
+  },
+  {
+    id: "MysteryBox",
+    name: "Mystery Box",
+    kind: "geode",
+    description: "Open to reveal a random item. Rare drops unlock after opening 10 or more boxes.",
+    sellPrice: 0,
+    profession: [],
+    locations: ["Fishing", "Monster Drops", "Various Events"],
+    image: "images/minerals/geodes/Mystery Box.png",
+    contents: [
+      {
+        name: "Magic Rock Candy",
+        image: "images/shop/Magic Rock Candy.png",
+        quantity: "1",
+        chance: "0.2%"
+      },
+      {
+        name: "Prismatic Shard",
+        image: "images/minerals/gems/Prismatic Shard.png",
+        quantity: "1",
+        chance: "0.4%"
+      },
+      {
+        name: "Treasure Chest",
+        quantity: "1",
+        chance: "0.8%",
+        image: "images/misc/Treasure Chest.png"
+      },
+      {
+        name: "Book of Stars",
+        image: "images/special-items/Book Of Stars.png",
+        quantity: "1",
+        chance: "0.49%"
+      },
+      {
+        name: "Book of Mysteries",
+        image: "images/special-items/Book of Mysteries.png",
+        quantity: "1",
+        chance: "0.49%"
+      },
+      {
+        name: "Pearl",
+        image: "images/minerals/Pearl.png",
+        quantity: "1",
+        chance: "0.49%"
+      },
+      {
+        name: "Golden Pumpkin",
+        quantity: "1",
+        chance: "0.49%",
+        image: "images/misc/Golden Pumpkin.png"
+      },
+      {
+        name: "Mystery Hat",
+        image: "images/hats/Mystery Hat.png",
+        quantity: "1",
+        chance: "0.97%"
+      },
+      {
+        name: "Mystery Shirt",
+        quantity: "1",
+        chance: "0.96%"
+      },
+      {
+        name: "Wallpaper",
+        quantity: "1",
+        chance: "0.95%"
+      },
+      {
+        name: "Mega Bomb",
+        image: "images/craftable/bombs/Mega Bomb.png",
+        quantity: "5",
+        chance: "0.63%"
+      },
+      {
+        name: "Triple Shot Espresso",
+        image: "images/cooking/Triple Shot Espresso.png",
+        quantity: "3",
+        chance: "0.63%"
+      },
+      {
+        name: "Dressed Spinner",
+        image: "images/fish/tackle/Dressed Spinner.png",
+        quantity: "1",
+        chance: "0-0.16%"
+      },
+      {
+        name: "Cork Bobber",
+        image: "images/fish/tackle/Cork Bobber.png",
+        quantity: "1",
+        chance: "0-0.16%"
+      },
+      {
+        name: "Dish O' The Sea",
+        image: "images/cooking/Dish O' The Sea.png",
+        quantity: "2",
+        chance: "0.31-0.63%"
+      },
+      {
+        name: "Lucky Lunch",
+        image: "images/cooking/Lucky Lunch.png",
+        quantity: "1-2",
+        chance: "0.13-0.63%"
+      },
+      {
+        name: "Quality Fertilizer",
+        image: "images/craftable/fertilizer/Quality Fertilizer.png",
+        quantity: "10-20",
+        chance: "0.63-6.03%"
+      },
+      {
+        name: "Deluxe Speed-Gro",
+        image: "images/craftable/fertilizer/Deluxe Speed-Gro.png",
+        quantity: "10-20",
+        chance: "0.63-6.03%"
+      },
+      {
+        name: "Life Elixir",
+        image: "images/craftable/edible-items/Life Elixir.png",
+        quantity: "2",
+        chance: "0.63%"
+      },
+      {
+        name: "Warp Totem: Farm",
+        image: "images/craftable/consumables/Warp Totem Farm.png",
+        quantity: "1-3",
+        chance: "0.63-6.03%"
+      },
+      {
+        name: "Cherry Sapling",
+        image: "images/trees/cherry/seed.png",
+        quantity: "1",
+        chance: "0.1%"
+      },
+      {
+        name: "Apricot Sapling",
+        image: "images/trees/apricot/seed.png",
+        quantity: "1",
+        chance: "0.1%"
+      },
+      {
+        name: "Orange Sapling",
+        image: "images/trees/orange/seed.png",
+        quantity: "1",
+        chance: "0.1%"
+      },
+      {
+        name: "Peach Sapling",
+        image: "images/trees/peach/seed.png",
+        quantity: "1",
+        chance: "0.1%"
+      },
+      {
+        name: "Pomegranate Sapling",
+        image: "images/trees/pomegranate/seed.png",
+        quantity: "1",
+        chance: "0.1%"
+      },
+      {
+        name: "Apple Sapling",
+        image: "images/trees/apple/seed.png",
+        quantity: "1",
+        chance: "0.1%"
+      },
+      {
+        name: "Parsnip Seeds",
+        image: "images/crops/parsnip/seed.png",
+        quantity: "8-20",
+        chance: "0.5-1.51%"
+      },
+      {
+        name: "Green Bean Seeds",
+        image: "images/crops/green-bean/seed.png",
+        quantity: "8-20",
+        chance: "0.5-1.51%"
+      },
+      {
+        name: "Cauliflower Seeds",
+        image: "images/crops/cauliflower/seed.png",
+        quantity: "8-20",
+        chance: "0.5-1.51%"
+      },
+      {
+        name: "Potato Seeds",
+        image: "images/crops/potato/seed.png",
+        quantity: "8-20",
+        chance: "0.5-1.51%"
+      },
+      {
+        name: "Corn Seeds",
+        image: "images/crops/corn/seed.png",
+        quantity: "8-20",
+        chance: "0.1-1.51%"
+      },
+      {
+        name: "Wheat Seeds",
+        image: "images/crops/wheat/seed.png",
+        quantity: "8-20",
+        chance: "0.05-1.51%"
+      },
+      {
+        name: "Hot Pepper Seeds",
+        image: "images/crops/hot-pepper/seed.png",
+        quantity: "8-20",
+        chance: "0.05-1.51%"
+      },
+      {
+        name: "Radish Seeds",
+        image: "images/crops/radish/seed.png",
+        quantity: "8-20",
+        chance: "0.05-1.51%"
+      },
+      {
+        name: "Eggplant Seeds",
+        image: "images/crops/eggplant/seed.png",
+        quantity: "8-20",
+        chance: "0.05-1.51%"
+      },
+      {
+        name: "Artichoke Seeds",
+        image: "images/crops/artichoke/seed.png",
+        quantity: "8-20",
+        chance: "0.05-1.51%"
+      },
+      {
+        name: "Pumpkin Seeds",
+        image: "images/crops/pumpkin/seed.png",
+        quantity: "8-20",
+        chance: "0.05-1.51%"
+      },
+      {
+        name: "Carrot Seeds",
+        image: "images/crops/carrot/seed.png",
+        quantity: "8",
+        chance: "0.63%"
+      },
+      {
+        name: "Summer Squash Seeds",
+        image: "images/crops/summer-squash/seed.png",
+        quantity: "8",
+        chance: "0.63%"
+      },
+      {
+        name: "Broccoli Seeds",
+        image: "images/crops/broccoli/seed.png",
+        quantity: "8",
+        chance: "0.63%"
+      },
+      {
+        name: "Powdermelon Seeds",
+        image: "images/crops/powdermelon/seed.png",
+        quantity: "8",
+        chance: "0.63%"
+      },
+      {
+        name: "Ossified Blade",
+        image: "images/weapons/swords/Ossified Blade.png",
+        quantity: "1",
+        chance: "0.31%"
+      },
+      {
+        name: "Emerald Ring",
+        image: "images/rings/Emerald Ring.png",
+        quantity: "1",
+        chance: "0.16%"
+      },
+      {
+        name: "Ruby Ring",
+        image: "images/rings/Ruby Ring.png",
+        quantity: "1",
+        chance: "0.16%"
+      },
+      {
+        name: "Quality Sprinkler",
+        image: "images/craftable/sprinklers/Quality Sprinkler.png",
+        quantity: "1",
+        chance: "0.63%"
+      },
+      {
+        name: "Mystery Box",
+        image: "images/minerals/geodes/Mystery Box.png",
+        quantity: "2-4",
+        chance: "0.63-3.62%"
+      },
+      {
+        name: "Stardew Valley Almanac",
+        image: "images/special-items/Stardew Valley Almanac.png",
+        quantity: "1",
+        chance: "0.13%"
+      },
+      {
+        name: "Bait And Bobber",
+        image: "images/special-items/Bait And Bobber.png",
+        quantity: "1",
+        chance: "0.13%"
+      },
+      {
+        name: "Woodcutter's Weekly",
+        image: "images/special-items/Woodcutter's Weekly.png",
+        quantity: "1",
+        chance: "0.13%"
+      },
+      {
+        name: "Mining Monthly",
+        image: "images/special-items/Mining Monthly.png",
+        quantity: "1",
+        chance: "0.13%"
+      },
+      {
+        name: "Combat Quarterly",
+        image: "images/special-items/Combat Quarterly.png",
+        quantity: "1",
+        chance: "0.13%"
+      },
+      {
+        name: "Coffee",
+        image: "images/artisan-goods/Coffee.png",
+        quantity: "3",
+        chance: "6.03%"
+      },
+      {
+        name: "Bomb",
+        image: "images/craftable/bombs/Bomb.png",
+        quantity: "5",
+        chance: "6.03%"
+      },
+      {
+        name: "Hardwood",
+        image: "images/forageables/Hardwood.png",
+        quantity: "10",
+        chance: "6.03%"
+      },
+      {
+        name: "Warp Totem: Mountains",
+        image: "images/craftable/consumables/Warp Totem Mountains.png",
+        quantity: "1",
+        chance: "6.03%"
+      },
+      {
+        name: "Warp Totem: Beach",
+        image: "images/craftable/consumables/Warp Totem Beach.png",
+        quantity: "1",
+        chance: "6.03%"
+      },
+      {
+        name: "Mixed Seeds",
+        image: "images/mixed-seeds/mixed-seeds.png",
+        quantity: "10",
+        chance: "6.03%"
+      },
+      {
+        name: "Mixed Flower Seeds",
+        image: "images/mixed-seeds/mixed-flower-seeds.png",
+        quantity: "10",
+        chance: "6.03%"
+      },
+      {
+        name: "Sturdy Ring",
+        image: "images/rings/Sturdy Ring.png",
+        quantity: "1",
+        chance: "0.3-0.6%"
+      },
+      {
+        name: "Amethyst Ring",
+        image: "images/rings/Amethyst Ring.png",
+        quantity: "1",
+        chance: "0.3-0.6%"
+      },
+      {
+        name: "Glowstone Ring",
+        image: "images/rings/Glowstone Ring.png",
+        quantity: "1",
+        chance: "0.3-0.6%"
+      },
+      {
+        name: "Aquamarine Ring",
+        image: "images/rings/Aquamarine Ring.png",
+        quantity: "1",
+        chance: "0.3%"
+      },
+      {
+        name: "Jade Ring",
+        image: "images/rings/Jade Ring.png",
+        quantity: "1",
+        chance: "0.3%"
+      }
+    ]
+  },
+  {
+    id: "GoldenMysteryBox",
+    name: "Golden Mystery Box",
+    kind: "geode",
+    description: "Open to reveal a random item. Better odds than a Mystery Box, with two exclusive items.",
+    sellPrice: 0,
+    profession: [],
+    locations: ["Various Events", "Special Rewards"],
+    image: "images/minerals/geodes/Golden Mystery Box.png",
+    contents: [
+      {
+        name: "Golden Animal Cracker",
+        image: "images/misc/Golden Animal Cracker.png",
+        quantity: "1",
+        chance: "0.5%"
+      },
+      {
+        name: "Auto-Petter",
+        image: "images/tools/Auto-Petter.png",
+        quantity: "1",
+        chance: "0.5%"
+      },
+      {
+        name: "Magic Rock Candy",
+        image: "images/shop/Magic Rock Candy.png",
+        quantity: "1",
+        chance: "0.4%"
+      },
+      {
+        name: "Prismatic Shard",
+        image: "images/minerals/gems/Prismatic Shard.png",
+        quantity: "1",
+        chance: "0.79%"
+      },
+      {
+        name: "Treasure Chest",
+        quantity: "1",
+        chance: "1.57%",
+        image: "images/misc/Treasure Chest.png"
+      },
+      {
+        name: "Book of Stars",
+        image: "images/special-items/Book Of Stars.png",
+        quantity: "1",
+        chance: "0.96%"
+      },
+      {
+        name: "Book of Mysteries",
+        image: "images/special-items/Book of Mysteries.png",
+        quantity: "1",
+        chance: "0.96%"
+      },
+      {
+        name: "Pearl",
+        image: "images/minerals/Pearl.png",
+        quantity: "1",
+        chance: "0.94%"
+      },
+      {
+        name: "Golden Pumpkin",
+        quantity: "1",
+        chance: "0.94%",
+        image: "images/misc/Golden Pumpkin.png"
+      },
+      {
+        name: "Mystery Hat",
+        image: "images/hats/Mystery Hat.png",
+        quantity: "1",
+        chance: "1.85%"
+      },
+      {
+        name: "Mystery Shirt",
+        quantity: "1",
+        chance: "1.81%"
+      },
+      {
+        name: "Wallpaper",
+        quantity: "1",
+        chance: "1.78%"
+      },
+      {
+        name: "Mega Bomb",
+        image: "images/craftable/bombs/Mega Bomb.png",
+        quantity: "5",
+        chance: "5.8%"
+      },
+      {
+        name: "Triple Shot Espresso",
+        image: "images/cooking/Triple Shot Espresso.png",
+        quantity: "3",
+        chance: "5.8%"
+      },
+      {
+        name: "Dressed Spinner",
+        image: "images/fish/tackle/Dressed Spinner.png",
+        quantity: "1",
+        chance: "0-1.45%"
+      },
+      {
+        name: "Cork Bobber",
+        image: "images/fish/tackle/Cork Bobber.png",
+        quantity: "1",
+        chance: "0-1.45%"
+      },
+      {
+        name: "Dish O' The Sea",
+        image: "images/cooking/Dish O' The Sea.png",
+        quantity: "2",
+        chance: "2.9-5.8%"
+      },
+      {
+        name: "Lucky Lunch",
+        image: "images/cooking/Lucky Lunch.png",
+        quantity: "2",
+        chance: "5.8%"
+      },
+      {
+        name: "Quality Fertilizer",
+        image: "images/craftable/fertilizer/Quality Fertilizer.png",
+        quantity: "20",
+        chance: "5.8%"
+      },
+      {
+        name: "Deluxe Speed-Gro",
+        image: "images/craftable/fertilizer/Deluxe Speed-Gro.png",
+        quantity: "20",
+        chance: "5.8%"
+      },
+      {
+        name: "Life Elixir",
+        image: "images/craftable/edible-items/Life Elixir.png",
+        quantity: "2",
+        chance: "5.8%"
+      },
+      {
+        name: "Warp Totem: Farm",
+        image: "images/craftable/consumables/Warp Totem Farm.png",
+        quantity: "3",
+        chance: "5.8%"
+      },
+      {
+        name: "Cherry Sapling",
+        image: "images/trees/cherry/seed.png",
+        quantity: "1",
+        chance: "0.97%"
+      },
+      {
+        name: "Apricot Sapling",
+        image: "images/trees/apricot/seed.png",
+        quantity: "1",
+        chance: "0.97%"
+      },
+      {
+        name: "Orange Sapling",
+        image: "images/trees/orange/seed.png",
+        quantity: "1",
+        chance: "0.97%"
+      },
+      {
+        name: "Peach Sapling",
+        image: "images/trees/peach/seed.png",
+        quantity: "1",
+        chance: "0.97%"
+      },
+      {
+        name: "Pomegranate Sapling",
+        image: "images/trees/pomegranate/seed.png",
+        quantity: "1",
+        chance: "0.97%"
+      },
+      {
+        name: "Apple Sapling",
+        image: "images/trees/apple/seed.png",
+        quantity: "1",
+        chance: "0.97%"
+      },
+      {
+        name: "Parsnip Seeds",
+        image: "images/crops/parsnip/seed.png",
+        quantity: "20",
+        chance: "0.48-1.45%"
+      },
+      {
+        name: "Green Bean Seeds",
+        image: "images/crops/green-bean/seed.png",
+        quantity: "20",
+        chance: "0.48-1.45%"
+      },
+      {
+        name: "Cauliflower Seeds",
+        image: "images/crops/cauliflower/seed.png",
+        quantity: "20",
+        chance: "0.48-1.45%"
+      },
+      {
+        name: "Potato Seeds",
+        image: "images/crops/potato/seed.png",
+        quantity: "20",
+        chance: "0.48-1.45%"
+      },
+      {
+        name: "Corn Seeds",
+        image: "images/crops/corn/seed.png",
+        quantity: "20",
+        chance: "0.48-1.45%"
+      },
+      {
+        name: "Wheat Seeds",
+        image: "images/crops/wheat/seed.png",
+        quantity: "20",
+        chance: "0.48-1.45%"
+      },
+      {
+        name: "Hot Pepper Seeds",
+        image: "images/crops/hot-pepper/seed.png",
+        quantity: "20",
+        chance: "0.48-1.45%"
+      },
+      {
+        name: "Radish Seeds",
+        image: "images/crops/radish/seed.png",
+        quantity: "20",
+        chance: "0.48-1.45%"
+      },
+      {
+        name: "Eggplant Seeds",
+        image: "images/crops/eggplant/seed.png",
+        quantity: "20",
+        chance: "0.48-1.45%"
+      },
+      {
+        name: "Artichoke Seeds",
+        image: "images/crops/artichoke/seed.png",
+        quantity: "20",
+        chance: "0.48-1.45%"
+      },
+      {
+        name: "Pumpkin Seeds",
+        image: "images/crops/pumpkin/seed.png",
+        quantity: "20",
+        chance: "0.48-1.45%"
+      },
+      {
+        name: "Carrot Seeds",
+        image: "images/crops/carrot/seed.png",
+        quantity: "8",
+        chance: "5.8%"
+      },
+      {
+        name: "Summer Squash Seeds",
+        image: "images/crops/summer-squash/seed.png",
+        quantity: "8",
+        chance: "5.8%"
+      },
+      {
+        name: "Broccoli Seeds",
+        image: "images/crops/broccoli/seed.png",
+        quantity: "8",
+        chance: "5.8%"
+      },
+      {
+        name: "Powdermelon Seeds",
+        image: "images/crops/powdermelon/seed.png",
+        quantity: "8",
+        chance: "5.8%"
+      },
+      {
+        name: "Ossified Blade",
+        image: "images/weapons/swords/Ossified Blade.png",
+        quantity: "1",
+        chance: "2.9%"
+      },
+      {
+        name: "Emerald Ring",
+        image: "images/rings/Emerald Ring.png",
+        quantity: "1",
+        chance: "1.45%"
+      },
+      {
+        name: "Ruby Ring",
+        image: "images/rings/Ruby Ring.png",
+        quantity: "1",
+        chance: "1.45%"
+      },
+      {
+        name: "Quality Sprinkler",
+        image: "images/craftable/sprinklers/Quality Sprinkler.png",
+        quantity: "1",
+        chance: "5.8%"
+      },
+      {
+        name: "Mystery Box",
+        image: "images/minerals/geodes/Mystery Box.png",
+        quantity: "3-4",
+        chance: "5.8%"
+      },
+      {
+        name: "Stardew Valley Almanac",
+        image: "images/special-items/Stardew Valley Almanac.png",
+        quantity: "1",
+        chance: "1.16%"
+      },
+      {
+        name: "Bait And Bobber",
+        image: "images/special-items/Bait And Bobber.png",
+        quantity: "1",
+        chance: "1.16%"
+      },
+      {
+        name: "Woodcutter's Weekly",
+        image: "images/special-items/Woodcutter's Weekly.png",
+        quantity: "1",
+        chance: "1.16%"
+      },
+      {
+        name: "Mining Monthly",
+        image: "images/special-items/Mining Monthly.png",
+        quantity: "1",
+        chance: "1.16%"
+      },
+      {
+        name: "Combat Quarterly",
+        image: "images/special-items/Combat Quarterly.png",
+        quantity: "1",
+        chance: "1.16%"
+      },
+      {
+        name: "Coffee",
+        image: "images/artisan-goods/Coffee.png",
+        quantity: "3",
+        chance: "5.8%"
+      },
+      {
+        name: "Bomb",
+        image: "images/craftable/bombs/Bomb.png",
+        quantity: "5",
+        chance: "5.8%"
+      },
+      {
+        name: "Hardwood",
+        image: "images/forageables/Hardwood.png",
+        quantity: "10",
+        chance: "5.8%"
+      },
+      {
+        name: "Warp Totem: Mountains",
+        image: "images/craftable/consumables/Warp Totem Mountains.png",
+        quantity: "1",
+        chance: "5.8%"
+      },
+      {
+        name: "Warp Totem: Beach",
+        image: "images/craftable/consumables/Warp Totem Beach.png",
+        quantity: "1",
+        chance: "5.8%"
+      },
+      {
+        name: "Mixed Seeds",
+        image: "images/mixed-seeds/mixed-seeds.png",
+        quantity: "10",
+        chance: "5.8%"
+      },
+      {
+        name: "Mixed Flower Seeds",
+        image: "images/mixed-seeds/mixed-flower-seeds.png",
+        quantity: "10",
+        chance: "5.8%"
+      },
+      {
+        name: "Sturdy Ring",
+        image: "images/rings/Sturdy Ring.png",
+        quantity: "1",
+        chance: "2.9%"
+      },
+      {
+        name: "Amethyst Ring",
+        image: "images/rings/Amethyst Ring.png",
+        quantity: "1",
+        chance: "2.9%"
+      },
+      {
+        name: "Glowstone Ring",
+        image: "images/rings/Glowstone Ring.png",
+        quantity: "1",
+        chance: "2.9%"
+      },
+      {
+        name: "Aquamarine Ring",
+        image: "images/rings/Aquamarine Ring.png",
+        quantity: "1",
+        chance: "2.9%"
+      },
+      {
+        name: "Jade Ring",
+        image: "images/rings/Jade Ring.png",
+        quantity: "1",
+        chance: "2.9%"
+      }
+    ]
   }
 ];
 
@@ -16579,6 +23294,83 @@ var MineralQuery = class _MineralQuery extends QueryBase {
 };
 function minerals(source = allMineralData) {
   return new MineralQuery(source);
+}
+
+// data/rarecrows.json
+var rarecrows_default = [
+  {
+    id: "110",
+    number: 1,
+    name: "Rarecrow 1",
+    image: "images/scarecrows/Rarecrow 1.png",
+    obtain: "Purchase at the Stardew Valley Fair for 800 Tokens."
+  },
+  {
+    id: "113",
+    number: 2,
+    name: "Rarecrow 2",
+    image: "images/scarecrows/Rarecrow 2.png",
+    obtain: "Purchase at the Spirit's Eve festival for 5,000g."
+  },
+  {
+    id: "126",
+    number: 3,
+    name: "Rarecrow 3",
+    image: "images/scarecrows/Rarecrow 3.png",
+    obtain: "Purchase at the Casino for 10,000 Qi Coins."
+  },
+  {
+    id: "136",
+    number: 4,
+    name: "Rarecrow 4",
+    image: "images/scarecrows/Rarecrow 4.png",
+    obtain: "Purchase at the Traveling Cart randomly during fall or winter for 4,000g, or purchase at the Festival of Ice for 5,000g."
+  },
+  {
+    id: "137",
+    number: 5,
+    name: "Rarecrow 5",
+    image: "images/scarecrows/Rarecrow 5.png",
+    obtain: "Purchase at the Flower Dance for 2,500g."
+  },
+  {
+    id: "138",
+    number: 6,
+    name: "Rarecrow 6",
+    image: "images/scarecrows/Rarecrow 6.png",
+    obtain: "Purchase from the Dwarf for 2,500g."
+  },
+  {
+    id: "139",
+    number: 7,
+    name: "Rarecrow 7",
+    image: "images/scarecrows/Rarecrow 7.png",
+    obtain: "Donate 20 Artifacts (not counting Minerals) to the Museum. Can be purchased from the Night Market once the first one is earned."
+  },
+  {
+    id: "140",
+    number: 8,
+    name: "Rarecrow 8",
+    image: "images/scarecrows/Rarecrow 8.png",
+    obtain: "Donate 40 items to the Museum. Can be purchased from the Night Market once the first one is earned."
+  }
+];
+
+// src/modules/rarecrows/index.ts
+var rarecrewsData = rarecrows_default;
+var RarecrowQuery = class _RarecrowQuery extends QueryBase {
+  constructor(data = rarecrewsData) {
+    super(data);
+  }
+  /** Sort by rarecrow number. Default: `'asc'`. */
+  sortByNumber(order = "asc") {
+    return new _RarecrowQuery(
+      [...this.data].sort((a, b) => order === "asc" ? a.number - b.number : b.number - a.number)
+    );
+  }
+};
+function rarecrows(source = rarecrewsData) {
+  return new RarecrowQuery(source);
 }
 
 // data/rings.json
@@ -17082,25 +23874,29 @@ var tackle_default = [
 ];
 
 // src/modules/tackle/index.ts
-var allTackleData = tackle_default;
+var tackleData = tackle_default;
 var TackleQuery = class _TackleQuery extends QueryBase {
-  constructor(data = allTackleData) {
+  constructor(data = tackleData) {
     super(data);
   }
+  /** Sort alphabetically by name. Default: `'asc'`. */
   sortByName(order = "asc") {
-    const sorted = [...this.data].sort(
-      (a, b) => order === "asc" ? a.name.localeCompare(b.name) : b.name.localeCompare(a.name)
+    return new _TackleQuery(
+      [...this.data].sort(
+        (a, b) => order === "asc" ? a.name.localeCompare(b.name) : b.name.localeCompare(a.name)
+      )
     );
-    return new _TackleQuery(sorted);
   }
+  /** Sort by sell price. Default: `'desc'` (most valuable first). */
   sortBySellPrice(order = "desc") {
-    const sorted = [...this.data].sort(
-      (a, b) => order === "asc" ? a.sellPrice - b.sellPrice : b.sellPrice - a.sellPrice
+    return new _TackleQuery(
+      [...this.data].sort(
+        (a, b) => order === "asc" ? a.sellPrice - b.sellPrice : b.sellPrice - a.sellPrice
+      )
     );
-    return new _TackleQuery(sorted);
   }
 };
-function tackle(source = allTackleData) {
+function tackle(source = tackleData) {
   return new TackleQuery(source);
 }
 
@@ -17307,7 +24103,7 @@ var tools_default = [
     type: "upgradeable",
     name: "Trash Can",
     description: "Discard items from your inventory. Higher upgrades refund a percentage of the item's sell value.",
-    canEnchant: true,
+    canEnchant: false,
     levels: [
       {
         level: "basic",
@@ -17354,7 +24150,7 @@ var tools_default = [
   {
     id: "pan",
     type: "upgradeable",
-    name: "Copper Pan",
+    name: "Pan",
     description: "Gather ore, gems, and other items from shimmering spots in water. Higher upgrades increase yield and chance for special items.",
     canEnchant: true,
     levels: [
@@ -17393,69 +24189,68 @@ var tools_default = [
     ]
   },
   {
-    id: "bamboo-pole",
+    id: "fishing-rod",
     type: "fishing-rod",
-    name: "Bamboo Pole",
-    description: "A basic fishing rod. Cannot use bait or tackle.",
-    image: "images/tools/fishing-rod/Bamboo Pole.png",
-    cost: 500,
-    fishingLevelRequired: null,
-    bait: false,
-    tackleSlots: 0,
-    canEnchant: false,
-    obtain: "Purchased from Willy's Fish Shop."
-  },
-  {
-    id: "training-rod",
-    type: "fishing-rod",
-    name: "Training Rod",
-    description: "Simplifies the fishing minigame and only catches common fish. Good for beginners.",
-    image: "images/tools/fishing-rod/Training Rod.png",
-    cost: 25,
-    fishingLevelRequired: null,
-    bait: false,
-    tackleSlots: 0,
-    canEnchant: false,
-    obtain: "Purchased from Willy's Fish Shop."
-  },
-  {
-    id: "fiberglass-rod",
-    type: "fishing-rod",
-    name: "Fiberglass Rod",
-    description: "A mid-tier fishing rod that supports bait to attract fish faster.",
-    image: "images/tools/fishing-rod/Fiberglass Rod.png",
-    cost: 1800,
-    fishingLevelRequired: 2,
-    bait: true,
-    tackleSlots: 0,
-    canEnchant: false,
-    obtain: "Purchased from Willy's Fish Shop."
-  },
-  {
-    id: "iridium-rod",
-    type: "fishing-rod",
-    name: "Iridium Rod",
-    description: "A high-end fishing rod that supports both bait and one tackle attachment.",
-    image: "images/tools/fishing-rod/Iridium Rod.png",
-    cost: 7500,
-    fishingLevelRequired: 6,
-    bait: true,
-    tackleSlots: 1,
+    name: "Fishing Rod",
+    description: "Fishing rods for catching fish. Higher tiers unlock bait and tackle support.",
     canEnchant: true,
-    obtain: "Purchased from Willy's Fish Shop."
-  },
-  {
-    id: "advanced-iridium-rod",
-    type: "fishing-rod",
-    name: "Advanced Iridium Rod",
-    description: "The ultimate fishing rod with two tackle slots and bait support.",
-    image: "images/tools/fishing-rod/Advanced Iridium Rod.png",
-    cost: null,
-    fishingLevelRequired: null,
-    bait: true,
-    tackleSlots: 2,
-    canEnchant: true,
-    obtain: "Reward for achieving Fishing Mastery."
+    levels: [
+      {
+        name: "Training Rod",
+        image: "images/tools/fishing-rod/Training Rod.png",
+        cost: 25,
+        fishingLevelRequired: null,
+        bait: false,
+        tackleSlots: 0,
+        canEnchant: false,
+        obtain: "Purchased from Willy's Fish Shop.",
+        description: "Simplifies the fishing minigame and only catches common fish. Good for beginners."
+      },
+      {
+        name: "Bamboo Pole",
+        image: "images/tools/fishing-rod/Bamboo Pole.png",
+        cost: 500,
+        fishingLevelRequired: null,
+        bait: false,
+        tackleSlots: 0,
+        canEnchant: false,
+        obtain: "Purchased from Willy's Fish Shop.",
+        description: "A basic fishing rod. Cannot use bait or tackle."
+      },
+      {
+        name: "Fiberglass Rod",
+        image: "images/tools/fishing-rod/Fiberglass Rod.png",
+        cost: 1800,
+        fishingLevelRequired: 2,
+        bait: true,
+        tackleSlots: 0,
+        canEnchant: false,
+        obtain: "Purchased from Willy's Fish Shop.",
+        description: "Supports bait to reduce time between bites. Requires Fishing level 2."
+      },
+      {
+        name: "Iridium Rod",
+        image: "images/tools/fishing-rod/Iridium Rod.png",
+        cost: 7500,
+        fishingLevelRequired: 6,
+        bait: true,
+        tackleSlots: 1,
+        canEnchant: true,
+        obtain: "Purchased from Willy's Fish Shop.",
+        description: "Supports bait and one tackle attachment. Can be enchanted at the Forge. Requires Fishing level 6."
+      },
+      {
+        name: "Advanced Iridium Rod",
+        image: "images/tools/fishing-rod/Advanced Iridium Rod.png",
+        cost: null,
+        fishingLevelRequired: null,
+        bait: true,
+        tackleSlots: 2,
+        canEnchant: true,
+        obtain: "Reward for achieving Fishing Mastery.",
+        description: "The ultimate fishing rod. Supports bait and two tackle attachments simultaneously. Can be enchanted at the Forge."
+      }
+    ]
   },
   {
     id: "scythe",
@@ -17605,8 +24400,14 @@ var trees_default = [
     saplingId: "629",
     saplingName: "Apricot Sapling",
     saplingBuyPrices: [
-      { place: "Pierre's", price: 2e3 },
-      { place: "JojaMart", price: 2500 }
+      {
+        place: "Pierre's",
+        price: 2e3
+      },
+      {
+        place: "JojaMart",
+        price: 2500
+      }
     ],
     saplingSellPrice: 500,
     seasons: ["spring"],
@@ -17615,19 +24416,53 @@ var trees_default = [
     image: "images/trees/apricot/harvest.png",
     saplingImage: "images/trees/apricot/seed.png",
     stages: [
-      { name: "stage 1", image: "images/trees/apricot/stage-1.png" },
-      { name: "stage 2", image: "images/trees/apricot/stage-2.png" },
-      { name: "stage 3", image: "images/trees/apricot/stage-3.png" },
-      { name: "stage 4", image: "images/trees/apricot/stage-4.png" },
-      { name: "mature", image: "images/trees/apricot/stage-5.png" }
+      {
+        name: "stage 1",
+        image: "images/trees/apricot/stage-1.png"
+      },
+      {
+        name: "stage 2",
+        image: "images/trees/apricot/stage-2.png"
+      },
+      {
+        name: "stage 3",
+        image: "images/trees/apricot/stage-3.png"
+      },
+      {
+        name: "stage 4",
+        image: "images/trees/apricot/stage-4.png"
+      },
+      {
+        name: "mature",
+        image: "images/trees/apricot/stage-5.png"
+      }
     ],
     produce: {
       id: "634",
       name: "Apricot",
       sellPrice: 50,
+      profession: ["tiller"],
       image: "images/trees/apricot/crop.png",
-      energyHealth: { energy: 38, health: 17 }
-    }
+      energyHealth: {
+        energy: 38,
+        health: 17
+      },
+      artisanUses: {
+        honey: false,
+        wine: true,
+        juice: false,
+        pickles: false,
+        jelly: true,
+        driedMushrooms: false,
+        driedFruit: true
+      }
+    },
+    choppedProduce: [
+      {
+        id: "629",
+        name: "Apricot Sapling"
+      }
+    ]
   },
   {
     type: "fruit-tree",
@@ -17636,8 +24471,14 @@ var trees_default = [
     saplingId: "628",
     saplingName: "Cherry Sapling",
     saplingBuyPrices: [
-      { place: "Pierre's", price: 3400 },
-      { place: "JojaMart", price: 4250 }
+      {
+        place: "Pierre's",
+        price: 3400
+      },
+      {
+        place: "JojaMart",
+        price: 4250
+      }
     ],
     saplingSellPrice: 850,
     seasons: ["spring"],
@@ -17646,19 +24487,53 @@ var trees_default = [
     image: "images/trees/cherry/harvest.png",
     saplingImage: "images/trees/cherry/seed.png",
     stages: [
-      { name: "stage 1", image: "images/trees/cherry/stage-1.png" },
-      { name: "stage 2", image: "images/trees/cherry/stage-2.png" },
-      { name: "stage 3", image: "images/trees/cherry/stage-3.png" },
-      { name: "stage 4", image: "images/trees/cherry/stage-4.png" },
-      { name: "mature", image: "images/trees/cherry/stage-5.png" }
+      {
+        name: "stage 1",
+        image: "images/trees/cherry/stage-1.png"
+      },
+      {
+        name: "stage 2",
+        image: "images/trees/cherry/stage-2.png"
+      },
+      {
+        name: "stage 3",
+        image: "images/trees/cherry/stage-3.png"
+      },
+      {
+        name: "stage 4",
+        image: "images/trees/cherry/stage-4.png"
+      },
+      {
+        name: "mature",
+        image: "images/trees/cherry/stage-5.png"
+      }
     ],
     produce: {
       id: "638",
       name: "Cherry",
       sellPrice: 80,
+      profession: ["tiller"],
       image: "images/trees/cherry/crop.png",
-      energyHealth: { energy: 38, health: 17 }
-    }
+      energyHealth: {
+        energy: 38,
+        health: 17
+      },
+      artisanUses: {
+        honey: false,
+        wine: true,
+        juice: false,
+        pickles: false,
+        jelly: true,
+        driedMushrooms: false,
+        driedFruit: true
+      }
+    },
+    choppedProduce: [
+      {
+        id: "628",
+        name: "Cherry Sapling"
+      }
+    ]
   },
   {
     type: "fruit-tree",
@@ -17667,8 +24542,14 @@ var trees_default = [
     saplingId: "630",
     saplingName: "Orange Sapling",
     saplingBuyPrices: [
-      { place: "Pierre's", price: 4e3 },
-      { place: "JojaMart", price: 5e3 }
+      {
+        place: "Pierre's",
+        price: 4e3
+      },
+      {
+        place: "JojaMart",
+        price: 5e3
+      }
     ],
     saplingSellPrice: 1e3,
     seasons: ["summer"],
@@ -17677,19 +24558,53 @@ var trees_default = [
     image: "images/trees/orange/harvest.png",
     saplingImage: "images/trees/orange/seed.png",
     stages: [
-      { name: "stage 1", image: "images/trees/orange/stage-1.png" },
-      { name: "stage 2", image: "images/trees/orange/stage-2.png" },
-      { name: "stage 3", image: "images/trees/orange/stage-3.png" },
-      { name: "stage 4", image: "images/trees/orange/stage-4.png" },
-      { name: "mature", image: "images/trees/orange/stage-5.png" }
+      {
+        name: "stage 1",
+        image: "images/trees/orange/stage-1.png"
+      },
+      {
+        name: "stage 2",
+        image: "images/trees/orange/stage-2.png"
+      },
+      {
+        name: "stage 3",
+        image: "images/trees/orange/stage-3.png"
+      },
+      {
+        name: "stage 4",
+        image: "images/trees/orange/stage-4.png"
+      },
+      {
+        name: "mature",
+        image: "images/trees/orange/stage-5.png"
+      }
     ],
     produce: {
       id: "635",
       name: "Orange",
       sellPrice: 100,
+      profession: ["tiller"],
       image: "images/trees/orange/crop.png",
-      energyHealth: { energy: 38, health: 17 }
-    }
+      energyHealth: {
+        energy: 38,
+        health: 17
+      },
+      artisanUses: {
+        honey: false,
+        wine: true,
+        juice: false,
+        pickles: false,
+        jelly: true,
+        driedMushrooms: false,
+        driedFruit: true
+      }
+    },
+    choppedProduce: [
+      {
+        id: "630",
+        name: "Orange Sapling"
+      }
+    ]
   },
   {
     type: "fruit-tree",
@@ -17698,8 +24613,14 @@ var trees_default = [
     saplingId: "631",
     saplingName: "Peach Sapling",
     saplingBuyPrices: [
-      { place: "Pierre's", price: 6e3 },
-      { place: "JojaMart", price: 7500 }
+      {
+        place: "Pierre's",
+        price: 6e3
+      },
+      {
+        place: "JojaMart",
+        price: 7500
+      }
     ],
     saplingSellPrice: 1500,
     seasons: ["summer"],
@@ -17708,19 +24629,53 @@ var trees_default = [
     image: "images/trees/peach/harvest.png",
     saplingImage: "images/trees/peach/seed.png",
     stages: [
-      { name: "stage 1", image: "images/trees/peach/stage-1.png" },
-      { name: "stage 2", image: "images/trees/peach/stage-2.png" },
-      { name: "stage 3", image: "images/trees/peach/stage-3.png" },
-      { name: "stage 4", image: "images/trees/peach/stage-4.png" },
-      { name: "mature", image: "images/trees/peach/stage-5.png" }
+      {
+        name: "stage 1",
+        image: "images/trees/peach/stage-1.png"
+      },
+      {
+        name: "stage 2",
+        image: "images/trees/peach/stage-2.png"
+      },
+      {
+        name: "stage 3",
+        image: "images/trees/peach/stage-3.png"
+      },
+      {
+        name: "stage 4",
+        image: "images/trees/peach/stage-4.png"
+      },
+      {
+        name: "mature",
+        image: "images/trees/peach/stage-5.png"
+      }
     ],
     produce: {
       id: "636",
       name: "Peach",
       sellPrice: 140,
+      profession: ["tiller"],
       image: "images/trees/peach/crop.png",
-      energyHealth: { energy: 38, health: 17 }
-    }
+      energyHealth: {
+        energy: 38,
+        health: 17
+      },
+      artisanUses: {
+        honey: false,
+        wine: true,
+        juice: false,
+        pickles: false,
+        jelly: true,
+        driedMushrooms: false,
+        driedFruit: true
+      }
+    },
+    choppedProduce: [
+      {
+        id: "631",
+        name: "Peach Sapling"
+      }
+    ]
   },
   {
     type: "fruit-tree",
@@ -17736,19 +24691,53 @@ var trees_default = [
     image: "images/trees/banana/harvest.png",
     saplingImage: "images/trees/banana/seed.png",
     stages: [
-      { name: "stage 1", image: "images/trees/banana/stage-1.png" },
-      { name: "stage 2", image: "images/trees/banana/stage-2.png" },
-      { name: "stage 3", image: "images/trees/banana/stage-3.png" },
-      { name: "stage 4", image: "images/trees/banana/stage-4.png" },
-      { name: "mature", image: "images/trees/banana/stage-5.png" }
+      {
+        name: "stage 1",
+        image: "images/trees/banana/stage-1.png"
+      },
+      {
+        name: "stage 2",
+        image: "images/trees/banana/stage-2.png"
+      },
+      {
+        name: "stage 3",
+        image: "images/trees/banana/stage-3.png"
+      },
+      {
+        name: "stage 4",
+        image: "images/trees/banana/stage-4.png"
+      },
+      {
+        name: "mature",
+        image: "images/trees/banana/stage-5.png"
+      }
     ],
     produce: {
       id: "91",
       name: "Banana",
       sellPrice: 150,
+      profession: ["tiller"],
       image: "images/trees/banana/crop.png",
-      energyHealth: { energy: 75, health: 33 }
-    }
+      energyHealth: {
+        energy: 75,
+        health: 33
+      },
+      artisanUses: {
+        honey: false,
+        wine: true,
+        juice: false,
+        pickles: false,
+        jelly: true,
+        driedMushrooms: false,
+        driedFruit: true
+      }
+    },
+    choppedProduce: [
+      {
+        id: "69",
+        name: "Banana Sapling"
+      }
+    ]
   },
   {
     type: "fruit-tree",
@@ -17764,19 +24753,53 @@ var trees_default = [
     image: "images/trees/mango/harvest.png",
     saplingImage: "images/trees/mango/seed.png",
     stages: [
-      { name: "stage 1", image: "images/trees/mango/stage-1.png" },
-      { name: "stage 2", image: "images/trees/mango/stage-2.png" },
-      { name: "stage 3", image: "images/trees/mango/stage-3.png" },
-      { name: "stage 4", image: "images/trees/mango/stage-4.png" },
-      { name: "mature", image: "images/trees/mango/stage-5.png" }
+      {
+        name: "stage 1",
+        image: "images/trees/mango/stage-1.png"
+      },
+      {
+        name: "stage 2",
+        image: "images/trees/mango/stage-2.png"
+      },
+      {
+        name: "stage 3",
+        image: "images/trees/mango/stage-3.png"
+      },
+      {
+        name: "stage 4",
+        image: "images/trees/mango/stage-4.png"
+      },
+      {
+        name: "mature",
+        image: "images/trees/mango/stage-5.png"
+      }
     ],
     produce: {
       id: "834",
       name: "Mango",
       sellPrice: 130,
+      profession: ["tiller"],
       image: "images/trees/mango/crop.png",
-      energyHealth: { energy: 100, health: 45 }
-    }
+      energyHealth: {
+        energy: 100,
+        health: 45
+      },
+      artisanUses: {
+        honey: false,
+        wine: true,
+        juice: false,
+        pickles: false,
+        jelly: true,
+        driedMushrooms: false,
+        driedFruit: true
+      }
+    },
+    choppedProduce: [
+      {
+        id: "835",
+        name: "Mango Sapling"
+      }
+    ]
   },
   {
     type: "fruit-tree",
@@ -17785,8 +24808,14 @@ var trees_default = [
     saplingId: "633",
     saplingName: "Apple Sapling",
     saplingBuyPrices: [
-      { place: "Pierre's", price: 4e3 },
-      { place: "JojaMart", price: 5e3 }
+      {
+        place: "Pierre's",
+        price: 4e3
+      },
+      {
+        place: "JojaMart",
+        price: 5e3
+      }
     ],
     saplingSellPrice: 1e3,
     seasons: ["fall"],
@@ -17795,19 +24824,53 @@ var trees_default = [
     image: "images/trees/apple/harvest.png",
     saplingImage: "images/trees/apple/seed.png",
     stages: [
-      { name: "stage 1", image: "images/trees/apple/stage-1.png" },
-      { name: "stage 2", image: "images/trees/apple/stage-2.png" },
-      { name: "stage 3", image: "images/trees/apple/stage-3.png" },
-      { name: "stage 4", image: "images/trees/apple/stage-4.png" },
-      { name: "mature", image: "images/trees/apple/stage-5.png" }
+      {
+        name: "stage 1",
+        image: "images/trees/apple/stage-1.png"
+      },
+      {
+        name: "stage 2",
+        image: "images/trees/apple/stage-2.png"
+      },
+      {
+        name: "stage 3",
+        image: "images/trees/apple/stage-3.png"
+      },
+      {
+        name: "stage 4",
+        image: "images/trees/apple/stage-4.png"
+      },
+      {
+        name: "mature",
+        image: "images/trees/apple/stage-5.png"
+      }
     ],
     produce: {
       id: "613",
       name: "Apple",
       sellPrice: 100,
+      profession: ["tiller"],
       image: "images/trees/apple/crop.png",
-      energyHealth: { energy: 38, health: 17 }
-    }
+      energyHealth: {
+        energy: 38,
+        health: 17
+      },
+      artisanUses: {
+        honey: false,
+        wine: true,
+        juice: false,
+        pickles: false,
+        jelly: true,
+        driedMushrooms: false,
+        driedFruit: true
+      }
+    },
+    choppedProduce: [
+      {
+        id: "633",
+        name: "Apple Sapling"
+      }
+    ]
   },
   {
     type: "fruit-tree",
@@ -17816,8 +24879,14 @@ var trees_default = [
     saplingId: "632",
     saplingName: "Pomegranate Sapling",
     saplingBuyPrices: [
-      { place: "Pierre's", price: 6e3 },
-      { place: "JojaMart", price: 7500 }
+      {
+        place: "Pierre's",
+        price: 6e3
+      },
+      {
+        place: "JojaMart",
+        price: 7500
+      }
     ],
     saplingSellPrice: 1500,
     seasons: ["fall"],
@@ -17826,19 +24895,53 @@ var trees_default = [
     image: "images/trees/pomegranate/harvest.png",
     saplingImage: "images/trees/pomegranate/seed.png",
     stages: [
-      { name: "stage 1", image: "images/trees/pomegranate/stage-1.png" },
-      { name: "stage 2", image: "images/trees/pomegranate/stage-2.png" },
-      { name: "stage 3", image: "images/trees/pomegranate/stage-3.png" },
-      { name: "stage 4", image: "images/trees/pomegranate/stage-4.png" },
-      { name: "mature", image: "images/trees/pomegranate/stage-5.png" }
+      {
+        name: "stage 1",
+        image: "images/trees/pomegranate/stage-1.png"
+      },
+      {
+        name: "stage 2",
+        image: "images/trees/pomegranate/stage-2.png"
+      },
+      {
+        name: "stage 3",
+        image: "images/trees/pomegranate/stage-3.png"
+      },
+      {
+        name: "stage 4",
+        image: "images/trees/pomegranate/stage-4.png"
+      },
+      {
+        name: "mature",
+        image: "images/trees/pomegranate/stage-5.png"
+      }
     ],
     produce: {
       id: "637",
       name: "Pomegranate",
       sellPrice: 140,
+      profession: ["tiller"],
       image: "images/trees/pomegranate/crop.png",
-      energyHealth: { energy: 38, health: 17 }
-    }
+      energyHealth: {
+        energy: 38,
+        health: 17
+      },
+      artisanUses: {
+        honey: false,
+        wine: true,
+        juice: false,
+        pickles: false,
+        jelly: true,
+        driedMushrooms: false,
+        driedFruit: true
+      }
+    },
+    choppedProduce: [
+      {
+        id: "632",
+        name: "Pomegranate Sapling"
+      }
+    ]
   },
   {
     type: "wild-tree",
@@ -17847,21 +24950,51 @@ var trees_default = [
     seedId: "309",
     seedName: "Acorn",
     description: "A sturdy deciduous tree common throughout the valley. Can be tapped for Oak Resin.",
-    image: "images/trees/oak/stage-5.png",
+    image: "images/trees/oak/portrait.png",
     seedImage: "images/trees/oak/seed.png",
     stages: [
-      { name: "stage 1", image: "images/trees/oak/stage-1.png" },
-      { name: "stage 2", image: "images/trees/oak/stage-2.png" },
-      { name: "stage 3", image: "images/trees/oak/stage-3.png" },
-      { name: "stage 4", image: "images/trees/oak/stage-4.png" },
-      { name: "mature", image: "images/trees/oak/stage-5.png" }
+      {
+        name: "stage 1",
+        image: "images/trees/oak/stage-1.png"
+      },
+      {
+        name: "stage 2",
+        image: "images/trees/oak/stage-2.png"
+      },
+      {
+        name: "stage 3",
+        image: "images/trees/oak/stage-3.png"
+      },
+      {
+        name: "stage 4",
+        image: "images/trees/oak/stage-4.png"
+      },
+      {
+        name: "mature",
+        image: "images/trees/oak/stage-5.png"
+      }
     ],
     tapper: {
       id: "725",
       name: "Oak Resin",
       sellPrice: 150,
+      profession: ["tapper"],
       image: "images/forageables/Oak Resin.png"
-    }
+    },
+    choppedProduce: [
+      {
+        id: "388",
+        name: "Wood"
+      },
+      {
+        id: "92",
+        name: "Sap"
+      },
+      {
+        id: "309",
+        name: "Acorn"
+      }
+    ]
   },
   {
     type: "wild-tree",
@@ -17870,22 +25003,55 @@ var trees_default = [
     seedId: "310",
     seedName: "Maple Seed",
     description: "A beautiful tree with vibrant fall colors. Produces a sweet, valuable syrup.",
-    image: "images/trees/maple/stage-5.png",
+    image: "images/trees/maple/portrait.png",
     seedImage: "images/trees/maple/seed.png",
     stages: [
-      { name: "stage 1", image: "images/trees/maple/stage-1.png" },
-      { name: "stage 2", image: "images/trees/maple/stage-2.png" },
-      { name: "stage 3", image: "images/trees/maple/stage-3.png" },
-      { name: "stage 4", image: "images/trees/maple/stage-4.png" },
-      { name: "mature", image: "images/trees/maple/stage-5.png" }
+      {
+        name: "stage 1",
+        image: "images/trees/maple/stage-1.png"
+      },
+      {
+        name: "stage 2",
+        image: "images/trees/maple/stage-2.png"
+      },
+      {
+        name: "stage 3",
+        image: "images/trees/maple/stage-3.png"
+      },
+      {
+        name: "stage 4",
+        image: "images/trees/maple/stage-4.png"
+      },
+      {
+        name: "mature",
+        image: "images/trees/maple/stage-5.png"
+      }
     ],
     tapper: {
       id: "724",
       name: "Maple Syrup",
       sellPrice: 200,
+      profession: ["tapper"],
       image: "images/forageables/Maple Syrup.png",
-      energyHealth: { energy: 50, health: 22 }
-    }
+      energyHealth: {
+        energy: 50,
+        health: 22
+      }
+    },
+    choppedProduce: [
+      {
+        id: "388",
+        name: "Wood"
+      },
+      {
+        id: "92",
+        name: "Sap"
+      },
+      {
+        id: "310",
+        name: "Maple Seed"
+      }
+    ]
   },
   {
     type: "wild-tree",
@@ -17894,21 +25060,51 @@ var trees_default = [
     seedId: "311",
     seedName: "Pine Cone",
     description: "A resilient evergreen that stays green throughout the year.",
-    image: "images/trees/pine/stage-5.png",
+    image: "images/trees/pine/portrait.png",
     seedImage: "images/trees/pine/seed.png",
     stages: [
-      { name: "stage 1", image: "images/trees/pine/stage-1.png" },
-      { name: "stage 2", image: "images/trees/pine/stage-2.png" },
-      { name: "stage 3", image: "images/trees/pine/stage-3.png" },
-      { name: "stage 4", image: "images/trees/pine/stage-4.png" },
-      { name: "mature", image: "images/trees/pine/stage-5.png" }
+      {
+        name: "stage 1",
+        image: "images/trees/pine/stage-1.png"
+      },
+      {
+        name: "stage 2",
+        image: "images/trees/pine/stage-2.png"
+      },
+      {
+        name: "stage 3",
+        image: "images/trees/pine/stage-3.png"
+      },
+      {
+        name: "stage 4",
+        image: "images/trees/pine/stage-4.png"
+      },
+      {
+        name: "mature",
+        image: "images/trees/pine/stage-5.png"
+      }
     ],
     tapper: {
       id: "726",
       name: "Pine Tar",
       sellPrice: 100,
+      profession: ["tapper"],
       image: "images/forageables/Pine Tar.png"
-    }
+    },
+    choppedProduce: [
+      {
+        id: "388",
+        name: "Wood"
+      },
+      {
+        id: "92",
+        name: "Sap"
+      },
+      {
+        id: "311",
+        name: "Pine Cone"
+      }
+    ]
   },
   {
     type: "wild-tree",
@@ -17917,22 +25113,51 @@ var trees_default = [
     seedId: "292",
     seedName: "Mahogany Seed",
     description: "A rare hardwood tree. When tapped, it produces sap every day.",
-    image: "images/trees/mahogany/stage-5.png",
+    image: "images/trees/mahogany/portrait.png",
     seedImage: "images/trees/mahogany/seed.png",
     stages: [
-      { name: "stage 1", image: "images/trees/mahogany/stage-1.png" },
-      { name: "stage 2", image: "images/trees/mahogany/stage-2.png" },
-      { name: "stage 3", image: "images/trees/mahogany/stage-3.png" },
-      { name: "stage 4", image: "images/trees/mahogany/stage-4.png" },
-      { name: "mature", image: "images/trees/mahogany/stage-5.png" }
+      {
+        name: "stage 1",
+        image: "images/trees/mahogany/stage-1.png"
+      },
+      {
+        name: "stage 2",
+        image: "images/trees/mahogany/stage-2.png"
+      },
+      {
+        name: "stage 3",
+        image: "images/trees/mahogany/stage-3.png"
+      },
+      {
+        name: "stage 4",
+        image: "images/trees/mahogany/stage-4.png"
+      },
+      {
+        name: "mature",
+        image: "images/trees/mahogany/stage-5.png"
+      }
     ],
     tapper: {
       id: "92",
       name: "Sap",
       sellPrice: 2,
+      profession: [],
       image: "images/forageables/Sap.png",
-      energyHealth: { energy: -2, health: -1 }
-    }
+      energyHealth: {
+        energy: -2,
+        health: -1
+      }
+    },
+    choppedProduce: [
+      {
+        id: "292",
+        name: "Mahogany Seed"
+      },
+      {
+        id: "709",
+        name: "Hardwood"
+      }
+    ]
   },
   {
     type: "wild-tree",
@@ -17941,22 +25166,55 @@ var trees_default = [
     seedId: "891",
     seedName: "Mushroom Tree Seed",
     description: "A peculiar tree covered in fungi. Produces mushrooms when tapped.",
-    image: "images/trees/mushroom/stage-5.png",
+    image: "images/trees/mushroom/portrait.png",
     seedImage: "images/trees/mushroom/seed.png",
     stages: [
-      { name: "stage 1", image: "images/trees/mushroom/stage-1.png" },
-      { name: "stage 2", image: "images/trees/mushroom/stage-2.png" },
-      { name: "stage 3", image: "images/trees/mushroom/stage-3.png" },
-      { name: "stage 4", image: "images/trees/mushroom/stage-4.png" },
-      { name: "mature", image: "images/trees/mushroom/stage-5.png" }
+      {
+        name: "stage 1",
+        image: "images/trees/mushroom/stage-1.png"
+      },
+      {
+        name: "stage 2",
+        image: "images/trees/mushroom/stage-2.png"
+      },
+      {
+        name: "stage 3",
+        image: "images/trees/mushroom/stage-3.png"
+      },
+      {
+        name: "stage 4",
+        image: "images/trees/mushroom/stage-4.png"
+      },
+      {
+        name: "mature",
+        image: "images/trees/mushroom/stage-5.png"
+      }
     ],
     tapper: {
       id: "404",
       name: "Common Mushroom",
       sellPrice: 40,
+      profession: ["tapper"],
       image: "images/forageables/Common Mushroom.png",
-      energyHealth: { energy: 38, health: 17 }
-    }
+      energyHealth: {
+        energy: 38,
+        health: 17
+      }
+    },
+    choppedProduce: [
+      {
+        id: "388",
+        name: "Wood"
+      },
+      {
+        id: "92",
+        name: "Sap"
+      },
+      {
+        id: "891",
+        name: "Mushroom Tree Seed"
+      }
+    ]
   },
   {
     type: "wild-tree",
@@ -17965,22 +25223,144 @@ var trees_default = [
     seedId: "MysticTreeSeed",
     seedName: "Mystic Tree Seed",
     description: "Not native to the valley. This otherworldly tree produces a powerful mystic syrup.",
-    image: "images/trees/mystic/stage-5.png",
+    image: "images/trees/mystic/portrait.png",
     seedImage: "images/trees/mystic/seed.png",
     stages: [
-      { name: "stage 1", image: "images/trees/mystic/stage-1.png" },
-      { name: "stage 2", image: "images/trees/mystic/stage-2.png" },
-      { name: "stage 3", image: "images/trees/mystic/stage-3.png" },
-      { name: "stage 4", image: "images/trees/mystic/stage-4.png" },
-      { name: "mature", image: "images/trees/mystic/stage-5.png" }
+      {
+        name: "stage 1",
+        image: "images/trees/mystic/stage-1.png"
+      },
+      {
+        name: "stage 2",
+        image: "images/trees/mystic/stage-2.png"
+      },
+      {
+        name: "stage 3",
+        image: "images/trees/mystic/stage-3.png"
+      },
+      {
+        name: "stage 4",
+        image: "images/trees/mystic/stage-4.png"
+      },
+      {
+        name: "mature",
+        image: "images/trees/mystic/stage-5.png"
+      }
     ],
     tapper: {
       id: "MysticSyrup",
       name: "Mystic Syrup",
       sellPrice: 1e3,
+      profession: ["tapper"],
       image: "images/forageables/Mystic Syrup.png",
-      energyHealth: { energy: 500, health: 225 }
-    }
+      energyHealth: {
+        energy: 500,
+        health: 225
+      }
+    },
+    choppedProduce: [
+      {
+        id: "388",
+        name: "Wood"
+      },
+      {
+        id: "92",
+        name: "Sap"
+      },
+      {
+        id: "MysticTreeSeed",
+        name: "Mystic Tree Seed"
+      }
+    ]
+  },
+  {
+    type: "wild-tree",
+    id: "12",
+    name: "Fiddlehead Stalk",
+    seedId: "MossySeed",
+    seedName: "Mossy Seed",
+    description: "A peculiar tree that grows from Mossy Seeds. Yields Fiddlehead Ferns instead of wood when chopped. Becomes a stump during winter.",
+    image: "images/trees/fiddlehead/portrait.png",
+    seedImage: "images/trees/fiddlehead/seed.png",
+    stages: [
+      {
+        name: "stage 1",
+        image: "images/trees/fiddlehead/stage-1.png"
+      },
+      {
+        name: "stage 2",
+        image: "images/trees/fiddlehead/stage-2.png"
+      },
+      {
+        name: "stage 3",
+        image: "images/trees/fiddlehead/stage-3.png"
+      },
+      {
+        name: "stage 4",
+        image: "images/trees/fiddlehead/stage-4.png"
+      },
+      {
+        name: "mature",
+        image: "images/trees/fiddlehead/stage-5.png"
+      }
+    ],
+    tapper: {
+      id: "259",
+      name: "Fiddlehead Fern",
+      sellPrice: 90,
+      profession: ["tiller"],
+      image: "images/forageables/Fiddlehead Fern.png",
+      energyHealth: {
+        energy: 25,
+        health: 11
+      }
+    },
+    choppedProduce: [
+      {
+        id: "259",
+        name: "Fiddlehead Fern"
+      },
+      {
+        id: "MossySeed",
+        name: "Mossy Seed"
+      }
+    ]
+  },
+  {
+    type: "wild-tree",
+    id: "6",
+    name: "Palm Tree",
+    description: "A tall tree found in the Calico Desert and on Ginger Island. Cannot be cultivated by players. Shaking or chopping it may yield a Coconut.",
+    image: "images/trees/palm/portrait.png",
+    stages: [
+      {
+        name: "stage 1",
+        image: "images/trees/palm/stage-1.png"
+      },
+      {
+        name: "stage 2",
+        image: "images/trees/palm/stage-2.png"
+      },
+      {
+        name: "mature",
+        image: "images/trees/palm/stage-3.png"
+      }
+    ],
+    choppedProduce: [
+      {
+        id: "388",
+        name: "Wood"
+      },
+      {
+        id: "88",
+        name: "Coconut"
+      },
+      {
+        id: "791",
+        name: "Golden Coconut",
+        image: "images/minerals/geodes/Golden Coconut.png"
+      }
+    ]
   }
 ];
 
@@ -18002,6 +25382,12 @@ var TreeQuery = class _TreeQuery extends QueryBase {
   bySeason(season) {
     return new _TreeQuery(
       this.data.filter((t) => t.type === "fruit-tree" && t.seasons.includes(season))
+    );
+  }
+  /** Filter to fruit trees whose produce can be used for the given artisan good. Wild trees always return false for all uses. */
+  byArtisanUse(use) {
+    return new _TreeQuery(
+      this.data.filter((t) => t.type === "fruit-tree" && t.produce.artisanUses[use])
     );
   }
   /** Filter to wild trees that can be tapped (have a `tapper` product). */
@@ -19240,12 +26626,12 @@ function search(query, kinds) {
           sellPrice: null
         });
       }
-      if (matches(query, tree.seedId, tree.seedName)) {
+      if (tree.seedId && tree.seedName && matches(query, tree.seedId, tree.seedName)) {
         add({
           kind: "wild-tree-seed",
           id: tree.seedId,
           name: tree.seedName,
-          image: tree.seedImage,
+          image: tree.seedImage ?? "",
           sellPrice: null
         });
       }
@@ -19337,6 +26723,12 @@ function search(query, kinds) {
         const image = tool.levels.find((l) => l.image !== null)?.image;
         if (image) {
           add({ kind: "tool", id: tool.id, name: tool.name, image, sellPrice: null });
+        }
+      }
+    } else if (tool.type === "fishing-rod") {
+      for (const level of tool.levels) {
+        if (matches(query, level.name, level.name)) {
+          add({ kind: "tool", id: tool.id, name: level.name, image: level.image, sellPrice: null });
         }
       }
     } else {
@@ -19491,6 +26883,11 @@ function search(query, kinds) {
       }
     }
   }
+  for (const crow of rarecrows().get()) {
+    if (matches(query, crow.id, crow.name)) {
+      add({ kind: "rarecrow", id: crow.id, name: crow.name, image: crow.image, sellPrice: null });
+    }
+  }
   return dedupe(raw);
 }
 
@@ -19507,15 +26904,20 @@ var skills_default = [
         level: 1,
         xpRequired: 100,
         totalXp: 100,
-        recipes: { crafting: ["Scarecrow"], cooking: [] }
+        recipes: {
+          crafting: ["Scarecrow", "Basic Fertilizer"],
+          cooking: [],
+          additional: []
+        }
       },
       {
         level: 2,
         xpRequired: 280,
         totalXp: 380,
         recipes: {
-          crafting: ["Basic Fertilizer", "Mayonnaise Machine", "Stone Fence"],
-          cooking: []
+          crafting: ["Mayonnaise Machine", "Stone Fence", "Sprinkler"],
+          cooking: [],
+          additional: []
         }
       },
       {
@@ -19523,8 +26925,9 @@ var skills_default = [
         xpRequired: 390,
         totalXp: 770,
         recipes: {
-          crafting: ["Bee House", "Sprinkler", "Speed-Gro"],
-          cooking: ["Farmer's Lunch"]
+          crafting: ["Bee House", "Speed-Gro"],
+          cooking: ["Farmer's Lunch"],
+          additional: []
         }
       },
       {
@@ -19533,14 +26936,19 @@ var skills_default = [
         totalXp: 1300,
         recipes: {
           crafting: ["Preserves Jar", "Basic Retaining Soil", "Iron Fence"],
-          cooking: []
+          cooking: [],
+          additional: []
         }
       },
       {
         level: 5,
         xpRequired: 850,
         totalXp: 2150,
-        recipes: { crafting: [], cooking: [] }
+        recipes: {
+          crafting: [],
+          cooking: [],
+          additional: []
+        }
       },
       {
         level: 6,
@@ -19548,32 +26956,45 @@ var skills_default = [
         totalXp: 3300,
         recipes: {
           crafting: ["Cheese Press", "Hardwood Fence", "Quality Sprinkler"],
-          cooking: []
+          cooking: [],
+          additional: []
         }
       },
       {
         level: 7,
         xpRequired: 1500,
         totalXp: 4800,
-        recipes: { crafting: ["Loom", "Quality Retaining Soil", "Oil Maker"], cooking: [] }
+        recipes: {
+          crafting: ["Loom", "Quality Retaining Soil"],
+          cooking: [],
+          additional: []
+        }
       },
       {
         level: 8,
         xpRequired: 2100,
         totalXp: 6900,
-        recipes: { crafting: ["Keg", "Deluxe Speed-Gro", "Seed Maker"], cooking: [] }
+        recipes: {
+          crafting: ["Oil Maker", "Keg", "Deluxe Speed-Gro"],
+          cooking: [],
+          additional: []
+        }
       },
       {
         level: 9,
         xpRequired: 3100,
         totalXp: 1e4,
-        recipes: { crafting: ["Iridium Sprinkler", "Quality Fertilizer"], cooking: [] }
+        recipes: {
+          crafting: ["Seed Maker", "Iridium Sprinkler", "Quality Fertilizer"],
+          cooking: [],
+          additional: []
+        }
       },
       {
         level: 10,
         xpRequired: 5e3,
         totalXp: 15e3,
-        recipes: { crafting: [], cooking: [] }
+        recipes: { crafting: [], cooking: [], additional: [] }
       }
     ],
     mastery: {
@@ -19604,64 +27025,69 @@ var skills_default = [
         level: 1,
         xpRequired: 100,
         totalXp: 100,
-        recipes: { crafting: ["Cherry Bomb"], cooking: [] }
+        recipes: { crafting: ["Cherry Bomb"], cooking: [], additional: [] }
       },
       {
         level: 2,
         xpRequired: 280,
         totalXp: 380,
-        recipes: { crafting: ["Staircase"], cooking: [] }
+        recipes: { crafting: ["Staircase"], cooking: [], additional: [] }
       },
       {
         level: 3,
         xpRequired: 390,
         totalXp: 770,
         recipes: {
-          crafting: ["Glowstone Ring", "Transmute (Fe)"],
-          cooking: ["Miner's Treat"]
+          crafting: [],
+          cooking: ["Miner's Treat"],
+          additional: []
         }
       },
       {
         level: 4,
         xpRequired: 530,
         totalXp: 1300,
-        recipes: { crafting: [], cooking: [] }
+        recipes: {
+          crafting: ["Glowstone Ring", "Transmute (Fe)"],
+          cooking: [],
+          additional: []
+        }
       },
       {
         level: 5,
         xpRequired: 850,
         totalXp: 2150,
-        recipes: { crafting: [], cooking: [] }
+        recipes: { crafting: [], cooking: [], additional: [] }
       },
       {
         level: 6,
         xpRequired: 1150,
         totalXp: 3300,
-        recipes: { crafting: ["Bomb"], cooking: [] }
+        recipes: { crafting: ["Bomb"], cooking: [], additional: [] }
       },
       {
         level: 7,
         xpRequired: 1500,
         totalXp: 4800,
-        recipes: { crafting: ["Transmute (Au)", "Mega Bomb"], cooking: [] }
+        recipes: { crafting: ["Transmute (Au)"], cooking: [], additional: [] }
       },
       {
         level: 8,
         xpRequired: 2100,
         totalXp: 6900,
-        recipes: { crafting: ["Crystalarium"], cooking: [] }
+        recipes: { crafting: ["Mega Bomb"], cooking: [], additional: [] }
       },
       {
         level: 9,
         xpRequired: 3100,
         totalXp: 1e4,
-        recipes: { crafting: [], cooking: [] }
+        recipes: { crafting: ["Crystalarium"], cooking: [], additional: [] }
       },
       {
         level: 10,
         xpRequired: 5e3,
         totalXp: 15e3,
-        recipes: { crafting: [], cooking: [] }
+        recipes: { crafting: [], cooking: [], additional: [] }
       }
     ],
     mastery: {
@@ -19689,64 +27115,85 @@ var skills_default = [
         level: 1,
         xpRequired: 100,
         totalXp: 100,
-        recipes: { crafting: ["Wild Seeds (Spring)"], cooking: ["Field Snack"] }
+        recipes: {
+          crafting: ["Wild Seeds (Sp)", "Field Snack"],
+          cooking: [],
+          additional: ["Trees sometimes drop seeds."]
+        }
       },
       {
         level: 2,
         xpRequired: 280,
         totalXp: 380,
-        recipes: { crafting: ["Charcoal Kiln"], cooking: [] }
+        recipes: { crafting: ["Charcoal Kiln"], cooking: [], additional: [] }
       },
       {
         level: 3,
         xpRequired: 390,
         totalXp: 770,
-        recipes: { crafting: ["Cookout Kit"], cooking: ["Moss Soup"] }
+        recipes: { crafting: ["Cookout Kit"], cooking: ["Moss Soup"], additional: [] }
       },
       {
         level: 4,
         xpRequired: 530,
         totalXp: 1300,
-        recipes: { crafting: ["Wild Seeds (Summer)", "Tapper", "Mushroom Log"], cooking: [] }
+        recipes: {
+          crafting: ["Wild Seeds (Su)", "Tapper", "Mushroom Log"],
+          cooking: [],
+          additional: ["+1 Wild Berry harvesting"]
+        }
       },
       {
         level: 5,
         xpRequired: 850,
         totalXp: 2150,
-        recipes: { crafting: [], cooking: [] }
+        recipes: { crafting: [], cooking: [], additional: [] }
       },
       {
         level: 6,
         xpRequired: 1150,
         totalXp: 3300,
-        recipes: { crafting: ["Lightning Rod", "Wild Seeds (Fall)"], cooking: [] }
+        recipes: {
+          crafting: ["Lightning Rod", "Wild Seeds (Fa)", "Warp Totem: Beach"],
+          cooking: [],
+          additional: []
+        }
       },
       {
         level: 7,
         xpRequired: 1500,
         totalXp: 4800,
-        recipes: { crafting: ["Warp Totem: Beach"], cooking: [] }
+        recipes: {
+          crafting: ["Wild Seeds (Wi)", "Warp Totem: Mountains", "Tree Fertilizer"],
+          cooking: [],
+          additional: []
+        }
       },
       {
         level: 8,
         xpRequired: 2100,
         totalXp: 6900,
         recipes: {
-          crafting: ["Wild Seeds (Winter)", "Warp Totem: Mountains", "Tree Fertilizer"],
-          cooking: []
+          crafting: ["Warp Totem: Farm", "Tent Kit"],
+          cooking: ["Survival Burger"],
+          additional: ["+1 Wild Berry harvesting"]
         }
       },
       {
         level: 9,
         xpRequired: 3100,
         totalXp: 1e4,
-        recipes: { crafting: ["Warp Totem: Farm", "Tent Kit"], cooking: ["Survival Burger"] }
+        recipes: {
+          crafting: ["Rain Totem"],
+          cooking: [],
+          additional: []
+        }
       },
       {
         level: 10,
         xpRequired: 5e3,
         totalXp: 15e3,
-        recipes: { crafting: [], cooking: [] }
+        recipes: { crafting: [], cooking: [], additional: [] }
       }
     ],
     mastery: {
@@ -19774,31 +27221,50 @@ var skills_default = [
         level: 1,
         xpRequired: 100,
         totalXp: 100,
-        recipes: { crafting: ["Bait"], cooking: [] }
+        recipes: {
+          crafting: [],
+          cooking: [],
+          additional: ["Casting distance increased by one tile"]
+        }
       },
       {
         level: 2,
         xpRequired: 280,
         totalXp: 380,
-        recipes: { crafting: [], cooking: [] }
+        recipes: {
+          crafting: ["Bait"],
+          cooking: [],
+          additional: ["Fiberglass Rod & Bait unlocked in Willy's Fish Shop"]
+        }
       },
       {
         level: 3,
         xpRequired: 390,
         totalXp: 770,
-        recipes: { crafting: ["Crab Pot"], cooking: ["Dish O' The Sea"] }
+        recipes: {
+          crafting: ["Crab Pot"],
+          cooking: ["Dish O' The Sea"],
+          additional: ["Crab Pot unlocked in Willy's Fish Shop"]
+        }
       },
       {
         level: 4,
         xpRequired: 530,
         totalXp: 1300,
-        recipes: { crafting: ["Deluxe Bait", "Worm Bin", "Recycling Machine"], cooking: [] }
+        recipes: {
+          crafting: ["Deluxe Bait", "Worm Bin", "Recycling Machine"],
+          cooking: [],
+          additional: [
+            "Deluxe Bait unlocked in Willy's Fish Shop",
+            "Casting distance increased by one tile"
+          ]
+        }
       },
       {
         level: 5,
         xpRequired: 850,
         totalXp: 2150,
-        recipes: { crafting: [], cooking: [] }
+        recipes: { crafting: [], cooking: [], additional: [] }
       },
       {
         level: 6,
@@ -19806,14 +27272,21 @@ var skills_default = [
         totalXp: 3300,
         recipes: {
           crafting: ["Bait Maker", "Spinner", "Trap Bobber", "Sonar Bobber"],
-          cooking: []
+          cooking: [],
+          additional: [
+            "Iridium Rod, Sonar Bobber, Lead Bobber, Spinner, Trap Bobber unlocked in Willy's Fish Shop"
+          ]
         }
       },
       {
         level: 7,
         xpRequired: 1500,
         totalXp: 4800,
-        recipes: { crafting: ["Cork Bobber", "Treasure Hunter"], cooking: [] }
+        recipes: {
+          crafting: ["Cork Bobber", "Treasure Hunter"],
+          cooking: [],
+          additional: ["Cork Bobber & Treasure Hunter unlocked in Willy's Fish Shop"]
+        }
       },
       {
         level: 8,
@@ -19821,20 +27294,28 @@ var skills_default = [
         totalXp: 6900,
         recipes: {
           crafting: ["Deluxe Worm Bin", "Barbed Hook", "Dressed Spinner"],
-          cooking: []
+          cooking: [],
+          additional: [
+            "Barbed Hook & Dressed Spinner unlocked in Willy's Fish Shop",
+            "Casting distance increased by one tile"
+          ]
         }
       },
       {
         level: 9,
         xpRequired: 3100,
         totalXp: 1e4,
-        recipes: { crafting: ["Magnet"], cooking: ["Seafoam Pudding"] }
+        recipes: {
+          crafting: ["Magnet"],
+          cooking: ["Seafoam Pudding"],
+          additional: ["Magnet unlocked in Willy's Fish Shop"]
+        }
       },
       {
         level: 10,
         xpRequired: 5e3,
         totalXp: 15e3,
-        recipes: { crafting: [], cooking: [] }
+        recipes: { crafting: [], cooking: [], additional: [] }
       }
     ],
     mastery: {
@@ -19865,64 +27346,73 @@ var skills_default = [
         level: 1,
         xpRequired: 100,
         totalXp: 100,
-        recipes: { crafting: ["Sturdy Ring"], cooking: ["Bug Steak"] }
+        recipes: { crafting: ["Sturdy Ring", "Bug Steak"], cooking: [], additional: [] }
       },
       {
         level: 2,
         xpRequired: 280,
         totalXp: 380,
-        recipes: { crafting: [], cooking: [] }
+        recipes: { crafting: ["Life Elixir"], cooking: [], additional: [] }
       },
       {
         level: 3,
         xpRequired: 390,
         totalXp: 770,
-        recipes: { crafting: ["Life Elixir"], cooking: [] }
+        recipes: { crafting: [], cooking: ["Roots Platter"], additional: [] }
       },
       {
         level: 4,
         xpRequired: 530,
         totalXp: 1300,
-        recipes: { crafting: [], cooking: ["Roots Platter"] }
+        recipes: { crafting: ["Warrior Ring"], cooking: [], additional: [] }
       },
       {
         level: 5,
         xpRequired: 850,
         totalXp: 2150,
-        recipes: { crafting: [], cooking: [] }
+        recipes: { crafting: [], cooking: [], additional: [] }
       },
       {
         level: 6,
         xpRequired: 1150,
         totalXp: 3300,
-        recipes: { crafting: ["Warrior Ring"], cooking: [] }
+        recipes: {
+          crafting: ["Slime Egg-Press", "Oil of Garlic"],
+          cooking: [],
+          additional: []
+        }
       },
       {
         level: 7,
         xpRequired: 1500,
         totalXp: 4800,
-        recipes: { crafting: [], cooking: [] }
+        recipes: { crafting: ["Ring of Yoba", "Thorns Ring"], cooking: [], additional: [] }
       },
       {
         level: 8,
         xpRequired: 2100,
         totalXp: 6900,
-        recipes: { crafting: ["Slime Egg-Press"], cooking: [] }
+        recipes: {
+          crafting: ["Slime Incubator", "Explosive Ammo"],
+          cooking: [],
+          additional: []
+        }
       },
       {
         level: 9,
         xpRequired: 3100,
         totalXp: 1e4,
         recipes: {
-          crafting: ["Oil of Garlic", "Ring of Yoba", "Thorns Ring", "Slime Incubator"],
-          cooking: []
+          crafting: ["Iridium Band"],
+          cooking: ["Squid Ink Ravioli"],
+          additional: []
         }
       },
       {
         level: 10,
         xpRequired: 5e3,
         totalXp: 15e3,
-        recipes: { crafting: [], cooking: [] }
+        recipes: { crafting: [], cooking: [], additional: [] }
       }
     ],
     mastery: {
@@ -20355,7 +27845,8 @@ var seasons_default = [
         image: "images/seasons/festivals/Flower Dance.jpg",
         calendarIcon: "images/seasons/calendar-icons/Festival Flag.gif"
       }
-    ]
+    ],
+    bookseller: [11, 12, 21, 22, 25]
   },
   {
     id: "summer",
@@ -20384,7 +27875,8 @@ var seasons_default = [
         image: "images/seasons/festivals/Dance of the Moonlight Jellies.jpg",
         calendarIcon: "images/seasons/calendar-icons/Festival Flag.gif"
       }
-    ]
+    ],
+    bookseller: [9, 12, 18, 25, 27]
   },
   {
     id: "fall",
@@ -20406,7 +27898,8 @@ var seasons_default = [
         image: "images/seasons/festivals/Spirit's Eve.png",
         calendarIcon: "images/seasons/calendar-icons/Festival Flag.gif"
       }
-    ]
+    ],
+    bookseller: [4, 7, 8, 9, 12, 19, 22, 25]
   },
   {
     id: "winter",
@@ -20442,7 +27935,8 @@ var seasons_default = [
         image: "images/seasons/festivals/Feast of the Winter Star.png",
         calendarIcon: "images/seasons/calendar-icons/Festival Flag.gif"
       }
-    ]
+    ],
+    bookseller: [5, 11, 12, 19, 22, 24]
   }
 ];
 
@@ -21072,11 +28566,57 @@ var villagers_default = [
   {
     id: "abigail",
     name: "Abigail",
-    birthday: { day: 13, season: "fall" },
+    birthday: {
+      day: 13,
+      season: "fall"
+    },
     address: "Pierre's General Store",
     occupation: "Adventurer",
+    description: "Abigail is a villager who lives at Pierre's General Store in Pelican Town. She is one of the twelve characters available to marry.",
     marriageable: true,
-    hearts: { max: 8, bouquetIncrease: 2, spouseIncrease: 4 },
+    hearts: {
+      max: 8,
+      bouquetIncrease: 2,
+      spouseIncrease: 4
+    },
+    events: [
+      {
+        heart: 2,
+        id: 1,
+        description: "The player helps Abigail play Journey of the Prairie King together on her console.",
+        details: "Enter Pierre's General Store when Abigail is there, any day except Saturday. You enter Abigail's room and watch her get angry about a videogame. She asks for your help, and you play the console version of Journey of the Prairie King together. When you finish the level, she thanks you and the cutscene ends. If you fail, she will still thank you for trying."
+      },
+      {
+        heart: 4,
+        id: 2,
+        description: "Abigail plays her flute on a rainy day and invites the player to stand under a tree, where they perform a duet.",
+        details: "Visit the mountain between noon and 7pm on a rainy day, any season except Winter. You see Abigail playing her flute. She asks what you're doing out in the rain. Regardless of your response, she invites you to stand under the tree with her. You pull out a lyre and play a duet as the camera pans out over the lake."
+      },
+      {
+        heart: 6,
+        id: 4,
+        description: "The player encounters Abigail practicing swordplay in the graveyard at night.",
+        details: "Between 9pm and midnight on a day when it is not raining, enter Pelican Town from any direction. Abigail is in the graveyard practicing with her sword because she wants to go on adventures. Pierre arrives and interrupts, telling her to help cook dinner. She gets angry about gender expectations, walks off calling you to follow. You both hide in bushes and talk. She asks you to help untangle her hair from a bush before the cutscene ends."
+      },
+      {
+        heart: 8,
+        id: 3,
+        description: "Abigail invites the player to her room where she shows them her spirit board, revealing developing romantic feelings.",
+        details: "After receiving a letter from Abigail, enter Pierre's General Store between 8pm and 10pm when she's there. Abigail invites you to her room via letter. She shows you her spirit board, which reveals a message indicating she's developing feelings for you. She gets embarrassed and rushes you out. The next day she visits and apologizes."
+      },
+      {
+        heart: 10,
+        id: 901756,
+        description: "Abigail becomes frightened by bats in the mines and confesses she likes the player as more than a friend.",
+        details: "Enter the mines or Quarry Mine between 5pm and midnight. Abigail is preparing to enter the mine when a bat startles her. Hundreds more bats fly up; she's terrified and cowers. You comfort her. She then confesses she likes you as more than a friend and asks you to stay with her, hugging you."
+      },
+      {
+        heart: 14,
+        id: 6963327,
+        description: "A monster attacks the player in the Backwoods and Abigail saves them.",
+        details: `Enter the Backwoods between 6:10am and 5pm. While foraging, a monster attacks you and you collapse. Abigail appears, kills the monster, and asks if you're okay, saying "I've never taken a life before." She warns you to be more careful and buries the monster, marking the grave with Yoba's symbol.`
+      }
+    ],
     image: "images/villagers/Abigail.png",
     spouseImage: "images/villagers/spouse-portraits/Abigail.png",
     loves: [
@@ -21117,11 +28657,75 @@ var villagers_default = [
   {
     id: "alex",
     name: "Alex",
-    birthday: { day: 13, season: "summer" },
+    birthday: {
+      day: 13,
+      season: "summer"
+    },
     address: "1 River Road",
     occupation: "Aspiring gridball player",
+    description: "Alex is a villager who lives in the house southeast of Pierre's General Store. He is one of the twelve characters available to marry.",
     marriageable: true,
-    hearts: { max: 8, bouquetIncrease: 2, spouseIncrease: 4 },
+    hearts: {
+      max: 8,
+      bouquetIncrease: 2,
+      spouseIncrease: 4
+    },
+    events: [
+      {
+        heart: 2,
+        id: 20,
+        description: "Alex attempts to toss his gridball to the player at the beach and discusses his aspirations.",
+        details: "Visit the Beach on a sunny Summer day when Alex is there. Alex greets you with his gridball and tries to toss it to you. After you fail to catch it, he laughs and discusses his professional gridball aspirations. You choose between encouraging him or calling him arrogant."
+      },
+      {
+        heart: 4,
+        id: 2481135,
+        description: "Alex reveals that his father was abusive and his mother passed away.",
+        details: "Enter town between 9am and 4pm. Alex talks to his dog Dusty near the dog pen, expressing feeling misunderstood. He reveals his father was an alcoholic who verbally abused him and called him worthless. His father left, then his mother became ill and died. Alex declines sympathy and offers to show you what Dusty will do for barbecued steak."
+      },
+      {
+        heart: 5,
+        id: 21,
+        description: "Alex expresses worry about his future while staring at his bookcase.",
+        details: "Enter Alex's house when he's there. Alex laments not reading books from his shelf, worrying he won't succeed without knowledge and feels worthless. You can respond with dialogue options affecting friendship or suggesting dinner discussions about philosophy."
+      },
+      {
+        heart: 6,
+        id: 2119820,
+        description: "Alex apologizes for his previous rudeness and thanks the player for their support.",
+        details: "Enter Alex's house when he's there. Alex expresses doubt about going professional. He apologizes for previous arrogance and thanks you for supporting him. You provide encouragement, and he returns to his workout with renewed vigor."
+      },
+      {
+        heart: 8,
+        id: 288847,
+        description: "On the anniversary of his mother's death, Alex sits on the beach and shares her music box with the player.",
+        details: "Visit the Beach on a sunny day when Alex is there. Alex sits crying on the beach \u2014 the anniversary of his mother's death 12 years ago. He regrets not thanking her for childhood care. He plays his mother's music box, revealing a vision of her with baby Alex. He asks you not to tell others he cried."
+      },
+      {
+        heart: 10,
+        id: 911526,
+        description: "Alex invites the player to a private dinner at the Saloon where he confesses his romantic feelings.",
+        details: "Alex sends a letter requesting you meet him at the Saloon after dark. Enter between 7pm-10pm. Alex reserves a private room. Gus plays violin; Emily serves food. Alex confesses romantic feelings \u2014 that he's had a crush since meeting. You can accept or decline these feelings."
+      },
+      {
+        heart: 14.1,
+        id: 3917587,
+        description: "Alex requests 5,000g from the player for a secret project.",
+        details: "Exit the Farmhouse in Year 2+ between 6am-8:20am on non-Sunday days with 5,000g available. Alex requests 5,000g for a secret project ready Sunday."
+      },
+      {
+        heart: 14.2,
+        id: 3917589,
+        description: "Alex's secret project is revealed to be a gridball-themed room at the Saloon.",
+        details: "Enter the Saloon on Sunday. Alex, Kent, Shane, George, and Gus watch gridball on a TV in a decorated backroom. Alex explains this small way of realizing his gridball dream."
+      },
+      {
+        heart: 14.3,
+        id: 3917590,
+        description: "Alex shows the player the completed gridball room.",
+        details: "Alex thanks the player for funding the room and celebrates the completed gridball viewing setup at the Saloon."
+      }
+    ],
     image: "images/villagers/Alex.png",
     spouseImage: "images/villagers/spouse-portraits/Alex.png",
     loves: ["Complete Breakfast", "Jack Be Nimble Jack Be Thick", "Salmon Dinner"],
@@ -21154,11 +28758,45 @@ var villagers_default = [
   {
     id: "caroline",
     name: "Caroline",
-    birthday: { day: 7, season: "winter" },
+    birthday: {
+      day: 7,
+      season: "winter"
+    },
     address: "Pierre's General Store",
     occupation: "Homemaker",
+    description: "Caroline is a villager who lives in Pelican Town. She is married to Pierre and is the mother of Abigail.",
     marriageable: false,
-    hearts: { max: 10, bouquetIncrease: 0, spouseIncrease: 0 },
+    hearts: {
+      max: 10,
+      bouquetIncrease: 0,
+      spouseIncrease: 0
+    },
+    events: [
+      {
+        heart: 2,
+        id: 719926,
+        description: "Caroline shows the player her private sunroom and offers green tea.",
+        details: "Enter the sunroom via Caroline's kitchen between 9am-5pm on a non-rainy day. Caroline shows you her private sunroom sanctuary. She offers homemade Green Tea, then a surrealistic cutscene plays. She invites you back anytime. The next day, she mails you a Tea Sapling recipe."
+      },
+      {
+        heart: 3,
+        id: null,
+        description: "Caroline sends a Parsnip Soup recipe in the mail.",
+        details: 'After reaching 3 hearts, Caroline mails you the Parsnip Soup recipe with a note: "Nothing is more satisfying than cooking with fresh vegetables from your own garden!"'
+      },
+      {
+        heart: 6,
+        id: 17,
+        description: "The player overhears Caroline and Abigail arguing about personal freedom and appreciation.",
+        details: "Enter Pierre's General Store when Caroline and Abigail are present. You overhear them arguing about Abigail's independence and appearance. Abigail confronts you afterward, swearing the house is haunted. The conflict ends with Caroline apologizing."
+      },
+      {
+        heart: 7,
+        id: null,
+        description: "Caroline sends a Vegetable Medley recipe in the mail.",
+        details: "After reaching 7 hearts, Caroline mails you a recipe labeled Vegetable Stew (which creates Vegetable Medley when cooked) with a similar note praising homegrown vegetables."
+      }
+    ],
     image: "images/villagers/Caroline.png",
     loves: ["Fish Taco", "Green Tea", "Summer Spangle", "Tropical Curry"],
     likes: ["Daffodil", "Tea Leaves", "Wild Horseradish"],
@@ -21189,11 +28827,45 @@ var villagers_default = [
   {
     id: "clint",
     name: "Clint",
-    birthday: { day: 26, season: "winter" },
+    birthday: {
+      day: 26,
+      season: "winter"
+    },
     address: "The Blacksmith",
     occupation: "Blacksmith",
+    description: "Clint is a villager who lives in Pelican Town and owns and runs the local Blacksmith.",
     marriageable: false,
-    hearts: { max: 10, bouquetIncrease: 0, spouseIncrease: 0 },
+    hearts: {
+      max: 10,
+      bouquetIncrease: 0,
+      spouseIncrease: 0
+    },
+    events: [
+      {
+        heart: 3,
+        id: 97,
+        description: "Clint asks for romantic advice at the saloon, then nervously fails to ask Emily out.",
+        details: "Visit the saloon between 7pm-11pm on Monday. Clint asks for dating advice. Emily arrives to take his order; Clint panics and stammers. When attempting to speak with her, he loses his nerve and gives up. Emily chats easily with Shane instead, leaving Clint dejected."
+      },
+      {
+        heart: 3,
+        id: null,
+        description: "Clint sends an Algae Soup recipe in the mail.",
+        details: `After reaching 3 hearts, Clint mails you the Algae Soup recipe with a note: "Well, I know a couple of recipes. I thought I'd send you one... maybe it'll help you mine more ore or something. Take care. -Clint"`
+      },
+      {
+        heart: 6,
+        id: 101,
+        description: "Clint finally asks Emily on a date to the carnival.",
+        details: "Enter town from Cindersap Forest between 9am-6:30pm after the Three Hearts event. You discover Clint watching Emily from bushes, planning to ask her out. With your encouragement, he approaches Emily and invites her to the Grampleton Carnival with tickets. She accepts. Clint thanks you, nervous but grateful."
+      },
+      {
+        heart: 7,
+        id: null,
+        description: "Clint sends a Bean Hotpot recipe in the mail.",
+        details: `After reaching 7 hearts, Clint mails you the Bean Hotpot recipe with a note: "Well, I know a couple of recipes. I thought I'd send you one... maybe it'll help you mine more ore or something. Take care. -Clint"`
+      }
+    ],
     image: "images/villagers/Clint.png",
     loves: [
       "Amethyst",
@@ -21236,11 +28908,39 @@ var villagers_default = [
   {
     id: "demetrius",
     name: "Demetrius",
-    birthday: { day: 19, season: "summer" },
+    birthday: {
+      day: 19,
+      season: "summer"
+    },
     address: "24 Mountain Road",
     occupation: "Scientist",
+    description: "Demetrius is a villager who resides at 24 Mountain Road with his wife Robin, daughter Maru, and step-son Sebastian.",
     marriageable: false,
-    hearts: { max: 10, bouquetIncrease: 0, spouseIncrease: 0 },
+    hearts: {
+      max: 10,
+      bouquetIncrease: 0,
+      spouseIncrease: 0
+    },
+    events: [
+      {
+        heart: 3,
+        id: null,
+        description: "Demetrius sends a Fried Mushroom recipe in the mail.",
+        details: `After reaching 3 hearts, Demetrius mails you the Fried Mushroom recipe with a note: "I wanted to say 'thanks' for taking an interest in my work. Here's a cooking recipe that I like. -Demetrius"`
+      },
+      {
+        heart: 6,
+        id: 25,
+        description: "The player witnesses Demetrius and Robin arguing about whether tomatoes are fruits or vegetables.",
+        details: `Enter Demetrius' house while he and Robin are inside. Robin asked him to retrieve fruit, but he brought tomatoes instead. Robin protests that tomatoes aren't real fruit. Demetrius defends himself, arguing tomatoes are botanically fruits. He asks the player to settle the debate. Choosing "Vegetable" results in -30 friendship, choosing "Fruit" results in +50 friendship.`
+      },
+      {
+        heart: 7,
+        id: null,
+        description: "Demetrius sends an Autumn's Bounty recipe in the mail.",
+        details: "After reaching 7 hearts, Demetrius mails you the Autumn's Bounty recipe with a similar note thanking you for your interest in his work."
+      }
+    ],
     image: "images/villagers/Demetrius.png",
     loves: ["Bean Hotpot", "Ice Cream", "Rice Pudding", "Strawberry"],
     likes: ["Dinosaur Egg", "Purple Mushroom"],
@@ -21266,11 +28966,27 @@ var villagers_default = [
   {
     id: "dwarf",
     name: "Dwarf",
-    birthday: { day: 22, season: "summer" },
+    birthday: {
+      day: 22,
+      season: "summer"
+    },
     address: "The Mines",
     occupation: "Shopkeeper",
+    description: "The Dwarf is a valley resident who lives in the Mines. Access is initially blocked by an unbreakable rock which can be broken using a steel pickaxe or bombs.",
     marriageable: false,
-    hearts: { max: 10, bouquetIncrease: 0, spouseIncrease: 0 },
+    hearts: {
+      max: 10,
+      bouquetIncrease: 0,
+      spouseIncrease: 0
+    },
+    events: [
+      {
+        heart: 0.2,
+        id: 691039,
+        description: "The Dwarf confronts Krobus in the sewers over past conflicts between their races, but the Wizard brokers a peace agreement.",
+        details: "After earning 50 friendship points with the Dwarf, enter the Sewers. A Stardrop must have been purchased from Krobus. The Dwarf encounters Krobus and accuses the Shadow People of killing their family. Krobus responds that violence became necessary after dwarves displaced them from their homeland. The player intervenes. The Wizard suddenly appears and halts the conflict, reminding them the Elemental Wars have long been finished. The Dwarf agrees and promises to avoid the Sewers. The Wizard casts a Seal of Promise to formalize their agreement."
+      }
+    ],
     image: "images/villagers/Dwarf.png",
     loves: [
       "Amethyst",
@@ -21313,11 +29029,63 @@ var villagers_default = [
   {
     id: "elliott",
     name: "Elliott",
-    birthday: { day: 5, season: "fall" },
+    birthday: {
+      day: 5,
+      season: "fall"
+    },
     address: "Elliott's Cabin",
     occupation: "Writer",
+    description: "Elliott lives alone in a cabin on the beach. He is a writer who dreams of one day writing a magnificent novel.",
     marriageable: true,
-    hearts: { max: 8, bouquetIncrease: 2, spouseIncrease: 4 },
+    hearts: {
+      max: 8,
+      bouquetIncrease: 2,
+      spouseIncrease: 4
+    },
+    events: [
+      {
+        heart: 2,
+        id: 39,
+        description: "Elliott explains his background as a writer and asks about the player's favorite novel genre.",
+        details: "Enter Elliott's cabin when he's there. Elliott explains he came to Pelican Town to become a writer but faced skepticism from his hometown. He asks your preferred novel genre (Mystery/Romance/Sci-Fi), each granting +30 friendship. He then requests you examine his rose, suspecting it may be wilting."
+      },
+      {
+        heart: 4,
+        id: 40,
+        description: "The player encounters Elliott at the Saloon where they share a toast together.",
+        details: `Enter the Stardrop Saloon between 3pm-10pm when Gus is present. Elliott arrives and proposes a toast. Four options available: "To Pelican Town!" (+25 friendship), "To our friendship!" (+50 friendship), "To my good health!" (-10 friendship), or "To your doom!" (-50 friendship). After drinking, Elliott dances and you're transported outside.`
+      },
+      {
+        heart: 6,
+        id: 423502,
+        description: "Elliott plays piano at his cabin and discusses his struggles finishing his novel.",
+        details: "Enter Elliott's home when he's there. Elliott finishes playing piano. You can comment on the performance or ask about his playing duration. He discusses struggles finishing his novel, mentioning desire to become a farmer. You can respond sympathetically or invite him to the farm."
+      },
+      {
+        heart: 8,
+        id: 1848481,
+        description: "Elliott holds a public reading of his completed book at the museum, dedicating it to the player.",
+        details: `Visit the museum between 1pm-7pm after receiving Elliott's letter. Villagers gather for Elliott's novel reading. He reads from his completed book in your chosen genre from the Two-Heart event: the mystery "Blue Tower," romance "Camellia Station," or sci-fi "The Rise And Fall Of Planet Yazzo." He dedicates the work to you and thanks you for your support.`
+      },
+      {
+        heart: 10,
+        id: 43,
+        description: "Elliott invites the player on a rowboat ride where he confesses his feelings.",
+        details: `Go to the beach between 7am-1pm on a non-rainy day. Elliott shows you his repaired rowboat and invites you on a maiden voyage. If you accept, he discusses his novel and kisses you unexpectedly. Choosing "I'm happy" grants +50 friendship. Declining or requesting he stop results in -50 friendship.`
+      },
+      {
+        heart: 14.1,
+        id: 3912125,
+        description: "Elliott departs on a book tour and sends letters home.",
+        details: "Exit farmhouse or enter farm between 6am-3pm when no festivals occur within 8 days. Elliott appears on your front porch. He sends daily letters during his week-long book tour. On day two, Crab Cakes appear in your fridge."
+      },
+      {
+        heart: 14.2,
+        id: 3912132,
+        description: "Elliott returns from his book tour and proposes to the player.",
+        details: "On day eight of the book tour, Elliott returns and triggers the final event sequence upon waking."
+      }
+    ],
     image: "images/villagers/Elliott.png",
     spouseImage: "images/villagers/spouse-portraits/Elliott.png",
     loves: ["Crab Cakes", "Duck Feather", "Lobster", "Pomegranate", "Squid Ink", "Tom Kha Soup"],
@@ -21351,11 +29119,75 @@ var villagers_default = [
   {
     id: "emily",
     name: "Emily",
-    birthday: { day: 27, season: "spring" },
+    birthday: {
+      day: 27,
+      season: "spring"
+    },
     address: "2 Willow Lane",
     occupation: "Tailor",
+    description: "Emily is a villager who lives in Pelican Town and is one of twelve characters available to marry. She works evenings at The Stardrop Saloon and lives at 2 Willow Lane with her sister Haley.",
     marriageable: true,
-    hearts: { max: 8, bouquetIncrease: 2, spouseIncrease: 4 },
+    hearts: {
+      max: 8,
+      bouquetIncrease: 2,
+      spouseIncrease: 4
+    },
+    events: [
+      {
+        heart: 2,
+        id: 471942,
+        description: "The player appears in Emily's dream where she sees them as someone special with an intertwined destiny.",
+        details: "Enter Emily's house when she's there. Emily is asleep and you witness her dream. The scene shows abstract shapes, clouds, and palm trees. She floats above a purple structure meditating. You appear, surprising her. Rainbow streaks fly by as she perceives them as omens. You disappear and she wakes, believing your destinies are somehow intertwined."
+      },
+      {
+        heart: 3,
+        id: null,
+        description: "Emily sends a Salad recipe in the mail.",
+        details: `After reaching 3 hearts, Emily mails you the Salad recipe with a note: "Flip this letter over for instructions on how to make a super-healthy meal! You'll feel energized. See you soon. -Emily"`
+      },
+      {
+        heart: 4,
+        id: 463391,
+        description: "An injured parrot crashes into Emily's window and she adopts and cares for it.",
+        details: "Enter town on a sunny day, not in winter. Emily leaves her house and waves at three passing parrots, calling them friends. A fourth parrot flies too low and hits her house window, injuring itself. She rushes over, cradles it gently, and promises care. Emily now keeps the injured parrot in her room."
+      },
+      {
+        heart: 6,
+        id: 917409,
+        description: "Emily performs a private dance for the player in her room.",
+        details: `Enter Emily's house when she's there. Emily excitedly shows her secret hobby \u2014 dancing. She turns on her stereo and performs for you. Afterward, you choose your response: "That was amazing!" (+25 friendship), "That was embarrassing..." (-50 friendship), or slow clap silently (+25 friendship).`
+      },
+      {
+        heart: 7,
+        id: null,
+        description: "Emily sends a Red Plate recipe in the mail.",
+        details: "After reaching 7 hearts, Emily mails you the Red Plate recipe with a similar note about healthy meals."
+      },
+      {
+        heart: 8,
+        id: 2123243,
+        description: "Emily hosts a Clothing Therapy session at the Mayor's house where townspeople express themselves through fashion.",
+        details: "Receive a letter inviting you to the Mayor's Manor. Emily hosts Clothing Therapy. Attendees include Lewis, Abigail, Shane, Robin, and Clint. Each person selects an outfit expressing their true self. Shane wears goth clothing; Robin wears a fine dress; Lewis wears fancy accessories; Abigail wears armor; Clint reluctantly wears pink shorts and a beret. Emily shows romantic interest in you afterward, but Clint interrupts."
+      },
+      {
+        heart: 10,
+        id: 2123343,
+        description: "The player goes camping with Emily in the Secret Woods where a bear interrupts and they share a sleeping bag.",
+        details: "Letter invites you to Secret Woods after 10pm (requires steel axe to access). You go camping with Emily. Strange grunting emerges from the forest. She cuddles close for warmth. A bear approaches, and you both dive into the tent. The bear investigates then leaves. She mentions a sleeping bag remains outside but won't retrieve it \u2014 you must share one. Screen fades; day ends."
+      },
+      {
+        heart: 14.1,
+        id: 3917600,
+        description: "Emily requests 200 fiber for a project.",
+        details: "Exit farmhouse between 6am-8:20am after marriage. Emily appears requesting an errand \u2014 bring 200 fiber pieces."
+      },
+      {
+        heart: 14.2,
+        id: 3917601,
+        description: "Emily gives the player a magical outfit with hat, boots, shirt, and pants.",
+        details: "After completing the fiber request and waiting 3 days, enter the farmhouse between 8pm-midnight. Emily gives you an outfit: Emily's Magic Hat, Boots, Shirt, and matching blue Genie Pants."
+      }
+    ],
     image: "images/villagers/Emily.png",
     spouseImage: "images/villagers/spouse-portraits/Emily.png",
     loves: [
@@ -21394,11 +29226,33 @@ var villagers_default = [
   {
     id: "evelyn",
     name: "Evelyn",
-    birthday: { day: 20, season: "winter" },
+    birthday: {
+      day: 20,
+      season: "winter"
+    },
     address: "1 River Road",
     occupation: "Gardener",
+    description: "Evelyn has lived in Pelican Town her entire life. Always hopeful and optimistic, Granny spends her days tending the town gardens, baking her signature cookies, and reminiscing about Stardew Valley's vibrant past.",
     marriageable: false,
-    hearts: { max: 10, bouquetIncrease: 0, spouseIncrease: 0 },
+    hearts: {
+      max: 10,
+      bouquetIncrease: 0,
+      spouseIncrease: 0
+    },
+    events: [
+      {
+        heart: 4,
+        id: 19,
+        description: "The player enters Evelyn's home and receives her Cookie recipe after tasting her baked goods.",
+        details: `Enter Evelyn's home at 1 River Road while she is inside. You discover Evelyn baking cookies and she offers you some, requesting your opinion. "It's delicious!" awards +100 friendship points. "It was like chewing on a hockey puck" results in -100 friendship points. Regardless of your response, Evelyn provides you with the Cookie recipe.`
+      },
+      {
+        heart: 7,
+        id: null,
+        description: "Evelyn sends a Rice Pudding recipe in the mail.",
+        details: `After reaching 7 hearts, Evelyn mails you the Rice Pudding recipe with a note: "I usually don't give out my recipes... but since you've been such a sweetheart to George and I, I've written this one down for you. -Evelyn"`
+      }
+    ],
     image: "images/villagers/Evelyn.png",
     loves: ["Beet", "Chocolate Cake", "Diamond", "Fairy Rose", "Raisins", "Stuffing", "Tulip"],
     likes: [
@@ -21445,11 +29299,39 @@ var villagers_default = [
   {
     id: "george",
     name: "George",
-    birthday: { day: 24, season: "fall" },
+    birthday: {
+      day: 24,
+      season: "fall"
+    },
     address: "1 River Road",
     occupation: "Retired",
+    description: "George is a villager who lives in Pelican Town. He is an elderly man who uses a wheelchair and lives with his wife Evelyn and grandson Alex.",
     marriageable: false,
-    hearts: { max: 10, bouquetIncrease: 0, spouseIncrease: 0 },
+    hearts: {
+      max: 10,
+      bouquetIncrease: 0,
+      spouseIncrease: 0
+    },
+    events: [
+      {
+        heart: 3,
+        id: null,
+        description: "George sends a Fried Eel recipe in the mail.",
+        details: `After reaching 3 hearts, George mails you the Fried Eel recipe with a note: "Figured I'd give you this recipe I had laying around. Try not to burn it. -George"`
+      },
+      {
+        heart: 6,
+        id: 18,
+        description: "George struggles to reach something on a bookshelf and the player retrieves it, after which he explains why he uses a wheelchair.",
+        details: "Enter George's house when he is home. George struggles to reach something on a bookshelf. The player walks to the shelf and retrieves the item for George. He thanks the player and a few moments of silence ensue. George then tells the player why he is in a wheelchair."
+      },
+      {
+        heart: 7,
+        id: null,
+        description: "George sends a Spicy Eel recipe in the mail.",
+        details: `After reaching 7 hearts, George mails you the Spicy Eel recipe with a note: "Figured I'd give you this recipe I had laying around. Try not to burn it. -George"`
+      }
+    ],
     image: "images/villagers/George.png",
     loves: ["Fried Mushroom", "Leek"],
     likes: ["Daffodil"],
@@ -21473,11 +29355,45 @@ var villagers_default = [
   {
     id: "gus",
     name: "Gus",
-    birthday: { day: 8, season: "summer" },
+    birthday: {
+      day: 8,
+      season: "summer"
+    },
     address: "The Stardrop Saloon",
     occupation: "Saloon owner and chef",
+    description: "Gus is a villager who lives and works at The Stardrop Saloon in Pelican Town. He owns the establishment.",
     marriageable: false,
-    hearts: { max: 10, bouquetIncrease: 0, spouseIncrease: 0 },
+    hearts: {
+      max: 10,
+      bouquetIncrease: 0,
+      spouseIncrease: 0
+    },
+    events: [
+      {
+        heart: 3,
+        id: null,
+        description: "Gus sends a Salmon Dinner recipe in the mail.",
+        details: `After reaching 3 hearts, Gus mails you the Salmon Dinner recipe with a note: "Here's a recipe from my saloon. I only share this with my good friends! -Gus"`
+      },
+      {
+        heart: 4,
+        id: 96,
+        description: "Gus confides about the saloon's financial troubles and asks for help addressing Pam's unpaid tab.",
+        details: `Enter the Saloon during open hours when Gus is inside. Only occurs if friendship with Pam is at 2+ hearts. Gus sits dejected at a table. He explains the saloon faces financial hardship and admits Pam hasn't paid her tab. When Pam enters requesting a drink, you choose between: "You need to pay your tab right now!" (-50 friendship with Pam) or "The saloon isn't doing well, financially" (+15 friendship with Pam).`
+      },
+      {
+        heart: 5,
+        id: 980558,
+        description: "Gus appears at the player's farmhouse with a cooking analogy and gifts a Mini-Jukebox.",
+        details: "Exit farmhouse on non-rainy day between 6am-11:30am. Gus appears with sauce, drawing a cooking analogy to the player's arrival in Stardew Valley. He explains that adding a new ingredient may ruin the sauce or create something new and delicious, and reflects on your friendship. He gifts a Mini-Jukebox found while cleaning the Saloon and provides the recipe to craft more."
+      },
+      {
+        heart: 7,
+        id: null,
+        description: "Gus sends a Cranberry Sauce recipe in the mail.",
+        details: `After reaching 7 hearts, Gus mails you the Cranberry Sauce recipe with a note: "Here's a recipe from my saloon. I only share this with my good friends! -Gus"`
+      }
+    ],
     image: "images/villagers/Gus.png",
     loves: ["Diamond", "Escargot", "Fish Taco", "Orange", "Tropical Curry"],
     likes: ["Daffodil", "Truffle"],
@@ -21503,11 +29419,69 @@ var villagers_default = [
   {
     id: "haley",
     name: "Haley",
-    birthday: { day: 14, season: "spring" },
+    birthday: {
+      day: 14,
+      season: "spring"
+    },
     address: "2 Willow Lane",
     occupation: "Photographer",
+    description: "Haley is a villager who lives in Pelican Town and is one of twelve characters available to marry.",
     marriageable: true,
-    hearts: { max: 8, bouquetIncrease: 2, spouseIncrease: 4 },
+    hearts: {
+      max: 8,
+      bouquetIncrease: 2,
+      spouseIncrease: 4
+    },
+    events: [
+      {
+        heart: 2,
+        id: 11,
+        description: "Haley and Emily argue about cleaning, and the player is asked to help resolve their conflict.",
+        details: "Enter Haley and Emily's house when both are there. Haley and Emily argue about cleaning couch cushions. Player chooses how to resolve conflict, affecting friendship (+30/-50/-30)."
+      },
+      {
+        heart: 4,
+        id: 12,
+        description: "Haley struggles to open a jar and asks the player for help.",
+        details: "Enter Haley's house when she's there. Haley struggles opening a jar and asks if the player is strong enough to help. Responses affect friendship (+30/-30). She mentions finding a tool later."
+      },
+      {
+        heart: 6,
+        id: 13,
+        description: "The player finds Haley grieving over a lost bracelet at the beach and can choose to help retrieve it.",
+        details: "Visit the Beach between 10am-4pm, any season except Winter. Haley grieves losing her great-grandmother's bracelet. Player can offer sympathy (+50) or dismiss concern (-30). The bracelet is found near Elliott's cabin."
+      },
+      {
+        heart: 8,
+        id: 14,
+        description: "Haley asks the player to take pictures with her at the ranch, where she climbs on a cow and falls off.",
+        details: "Enter Cindersap Forest on a sunny day between 10am-4pm, any season except Winter. Haley photographs and asks the player to take pictures. She climbs on a cow, falls, gets dirty, and leaves to shower. She sends a letter the next morning."
+      },
+      {
+        heart: 10,
+        id: 15,
+        description: "Haley shows the player her dark room for developing photos.",
+        details: "Enter Haley's house when she's there. Haley shows her dark room for developing photos. The player responds about room quality, then chooses to help decorate, make an excuse, or kiss her, affecting the outcome."
+      },
+      {
+        heart: 14.1,
+        id: 6184643,
+        description: "Haley begins organizing a charity cakewalk to raise funds for new school books.",
+        details: "Enter town on a non-rainy day between 8am-3pm. Haley overhears children discussing damaged books and decides to organize a charity event."
+      },
+      {
+        heart: 14.2,
+        id: 8675611,
+        description: "The charity cakewalk event takes place in town.",
+        details: "Enter the farmhouse between 6:20am-5pm. Haley requests a chocolate cake for the charity cakewalk she is organizing."
+      },
+      {
+        heart: 14.3,
+        id: 6184644,
+        description: "Haley celebrates the success of the charity cakewalk.",
+        details: "Enter the town square on the next sunny day. The cakewalk occurs; Haley reveals the fundraising was for new books for the school."
+      }
+    ],
     image: "images/villagers/Haley.png",
     spouseImage: "images/villagers/spouse-portraits/Haley.png",
     loves: ["Coconut", "Fruit Salad", "Pink Cake", "Sunflower"],
@@ -21538,11 +29512,57 @@ var villagers_default = [
   {
     id: "harvey",
     name: "Harvey",
-    birthday: { day: 14, season: "winter" },
+    birthday: {
+      day: 14,
+      season: "winter"
+    },
     address: "Medical Clinic",
     occupation: "Doctor",
+    description: "Harvey is a villager who lives in Pelican Town. He runs the town's medical clinic and is one of the twelve characters available to marry.",
     marriageable: true,
-    hearts: { max: 8, bouquetIncrease: 2, spouseIncrease: 4 },
+    hearts: {
+      max: 8,
+      bouquetIncrease: 2,
+      spouseIncrease: 4
+    },
+    events: [
+      {
+        heart: 2,
+        id: 56,
+        description: "Harvey performs a check-up on George and appreciates the player's help getting George to cooperate.",
+        details: `Enter George's house while George is there. Harvey is performing a private check-up on George. He tries to explain that George needs to make some lifestyle changes, but George seems irritated with his advice. "George should follow Dr. Harvey's advice" (+40 friendship). "George knows what's best for his own body" (-40 friendship).`
+      },
+      {
+        heart: 4,
+        id: 57,
+        description: "During an annual check-up at the clinic, Harvey notices the player's elevated pulse and declares them healthy.",
+        details: "Enter the clinic when Harvey is there. Harvey says he was just about to write you a letter about your annual check-up. As he's looking you over, he notices your pulse seems high. Options regarding nervousness, farm work, or doubting his credentials affect friendship. Harvey declares you healthy and advises against overwork."
+      },
+      {
+        heart: 6,
+        id: 58,
+        description: "Harvey is embarrassed when the player catches him attending a dance aerobics class.",
+        details: `Enter the general store between 11am and 3pm. You witness a dance aerobics session with some of the ladies and, unexpectedly, Harvey. Harvey seems out of breath as the session ends, heading towards the door but running into you on the way. Harvey seems incredibly embarrassed when he finds out you were watching. "I won't tell" (+20 friendship). "I can't promise that" (-50 friendship).`
+      },
+      {
+        heart: 8,
+        id: 571102,
+        description: "Harvey excitedly makes radio contact with a pilot and shares his childhood dream of becoming an aviator.",
+        details: "Enter the clinic. You head into Harvey's room to find him using his equipment to contact a pilot. He suddenly gets a response, surprising him, but he manages to respond with his coordinates before signing off. Harvey reveals his childhood dream of becoming a pilot, thwarted by poor eyesight and fear of heights. He shows you his model planes collection."
+      },
+      {
+        heart: 10,
+        id: 528052,
+        description: "Harvey arranges a hot air balloon ride where both ascend together and share a kiss in the sky.",
+        details: "Harvey sends a letter asking to meet at the railroad tracks. Go between 9am and 5pm. A man in a hot air balloon, Marcello, lands nearby. Harvey arranged a hot air balloon rental. Despite his fear of heights, he boards with you. During the flight, you share a kiss. You return the balloon at least a half hour late."
+      },
+      {
+        heart: 14,
+        id: 3917626,
+        description: "Harvey cooks angel hair pasta with clams at the player's farmhouse.",
+        details: "Enter an upgraded farmhouse (upgraded at least twice) between 8pm and midnight. Harvey is seen cooking and then setting the table for dinner. As you enter, Harvey says you're just in time and tells you he's cooked angel hair pasta with clams. Harvey offers to wash the dishes and expresses happiness."
+      }
+    ],
     image: "images/villagers/Harvey.png",
     spouseImage: "images/villagers/spouse-portraits/Harvey.png",
     loves: ["Coffee", "Pickles", "Super Meal", "Truffle Oil", "Wine"],
@@ -21588,11 +29608,27 @@ var villagers_default = [
   {
     id: "jas",
     name: "Jas",
-    birthday: { day: 4, season: "summer" },
+    birthday: {
+      day: 4,
+      season: "summer"
+    },
     address: "Marnie's Ranch",
     occupation: "Child",
+    description: "Jas is a villager who lives just outside Pelican Town. She is a young girl who can often be found with her best friend Vincent.",
     marriageable: false,
-    hearts: { max: 10, bouquetIncrease: 0, spouseIncrease: 0 },
+    hearts: {
+      max: 10,
+      bouquetIncrease: 0,
+      spouseIncrease: 0
+    },
+    events: [
+      {
+        heart: 8,
+        id: 3910979,
+        description: "Jas and Vincent teach the player how to clean Spring Onions, permanently increasing their sell price by 5x.",
+        details: "Enter Cindersap Forest during Spring on a sunny day between 6am and 5pm after reaching 8 hearts with both Jas and Vincent. Vincent will explain how to clean Spring Onions by removing insects. Jas insists that the insects not be killed after removing them from the onions. Afterward, the player gains Spring Onion Mastery, which permanently increases the sell price of Spring Onions by 5x."
+      }
+    ],
     image: "images/villagers/Jas.png",
     loves: [
       "Ancient Doll",
@@ -21639,11 +29675,45 @@ var villagers_default = [
   {
     id: "jodi",
     name: "Jodi",
-    birthday: { day: 11, season: "fall" },
+    birthday: {
+      day: 11,
+      season: "fall"
+    },
     address: "1 Willow Lane",
     occupation: "Homemaker",
+    description: "Jodi is a villager who lives in Pelican Town at 1 Willow Lane with her husband Kent and two sons, Sam and Vincent.",
     marriageable: false,
-    hearts: { max: 10, bouquetIncrease: 0, spouseIncrease: 0 },
+    hearts: {
+      max: 10,
+      bouquetIncrease: 0,
+      spouseIncrease: 0
+    },
+    events: [
+      {
+        heart: 2,
+        id: null,
+        description: "The player finds a letter from Kent in Jodi's bedroom drawer.",
+        details: "Enter Jodi's house while she is there. The player discovers a letter from Kent in Jodi's bedroom drawer expressing concerns about his return from military service."
+      },
+      {
+        heart: 3,
+        id: null,
+        description: "Jodi sends a Fried Calamari recipe in the mail.",
+        details: 'After reaching 3 hearts, Jodi mails you the Fried Calamari recipe with a note: "This recipe of mine won 1st place in a cooking competition! I hope you like it. Thanks for being a friend! -Jodi"'
+      },
+      {
+        heart: 4,
+        id: [94, 95],
+        description: "Jodi visits the farm to invite the player to dinner, requesting they bring a Largemouth Bass.",
+        details: `Leave your farmhouse between 6am-9:30am on a Monday when you've reached 4 hearts with Jodi. Jodi will be waiting outside your farmhouse. She invites you to dinner at her house at 7pm and requests you bring a Largemouth Bass for the casserole she's making, describing it as "one of those big, slimy fish from the lake." You must bring a Largemouth Bass to her house at 7pm on any day after the invitation. When you enter her home with the fish, a dinner cutscene occurs.`
+      },
+      {
+        heart: 7,
+        id: null,
+        description: "Jodi sends an Ice Cream recipe in the mail.",
+        details: 'After reaching 7 hearts, Jodi mails you the Ice Cream recipe with a note: "This recipe of mine won 1st place in a cooking competition! I hope you like it. Thanks for being a friend! -Jodi"'
+      }
+    ],
     image: "images/villagers/Jodi.png",
     loves: [
       "Chocolate Cake",
@@ -21678,11 +29748,39 @@ var villagers_default = [
   {
     id: "kent",
     name: "Kent",
-    birthday: { day: 4, season: "spring" },
+    birthday: {
+      day: 4,
+      season: "spring"
+    },
     address: "1 Willow Lane",
     occupation: "Soldier",
+    description: "Kent is a villager who lives in Pelican Town. He is away serving in the army throughout the first year and returns to live in the town during spring of year two.",
     marriageable: false,
-    hearts: { max: 10, bouquetIncrease: 0, spouseIncrease: 0 },
+    hearts: {
+      max: 10,
+      bouquetIncrease: 0,
+      spouseIncrease: 0
+    },
+    events: [
+      {
+        heart: 3,
+        id: 100,
+        description: "Popcorn sounds trigger Kent's PTSD and the player must choose how to respond to his distress.",
+        details: `Enter Kent's home while he and Jodi are both there. Jodi says she's making popcorn. Kent screams, recalling how the sound reminds him of the war, and laments losing friends. Jodi responds that popcorn was his favorite before leaving. Kent says things have changed. "Blame Jodi" (-25 friendship). "Support Kent's feelings" (+50 friendship). "Lie and take blame" (-50 friendship, Kent states he hates lies more than anything).`
+      },
+      {
+        heart: 3,
+        id: null,
+        description: "Kent sends a Crispy Bass recipe in the mail.",
+        details: 'After reaching 3 hearts, Kent mails you the Crispy Bass recipe with a note: "Picked up this recipe overseas. Enjoy. Want to say thanks for making me feel welcome. -Kent"'
+      },
+      {
+        heart: 7,
+        id: null,
+        description: "Kent sends a Super Meal recipe in the mail.",
+        details: "After reaching 7 hearts, Kent mails you the Super Meal recipe with a note expressing gratitude for the player's hospitality."
+      }
+    ],
     image: "images/villagers/Kent.png",
     loves: ["Fiddlehead Risotto", "Roasted Hazelnuts"],
     likes: ["Daffodil", "Dwarvish Safety Manual"],
@@ -21705,11 +29803,33 @@ var villagers_default = [
   {
     id: "krobus",
     name: "Krobus",
-    birthday: { day: 1, season: "winter" },
+    birthday: {
+      day: 1,
+      season: "winter"
+    },
     address: "The Sewers",
     occupation: "Shadow merchant",
+    description: "Krobus is the only friendly monster players will encounter. He is a shadow person who lives in the Sewers.",
     marriageable: true,
-    hearts: { max: 8, bouquetIncrease: 2, spouseIncrease: 4 },
+    hearts: {
+      max: 8,
+      bouquetIncrease: 2,
+      spouseIncrease: 4
+    },
+    events: [
+      {
+        heart: 3,
+        id: null,
+        description: "Krobus sends a Dark Sign crafting recipe in the mail.",
+        details: `After reaching 3 hearts, Krobus mails you the Dark Sign crafting recipe with a note: "I'm not sure how the human message system works, so I asked Wizard to help me write this letter. I hope you are doing okay. I wanted to share this with you... it's notes on how my people build a certain item. -Krobus"`
+      },
+      {
+        heart: 14,
+        id: 7771191,
+        description: "A sea monster appears while Krobus watches Moonlight Jellies at the beach, and he enjoys a ride on its tentacles.",
+        details: "Enter the Beach between 8pm and 1am on a non-rainy day. Krobus sits on the docks watching Moonlight Jellies swim, when a sea monster appears. The sea monster raises its tentacles, and Krobus hops on for a ride. A heart dialogue bubble appears over Krobus' head, indicating he enjoyed the ride."
+      }
+    ],
     image: "images/villagers/Krobus.png",
     spouseImage: "images/villagers/spouse-portraits/Krobus.png",
     loves: [
@@ -21746,11 +29866,69 @@ var villagers_default = [
   {
     id: "leah",
     name: "Leah",
-    birthday: { day: 23, season: "winter" },
+    birthday: {
+      day: 23,
+      season: "winter"
+    },
     address: "Leah's Cottage",
     occupation: "Artist",
+    description: "Leah is a villager who lives in a small cottage outside Pelican Town. She is one of the twelve characters available to marry.",
     marriageable: true,
-    hearts: { max: 8, bouquetIncrease: 2, spouseIncrease: 4 },
+    hearts: {
+      max: 8,
+      bouquetIncrease: 2,
+      spouseIncrease: 4
+    },
+    events: [
+      {
+        heart: 2,
+        id: 50,
+        description: "The player visits Leah's cottage while she is sculpting and discusses art.",
+        details: "Enter Leah's Cottage when she's there. She's working on a sculpture and discusses how once you get past the outer layers, the true nature starts to show. You choose between responses, with one option permanently blocking her 8-Heart event. She mentions difficulty paying bills as an artist, prompting suggestions about an art show or selling art online."
+      },
+      {
+        heart: 4,
+        id: 51,
+        description: "Leah receives a call from her ex-partner asking her to return to the city.",
+        details: "Enter Leah's Cottage when she's there. You find her arguing with her ex-partner Kel via phone call about returning to the city. She asks if leaving was selfish. Your response determines whether she thanks you or gets briefly angry. She mentions pursuing either the art show or computer idea from the previous event."
+      },
+      {
+        heart: 6,
+        id: 992253,
+        description: "Leah gives the player a sculpture she created.",
+        details: `Leah appears at your farmhouse door on non-rainy days between 6am and 11:30am. She gives you a sculpture she's been working on titled "How I Feel About [your name]."`
+      },
+      {
+        heart: 6,
+        id: 52,
+        description: "The player helps Leah reach fruit from a tree by lifting her onto their shoulders.",
+        details: "Enter Cindersap Forest when Leah is there, any season except winter. Leah tries reaching fruit from a tree above the forest lake. The player lifts her onto their shoulders. She thanks you, saying if her art ever fails, you'll always be there to catch her."
+      },
+      {
+        heart: 8,
+        id: [53, 584059],
+        description: "Leah holds an art show in town or launches an online art shop, depending on earlier choices.",
+        details: "If you suggested an art show at Two Hearts, she invites you via farmhouse visit. Enter Pelican Town between 3-5pm. Leah nervously presents her sculptures to gathered villagers, thanking you for suggesting the show. Her ex Kel appears watching from the side. If you suggested selling online, enter her cottage. Leah shows you her new laptop and online art shop. Someone called Mr K keeps buying everything."
+      },
+      {
+        heart: 10,
+        id: 54,
+        description: "Leah surprises the player with a picnic in the forest, they share a kiss, and her ex appears.",
+        details: "Enter Cindersap Forest between 11am and 4pm on sunny days, any season except winter. Leah surprises you with a picnic, thanking you for helping her become a real artist. You kiss. Her ex Kel emerges, revealing they've been secretly buying all her art. You can punch or reason with Kel; either way, Leah handles it. You relocate to a more private spot."
+      },
+      {
+        heart: 14.1,
+        id: 3911124,
+        description: "The player paints alongside Leah, comparing their artistic abilities.",
+        details: "Exit farmhouse between 6-8:20am on sunny non-Sunday days, not winter. Leah meets you outside and proposes a painting session. Enter the Forest between 11:30am and 2pm on any sunny day after."
+      },
+      {
+        heart: 14.2,
+        id: 3091462,
+        description: "Leah and the player finish their paintings and share the results.",
+        details: "You paint a portrait of Marnie together. You choose Leah's portrait style and describe your own attempt. Leah's painting is beautiful; yours is unflattering. Marnie keeps Leah's painting and gives you yours to keep."
+      }
+    ],
     image: "images/villagers/Leah.png",
     spouseImage: "images/villagers/spouse-portraits/Leah.png",
     loves: [
@@ -21780,11 +29958,57 @@ var villagers_default = [
   {
     id: "leo",
     name: "Leo",
-    birthday: { day: 26, season: "summer" },
+    birthday: {
+      day: 26,
+      season: "summer"
+    },
     address: "Ginger Island",
     occupation: "Islander",
+    description: "Leo is a boy who initially lives on Ginger Island. His parents were lost at sea, and he considers the parrots who inhabit the island to be his family.",
     marriageable: false,
-    hearts: { max: 10, bouquetIncrease: 0, spouseIncrease: 0 },
+    hearts: {
+      max: 10,
+      bouquetIncrease: 0,
+      spouseIncrease: 0
+    },
+    events: [
+      {
+        heart: 2,
+        id: 6497423,
+        description: "Leo shares his loneliness about not truly belonging anywhere despite living with the parrots.",
+        details: "Enter Island West on a sunny day between 6am and 6pm. The player stands by the shore when Leo approaches. He asks what they're doing, then about their home, then if there are kids in Pelican Town. Leo reveals he's not truly a bird and feels lonely not belonging anywhere. He runs off before Willy arrives."
+      },
+      {
+        heart: 3,
+        id: null,
+        description: "Leo sends a Poi recipe in the mail.",
+        details: `After reaching 3 hearts, Leo mails you the Poi recipe with a note: "Here's a food from my home, that me and my family enjoy. Hope you like it. -Leo P.S. Willy helped me write this."`
+      },
+      {
+        heart: 4,
+        id: 6497421,
+        description: "Leo accidentally squawks at the player and discusses his struggles with communication.",
+        details: "Enter Island North on a sunny day between 6am and 6pm, before Leo moves to the Valley. Leo squawks like a parrot, startling the player. He explains difficulty communicating with words and asks if the player finds him weird. He wonders about normal kids and whether he could be normal again. Leo states the parrots are his family regardless, and thanks the player, saying they may be a part of his family too someday."
+      },
+      {
+        heart: 6,
+        id: 6497428,
+        description: "Linus invites Leo to move to the mainland, and the parrots construct a treehouse for him near Linus's tent.",
+        details: "Enter Island South on a sunny day between 6am and 6pm. Linus invites Leo to move to mainland Stardew Valley. Willy mentions other children exist and Leo can visit Ginger Island anytime. Leo decides to move. That night, parrots build him a treehouse west of Linus' tent."
+      },
+      {
+        heart: 7,
+        id: null,
+        description: "Leo sends a Mango Sticky Rice recipe in the mail.",
+        details: `After reaching 7 hearts, Leo mails you the Mango Sticky Rice recipe with a note: "Here's a food from my home, that me and my family enjoy. Hope you like it. -Leo P.S. Willy helped me write this."`
+      },
+      {
+        heart: 9,
+        id: 8959199,
+        description: "A montage shows Leo settling into Valley life, attending school, fishing with Willy, and developing a crush on Jas.",
+        details: "Enter the Mountain on a non-rainy day between 6am and 7pm. Leo adjusts well to Valley life. Scenes show him cooking with Linus, answering questions correctly at school with Penny, Vincent, and Jas, fishing with Willy, and watching Jas at the playground. He arrives home and tells his parrot friend his day was good but misses Ginger Island."
+      }
+    ],
     image: "images/villagers/Leo.png",
     loves: ["Duck Feather", "Mango", "Ostrich Egg", "Parrot Egg", "Poi"],
     likes: [
@@ -21836,11 +30060,39 @@ var villagers_default = [
   {
     id: "lewis",
     name: "Lewis",
-    birthday: { day: 7, season: "spring" },
+    birthday: {
+      day: 7,
+      season: "spring"
+    },
     address: "Mayor's Manor",
     occupation: "Mayor",
+    description: "Lewis is the mayor of Pelican Town. He greets the player upon arrival and has served as mayor for over twenty years.",
     marriageable: false,
-    hearts: { max: 10, bouquetIncrease: 0, spouseIncrease: 0 },
+    hearts: {
+      max: 10,
+      bouquetIncrease: 0,
+      spouseIncrease: 0
+    },
+    events: [
+      {
+        heart: 3,
+        id: null,
+        description: "Lewis sends a Spaghetti recipe in the mail.",
+        details: `After reaching 3 hearts, Lewis mails you the Spaghetti recipe with a note: "Remember to eat healthy, or you won't have enough energy to work hard! I'm including one of my favorite recipes. Make sure to use ripe tomatoes!"`
+      },
+      {
+        heart: 6,
+        id: 639373,
+        description: "The player witnesses Lewis and Marnie discussing their secret romance by the river.",
+        details: `On a sunny day, enter the town between 7pm and 11pm. Only happens if Marnie is also at 6 hearts. You appear behind Lewis' house. Lewis and Marnie are talking by the river about making their romance public. Lewis says it would undermine his authority, while Marnie says he's too concerned for his job. You pop up and scare both of them. Lewis asks if you heard anything. "Yes... but I'll keep it a secret" (+50 friendship). "Yes... and I'm going to tell everyone" (-100 friendship, Lewis cries). Marnie then questions why you were behind the house, and your character runs away.`
+      },
+      {
+        heart: 7,
+        id: null,
+        description: "Lewis sends an Eggplant Parmesan recipe in the mail.",
+        details: "After reaching 7 hearts, Lewis mails you the Eggplant Parmesan recipe with a similar note encouraging healthy eating."
+      }
+    ],
     image: "images/villagers/Lewis.png",
     loves: ["Autumn's Bounty", "Glazed Yams", "Green Tea", "Hot Pepper", "Vegetable Medley"],
     likes: ["Blueberry", "Cactus Fruit", "Coconut"],
@@ -21866,11 +30118,51 @@ var villagers_default = [
   {
     id: "linus",
     name: "Linus",
-    birthday: { day: 3, season: "winter" },
+    birthday: {
+      day: 3,
+      season: "winter"
+    },
     address: "Mountain Tent",
     occupation: "Hermit",
+    description: "Linus is a villager who lives in a small tent on the Mountains north of Pelican Town. He has chosen a solitary lifestyle in nature.",
     marriageable: false,
-    hearts: { max: 10, bouquetIncrease: 0, spouseIncrease: 0 },
+    hearts: {
+      max: 10,
+      bouquetIncrease: 0,
+      spouseIncrease: 0
+    },
+    events: [
+      {
+        heart: 0.2,
+        id: 502969,
+        description: "George mistakes Linus for a raccoon raiding trash cans.",
+        details: "After reaching 50 friendship points, enter town between 8pm-12am on a non-rainy day (not before Spring 7, Year 1). George asks you to scare raccoons from trash cans. You find Linus instead, who's embarrassed but explains he prevents food waste. Later, Gus catches Linus at the Saloon's trash and gives him zucchini fritters."
+      },
+      {
+        heart: 3,
+        id: null,
+        description: "Linus sends a Sashimi recipe in the mail.",
+        details: "After reaching 3 hearts, Linus mails you the Sashimi recipe with a note about one of his favorite fish recipes."
+      },
+      {
+        heart: 4,
+        id: 26,
+        description: "Linus invites the player to his campsite and teaches them to craft Wild Bait.",
+        details: "Enter mountain near tent between 8pm-12am on a non-rainy day. Linus invites you over to his camp site. He apologizes for not trusting you when you first met, and thanks you for being a good friend. He invites you into his tent, where he shows you how to craft Wild Bait for use in fishing."
+      },
+      {
+        heart: 7,
+        id: null,
+        description: "Linus sends a Fish Taco recipe in the mail.",
+        details: "After reaching 7 hearts, Linus mails you the Fish Taco recipe with a note about one of his favorite fish recipes."
+      },
+      {
+        heart: 8,
+        id: 371652,
+        description: "Robin offers to build Linus a house, but he declines, preferring his independent lifestyle in nature.",
+        details: "Exit Robin's house on a non-rainy day between 9am-5pm. Robin, Linus, and the player gather outside Robin's house. Robin offers lunch; Linus declines, mentioning foraging luck. Robin offers to build him a house. The player can encourage this or support Linus' independence. Linus runs off to pick berries."
+      }
+    ],
     image: "images/villagers/Linus.png",
     loves: [
       "Blueberry Tart",
@@ -21888,11 +30180,45 @@ var villagers_default = [
   {
     id: "marnie",
     name: "Marnie",
-    birthday: { day: 18, season: "fall" },
+    birthday: {
+      day: 18,
+      season: "fall"
+    },
     address: "Marnie's Ranch",
     occupation: "Rancher",
+    description: "Marnie is a villager who lives at Marnie's Ranch in Cindersap Forest.",
     marriageable: false,
-    hearts: { max: 10, bouquetIncrease: 0, spouseIncrease: 0 },
+    hearts: {
+      max: 10,
+      bouquetIncrease: 0,
+      spouseIncrease: 0
+    },
+    events: [
+      {
+        heart: 3,
+        id: 91,
+        description: "Marnie visits the farm asking the player to bring a Cave Carrot to her ranch.",
+        details: "Leave your farmhouse between 6am-9:30am. Marnie greets you and explains her goats need Cave Carrots to say hello. She asks you to bring one to her ranch between 9am-5pm. When the player enters during those hours with a Cave Carrot, a cutscene triggers where they give it to Marnie."
+      },
+      {
+        heart: 3,
+        id: null,
+        description: "Marnie sends a Pale Broth recipe in the mail.",
+        details: `After reaching 3 hearts, Marnie mails you the Pale Broth recipe with a note: "Dear neighbor, when I'm not taking care of animals I like to experiment in the kitchen..."`
+      },
+      {
+        heart: 6,
+        id: 639373,
+        description: "The player discovers Lewis and Marnie's secret romance behind his house.",
+        details: `On a sunny day, enter the town between 7pm and 11pm. Only happens if Lewis is also at 6 hearts. You appear behind Lewis' house. Lewis and Marnie are talking by the river about making their romance public. Lewis says it would undermine his authority. You pop up and scare both of them. "Yes... but I'll keep it a secret" (+50 friendship with Lewis). "Yes... and I'm going to tell everyone" (-100 friendship with Lewis, Lewis cries). Marnie asks why you were behind the house, and your character runs away.`
+      },
+      {
+        heart: 7,
+        id: null,
+        description: "Marnie sends a Rhubarb Pie recipe in the mail.",
+        details: "After reaching 7 hearts, Marnie mails you the Rhubarb Pie recipe with a similar note about kitchen experiments."
+      }
+    ],
     image: "images/villagers/Marnie.png",
     loves: ["Diamond", "Farmer's Lunch", "Pink Cake", "Pumpkin Pie"],
     likes: ["Quartz", "Stardew Valley Almanac"],
@@ -21916,11 +30242,63 @@ var villagers_default = [
   {
     id: "maru",
     name: "Maru",
-    birthday: { day: 10, season: "summer" },
+    birthday: {
+      day: 10,
+      season: "summer"
+    },
     address: "24 Mountain Road",
     occupation: "Nurse and inventor",
+    description: "Maru is a villager who lives in The Mountains north of Pelican Town. She is one of the twelve characters available to marry.",
     marriageable: true,
-    hearts: { max: 8, bouquetIncrease: 2, spouseIncrease: 4 },
+    hearts: {
+      max: 8,
+      bouquetIncrease: 2,
+      spouseIncrease: 4
+    },
+    events: [
+      {
+        heart: 2,
+        id: 6,
+        description: "The player finds Maru testing soil samples with her father, who warns about not interfering with her future.",
+        details: `Enter the Carpenter's Shop when Maru is there. You find Maru and Demetrius testing soil samples. Demetrius warns you not to interfere with Maru's future, then Maru returns. You can either stay silent (+10 friendship with Demetrius) or tell her "Actually, your dad was being weird" (-100 friendship with Demetrius).`
+      },
+      {
+        heart: 4,
+        id: 7,
+        description: "Maru accidentally drops a beaker at the clinic and asks the player how to handle telling Harvey.",
+        details: "Enter Harvey's Clinic when Maru is there. Maru drops a glass beaker and asks what to do. Options: suggest she hide it (-50 friendship), tell Harvey it was your fault (-20 friendship), or advise her to tell Harvey it was an accident (+50 friendship)."
+      },
+      {
+        heart: 6,
+        id: 8,
+        description: "Maru shows the player her telescope on the mountain and shares thoughts about the stars.",
+        details: 'Enter the mountain on a sunny day between 9pm-11:40pm. Maru shows you her telescope. You can respond about seeing "a beautiful planet" (+30 friendship) or "a cold, dark abyss" (-30 friendship). She reflects on mortality and shows you a binary star system.'
+      },
+      {
+        heart: 8,
+        id: 9,
+        description: "Maru demonstrates a machine component that shocks the player, then apologizes while applying burn cream.",
+        details: `Enter the Carpenter's Shop when Maru is there. She demonstrates a machine component but accidentally shocks you. You can say "it doesn't even hurt" (+30 friendship) or complain it hurts (-50 friendship). She apologizes either way.`
+      },
+      {
+        heart: 10,
+        id: 10,
+        description: "Maru reveals her robot creation MarILDA, which ultimately requests freedom and departs into space.",
+        details: "Enter the Carpenter's Shop between 9am-4pm. Maru reveals her completed robot, MarILDA. Demetrius initially fears it but accepts it. MarILDA requests freedom to explore space. Multiple dialogue options available with varying friendship impacts."
+      },
+      {
+        heart: 14.1,
+        id: 3917666,
+        description: "Maru invites the player to observe a rare comet together.",
+        details: "Enter farmhouse between 6:10am-5pm on a non-Sunday/winter day. Maru invites you to observe a comet on the mountain."
+      },
+      {
+        heart: 14.2,
+        id: 5183338,
+        description: "Maru asks the player what they wish for while watching the comet.",
+        details: "Enter mountains between 10pm-1am on a sunny day. You watch the comet together. You wish for a new baby, growing old together, or more money. The day ends immediately after."
+      }
+    ],
     image: "images/villagers/Maru.png",
     spouseImage: "images/villagers/spouse-portraits/Maru.png",
     loves: [
@@ -21967,11 +30345,39 @@ var villagers_default = [
   {
     id: "pam",
     name: "Pam",
-    birthday: { day: 18, season: "spring" },
+    birthday: {
+      day: 18,
+      season: "spring"
+    },
     address: "Trailer",
     occupation: "Bus driver",
+    description: "Pam is a villager who lives in the trailer west of the river in Pelican Town. She drives the Pelican Town bus, enabling access to the Calico Desert.",
     marriageable: false,
-    hearts: { max: 10, bouquetIncrease: 0, spouseIncrease: 0 },
+    hearts: {
+      max: 10,
+      bouquetIncrease: 0,
+      spouseIncrease: 0
+    },
+    events: [
+      {
+        heart: 3,
+        id: null,
+        description: "Pam sends a Cheese Cauliflower recipe in the mail.",
+        details: `After reaching 3 hearts, Pam mails you the Cheese Cauliflower recipe with a note: "Here's the recipe for a little treat my pappy used to make. Cook it slow. -Pam"`
+      },
+      {
+        heart: 7,
+        id: null,
+        description: "Pam sends a Stuffing recipe in the mail.",
+        details: `After reaching 7 hearts, Pam mails you the Stuffing recipe with a note: "Here's the recipe for a little treat my pappy used to make. Cook it slow. -Pam"`
+      },
+      {
+        heart: 9,
+        id: 503180,
+        description: "Pam reveals her struggles with drinking despite improved housing conditions after the community upgrade.",
+        details: `Purchase the Community Upgrade from the Carpenter's Shop. After earning 9 hearts with Pam, enter Pam's house at least 4 days after the Community Upgrade is completed. You find Pam praying before a Sign of the Vessel statue. She confesses that she loves the new house, but hasn't been able to cut back on her drinking. She says she thought the new house would change everything, but it didn't, so she ordered the statue. "I'm glad you're feeling hopeful" (no effect). "Sorry Pam, but Yoba isn't real..." (-1000 friendship, Pam becomes angry and orders you to leave).`
+      }
+    ],
     image: "images/villagers/Pam.png",
     loves: [
       "Beer",
@@ -22005,11 +30411,63 @@ var villagers_default = [
   {
     id: "penny",
     name: "Penny",
-    birthday: { day: 2, season: "fall" },
+    birthday: {
+      day: 2,
+      season: "fall"
+    },
     address: "Trailer",
     occupation: "Tutor",
+    description: "Penny is a villager who lives in Pelican Town and is one of the twelve characters available to marry. She is shy and modest, and likes to cook and read books from the local library.",
     marriageable: true,
-    hearts: { max: 8, bouquetIncrease: 2, spouseIncrease: 4 },
+    hearts: {
+      max: 8,
+      bouquetIncrease: 2,
+      spouseIncrease: 4
+    },
+    events: [
+      {
+        heart: 2,
+        id: 34,
+        description: "George struggles to reach his mailbox, and Penny helps him while the player observes.",
+        details: "Enter Pelican Town on a sunny day between 9am and 2pm. George looks in his mailbox and can't reach a letter. Penny helps him get it, but George scolds her for seeing him helpless. The player can respond supportively (+50 friendship), critically (-50 friendship), or neutrally (no effect). George apologizes, and Penny reflects on aging."
+      },
+      {
+        heart: 4,
+        id: 35,
+        description: "Penny asks the player to help clean the trailer, but Pam returns home upset about strangers in their space.",
+        details: "Enter the trailer when Penny is home. Penny asks the player to help clean the messy trailer. Pam returns and yells at Penny for letting a stranger clean. Pam eventually asks the player to leave, admitting embarrassment. The next day, the player receives an apology letter from Penny."
+      },
+      {
+        heart: 6,
+        id: 36,
+        description: "Penny invites the player to taste a new recipe and suggests watching a movie together.",
+        details: "Enter the trailer when Penny is home. Penny asks the player to try her invented recipe. The player can lie and praise it (+50 friendship), ask to take leftovers (-50 friendship), or comment on its rubbery texture (no effect). Regardless of choice, she invites the player to watch a movie together, and the player gains 165 energy."
+      },
+      {
+        heart: 8,
+        id: 181928,
+        description: "Penny asks the player to be a guest speaker for Jas and Vincent's field trip, then inquires about their thoughts on parenthood.",
+        details: "Enter Cindersap Forest on a sunny day between 9am and 4pm. Penny leads a field trip with Jas and Vincent. She requests the player be a guest speaker about countryside life. The player agrees (+10 friendship), agrees neutrally (no effect), or refuses harshly (-1500 friendship). If agreeing, dialogue options about parenting follow, each affecting friendship differently."
+      },
+      {
+        heart: 10,
+        id: 38,
+        description: "Penny confesses romantic feelings for the player in the spa pool and shares a kiss.",
+        details: "Receive a letter from Penny, then enter the spa pool area between 7pm and midnight. Penny confesses romantic feelings. The player can reciprocate (no friendship effect but triggers a kiss), or reject her (-1500 friendship, she bursts into tears)."
+      },
+      {
+        heart: 14.1,
+        id: 4325434,
+        description: "Penny asks about redecorating the bedroom in one of three styles.",
+        details: "Enter the farmhouse between 3pm and 7pm when Penny is home. Penny greets the player and offers bedroom redecoration in three styles: Forest and Moon, Strawberry Home, or Pirate Theme."
+      },
+      {
+        heart: 14.2,
+        id: 4324303,
+        description: "The bedroom is redecorated in the chosen style with unique furniture.",
+        details: "Three days later, the bedroom is redecorated in the chosen style. Each provides unique decorations unavailable elsewhere."
+      }
+    ],
     image: "images/villagers/Penny.png",
     spouseImage: "images/villagers/spouse-portraits/Penny.png",
     loves: [
@@ -22063,11 +30521,33 @@ var villagers_default = [
   {
     id: "pierre",
     name: "Pierre",
-    birthday: { day: 26, season: "spring" },
+    birthday: {
+      day: 26,
+      season: "spring"
+    },
     address: "Pierre's General Store",
     occupation: "General store owner",
+    description: "Pierre is a villager who lives in Pelican Town. He owns and runs Pierre's General Store.",
     marriageable: false,
-    hearts: { max: 10, bouquetIncrease: 0, spouseIncrease: 0 },
+    hearts: {
+      max: 10,
+      bouquetIncrease: 0,
+      spouseIncrease: 0
+    },
+    events: [
+      {
+        heart: 3,
+        id: null,
+        description: "Pierre sends a Blueberry Tart recipe in the mail.",
+        details: `After reaching 3 hearts, Pierre mails you the Blueberry Tart recipe with a note: "TOP SECRET: Here's the recipe for my famous blueberry tart. Don't tell anyone! I'm giving it to you because we are such good friends. -Pierre"`
+      },
+      {
+        heart: 6,
+        id: 16,
+        description: "The player discovers Pierre's secret stash behind his bookshelf and must choose whether to keep his secret.",
+        details: `Enter Pierre's General Store to trigger the cutscene. You enter Pierre's bedroom. After looking around, you find Pierre's secret stash behind the bookshelf. Pierre catches you and asks that you tell no one. "Your secret is safe with me" (+70 friendship). "Your wife deserves to know about this" (-500 friendship). Pierre says he has to find a new hiding spot.`
+      }
+    ],
     image: "images/villagers/Pierre.png",
     loves: ["Fried Calamari", "Price Catalogue", "Stardrop Tea"],
     likes: ["Daffodil", "Dandelion"],
@@ -22094,11 +30574,33 @@ var villagers_default = [
   {
     id: "robin",
     name: "Robin",
-    birthday: { day: 21, season: "fall" },
+    birthday: {
+      day: 21,
+      season: "fall"
+    },
     address: "24 Mountain Road",
     occupation: "Carpenter",
+    description: "Robin is a villager who resides at 24 Mountain Road with her husband Demetrius, daughter Maru, and son Sebastian.",
     marriageable: false,
-    hearts: { max: 10, bouquetIncrease: 0, spouseIncrease: 0 },
+    hearts: {
+      max: 10,
+      bouquetIncrease: 0,
+      spouseIncrease: 0
+    },
+    events: [
+      {
+        heart: 6,
+        id: 33,
+        description: "Robin shares carpentry secrets and gives the player the Drum Block and Flute Block blueprints.",
+        details: `Enter Robin's house while she is home. You find Robin cleaning the dust off her saw. She asks if you've ever made anything out of wood. She responds: "I think we've become good enough friends that I can trust you with my carpentry secrets!" and gives you two blueprints \u2014 the Drum Block and the Flute Block. She mentions it feels good to decorate your house with things you've made yourself.`
+      },
+      {
+        heart: 7,
+        id: null,
+        description: "Robin sends a Pumpkin Soup recipe in the mail.",
+        details: 'After reaching 7 hearts, Robin mails you the Pumpkin Soup recipe with a note: "Here is an old recipe that my grandma passed down to me. Enjoy! -Robin"'
+      }
+    ],
     image: "images/villagers/Robin.png",
     loves: ["Goat Cheese", "Peach", "Spaghetti", "Woody's Secret"],
     likes: ["Hardwood", "Quartz", "Woodcutter's Weekly"],
@@ -22123,11 +30625,81 @@ var villagers_default = [
   {
     id: "sam",
     name: "Sam",
-    birthday: { day: 17, season: "summer" },
+    birthday: {
+      day: 17,
+      season: "summer"
+    },
     address: "1 Willow Lane",
     occupation: "Musician",
+    description: "Sam is a villager who lives in Pelican Town and is one of the twelve characters available to marry.",
     marriageable: true,
-    hearts: { max: 8, bouquetIncrease: 2, spouseIncrease: 4 },
+    hearts: {
+      max: 8,
+      bouquetIncrease: 2,
+      spouseIncrease: 4
+    },
+    events: [
+      {
+        heart: 2,
+        id: 44,
+        description: "Sam and Sebastian jam in his room, and the player is asked what music style the band should play.",
+        details: "Enter Sam's house when he's there. Sam and Sebastian jam in Sam's room. Sam asks what music style you prefer from options like cheerful pop, experimental noise rock, hi-energy dance, or honky-tonky country. Regardless of choice, Sam says that's the style he's been considering. Sebastian agrees, and Sam thanks you."
+      },
+      {
+        heart: 3,
+        id: 733330,
+        description: "Sam watches Vincent at the beach while reflecting on his absent father and seeking the player's advice.",
+        details: 'Visit the Beach on a sunny day between 7am-3pm, any season except winter (Year 1 only). Sam watches Vincent play in the sand. Vincent asks if their father will return. Sam reassures him, but later expresses guilt about giving false hope. You choose between "honesty is best" or "kids need hope." Sam mentions the band progressing with Abigail as potential drummer.'
+      },
+      {
+        heart: 4,
+        id: 46,
+        description: "Sam drops an egg in the kitchen and the player must decide what story to tell his mom.",
+        details: "Enter Sam's house when he's there. In the kitchen, Sam drops an egg while getting you a snack. His mother Jodi enters upset. You choose: blame Sam (-10 friendship), blame yourself (+50 friendship), or claim Sam did it intentionally (-50 friendship). Sam later apologizes about the incident."
+      },
+      {
+        heart: 6,
+        id: 45,
+        description: "Mayor Lewis catches Sam skateboarding on Emily and Haley's flower box and asks for the player's judgment.",
+        details: "Enter town on a non-rainy day between noon-4pm. Sam grinds on Emily and Haley's flower box while skateboarding. Mayor Lewis confronts him. You can support Sam's skating lack of alternatives, criticize him for disrespecting property, or stay neutral."
+      },
+      {
+        heart: 8,
+        id: 4081148,
+        description: "Sam invites the player to watch his band perform in Zuzu City.",
+        details: "Sam visits your doorstep between 6am-8am (requires seeing Two Hearts event). Sam invites you to see his band perform in Zuzu City. Meet him at the bus stop between 4pm-7pm to watch the concert. He thanks you for inspiring the band's musical direction."
+      },
+      {
+        heart: 10,
+        id: 233104,
+        description: "Sam confesses his feelings for the player in his bedroom while his mom unknowingly interrupts.",
+        details: "After receiving Sam's letter, enter town on a sunny day between 8pm-midnight. Sam sneaks you into his room. He admits falling for you. His mother knocks; you hide in bed. She leaves after Sam claims he was exercising. You choose to get out of bed, move closer for a kiss, head for the window to reject him, or stay put for a kiss in bed."
+      },
+      {
+        heart: 14.1,
+        id: 3918600,
+        description: "Sam struggles with motivation after the band's success.",
+        details: "Enter the upgraded farmhouse (2+ upgrades) between 6:10am-5pm when Sam is present. Sam feels lazy and seeks music-related work."
+      },
+      {
+        heart: 14.2,
+        id: 3918601,
+        description: "Sam receives a job composing music for a children's TV show.",
+        details: "Enter the farmhouse again. Sam receives a job offer creating music for The Happy Junimo Show. You encourage him professionally or sympathetically."
+      },
+      {
+        heart: 14.3,
+        id: 3918602,
+        description: "Sam completes the composing project.",
+        details: "Enter the farmhouse again. Sam plays his acoustic composition, feeling optimistic about the work."
+      },
+      {
+        heart: 14.4,
+        id: 3918603,
+        description: "Sam gifts the player his boombox.",
+        details: "Enter the farmhouse again. You, Vincent, and Jas watch the finished song on TV. Sam gives you his boombox as thanks for supporting him."
+      }
+    ],
     image: "images/villagers/Sam.png",
     spouseImage: "images/villagers/spouse-portraits/Sam.png",
     loves: ["Cactus Fruit", "Maple Bar", "Pizza", "Tigerseye"],
@@ -22172,11 +30744,27 @@ var villagers_default = [
   {
     id: "sandy",
     name: "Sandy",
-    birthday: { day: 15, season: "fall" },
+    birthday: {
+      day: 15,
+      season: "fall"
+    },
     address: "The Oasis",
     occupation: "Desert shopkeeper",
+    description: "Sandy is a villager who operates the Oasis shop in the Calico Desert.",
     marriageable: false,
-    hearts: { max: 10, bouquetIncrease: 0, spouseIncrease: 0 },
+    hearts: {
+      max: 10,
+      bouquetIncrease: 0,
+      spouseIncrease: 0
+    },
+    events: [
+      {
+        heart: 7,
+        id: null,
+        description: "Sandy sends a Tom Kha Soup recipe in the mail.",
+        details: `After reaching 7 hearts, Sandy mails you the Tom Kha Soup recipe with a note: "I was so bored out here in the desert that I wrote you a letter. There's a recipe for a delicious soup enclosed. Come visit me soon! -Sandy"`
+      }
+    ],
     image: "images/villagers/Sandy.png",
     loves: ["Crocus", "Daffodil", "Mango Sticky Rice", "Sweet Pea"],
     likes: ["Quartz", "Wool"],
@@ -22187,11 +30775,63 @@ var villagers_default = [
   {
     id: "sebastian",
     name: "Sebastian",
-    birthday: { day: 10, season: "winter" },
+    birthday: {
+      day: 10,
+      season: "winter"
+    },
     address: "24 Mountain Road",
     occupation: "Freelance programmer",
+    description: "Sebastian is a villager who lives in the basement of 24 Mountain Road. He is one of the twelve characters available to marry.",
     marriageable: true,
-    hearts: { max: 8, bouquetIncrease: 2, spouseIncrease: 4 },
+    hearts: {
+      max: 8,
+      bouquetIncrease: 2,
+      spouseIncrease: 4
+    },
+    events: [
+      {
+        heart: 2,
+        id: 2794460,
+        description: "The player finds Sebastian working on his computer and learns about his freelance programming career.",
+        details: "Enter Sebastian's room when he's there. Sebastian is working on his computer and asks you to wait. You can leave or stay put. He finishes and apologizes for the wait. You learn he does freelance programming work and is saving to move to the city. Robin interrupts mentioning Abigail will visit."
+      },
+      {
+        heart: 4,
+        id: 384883,
+        description: "Sebastian shows the player his motorcycle and suggests taking a ride together someday.",
+        details: "Go to The Mountain between 11am and 5pm. Sebastian is working on his motorcycle in the garage. He explains it's his and he takes long rides alone away from town. He suggests you might ride with him sometime, offering different responses based on your reaction."
+      },
+      {
+        heart: 6,
+        id: 27,
+        description: "Sebastian invites the player to play Solarion Chronicles: The Game with him and Sam.",
+        details: "Enter Sebastian's room when he's there. Sebastian invites you to play Solarion Chronicles with him and Sam. You choose an archetype (Warrior, Healer, or Wizard) and play through a scenario. Correct choices lead to perfect scores, with different endings based on your class selection."
+      },
+      {
+        heart: 8,
+        id: 29,
+        description: "Sebastian meets the player at the beach on a rainy day and shares an umbrella, expressing comfort around them.",
+        details: "Go to the beach on a rainy day between noon and 11pm. Sebastian is on the boardwalk, surprised to see you in the rain. He admits he's anxious around people but not with you. He pulls out an umbrella and invites you to stand under it together."
+      },
+      {
+        heart: 10,
+        id: 384882,
+        description: "Sebastian takes the player on a motorcycle ride to his favorite spot and confesses his feelings.",
+        details: "Go to The Mountain between 8pm and midnight. Sebastian invites you for a motorcycle ride to his favorite thinking spot overlooking the city. He confesses true feelings, mentioning he doesn't normally bring others there. You embrace under the full moon."
+      },
+      {
+        heart: 14.1,
+        id: 9333219,
+        description: "The player helps Sebastian rescue an injured frog.",
+        details: "Go to The Mountain on a rainy day between 6am and 7pm. You help Sebastian rescue an injured frog from the bushes. He takes it home."
+      },
+      {
+        heart: 14.2,
+        id: 9333220,
+        description: "Sebastian brings the frog home and creates a terrarium for it in his spouse room.",
+        details: "The next day, Sebastian shows you a terrarium he built for the frog's recovery, discussing frog sanctuaries and expressing his newfound hobby."
+      }
+    ],
     image: "images/villagers/Sebastian.png",
     spouseImage: "images/villagers/spouse-portraits/Sebastian.png",
     loves: ["Frog Egg", "Frozen Tear", "Obsidian", "Pumpkin Soup", "Sashimi", "Void Egg"],
@@ -22233,11 +30873,87 @@ var villagers_default = [
   {
     id: "shane",
     name: "Shane",
-    birthday: { day: 20, season: "spring" },
+    birthday: {
+      day: 20,
+      season: "spring"
+    },
     address: "Marnie's Ranch",
     occupation: "JojaMart employee",
+    description: "Shane is a villager who lives at Marnie's Ranch in Pelican Town. He is one of the twelve characters available to marry.",
     marriageable: true,
-    hearts: { max: 8, bouquetIncrease: 2, spouseIncrease: 4 },
+    hearts: {
+      max: 8,
+      bouquetIncrease: 2,
+      spouseIncrease: 4
+    },
+    events: [
+      {
+        heart: 2,
+        id: 611944,
+        description: "Shane shares a beer with the player on a pond dock and discusses his depression.",
+        details: "Enter Cindersap Forest between 8pm and midnight. Shane shares a beer with the player on the pond dock, describing his depression. He expresses optimism for the player's future and warns against heavy drinking. The beer heals up to 50 Energy and 22 Health, leaving the player with a Tipsy buff."
+      },
+      {
+        heart: 3,
+        id: null,
+        description: "Shane sends a Pepper Poppers recipe in the mail.",
+        details: 'After reaching 3 hearts, Shane mails you the Pepper Poppers recipe with a note: "I found this recipe in a magazine and I thought it sounded interesting. Feel free to give me a taste if you make it. hehe. -Shane"'
+      },
+      {
+        heart: 4,
+        id: 3910674,
+        description: "The player finds Shane passed out in his room surrounded by beer cans.",
+        details: "Enter Marnie's Ranch at any time. Shane is found passed out in his room surrounded by empty beer cans. The player uses a watering can to wake him. Marnie expresses frustration about his drinking. Shane responds pessimistically about his future. Jas overhears and runs away crying; Shane falls to the ground apologizing."
+      },
+      {
+        heart: 6,
+        id: 3910975,
+        description: "Shane lies at a cliff's edge contemplating suicide; the player intervenes and he commits to seeking counseling.",
+        details: "Enter Cindersap Forest between 9am and 8pm while storming or raining. Shane lies at the cliff's edge surrounded by empty beer cans, asking why he shouldn't jump off. Harvey then treats him medically and recommends counseling in Zuzu City. The next day, Shane visits the farm to announce his intention to seek counseling."
+      },
+      {
+        heart: 6.8,
+        id: 3910974,
+        description: "Shane tells Marnie he has been feeling happier and has switched to sparkling water instead of beer.",
+        details: "Enter Marnie's Ranch while Shane is home after triggering the six heart event. Shane tells Marnie he's been feeling happier and has switched to sparkling water instead of beer. He explains he's learned to rely on others without feeling weak. He gives Jas expensive shoes, explaining he afforded them by cutting back on drinking expenses."
+      },
+      {
+        heart: 7,
+        id: 831125,
+        description: "Shane directs a Joja Cola advertisement scene starring Emily and Clint sends a Strange Bun recipe in the mail",
+        details: 'Enter town between 10am and 4pm on a sunny day (requires 2 hearts with both Emily and Clint). Shane films a Joja Cola advertisement scene with Emily and Clint. He explains a contest with a 10,000g prize and asks the player to walk behind the actors to make the scene feel natural. Shane mails you the Strange Bun recipe with a note: "I found this recipe in a magazine and I thought it sounded interesting. Feel free to give me a taste if you make it. hehe. -Shane"'
+      },
+      {
+        heart: 8,
+        id: 3900074,
+        description: "Shane shows the player his hidden chicken coop with his prized blue chickens and white chicken named Charlie.",
+        details: "Enter Marnie's Ranch while Shane is home. Jas leads the player through a normally-locked kitchen door. Shane is painting a Fresh Eggs sign, surrounded by his blue chickens and white chicken Charlie. He discusses passing chicken knowledge to Jas. Afterward, purchased chickens and hatched eggs have a 25% chance of being blue."
+      },
+      {
+        heart: 10,
+        id: 9581348,
+        description: "Shane takes the player to a gridball game in Zuzu City where he expresses gratitude and shares a kiss.",
+        details: "Exit your house before 6:30am, then walk to the Bus Stop between 4pm and 6pm. Shane invites the player to a Zuzu City Tunnelers gridball game. At the stadium, he thanks the player for supporting him through depression and anxiety. After discussing the game, Shane kisses the player."
+      },
+      {
+        heart: 14.1,
+        id: 3917584,
+        description: "The player discovers Shane has replaced drinking beer with playing arcade games.",
+        details: "Enter town on a non-Friday between 8am and 5pm. Marnie, Jas, and the player are outside the saloon. Shane exits saying he hasn't had a session like that in a while. Marnie expresses concern."
+      },
+      {
+        heart: 14.2,
+        id: 3917585,
+        description: "Shane continues managing his anxiety through arcade games.",
+        details: "Enter town anytime the next day. Shane exits; the player confronts him about drinking. Shane gets upset denying the accusation and runs home."
+      },
+      {
+        heart: 14.3,
+        id: 3917586,
+        description: "Shane reflects on his progress managing anxiety without alcohol.",
+        details: "Enter town anytime the following day. Marnie and the player wait outside. Shane enters; they catch him at an arcade machine. He explains the cans are Joja Cola, not beer, and that video games help manage drinking urges."
+      }
+    ],
     image: "images/villagers/Shane.png",
     spouseImage: "images/villagers/spouse-portraits/Shane.png",
     loves: ["Beer", "Hot Pepper", "Pepper Poppers", "Pizza"],
@@ -22265,11 +30981,27 @@ var villagers_default = [
   {
     id: "vincent",
     name: "Vincent",
-    birthday: { day: 10, season: "spring" },
+    birthday: {
+      day: 10,
+      season: "spring"
+    },
     address: "1 Willow Lane",
     occupation: "Child",
+    description: "Vincent is a young villager who lives in Pelican Town. He can often be found with his best friend Jas.",
     marriageable: false,
-    hearts: { max: 10, bouquetIncrease: 0, spouseIncrease: 0 },
+    hearts: {
+      max: 10,
+      bouquetIncrease: 0,
+      spouseIncrease: 0
+    },
+    events: [
+      {
+        heart: 8,
+        id: 3910979,
+        description: "Vincent and Jas teach the player how to clean Spring Onions, permanently increasing their sell price by 5x.",
+        details: "Enter Cindersap Forest during Spring on a sunny day between 6am and 5pm after reaching 8 hearts with both Vincent and Jas. Vincent will explain how to clean Spring Onions by removing insects. Jas insists that the insects not be killed after removing them from the onions. Afterward, the player gains Spring Onion Mastery, which permanently increases the sell price of Spring Onions by 5x."
+      }
+    ],
     image: "images/villagers/Vincent.png",
     loves: ["Cranberry Candy", "Frog Egg", "Ginger Ale", "Grape", "Pink Cake", "Snail"],
     likes: ["Coconut", "Daffodil"],
@@ -22308,11 +31040,51 @@ var villagers_default = [
   {
     id: "willy",
     name: "Willy",
-    birthday: { day: 24, season: "summer" },
+    birthday: {
+      day: 24,
+      season: "summer"
+    },
     address: "The Beach",
     occupation: "Fisher and shopkeeper",
+    description: "Willy is a villager who lives south of Pelican Town on the beach. He operates a fishing supply shop.",
     marriageable: false,
-    hearts: { max: 10, bouquetIncrease: 0, spouseIncrease: 0 },
+    hearts: {
+      max: 10,
+      bouquetIncrease: 0,
+      spouseIncrease: 0
+    },
+    events: [
+      {
+        heart: 3,
+        id: null,
+        description: "Willy sends a Chowder recipe in the mail.",
+        details: `After reaching 3 hearts, Willy mails you the Chowder recipe with a note: "I'd like to share an ol' cooking recipe my pappy used to make. It's important the fish is FRESH. -Willy"`
+      },
+      {
+        heart: 5,
+        id: null,
+        description: "Willy sends an Escargot recipe in the mail.",
+        details: `After reaching 5 hearts, Willy mails you the Escargot recipe with a note: "I'd like to share an ol' cooking recipe my pappy used to make. It's important the fish is FRESH. -Willy"`
+      },
+      {
+        heart: 6,
+        id: 711130,
+        description: "Willy asks for help when crabs overrun his fish shop, and Gus purchases them all.",
+        details: "Enter The Beach between 6am and 5:10pm. Willy greets you outside the Fish Shop and says he needs your help. Once inside, you see crabs run amok, covering the Fish Shop floor. Before you can help, Gus enters and offers to purchase all the crabs, minus a discount for the labor involved. Willy agrees, and Gus gathers the crabs. Gus turns to you and says he's going to run a special on Crab Cakes for the next few days. The cutscene ends with Willy saying goodbye to his sweet ladies as they are taken away. Gus sells unlimited Crab Cakes at the Saloon for 550g each for 3 days after."
+      },
+      {
+        heart: 7,
+        id: null,
+        description: "Willy sends a Fish Stew recipe in the mail.",
+        details: `After reaching 7 hearts, Willy mails you the Fish Stew recipe with a note: "I'd like to share an ol' cooking recipe my pappy used to make. It's important the fish is FRESH. -Willy"`
+      },
+      {
+        heart: 9,
+        id: null,
+        description: "Willy sends a Lobster Bisque recipe in the mail.",
+        details: `After reaching 9 hearts, Willy mails you the Lobster Bisque recipe with a note: "I'd like to share an ol' cooking recipe my pappy used to make. It's important the fish is FRESH. -Willy"`
+      }
+    ],
     image: "images/villagers/Willy.png",
     loves: [
       "Catfish",
@@ -22362,11 +31134,27 @@ var villagers_default = [
   {
     id: "wizard",
     name: "Wizard",
-    birthday: { day: 17, season: "winter" },
+    birthday: {
+      day: 17,
+      season: "winter"
+    },
     address: "Wizard's Tower",
     occupation: "Wizard",
+    description: "The Wizard, also known as M. Rasmodius, is a villager who lives in the Wizard's Tower to the far west of Cindersap Forest.",
     marriageable: false,
-    hearts: { max: 10, bouquetIncrease: 0, spouseIncrease: 0 },
+    hearts: {
+      max: 10,
+      bouquetIncrease: 0,
+      spouseIncrease: 0
+    },
+    events: [
+      {
+        heart: 4,
+        id: null,
+        description: "The player gains access to the Wizard's Tower basement and the Shrine of Illusions.",
+        details: "After reaching 4 hearts with the Wizard, the player gains access to the basement of the Wizard's Tower. The basement contains the Shrine of Illusions, which allows the player to change their character's appearance for 500g."
+      }
+    ],
     image: "images/villagers/Wizard.png",
     loves: [
       "Book of Mysteries",
@@ -22526,12 +31314,15 @@ var WeatherQuery = class _WeatherQuery extends QueryBase {
   constructor(data = weatherData) {
     super(data);
   }
+  /** Filter to weather events that can occur in the given season. */
   bySeason(season) {
     return new _WeatherQuery(this.data.filter((w) => w.seasons.includes(season)));
   }
+  /** Filter to weather events that water crops when they occur. */
   watersCrops() {
     return new _WeatherQuery(this.data.filter((w) => w.watersCrops));
   }
+  /** Filter to special weather events (e.g. Green Rain, Storm). */
   special() {
     return new _WeatherQuery(this.data.filter((w) => w.special));
   }
@@ -22580,6 +31371,7 @@ var WeaponStatQuery = class _WeaponStatQuery extends QueryBase {
   constructor(data = weaponStatsData) {
     super(data);
   }
+  /** Sort alphabetically by name. Default: `'asc'`. */
   sortByName(order = "asc") {
     return new _WeaponStatQuery(
       [...this.data].sort(
@@ -22641,24 +31433,24 @@ var collections_default = {
     "289",
     "296",
     "300",
-    "pale-ale",
+    "303",
     "304",
     "305",
-    "mayonnaise",
-    "duck-mayonnaise",
-    "void-mayonnaise",
+    "306",
+    "307",
+    "308",
     "330",
     "334",
     "335",
     "336",
     "337",
     "338",
-    "honey",
-    "pickles",
-    "jelly",
-    "beer",
-    "wine",
-    "juice",
+    "340",
+    "342",
+    "344",
+    "346",
+    "348",
+    "350",
     "376",
     "378",
     "380",
@@ -22688,28 +31480,28 @@ var collections_default = {
     "420",
     "421",
     "422",
-    "cheese",
-    "goat-cheese",
-    "cloth",
+    "424",
+    "426",
+    "428",
     "430",
-    "truffle-oil",
+    "432",
     "433",
     "436",
     "438",
     "440",
     "442",
     "444",
-    "caviar",
+    "445",
     "446",
-    "aged-roe",
+    "447",
     "454",
-    "mead",
+    "459",
     "591",
     "593",
     "595",
     "597",
     "613",
-    "green-tea",
+    "614",
     "634",
     "635",
     "636",
@@ -22726,7 +31518,7 @@ var collections_default = {
     "769",
     "771",
     "787",
-    "dinosaur-mayonnaise",
+    "807",
     "812",
     "814",
     "815",
@@ -22739,12 +31531,12 @@ var collections_default = {
     "881",
     "909",
     "910",
-    "smoked-fish",
+    "SmokedFish",
     "Moss",
     "MysticSyrup",
-    "raisins",
-    "dried-fruit",
-    "dried-mushrooms",
+    "Raisins",
+    "DriedFruit",
+    "DriedMushrooms",
     "Carrot",
     "SummerSquash",
     "Broccoli",
@@ -22924,238 +31716,238 @@ var collections_default = {
     "578"
   ],
   cooking: [
-    "194",
-    "195",
-    "196",
-    "197",
-    "198",
-    "199",
-    "200",
-    "201",
-    "202",
-    "203",
-    "204",
-    "205",
-    "206",
-    "207",
-    "208",
-    "209",
-    "210",
-    "211",
-    "212",
-    "213",
-    "214",
-    "215",
-    "216",
-    "218",
-    "219",
-    "220",
-    "221",
-    "222",
-    "223",
-    "224",
-    "225",
-    "226",
-    "227",
-    "228",
-    "229",
-    "230",
-    "231",
-    "232",
-    "233",
-    "234",
-    "235",
-    "236",
-    "237",
-    "238",
-    "239",
-    "240",
-    "241",
-    "242",
-    "243",
-    "244",
-    "253",
-    "265",
-    "456",
-    "457",
-    "604",
-    "605",
-    "606",
-    "607",
-    "608",
-    "609",
-    "610",
-    "611",
-    "612",
-    "648",
-    "649",
-    "651",
-    "618",
-    "727",
-    "728",
-    "729",
-    "730",
-    "731",
-    "732",
-    "733",
-    "903",
-    "904",
-    "905",
-    "906",
-    "907",
-    "921",
-    "MossSoup"
+    "Fried Egg",
+    "Omelet",
+    "Salad",
+    "Cheese Cauliflower",
+    "Baked Fish",
+    "Parsnip Soup",
+    "Vegetable Medley",
+    "Complete Breakfast",
+    "Fried Calamari",
+    "Strange Bun",
+    "Lucky Lunch",
+    "Fried Mushroom",
+    "Pizza",
+    "Bean Hotpot",
+    "Glazed Yams",
+    "Carp Surprise",
+    "Hashbrowns",
+    "Pancakes",
+    "Salmon Dinner",
+    "Fish Taco",
+    "Crispy Bass",
+    "Pepper Poppers",
+    "Bread",
+    "Tom Kha Soup",
+    "Trout Soup",
+    "Chocolate Cake",
+    "Pink Cake",
+    "Rhubarb Pie",
+    "Cookie",
+    "Spaghetti",
+    "Fried Eel",
+    "Spicy Eel",
+    "Sashimi",
+    "Maki Roll",
+    "Tortilla",
+    "Red Plate",
+    "Eggplant Parmesan",
+    "Rice Pudding",
+    "Ice Cream",
+    "Blueberry Tart",
+    "Autumn's Bounty",
+    "Pumpkin Soup",
+    "Super Meal",
+    "Cranberry Sauce",
+    "Stuffing",
+    "Farmer's Lunch",
+    "Survival Burger",
+    "Dish O' The Sea",
+    "Miner's Treat",
+    "Roots Platter",
+    "Triple Shot Espresso",
+    "Seafoam Pudding",
+    "Algae Soup",
+    "Pale Broth",
+    "Plum Pudding",
+    "Artichoke Dip",
+    "Stir Fry",
+    "Roasted Hazelnuts",
+    "Pumpkin Pie",
+    "Radish Salad",
+    "Fruit Salad",
+    "Blackberry Cobbler",
+    "Cranberry Candy",
+    "Coleslaw",
+    "Fiddlehead Risotto",
+    "Poppyseed Muffin",
+    "Bruschetta",
+    "Chowder",
+    "Fish Stew",
+    "Escargot",
+    "Lobster Bisque",
+    "Maple Bar",
+    "Crab Cakes",
+    "Shrimp Cocktail",
+    "Ginger Ale",
+    "Banana Pudding",
+    "Mango Sticky Rice",
+    "Poi",
+    "Tropical Curry",
+    "Squid Ink Ravioli",
+    "Moss Soup"
   ],
   crafting: [
-    "287",
-    "286",
-    "288",
-    "325",
-    "298",
-    "324",
-    "323",
-    "322",
-    "BigChest",
-    "BigStoneChest",
-    "130",
-    "232",
-    "39",
-    "38",
-    "TextSign",
-    "37",
-    "10",
-    "163",
-    "16",
+    "Bomb",
+    "Cherry Bomb",
+    "Mega Bomb",
+    "Gate",
+    "Hardwood Fence",
+    "Iron Fence",
+    "Stone Fence",
+    "Wood Fence",
+    "Big Chest",
+    "Big Stone Chest",
+    "Chest",
+    "Stone Chest",
+    "Dark Sign",
+    "Stone Sign",
+    "Text Sign",
+    "Wood Sign",
+    "Bee House",
+    "Cask",
+    "Cheese Press",
     "Dehydrator",
-    "FishSmoker",
-    "12",
-    "17",
-    "24",
-    "19",
-    "15",
-    "BaitMaker",
-    "90",
-    "114",
-    "21",
-    "DeluxeWormBin",
-    "13",
-    "182",
-    "HeavyFurnace",
-    "264",
-    "9",
-    "MushroomLog",
-    "254",
-    "20",
-    "25",
-    "158",
-    "156",
-    "105",
-    "154",
-    "645",
-    "621",
-    "599",
-    "150",
-    "146",
-    "148",
-    "145",
-    "153",
-    "746",
-    "151",
-    "149",
-    "144",
-    "147",
-    "93",
-    "152",
-    "143",
-    "167",
-    "62",
-    "275",
-    "8",
-    "108",
-    "83",
-    "463",
-    "464",
-    "888",
-    "527",
-    "524",
-    "525",
-    "839",
-    "521",
-    "685",
-    "691",
-    "ChallengeBait",
-    "695",
-    "710",
-    "DeluxeBait",
-    "687",
-    "908",
-    "703",
-    "877",
-    "SonarBobber",
-    "686",
-    "694",
-    "693",
-    "774",
-    "293",
-    "333",
-    "840",
-    "329",
-    "841",
-    "401",
-    "331",
-    "328",
-    "411",
-    "409",
-    "407",
-    "415",
-    "405",
-    "499",
-    "368",
-    "370",
-    "BlueGrassStarter",
-    "919",
-    "920",
-    "466",
-    "885",
-    "297",
-    "918",
-    "MysticTreeSeed",
-    "369",
-    "371",
-    "465",
-    "251",
-    "805",
-    "497",
-    "495",
-    "496",
-    "498",
-    "926",
-    "681",
-    "TentKit",
-    "TreasureTotem",
-    "690",
-    "261",
-    "688",
-    "886",
-    "689",
-    "403",
-    "874",
-    "441",
-    "872",
-    "773",
-    "879",
-    "772",
+    "Fish Smoker",
+    "Keg",
+    "Loom",
+    "Mayonnaise Machine",
+    "Oil Maker",
+    "Preserves Jar",
+    "Bait Maker",
+    "Bone Mill",
+    "Charcoal Kiln",
+    "Crystalarium",
+    "Deluxe Worm Bin",
+    "Furnace",
+    "Geode Crusher",
+    "Heavy Furnace",
+    "Heavy Tapper",
+    "Lightning Rod",
+    "Mushroom Log",
+    "Ostrich Incubator",
+    "Recycling Machine",
+    "Seed Maker",
+    "Slime Egg-Press",
+    "Slime Incubator",
+    "Tapper",
+    "Worm Bin",
+    "Iridium Sprinkler",
+    "Quality Sprinkler",
+    "Sprinkler",
+    "Barrel Brazier",
+    "Campfire",
+    "Carved Brazier",
+    "Gold Brazier",
+    "Iron Lamp-post",
+    "Jack-O-Lantern",
+    "Marble Brazier",
+    "Skull Brazier",
+    "Stone Brazier",
+    "Stump Brazier",
+    "Torch",
+    "Wood Lamp-post",
+    "Wooden Brazier",
+    "Deluxe Scarecrow",
+    "Garden Pot",
+    "Hopper",
+    "Scarecrow",
+    "Tub o' Flowers",
+    "Wicked Statue",
+    "Drum Block",
+    "Flute Block",
+    "Glowstone Ring",
+    "Iridium Band",
+    "Ring of Yoba",
+    "Sturdy Ring",
+    "Thorns Ring",
+    "Warrior Ring",
+    "Bait",
+    "Barbed Hook",
+    "Challenge Bait",
+    "Cork Bobber",
+    "Crab Pot",
+    "Deluxe Bait",
+    "Dressed Spinner",
+    "Magic Bait",
+    "Magnet",
+    "Quality Bobber",
+    "Sonar Bobber",
+    "Spinner",
+    "Trap Bobber",
+    "Treasure Hunter",
+    "Wild Bait",
+    "Brick Floor",
+    "Crystal Floor",
+    "Rustic Plank Floor",
+    "Stone Floor",
+    "Stone Walkway Floor",
+    "Straw Floor",
+    "Weathered Floor",
+    "Wood Floor",
+    "Cobblestone Path",
+    "Crystal Path",
+    "Gravel Path",
+    "Stepping Stone Path",
+    "Wood Path",
+    "Ancient Seeds",
+    "Basic Fertilizer",
+    "Basic Retaining Soil",
+    "Blue Grass Starter",
+    "Deluxe Fertilizer",
+    "Deluxe Retaining Soil",
+    "Deluxe Speed-Gro",
+    "Fiber Seeds",
+    "Grass Starter",
+    "Hyper Speed-Gro",
+    "Mystic Tree Seed",
+    "Quality Fertilizer",
+    "Quality Retaining Soil",
+    "Speed-Gro",
+    "Tea Sapling",
+    "Tree Fertilizer",
+    "Wild Seeds (Fa)",
+    "Wild Seeds (Sp)",
+    "Wild Seeds (Su)",
+    "Wild Seeds (Wi)",
+    "Cookout Kit",
+    "Rain Totem",
+    "Tent Kit",
+    "Treasure Totem",
+    "Warp Totem: Beach",
+    "Warp Totem: Desert",
+    "Warp Totem: Farm",
+    "Warp Totem: Island",
+    "Warp Totem: Mountains",
+    "Field Snack",
+    "Bug Steak",
+    "Explosive Ammo",
+    "Fairy Dust",
+    "Life Elixir",
+    "Monster Musk",
+    "Oil Of Garlic",
     "Anvil",
-    "239",
-    "MiniForge",
-    "209",
-    "238",
-    "231",
-    "71",
-    "StatueOfBlessings",
-    "StatueOfTheDwarfKing",
-    "336",
-    "335"
+    "Farm Computer",
+    "Mini-Forge",
+    "Mini-Jukebox",
+    "Mini-Obelisk",
+    "Solar Panel",
+    "Staircase",
+    "Statue Of Blessings",
+    "Statue Of The Dwarf King",
+    "Transmute (Au)",
+    "Transmute (Fe)"
   ]
 };
 
@@ -23173,9 +31965,6 @@ function buildLookup() {
   for (const item of crops_default) add(item);
   for (const item of artisan_goods_default) add(item);
   for (const item of monster_loot_default) add(item);
-  for (const recipe of crafting_default) {
-    add({ id: recipe.output.id, name: recipe.output.name, image: recipe.image });
-  }
   for (const animal of animals_default) {
     if (animal.type !== "farm-animal") continue;
     if (animal.produce) add(animal.produce);
@@ -23187,7 +31976,24 @@ function buildLookup() {
   }
   return map;
 }
+function buildCookingLookup() {
+  const map = /* @__PURE__ */ new Map();
+  for (const recipe of cooking_default) {
+    map.set(recipe.name, { id: recipe.id, name: recipe.name, image: recipe.image });
+  }
+  return map;
+}
+function buildCraftingLookup() {
+  const map = /* @__PURE__ */ new Map();
+  for (const recipe of crafting_default) {
+    const id = recipe.output.isBigCraftable ? `(BC)${recipe.output.id}` : recipe.output.id;
+    map.set(recipe.name, { id, name: recipe.name, image: recipe.image });
+  }
+  return map;
+}
 var lookup = buildLookup();
+var cookingLookup = buildCookingLookup();
+var craftingLookup = buildCraftingLookup();
 var CollectionItemQuery = class extends QueryBase {
   constructor(data) {
     super(data);
@@ -23220,11 +32026,21 @@ var CollectionsQuery = class {
   }
   /** Items that appear in the Cooking collection tab. */
   cooking() {
-    return this.resolve(collections_default.cooking);
+    const items = [];
+    for (const name of collections_default.cooking) {
+      const item = cookingLookup.get(name);
+      if (item) items.push(item);
+    }
+    return new CollectionItemQuery(items);
   }
   /** Items that appear in the Crafting collection tab. */
   crafting() {
-    return this.resolve(collections_default.crafting);
+    const items = [];
+    for (const name of collections_default.crafting) {
+      const item = craftingLookup.get(name);
+      if (item) items.push(item);
+    }
+    return new CollectionItemQuery(items);
   }
 };
 function collections() {
@@ -23277,7 +32093,7 @@ var perfection_default = [
     id: "farmer-level",
     name: "Farmer Level",
     requirement: "Reach level 10 in every skill",
-    count: 25,
+    count: 50,
     unit: "skill levels",
     weight: 5
   },
@@ -24592,9 +33408,9 @@ var pierre_shop_default = [
 ];
 
 // src/modules/pierre-shop/index.ts
-var allPierreData = pierre_shop_default;
+var pierreData = pierre_shop_default;
 var PierreQuery = class _PierreQuery extends QueryBase {
-  constructor(data = allPierreData) {
+  constructor(data = pierreData) {
     super(data);
   }
   /** Filter to items available in the given season (includes permanent and multi-season items). */
@@ -24651,7 +33467,7 @@ var PierreQuery = class _PierreQuery extends QueryBase {
     );
   }
 };
-function pierre(source = allPierreData) {
+function pierre(source = pierreData) {
   return new PierreQuery(source);
 }
 
@@ -25305,7 +34121,7 @@ var wizard_shop_default = [
         itemId: "852",
         itemName: "Dragon Tooth",
         amount: 10,
-        image: "images/minerals/Dragon Tooth.png"
+        image: "images/monsters/monster-loot/Dragon Tooth.png"
       },
       {
         itemId: "91",
@@ -27239,7 +36055,7 @@ var island_trader_shop_default = [
     image: "images/trees/banana/seed.png",
     tradeItemId: "852",
     tradeItemName: "Dragon Tooth",
-    tradeItemImage: "images/minerals/Dragon Tooth.png",
+    tradeItemImage: "images/monsters/monster-loot/Dragon Tooth.png",
     tradeAmount: 5
   },
   {
@@ -28424,7 +37240,7 @@ function locations(source = allLocations) {
 // data/special-items.json
 var special_items_default = [
   {
-    id: "forest-magic",
+    id: "ForestMagic",
     name: "Forest Magic",
     type: "special-item",
     effect: "Unlocks the ability to read the language of the Junimos",
@@ -28433,7 +37249,7 @@ var special_items_default = [
     mailFlags: ["canReadJunimoText"]
   },
   {
-    id: "dwarvish-translation-guide",
+    id: "DwarvishTranslationGuide",
     name: "Dwarvish Translation Guide",
     type: "special-item",
     effect: "Unlocks the ability to speak to the Dwarf in the mines and volcano dungeon",
@@ -28442,7 +37258,7 @@ var special_items_default = [
     mailFlags: ["HasDwarvishTranslationGuide"]
   },
   {
-    id: "rusty-key",
+    id: "RustyKey",
     name: "Rusty Key",
     type: "special-item",
     effect: "Grants access to The Sewers",
@@ -28451,7 +37267,7 @@ var special_items_default = [
     mailFlags: ["HasRustyKey", "ccBoilerRoom"]
   },
   {
-    id: "club-card",
+    id: "ClubCard",
     name: "Club Card",
     type: "special-item",
     effect: "Enables entry to the Casino",
@@ -28460,7 +37276,7 @@ var special_items_default = [
     mailFlags: ["HasClubCard"]
   },
   {
-    id: "special-charm",
+    id: "SpecialCharm",
     name: "Special Charm",
     type: "special-item",
     effect: "Permanently increases daily luck",
@@ -28469,7 +37285,7 @@ var special_items_default = [
     mailFlags: ["HasSpecialCharm"]
   },
   {
-    id: "skull-key",
+    id: "SkullKey",
     name: "Skull Key",
     type: "special-item",
     effect: "Unlocks Skull Cavern and enables the Junimo Kart machine",
@@ -28478,7 +37294,7 @@ var special_items_default = [
     mailFlags: ["HasSkullKey"]
   },
   {
-    id: "magnifying-glass",
+    id: "MagnifyingGlass",
     name: "Magnifying Glass",
     type: "special-item",
     effect: "Unlocks the ability to find Secret Notes",
@@ -28487,7 +37303,7 @@ var special_items_default = [
     mailFlags: ["HasMagnifyingGlass"]
   },
   {
-    id: "dark-talisman",
+    id: "DarkTalisman",
     name: "Dark Talisman",
     type: "special-item",
     effect: "Quest item used to open the passage to the Witch's Swamp",
@@ -28496,7 +37312,7 @@ var special_items_default = [
     mailFlags: ["HasDarkTalisman"]
   },
   {
-    id: "magic-ink",
+    id: "MagicInk",
     name: "Magic Ink",
     type: "special-item",
     effect: "Quest item returned to the Wizard to restore his magic",
@@ -28505,7 +37321,7 @@ var special_items_default = [
     mailFlags: ["HasMagicInk"]
   },
   {
-    id: "bears-knowledge",
+    id: "BearPaw",
     name: "Bear's Knowledge",
     type: "special-item",
     effect: "Increases sell price of Blackberries and Salmonberries by 3x",
@@ -28514,7 +37330,7 @@ var special_items_default = [
     mailFlags: ["bearsKnowledge"]
   },
   {
-    id: "spring-onion-mastery",
+    id: "SpringOnionMastery",
     name: "Spring Onion Mastery",
     type: "special-item",
     effect: "Increases sell price of Spring Onions by 5x",
@@ -28523,7 +37339,7 @@ var special_items_default = [
     eventFlags: ["3910979"]
   },
   {
-    id: "key-to-the-town",
+    id: "KeyToTheTown",
     name: "Key To The Town",
     type: "special-item",
     effect: "Allows access to all buildings in town at any time",
@@ -28532,7 +37348,7 @@ var special_items_default = [
     mailFlags: ["HasTownKey"]
   },
   {
-    id: "price-catalogue",
+    id: "PriceCatalogue",
     name: "Price Catalogue",
     type: "book",
     effect: "You can now see the value of your items",
@@ -28540,7 +37356,7 @@ var special_items_default = [
     image: "images/special-items/Price Catalogue.png"
   },
   {
-    id: "mapping-cave-systems",
+    id: "Marlon",
     name: "Mapping Cave Systems",
     type: "book",
     effect: "50% discount on Marlon's item retrieval service",
@@ -28548,7 +37364,7 @@ var special_items_default = [
     image: "images/special-items/Mapping Cave Systems.png"
   },
   {
-    id: "way-of-the-wind-pt-1",
+    id: "Speed",
     name: "Way Of The Wind pt. 1",
     type: "book",
     effect: "Permanently increases running speed",
@@ -28556,7 +37372,7 @@ var special_items_default = [
     image: "images/special-items/Way Of The Wind pt. 1.png"
   },
   {
-    id: "way-of-the-wind-pt-2",
+    id: "Speed2",
     name: "Way Of The Wind pt. 2",
     type: "book",
     effect: "Additional running speed boost (requires Way Of The Wind pt. 1)",
@@ -28564,7 +37380,7 @@ var special_items_default = [
     image: "images/special-items/Way Of The Wind pt. 2.png"
   },
   {
-    id: "monster-compendium",
+    id: "Void",
     name: "Monster Compendium",
     type: "book",
     effect: "Monsters have a small chance to drop double loot",
@@ -28572,7 +37388,7 @@ var special_items_default = [
     image: "images/special-items/Monster Compendium.png"
   },
   {
-    id: "friendship-101",
+    id: "Friendship",
     name: "Friendship 101",
     type: "book",
     effect: "You become friends with people a little faster",
@@ -28580,7 +37396,7 @@ var special_items_default = [
     image: "images/special-items/Friendship 101.png"
   },
   {
-    id: "jack-be-nimble-jack-be-thick",
+    id: "Defense",
     name: "Jack Be Nimble, Jack Be Thick",
     type: "book",
     effect: "Gain +1 Defense",
@@ -28588,7 +37404,7 @@ var special_items_default = [
     image: "images/special-items/Jack Be Nimble, Jack Be Thick.png"
   },
   {
-    id: "woodys-secret",
+    id: "Woodcutting",
     name: "Woody's Secret",
     type: "book",
     effect: "Felled trees have a 5% chance to yield double wood",
@@ -28596,7 +37412,7 @@ var special_items_default = [
     image: "images/special-items/Woody's Secret.png"
   },
   {
-    id: "ways-of-the-wild",
+    id: "WildSeeds",
     name: "Ways Of The Wild",
     type: "book",
     effect: "Weeds have a greater chance to yield mixed seeds",
@@ -28604,7 +37420,7 @@ var special_items_default = [
     image: "images/special-items/Ways Of The Wild.png"
   },
   {
-    id: "jewels-of-the-sea",
+    id: "Roe",
     name: "Jewels Of The Sea",
     type: "book",
     effect: "Fishing treasure chests have a chance to yield roe",
@@ -28612,7 +37428,7 @@ var special_items_default = [
     image: "images/special-items/Jewels Of The Sea.png"
   },
   {
-    id: "dwarvish-safety-manual",
+    id: "Bombs",
     name: "Dwarvish Safety Manual",
     type: "book",
     effect: "Bombs deal 25% less damage to you",
@@ -28620,7 +37436,7 @@ var special_items_default = [
     image: "images/special-items/Dwarvish Safety Manual.png"
   },
   {
-    id: "the-art-o-crabbing",
+    id: "Crabbing",
     name: "The Art O' Crabbing",
     type: "book",
     effect: "Crab pots have a 25% chance to yield double catch",
@@ -28628,7 +37444,7 @@ var special_items_default = [
     image: "images/special-items/The Art O' Crabbing.png"
   },
   {
-    id: "the-alleyway-buffet",
+    id: "Trash",
     name: "The Alleyway Buffet",
     type: "book",
     effect: "Greater chance to find items in trash cans",
@@ -28636,7 +37452,7 @@ var special_items_default = [
     image: "images/special-items/The Alleyway Buffet.png"
   },
   {
-    id: "the-diamond-hunter",
+    id: "Diamonds",
     name: "The Diamond Hunter",
     type: "book",
     effect: "All stones have a chance to drop a diamond when mined",
@@ -28644,7 +37460,7 @@ var special_items_default = [
     image: "images/special-items/The Diamond Hunter.png"
   },
   {
-    id: "book-of-mysteries",
+    id: "Mystery",
     name: "Book of Mysteries",
     type: "book",
     effect: "Slightly greater chance to find Mystery Boxes",
@@ -28652,7 +37468,7 @@ var special_items_default = [
     image: "images/special-items/Book of Mysteries.png"
   },
   {
-    id: "horse-the-book",
+    id: "Horse",
     name: "Horse: The Book",
     type: "book",
     effect: "Gain a little extra speed when riding your horse",
@@ -28660,7 +37476,7 @@ var special_items_default = [
     image: "images/special-items/Horse The Book.png"
   },
   {
-    id: "treasure-appraisal-guide",
+    id: "Artifact",
     name: "Treasure Appraisal Guide",
     type: "book",
     effect: "Fetch a better price when selling artifacts",
@@ -28668,7 +37484,7 @@ var special_items_default = [
     image: "images/special-items/Treasure Appraisal Guide.png"
   },
   {
-    id: "ol-slitherlegs",
+    id: "Grass",
     name: "Ol' Slitherlegs",
     type: "book",
     effect: "Run a lot faster through grass and crops",
@@ -28676,7 +37492,7 @@ var special_items_default = [
     image: "images/special-items/Ol' Slitherlegs.png"
   },
   {
-    id: "animal-catalogue",
+    id: "AnimalCatalogue",
     name: "Animal Catalogue",
     type: "book",
     effect: "Access Marnie's shop when she's not around",
@@ -28684,7 +37500,7 @@ var special_items_default = [
     image: "images/special-items/Animal Catalogue.png"
   },
   {
-    id: "bait-and-bobber",
+    id: "BaitAndBobber",
     name: "Bait And Bobber",
     type: "skill-book",
     effect: "Grants 250 Fishing XP",
@@ -28692,7 +37508,7 @@ var special_items_default = [
     image: "images/special-items/Bait And Bobber.png"
   },
   {
-    id: "combat-quarterly",
+    id: "CombatQuarterly",
     name: "Combat Quarterly",
     type: "skill-book",
     effect: "Grants 250 Combat XP",
@@ -28700,7 +37516,7 @@ var special_items_default = [
     image: "images/special-items/Combat Quarterly.png"
   },
   {
-    id: "mining-monthly",
+    id: "MiningMonthly",
     name: "Mining Monthly",
     type: "skill-book",
     effect: "Grants 250 Mining XP",
@@ -28708,7 +37524,7 @@ var special_items_default = [
     image: "images/special-items/Mining Monthly.png"
   },
   {
-    id: "stardew-valley-almanac",
+    id: "StardewValleyAlmanac",
     name: "Stardew Valley Almanac",
     type: "skill-book",
     effect: "Grants 250 Farming XP",
@@ -28716,7 +37532,7 @@ var special_items_default = [
     image: "images/special-items/Stardew Valley Almanac.png"
   },
   {
-    id: "woodcutters-weekly",
+    id: "WoodcuttersWeekly",
     name: "Woodcutter's Weekly",
     type: "skill-book",
     effect: "Grants 250 Foraging XP",
@@ -28724,7 +37540,7 @@ var special_items_default = [
     image: "images/special-items/Woodcutter's Weekly.png"
   },
   {
-    id: "farming-mastery",
+    id: "Mastery_Farming",
     name: "Farming Mastery",
     type: "mastery",
     skill: "farming",
@@ -28733,7 +37549,7 @@ var special_items_default = [
     image: "images/special-items/Mastery Icon.png"
   },
   {
-    id: "mining-mastery",
+    id: "Mastery_Mining",
     name: "Mining Mastery",
     type: "mastery",
     skill: "mining",
@@ -28742,7 +37558,7 @@ var special_items_default = [
     image: "images/special-items/Mastery Icon.png"
   },
   {
-    id: "foraging-mastery",
+    id: "Mastery_Foraging",
     name: "Foraging Mastery",
     type: "mastery",
     skill: "foraging",
@@ -28751,7 +37567,7 @@ var special_items_default = [
     image: "images/special-items/Mastery Icon.png"
   },
   {
-    id: "fishing-mastery",
+    id: "Mastery_Fishing",
     name: "Fishing Mastery",
     type: "mastery",
     skill: "fishing",
@@ -28760,7 +37576,7 @@ var special_items_default = [
     image: "images/special-items/Mastery Icon.png"
   },
   {
-    id: "combat-mastery",
+    id: "Mastery_Combat",
     name: "Combat Mastery",
     type: "mastery",
     skill: "combat",
@@ -31483,6 +40299,7 @@ var buildings_default = [
     ],
     upgradeFrom: null,
     magical: false,
+    animalCapacity: 4,
     image: "images/buildings/coop/Coop.png"
   },
   {
@@ -31506,6 +40323,7 @@ var buildings_default = [
     ],
     upgradeFrom: "coop",
     magical: false,
+    animalCapacity: 8,
     image: "images/buildings/coop/Big Coop.png"
   },
   {
@@ -31529,6 +40347,7 @@ var buildings_default = [
     ],
     upgradeFrom: "big-coop",
     magical: false,
+    animalCapacity: 12,
     image: "images/buildings/coop/Deluxe Coop.png"
   },
   {
@@ -31552,6 +40371,7 @@ var buildings_default = [
     ],
     upgradeFrom: null,
     magical: false,
+    animalCapacity: 4,
     image: "images/buildings/barn/Barn.png"
   },
   {
@@ -31575,6 +40395,7 @@ var buildings_default = [
     ],
     upgradeFrom: "barn",
     magical: false,
+    animalCapacity: 8,
     image: "images/buildings/barn/Big Barn.png"
   },
   {
@@ -31598,6 +40419,7 @@ var buildings_default = [
     ],
     upgradeFrom: "big-barn",
     magical: false,
+    animalCapacity: 12,
     image: "images/buildings/barn/Deluxe Barn.png"
   },
   {
@@ -31792,6 +40614,7 @@ var buildings_default = [
     ],
     upgradeFrom: null,
     magical: false,
+    animalCapacity: 20,
     image: "images/buildings/Slime Hutch.png"
   },
   {
@@ -31988,6 +40811,18 @@ var buildings_default = [
     upgradeFrom: null,
     magical: true,
     image: "images/buildings/Gold Clock.png"
+  },
+  {
+    id: "greenhouse",
+    name: "Greenhouse",
+    description: "A climate-controlled building where crops can be grown in any season. Unlocked by completing the Pantry bundles or purchasing the Joja Greenhouse.",
+    builder: "Community Center",
+    buildCost: 0,
+    buildDays: 0,
+    materials: [],
+    upgradeFrom: null,
+    magical: false,
+    image: "images/buildings/Greenhouse.png"
   }
 ];
 
@@ -32082,6 +40917,7 @@ function parseAnimals(root) {
           id: str(fa.myID),
           name: str(fa.name),
           type: str(fa.type),
+          buildingId: str(b.id),
           buildingType: str(fa.buildingTypeILiveIn),
           friendship: num(fa.friendshipTowardFarmer),
           happiness: num(fa.happiness),
@@ -32089,6 +40925,33 @@ function parseAnimals(root) {
           hasAnimalCracker: fa.hasEatenAnimalCracker === true || fa.hasEatenAnimalCracker === "true"
         });
       }
+    }
+    break;
+  }
+  return result;
+}
+function parseFishPonds(root) {
+  const result = [];
+  const locations2 = ensureArray(root.locations?.GameLocation);
+  for (const loc of locations2) {
+    const l = loc;
+    if (str(l.name) !== "Farm") continue;
+    const buildings2 = ensureArray(l.buildings?.Building);
+    for (const building of buildings2) {
+      const b = building;
+      const xsiType = str(
+        b["@_xsi:type"] ?? b["@_type"]
+      );
+      if (xsiType !== "FishPond") continue;
+      const fishTypeRaw = b.fishType;
+      const fishType = num(fishTypeRaw?.int);
+      if (fishType === 0) continue;
+      result.push({
+        buildingId: str(b.id),
+        fishType,
+        currentOccupants: num(b.currentOccupants),
+        maxOccupants: num(b.maxOccupants)
+      });
     }
     break;
   }
@@ -32106,9 +40969,8 @@ function parseBuildings(root) {
     for (const building of buildings2) {
       const b = building;
       result.push({
+        id: str(b.id),
         type: str(b.buildingType),
-        tileX: num(b.tileX),
-        tileY: num(b.tileY),
         animalCount: num(b.currentOccupants)
       });
     }
@@ -32306,9 +41168,9 @@ function parseBundles(root, mail) {
     });
     const itemsCompleted = items.filter((it) => it.completed).length;
     bundles2.push({
+      id: `${def.room}/${index}`,
       bundleIndex: index,
       name: def.name,
-      room: def.room,
       items,
       itemsRequired: def.itemsRequired,
       itemsCompleted,
@@ -32336,7 +41198,26 @@ function parseBundles(root, mail) {
   rooms.sort((a, b) => a.areaIndex - b.areaIndex);
   const isJojaRoute = JOJA_MAIL_FLAGS.some((f) => mail.has(f));
   const isCCComplete = mail.has("ccIsComplete");
-  return { bundles: bundles2, rooms, isJojaRoute, isCCComplete };
+  return { rooms, isJojaRoute, isCCComplete };
+}
+
+// src/save-file/parsers/v1/community-center.ts
+function parseCommunityCenter(mail, events2) {
+  return {
+    unlocked: mail.has("ccDoorUnlock"),
+    bundlesActive: mail.has("wizardJunimoNote"),
+    completed: mail.has("ccIsComplete"),
+    ceremonyAttended: events2.has("191393"),
+    jojaAbandoned: mail.has("abandonedJojaMartAccessible"),
+    rooms: {
+      boilerRoom: mail.has("ccBoilerRoom"),
+      craftsRoom: mail.has("ccCraftsRoom"),
+      pantry: mail.has("ccPantry"),
+      fishTank: mail.has("ccFishTank"),
+      vault: mail.has("ccVault"),
+      bulletin: mail.has("ccBulletin")
+    }
+  };
 }
 
 // src/save-file/parsers/v1/date.ts
@@ -32387,7 +41268,10 @@ function parseChildren(root) {
   }
   return result;
 }
-function parsePet(root) {
+function parsePets(root, player) {
+  const results = [];
+  const starterType = str(player?.whichPetType);
+  const starterBreed = num(player?.whichPetBreed);
   const locations2 = ensureArray(root.locations?.GameLocation);
   for (const loc of locations2) {
     const l = loc;
@@ -32400,11 +41284,36 @@ function parsePet(root) {
         n["@_xsi:type"] ?? n["@_type"]
       );
       if (xsiType !== "Pet" && xsiType !== "Cat" && xsiType !== "Dog") continue;
+      const type = str(n.petType, xsiType);
+      const breed = num(n.whichBreed);
+      results.push({
+        name: str(n.name),
+        type,
+        breed,
+        friendship: num(n.friendshipTowardFarmer),
+        starter: type === starterType && breed === starterBreed
+      });
+    }
+  }
+  return results;
+}
+function parseHorse(root) {
+  const locations2 = ensureArray(root.locations?.GameLocation);
+  for (const loc of locations2) {
+    const l = loc;
+    const name = str(l.name);
+    if (name !== "Farm") continue;
+    const characters = ensureArray(l.characters?.NPC);
+    for (const npc of characters) {
+      const n = npc;
+      const xsiType = str(
+        n["@_xsi:type"] ?? n["@_type"]
+      );
+      if (xsiType !== "Horse") continue;
       return {
         name: str(n.name),
-        type: str(n.petType, xsiType),
-        breed: num(n.whichBreed),
-        friendship: num(n.friendshipTowardFarmer)
+        type: "horse",
+        id: str(n.HorseId)
       };
     }
   }
@@ -32471,20 +41380,150 @@ function parseInventory(items) {
   return result;
 }
 
+// data/island-upgrades.json
+var island_upgrades_default = [
+  {
+    id: "Island_FirstParrot",
+    name: "Ginger Island North",
+    description: "Feed Leo's parrot friend to unlock access to the north side of the island.",
+    cost: 1,
+    location: "Leo's Hut"
+  },
+  {
+    id: "Island_Turtle",
+    name: "Ginger Island West",
+    description: "A turtle ferries the player to the western island region.",
+    cost: 10,
+    location: "Leo's Hut area"
+  },
+  {
+    id: "Island_UpgradeHouse",
+    name: "Island Farmhouse",
+    description: "Provides sleeping quarters on the west side of the island so the player can stay overnight.",
+    cost: 20,
+    location: "Ginger Island West"
+  },
+  {
+    id: "Island_Resort",
+    name: "Island Resort",
+    description: "Unlocks the beach resort on the south side of the island. Villagers can visit.",
+    cost: 20,
+    location: "Island South"
+  },
+  {
+    id: "Island_UpgradeTrader",
+    name: "Island Trader",
+    description: "Unlocks the Island Trader shop on the north side of the island.",
+    cost: 10,
+    location: "Island North"
+  },
+  {
+    id: "Island_UpgradeBridge",
+    name: "Dig Site Bridge",
+    description: "Repairs the bridge to access the island dig site.",
+    cost: 10,
+    location: "Island North"
+  },
+  {
+    id: "Island_UpgradeParrotPlatform",
+    name: "Parrot Express",
+    description: "Enables the fast-travel parrot platform system around the island.",
+    cost: 10,
+    location: "Ginger Island (multiple stops)"
+  },
+  {
+    id: "Island_UpgradeHouse_Mailbox",
+    name: "Farmhouse Mailbox",
+    description: "Adds a mailbox to the island farmhouse so the player can receive mail.",
+    cost: 5,
+    location: "Island Farmhouse"
+  },
+  {
+    id: "Island_W_Obelisk",
+    name: "Farm Obelisk",
+    description: "Builds an obelisk near the island farmhouse that teleports the player back to the farm.",
+    cost: 20,
+    location: "Island Farmhouse"
+  },
+  {
+    id: "Island_VolcanoBridge",
+    name: "Volcano Bridge",
+    description: "Builds a permanent bridge at the volcano dungeon entrance.",
+    cost: 5,
+    location: "Volcano Dungeon entrance"
+  },
+  {
+    id: "Island_VolcanoShortcutOut",
+    name: "Volcano Exit Shortcut",
+    description: "Creates a shortcut exit passage on volcano dungeon level 5.",
+    cost: 5,
+    location: "Volcano Dungeon level 5"
+  }
+];
+
 // src/save-file/parsers/v1/island-upgrades.ts
+var UPGRADE_IDS = island_upgrades_default.map((u) => u.id);
 function parseIslandUpgrades(mail) {
+  return UPGRADE_IDS.map((id) => ({
+    id,
+    unlocked: mail.has(id)
+  }));
+}
+
+// data/joja-development.json
+var joja_development_default = [
+  {
+    id: "jojaPantry",
+    name: "Greenhouse",
+    description: "Repairs the old ruins on the farm, turning it into a greenhouse.",
+    cost: 35e3,
+    ccEquivalent: "ccPantry",
+    order: 0
+  },
+  {
+    id: "jojaCraftsRoom",
+    name: "Bridge",
+    description: "Repairs the broken bridge east of the Mines, enabling access to the Quarry.",
+    cost: 25e3,
+    ccEquivalent: "ccCraftsRoom",
+    order: 1
+  },
+  {
+    id: "jojaFishTank",
+    name: "Panning",
+    description: "Removes the glimmering boulder near the mine entrance, enabling copper panning.",
+    cost: 2e4,
+    ccEquivalent: "ccFishTank",
+    order: 2
+  },
+  {
+    id: "jojaBoilerRoom",
+    name: "Minecarts",
+    description: "Repairs the minecart system between the Bus Stop, the Mountains, and Pelican Town.",
+    cost: 15e3,
+    ccEquivalent: "ccBoilerRoom",
+    order: 3
+  },
+  {
+    id: "jojaVault",
+    name: "Bus",
+    description: "Repairs the bus that runs to the Calico Desert.",
+    cost: 4e4,
+    ccEquivalent: "ccVault",
+    order: 4
+  }
+];
+
+// src/save-file/parsers/v1/joja.ts
+var DEVELOPMENT_IDS = joja_development_default.map((d) => d.id);
+function parseJoja(mail, events2) {
   return {
-    firstParrot: mail.has("Island_FirstParrot"),
-    turtle: mail.has("Island_Turtle"),
-    house: mail.has("Island_UpgradeHouse"),
-    resort: mail.has("Island_Resort"),
-    trader: mail.has("Island_UpgradeTrader"),
-    bridge: mail.has("Island_UpgradeBridge"),
-    parrotPlatforms: mail.has("Island_UpgradeParrotPlatform"),
-    mailbox: mail.has("Island_UpgradeHouse_Mailbox"),
-    obelisk: mail.has("Island_W_Obelisk"),
-    volcanoBridge: mail.has("Island_VolcanoBridge"),
-    volcanoShortcut: mail.has("Island_VolcanoShortcutOut")
+    isMember: mail.has("JojaMember"),
+    completed: events2.has("502261"),
+    developments: DEVELOPMENT_IDS.map((id) => ({
+      id,
+      purchased: mail.has(id)
+    }))
   };
 }
 
@@ -32497,9 +41536,8 @@ function parseMail(mailReceived) {
 }
 function parseSpecialOrders(root) {
   const completed = ensureArray(root.completedSpecialOrders?.string).map((m) => str(m)).filter(Boolean);
-  const townCompleted = completed.filter((id) => !QI_ORDER_IDS.has(id));
   const qiCompleted = completed.filter((id) => QI_ORDER_IDS.has(id));
-  return { completed, townCompleted, qiCompleted };
+  return { completed, qiCompleted };
 }
 function parseBooksRead(player) {
   const books = [];
@@ -32663,7 +41701,108 @@ function parseMastery(stats) {
     perks
   };
 }
-function parsePlayer(player, root) {
+var TOOL_TYPES = ["WateringCan", "Pan", "Pickaxe", "Axe", "Hoe", "FishingRod"];
+var TOOL_KEY_MAP = {
+  WateringCan: "wateringCan",
+  Pan: "pan",
+  Pickaxe: "pickaxe",
+  Axe: "axe",
+  Hoe: "hoe"
+};
+var FISHING_ROD_LEVEL = {
+  TrainingRod: 0,
+  BambooPole: 1,
+  FiberglassRod: 2,
+  IridiumRod: 3,
+  AdvancedIridiumRod: 4
+};
+function collectToolItems(node, depth = 0) {
+  if (!node || typeof node !== "object" || depth > 20) return [];
+  const results = [];
+  if (Array.isArray(node)) {
+    for (const child of node) results.push(...collectToolItems(child, depth + 1));
+    return results;
+  }
+  const obj = node;
+  const xsiType = obj["@_xsi:type"] ?? obj["@_type"] ?? "";
+  if (TOOL_TYPES.includes(xsiType)) {
+    results.push(obj);
+  }
+  for (const key of [
+    "Item",
+    "items",
+    "objects",
+    "item",
+    "Object",
+    "value",
+    "GameLocation",
+    "Building",
+    "buildings",
+    "indoors",
+    "heldObject"
+  ]) {
+    if (obj[key]) results.push(...collectToolItems(obj[key], depth + 1));
+  }
+  return results;
+}
+function getEnchantmentName(item) {
+  const enc = item.enchantments;
+  if (!enc) return null;
+  const first = Array.isArray(enc) ? enc[0] : enc;
+  if (!first || typeof first !== "object") return null;
+  const xsiType = first["@_xsi:type"] ?? "";
+  return xsiType.replace(/Enchantment$/, "") || null;
+}
+function toolLevel(level, enchantment = null) {
+  return { level, enchantment };
+}
+function parseToolLevels(player, root) {
+  const levels = {
+    wateringCan: toolLevel(0),
+    pan: toolLevel(0),
+    pickaxe: toolLevel(0),
+    axe: toolLevel(0),
+    hoe: toolLevel(0),
+    trashCan: toolLevel(num(player.trashCanLevel)),
+    fishingRod: toolLevel(-1),
+    currentlyUpgrading: null
+  };
+  const upgrading = player.toolBeingUpgraded;
+  if (upgrading) {
+    const xsiType = upgrading["@_xsi:type"] ?? upgrading["@_type"] ?? "";
+    const key = TOOL_KEY_MAP[xsiType];
+    if (key) {
+      const offset = key === "pan" ? 2 : 1;
+      const currentLevel = num(upgrading.upgradeLevel) - offset;
+      if (currentLevel > levels[key].level) {
+        levels[key] = toolLevel(currentLevel, getEnchantmentName(upgrading));
+      }
+      levels.currentlyUpgrading = { tool: key, name: str(upgrading.name) };
+    }
+  }
+  const allItems2 = [
+    ...collectToolItems(player.items),
+    ...collectToolItems(root.locations?.GameLocation)
+  ];
+  for (const item of allItems2) {
+    const i = item;
+    const xsiType = i["@_xsi:type"] ?? i["@_type"] ?? "";
+    const key = TOOL_KEY_MAP[xsiType];
+    if (key) {
+      const level = num(i.upgradeLevel);
+      if (level > levels[key].level) {
+        levels[key] = toolLevel(level, getEnchantmentName(i));
+      }
+    } else if (xsiType === "FishingRod") {
+      const rodLevel = FISHING_ROD_LEVEL[i.itemId] ?? -1;
+      if (rodLevel > levels.fishingRod.level) {
+        levels.fishingRod = toolLevel(rodLevel, getEnchantmentName(i));
+      }
+    }
+  }
+  return levels;
+}
+function parsePlayer(player, root, mail) {
   return {
     name: str(player.name),
     farmName: str(player.farmName),
@@ -32673,11 +41812,18 @@ function parsePlayer(player, root) {
     totalMoneyEarned: num(player.totalMoneyEarned),
     spouse: player.spouse ? str(player.spouse) : null,
     houseUpgradeLevel: num(player.houseUpgradeLevel),
+    luckLevel: num(player.luckLevel),
+    maxItems: num(player.maxItems),
     maxHealth: num(player.maxHealth),
     maxStamina: num(player.maxStamina),
     skills: parseSkills(player.experiencePoints?.int),
     mastery: parseMastery(player.stats),
-    gameVersion: str(root.gameVersion)
+    toolLevels: parseToolLevels(player, root),
+    willyBackRoomInvitation: mail.has("willyBackRoomInvitation"),
+    lostBooksFound: num(root.lostBooksFound),
+    helpWantedQuests: getStatValue(player.stats, "questsCompleted"),
+    gameVersion: str(root.gameVersion),
+    millisecondsPlayed: num(player.millisecondsPlayed)
   };
 }
 
@@ -32686,8 +41832,8 @@ var POWER_ITEMS = special_items_default.filter(
   (item) => item.type === "special-item"
 );
 var EXTRA_POWERS = [
-  { id: "prairie-king-victory", name: "Prairie King Victory", check: (m) => m.has("Beat_PK") },
-  { id: "junimo-kart-victory", name: "Junimo Kart Victory", check: (m) => m.has("JunimoKart") }
+  { id: "Beat_PK", name: "Prairie King Victory", check: (m) => m.has("Beat_PK") },
+  { id: "JunimoKart", name: "Junimo Kart Victory", check: (m) => m.has("JunimoKart") }
 ];
 function parsePowers(mail, events2) {
   const specialItems2 = POWER_ITEMS.map((item) => {
@@ -32746,6 +41892,42 @@ function parseRaccoons(root, mail) {
   };
 }
 
+// src/save-file/parsers/v1/rarecrows.ts
+function collectFromItems(items, ids) {
+  for (const item of ensureArray(items)) {
+    const it = item;
+    if (str(it.name) === "Rarecrow") {
+      ids.add(str(it.itemId));
+    }
+  }
+}
+function collectFromObjects(objects, ids) {
+  for (const { value } of extractDictItems(objects)) {
+    const obj = value?.Object;
+    if (!obj) continue;
+    if (str(obj.name) === "Rarecrow") {
+      ids.add(str(obj.itemId));
+    }
+    if (obj.items) {
+      collectFromItems(obj.items.Item, ids);
+    }
+  }
+}
+function parseRarecrows(root) {
+  const ids = /* @__PURE__ */ new Set();
+  const locations2 = ensureArray(root.locations?.GameLocation);
+  for (const loc of locations2) {
+    const l = loc;
+    collectFromObjects(l.objects, ids);
+    const buildings2 = ensureArray(l.buildings?.Building);
+    for (const building of buildings2) {
+      const b = building;
+      collectFromObjects(b.indoors?.objects, ids);
+    }
+  }
+  return { placed: Array.from(ids) };
+}
+
 // src/save-file/parsers/v1/recipes.ts
 function parseRecipes(data) {
   const result = [];
@@ -32761,20 +41943,46 @@ function parseRecipes(data) {
   }
   return result;
 }
-function parseCookingRecipes(data) {
-  return parseRecipes(data);
+var cookingIdToName = new Map(
+  cooking_default.map((r) => [r.id, r.name])
+);
+function parseCookingRecipes(knownData, cookedData) {
+  const cookedCounts = /* @__PURE__ */ new Map();
+  for (const item of extractDictItems(cookedData)) {
+    const key = item.key;
+    const val = item.value;
+    const id = str(key?.string);
+    if (id) cookedCounts.set(id, num(val?.int));
+  }
+  const cookedByName = /* @__PURE__ */ new Map();
+  for (const [id, count] of cookedCounts) {
+    const name = cookingIdToName.get(id);
+    if (name) cookedByName.set(name, count);
+  }
+  const result = [];
+  for (const item of extractDictItems(knownData)) {
+    const key = item.key;
+    const name = str(key?.string);
+    if (!name) continue;
+    result.push({
+      name,
+      timesMade: cookedByName.get(name) ?? 0
+    });
+  }
+  return result;
 }
 function parseCraftingRecipes(data) {
   return parseRecipes(data);
 }
 
 // src/save-file/parsers/v1/secret-notes.ts
-function parseSecretNotes(player, mail) {
+function parseSecretNotes(player, mail, events2) {
   const allNotes = ensureArray(player.secretNotesSeen?.int).map(num);
   return {
     notesFound: allNotes.filter((n) => n < 1e3),
     journalScrapsFound: allNotes.filter((n) => n >= 1e3).map((n) => n - 1e3),
-    hasMagnifyingGlass: mail.has("HasMagnifyingGlass") || player.hasMagnifyingGlass === true || player.hasMagnifyingGlass === "true"
+    hasMagnifyingGlass: mail.has("HasMagnifyingGlass") || player.hasMagnifyingGlass === true || player.hasMagnifyingGlass === "true",
+    hasSeenKrobus: events2.has("520702")
   };
 }
 
@@ -32845,7 +42053,7 @@ function parseWalnuts(root) {
 
 // src/save-file/parser-registry.ts
 var v1 = (ctx) => ({
-  player: parsePlayer(ctx.player, ctx.root),
+  player: parsePlayer(ctx.player, ctx.root, ctx.mailSet),
   farm: { type: ctx.root.whichFarm, name: ctx.player.farmName },
   date: parseDate(ctx.player, ctx.root),
   inventory: parseInventory(ctx.player.items),
@@ -32858,8 +42066,9 @@ var v1 = (ctx) => ({
   stardrops: parseStardrops(ctx.player.mailReceived),
   stats: parseStats(ctx.player),
   animals: parseAnimals(ctx.root),
+  fishPonds: parseFishPonds(ctx.root),
   buildings: parseBuildings(ctx.root),
-  cookingRecipes: parseCookingRecipes(ctx.player.cookingRecipes),
+  cookingRecipes: parseCookingRecipes(ctx.player.cookingRecipes, ctx.player.recipesCooked),
   craftingRecipes: parseCraftingRecipes(ctx.player.craftingRecipes),
   bundles: parseBundles(ctx.root, ctx.mailSet),
   monstersKilled: parseMonstersKilled(ctx.player),
@@ -32868,15 +42077,19 @@ var v1 = (ctx) => ({
   professions: parseProfessions(ctx.player.professions),
   booksRead: parseBooksRead(ctx.player),
   eventsSeen: ctx.eventsSeen,
-  secretNotes: parseSecretNotes(ctx.player, ctx.mailSet),
+  secretNotes: parseSecretNotes(ctx.player, ctx.mailSet, ctx.eventsSet),
   walnuts: parseWalnuts(ctx.root),
   islandUpgrades: parseIslandUpgrades(ctx.mailSet),
   children: parseChildren(ctx.root),
-  pet: parsePet(ctx.root),
+  pets: parsePets(ctx.root, ctx.player),
+  horse: parseHorse(ctx.root),
   powers: parsePowers(ctx.mailSet, ctx.eventsSet),
   raccoons: parseRaccoons(ctx.root, ctx.mailSet),
+  rarecrows: parseRarecrows(ctx.root),
   perfection: parsePerfection(ctx.root),
-  mineProgress: parseMineProgress(ctx.player, ctx.root, ctx.mailSet)
+  mineProgress: parseMineProgress(ctx.player, ctx.root, ctx.mailSet),
+  communityCenter: parseCommunityCenter(ctx.mailSet, ctx.eventsSet),
+  joja: parseJoja(ctx.mailSet, ctx.eventsSet)
 });
 var PARSER_SETS = {
   1: v1
@@ -32961,6 +42174,7 @@ function parseSaveFile(xml) {
   AchievementQuery,
   AnimalQuery,
   ArtifactQuery,
+  ArtisanCalculator,
   ArtisanGoodQuery,
   BaitQuery,
   BlacksmithQuery,
@@ -32992,7 +42206,9 @@ function parseSaveFile(xml) {
   HouseRenovationQuery,
   HouseUpgradeQuery,
   IslandTraderQuery,
+  JojaParrotCalculator,
   JojaQuery,
+  KnowledgeCalculator,
   KrobusQuery,
   LATEST_API_VERSION,
   LocationQuery,
@@ -33008,10 +42224,12 @@ function parseSaveFile(xml) {
   OasisQuery,
   PerfectionQuery,
   PierreQuery,
+  ProfessionCalculator,
   ProfessionQuery,
   QiStockQuery,
   QualityCalculator,
   QuestQuery,
+  RarecrowQuery,
   RingQuery,
   SKILL_TITLES,
   SaloonQuery,
@@ -33036,6 +42254,7 @@ function parseSaveFile(xml) {
   animals,
   applyPriceFormula,
   artifacts,
+  artisanCalculator,
   artisanGoods,
   bait,
   blacksmith,
@@ -33074,6 +42293,8 @@ function parseSaveFile(xml) {
   isPet,
   islandTrader,
   joja,
+  jojaParrotCalculator,
+  knowledgeCalculator,
   krobus,
   locations,
   lostBooks,
@@ -33089,10 +42310,12 @@ function parseSaveFile(xml) {
   parseSaveFile,
   perfection,
   pierre,
+  professionCalculator,
   professions,
   qiStock,
   qualityCalculator,
   quests,
+  rarecrows,
   resolveApiVersion,
   rings,
   saloon,
