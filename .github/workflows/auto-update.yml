@@ -2,38 +2,62 @@ name: Auto-update game data
 
 on:
   schedule:
-    - cron: '0 0 */3 * *'
-  workflow_dispatch:
+    - cron: '0 0 */3 * *'  # 每3天 UTC 00:00（北京时间 08:00）
+  workflow_dispatch:  # 支持手动触发
 
 jobs:
   update-data:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - name: Checkout repo
+        uses: actions/checkout@v4
         with:
-          node-version: '20'
-      - run: |
-          mkdir -p /tmp/svd && cd /tmp/svd && npm init -y && npm install stardew-valley-data
-      - run: |
+          fetch-depth: 0  # 拉取完整 git 历史，否则 push 会报 exit 128
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'  # Node 22 LTS，消除 Node 20 弃用警告
+
+      - name: Download latest stardew-valley-data
+        run: |
+          mkdir -p /tmp/svd
+          cd /tmp/svd
+          npm init -y
+          npm install stardew-valley-data
+
+      - name: Sync data and images
+        run: |
+          # 备份旧版本号
           OLD_VER=$(cat data-src/package/package.json | grep version | head -1 | cut -d'"' -f4)
+
+          # 复制最新数据
           rm -rf data-src/package
           cp -r /tmp/svd/node_modules/stardew-valley-data data-src/package
+
+          # 复制勾选追踪数据
           mkdir -p data
           cp data-src/package/data/fish.json data/fish.json
           cp data-src/package/data/artifacts.json data/artifacts.json
           cp data-src/package/data/minerals.json data/minerals.json
+
           NEW_VER=$(cat data-src/package/package.json | grep version | head -1 | cut -d'"' -f4)
           echo "OLD_VER=$OLD_VER" >> $GITHUB_ENV
           echo "NEW_VER=$NEW_VER" >> $GITHUB_ENV
-      - id: diff
+
+      - name: Check for changes
+        id: diff
         run: |
           if git diff --quiet data-src/ data/; then
             echo "changed=false" >> $GITHUB_OUTPUT
+            echo "No changes in data, skipping."
           else
             echo "changed=true" >> $GITHUB_OUTPUT
+            echo "Data updated from ${{ env.OLD_VER }} to ${{ env.NEW_VER }}"
           fi
-      - if: steps.diff.outputs.changed == 'true'
+
+      - name: Commit and push
+        if: steps.diff.outputs.changed == 'true'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
