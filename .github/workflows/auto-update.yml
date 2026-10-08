@@ -24,7 +24,8 @@ jobs:
           mkdir -p /tmp/svd
           cd /tmp/svd
           npm init -y
-          npm install stardew-valley-data
+          # 用官方 registry + @latest，避免镜像把版本解析成 0.1.0
+          npm install --registry=https://registry.npmjs.org stardew-valley-data@latest
 
       - name: Sync data and images
         run: |
@@ -51,9 +52,17 @@ jobs:
           if git diff --quiet data-src/ data/; then
             echo "changed=false" >> $GITHUB_OUTPUT
             echo "No changes in data, skipping."
-          else
+          elif python3 -c "
+import sys
+old = [int(x) for x in '${{ env.OLD_VER }}'.split('.')]
+new = [int(x) for x in '${{ env.NEW_VER }}'.split('.')]
+sys.exit(0 if new >= old else 1)
+"; then
             echo "changed=true" >> $GITHUB_OUTPUT
             echo "Data updated from ${{ env.OLD_VER }} to ${{ env.NEW_VER }}"
+          else
+            echo "changed=false" >> $GITHUB_OUTPUT
+            echo "⚠️ New version ${{ env.NEW_VER }} is older than current ${{ env.OLD_VER }}, skipping to avoid downgrade."
           fi
 
       - name: Commit and push
