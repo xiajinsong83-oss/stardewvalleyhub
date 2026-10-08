@@ -1,6 +1,6 @@
 [
   {
-    "id": "ForestMagic",
+    "id": "forest-magic",
     "name": "Forest Magic",
     "type": "special-item",
     "effect": "Unlocks the ability to read the language of the Junimos",
@@ -9,7 +9,7 @@
     "mailFlags": ["canReadJunimoText"]
   },
   {
-    "id": "DwarvishTranslationGuide",
+    "id": "dwarvish-translation-guide",
     "name": "Dwarvish Translation Guide",
     "type": "special-item",
     "effect": "Unlocks the ability to speak to the Dwarf in the mines and volcano dungeon",
@@ -18,7 +18,7 @@
     "mailFlags": ["HasDwarvishTranslationGuide"]
   },
   {
-    "id": "RustyKey",
+    "id": "rusty-key",
     "name": "Rusty Key",
     "type": "special-item",
     "effect": "Grants access to The Sewers",
@@ -27,7 +27,7 @@
     "mailFlags": ["HasRustyKey", "ccBoilerRoom"]
   },
   {
-    "id": "ClubCard",
+    "id": "club-card",
     "name": "Club Card",
     "type": "special-item",
     "effect": "Enables entry to the Casino",
@@ -36,7 +36,7 @@
     "mailFlags": ["HasClubCard"]
   },
   {
-    "id": "SpecialCharm",
+    "id": "special-charm",
     "name": "Special Charm",
     "type": "special-item",
     "effect": "Permanently increases daily luck",
@@ -45,7 +45,7 @@
     "mailFlags": ["HasSpecialCharm"]
   },
   {
-    "id": "SkullKey",
+    "id": "skull-key",
     "name": "Skull Key",
     "type": "special-item",
     "effect": "Unlocks Skull Cavern and enables the Junimo Kart machine",
@@ -54,7 +54,7 @@
     "mailFlags": ["HasSkullKey"]
   },
   {
-    "id": "MagnifyingGlass",
+    "id": "magnifying-glass",
     "name": "Magnifying Glass",
     "type": "special-item",
     "effect": "Unlocks the ability to find Secret Notes",
@@ -63,7 +63,7 @@
     "mailFlags": ["HasMagnifyingGlass"]
   },
   {
-    "id": "DarkTalisman",
+    "id": "dark-talisman",
     "name": "Dark Talisman",
     "type": "special-item",
     "effect": "Quest item used to open the passage to the Witch's Swamp",
@@ -72,7 +72,7 @@
     "mailFlags": ["HasDarkTalisman"]
   },
   {
-    "id": "MagicInk",
+    "id": "magic-ink",
     "name": "Magic Ink",
     "type": "special-item",
     "effect": "Quest item returned to the Wizard to restore his magic",
@@ -81,7 +81,7 @@
     "mailFlags": ["HasMagicInk"]
   },
   {
-    "id": "BearPaw",
+    "id": "bears-knowledge",
     "name": "Bear's Knowledge",
     "type": "special-item",
     "effect": "Increases sell price of Blackberries and Salmonberries by 3x",
@@ -90,7 +90,7 @@
     "mailFlags": ["bearsKnowledge"]
   },
   {
-    "id": "SpringOnionMastery",
+    "id": "spring-onion-mastery",
     "name": "Spring Onion Mastery",
     "type": "special-item",
     "effect": "Increases sell price of Spring Onions by 5x",
@@ -99,7 +99,7 @@
     "eventFlags": ["3910979"]
   },
   {
-    "id": "KeyToTheTown",
+    "id": "key-to-the-town",
     "name": "Key To The Town",
     "type": "special-item",
     "effect": "Allows access to all buildings in town at any time",
@@ -108,7 +108,7 @@
     "mailFlags": ["HasTownKey"]
   },
   {
-    "id": "PriceCatalogue",
+    "id": "price-catalogue",
     "name": "Price Catalogue",
     "type": "book",
     "effect": "You can now see the value of your items",
@@ -116,7 +116,7 @@
     "image": "images/special-items/Price Catalogue.png"
   },
   {
-    "id": "Marlon",
+    "id": "mapping-cave-systems",
     "name": "Mapping Cave Systems",
     "type": "book",
     "effect": "50% discount on Marlon's item retrieval service",
@@ -124,7 +124,7 @@
     "image": "images/special-items/Mapping Cave Systems.png"
   },
   {
-    "id": "Speed",
+    "id": "way-of-the-wind-pt-1",
     "name": "Way Of The Wind pt. 1",
     "type": "book",
     "effect": "Permanently increases running speed",
@@ -132,7 +132,7 @@
     "image": "images/special-items/Way Of The Wind pt. 1.png"
   },
   {
-    "id": "Speed2",
+    "id": "way-of-the-wind-pt-2",
     "name": "Way Of The Wind pt. 2",
     "type": "book",
     "effect": "Additional running speed boost (requires Way Of The Wind pt. 1)",
@@ -140,7 +140,7 @@
     "image": "images/special-items/Way Of The Wind pt. 2.png"
   },
   {
-    "id": "Void",
+    "id": "monster-compendium",
     "name": "Monster Compendium",
     "type": "book",
     "effect": "Monsters have a small chance to drop double loot",
@@ -148,7 +148,7 @@
     "image": "images/special-items/Monster Compendium.png"
   },
   {
-    "id": "Friendship",
+    "id": "friendship-101",
     "name": "Friendship 101",
     "type": "book",
     "effect": "You become friends with people a little faster",
@@ -156,7 +156,7 @@
     "image": "images/special-items/Friendship 101.png"
   },
   {
-    "id": "Defense",
+    "id": "jack-be-nimble-jack-be-thick",
     "name": "Jack Be Nimble, Jack Be Thick",
     "type": "book",
     "effect": "Gain +1 Defense",
@@ -164,7 +164,7 @@
     "image": "images/special-items/Jack Be Nimble, Jack Be Thick.png"
   },
   {
-    "id": "Woodcutting",
+    "id": "woodys-secret",
     "name": "Woody's Secret",
     "type": "book",
     "effect": "Felled trees have a 5% chance to yield double wood",
@@ -172,7 +172,7 @@
     "image": "images/special-items/Woody's Secret.png"
   },
   {
-    "id": "WildSeeds",
+    "id": "ways-of-the-wild",
     "name": "Ways Of The Wild",
     "type": "book",
     "effect": "Weeds have a greater chance to yield mixed seeds",
@@ -180,7 +180,7 @@
     "image": "images/special-items/Ways Of The Wild.png"
   },
   {
-    "id": "Roe",
+    "id": "jewels-of-the-sea",
     "name": "Jewels Of The Sea",
     "type": "book",
     "effect": "Fishing treasure chests have a chance to yield roe",
@@ -188,7 +188,7 @@
     "image": "images/special-items/Jewels Of The Sea.png"
   },
   {
-    "id": "Bombs",
+    "id": "dwarvish-safety-manual",
     "name": "Dwarvish Safety Manual",
     "type": "book",
     "effect": "Bombs deal 25% less damage to you",
@@ -196,7 +196,7 @@
     "image": "images/special-items/Dwarvish Safety Manual.png"
   },
   {
-    "id": "Crabbing",
+    "id": "the-art-o-crabbing",
     "name": "The Art O' Crabbing",
     "type": "book",
     "effect": "Crab pots have a 25% chance to yield double catch",
@@ -204,7 +204,7 @@
     "image": "images/special-items/The Art O' Crabbing.png"
   },
   {
-    "id": "Trash",
+    "id": "the-alleyway-buffet",
     "name": "The Alleyway Buffet",
     "type": "book",
     "effect": "Greater chance to find items in trash cans",
@@ -212,7 +212,7 @@
     "image": "images/special-items/The Alleyway Buffet.png"
   },
   {
-    "id": "Diamonds",
+    "id": "the-diamond-hunter",
     "name": "The Diamond Hunter",
     "type": "book",
     "effect": "All stones have a chance to drop a diamond when mined",
@@ -220,7 +220,7 @@
     "image": "images/special-items/The Diamond Hunter.png"
   },
   {
-    "id": "Mystery",
+    "id": "book-of-mysteries",
     "name": "Book of Mysteries",
     "type": "book",
     "effect": "Slightly greater chance to find Mystery Boxes",
@@ -228,7 +228,7 @@
     "image": "images/special-items/Book of Mysteries.png"
   },
   {
-    "id": "Horse",
+    "id": "horse-the-book",
     "name": "Horse: The Book",
     "type": "book",
     "effect": "Gain a little extra speed when riding your horse",
@@ -236,7 +236,7 @@
     "image": "images/special-items/Horse The Book.png"
   },
   {
-    "id": "Artifact",
+    "id": "treasure-appraisal-guide",
     "name": "Treasure Appraisal Guide",
     "type": "book",
     "effect": "Fetch a better price when selling artifacts",
@@ -244,7 +244,7 @@
     "image": "images/special-items/Treasure Appraisal Guide.png"
   },
   {
-    "id": "Grass",
+    "id": "ol-slitherlegs",
     "name": "Ol' Slitherlegs",
     "type": "book",
     "effect": "Run a lot faster through grass and crops",
@@ -252,7 +252,7 @@
     "image": "images/special-items/Ol' Slitherlegs.png"
   },
   {
-    "id": "AnimalCatalogue",
+    "id": "animal-catalogue",
     "name": "Animal Catalogue",
     "type": "book",
     "effect": "Access Marnie's shop when she's not around",
@@ -260,7 +260,7 @@
     "image": "images/special-items/Animal Catalogue.png"
   },
   {
-    "id": "BaitAndBobber",
+    "id": "bait-and-bobber",
     "name": "Bait And Bobber",
     "type": "skill-book",
     "effect": "Grants 250 Fishing XP",
@@ -268,7 +268,7 @@
     "image": "images/special-items/Bait And Bobber.png"
   },
   {
-    "id": "CombatQuarterly",
+    "id": "combat-quarterly",
     "name": "Combat Quarterly",
     "type": "skill-book",
     "effect": "Grants 250 Combat XP",
@@ -276,7 +276,7 @@
     "image": "images/special-items/Combat Quarterly.png"
   },
   {
-    "id": "MiningMonthly",
+    "id": "mining-monthly",
     "name": "Mining Monthly",
     "type": "skill-book",
     "effect": "Grants 250 Mining XP",
@@ -284,7 +284,7 @@
     "image": "images/special-items/Mining Monthly.png"
   },
   {
-    "id": "StardewValleyAlmanac",
+    "id": "stardew-valley-almanac",
     "name": "Stardew Valley Almanac",
     "type": "skill-book",
     "effect": "Grants 250 Farming XP",
@@ -292,7 +292,7 @@
     "image": "images/special-items/Stardew Valley Almanac.png"
   },
   {
-    "id": "WoodcuttersWeekly",
+    "id": "woodcutters-weekly",
     "name": "Woodcutter's Weekly",
     "type": "skill-book",
     "effect": "Grants 250 Foraging XP",
@@ -300,7 +300,7 @@
     "image": "images/special-items/Woodcutter's Weekly.png"
   },
   {
-    "id": "Mastery_Farming",
+    "id": "farming-mastery",
     "name": "Farming Mastery",
     "type": "mastery",
     "skill": "farming",
@@ -309,7 +309,7 @@
     "image": "images/special-items/Mastery Icon.png"
   },
   {
-    "id": "Mastery_Mining",
+    "id": "mining-mastery",
     "name": "Mining Mastery",
     "type": "mastery",
     "skill": "mining",
@@ -318,7 +318,7 @@
     "image": "images/special-items/Mastery Icon.png"
   },
   {
-    "id": "Mastery_Foraging",
+    "id": "foraging-mastery",
     "name": "Foraging Mastery",
     "type": "mastery",
     "skill": "foraging",
@@ -327,7 +327,7 @@
     "image": "images/special-items/Mastery Icon.png"
   },
   {
-    "id": "Mastery_Fishing",
+    "id": "fishing-mastery",
     "name": "Fishing Mastery",
     "type": "mastery",
     "skill": "fishing",
@@ -336,7 +336,7 @@
     "image": "images/special-items/Mastery Icon.png"
   },
   {
-    "id": "Mastery_Combat",
+    "id": "combat-mastery",
     "name": "Combat Mastery",
     "type": "mastery",
     "skill": "combat",

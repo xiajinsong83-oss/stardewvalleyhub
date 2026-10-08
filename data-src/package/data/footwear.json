@@ -6,7 +6,6 @@
     "defense": 1,
     "immunity": 0,
     "obtain": "Purchased from Adventurer's Guild after Initiation quest; Special Item drops Floors 1-39 of The Mines; Fishing Treasure Chests",
-    "sellPrice": 50,
     "image": "images/footwear/Sneakers.png"
   },
   {
@@ -16,7 +15,6 @@
     "defense": 0,
     "immunity": 1,
     "obtain": "Special Item drops Floors 1-39 of The Mines; Fishing Treasure Chests",
-    "sellPrice": 50,
     "image": "images/footwear/Rubber Boots.png"
   },
   {
@@ -26,7 +24,6 @@
     "defense": 1,
     "immunity": 1,
     "obtain": "Reward from Chest Floor 10 of The Mines; Purchased from Adventurer's Guild after Floor 10; Fishing Treasure Chests",
-    "sellPrice": 100,
     "image": "images/footwear/Leather Boots.png"
   },
   {
@@ -36,7 +33,6 @@
     "defense": 2,
     "immunity": 0,
     "obtain": "Purchased from Adventurer's Guild after Floor 10; Possible Remixed Reward Floor 10; Fishing Treasure Chests",
-    "sellPrice": 100,
     "image": "images/footwear/Work Boots.png"
   },
   {
@@ -46,7 +42,6 @@
     "defense": 3,
     "immunity": 0,
     "obtain": "Purchased from Adventurer's Guild after Floor 40; Possible Remixed Reward Floor 50; Special Item drops Floors 61-79; Fishing Treasure Chests",
-    "sellPrice": 150,
     "image": "images/footwear/Combat Boots.png"
   },
   {
@@ -56,7 +51,6 @@
     "defense": 2,
     "immunity": 1,
     "obtain": "Reward from Chest Floor 50 of The Mines; Purchased from Adventurer's Guild after Floor 50; Fishing Treasure Chests",
-    "sellPrice": 150,
     "image": "images/footwear/Tundra Boots.png"
   },
   {
@@ -66,7 +60,6 @@
     "defense": 2,
     "immunity": 1,
     "obtain": "Found on Trains",
-    "sellPrice": 150,
     "image": "images/footwear/Leprechaun Shoes.png"
   },
   {
@@ -76,7 +69,6 @@
     "defense": 1,
     "immunity": 2,
     "obtain": "Possible Remixed Reward Floor 50; Special Item drops Floors 41-79; Fishing Treasure Chests",
-    "sellPrice": 150,
     "image": "images/footwear/Thermal Boots.png"
   },
   {
@@ -86,7 +78,6 @@
     "defense": 2,
     "immunity": 2,
     "obtain": "Unobtainable",
-    "sellPrice": 200,
     "image": "images/footwear/Cowboy Boots.png"
   },
   {
@@ -96,7 +87,6 @@
     "defense": 4,
     "immunity": 2,
     "obtain": "Purchased from Adventurer's Guild after Floor 80; Possible Remixed Reward Floor 80; Special Item drops Floors 81-119, Skull Cavern, Quarry Mine; Fishing Treasure Chests",
-    "sellPrice": 300,
     "image": "images/footwear/Dark Boots.png"
   },
   {
@@ -106,7 +96,6 @@
     "defense": 3,
     "immunity": 3,
     "obtain": "Reward from Chest Floor 80 of The Mines; Purchased from Adventurer's Guild after Floor 80; Fishing Treasure Chests",
-    "sellPrice": 300,
     "image": "images/footwear/Firewalker Boots.png"
   },
   {
@@ -116,7 +105,6 @@
     "defense": 1,
     "immunity": 6,
     "obtain": "Special Item drops Floors 81-119, Skull Cavern, Quarry Mine; Fishing Treasure Chests",
-    "sellPrice": 350,
     "image": "images/footwear/Genie Shoes.png"
   },
   {
@@ -126,7 +114,6 @@
     "defense": 4,
     "immunity": 4,
     "obtain": "Reward from Chest Floor 110 of The Mines; Purchased from Adventurer's Guild after Floor 110",
-    "sellPrice": 400,
     "image": "images/footwear/Space Boots.png"
   },
   {
@@ -136,7 +123,6 @@
     "defense": 3,
     "immunity": 5,
     "obtain": "Possible Remixed Reward Floor 110; Special Item drops in Skull Cavern and Quarry Mine",
-    "sellPrice": 400,
     "image": "images/footwear/Crystal Shoes.png"
   },
   {
@@ -146,7 +132,6 @@
     "defense": 4,
     "immunity": 4,
     "obtain": "Received during Emily's 14-heart event",
-    "sellPrice": 400,
     "image": "images/footwear/Emily's Magic Boots.png"
   },
   {
@@ -156,7 +141,6 @@
     "defense": 6,
     "immunity": 5,
     "obtain": "Volcano Dungeon Shop (100 Cinder Shards)",
-    "sellPrice": 550,
     "image": "images/footwear/Cinderclown Shoes.png"
   },
   {
@@ -166,7 +150,6 @@
     "defense": 5,
     "immunity": 8,
     "obtain": "From a Rare Chest in the Volcano Dungeon",
-    "sellPrice": 650,
     "image": "images/footwear/Mermaid Boots.png"
   },
   {
@@ -176,7 +159,6 @@
     "defense": 7,
     "immunity": 0,
     "obtain": "From a Rare Chest in the Volcano Dungeon",
-    "sellPrice": 350,
     "image": "images/footwear/Dragonscale Boots.png"
   }
 ]
