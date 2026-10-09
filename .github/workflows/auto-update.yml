@@ -22,7 +22,9 @@ jobs:
           mkdir -p /tmp/svd
           cd /tmp/svd
           npm init -y
-          npm install --registry=https://registry.npmjs.org stardew-valley-data@latest
+          # 使用淘宝npm镜像加速
+          npm config set registry https://registry.npmmirror.com
+          npm install stardew-valley-data@latest
       - name: Sync data and images
         run: |
           git config --global --add safe.directory "$GITHUB_WORKSPACE"
@@ -39,6 +41,8 @@ jobs:
           NEW_VER=$(cat data-src/package/package.json | grep version | head -1 | cut -d'"' -f4)
           echo "OLD_VER=$OLD_VER" >> $GITHUB_ENV
           echo "NEW_VER=$NEW_VER" >> $GITHUB_ENV
+          echo "Old Version: $OLD_VER"
+          echo "New Version: $NEW_VER"
       - name: Check for changes
         id: diff
         run: |
