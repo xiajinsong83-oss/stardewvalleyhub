@@ -3,8 +3,8 @@ permissions:
   contents: write
 on:
   schedule:
-    - cron: '0 0 */3 * *'  # 每3天 UTC 00:00（北京时间 08:00）
-  workflow_dispatch:  # 支持手动触发
+    - cron: '0 0 */3 * *'
+  workflow_dispatch:
 jobs:
   update-data:
     runs-on: ubuntu-latest
@@ -12,30 +12,26 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0  # 拉取完整 git 历史，否则 push 会报 exit 128
+          fetch-depth: 0
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '22'  # Node 22 LTS，消除 Node 20 弃用警告
+          node-version: '22'
       - name: Download latest stardew-valley-data
         run: |
           mkdir -p /tmp/svd
           cd /tmp/svd
           npm init -y
-          # 用官方 registry + @latest，避免镜像把版本解析成 0.1.0
           npm install --registry=https://registry.npmjs.org stardew-valley-data@latest
       - name: Sync data and images
         run: |
           git config --global --add safe.directory "$GITHUB_WORKSPACE"
-          # 读取旧版本，文件不存在则设为空
           OLD_VER=""
           if [ -f data-src/package/package.json ]; then
             OLD_VER=$(cat data-src/package/package.json | grep version | head -1 | cut -d'"' -f4)
           fi
-          # 复制最新数据
           rm -rf data-src/package
           cp -r /tmp/svd/node_modules/stardew-valley-data data-src/package
-          # 复制勾选追踪数据
           mkdir -p data
           cp data-src/package/data/fish.json data/fish.json
           cp data-src/package/data/artifacts.json data/artifacts.json
@@ -46,26 +42,19 @@ jobs:
       - name: Check for changes
         id: diff
         run: |
-          # 正确：对比当前工作区与HEAD
           if git diff --quiet HEAD -- data-src/ data/; then
             echo "changed=false" >> $GITHUB_OUTPUT
             echo "No changes in data, skipping."
           else
-            # 版本判断，OLD为空直接更新
             if [ -z "${{ env.OLD_VER }}" ]; then
               echo "changed=true" >> $GITHUB_OUTPUT
               echo "No previous version, import new data ${{ env.NEW_VER }}"
-            elif python3 -c "
-import sys
-old = [int(x) for x in '${{ env.OLD_VER }}'.split('.')]
-new = [int(x) for x in '${{ env.NEW_VER }}'.split('.')]
-sys.exit(0 if new >= old else 1)
-"; then
+            elif [ "$(printf '%s\n' "${{ env.OLD_VER }}" "${{ env.NEW_VER }}" | sort -V | head -n1)" != "${{ env.NEW_VER }}" ]; then
               echo "changed=true" >> $GITHUB_OUTPUT
               echo "Data updated from ${{ env.OLD_VER }} to ${{ env.NEW_VER }}"
             else
               echo "changed=false" >> $GITHUB_OUTPUT
-              echo "⚠️ New version ${{ env.NEW_VER }} is older than current ${{ env.OLD_VER }}, skipping to avoid downgrade."
+              echo "⚠️ New version ${{ env.NEW_VER }} older than current ${{ env.OLD_VER }}, skip downgrade"
             fi
           fi
       - name: Commit and push
