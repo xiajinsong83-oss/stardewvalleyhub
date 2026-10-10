@@ -3,7 +3,7 @@ permissions:
   contents: write
 on:
   schedule:
-    - cron: '0 2 */2 * *'  # 每 2 天 UTC 02:00（北京时间 10:00）
+    - cron: '0 2 * * *'  # 每天 UTC 02:00（北京时间 10:00）
   workflow_dispatch:  # 支持手动触发
 jobs:
   gen-guides:
