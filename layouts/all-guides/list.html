@@ -1,12 +1,6 @@
 {{ define "main" }}
 <div class="content-col">
   {{ partial "breadcrumb.html" . }}
-  <div class="page-head">
-    <h1>{{ .Title }}</h1>
-    {{ with .Description }}<p class="lead">{{ . }}</p>{{ end }}
-  </div>
-
-  {{ .Content }}
 
   {{ $badges := dict "crops" "Crop Guide" "fish" "Fish Guide" "minerals" "Mineral & Artifact" "villagers" "Villager Guide" }}
   {{ $colors := dict "crops" "#3ddc97" "fish" "#4fc3f7" "minerals" "#b39ddb" "villagers" "#ffb74d" }}
@@ -106,5 +100,10 @@
       </div>
     </aside>
   </div>
+
+  <!-- 栏目区（下移）：All Guides 标题 + 说明 + 分类卡片，置于文章列表最下方 -->
+  <section class="guides-catalog">
+    {{ .Content }}
+  </section>
 </div>
 {{ end }}
