@@ -868,3 +868,15 @@ select { background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='h
 .guide-cover-banner .gcb-meta { margin-top: 8px; font-size: 13px; color: #9aa8bf; }
 .guide-cover-banner .gcb-meta .gcb-author { color: #c8d2e3; }
 @media (max-width: 900px) { .guide-cover-banner .gcb-title { font-size: 20px; } .guide-cover-banner .gcb-overlay { padding: 24px 16px 12px; } }
+
+/* ---------- 手机端下拉菜单/面包屑防溢出 ---------- */
+@media (max-width: 768px) {
+  .nav-drop-menu {
+    left: auto !important;          /* 覆盖 JS 动态 left，避免菜单超出视口右侧 */
+    right: 8px !important;
+    min-width: 0 !important;
+    max-width: calc(100vw - 16px);
+  }
+  .nav-drop-menu a { white-space: normal; word-break: break-word; }
+  .breadcrumb { white-space: normal; word-break: break-word; overflow-wrap: anywhere; }
+}

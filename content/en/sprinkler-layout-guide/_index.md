@@ -1,6 +1,7 @@
 ---
-title: "Stardew Valley Sprinkler Layout Guide: Best Setups & Coverage"
-description: "Discover the best sprinkler layouts for Stardew Valley. Learn coverage ranges for Basic, Quality and Iridium sprinklers, and plan your farm with our Farm Layout Planner."
+title: "Stardew Valley Sprinkler Layout Guide & Planner: Best Setups & Coverage"
+description: "Plan the perfect Stardew Valley sprinkler layout with our free planner tool. Learn Basic, Quality and Iridium sprinkler coverage ranges, the best 3x3 and 5x5 sprinkler layouts, and how many crops each sprinkler waters."
+og_image: /images/farm-planner/sprinkler-layout.jpg
 type: sprinkler-layout-guide
 layout: sprinkler
 ---

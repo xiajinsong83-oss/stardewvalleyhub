@@ -60,6 +60,57 @@
     {{ .Content }}
   </div>
 
+  <!-- SEO: FAQ 区块（蓝海长尾关键词）+ FAQPage 结构化数据 -->
+  <section class="spr-faq">
+    <h2>Stardew Valley Sprinkler FAQs</h2>
+    <div class="spr-faq-item">
+      <h3>How many crops does an Iridium Sprinkler water?</h3>
+      <p>An Iridium Sprinkler waters 24 crops in a 5x5 area (the sprinkler sits in the center tile, which stays dry). That is the most efficient sprinkler in Stardew Valley and covers an entire 5x5 crop block.</p>
+    </div>
+    <div class="spr-faq-item">
+      <h3>How many crops does a Quality Sprinkler water?</h3>
+      <p>A Quality Sprinkler waters 8 crops in a 3x3 area around it. Unlocked at Farming level 6, it needs 1 Iron Bar, 1 Gold Bar and 1 Refined Quartz to craft, and it is the best mid-game option.</p>
+    </div>
+    <div class="spr-faq-item">
+      <h3>What is the best sprinkler layout for a 5x5 farm?</h3>
+      <p>For a 5x5 farm plot, one Iridium Sprinkler in the center covers all 24 surrounding tiles. For larger fields, place Iridium Sprinklers every 5 tiles (a 5x5 grid) so every crop is watered with zero gaps.</p>
+    </div>
+    <div class="spr-faq-item">
+      <h3>Can sprinklers water seeds planted on the same day?</h3>
+      <p>No. Sprinklers water crops at the start of the day, so seeds planted after that watering pass will not be watered until the next morning. Plan planting in the evening or before 2am sleep so your new seeds get watered the next day.</p>
+    </div>
+    <div class="spr-faq-item">
+      <h3>When can I unlock the Basic Sprinkler?</h3>
+      <p>The Basic Sprinkler unlocks at Farming level 2 and costs 1 Copper Bar and 1 Iron Bar. It waters 4 tiles directly up, down, left and right, making it useful only for a very small early-game garden.</p>
+    </div>
+  </section>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {"@type": "Question", "name": "How many crops does an Iridium Sprinkler water?", "acceptedAnswer": {"@type": "Answer", "text": "An Iridium Sprinkler waters 24 crops in a 5x5 area, with the sprinkler in the center tile which stays dry."}},
+      {"@type": "Question", "name": "How many crops does a Quality Sprinkler water?", "acceptedAnswer": {"@type": "Answer", "text": "A Quality Sprinkler waters 8 crops in a 3x3 area around it, unlocked at Farming level 6."}},
+      {"@type": "Question", "name": "What is the best sprinkler layout for a 5x5 farm?", "acceptedAnswer": {"@type": "Answer", "text": "One Iridium Sprinkler in the center covers all 24 surrounding tiles of a 5x5 plot; for larger fields space Iridium Sprinklers every 5 tiles."}},
+      {"@type": "Question", "name": "Can sprinklers water seeds planted on the same day?", "acceptedAnswer": {"@type": "Answer", "text": "No. Sprinklers water at the start of the day, so seeds planted after that watering pass are watered the next morning."}},
+      {"@type": "Question", "name": "When can I unlock the Basic Sprinkler?", "acceptedAnswer": {"@type": "Answer", "text": "The Basic Sprinkler unlocks at Farming level 2 and costs 1 Copper Bar and 1 Iron Bar; it waters 4 adjacent tiles."}}
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Stardew Valley Sprinkler Layout Planner",
+    "url": "{{ .Permalink }}",
+    "applicationCategory": "GameApplication",
+    "operatingSystem": "Any",
+    "description": "Interactive Stardew Valley sprinkler layout planner with Basic, Quality and Iridium sprinkler coverage, auto layout and export."
+  }
+  </script>
+
   {{ partial "related-links.html" . }}
 </div>
 
@@ -113,7 +164,14 @@
 .lg-cov { background: #3e8f4f; }
 .lg-soil { background: #5a4a38; }
 
-.spr-body { margin-top: 28px; }
+s.spr-body { margin-top: 28px; }
+.spr-faq { margin-top: 36px; background: #16213a; border: 1px solid #2a3a55; border-radius: 12px; padding: 20px 22px; }
+.spr-faq h2 { font-size: 22px; margin: 0 0 14px; color: #fff; }
+.spr-faq-item { border-bottom: 1px solid #243250; padding: 10px 0; }
+.spr-faq-item:last-child { border-bottom: 0; }
+.spr-faq-item h3 { font-size: 16px; margin: 0 0 4px; color: #3ddc97; }
+.spr-faq-item p { margin: 0; color: #cbd5e8; font-size: 14.5px; line-height: 1.65; }
+
 .spr-body h2 { font-size: 22px; margin: 28px 0 12px; color: #fff; }
 .spr-body h3 { font-size: 17px; margin: 20px 0 8px; }
 .spr-body p, .spr-body li { color: #cbd5e8; line-height: 1.7; }
