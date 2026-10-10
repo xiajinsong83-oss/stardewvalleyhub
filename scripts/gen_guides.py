@@ -4,10 +4,12 @@
 Stardew Valley Hub — Guides Hub 数据驱动原创攻略页生成器
 =========================================================
 从开源数据包 stardew-valley-data 的客观游戏事实生成 100% 原创攻略页，
-不抓取任何外部文章，零版权风险。选题池按分类轮询，跳过已生成页面，
-每次默认生成 3 篇（--count 可调），并自动更新：
-  - 分类页 content/en/all-guides/<cat>/_index.md（该分类全部攻略索引）
-  - 攻略库首页 content/en/all-guides/_index.md 的 GUIDES-HUB 区段
+不抓取任何外部文章，零版权风险。选题规则：
+  1. 有新内容（数据包版本高于上次记录）时，优先生成最新添加的物品攻略；
+  2. 没有新内容时，按时间最新 → 最老顺序补生成（数字 id 降序 = 游戏内较新物品优先）；
+  3. 每天默认生成 3 篇（--count 可调），并自动更新：
+     - 分类页 content/en/all-guides/<cat>/_index.md（该分类全部攻略索引）
+     - 攻略库首页 content/en/all-guides/_index.md 的 GUIDES-HUB 区段
 攻略页底部通过 front matter `related` 自动内链到对应站内工具。
 
 用法:
@@ -23,6 +25,8 @@ import unicodedata
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA_DIR = os.path.join(ROOT, "data-src", "package", "data")
+PKG_JSON = os.path.join(ROOT, "data-src", "package", "package.json")
+VER_FILE = os.path.join(ROOT, "data", ".guides-version")
 GUIDES_DIR = os.path.join(ROOT, "content", "en", "all-guides")
 TODAY = datetime.date.today().isoformat()
 
@@ -34,6 +38,44 @@ def slugify(name):
     s = s.replace("'", "").replace("’", "").replace(".", "")
     s = re.sub(r"[^a-z0-9]+", "-", s.lower()).strip("-")
     return s or "item"
+
+
+def current_data_version():
+    """读取当前数据包版本号。"""
+    try:
+        with open(PKG_JSON, encoding="utf-8") as f:
+            return json.load(f).get("version", "0.0.0")
+    except (OSError, ValueError):
+        return "0.0.0"
+
+
+def last_processed_version():
+    """读取上次生成攻略时处理的数据版本。"""
+    try:
+        with open(VER_FILE, encoding="utf-8") as f:
+            return f.read().strip() or "0.0.0"
+    except OSError:
+        return "0.0.0"
+
+
+def record_processed_version(ver):
+    os.makedirs(os.path.dirname(VER_FILE), exist_ok=True)
+    with open(VER_FILE, "w", encoding="utf-8") as f:
+        f.write(ver)
+
+
+def newest_first(items):
+    """数字 id 降序 = 游戏内较新的物品优先；非数字 id 保持数据顺序。
+
+    返回 (items, is_sorted)。crops/fish/minerals/artifacts 的 id 为数字字符串，
+    villagers 的 id 为名字（保持数据文件顺序即可）。
+    """
+    def key(it):
+        try:
+            return (1, int(it.get("id", 0)))
+        except (TypeError, ValueError):
+            return (0, 0)
+    return sorted(items, key=key, reverse=True)
 
 
 def load(name):
@@ -425,7 +467,16 @@ def main():
     ap.add_argument("--dry-run", action="store_true")
     args = ap.parse_args()
 
-    # 轮询选题：按 CATS 轮流取下一个未生成的
+    # 版本检测：有新内容（数据包版本升高）优先取新物品；无新内容按最新→最老补
+    cur_ver = current_data_version()
+    last_ver = last_processed_version()
+    new_content = cur_ver != last_ver
+    if new_content:
+        print(f"New data content detected: {last_ver} → {cur_ver}. Prioritizing newest items.", file=sys.stderr)
+    else:
+        print(f"No new data content (version {cur_ver}). Backfilling newest → oldest.", file=sys.stderr)
+
+    # 选题：按 CATS 轮询，每个分类内 newest_first（最新物品优先）
     generated = []      # (cat, slug, title, desc)
     pool_index = 0
     stall = 0           # 连续无新项的轮数，达 len(CATS) 判定池耗尽
@@ -433,9 +484,9 @@ def main():
     while len(generated) < args.count:
         cat = CATS[pool_index % len(CATS)]
         pool_index += 1
-        items = load(REGISTRY[cat]["file"])
+        items = newest_first(load(REGISTRY[cat]["file"]))
         if cat == "minerals":
-            items = items + load("artifacts.json")
+            items = items + newest_first(load("artifacts.json"))
         found = False
         for it in items:
             slug = slugify(it["name"])
@@ -526,6 +577,10 @@ def main():
         cat_summary[c]["emoji"] = emojis[c]
     patch_hub_section(hub_section(cat_summary))
     print("Updated Guides Hub home + category indexes.")
+
+    # 记录本次处理的数据版本（供下轮判断是否有新内容）
+    record_processed_version(cur_ver)
+    print(f"Recorded data version {cur_ver} -> {VER_FILE}")
 
 
 if __name__ == "__main__":

@@ -11,7 +11,8 @@
   {{ $badges := dict "crops" "Crop Guide" "fish" "Fish Guide" "minerals" "Mineral & Artifact" "villagers" "Villager Guide" }}
   {{ $colors := dict "crops" "#3ddc97" "fish" "#4fc3f7" "minerals" "#b39ddb" "villagers" "#ffb74d" }}
   {{ $all := where .Site.RegularPages "Params.type" "guide" }}
-  {{ $pag := .Paginate $all 10 }}
+  {{ $sorted := $all.ByDate.Reverse }}
+  {{ $pag := .Paginate $sorted 10 }}
 
   <div class="guides-layout">
     <div class="guides-main">
