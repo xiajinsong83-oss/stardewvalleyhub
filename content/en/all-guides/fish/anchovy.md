@@ -7,10 +7,6 @@ type: guide
 icon: "/images/fish/Anchovy.png"
 related: [{"title": "Fish Checklist", "url": "/fish-checklist/"}, {"title": "Farm Layout Planner", "url": "/farmlayou/"}]
 ---
-# Anchovy Guide: Where to Catch It in Spring, Fall (Ocean, 6:00 AM – 2:00 AM)
-
-![Anchovy](/images/fish/Anchovy.png)
-
 The Anchovy is a regular fish in Stardew Valley. A small silver fish found in the ocean.
 
 ## Catch Conditions
@@ -38,4 +34,3 @@ Go to **Ocean** during the right season and time window. The Anchovy is Easy —
 - **Smoking**: can be smoked in a Fish Smoker for extra value.
 - **Fish Pond**: keeps in a Fish Pond and produces Roe/items at population milestones.
 - Track your catches with the [Fish Checklist](/fish-checklist/).
-

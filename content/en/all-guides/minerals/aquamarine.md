@@ -7,10 +7,6 @@ type: guide
 icon: "/images/minerals/gems/Aquamarine.png"
 related: [{"title": "Museum Checklist", "url": "/museum-checklist/"}]
 ---
-# Aquamarine Guide: Where to Find It (Aquamarine Node, 180g Value)
-
-![Aquamarine](/images/minerals/gems/Aquamarine.png)
-
 A shimmery blue-green gem.
 
 ## Where to Find
@@ -27,4 +23,3 @@ A shimmery blue-green gem.
 - Mining deeper floors and cracking geodes are the fastest ways to find new pieces.
 - Gemologist profession raises mineral sell prices by 30% (base **180g** → **234g**).
 - Track donations with the [Museum Checklist](/museum-checklist/).
-

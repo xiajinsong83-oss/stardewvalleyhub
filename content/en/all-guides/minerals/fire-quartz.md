@@ -7,10 +7,6 @@ type: guide
 icon: "/images/minerals/foraged-minerals/Fire Quartz.png"
 related: [{"title": "Museum Checklist", "url": "/museum-checklist/"}]
 ---
-# Fire Quartz Guide: Where to Find It (The Mines (Floors 80-120), 100g Value)
-
-![Fire Quartz](/images/minerals/foraged-minerals/Fire Quartz.png)
-
 A glowing red crystal commonly found near hot lava.
 
 ## Where to Find
@@ -27,4 +23,3 @@ A glowing red crystal commonly found near hot lava.
 - Mining deeper floors and cracking geodes are the fastest ways to find new pieces.
 - Gemologist profession raises mineral sell prices by 30% (base **100g** → **130g**).
 - Track donations with the [Museum Checklist](/museum-checklist/).
-

@@ -800,13 +800,15 @@ select { background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='h
 .guides-feed-total { color: #6b7a90; font-size: 13px; }
 .guide-post { display: flex; gap: 18px; background: #141e30; border: 1px solid #2a3a55; border-radius: 12px; padding: 16px; margin-bottom: 14px; transition: border-color .2s; }
 .guide-post:hover { border-color: #3ddc97; }
-.guide-thumb { flex: 0 0 130px; height: 90px; display: flex; align-items: center; justify-content: center; background: #0f1826; border-radius: 8px; overflow: hidden; border: 1px solid #223350; text-decoration: none; }
-.guide-thumb img { max-width: 92%; max-height: 92%; image-rendering: pixelated; }
+.guide-thumb { flex: 0 0 268px; height: 168px; display: block; background: #0f1826; border-radius: 10px; overflow: hidden; border: 1px solid #223350; text-decoration: none; }
+.guide-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .25s ease; }
+.guide-post:hover .guide-thumb img { transform: scale(1.03); }
 .guide-body { flex: 1; min-width: 0; }
 .guide-meta { display: flex; align-items: center; gap: 10px; margin-bottom: 6px; flex-wrap: wrap; }
 .guide-badge { font-size: 11px; font-weight: 700; letter-spacing: .4px; text-transform: uppercase; padding: 3px 9px; border-radius: 999px; border: 1px solid; }
 .guide-meta time { color: #6b7a90; font-size: 12px; }
-.guide-body h3 { margin: 0 0 6px; font-size: 16px; }
+.guide-body h3 { margin: 0 0 8px; font-size: 19px; line-height: 1.35; }
+.guide-author { color: #c8d2e3; font-size: 12px; }
 .guide-body h3 a { color: #e8eef7; text-decoration: none; }
 .guide-body h3 a:hover { color: #3ddc97; }
 .guide-excerpt { color: #9aa8bf; font-size: 13px; line-height: 1.6; margin: 0 0 8px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
@@ -820,7 +822,7 @@ select { background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='h
 .pagination a:hover { border-color: #3ddc97; }
 @media (max-width: 640px) {
   .guide-post { flex-direction: column; }
-  .guide-thumb { flex: none; width: 100%; height: 140px; }
+  .guide-thumb { flex: none; width: 100%; height: 190px; }
 }
 
 /* Guides Hub 两栏布局 */
@@ -856,3 +858,13 @@ select { background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='h
 @media (max-width: 640px) {
   .related-links-grid { grid-template-columns: 1fr; }
 }
+
+/* guide 文章页分类横幅 */
+.guide-cover-banner { margin-bottom: 18px; border-radius: 14px; overflow: hidden; border: 1px solid #2a3a55; position: relative; }
+.guide-cover-banner img { width: 100%; display: block; max-height: 420px; object-fit: cover; }
+.guide-cover-banner .gcb-overlay { position: absolute; left: 0; right: 0; bottom: 0; padding: 34px 22px 16px; background: linear-gradient(180deg, transparent, rgba(8,14,26,.92) 78%); }
+.guide-cover-banner .gcb-tag { display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: .5px; text-transform: uppercase; color: #0d1a2d; background: #f0b429; padding: 3px 10px; border-radius: 999px; margin-bottom: 8px; }
+.guide-cover-banner .gcb-title { margin: 0; font-size: 26px; line-height: 1.3; color: #fff; }
+.guide-cover-banner .gcb-meta { margin-top: 8px; font-size: 13px; color: #9aa8bf; }
+.guide-cover-banner .gcb-meta .gcb-author { color: #c8d2e3; }
+@media (max-width: 900px) { .guide-cover-banner .gcb-title { font-size: 20px; } .guide-cover-banner .gcb-overlay { padding: 24px 16px 12px; } }

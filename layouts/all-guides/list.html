@@ -20,18 +20,18 @@
           {{ range $pag.Pages }}
           {{ $url := .RelPermalink }}
           {{ $title := .Title }}
-          {{ $sec := .Section }}
+          {{ $sec := "guides" }}{{ if .File }}{{ $parts := split .File.Path "/" }}{{ $sec = index $parts (sub (len $parts) 2) | default "guides" }}{{ end }}
           <article class="guide-post">
-            {{ with .Params.icon }}
             <a class="guide-thumb" href="{{ $url }}">
-              <img src="{{ . }}" alt="{{ $title }}" loading="lazy">
+              <img src="/images/guide-covers/{{ $sec }}.jpg" alt="{{ $title }}" loading="lazy"
+                   onerror="this.src='{{ with .Params.icon }}{{ . }}{{ end }}';this.onerror=null;">
             </a>
-            {{ end }}
             <div class="guide-body">
               <div class="guide-meta">
                 <span class="guide-badge" style="background:{{ index $colors $sec | default "#9aa8bf" }}22;color:{{ index $colors $sec | default "#9aa8bf" }};border-color:{{ index $colors $sec | default "#9aa8bf" }}55;">
                   {{ index $badges $sec | default "Guide" }}
                 </span>
+                <span class="guide-author">Stardew Valley Hub</span>
                 <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2, 2006" }}</time>
               </div>
               <h3><a href="{{ $url }}">{{ $title }}</a></h3>

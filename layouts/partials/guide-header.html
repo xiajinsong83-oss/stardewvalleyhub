@@ -1,0 +1,16 @@
+{{ if eq .Type "guide" }}
+{{ $sec := "guides" }}{{ if .File }}{{ $parts := split .File.Path "/" }}{{ $sec = index $parts (sub (len $parts) 2) | default "guides" }}{{ end }}
+{{ $badges := dict "crops" "Crop Guide" "fish" "Fish Guide" "minerals" "Mineral & Artifact" "villagers" "Villager Guide" }}
+{{ $colors := dict "crops" "#3ddc97" "fish" "#4fc3f7" "minerals" "#b39ddb" "villagers" "#ffb74d" }}
+<div class="guide-cover-banner">
+  <img src="/images/guide-covers/{{ $sec }}.jpg" alt="{{ .Title }}" loading="lazy"
+       onerror="this.style.display='none'">
+  <div class="gcb-overlay">
+    <span class="gcb-tag">{{ index $badges $sec | default "Guide" }}</span>
+    <p class="gcb-meta">
+      <span class="gcb-author">Stardew Valley Hub</span>
+      {{ if .Date }} · {{ .Date.Format "Jan 2, 2006" }}{{ end }}
+    </p>
+  </div>
+</div>
+{{ end }}

@@ -7,10 +7,6 @@ type: guide
 icon: "/images/minerals/foraged-minerals/Frozen Tear.png"
 related: [{"title": "Museum Checklist", "url": "/museum-checklist/"}]
 ---
-# Frozen Tear Guide: Where to Find It (The Mines (Floors 40-79), 75g Value)
-
-![Frozen Tear](/images/minerals/foraged-minerals/Frozen Tear.png)
-
 A crystal fabled to be the frozen tears of a yeti.
 
 ## Where to Find
@@ -27,4 +23,3 @@ A crystal fabled to be the frozen tears of a yeti.
 - Mining deeper floors and cracking geodes are the fastest ways to find new pieces.
 - Gemologist profession raises mineral sell prices by 30% (base **75g** → **97g**).
 - Track donations with the [Museum Checklist](/museum-checklist/).
-

@@ -7,10 +7,6 @@ type: guide
 icon: "/images/fish/Tuna.png"
 related: [{"title": "Fish Checklist", "url": "/fish-checklist/"}, {"title": "Farm Layout Planner", "url": "/farmlayou/"}]
 ---
-# Tuna Guide: Where to Catch It in Summer, Winter (Ocean, Ginger Island, 6:00 AM – 7:00 PM)
-
-![Tuna](/images/fish/Tuna.png)
-
 The Tuna is a regular fish in Stardew Valley. A large fish that lives in the ocean.
 
 ## Catch Conditions
@@ -38,4 +34,3 @@ Go to **Ocean, Ginger Island** during the right season and time window. The Tuna
 - **Smoking**: can be smoked in a Fish Smoker for extra value.
 - **Fish Pond**: keeps in a Fish Pond and produces Roe/items at population milestones.
 - Track your catches with the [Fish Checklist](/fish-checklist/).
-

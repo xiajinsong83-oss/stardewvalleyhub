@@ -7,10 +7,6 @@ type: guide
 icon: "/images/minerals/gems/Ruby.png"
 related: [{"title": "Museum Checklist", "url": "/museum-checklist/"}]
 ---
-# Ruby Guide: Where to Find It (Ruby Node, 250g Value)
-
-![Ruby](/images/minerals/gems/Ruby.png)
-
 A precious stone sought after for its rich color and beautiful luster.
 
 ## Where to Find
@@ -27,4 +23,3 @@ A precious stone sought after for its rich color and beautiful luster.
 - Mining deeper floors and cracking geodes are the fastest ways to find new pieces.
 - Gemologist profession raises mineral sell prices by 30% (base **250g** → **325g**).
 - Track donations with the [Museum Checklist](/museum-checklist/).
-

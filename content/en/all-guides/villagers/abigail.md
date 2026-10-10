@@ -7,10 +7,6 @@ type: guide
 icon: "/images/villagers/Abigail.png"
 related: [{"title": "Gift Lookup", "url": "/gift/"}]
 ---
-# Abigail Guide: Birthday (Fall 13), Loved Gifts & Best Gift Ideas
-
-![Abigail](/images/villagers/Abigail.png)
-
 Abigail is a villager who lives at Pierre's General Store in Pelican Town. She is one of the twelve characters available to marry.
 
 ## At a Glance
@@ -34,4 +30,3 @@ Abigail is a villager who lives at Pierre's General Store in Pelican Town. She i
 - **Birthday bonus**: gifts on Fall 13 give 8× friendship points — save a loved item for that day.
 - Talk daily and give a loved gift twice a week to reach the next heart event quickly.
 - Plan which items to stock with the [Gift Lookup](/gift/) tool.
-

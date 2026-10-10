@@ -7,10 +7,6 @@ type: guide
 icon: "/images/villagers/Clint.png"
 related: [{"title": "Gift Lookup", "url": "/gift/"}]
 ---
-# Clint Guide: Birthday (Winter 26), Loved Gifts & Best Gift Ideas
-
-![Clint](/images/villagers/Clint.png)
-
 Clint is a villager who lives in Pelican Town and owns and runs the local Blacksmith.
 
 ## At a Glance
@@ -34,4 +30,3 @@ Clint is a villager who lives in Pelican Town and owns and runs the local Blacks
 - **Birthday bonus**: gifts on Winter 26 give 8× friendship points — save a loved item for that day.
 - Talk daily and give a loved gift twice a week to reach the next heart event quickly.
 - Plan which items to stock with the [Gift Lookup](/gift/) tool.
-

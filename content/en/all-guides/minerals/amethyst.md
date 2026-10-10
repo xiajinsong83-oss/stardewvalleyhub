@@ -7,10 +7,6 @@ type: guide
 icon: "/images/minerals/gems/Amethyst.png"
 related: [{"title": "Museum Checklist", "url": "/museum-checklist/"}]
 ---
-# Amethyst Guide: Where to Find It (Amethyst Node, 100g Value)
-
-![Amethyst](/images/minerals/gems/Amethyst.png)
-
 A purple variant of quartz.
 
 ## Where to Find
@@ -27,4 +23,3 @@ A purple variant of quartz.
 - Mining deeper floors and cracking geodes are the fastest ways to find new pieces.
 - Gemologist profession raises mineral sell prices by 30% (base **100g** → **130g**).
 - Track donations with the [Museum Checklist](/museum-checklist/).
-

@@ -7,10 +7,6 @@ type: guide
 icon: "/images/fish/Smallmouth Bass.png"
 related: [{"title": "Fish Checklist", "url": "/fish-checklist/"}, {"title": "Farm Layout Planner", "url": "/farmlayou/"}]
 ---
-# Smallmouth Bass Guide: Where to Catch It in Spring, Fall (River, Forest Pond, 6:00 AM – 2:00 AM)
-
-![Smallmouth Bass](/images/fish/Smallmouth Bass.png)
-
 The Smallmouth Bass is a regular fish in Stardew Valley. A freshwater fish that is very sensitive to pollution.
 
 ## Catch Conditions
@@ -38,4 +34,3 @@ Go to **River, Forest Pond** during the right season and time window. The Smallm
 - **Smoking**: can be smoked in a Fish Smoker for extra value.
 - **Fish Pond**: keeps in a Fish Pond and produces Roe/items at population milestones.
 - Track your catches with the [Fish Checklist](/fish-checklist/).
-

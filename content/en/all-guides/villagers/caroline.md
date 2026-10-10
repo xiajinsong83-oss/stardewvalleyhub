@@ -7,10 +7,6 @@ type: guide
 icon: "/images/villagers/Caroline.png"
 related: [{"title": "Gift Lookup", "url": "/gift/"}]
 ---
-# Caroline Guide: Birthday (Winter 7), Loved Gifts & Best Gift Ideas
-
-![Caroline](/images/villagers/Caroline.png)
-
 Caroline is a villager who lives in Pelican Town. She is married to Pierre and is the mother of Abigail.
 
 ## At a Glance
@@ -34,4 +30,3 @@ Caroline is a villager who lives in Pelican Town. She is married to Pierre and i
 - **Birthday bonus**: gifts on Winter 7 give 8× friendship points — save a loved item for that day.
 - Talk daily and give a loved gift twice a week to reach the next heart event quickly.
 - Plan which items to stock with the [Gift Lookup](/gift/) tool.
-

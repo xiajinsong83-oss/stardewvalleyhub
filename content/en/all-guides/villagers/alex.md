@@ -7,10 +7,6 @@ type: guide
 icon: "/images/villagers/Alex.png"
 related: [{"title": "Gift Lookup", "url": "/gift/"}]
 ---
-# Alex Guide: Birthday (Summer 13), Loved Gifts & Best Gift Ideas
-
-![Alex](/images/villagers/Alex.png)
-
 Alex is a villager who lives in the house southeast of Pierre's General Store. He is one of the twelve characters available to marry.
 
 ## At a Glance
@@ -34,4 +30,3 @@ Alex is a villager who lives in the house southeast of Pierre's General Store. H
 - **Birthday bonus**: gifts on Summer 13 give 8× friendship points — save a loved item for that day.
 - Talk daily and give a loved gift twice a week to reach the next heart event quickly.
 - Plan which items to stock with the [Gift Lookup](/gift/) tool.
-

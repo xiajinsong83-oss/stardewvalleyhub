@@ -7,10 +7,6 @@ type: guide
 icon: "/images/fish/Bream.png"
 related: [{"title": "Fish Checklist", "url": "/fish-checklist/"}, {"title": "Farm Layout Planner", "url": "/farmlayou/"}]
 ---
-# Bream Guide: Where to Catch It in Spring, Summer, Fall, Winter (River, 6:00 PM – 2:00 AM)
-
-![Bream](/images/fish/Bream.png)
-
 The Bream is a regular fish in Stardew Valley. A fairly common river fish that becomes active at night.
 
 ## Catch Conditions
@@ -38,4 +34,3 @@ Go to **River** during the right season and time window. The Bream is Easy — c
 - **Smoking**: can be smoked in a Fish Smoker for extra value.
 - **Fish Pond**: keeps in a Fish Pond and produces Roe/items at population milestones.
 - Track your catches with the [Fish Checklist](/fish-checklist/).
-

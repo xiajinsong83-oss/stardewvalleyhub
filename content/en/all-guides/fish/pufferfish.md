@@ -7,10 +7,6 @@ type: guide
 icon: "/images/fish/Pufferfish.png"
 related: [{"title": "Fish Checklist", "url": "/fish-checklist/"}, {"title": "Farm Layout Planner", "url": "/farmlayou/"}]
 ---
-# Pufferfish Guide: Where to Catch, Seasons & Tips
-
-![Pufferfish](/images/fish/Pufferfish.png)
-
 The Pufferfish is a regular fish in Stardew Valley. Inflates when threatened.
 
 ## Catch Conditions
@@ -38,4 +34,3 @@ Go to **Ocean, Ginger Island** during the right season and time window. The Puff
 - **Smoking**: can be smoked in a Fish Smoker for extra value.
 - **Fish Pond**: keeps in a Fish Pond and produces Roe/items at population milestones.
 - Track your catches with the [Fish Checklist](/fish-checklist/).
-

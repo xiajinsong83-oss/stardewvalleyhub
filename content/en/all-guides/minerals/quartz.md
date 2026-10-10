@@ -7,10 +7,6 @@ type: guide
 icon: "/images/minerals/foraged-minerals/Quartz.png"
 related: [{"title": "Museum Checklist", "url": "/museum-checklist/"}]
 ---
-# Quartz Guide: Where to Find & Value
-
-![Quartz](/images/minerals/foraged-minerals/Quartz.png)
-
 A clear crystal commonly found in caves and mines.
 
 ## Where to Find
@@ -27,4 +23,3 @@ A clear crystal commonly found in caves and mines.
 - Mining deeper floors and cracking geodes are the fastest ways to find new pieces.
 - Gemologist profession raises mineral sell prices by 30% (base **25g** → **32g**).
 - Track donations with the [Museum Checklist](/museum-checklist/).
-

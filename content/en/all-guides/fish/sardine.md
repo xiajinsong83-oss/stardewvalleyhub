@@ -7,10 +7,6 @@ type: guide
 icon: "/images/fish/Sardine.png"
 related: [{"title": "Fish Checklist", "url": "/fish-checklist/"}, {"title": "Farm Layout Planner", "url": "/farmlayou/"}]
 ---
-# Sardine Guide: Where to Catch It in Spring, Summer, Fall, Winter (Ocean, 6:00 AM – 7:00 PM)
-
-![Sardine](/images/fish/Sardine.png)
-
 The Sardine is a regular fish in Stardew Valley. A common ocean fish.
 
 ## Catch Conditions
@@ -38,4 +34,3 @@ Go to **Ocean** during the right season and time window. The Sardine is Easy —
 - **Smoking**: can be smoked in a Fish Smoker for extra value.
 - **Fish Pond**: keeps in a Fish Pond and produces Roe/items at population milestones.
 - Track your catches with the [Fish Checklist](/fish-checklist/).
-

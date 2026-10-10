@@ -7,10 +7,6 @@ type: guide
 icon: "/images/crops/parsnip/crop.png"
 related: [{"title": "Farm Layout Planner", "url": "/farmlayou/"}, {"title": "Crop Profit Calculator", "url": "/calculator/"}]
 ---
-# Parsnip Guide: How to Grow, Harvest & Profit
-
-![Parsnip](/images/crops/parsnip/crop.png)
-
 The Parsnip is a vegetable crop in Stardew Valley. A spring tuber closely related to the carrot. It has a sweet, fresh taste. It grows in Spring and is one of the most reliable ways to build early-season income, so it belongs in almost every farm plan.
 
 ## At a Glance
@@ -50,4 +46,3 @@ With the **Tiller** profession, crop sell prices increase by 10%, lifting the se
 - **Sprinklers**: pair it with a sprinkler layout in the [Farm Layout Planner](/farmlayou/) to automate watering from day one.
 - **Quality**: with higher Farming skill and fertilizer, silver/gold/iridium quality harvests raise the sell price well above the base 35g.
 - **Season end**: crops wither at season change — time plantings so the final harvest lands before the 28th.
-

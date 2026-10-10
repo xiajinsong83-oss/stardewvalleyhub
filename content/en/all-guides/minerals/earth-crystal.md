@@ -7,10 +7,6 @@ type: guide
 icon: "/images/minerals/foraged-minerals/Earth Crystal.png"
 related: [{"title": "Museum Checklist", "url": "/museum-checklist/"}]
 ---
-# Earth Crystal Guide: Where to Find It (The Mines (Floors 1-39), 50g Value)
-
-![Earth Crystal](/images/minerals/foraged-minerals/Earth Crystal.png)
-
 A resinous substance found near the surface.
 
 ## Where to Find
@@ -27,4 +23,3 @@ A resinous substance found near the surface.
 - Mining deeper floors and cracking geodes are the fastest ways to find new pieces.
 - Gemologist profession raises mineral sell prices by 30% (base **50g** → **65g**).
 - Track donations with the [Museum Checklist](/museum-checklist/).
-

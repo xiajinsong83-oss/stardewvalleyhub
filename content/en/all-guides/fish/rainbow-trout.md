@@ -7,10 +7,6 @@ type: guide
 icon: "/images/fish/Rainbow Trout.png"
 related: [{"title": "Fish Checklist", "url": "/fish-checklist/"}, {"title": "Farm Layout Planner", "url": "/farmlayou/"}]
 ---
-# Rainbow Trout Guide: Where to Catch It in Summer (River, Mountain Lake, 6:00 AM – 7:00 PM)
-
-![Rainbow Trout](/images/fish/Rainbow Trout.png)
-
 The Rainbow Trout is a regular fish in Stardew Valley. A freshwater trout with colorful markings.
 
 ## Catch Conditions
@@ -38,4 +34,3 @@ Go to **River, Mountain Lake** during the right season and time window. The Rain
 - **Smoking**: can be smoked in a Fish Smoker for extra value.
 - **Fish Pond**: keeps in a Fish Pond and produces Roe/items at population milestones.
 - Track your catches with the [Fish Checklist](/fish-checklist/).
-

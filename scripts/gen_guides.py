@@ -173,11 +173,6 @@ def crop_guide(item):
         name, item.get("category", "crop").lower(), desc, season_label(item.get("seasons", [])))
 
     body = [
-        "# %s Guide: How to Grow %s in %s (%d-Day Growth, Profit & Tips)" % (
-            name, name, season_label(item.get("seasons", [])).title(), grow),
-        "",
-        "![%s](%s)" % (name, img_url(item)),
-        "",
         intro,
         "",
         "## At a Glance",
@@ -246,13 +241,6 @@ def fish_guide(item):
                 if diff >= 40 else
                 "Easy — catchable with the basic rod early on.")
     body = [
-        "# %s Guide: Where to Catch It in %s (%s, %s)" % (
-            name, season_label(item.get("seasons", [])).title(),
-            item.get("location") or "All Locations",
-            item.get("time") or "All Day"),
-        "",
-        "![%s](%s)" % (name, img_url(item)),
-        "",
         "The %s is a %s fish in Stardew Valley. %s" % (name, item.get("category", "fish"), item.get("description", "")),
         "",
         "## Catch Conditions",
@@ -301,11 +289,6 @@ def mineral_guide(item):
     locs = item.get("locations") or []
     loc_txt = locs[0] if locs else "The Mines & Geodes"
     body = [
-        "# %s Guide: Where to Find It (%s, %s Value)" % (
-            name, loc_txt, money(item.get("sellPrice", 0))),
-        "",
-        "![%s](%s)" % (name, img_url(item)),
-        "",
         "%s" % item.get("description", ""),
         "",
         "## Where to Find",
@@ -337,10 +320,6 @@ def villager_guide(item):
     loves = item.get("loves") or []
     likes = item.get("likes") or []
     body = [
-        "# %s Guide: Birthday (%s), Loved Gifts & Best Gift Ideas" % (name, bday_txt),
-        "",
-        "![%s](%s)" % (name, img_url(item)),
-        "",
         "%s" % item.get("description", ""),
         "",
         "## At a Glance",

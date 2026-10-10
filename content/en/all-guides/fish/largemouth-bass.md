@@ -7,10 +7,6 @@ type: guide
 icon: "/images/fish/Largemouth Bass.png"
 related: [{"title": "Fish Checklist", "url": "/fish-checklist/"}, {"title": "Farm Layout Planner", "url": "/farmlayou/"}]
 ---
-# Largemouth Bass Guide: Where to Catch It in Spring, Summer, Fall, Winter (Mountain Lake, 6:00 AM – 7:00 PM)
-
-![Largemouth Bass](/images/fish/Largemouth Bass.png)
-
 The Largemouth Bass is a regular fish in Stardew Valley. A popular fish that lives in lakes.
 
 ## Catch Conditions
@@ -38,4 +34,3 @@ Go to **Mountain Lake** during the right season and time window. The Largemouth 
 - **Smoking**: can be smoked in a Fish Smoker for extra value.
 - **Fish Pond**: keeps in a Fish Pond and produces Roe/items at population milestones.
 - Track your catches with the [Fish Checklist](/fish-checklist/).
-

@@ -7,10 +7,6 @@ type: guide
 icon: "/images/villagers/Dwarf.png"
 related: [{"title": "Gift Lookup", "url": "/gift/"}]
 ---
-# Dwarf Guide: Birthday (Summer 22), Loved Gifts & Best Gift Ideas
-
-![Dwarf](/images/villagers/Dwarf.png)
-
 The Dwarf is a valley resident who lives in the Mines. Access is initially blocked by an unbreakable rock which can be broken using a steel pickaxe or bombs.
 
 ## At a Glance
@@ -34,4 +30,3 @@ The Dwarf is a valley resident who lives in the Mines. Access is initially block
 - **Birthday bonus**: gifts on Summer 22 give 8× friendship points — save a loved item for that day.
 - Talk daily and give a loved gift twice a week to reach the next heart event quickly.
 - Plan which items to stock with the [Gift Lookup](/gift/) tool.
-

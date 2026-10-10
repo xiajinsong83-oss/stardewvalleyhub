@@ -21,6 +21,7 @@
         </div>
       </div>
     </div>
+    {{ partial "guide-header.html" . }}
     <div class="content">{{ .Content }}</div>
     {{ if .Params.faq }}{{ partial "faq.html" . }}{{ end }}
     {{ if .Params.related }}
@@ -54,7 +55,8 @@
           </div>
         </div>
       </div>
-      <div class="content">{{ .Content }}</div>
+      {{ partial "guide-header.html" . }}
+    <div class="content">{{ .Content }}</div>
       {{ if .Params.faq }}{{ partial "faq.html" . }}{{ end }}
       {{ if .Params.related }}
       <section class="related">
