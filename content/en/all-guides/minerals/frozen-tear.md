@@ -2,6 +2,7 @@
 title: "Frozen Tear Guide: Where to Find It (The Mines (Floors 40-79), 75g Value)"
 description: "Frozen Tear Guide: Where to Find It (The Mines (Floors 40-79), 75g Value) — A crystal fabled to be the frozen tears of a yeti."
 date: 2026-10-10
+cover: "/images/guide-covers/minerals-alt.jpg"
 draft: false
 type: guide
 icon: "/images/minerals/foraged-minerals/Frozen Tear.png"

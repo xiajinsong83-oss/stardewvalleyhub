@@ -2,6 +2,7 @@
 title: "Bream Guide: Where to Catch It in Spring, Summer, Fall, Winter (River, 6:00 PM – 2:00 AM)"
 description: "Bream Guide: Where to Catch It in Spring, Summer, Fall, Winter (River, 6:00 PM – 2:00 AM) — A fairly common river fish that becomes active at night."
 date: 2026-10-10
+cover: "/images/guide-covers/fish-alt.jpg"
 draft: false
 type: guide
 icon: "/images/fish/Bream.png"

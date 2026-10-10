@@ -2,6 +2,7 @@
 title: "Dwarf Guide: Birthday (Summer 22), Loved Gifts & Best Gift Ideas"
 description: "Dwarf Guide: Birthday (Summer 22), Loved Gifts & Best Gift Ideas — The Dwarf is a valley resident who lives in the Mines. Access is initially blocked by…"
 date: 2026-10-10
+cover: "/images/guide-covers/villagers-alt.jpg"
 draft: false
 type: guide
 icon: "/images/villagers/Dwarf.png"

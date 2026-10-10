@@ -2,6 +2,7 @@
 title: "Parsnip Guide: How to Grow, Harvest & Profit"
 description: "A spring tuber closely related to the carrot. It has a sweet, fresh taste."
 date: 2026-10-10
+cover: "/images/guide-covers/crops.jpg"
 draft: false
 type: guide
 icon: "/images/crops/parsnip/crop.png"

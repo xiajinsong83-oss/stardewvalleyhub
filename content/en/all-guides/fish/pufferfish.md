@@ -2,6 +2,7 @@
 title: "Pufferfish Guide: Where to Catch, Seasons & Tips"
 description: "Inflates when threatened."
 date: 2026-10-10
+cover: "/images/guide-covers/fish-alt.jpg"
 draft: false
 type: guide
 icon: "/images/fish/Pufferfish.png"

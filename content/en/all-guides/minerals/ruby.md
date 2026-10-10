@@ -2,6 +2,7 @@
 title: "Ruby Guide: Where to Find It (Ruby Node, 250g Value)"
 description: "Ruby Guide: Where to Find It (Ruby Node, 250g Value) — A precious stone sought after for its rich color and beautiful luster."
 date: 2026-10-10
+cover: "/images/guide-covers/minerals-alt.jpg"
 draft: false
 type: guide
 icon: "/images/minerals/gems/Ruby.png"

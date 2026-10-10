@@ -2,6 +2,7 @@
 title: "Emerald Guide: Where to Find It (Emerald Node, 250g Value)"
 description: "Emerald Guide: Where to Find It (Emerald Node, 250g Value) — A precious stone with a brilliant green color."
 date: 2026-10-10
+cover: "/images/guide-covers/minerals-alt.jpg"
 draft: false
 type: guide
 icon: "/images/minerals/gems/Emerald.png"

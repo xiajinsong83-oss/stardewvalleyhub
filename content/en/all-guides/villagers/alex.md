@@ -2,6 +2,7 @@
 title: "Alex Guide: Birthday (Summer 13), Loved Gifts & Best Gift Ideas"
 description: "Alex Guide: Birthday (Summer 13), Loved Gifts & Best Gift Ideas — Alex is a villager who lives in the house southeast of Pierre's General Store. He is o…"
 date: 2026-10-10
+cover: "/images/guide-covers/villagers-alt.jpg"
 draft: false
 type: guide
 icon: "/images/villagers/Alex.png"

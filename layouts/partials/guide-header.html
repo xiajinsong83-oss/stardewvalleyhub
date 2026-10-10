@@ -3,7 +3,7 @@
 {{ $badges := dict "crops" "Crop Guide" "fish" "Fish Guide" "minerals" "Mineral & Artifact" "villagers" "Villager Guide" }}
 {{ $colors := dict "crops" "#3ddc97" "fish" "#4fc3f7" "minerals" "#b39ddb" "villagers" "#ffb74d" }}
 <div class="guide-cover-banner">
-  <img src="/images/guide-covers/{{ $sec }}.jpg" alt="{{ .Title }}" loading="lazy"
+  <img src="{{ .Params.cover | default (printf "/images/guide-covers/%s.jpg" $sec) }}" alt="{{ .Title }}" loading="lazy"
        onerror="this.style.display='none'">
   <div class="gcb-overlay">
     <span class="gcb-tag">{{ index $badges $sec | default "Guide" }}</span>

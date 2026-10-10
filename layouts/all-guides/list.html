@@ -23,7 +23,7 @@
           {{ $sec := "guides" }}{{ if .File }}{{ $parts := split .File.Path "/" }}{{ $sec = index $parts (sub (len $parts) 2) | default "guides" }}{{ end }}
           <article class="guide-post">
             <a class="guide-thumb" href="{{ $url }}">
-              <img src="/images/guide-covers/{{ $sec }}.jpg" alt="{{ $title }}" loading="lazy"
+              <img src="{{ .Params.cover | default (printf "/images/guide-covers/%s.jpg" $sec) }}" alt="{{ $title }}" loading="lazy"
                    onerror="this.src='{{ with .Params.icon }}{{ . }}{{ end }}';this.onerror=null;">
             </a>
             <div class="guide-body">

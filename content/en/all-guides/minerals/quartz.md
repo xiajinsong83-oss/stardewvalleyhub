@@ -2,6 +2,7 @@
 title: "Quartz Guide: Where to Find & Value"
 description: "A clear crystal commonly found in caves and mines."
 date: 2026-10-10
+cover: "/images/guide-covers/minerals.jpg"
 draft: false
 type: guide
 icon: "/images/minerals/foraged-minerals/Quartz.png"

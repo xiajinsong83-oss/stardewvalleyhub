@@ -2,6 +2,7 @@
 title: "Anchovy Guide: Where to Catch It in Spring, Fall (Ocean, 6:00 AM – 2:00 AM)"
 description: "Anchovy Guide: Where to Catch It in Spring, Fall (Ocean, 6:00 AM – 2:00 AM) — A small silver fish found in the ocean."
 date: 2026-10-10
+cover: "/images/guide-covers/fish.jpg"
 draft: false
 type: guide
 icon: "/images/fish/Anchovy.png"

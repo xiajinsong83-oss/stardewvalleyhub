@@ -2,6 +2,7 @@
 title: "Clint Guide: Birthday (Winter 26), Loved Gifts & Best Gift Ideas"
 description: "Clint Guide: Birthday (Winter 26), Loved Gifts & Best Gift Ideas — Clint is a villager who lives in Pelican Town and owns and runs the local Blacksmith."
 date: 2026-10-10
+cover: "/images/guide-covers/villagers-alt.jpg"
 draft: false
 type: guide
 icon: "/images/villagers/Clint.png"

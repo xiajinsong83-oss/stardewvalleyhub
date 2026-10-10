@@ -2,6 +2,7 @@
 title: "Demetrius Guide: Birthday (Summer 19), Loved Gifts & Best Gift Ideas"
 description: "Demetrius Guide: Birthday (Summer 19), Loved Gifts & Best Gift Ideas — Demetrius is a villager who resides at 24 Mountain Road with his wife Robin, daug…"
 date: 2026-10-10
+cover: "/images/guide-covers/villagers.jpg"
 draft: false
 type: guide
 icon: "/images/villagers/Demetrius.png"

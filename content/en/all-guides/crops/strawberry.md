@@ -2,6 +2,7 @@
 title: "Strawberry Guide: How to Grow Strawberry in Spring (8-Day Growth, Profit & Tips)"
 description: "Strawberry Guide: How to Grow Strawberry in Spring (8-Day Growth, Profit & Tips) — This plump, delicious berry will continue to produce after the first…"
 date: 2026-10-10
+cover: "/images/guide-covers/crops-alt.jpg"
 draft: false
 type: guide
 icon: "/images/crops/strawberry/crop.png"

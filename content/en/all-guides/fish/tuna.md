@@ -2,6 +2,7 @@
 title: "Tuna Guide: Where to Catch It in Summer, Winter (Ocean, Ginger Island, 6:00 AM – 7:00 PM)"
 description: "Tuna Guide: Where to Catch It in Summer, Winter (Ocean, Ginger Island, 6:00 AM – 7:00 PM) — A large fish that lives in the ocean."
 date: 2026-10-10
+cover: "/images/guide-covers/fish-alt.jpg"
 draft: false
 type: guide
 icon: "/images/fish/Tuna.png"

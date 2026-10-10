@@ -11,7 +11,6 @@ title: Crop Guides - Stardew Valley Hub
   <a class="card" href="/all-guides/crops/kale/"><h3>Kale Guide: How to Grow Kale in Spring (6-Day Growth, Profit & Tips)</h3><p>Full guide with data, tips and tools.</p></a>
   <a class="card" href="/all-guides/crops/parsnip/"><h3>Parsnip Guide: How to Grow, Harvest & Profit</h3><p>Full guide with data, tips and tools.</p></a>
   <a class="card" href="/all-guides/crops/potato/"><h3>Potato Guide: How to Grow Potato in Spring (6-Day Growth, Profit & Tips)</h3><p>Full guide with data, tips and tools.</p></a>
-  <a class="card" href="/all-guides/crops/qi-fruit/"><h3>Qi Fruit Guide: How to Grow Qi Fruit in Spring, Summer, Fall, Winter (4-Day Growth, Profit & Tips)</h3><p>Full guide with data, tips and tools.</p></a>
   <a class="card" href="/all-guides/crops/rhubarb/"><h3>Rhubarb Guide: How to Grow Rhubarb in Spring (13-Day Growth, Profit & Tips)</h3><p>Full guide with data, tips and tools.</p></a>
   <a class="card" href="/all-guides/crops/strawberry/"><h3>Strawberry Guide: How to Grow Strawberry in Spring (8-Day Growth, Profit & Tips)</h3><p>Full guide with data, tips and tools.</p></a>
 </div>

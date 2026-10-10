@@ -2,6 +2,7 @@
 title: "Rainbow Trout Guide: Where to Catch It in Summer (River, Mountain Lake, 6:00 AM – 7:00 PM)"
 description: "Rainbow Trout Guide: Where to Catch It in Summer (River, Mountain Lake, 6:00 AM – 7:00 PM) — A freshwater trout with colorful markings."
 date: 2026-10-10
+cover: "/images/guide-covers/fish.jpg"
 draft: false
 type: guide
 icon: "/images/fish/Rainbow Trout.png"

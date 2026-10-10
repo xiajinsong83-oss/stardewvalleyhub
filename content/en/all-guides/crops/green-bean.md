@@ -2,6 +2,7 @@
 title: "Green Bean Guide: How to Grow Green Bean in Spring (10-Day Growth, Profit & Tips)"
 description: "Green Bean Guide: How to Grow Green Bean in Spring (10-Day Growth, Profit & Tips) — A young, tender bean in the pod."
 date: 2026-10-10
+cover: "/images/guide-covers/crops.jpg"
 draft: false
 type: guide
 icon: "/images/crops/green-bean/crop.png"

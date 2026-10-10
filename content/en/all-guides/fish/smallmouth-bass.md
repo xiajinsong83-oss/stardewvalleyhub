@@ -2,6 +2,7 @@
 title: "Smallmouth Bass Guide: Where to Catch It in Spring, Fall (River, Forest Pond, 6:00 AM – 2:00 AM)"
 description: "Smallmouth Bass Guide: Where to Catch It in Spring, Fall (River, Forest Pond, 6:00 AM – 2:00 AM) — A freshwater fish that is very sensitive to pollution."
 date: 2026-10-10
+cover: "/images/guide-covers/fish.jpg"
 draft: false
 type: guide
 icon: "/images/fish/Smallmouth Bass.png"

@@ -2,6 +2,7 @@
 title: "Earth Crystal Guide: Where to Find It (The Mines (Floors 1-39), 50g Value)"
 description: "Earth Crystal Guide: Where to Find It (The Mines (Floors 1-39), 50g Value) — A resinous substance found near the surface."
 date: 2026-10-10
+cover: "/images/guide-covers/minerals.jpg"
 draft: false
 type: guide
 icon: "/images/minerals/foraged-minerals/Earth Crystal.png"

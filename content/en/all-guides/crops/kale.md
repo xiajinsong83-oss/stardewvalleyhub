@@ -2,6 +2,7 @@
 title: "Kale Guide: How to Grow Kale in Spring (6-Day Growth, Profit & Tips)"
 description: "Kale Guide: How to Grow Kale in Spring (6-Day Growth, Profit & Tips) — This dark leafy green is impressively healthy and grows quickly."
 date: 2026-10-10
+cover: "/images/guide-covers/crops-alt.jpg"
 draft: false
 type: guide
 icon: "/images/crops/kale/crop.png"

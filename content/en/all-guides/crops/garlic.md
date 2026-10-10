@@ -2,6 +2,7 @@
 title: "Garlic Guide: How to Grow Garlic in Spring (4-Day Growth, Profit & Tips)"
 description: "Garlic Guide: How to Grow Garlic in Spring (4-Day Growth, Profit & Tips) — A pungent herb used in cooking. The aroma is known to keep monsters at bay."
 date: 2026-10-10
+cover: "/images/guide-covers/crops-alt.jpg"
 draft: false
 type: guide
 icon: "/images/crops/garlic/crop.png"

@@ -2,6 +2,7 @@
 title: "Fire Quartz Guide: Where to Find It (The Mines (Floors 80-120), 100g Value)"
 description: "Fire Quartz Guide: Where to Find It (The Mines (Floors 80-120), 100g Value) — A glowing red crystal commonly found near hot lava."
 date: 2026-10-10
+cover: "/images/guide-covers/minerals.jpg"
 draft: false
 type: guide
 icon: "/images/minerals/foraged-minerals/Fire Quartz.png"

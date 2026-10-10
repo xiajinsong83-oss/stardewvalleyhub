@@ -2,6 +2,7 @@
 title: "Amethyst Guide: Where to Find It (Amethyst Node, 100g Value)"
 description: "Amethyst Guide: Where to Find It (Amethyst Node, 100g Value) — A purple variant of quartz."
 date: 2026-10-10
+cover: "/images/guide-covers/minerals.jpg"
 draft: false
 type: guide
 icon: "/images/minerals/gems/Amethyst.png"

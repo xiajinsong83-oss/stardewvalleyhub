@@ -2,6 +2,7 @@
 title: "Aquamarine Guide: Where to Find It (Aquamarine Node, 180g Value)"
 description: "Aquamarine Guide: Where to Find It (Aquamarine Node, 180g Value) — A shimmery blue-green gem."
 date: 2026-10-10
+cover: "/images/guide-covers/minerals-alt.jpg"
 draft: false
 type: guide
 icon: "/images/minerals/gems/Aquamarine.png"

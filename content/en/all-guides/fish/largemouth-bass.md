@@ -2,6 +2,7 @@
 title: "Largemouth Bass Guide: Where to Catch It in Spring, Summer, Fall, Winter (Mountain Lake, 6:00 AM – 7:00 PM)"
 description: "Largemouth Bass Guide: Where to Catch It in Spring, Summer, Fall, Winter (Mountain Lake, 6:00 AM – 7:00 PM) — A popular fish that lives in lakes."
 date: 2026-10-10
+cover: "/images/guide-covers/fish.jpg"
 draft: false
 type: guide
 icon: "/images/fish/Largemouth Bass.png"

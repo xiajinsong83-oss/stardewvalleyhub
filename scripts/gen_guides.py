@@ -508,7 +508,10 @@ def main():
                 d = d[:152].rstrip() + "…"
             desc = d
             icon = img_url(it)
-            md = front(title, d, icon, REGISTRY[cat]["related"]) + "\n".join(body) + "\n"
+            # 像素风封面图池：俯视地图(主) 与 平视场景(alt) 按生成顺序交替，避免同分类文章重复用同一张图
+            cover_count = sum(1 for c, _, _ in generated if c == cat) + 1
+            cover = "/images/guide-covers/%s%s.jpg" % (cat, "" if cover_count % 2 == 1 else "-alt")
+            md = front(title, d, icon, REGISTRY[cat]["related"], cover=cover) + "\n".join(body) + "\n"
             out = os.path.join(GUIDES_DIR, cat, slug + ".md")
             if args.dry_run:
                 print("[dry-run] would write:", os.path.relpath(out, ROOT))

@@ -2,6 +2,7 @@
 title: "Caroline Guide: Birthday (Winter 7), Loved Gifts & Best Gift Ideas"
 description: "Caroline Guide: Birthday (Winter 7), Loved Gifts & Best Gift Ideas — Caroline is a villager who lives in Pelican Town. She is married to Pierre and is t…"
 date: 2026-10-10
+cover: "/images/guide-covers/villagers.jpg"
 draft: false
 type: guide
 icon: "/images/villagers/Caroline.png"

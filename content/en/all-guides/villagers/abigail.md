@@ -2,6 +2,7 @@
 title: "Abigail Guide: Birthday (Fall 13), Loved Gifts & Best Gift Ideas"
 description: "Abigail Guide: Birthday (Fall 13), Loved Gifts & Best Gift Ideas — Abigail is a villager who lives at Pierre's General Store in Pelican Town. She is one…"
 date: 2026-10-10
+cover: "/images/guide-covers/villagers.jpg"
 draft: false
 type: guide
 icon: "/images/villagers/Abigail.png"

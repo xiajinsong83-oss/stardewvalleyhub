@@ -2,6 +2,7 @@
 title: "Potato Guide: How to Grow Potato in Spring (6-Day Growth, Profit & Tips)"
 description: "Potato Guide: How to Grow Potato in Spring (6-Day Growth, Profit & Tips) — A widely cultivated plant, the potato is one of the most important food crops…"
 date: 2026-10-10
+cover: "/images/guide-covers/crops-alt.jpg"
 draft: false
 type: guide
 icon: "/images/crops/potato/crop.png"

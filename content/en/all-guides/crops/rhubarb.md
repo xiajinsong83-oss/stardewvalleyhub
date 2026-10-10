@@ -2,6 +2,7 @@
 title: "Rhubarb Guide: How to Grow Rhubarb in Spring (13-Day Growth, Profit & Tips)"
 description: "Rhubarb Guide: How to Grow Rhubarb in Spring (13-Day Growth, Profit & Tips) — A spring crop sold at the Oasis Shop. It's tart but flavorful when cooked."
 date: 2026-10-10
+cover: "/images/guide-covers/crops.jpg"
 draft: false
 type: guide
 icon: "/images/crops/rhubarb/crop.png"

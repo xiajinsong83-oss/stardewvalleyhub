@@ -2,6 +2,7 @@
 title: "Cauliflower Guide: How to Grow Cauliflower in Spring (12-Day Growth, Profit & Tips)"
 description: "Cauliflower Guide: How to Grow Cauliflower in Spring (12-Day Growth, Profit & Tips) — It's actually a type of flower! A massive head of tightly packed w…"
 date: 2026-10-10
+cover: "/images/guide-covers/crops.jpg"
 draft: false
 type: guide
 icon: "/images/crops/cauliflower/crop.png"
