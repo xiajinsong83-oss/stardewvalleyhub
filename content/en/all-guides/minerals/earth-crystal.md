@@ -1,13 +1,13 @@
 ---
-title: "Earth Crystal Guide: Where to Find & Value"
-description: "A resinous substance found near the surface."
+title: "Earth Crystal Guide: Where to Find It (The Mines (Floors 1-39), 50g Value)"
+description: "Earth Crystal Guide: Where to Find It (The Mines (Floors 1-39), 50g Value) — A resinous substance found near the surface."
 date: 2026-10-10
 draft: false
 type: guide
 icon: "/images/minerals/foraged-minerals/Earth Crystal.png"
 related: [{"title": "Museum Checklist", "url": "/museum-checklist/"}]
 ---
-# Earth Crystal Guide: Where to Find & Value
+# Earth Crystal Guide: Where to Find It (The Mines (Floors 1-39), 50g Value)
 
 ![Earth Crystal](/images/minerals/foraged-minerals/Earth Crystal.png)
 

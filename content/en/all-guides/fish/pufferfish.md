@@ -5,7 +5,7 @@ date: 2026-10-10
 draft: false
 type: guide
 icon: "/images/fish/Pufferfish.png"
-related: [{"title": "Fish Checklist", "url": "/fish-checklist/"}, {"title": "Farm Layout Planner", "url": "/farm-layout-planner/"}]
+related: [{"title": "Fish Checklist", "url": "/fish-checklist/"}, {"title": "Farm Layout Planner", "url": "/farmlayou/"}]
 ---
 # Pufferfish Guide: Where to Catch, Seasons & Tips
 

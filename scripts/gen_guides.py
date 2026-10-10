@@ -131,7 +131,8 @@ def crop_guide(item):
         name, item.get("category", "crop").lower(), desc, season_label(item.get("seasons", [])))
 
     body = [
-        "# %s Guide: How to Grow, Harvest & Profit" % name,
+        "# %s Guide: How to Grow %s in %s (%d-Day Growth, Profit & Tips)" % (
+            name, name, season_label(item.get("seasons", [])).title(), grow),
         "",
         "![%s](%s)" % (name, img_url(item)),
         "",
@@ -182,7 +183,7 @@ def crop_guide(item):
         "## Tips & Pairings",
         "",
         "- **Artisan processing**: this crop can be processed into %s for even higher value." % artisan_label(item),
-        "- **Sprinklers**: pair it with a sprinkler layout in the [Farm Layout Planner](/farm-layout-planner/) "
+        "- **Sprinklers**: pair it with a sprinkler layout in the [Farm Layout Planner](/farmlayou/) "
         "to automate watering from day one.",
         "- **Quality**: with higher Farming skill and fertilizer, silver/gold/iridium quality "
         "harvests raise the sell price well above the base %s." % money(sell),
@@ -203,7 +204,10 @@ def fish_guide(item):
                 if diff >= 40 else
                 "Easy — catchable with the basic rod early on.")
     body = [
-        "# %s Guide: Where to Catch, Seasons & Tips" % name,
+        "# %s Guide: Where to Catch It in %s (%s, %s)" % (
+            name, season_label(item.get("seasons", [])).title(),
+            item.get("location") or "All Locations",
+            item.get("time") or "All Day"),
         "",
         "![%s](%s)" % (name, img_url(item)),
         "",
@@ -252,8 +256,11 @@ def mineral_guide(item):
     # artifacts.json 无 kind 字段（有独有字段 donationNotes）；minerals.json 的 kind 为
     # mineral/ore/node/geode/bar/resource 等，均属矿物类走 Gemologist 分支
     kind = "artifact" if ("donationNotes" in item) else item.get("kind", "mineral")
+    locs = item.get("locations") or []
+    loc_txt = locs[0] if locs else "The Mines & Geodes"
     body = [
-        "# %s Guide: Where to Find & Value" % name,
+        "# %s Guide: Where to Find It (%s, %s Value)" % (
+            name, loc_txt, money(item.get("sellPrice", 0))),
         "",
         "![%s](%s)" % (name, img_url(item)),
         "",
@@ -288,7 +295,7 @@ def villager_guide(item):
     loves = item.get("loves") or []
     likes = item.get("likes") or []
     body = [
-        "# %s Guide: Gifts, Birthday & Schedule" % name,
+        "# %s Guide: Birthday (%s), Loved Gifts & Best Gift Ideas" % (name, bday_txt),
         "",
         "![%s](%s)" % (name, img_url(item)),
         "",
@@ -324,12 +331,12 @@ def villager_guide(item):
 REGISTRY = {
     "crops": {"file": "crops.json", "gen": crop_guide,
               "title": "Crop Guides", "blurb": "How to grow, harvest and profit from every crop.",
-              "related": [("Farm Layout Planner", "/farm-layout-planner/"),
+              "related": [("Farm Layout Planner", "/farmlayou/"),
                           ("Crop Profit Calculator", "/calculator/")]},
     "fish": {"file": "fish.json", "gen": fish_guide,
              "title": "Fish Guides", "blurb": "Where and when to catch every fish.",
              "related": [("Fish Checklist", "/fish-checklist/"),
-                         ("Farm Layout Planner", "/farm-layout-planner/")]},
+                         ("Farm Layout Planner", "/farmlayou/")]},
     "minerals": {"file": "minerals.json", "gen": mineral_guide,
                  "title": "Mineral & Artifact Guides", "blurb": "Where to find minerals and artifacts.",
                  "related": [("Museum Checklist", "/museum-checklist/")]},
@@ -421,28 +428,36 @@ def main():
     # 轮询选题：按 CATS 轮流取下一个未生成的
     generated = []      # (cat, slug, title, desc)
     pool_index = 0
+    stall = 0           # 连续无新项的轮数，达 len(CATS) 判定池耗尽
+    done_all = set()    # 跨轮累积，避免同进程内重复选中同一 slug
     while len(generated) < args.count:
         cat = CATS[pool_index % len(CATS)]
         pool_index += 1
         items = load(REGISTRY[cat]["file"])
         if cat == "minerals":
             items = items + load("artifacts.json")
-        done = existing_slugs(cat)
+        found = False
         for it in items:
             slug = slugify(it["name"])
-            if slug in done:
-                # minerals 与 artifacts 同 slug 时只生成第一篇，避免重复
+            if slug in done_all:
+                continue
+            if slug in existing_slugs(cat):
+                # 已生成过的加入 done_all，本轮跳过
+                done_all.add(slug)
                 continue
             generated.append((cat, slug, it))
-            done.add(slug)
+            done_all.add(slug)
+            found = True
             break
-        else:
+        if not found:
             # 该分类已生成完，标记后继续轮询下一分类
-            pass
+            stall += 1
+            if stall >= len(CATS):
+                print("No more unpicked guides in pool (all generated).", file=sys.stderr)
+                break
+        else:
+            stall = 0
         if len(generated) >= args.count:
-            break
-        if pool_index > len(CATS) * 4 and len(generated) < args.count:
-            print("No more unpicked guides in pool (all generated).", file=sys.stderr)
             break
 
     if not generated:
@@ -457,10 +472,10 @@ def main():
             gslug, body = gen_fn(it)
             title = body[0].lstrip("# ").strip()
             desc = next((l.strip("- ").strip() for l in body if l.strip().startswith("- ") and "Guide" not in l.split(":")[0]), "")
-            # 生成描述：用数据描述截断
-            d = (it.get("description") or title).strip()
-            if len(d) > 120:
-                d = d[:117].rstrip() + "…"
+            # 生成描述：标题长尾词 + 数据描述（SEO meta description）
+            d = (title + " — " + (it.get("description") or "")).strip()
+            if len(d) > 155:
+                d = d[:152].rstrip() + "…"
             desc = d
             icon = img_url(it)
             md = front(title, d, icon, REGISTRY[cat]["related"]) + "\n".join(body) + "\n"

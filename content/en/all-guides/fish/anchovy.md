@@ -1,13 +1,13 @@
 ---
-title: "Anchovy Guide: Where to Catch, Seasons & Tips"
-description: "A small silver fish found in the ocean."
+title: "Anchovy Guide: Where to Catch It in Spring, Fall (Ocean, 6:00 AM – 2:00 AM)"
+description: "Anchovy Guide: Where to Catch It in Spring, Fall (Ocean, 6:00 AM – 2:00 AM) — A small silver fish found in the ocean."
 date: 2026-10-10
 draft: false
 type: guide
 icon: "/images/fish/Anchovy.png"
-related: [{"title": "Fish Checklist", "url": "/fish-checklist/"}, {"title": "Farm Layout Planner", "url": "/farm-layout-planner/"}]
+related: [{"title": "Fish Checklist", "url": "/fish-checklist/"}, {"title": "Farm Layout Planner", "url": "/farmlayou/"}]
 ---
-# Anchovy Guide: Where to Catch, Seasons & Tips
+# Anchovy Guide: Where to Catch It in Spring, Fall (Ocean, 6:00 AM – 2:00 AM)
 
 ![Anchovy](/images/fish/Anchovy.png)
 

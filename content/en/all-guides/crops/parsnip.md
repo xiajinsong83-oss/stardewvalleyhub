@@ -5,7 +5,7 @@ date: 2026-10-10
 draft: false
 type: guide
 icon: "/images/crops/parsnip/crop.png"
-related: [{"title": "Farm Layout Planner", "url": "/farm-layout-planner/"}, {"title": "Crop Profit Calculator", "url": "/calculator/"}]
+related: [{"title": "Farm Layout Planner", "url": "/farmlayou/"}, {"title": "Crop Profit Calculator", "url": "/calculator/"}]
 ---
 # Parsnip Guide: How to Grow, Harvest & Profit
 
@@ -47,7 +47,7 @@ With the **Tiller** profession, crop sell prices increase by 10%, lifting the se
 ## Tips & Pairings
 
 - **Artisan processing**: this crop can be processed into Juice, Pickles for even higher value.
-- **Sprinklers**: pair it with a sprinkler layout in the [Farm Layout Planner](/farm-layout-planner/) to automate watering from day one.
+- **Sprinklers**: pair it with a sprinkler layout in the [Farm Layout Planner](/farmlayou/) to automate watering from day one.
 - **Quality**: with higher Farming skill and fertilizer, silver/gold/iridium quality harvests raise the sell price well above the base 35g.
 - **Season end**: crops wither at season change — time plantings so the final harvest lands before the 28th.
 

@@ -1,0 +1,109 @@
+{{ define "main" }}
+<div class="content-col">
+  {{ partial "breadcrumb.html" . }}
+  <div class="page-head">
+    <h1>{{ .Title }}</h1>
+    {{ with .Description }}<p class="lead">{{ . }}</p>{{ end }}
+  </div>
+
+  {{ .Content }}
+
+  {{ $badges := dict "crops" "Crop Guide" "fish" "Fish Guide" "minerals" "Mineral & Artifact" "villagers" "Villager Guide" }}
+  {{ $colors := dict "crops" "#3ddc97" "fish" "#4fc3f7" "minerals" "#b39ddb" "villagers" "#ffb74d" }}
+  {{ $all := where .Site.RegularPages "Params.type" "guide" }}
+  {{ $pag := .Paginate $all 10 }}
+
+  <div class="guides-layout">
+    <div class="guides-main">
+      <section class="guides-feed">
+        <div class="guides-feed-head">
+          <h2>Latest Guides</h2>
+          <span class="guides-feed-total">{{ len $all }} total</span>
+        </div>
+
+        {{ if gt (len $pag.Pages) 0 }}
+          {{ range $pag.Pages }}
+          {{ $url := .RelPermalink }}
+          {{ $title := .Title }}
+          {{ $sec := .Section }}
+          <article class="guide-post">
+            {{ with .Params.icon }}
+            <a class="guide-thumb" href="{{ $url }}">
+              <img src="{{ . }}" alt="{{ $title }}" loading="lazy">
+            </a>
+            {{ end }}
+            <div class="guide-body">
+              <div class="guide-meta">
+                <span class="guide-badge" style="background:{{ index $colors $sec | default "#9aa8bf" }}22;color:{{ index $colors $sec | default "#9aa8bf" }};border-color:{{ index $colors $sec | default "#9aa8bf" }}55;">
+                  {{ index $badges $sec | default "Guide" }}
+                </span>
+                <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2, 2006" }}</time>
+              </div>
+              <h3><a href="{{ $url }}">{{ $title }}</a></h3>
+              {{ with .Description }}<p class="guide-excerpt">{{ . }}</p>{{ end }}
+              <a class="guide-more" href="{{ $url }}">Read guide →</a>
+            </div>
+          </article>
+          {{ end }}
+
+          {{ template "_internal/pagination.html" . }}
+        {{ else }}
+          <p class="guides-empty">No guides published yet — new data-driven guides arrive automatically every day.</p>
+        {{ end }}
+      </section>
+
+      <!-- 底部相关内链 -->
+      <section class="guides-related">
+        <h2>Related Resources</h2>
+        <div class="related-link-grid">
+          <a href="/farm-types/">All Farm Types Explained</a>
+          <a href="/sprinkler-layout-guide/">Sprinkler Layout Guide</a>
+          <a href="/farmlayou/">Farm Layout Planner</a>
+          <a href="/gift/">Gift Lookup</a>
+          <a href="/calculator/">Crop Profit Calculator</a>
+          <a href="/fish-checklist/">Fish Checklist</a>
+          <a href="/museum-checklist/">Museum Checklist</a>
+          <a href="/bundles/">Community Center Bundles</a>
+          <a href="/maps/">Farm Maps</a>
+          <a href="/tier/crop-profit/">Crop Profit Tier List</a>
+          <a href="/starter/">First-Year Starter Planner</a>
+          <a href="/faq/">Stardew Valley FAQ</a>
+        </div>
+      </section>
+    </div>
+
+    <aside class="guides-side">
+      <div class="side-card">
+        <h3>Player Tools</h3>
+        <ul>
+          <li><a href="/farmlayou/">Farm Layout Planner</a></li>
+          <li><a href="/gift/">Gift Lookup</a></li>
+          <li><a href="/calculator/">Crop Profit Calculator</a></li>
+          <li><a href="/bundles/">CC Checklist</a></li>
+          <li><a href="/fish-checklist/">Fish Check</a></li>
+          <li><a href="/museum-checklist/">Museum Check</a></li>
+          <li><a href="/sprinkler-layout-guide/">Sprinkler Layout Guide</a></li>
+          <li><a href="/starter/">Starter Planner</a></li>
+        </ul>
+      </div>
+      <div class="side-card">
+        <h3>Categories</h3>
+        <ul>
+          <li><a href="/all-guides/crops/">Crop Guides</a></li>
+          <li><a href="/all-guides/fish/">Fish Guides</a></li>
+          <li><a href="/all-guides/minerals/">Mineral &amp; Artifact Guides</a></li>
+          <li><a href="/all-guides/villagers/">Villager Guides</a></li>
+        </ul>
+      </div>
+      <div class="side-card">
+        <h3>Popular Guides</h3>
+        <ul>
+          {{ range first 5 $all }}
+          <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+          {{ end }}
+        </ul>
+      </div>
+    </aside>
+  </div>
+</div>
+{{ end }}

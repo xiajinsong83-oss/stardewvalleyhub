@@ -5,7 +5,7 @@
       <div class="nav-dropdown" id="guidesDrop">
         <button class="nav-drop-btn" onclick="toggleDrop('guidesDrop')">Guides ▾</button>
         <div class="nav-drop-menu">
-          <a href="/all-guides/"><b>All Guides</b></a>
+          <a href="/starter/"><b>Starter</b></a>
           <a href="/npc/">NPC Gifts</a>
           <a href="/crops/">Crops</a>
           <a href="/fish/">Fish</a>
@@ -18,27 +18,23 @@
           <a href="/maps/">Maps</a>
         </div>
       </div>
-      <!-- 桌面端展开的 Tools 链接 -->
-      <div class="tools-expanded">
-        <a href="/farm-layout-planner/">Farm Layout Planner</a>
-        <a href="/farm-types/">Farm Types</a>
-        <a href="/sprinkler-layout-guide/">Sprinkler Layout Guide</a>
-        <a href="/gift/">Gift Lookup</a>
-        <a href="/bundles/">CC Checklist</a>
-        <a href="/starter/">Starter</a>
-        <a href="/fish-checklist/">Fish Check</a>
-        <a href="/museum-checklist/">Museum Check</a>
-      </div>
-      <!-- 手机端收起的 Tools 下拉 -->
-      <div class="nav-dropdown tools-collapsed" id="toolsDrop">
-        <button class="nav-drop-btn" onclick="toggleDrop('toolsDrop')">Tools ▾</button>
+      <a class="nav-link" href="/all-guides/">Guides Hub</a>
+      <!-- Farm Layout 下拉（桌面+手机共用） -->
+      <div class="nav-dropdown" id="farmDrop">
+        <button class="nav-drop-btn" onclick="toggleDrop('farmDrop')">Farm Layout ▾</button>
         <div class="nav-drop-menu">
-          <a href="/farm-layout-planner/">Farm Layout Planner</a>
+          <a href="/farmlayou/">Farm Layout Planner</a>
           <a href="/farm-types/">Farm Types</a>
+        </div>
+      </div>
+      <!-- Player Tools 下拉（桌面+手机共用） -->
+      <div class="nav-dropdown" id="toolsDrop">
+        <button class="nav-drop-btn" onclick="toggleDrop('toolsDrop')">Player Tools ▾</button>
+        <div class="nav-drop-menu">
           <a href="/sprinkler-layout-guide/">Sprinkler Layout Guide</a>
           <a href="/gift/">Gift Lookup</a>
+          <a href="/calculator/">Crop Profit Calculator</a>
           <a href="/bundles/">CC Checklist</a>
-          <a href="/starter/">Starter</a>
           <a href="/fish-checklist/">Fish Check</a>
           <a href="/museum-checklist/">Museum Check</a>
         </div>
