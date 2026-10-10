@@ -12,5 +12,6 @@ title: Mineral & Artifact Guides - Stardew Valley Hub
   <a class="card" href="/all-guides/minerals/fire-quartz/"><h3>Fire Quartz Guide: Where to Find It (The Mines (Floors 80-120), 100g Value)</h3><p>Full guide with data, tips and tools.</p></a>
   <a class="card" href="/all-guides/minerals/frozen-tear/"><h3>Frozen Tear Guide: Where to Find It (The Mines (Floors 40-79), 75g Value)</h3><p>Full guide with data, tips and tools.</p></a>
   <a class="card" href="/all-guides/minerals/quartz/"><h3>Quartz Guide: Where to Find & Value</h3><p>Full guide with data, tips and tools.</p></a>
+  <a class="card" href="/all-guides/minerals/radioactive-bar/"><h3>Radioactive Bar Guide: Where to Find It (The Mines & Geodes, 3000g Value)</h3><p>Full guide with data, tips and tools.</p></a>
   <a class="card" href="/all-guides/minerals/ruby/"><h3>Ruby Guide: Where to Find It (Ruby Node, 250g Value)</h3><p>Full guide with data, tips and tools.</p></a>
 </div>
