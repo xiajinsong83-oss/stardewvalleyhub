@@ -572,6 +572,8 @@ body {
 .planner-info-box { background: rgba(20,30,48,.85); border: 1px solid #2a3a55; border-radius: 12px; padding: 18px; }
 .planner-info-box h4 { margin: 0 0 8px; font-size: 16px; }
 .planner-info-box p { color: #9aa8bf; font-size: 13px; line-height: 1.6; margin: 0; }
+.planner-type-link { margin: 14px 0 0; color: #9aa8bf; font-size: 13px; }
+.planner-type-link a { color: #3ddc97; text-decoration: underline; }
 
 @media (max-width: 900px) { .home-planner-wrap { grid-template-columns: 1fr; } .planner-info-row { grid-template-columns: 1fr; } }
 
