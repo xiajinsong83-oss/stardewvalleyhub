@@ -1,61 +1,62 @@
 {{ define "main" }}
 <div class="calc-wrap">
   <div class="calc-head">
-    <p class="calc-eyebrow">透明计算器</p>
-    <h1>作物利润计算器</h1>
-    <p class="calc-desc">输入自己的假设，或加载版本化的基础游戏预设。结果只来自可见输入的算术计算，不是隐藏的推荐。</p>
+    <p class="calc-eyebrow">Profit Calculator</p>
+    <h1>Crop Profit Calculator</h1>
+    <p class="calc-desc">Enter your own assumptions, or load a versioned base-game preset. Results come only from visible arithmetic, not hidden recommendations.</p>
   </div>
 
+    <div class="calc-hero"><img src="/images/crop-hero.jpg" alt="Crop profit reference" class="calc-hero-img"></div>
   <div class="calc-body">
     <!-- 左：输入 -->
     <div class="calc-input">
-      <h3>加载参考作物</h3>
+      <h3>Load reference crop</h3>
       <select id="cropSelect" class="calc-select">
-        <option value="">手动输入</option>
+        <option value="">Manual input</option>
       </select>
-      <p class="calc-ver" id="cropMeta">1.6.15 · 校验日期 2026-08-11</p>
+      <p class="calc-ver" id="cropMeta">v1.6.15 · Verified 2026-08-11 · Source: Stardew Valley Wiki</p>
 
       <div class="calc-field">
-        <label>种子成本</label>
+        <label>Seed cost</label>
         <input type="number" id="seedCost" value="80" min="0">
-        <small>每株作物的金币</small>
+        <small>g per crop</small>
       </div>
       <div class="calc-field">
-        <label>售卖价格</label>
+        <label>Sell price</label>
         <input type="number" id="sellPrice" value="200" min="0">
-        <small>每次收获的金币</small>
+        <small>g per harvest</small>
       </div>
       <div class="calc-field">
-        <label>生长天数</label>
+        <label>Growth days</label>
         <input type="number" id="growDays" value="13" min="1">
-        <small>首次收获所需天数</small>
+        <small>days to first harvest</small>
       </div>
       <div class="calc-field">
-        <label>收获次数</label>
+        <label>Harvests</label>
         <input type="number" id="harvestTimes" value="1" min="1">
-        <small>本规划中的总收获次数</small>
+        <small>total harvests this season</small>
       </div>
       <div class="calc-field">
-        <label>额外成本</label>
+        <label>Extra cost</label>
         <input type="number" id="extraCost" value="0" min="0">
-        <small>肥料或其他成本</small>
+        <small>fertilizer or other</small>
       </div>
-      <button class="calc-btn" id="calcBtn">计算利润</button>
+      <button class="calc-btn" id="calcBtn">Calculate profit</button>
     </div>
 
     <!-- 右：结果 -->
     <div class="calc-result">
-      <span class="calc-status" id="calcStatus">已就绪</span>
+      <span class="calc-status" id="calcStatus">Ready</span>
       <div class="calc-big">
         <span id="netProfit">0</span>
-        <small>金币净利润</small>
+        <small>g net profit</small>
       </div>
       <div class="calc-row">
-        <div><span>总收入</span><strong id="gross">0g</strong></div>
-        <div><span>总成本</span><strong id="cost">0g</strong></div>
-        <div><span>每日利润</span><strong id="perDay">0g</strong></div>
+        <div><span>Revenue</span><strong id="gross">0g</strong></div>
+        <div><span>Costs</span><strong id="cost">0g</strong></div>
+        <div><span>Per day</span><strong id="perDay">0g</strong></div>
       </div>
-      <p class="calc-note">公式：总收入减去种子和额外成本；每日利润等于净利润除以生长天数。除非你把相关数值加入输入，否则不包含加工、职业、品质和重复生长。</p>
+      <p class="calc-note">Formula: revenue minus seed and extra costs; daily profit equals net profit divided by growth days. Excludes processing, profession, quality and repeat growth unless you add those values to the inputs.</p>
     </div>
   </div>
 </div>
@@ -86,6 +87,10 @@
 .calc-row strong { font-size: 20px; color: #fff; }
 .calc-note { color: #6b7a90; font-size: 13px; line-height: 1.5; }
 @media (max-width: 800px) { .calc-body { grid-template-columns: 1fr; } }
+
+.calc-hero { margin-bottom: 20px; }
+.calc-hero-img { width: 100%; border-radius: 12px; border: 1px solid #2a3a55; display: block; }
+@media (max-width: 800px) { .calc-hero-img { border-radius: 8px; } }
 </style>
 
 <script>
