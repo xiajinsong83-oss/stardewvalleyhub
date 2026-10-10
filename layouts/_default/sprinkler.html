@@ -1,0 +1,383 @@
+{{ define "main" }}
+<div class="spr-wrap">
+  {{ partial "breadcrumb.html" . }}
+
+  <div class="spr-head">
+    <p class="spr-eyebrow">Sprinkler Planner</p>
+    <h1>{{ .Title }}</h1>
+    <p class="spr-desc">{{ .Description }}</p>
+  </div>
+
+  <div class="spr-tool">
+    <div class="spr-panel">
+      <h3>Grid size</h3>
+      <div class="spr-size">
+        <label>Width
+          <select id="sprW"></select>
+        </label>
+        <label>Height
+          <select id="sprH"></select>
+        </label>
+      </div>
+
+      <h3>Tool</h3>
+      <div class="spr-tools">
+        <button class="spr-tool-btn is-on" data-t="basic"><span class="st-dot st-basic"></span>Basic</button>
+        <button class="spr-tool-btn" data-t="quality"><span class="st-dot st-quality"></span>Quality</button>
+        <button class="spr-tool-btn" data-t="iridium"><span class="st-dot st-iridium"></span>Iridium</button>
+        <button class="spr-tool-btn" data-t="erase"><span class="st-dot st-erase"></span>Erase</button>
+      </div>
+
+      <h3>Actions</h3>
+      <button class="spr-btn spr-btn-gold" id="sprAuto">Auto layout</button>
+      <button class="spr-btn" id="sprClear">Clear board</button>
+      <button class="spr-btn" id="sprExport">Export JSON</button>
+      <button class="spr-btn" id="sprCopy">Copy layout</button>
+      <button class="spr-btn" id="sprReset">Reset to default</button>
+
+      <p class="spr-hint">Click a tile to place the selected sprinkler. Click a placed sprinkler (or use Erase) to remove it. Auto layout fills the whole grid with the selected sprinkler type. Changing the grid size clears the board. Layout saves automatically in your browser.</p>
+    </div>
+
+    <div class="spr-stage">
+      <div class="spr-stats">
+        <span>Sprinklers <b id="sprCount">0</b></span>
+        <span>Covered <b id="sprCovered">0</b></span>
+        <span>Coverage <b id="sprPct">0%</b></span>
+        <span>Uncovered <b id="sprLeft">0</b></span>
+      </div>
+      <div id="sprGrid" class="spr-grid"></div>
+      <div class="spr-legend">
+        <span><i class="lg lg-basic"></i>Basic (4 tiles, cross)</span>
+        <span><i class="lg lg-quality"></i>Quality (8 tiles, cross)</span>
+        <span><i class="lg lg-iridium"></i>Iridium (24 tiles, 5×5)</span>
+        <span><i class="lg lg-cov"></i>Watered</span>
+        <span><i class="lg lg-soil"></i>Unwatered</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="spr-body">
+    {{ .Content }}
+  </div>
+
+  {{ partial "related-links.html" . }}
+</div>
+
+<style>
+.spr-wrap { max-width: 1200px; margin: 0 auto; padding: 20px; }
+.spr-head { margin-bottom: 22px; }
+.spr-eyebrow { color: #3ddc97; font-size: 13px; letter-spacing: 1px; margin: 0 0 8px; }
+.spr-head h1 { font-size: 34px; margin: 0 0 10px; line-height: 1.25; }
+.spr-desc { color: #9aa8bf; max-width: 720px; margin: 0; line-height: 1.6; }
+
+.spr-tool { display: grid; grid-template-columns: 280px 1fr; gap: 20px; align-items: start; }
+.spr-panel { background: #1a2540; border: 1px solid #2a3a55; border-radius: 14px; padding: 20px; }
+.spr-panel h3 { margin: 0 0 10px; font-size: 14px; color: #fff; }
+.spr-panel h3 + h3 { margin-top: 18px; }
+.spr-size { display: flex; gap: 12px; }
+.spr-size label { font-size: 12px; color: #9aa8bf; display: flex; flex-direction: column; gap: 4px; }
+.spr-size select { background: #0d1a2d; border: 1px solid #2a3a55; color: #fff; padding: 8px; border-radius: 8px; font-size: 14px; }
+.spr-tools { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.spr-tool-btn { display: flex; align-items: center; gap: 8px; background: #0d1a2d; border: 1px solid #2a3a55; color: #cbd5e8; padding: 10px; border-radius: 8px; font-size: 13px; cursor: pointer; }
+.spr-tool-btn.is-on { border-color: #f0b429; background: #2a2110; color: #fff; }
+.st-dot { width: 14px; height: 14px; border-radius: 50%; flex: none; }
+.st-basic { background: #4fc3f7; }
+.st-quality { background: #cfd8dc; }
+.st-iridium { background: #f0b429; }
+.st-erase { background: #ef5350; border-radius: 3px; }
+.spr-btn { display: block; width: 100%; background: #0d1a2d; border: 1px solid #2a3a55; color: #cbd5e8; padding: 10px; border-radius: 8px; font-size: 13px; cursor: pointer; margin-top: 8px; }
+.spr-btn-gold { background: #f0b429; color: #1a1a1a; font-weight: 600; border-color: #f0b429; }
+.spr-btn:hover { filter: brightness(1.15); }
+.spr-hint { color: #6b7a90; font-size: 12px; line-height: 1.55; margin: 14px 0 0; }
+
+.spr-stage { background: #1a2540; border: 1px solid #2a3a55; border-radius: 14px; padding: 18px; }
+.spr-stats { display: flex; flex-wrap: wrap; gap: 10px 18px; margin-bottom: 14px; }
+.spr-stats span { color: #9aa8bf; font-size: 13px; }
+.spr-stats b { color: #f0b429; margin-left: 4px; font-size: 15px; }
+.spr-grid { display: grid; gap: 3px; background: #0d1a2d; padding: 3px; border-radius: 8px; user-select: none; }
+.spr-cell { aspect-ratio: 1 / 1; border-radius: 4px; cursor: pointer; transition: transform .06s; }
+@supports not (aspect-ratio: 1 / 1) { .spr-cell { height: 34px; } }
+.spr-cell:hover { outline: 2px solid #f0b42988; }
+.spr-cell.spr-soil { background: #5a4a38; box-shadow: inset 0 0 0 1px #4a3c2c; }
+.spr-cell.spr-cov { background: #3e8f4f; box-shadow: inset 0 0 0 1px #4fa862; }
+.spr-cell.spr-spr { background: #f0b429; box-shadow: inset 0 0 0 1px #d99a12; position: relative; }
+.spr-cell.spr-spr::after { content: ""; position: absolute; inset: 28%; border-radius: 50%; background: #fff; box-shadow: 0 0 0 3px #8a6d12; }
+.spr-cell.spr-spr.t-quality::after { background: #cfd8dc; box-shadow: 0 0 0 3px #6a7a8a; }
+.spr-cell.spr-spr.t-basic::after { background: #4fc3f7; box-shadow: 0 0 0 3px #2a6a8a; }
+.spr-legend { display: flex; flex-wrap: wrap; gap: 8px 16px; margin-top: 14px; }
+.spr-legend span { display: inline-flex; align-items: center; gap: 6px; color: #9aa8bf; font-size: 12px; }
+.lg { width: 12px; height: 12px; border-radius: 3px; display: inline-block; }
+.lg-basic { background: #4fc3f7; }
+.lg-quality { background: #cfd8dc; }
+.lg-iridium { background: #f0b429; }
+.lg-cov { background: #3e8f4f; }
+.lg-soil { background: #5a4a38; }
+
+.spr-body { margin-top: 28px; }
+.spr-body h2 { font-size: 22px; margin: 28px 0 12px; color: #fff; }
+.spr-body h3 { font-size: 17px; margin: 20px 0 8px; }
+.spr-body p, .spr-body li { color: #cbd5e8; line-height: 1.7; }
+.spr-body table { border-collapse: collapse; width: 100%; margin: 12px 0; background: #1a2540; border-radius: 10px; overflow: hidden; }
+.spr-body th, .spr-body td { border: 1px solid #2a3a55; padding: 8px 12px; font-size: 14px; text-align: left; }
+.spr-body th { background: #223052; color: #fff; }
+.spr-body img { max-width: 100%; border-radius: 12px; border: 1px solid #2a3a55; margin: 8px 0; }
+
+@media (max-width: 860px) {
+  .spr-tool { grid-template-columns: 1fr; }
+  .spr-head h1 { font-size: 26px; }
+}
+</style>
+
+<script>
+(function(){
+  var KEY = 'svh_sprinkler_v1';
+  var MAX = 15, MIN = 3, DEF = { w: 9, h: 9 };
+  var state = { w: DEF.w, h: DEF.h, tool: 'basic', placed: {} };
+
+  function covCells(x, y, type, W, H) {
+    var out = [];
+    for (var dy = -2; dy <= 2; dy++) for (var dx = -2; dx <= 2; dx++) {
+      if (dx === 0 && dy === 0) continue;
+      if (type === 'basic') {
+        if (Math.max(Math.abs(dx), Math.abs(dy)) > 1) continue;
+        if (dx !== 0 && dy !== 0) continue;
+      } else if (type === 'quality') {
+        if (Math.max(Math.abs(dx), Math.abs(dy)) > 2) continue;
+        if (dx !== 0 && dy !== 0) continue;
+      }
+      var nx = x + dx, ny = y + dy;
+      if (nx >= 0 && nx < W && ny >= 0 && ny < H) out.push(nx + ',' + ny);
+    }
+    return out;
+  }
+
+  function recompute() {
+    var covered = {};
+    var keys = Object.keys(state.placed);
+    keys.forEach(function(k){
+      var p = state.placed[k];
+      covCells(p.x, p.y, p.type, state.w, state.h).forEach(function(c){ covered[c] = true; });
+    });
+    var total = state.w * state.h;
+    var covN = Object.keys(covered).length;
+    var placedN = keys.length;
+    var wateredTiles = 0;
+    // 覆盖格不含洒水器占位格
+    keys.forEach(function(k){ if (covered[k]) covN--; });
+    var left = total - placedN - covN;
+    document.getElementById('sprCount').textContent = placedN;
+    document.getElementById('sprCovered').textContent = covN;
+    document.getElementById('sprPct').textContent = (total - placedN) === 0 ? '0%' : Math.round(covN / (total - placedN) * 100) + '%';
+    document.getElementById('sprLeft').textContent = Math.max(left, 0);
+    return { total: total, covN: covN, placedN: placedN, left: Math.max(left, 0) };
+  }
+
+  function render() {
+    var g = document.getElementById('sprGrid');
+    g.style.gridTemplateColumns = 'repeat(' + state.w + ', 1fr)';
+    g.innerHTML = '';
+    var covered = {};
+    Object.keys(state.placed).forEach(function(k){
+      var p = state.placed[k];
+      covCells(p.x, p.y, p.type, state.w, state.h).forEach(function(c){ covered[c] = true; });
+    });
+    for (var y = 0; y < state.h; y++) {
+      for (var x = 0; x < state.w; x++) {
+        var cell = document.createElement('div');
+        cell.className = 'spr-cell';
+        var key = x + ',' + y;
+        if (state.placed[key]) {
+          cell.classList.add('spr-spr', 't-' + state.placed[key].type);
+        } else if (covered[key]) {
+          cell.classList.add('spr-cov');
+        } else {
+          cell.classList.add('spr-soil');
+        }
+        cell.dataset.key = key;
+        cell.title = key;
+        g.appendChild(cell);
+      }
+    }
+    recompute();
+  }
+
+  function save() {
+    try { localStorage.setItem(KEY, JSON.stringify({ w: state.w, h: state.h, placed: state.placed })); } catch (e) {}
+  }
+  function load() {
+    try {
+      var raw = localStorage.getItem(KEY);
+      if (!raw) return false;
+      var d = JSON.parse(raw);
+      if (d && d.w >= MIN && d.w <= MAX && d.h >= MIN && d.h <= MAX) {
+        state.w = d.w; state.h = d.h;
+        // 过滤越界/非法洒水器项，避免统计与网格显示不一致
+        state.placed = {};
+        Object.keys(d.placed || {}).forEach(function(k){
+          var p = d.placed[k];
+          if (p && typeof p.x === 'number' && typeof p.y === 'number' &&
+              p.x >= 0 && p.x < state.w && p.y >= 0 && p.y < state.h &&
+              (p.type === 'basic' || p.type === 'quality' || p.type === 'iridium')) {
+            state.placed[k] = p;
+          }
+        });
+        document.getElementById('sprW').value = state.w;
+        document.getElementById('sprH').value = state.h;
+        return true;
+      }
+    } catch (e) {}
+    return false;
+  }
+
+  function greedy(type) {
+    var W = state.w, H = state.h;
+    var placed = {};
+    var uncovered = {};
+    for (var y = 0; y < H; y++) for (var x = 0; x < W; x++) uncovered[x + ',' + y] = true;
+    var guard = 0;
+    while (guard++ < 5000) {
+      var best = null, bestScore = -1;
+      for (var y = 0; y < H; y++) for (var x = 0; x < W; x++) {
+        var k = x + ',' + y;
+        if (placed[k]) continue;
+        var cov = covCells(x, y, type, W, H);
+        var score = 0;
+        for (var i = 0; i < cov.length; i++) if (uncovered[cov[i]]) score++;
+        if (score > bestScore) { bestScore = score; best = { x: x, y: y }; }
+      }
+      if (!best || bestScore <= 0) break;
+      placed[best.x + ',' + best.y] = { x: best.x, y: best.y, type: type };
+      covCells(best.x, best.y, type, W, H).forEach(function(c){ delete uncovered[c]; });
+      if (Object.keys(uncovered).length === 0) break;
+    }
+    return placed;
+  }
+
+  // 移除冗余洒水器：独占覆盖格为空的洒水器可安全删除（移除后仍全覆盖）
+  function prune(placed, type, W, H) {
+    var changed = true;
+    while (changed) {
+      changed = false;
+      var keys = Object.keys(placed);
+      var coverCount = {};
+      keys.forEach(function(k){
+        var p = placed[k];
+        covCells(p.x, p.y, p.type, W, H).forEach(function(c){ coverCount[c] = (coverCount[c] || 0) + 1; });
+      });
+      for (var i = 0; i < keys.length; i++) {
+        var k = keys[i], p = placed[k];
+        var exclusive = covCells(p.x, p.y, p.type, W, H).filter(function(c){ return !coverCount[c] || coverCount[c] === 1; });
+        if (exclusive.length === 0) {
+          delete placed[k];
+          changed = true;
+          break;
+        }
+      }
+    }
+    return placed;
+  }
+
+  // 自动推荐：Iridium 用规则网格（数学最优），Quality/Basic 用贪心；统一过冗余清理
+  function recommend(type, W, H) {
+    var placed = {};
+    if (type === 'iridium') {
+      for (var y = 2; y < H; y += 5)
+        for (var x = 2; x < W; x += 5)
+          placed[x + ',' + y] = { x: x, y: y, type: type };
+    } else {
+      placed = greedy(type, W, H);
+    }
+    return prune(placed, type, W, H);
+  }
+
+  var grid = document.getElementById('sprGrid');
+  grid.addEventListener('click', function(e){
+    var cell = e.target.closest('.spr-cell');
+    if (!cell) return;
+    var k = cell.dataset.key;
+    if (state.tool === 'erase') {
+      delete state.placed[k];
+    } else if (state.placed[k]) {
+      delete state.placed[k]; // 点击已放置的洒水器删除
+    } else {
+      var p = k.split(',');
+      state.placed[k] = { x: +p[0], y: +p[1], type: state.tool };
+    }
+    render(); save();
+  });
+
+  // 尺寸
+  var wSel = document.getElementById('sprW'), hSel = document.getElementById('sprH');
+  for (var i = MIN; i <= MAX; i++) {
+    wSel.appendChild(new Option(i, i));
+    hSel.appendChild(new Option(i, i));
+  }
+  wSel.value = state.w; hSel.value = state.h;
+  wSel.addEventListener('change', function(){ state.w = +wSel.value; state.placed = {}; render(); save(); });
+  hSel.addEventListener('change', function(){ state.h = +hSel.value; state.placed = {}; render(); save(); });
+
+  // 工具选择
+  var tbtns = document.querySelectorAll('.spr-tool-btn');
+  tbtns.forEach(function(b){
+    b.addEventListener('click', function(){
+      tbtns.forEach(function(x){ x.classList.remove('is-on'); });
+      b.classList.add('is-on');
+      state.tool = b.dataset.t;
+    });
+  });
+
+  // Auto layout（用当前工具类型，Erase 时回退 Iridium）
+  document.getElementById('sprAuto').addEventListener('click', function(){
+    var t = state.tool === 'erase' ? 'iridium' : state.tool;
+    state.placed = recommend(t, state.w, state.h);
+    render(); save();
+  });
+
+  document.getElementById('sprClear').addEventListener('click', function(){
+    state.placed = {}; render(); save();
+  });
+
+  document.getElementById('sprReset').addEventListener('click', function(){
+    state.w = DEF.w; state.h = DEF.h; state.placed = {};
+    wSel.value = state.w; hSel.value = state.h;
+    render(); save();
+  });
+
+  document.getElementById('sprExport').addEventListener('click', function(){
+    var payload = { version: 1, grid: [state.w, state.h], sprinklers: Object.keys(state.placed).map(function(k){
+      var p = state.placed[k]; return { x: p.x, y: p.y, type: p.type };
+    })};
+    var blob = new Blob([JSON.stringify(payload, null, 2)], { type: 'application/json' });
+    var a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = 'sprinkler-layout.json';
+    a.click();
+  });
+
+  document.getElementById('sprCopy').addEventListener('click', function(){
+    var lines = ['Stardew Valley Hub Sprinkler Layout', 'Grid: ' + state.w + ' x ' + state.h];
+    Object.keys(state.placed).forEach(function(k){
+      var p = state.placed[k];
+      lines.push('[' + p.x + ',' + p.y + '] ' + p.type);
+    });
+    var txt = lines.join('\n');
+    function fallbackCopy(t){
+      var ta = document.createElement('textarea');
+      ta.value = t; document.body.appendChild(ta); ta.select();
+      document.execCommand('copy'); document.body.removeChild(ta);
+      alert('Layout copied to clipboard.');
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(txt).then(
+        function(){ alert('Layout copied to clipboard.'); },
+        function(){ fallbackCopy(txt); });
+    } else {
+      fallbackCopy(txt);
+    }
+  });
+
+  if (!load()) { wSel.value = state.w; hSel.value = state.h; }
+  render();
+})();
+</script>
+{{ end }}

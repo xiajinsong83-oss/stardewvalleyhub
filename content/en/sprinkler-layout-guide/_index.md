@@ -2,9 +2,8 @@
 title: "Stardew Valley Sprinkler Layout Guide: Best Setups & Coverage"
 description: "Discover the best sprinkler layouts for Stardew Valley. Learn coverage ranges for Basic, Quality and Iridium sprinklers, and plan your farm with our Farm Layout Planner."
 type: sprinkler-layout-guide
+layout: sprinkler
 ---
-
-# Stardew Valley Sprinkler Layout Guide: Best Setups & Coverage
 
 ![Stardew Valley Sprinkler Layout](/images/farm-planner/sprinkler-layout.jpg)
 
@@ -63,7 +62,7 @@ The Greenhouse is the best place to use sprinklers, because crops inside never d
 
 ## Plan Your Layout with Our Tool
 
-Once you decide on your sprinkler setup, you can design and test your farm layout with our <a href="/farm-layout-planner/">Farm Layout Planner</a>. The grid works perfectly for sprinkler coverage planning: each cell on the board represents one farm tile, so you can sketch exactly where each sprinkler and crop goes before spending a single piece of ore.
+Once you decide on your sprinkler setup, you can design and test your farm layout with our <a href="/farmlayou/">Farm Layout Planner</a>. The grid works perfectly for sprinkler coverage planning: each cell on the board represents one farm tile, so you can sketch exactly where each sprinkler and crop goes before spending a single piece of ore.
 
 ## References
 
