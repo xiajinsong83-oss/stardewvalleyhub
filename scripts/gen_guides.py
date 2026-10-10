@@ -182,7 +182,7 @@ def crop_guide(item):
         "## Tips & Pairings",
         "",
         "- **Artisan processing**: this crop can be processed into %s for even higher value." % artisan_label(item),
-        "- **Sprinklers**: pair it with a sprinkler layout in the [Farm Layout Planner](/farmlayout/) "
+        "- **Sprinklers**: pair it with a sprinkler layout in the [Farm Layout Planner](/farm-layout-planner/) "
         "to automate watering from day one.",
         "- **Quality**: with higher Farming skill and fertilizer, silver/gold/iridium quality "
         "harvests raise the sell price well above the base %s." % money(sell),
@@ -324,12 +324,12 @@ def villager_guide(item):
 REGISTRY = {
     "crops": {"file": "crops.json", "gen": crop_guide,
               "title": "Crop Guides", "blurb": "How to grow, harvest and profit from every crop.",
-              "related": [("Farm Layout Planner", "/farmlayout/"),
+              "related": [("Farm Layout Planner", "/farm-layout-planner/"),
                           ("Crop Profit Calculator", "/calculator/")]},
     "fish": {"file": "fish.json", "gen": fish_guide,
              "title": "Fish Guides", "blurb": "Where and when to catch every fish.",
              "related": [("Fish Checklist", "/fish-checklist/"),
-                         ("Farm Layout Planner", "/farmlayout/")]},
+                         ("Farm Layout Planner", "/farm-layout-planner/")]},
     "minerals": {"file": "minerals.json", "gen": mineral_guide,
                  "title": "Mineral & Artifact Guides", "blurb": "Where to find minerals and artifacts.",
                  "related": [("Museum Checklist", "/museum-checklist/")]},
