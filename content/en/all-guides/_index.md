@@ -27,6 +27,5 @@ title: "All Guides - Stardew Valley Hub"
   <a class="card big" href="/all-guides/crops/"><div class="card-icon">🌾</div><h3>Crop Guides (1)</h3><p>How to grow, harvest and profit from every crop.</p><div class="card-links"><a href="/all-guides/crops/parsnip/">Parsnip Guide: How to Grow, Harvest & Profit</a></div></a>
   <a class="card big" href="/all-guides/fish/"><div class="card-icon">🐟</div><h3>Fish Guides (1)</h3><p>Where and when to catch every fish.</p><div class="card-links"><a href="/all-guides/fish/pufferfish/">Pufferfish Guide: Where to Catch, Seasons & Tips</a></div></a>
   <a class="card big" href="/all-guides/minerals/"><div class="card-icon">💎</div><h3>Mineral & Artifact Guides (1)</h3><p>Where to find minerals and artifacts.</p><div class="card-links"><a href="/all-guides/minerals/quartz/">Quartz Guide: Where to Find & Value</a></div></a>
-  <a class="card big" href="/all-guides/villagers/"><div class="card-icon">👥</div><h3>Villager Guides (0)</h3><p>Gifts, birthdays and friendship tips.</p><div class="card-links"></div></a>
 </div>
 <!-- GUIDES-HUB-END -->

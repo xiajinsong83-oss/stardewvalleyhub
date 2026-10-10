@@ -383,6 +383,9 @@ def hub_section(cat_summary):
         '<div class="card-grid home-grid">',
     ]
     for cat, info in cat_summary.items():
+        if info["count"] == 0:
+            # 空分类不输出卡片，避免 404 死链（等有攻略页后再显示）
+            continue
         recent = " · ".join('<a href="/all-guides/%s/%s/">%s</a>' % (cat, s, t)
                             for s, t in info["recent"][:3])
         lines.append(
