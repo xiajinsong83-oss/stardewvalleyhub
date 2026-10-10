@@ -63,7 +63,7 @@ The Greenhouse is the best place to use sprinklers, because crops inside never d
 
 ## Plan Your Layout with Our Tool
 
-Once you decide on your sprinkler setup, you can design and test your farm layout with our <a href="/farm-layout-planner/">Farm Layout Planner</a>. The grid works perfectly for sprinkler coverage planning: each cell on the board represents one farm tile, so you can sketch exactly where each sprinkler and crop goes before spending a single piece of ore.
+Once you decide on your sprinkler setup, you can design and test your farm layout with our <a href="/farmlayout/">Farm Layout Planner</a>. The grid works perfectly for sprinkler coverage planning: each cell on the board represents one farm tile, so you can sketch exactly where each sprinkler and crop goes before spending a single piece of ore.
 
 ## References
 
