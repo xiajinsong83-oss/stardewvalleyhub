@@ -1093,16 +1093,21 @@ for lang in ["en", "zh-hans"]:
         continue
     for root, dirs, files in os.walk(content_dir):
         for f in files:
-            if f != "_index.md":
+            if not f.endswith(".md"):
                 continue
             rel = os.path.relpath(root, os.path.join(content_dir, ".."))
             # rel 格式: en/npc 或 zh-hans/crops
             parts = rel.split(os.sep)
-            if len(parts) == 1:
-                # 根目录首页
-                path = "/" if lang == "en" else f"/{lang}/"
+            if f == "_index.md":
+                if len(parts) == 1:
+                    # 根目录首页
+                    path = "/" if lang == "en" else f"/{lang}/"
+                else:
+                    slug = "/".join(parts[1:])
+                    path = f"/{lang}/{slug}/" if lang != "en" else f"/{slug}/"
             else:
-                slug = "/".join(parts[1:])
+                # 单篇内容页（如 all-guides/crops/parsnip.md → /all-guides/crops/parsnip/）
+                slug = "/".join(parts[1:] + [f[:-3]])
                 path = f"/{lang}/{slug}/" if lang != "en" else f"/{slug}/"
             urls.append((path, today))
 
