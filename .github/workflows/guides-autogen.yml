@@ -1,0 +1,35 @@
+name: Auto-generate guides
+permissions:
+  contents: write
+on:
+  schedule:
+    - cron: '0 2 */2 * *'  # 每 2 天 UTC 02:00（北京时间 10:00）
+  workflow_dispatch:  # 支持手动触发
+jobs:
+  gen-guides:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Generate 3 data-driven original guides
+        run: |
+          python3 scripts/gen_guides.py --count 3
+      - name: Commit and push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          if git diff --quiet HEAD -- content/en/all-guides/; then
+            echo "No changes in guides, skipping commit."
+          else
+            git add content/en/all-guides/
+            git commit -m "chore: auto-generate 3 data-driven guides ($(date +%F))"
+            git push
+          fi
+      # 说明：push 后由 Cloudflare Pages 自动执行 bash build.sh（含 sitemap 生成）。
+      # GitHub Actions runner 不装 Hugo，不能在此步构建。
