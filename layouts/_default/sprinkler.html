@@ -22,9 +22,9 @@
 
       <h3>Tool</h3>
       <div class="spr-tools">
-        <button class="spr-tool-btn is-on" data-t="basic"><span class="st-dot st-basic"></span>Basic</button>
-        <button class="spr-tool-btn" data-t="quality"><span class="st-dot st-quality"></span>Quality</button>
-        <button class="spr-tool-btn" data-t="iridium"><span class="st-dot st-iridium"></span>Iridium</button>
+        <button class="spr-tool-btn is-on" data-t="basic"><img class="st-ico" src="/images/craftable/sprinklers/Sprinkler.png" alt="Basic Sprinkler">Basic</button>
+        <button class="spr-tool-btn" data-t="quality"><img class="st-ico" src="/images/craftable/sprinklers/Quality Sprinkler.png" alt="Quality Sprinkler">Quality</button>
+        <button class="spr-tool-btn" data-t="iridium"><img class="st-ico" src="/images/craftable/sprinklers/Iridium Sprinkler.png" alt="Iridium Sprinkler">Iridium</button>
         <button class="spr-tool-btn" data-t="erase"><span class="st-dot st-erase"></span>Erase</button>
       </div>
 
@@ -47,9 +47,9 @@
       </div>
       <div id="sprGrid" class="spr-grid"></div>
       <div class="spr-legend">
-        <span><i class="lg lg-basic"></i>Basic (4 tiles, cross)</span>
-        <span><i class="lg lg-quality"></i>Quality (8 tiles, cross)</span>
-        <span><i class="lg lg-iridium"></i>Iridium (24 tiles, 5×5)</span>
+        <span><i class="lg"><img class="lg-ico" src="/images/craftable/sprinklers/Sprinkler.png" alt=""></i>Basic (4 tiles, cross)</span>
+        <span><i class="lg"><img class="lg-ico" src="/images/craftable/sprinklers/Quality Sprinkler.png" alt=""></i>Quality (8 tiles, cross)</span>
+        <span><i class="lg"><img class="lg-ico" src="/images/craftable/sprinklers/Iridium Sprinkler.png" alt=""></i>Iridium (24 tiles, 5×5)</span>
         <span><i class="lg lg-cov"></i>Watered</span>
         <span><i class="lg lg-soil"></i>Unwatered</span>
       </div>
@@ -132,10 +132,8 @@
 .spr-tool-btn { display: flex; align-items: center; gap: 8px; background: #0d1a2d; border: 1px solid #2a3a55; color: #cbd5e8; padding: 10px; border-radius: 8px; font-size: 13px; cursor: pointer; }
 .spr-tool-btn.is-on { border-color: #f0b429; background: #2a2110; color: #fff; }
 .st-dot { width: 14px; height: 14px; border-radius: 50%; flex: none; }
-.st-basic { background: #4fc3f7; }
-.st-quality { background: #cfd8dc; }
-.st-iridium { background: #f0b429; }
 .st-erase { background: #ef5350; border-radius: 3px; }
+.st-ico { width: 22px; height: 22px; flex: none; image-rendering: pixelated; }
 .spr-btn { display: block; width: 100%; background: #0d1a2d; border: 1px solid #2a3a55; color: #cbd5e8; padding: 10px; border-radius: 8px; font-size: 13px; cursor: pointer; margin-top: 8px; }
 .spr-btn-gold { background: #f0b429; color: #1a1a1a; font-weight: 600; border-color: #f0b429; }
 .spr-btn:hover { filter: brightness(1.15); }
@@ -151,18 +149,16 @@
 .spr-cell:hover { outline: 2px solid #f0b42988; }
 .spr-cell.spr-soil { background: #5a4a38; box-shadow: inset 0 0 0 1px #4a3c2c; }
 .spr-cell.spr-cov { background: #3e8f4f; box-shadow: inset 0 0 0 1px #4fa862; }
-.spr-cell.spr-spr { background: #f0b429; box-shadow: inset 0 0 0 1px #d99a12; position: relative; }
-.spr-cell.spr-spr::after { content: ""; position: absolute; inset: 28%; border-radius: 50%; background: #fff; box-shadow: 0 0 0 3px #8a6d12; }
-.spr-cell.spr-spr.t-quality::after { background: #cfd8dc; box-shadow: 0 0 0 3px #6a7a8a; }
-.spr-cell.spr-spr.t-basic::after { background: #4fc3f7; box-shadow: 0 0 0 3px #2a6a8a; }
+.spr-cell.spr-spr { position: relative; background-color: rgba(255,255,255,.16); background-size: 86%; background-position: center; background-repeat: no-repeat; image-rendering: pixelated; box-shadow: inset 0 0 0 1px rgba(240,180,41,.55); }
+.spr-cell.spr-spr.t-basic { background-image: url('/images/craftable/sprinklers/Sprinkler.png'); }
+.spr-cell.spr-spr.t-quality { background-image: url('/images/craftable/sprinklers/Quality Sprinkler.png'); }
+.spr-cell.spr-spr.t-iridium { background-image: url('/images/craftable/sprinklers/Iridium Sprinkler.png'); }
 .spr-legend { display: flex; flex-wrap: wrap; gap: 8px 16px; margin-top: 14px; }
 .spr-legend span { display: inline-flex; align-items: center; gap: 6px; color: #9aa8bf; font-size: 12px; }
 .lg { width: 12px; height: 12px; border-radius: 3px; display: inline-block; }
-.lg-basic { background: #4fc3f7; }
-.lg-quality { background: #cfd8dc; }
-.lg-iridium { background: #f0b429; }
 .lg-cov { background: #3e8f4f; }
 .lg-soil { background: #5a4a38; }
+.lg-ico { width: 20px; height: 20px; display: block; image-rendering: pixelated; }
 
 s.spr-body { margin-top: 28px; }
 .spr-faq { margin-top: 36px; background: #16213a; border: 1px solid #2a3a55; border-radius: 12px; padding: 20px 22px; }
