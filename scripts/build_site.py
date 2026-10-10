@@ -827,25 +827,18 @@ w(os.path.join(fb_c, "_index.md"), front(
     type="feedback", faq=faq_fb) + "\n" + fb_body)
 print("Feedback pages: 1")
 
-# ---------- 生成 Updates 页面 ----------
+# ---------- Updates 页面 ----------
+# 由 scripts/fetch_updates.py 从官方博客 RSS 抓取生成（最新→最老 30 条），构建不再写硬编码。
 updates_c = os.path.join(CONTENT_EN, "updates")
-w(os.path.join(updates_c, "_index.md"),
-  front("Stardew Valley Updates & Patch News",
-        "Latest Stardew Valley update news, patch notes and changelogs, summarized automatically from official sources.", type="updates",
-        date="2026-10-04") + "\nUpdates are collected automatically from official channels (the official Stardew Valley blog and Steam news) and summarized without copying original text.\n")
-w(os.path.join(updates_c, "stardew-valley-1-6-9-patch-notes.md"), front(
-    "Stardew Valley 1.6.9 Patch Notes Summary",
-    "Summary of Stardew Valley 1.6.9: bug fixes and quality-of-life improvements. Official source linked below.",
-    type="updates", date="2024-04-22",
-    faq=[{"q": "What did Stardew Valley 1.6.9 fix?", "a": "1.6.9 focused on bug fixes and quality-of-life improvements following the large 1.6 update."},
-         {"q": "Where is the official 1.6.9 changelog?", "a": "Official changelog: https://www.stardewvalley.net/stardew-valley-1-6-update-full-changelog/"}] ) + "\nThe **1.6.9** patch was released on April 22, 2024, addressing bugs introduced with the 1.6 update and polishing game balance.\n\nSource: [Official Stardew Valley blog](https://www.stardewvalley.net/stardew-valley-1-6-update-full-changelog/) and [Steam news](https://store.steampowered.com/news/app/413150).\n")
-w(os.path.join(updates_c, "stardew-valley-1-6-update-changelog.md"), front(
-    "Stardew Valley 1.6 Update Changelog Summary",
-    "Summary of the big Stardew Valley 1.6 update: new farm types, desert festival, mastery system and more.",
-    type="updates", date="2024-03-19",
-    faq=[{"q": "When was Stardew Valley 1.6 released?", "a": "1.6 was released on March 19, 2024."},
-         {"q": "What is new in 1.6?", "a": "New farm types, the Desert Festival, a mastery system, new crops and items, and many quality-of-life improvements."}] ) + "\nThe **1.6** update (March 19, 2024) added major content: new farm types, the Desert Festival, a mastery system, new items and crops, plus extensive quality-of-life improvements.\n\nSource: [Official Stardew Valley blog](https://www.stardewvalley.net/stardew-valley-1-6-update-full-changelog/).\n")
-print("Update pages: 2")
+os.makedirs(updates_c, exist_ok=True)
+if not os.path.exists(os.path.join(updates_c, "_index.md")):
+    w(os.path.join(updates_c, "_index.md"),
+      front("Stardew Valley Updates & Patch News",
+            "Latest Stardew Valley update news, patch notes and changelogs, summarized automatically from official sources.", type="updates",
+            date="2026-10-04") + "\nUpdates are collected automatically from official channels (the official Stardew Valley blog and Steam news) and summarized without copying original text.\n")
+import glob as _glob
+_existing_updates = [os.path.basename(p) for p in _glob.glob(os.path.join(updates_c, "*.md")) if os.path.basename(p) != "_index.md"]
+print("Update pages:", len(_existing_updates))
 
 # ---------- 法律页面 ----------
 w(os.path.join(CONTENT_EN, "privacy.md"), front(

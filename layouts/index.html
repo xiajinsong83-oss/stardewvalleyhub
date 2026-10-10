@@ -572,7 +572,7 @@
     <h2>Latest Updates</h2>
     <ul>
       {{ $updates := (where .Site.RegularPages "Section" "updates").ByDate.Reverse }}
-      {{ range first 3 $updates }}
+      {{ range first 5 $updates }}
       <li><a href="{{ .RelPermalink }}">{{ .Title }}</a> <time>{{ .Date.Format "Jan 2, 2006" }}</time></li>
       {{ end }}
     </ul>

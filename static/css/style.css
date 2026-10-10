@@ -842,3 +842,17 @@ select { background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='h
   .guides-layout { flex-direction: column; }
   .guides-side { flex: none; width: 100%; }
 }
+
+/* 全站相关内链 */
+.related-links { margin-top: 30px; border-top: 1px solid #2a3a55; padding-top: 20px; }
+.related-links h2 { color: #fff; font-size: 18px; margin: 0 0 14px; }
+.related-links-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; }
+.rl-col { background: #141e30; border: 1px solid #2a3a55; border-radius: 12px; padding: 14px 16px; }
+.rl-col h3 { margin: 0 0 10px; color: #3ddc97; font-size: 14px; }
+.rl-col ul { list-style: none; margin: 0; padding: 0; }
+.rl-col li { margin: 0 0 7px; }
+.rl-col a { color: #cdd7e5; font-size: 13px; text-decoration: none; }
+.rl-col a:hover { color: #fff; text-decoration: underline; }
+@media (max-width: 640px) {
+  .related-links-grid { grid-template-columns: 1fr; }
+}

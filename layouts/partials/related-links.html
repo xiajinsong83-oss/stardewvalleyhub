@@ -1,0 +1,69 @@
+{{/* 全站相关内链：工具 + 指南分类 + 更多攻略（文章页/栏目页通用） */}}
+{{ $tools := slice
+  (dict "t" "Farm Layout Planner" "u" "/farmlayou/")
+  (dict "t" "Gift Lookup" "u" "/gift/")
+  (dict "t" "Crop Profit Calculator" "u" "/calculator/")
+  (dict "t" "CC Checklist" "u" "/bundles/")
+  (dict "t" "Fish Check" "u" "/fish-checklist/")
+  (dict "t" "Museum Check" "u" "/museum-checklist/")
+  (dict "t" "Sprinkler Layout Guide" "u" "/sprinkler-layout-guide/")
+  (dict "t" "Starter Planner" "u" "/starter/")
+}}
+{{ $cats := slice
+  (dict "t" "NPC Gift Guides" "u" "/npc/")
+  (dict "t" "Crop Guides" "u" "/crops/")
+  (dict "t" "Fish Guides" "u" "/fish/")
+  (dict "t" "Community Center Bundles" "u" "/bundles/")
+  (dict "t" "Bosses & Elite Enemies" "u" "/boss/")
+  (dict "t" "Weapons" "u" "/weapons/")
+  (dict "t" "Monsters" "u" "/monsters/")
+  (dict "t" "Museum" "u" "/museum/")
+  (dict "t" "Tier List" "u" "/tier/crop-profit/")
+  (dict "t" "Maps" "u" "/maps/")
+}}
+<section class="related-links">
+  <h2>Related Guides &amp; Tools</h2>
+  <div class="related-links-grid">
+    <div class="rl-col">
+      <h3>Player Tools</h3>
+      <ul>
+        {{ range $tools }}<li><a href="{{ .u }}">{{ .t }}</a></li>{{ end }}
+      </ul>
+    </div>
+    <div class="rl-col">
+      <h3>Guides</h3>
+      <ul>
+        {{ range $cats }}<li><a href="{{ .u }}">{{ .t }}</a></li>{{ end }}
+      </ul>
+    </div>
+    <div class="rl-col">
+      {{ $sec := "all-guides" }}
+      {{ if eq .Type "guide" }}
+        {{ $parts := split .File.Path "/" }}
+        {{ if ge (len $parts) 2 }}{{ $sec = index $parts 1 }}{{ end }}
+      {{ end }}
+      <h3>{{ if eq .Type "guide" }}{{ $sec | title }} Guides{{ else }}More Guides Hub{{ end }}</h3>
+      <ul>
+        {{ if eq .Type "guide" }}
+          {{ $prefix := printf "all-guides/%s/" $sec }}
+          {{ $sibs := slice }}
+          {{ range where .Site.RegularPages "Params.type" "guide" }}
+            {{ if and (strings.HasPrefix .File.Path $prefix) (ne .RelPermalink $.RelPermalink) }}
+              {{ $sibs = $sibs | append . }}
+            {{ end }}
+          {{ end }}
+          {{ range first 5 $sibs }}
+          <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+          {{ end }}
+          <li><a href="/all-guides/{{ $sec }}/">All guides in {{ $sec | title }}</a></li>
+        {{ else }}
+          <li><a href="/all-guides/">Guides Hub — all articles</a></li>
+          <li><a href="/all-guides/crops/">Crop Guides</a></li>
+          <li><a href="/all-guides/fish/">Fish Guides</a></li>
+          <li><a href="/all-guides/minerals/">Mineral &amp; Artifact Guides</a></li>
+          <li><a href="/all-guides/villagers/">Villager Guides</a></li>
+        {{ end }}
+      </ul>
+    </div>
+  </div>
+</section>
