@@ -20,16 +20,26 @@ jobs:
       - name: Generate 3 data-driven original guides
         run: |
           python3 scripts/gen_guides.py --count 3
-      - name: Commit and push
+      - name: Commit and push (with rebase + retry)
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           if git diff --quiet HEAD -- content/en/all-guides/ data/.guides-version; then
             echo "No changes in guides, skipping commit."
-          else
-            git add content/en/all-guides/ data/.guides-version
-            git commit -m "chore: auto-generate 3 data-driven guides ($(date +%F))"
-            git push
+            exit 0
           fi
+          git add content/en/all-guides/ data/.guides-version
+          git commit -m "chore: auto-generate 3 data-driven guides ($(date +%F))"
+          # 并发冲突防护：pull --rebase 后重试 push（最多 3 次）
+          for i in 1 2 3; do
+            if git pull --rebase origin main 2>/dev/null && git push origin main; then
+              echo "Push succeeded on attempt $i."
+              exit 0
+            fi
+            echo "Push attempt $i failed, retrying in 10s..."
+            sleep 10
+          done
+          echo "Push failed after 3 attempts." >&2
+          exit 1
       # 说明：push 后由 Cloudflare Pages 自动执行 bash build.sh（含 sitemap 生成）。
       # GitHub Actions runner 不装 Hugo，不能在此步构建。
