@@ -468,7 +468,11 @@ def main():
             items = items + newest_first(load("artifacts.json"))
         found = False
         for it in items:
-            slug = slugify(it["name"])
+            try:
+                slug = slugify(it["name"])
+            except Exception as exc:  # 数据异常条目直接跳过，不让单条坏数据中断流水线
+                print(f"[warn] skip item in {cat}: {exc!r}", file=sys.stderr)
+                continue
             if slug in done_all:
                 continue
             if slug in existing_slugs(cat):
@@ -497,9 +501,14 @@ def main():
     cat_summary = {c: {"count": 0, "recent": []} for c in CATS}
 
     if generated:
+        ok_generated = []
         for cat, slug, it in generated:
-            gen_fn = REGISTRY[cat]["gen"]
-            gslug, body = gen_fn(it)
+            try:
+                gen_fn = REGISTRY[cat]["gen"]
+                gslug, body = gen_fn(it)
+            except Exception as exc:  # 单条数据异常（如新版本字段变化）跳过，不中断整个流水线
+                print(f"[warn] skip {cat}/{slug}: {exc!r}", file=sys.stderr)
+                continue
             title = body[0].lstrip("# ").strip()
             desc = next((l.strip("- ").strip() for l in body if l.strip().startswith("- ") and "Guide" not in l.split(":")[0]), "")
             # 生成描述：标题长尾词 + 数据描述（SEO meta description）
@@ -509,7 +518,7 @@ def main():
             desc = d
             icon = img_url(it)
             # 像素风封面图池：俯视地图(主) 与 平视场景(alt) 按生成顺序交替，避免同分类文章重复用同一张图
-            cover_count = sum(1 for c, _, _ in generated if c == cat) + 1
+            cover_count = sum(1 for c, _, _ in ok_generated if c == cat) + 1
             cover = "/images/guide-covers/%s%s.jpg" % (cat, "" if cover_count % 2 == 1 else "-alt")
             md = front(title, d, icon, REGISTRY[cat]["related"], cover=cover) + "\n".join(body) + "\n"
             out = os.path.join(GUIDES_DIR, cat, slug + ".md")
@@ -520,6 +529,7 @@ def main():
                 print("Wrote:", os.path.relpath(out, ROOT))
             cat_summary[cat]["count"] += 1
             cat_summary[cat]["recent"].append((slug, title))
+            ok_generated.append((cat, slug, it))
 
     if args.dry_run:
         return
