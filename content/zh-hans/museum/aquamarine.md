@@ -1,0 +1,34 @@
+---
+title: "Aquamarine – 博物馆捐赠指南"
+description: "Aquamarine: where to find it, sell price and museum donation info in Stardew Valley."
+date: 2026-10-04
+icon: "/images/minerals/gems/Aquamarine.png"
+type: museum
+faq:
+  - q: "Where can I find the Aquamarine?"
+    a: "The Aquamarine can be found in: Aquamarine Node, Gem Node, Dwarvish Sentry, Panning, Fishing Treasure Chest."
+  - q: "How much does the Aquamarine sell for?"
+    a: "The Aquamarine sells for 180g (234g with the Gemologist profession)."
+  - q: "Should I donate the Aquamarine to the Museum?"
+    a: "Donations unlock museum rewards; duplicates can be sold. Donation note: No extra donation note is recorded in the open data."
+related:
+  - title: "Dwarf Scroll I"
+    url: "/museum/dwarf-scroll-i/"
+  - title: "Dwarf Scroll II"
+    url: "/museum/dwarf-scroll-ii/"
+  - title: "Dwarf Scroll III"
+    url: "/museum/dwarf-scroll-iii/"
+---
+
+The **Aquamarine** is a mineral that can be donated to the Stardew Valley Museum.
+
+**Sell price:** 180g
+
+**Found in:** Aquamarine Node, Gem Node, Dwarvish Sentry, Panning, Fishing Treasure Chest
+
+**Donation note:** No extra donation note is recorded in the open data.
+
+## Tips
+
+- Donate the first of each item, then sell duplicates.
+- Minerals sell for more with the Gemologist profession when applicable.
