@@ -1,0 +1,34 @@
+---
+title: "Palm Fossil – 博物馆捐赠指南"
+description: "Palm Fossil: where to find it, sell price and museum donation info in Stardew Valley."
+date: 2026-10-04
+icon: "/images/artifacts/Palm Fossil.png"
+type: museum
+faq:
+  - q: "Where can I find the Palm Fossil?"
+    a: "The Palm Fossil can be found in: Desert (7%), Forest (0.6-5%), Beach (0.6%), Bone Nodes (0.8%)."
+  - q: "How much does the Palm Fossil sell for?"
+    a: "The Palm Fossil sells for 100g."
+  - q: "Should I donate the Palm Fossil to the Museum?"
+    a: "Donations unlock museum rewards; duplicates can be sold. Donation note: No extra donation note is recorded in the open data."
+related:
+  - title: "Dwarf Scroll I"
+    url: "/museum/dwarf-scroll-i/"
+  - title: "Dwarf Scroll II"
+    url: "/museum/dwarf-scroll-ii/"
+  - title: "Dwarf Scroll III"
+    url: "/museum/dwarf-scroll-iii/"
+---
+
+The **Palm Fossil** is a artifact that can be donated to the Stardew Valley Museum.
+
+**Sell price:** 100g
+
+**Found in:** Desert (7%), Forest (0.6-5%), Beach (0.6%), Bone Nodes (0.8%)
+
+**Donation note:** No extra donation note is recorded in the open data.
+
+## Tips
+
+- Donate the first of each item, then sell duplicates.
+- Minerals sell for more with the Gemologist profession when applicable.
