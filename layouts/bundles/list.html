@@ -4,7 +4,7 @@
 
   <div class="progress-tracker">
     <p class="pt-eyebrow">Progress Tracker</p>
-    <h1>Community Center Checklist</h1>
+    <h1>{{ i18n "home_cc_title" }}</h1>
     <p class="pt-side">Plan by season: use standard bundle groups as a versioned reference when planning your season. Mixed variants and platform differences are not included in this first version.</p>
   </div>
 
@@ -12,16 +12,16 @@
     <!-- 左：清单列表 -->
     <div class="bundle-left">
       <div class="bundle-toolbar">
-        <label>Show
+        <label>{{ i18n "tool_show" }}
           <select id="filterType" class="pals-select">
-            <option value="">All reference lists</option>
+            <option value="">{{ i18n "tool_all_lists" }}</option>
             <option value="spring">Spring</option>
             <option value="summer">Summer</option>
             <option value="fall">Fall</option>
-            <option value="any">Any season</option>
+            <option value="any">{{ i18n "tool_any_season" }}</option>
           </select>
         </label>
-        <span class="bundle-count">26 bundles</span>
+        <span class="bundle-count">26 {{ i18n "home_bundles_count" }}</span>
       </div>
 
       <div class="bundle-list" id="bundleList">
@@ -287,7 +287,7 @@
       </div>
 
       <div class="bundle-progress">
-        <span><strong id="doneCount">0</strong>% tracked</span>
+        <span><strong id="doneCount">0</strong>% {{ i18n "tool_tracked" }}</span>
         <p class="bundle-version">Versioned reference: Stardew Valley 1.6.15 · Verified 2026-08-11 · Source: <a href="https://stardewvalleywiki.com/Bundles" target="_blank">Stardew Valley Wiki bundles page</a></p>
       </div>
     </div>
@@ -300,7 +300,7 @@
         <h3>≡ Plan by season</h3>
         <p>Bundles naturally fit planning because the same item may be limited by season, weather, time, location, or another production chain. A useful checklist doesn't just say "collect this item" — it shows when it's available and which goals compete for the same space.</p>
         <p>This preview version is scoped to a manageable data range. It validates the interaction with easy-to-recognize examples and states the source: the full version needs a complete item table with version numbers, mixed bundle rules, and a last-verified date.</p>
-        <p><a href="https://stardewvalleywiki.com/Bundles" target="_blank">Compare with official reference ↗</a></p>
+        <p><a href="https://stardewvalleywiki.com/Bundles" target="_blank">{{ i18n "tool_compare_official" }}</a></p>
       </div>
     </div>
   </div>

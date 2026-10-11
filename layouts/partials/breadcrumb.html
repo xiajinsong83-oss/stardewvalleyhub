@@ -1,5 +1,5 @@
 <nav class="breadcrumb" aria-label="Breadcrumb">
-  <a href="{{ .Site.Home.RelPermalink }}">Home</a>
+  <a href="{{ .Site.Home.RelPermalink }}">{{ i18n "nav_home" }}</a>
   {{ with .Parent }}
   {{ if not .IsHome }}<span>/</span><a href="{{ .RelPermalink }}">{{ .Title }}</a>{{ end }}
   {{ end }}

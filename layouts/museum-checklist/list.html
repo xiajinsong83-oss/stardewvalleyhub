@@ -4,19 +4,19 @@
 
   <div class="progress-tracker">
     <div class="pt-title-block">
-      <p class="pt-eyebrow">Collection Tracker</p>
+      <p class="pt-eyebrow">{{ i18n "tool_collection_tracker" }}</p>
       <h1>Museum Donation Checklist</h1>
     </div>
-    <p class="pt-side">Check off the artifacts and minerals you've donated. Progress saves in your browser. Complete all items to finish the museum collection.</p>
+    <p class="pt-side">{{ i18n "tool_museum_side" }}</p>
   </div>
 
   <div class="fish-tracker-layout">
     <!-- 左：筛选+列表 -->
     <div class="fish-left">
       <div class="fish-toolbar">
-        <label>Show
+        <label>{{ i18n "tool_show" }}
           <select id="filterType" class="fish-select">
-            <option value="">All items</option>
+            <option value="">{{ i18n "tool_all_items" }}</option>
             <option value="artifact">Artifacts</option>
             <option value="mineral">Minerals</option>
             <option value="gem">Gems</option>
@@ -26,7 +26,7 @@
       </div>
 
       <div class="fish-search-box">
-        <input type="text" id="fishSearch" class="fish-search-input" placeholder="Search item name...">
+        <input type="text" id="fishSearch" class="fish-search-input" placeholder="{{ i18n "tool_search_item_ph" }}">
       </div>
 
       <div class="fish-list" id="fishList">
@@ -71,13 +71,13 @@
         <img src="/images/museum-hero.jpg" alt="Museum collection" class="fish-hero-img">
         <h3>≡ Museum by category</h3>
         <p>The museum needs artifacts dug up from artifact spots, and minerals found in the mines or geodes. Donate items to earn rewards and unlock the game's secret collection.</p>
-        <p>Check off items you've donated — progress saves automatically in your browser.</p>
-        <p><a href="/museum/">See full museum guide →</a></p>
+        <p>{{ i18n "tool_museum_check_note" }}</p>
+        <p><a href="/museum/">{{ i18n "tool_see_museum_guide" }}</a></p>
       </div>
       <div class="fish-stats-card">
-        <h4>Collection progress</h4>
-        <div class="fish-stat-row"><span>Donated</span><strong id="statCaught">0 / {{ $na := 95 }}{{ with .Site.Data.artifacts }}{{ $na = len . }}{{ end }}{{ $nm := 53 }}{{ with .Site.Data.minerals }}{{ $nm = len . }}{{ end }}{{ add $na $nm }}</strong></div>
-        <div class="fish-stat-row"><span>Remaining</span><strong id="statLeft">{{ $na := 95 }}{{ with .Site.Data.artifacts }}{{ $na = len . }}{{ end }}{{ $nm := 53 }}{{ with .Site.Data.minerals }}{{ $nm = len . }}{{ end }}{{ add $na $nm }}</strong></div>
+        <h4>{{ i18n "tool_collection_progress" }}</h4>
+        <div class="fish-stat-row"><span>{{ i18n "tool_donated" }}</span><strong id="statCaught">0 / {{ $na := 95 }}{{ with .Site.Data.artifacts }}{{ $na = len . }}{{ end }}{{ $nm := 53 }}{{ with .Site.Data.minerals }}{{ $nm = len . }}{{ end }}{{ add $na $nm }}</strong></div>
+        <div class="fish-stat-row"><span>{{ i18n "tool_remaining" }}</span><strong id="statLeft">{{ $na := 95 }}{{ with .Site.Data.artifacts }}{{ $na = len . }}{{ end }}{{ $nm := 53 }}{{ with .Site.Data.minerals }}{{ $nm = len . }}{{ end }}{{ add $na $nm }}</strong></div>
         <div class="fish-stat-row"><span>Artifacts</span><strong>{{ with .Site.Data.artifacts }}{{ len . }}{{ else }}95{{ end }}</strong></div>
         <div class="fish-stat-row"><span>Minerals</span><strong>{{ with .Site.Data.minerals }}{{ len . }}{{ else }}53{{ end }}</strong></div>
       </div>

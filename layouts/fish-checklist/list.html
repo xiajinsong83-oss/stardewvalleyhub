@@ -4,19 +4,19 @@
 
   <div class="progress-tracker">
     <div class="pt-title-block">
-      <p class="pt-eyebrow">Collection Tracker</p>
+      <p class="pt-eyebrow">{{ i18n "tool_collection_tracker" }}</p>
       <h1>Fish Collection Checklist</h1>
     </div>
-    <p class="pt-side">Check off the fish you've caught. Progress saves in your browser. Complete all 77 fish to finish the Fish Tank bundles.</p>
+    <p class="pt-side">{{ i18n "tool_fish_side" }}</p>
   </div>
 
   <div class="fish-tracker-layout">
     <!-- 左：筛选+列表 -->
     <div class="fish-left">
       <div class="fish-toolbar">
-        <label>Show
+        <label>{{ i18n "tool_show" }}
           <select id="filterType" class="fish-select">
-            <option value="">All fish</option>
+            <option value="">{{ i18n "tool_all_fish" }}</option>
             <option value="spring">Spring</option>
             <option value="summer">Summer</option>
             <option value="fall">Fall</option>
@@ -28,7 +28,7 @@
       </div>
 
       <div class="fish-search-box">
-        <input type="text" id="fishSearch" class="fish-search-input" placeholder="Search fish name...">
+        <input type="text" id="fishSearch" class="fish-search-input" placeholder="{{ i18n "tool_search_fish_ph" }}">
       </div>
 
       <div class="fish-list" id="fishList">
@@ -61,13 +61,13 @@
         <img src="/images/fish-hero.jpg" alt="Fishing in Stardew Valley" class="fish-hero-img">
         <h3>≡ Fish by season</h3>
         <p>Fish are limited by season, weather, time, and location. Legendary fish can only be caught once each, and require rainy weather and a specific spot.</p>
-        <p>Check off fish you've caught — progress saves automatically in your browser.</p>
-        <p><a href="/fish/">See full fish guide →</a></p>
+        <p>{{ i18n "tool_fish_check_note" }}</p>
+        <p><a href="/fish/">{{ i18n "tool_see_fish_guide" }}</a></p>
       </div>
       <div class="fish-stats-card">
-        <h4>Collection progress</h4>
-        <div class="fish-stat-row"><span>Caught</span><strong id="statCaught">0 / 77</strong></div>
-        <div class="fish-stat-row"><span>Remaining</span><strong id="statLeft">77</strong></div>
+        <h4>{{ i18n "tool_collection_progress" }}</h4>
+        <div class="fish-stat-row"><span>{{ i18n "tool_caught" }}</span><strong id="statCaught">0 / 77</strong></div>
+        <div class="fish-stat-row"><span>{{ i18n "tool_remaining" }}</span><strong id="statLeft">77</strong></div>
         <div class="fish-stat-row"><span>Legendary</span><strong>5</strong></div>
       </div>
     </div>

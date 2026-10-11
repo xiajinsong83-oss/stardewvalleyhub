@@ -16,62 +16,62 @@
     </div>
     <div class="planner-wrap home-planner-wrap">
       <aside class="planner-tools">
-        <h3>BUILD PALETTE</h3>
-        <p class="planner-sub">Choose a tile <span class="planner-badge">7 TOOLS</span></p>
+        <h3>{{ i18n "home_palette" }}</h3>
+        <p class="planner-sub">{{ i18n "home_choose_tile" }} <span class="planner-badge">{{ i18n "home_tools_7" }}</span></p>
         <div class="planner-active-tool">
-          <div class="active-tool-box"><span class="active-tool-icon" id="activeToolIcon"></span><div><small>ACTIVE TOOL</small><strong id="activeToolName">Soil</strong></div></div>
+          <div class="active-tool-box"><span class="active-tool-icon" id="activeToolIcon"></span><div><small>{{ i18n "home_active_tool" }}</small><strong id="activeToolName">{{ i18n "home_soil" }}</strong></div></div>
         </div>
         <div class="planner-tools-grid">
-          <button class="tool-btn active" data-tool="soil"><span class="tool-icon soil"></span>Soil</button>
-          <button class="tool-btn" data-tool="crop"><span class="tool-icon crop"></span>Crop</button>
-          <button class="tool-btn" data-tool="building"><span class="tool-icon building"></span>Building</button>
-          <button class="tool-btn" data-tool="tree"><span class="tool-icon tree"></span>Tree</button>
-          <button class="tool-btn" data-tool="path"><span class="tool-icon path"></span>Path</button>
-          <button class="tool-btn" data-tool="water"><span class="tool-icon water"></span>Water</button>
-          <button class="tool-btn tool-erase" data-tool="erase"><span class="tool-icon erase"></span>Erase</button>
+          <button class="tool-btn active" data-tool="soil"><span class="tool-icon soil"></span>{{ i18n "home_soil" }}</button>
+          <button class="tool-btn" data-tool="crop"><span class="tool-icon crop"></span>{{ i18n "home_crop" }}</button>
+          <button class="tool-btn" data-tool="building"><span class="tool-icon building"></span>{{ i18n "home_building" }}</button>
+          <button class="tool-btn" data-tool="tree"><span class="tool-icon tree"></span>{{ i18n "home_tree" }}</button>
+          <button class="tool-btn" data-tool="path"><span class="tool-icon path"></span>{{ i18n "home_path" }}</button>
+          <button class="tool-btn" data-tool="water"><span class="tool-icon water"></span>{{ i18n "home_water" }}</button>
+          <button class="tool-btn tool-erase" data-tool="erase"><span class="tool-icon erase"></span>{{ i18n "home_erase" }}</button>
         </div>
         <div class="planner-planname">
-          <label>Plan name</label>
-          <input type="text" id="planName" value="Year 1 layout">
+          <label>{{ i18n "home_plan_name" }}</label>
+          <input type="text" id="planName" value="{{ i18n "home_plan_default" }}">
         </div>
-        <button class="planner-save" id="saveBtn">Save draft</button>
-        <button class="planner-clear" id="clearBtn">Clear board</button>
-        <p class="planner-save-status" id="saveStatus">No local save yet.</p>
+        <button class="planner-save" id="saveBtn">{{ i18n "home_save_draft" }}</button>
+        <button class="planner-clear" id="clearBtn">{{ i18n "home_clear_board" }}</button>
+        <p class="planner-save-status" id="saveStatus">{{ i18n "home_no_save" }}</p>
       </aside>
       <main class="planner-board">
         <div class="planner-board-head">
           <div><span class="planner-badge">12 × 8</span><h2 id="boardTitle">Year 1 layout</h2></div>
           <div class="planner-head-right">
-            <span class="planner-counter"><strong id="filledCount">0</strong> / 96 filled</span>
-            <button class="planner-export" id="exportBtn">↓ Export JSON</button>
+            <span class="planner-counter"><strong id="filledCount">0</strong> / 96 {{ i18n "home_filled" }}</span>
+            <button class="planner-export" id="exportBtn">{{ i18n "home_export" }}</button>
           </div>
         </div>
         <div class="planner-hint">
-          <span class="dot"></span> <strong id="toolLabel">Soil</strong> ACTIVE — Click a plot to place
+          <span class="dot"></span> <strong id="toolLabel">{{ i18n "home_soil" }}</strong> {{ i18n "home_active" }} — {{ i18n "home_click_place" }}
         </div>
-        <p class="planner-grid-label">FARM MAP <span>12 COLUMNS · 8 ROWS</span></p>
+        <p class="planner-grid-label">{{ i18n "home_farm_map" }} <span>{{ i18n "home_grid_label" }}</span></p>
         <div class="planner-grid" id="gridBoard"></div>
         <div class="planner-board-footer">
-          <span>⌨ Placement mode · <kbd>Arrow keys</kbd> move focus</span>
-          <span>◎ Sketch only</span>
+          <span>{{ i18n "home_placement" }} <kbd>{{ i18n "home_arrows" }}</kbd> {{ i18n "home_move_focus" }}</span>
+          <span>{{ i18n "home_sketch_only" }}</span>
         </div>
       </main>
       <aside class="planner-summary">
-        <h3>BOARD SUMMARY</h3>
-        <p class="planner-sub">Farm footprint</p>
-        <div class="planner-stat-row"><span>Available space</span><strong id="statFilled2">0</strong></div>
+        <h3>{{ i18n "home_summary" }}</h3>
+        <p class="planner-sub">{{ i18n "home_footprint" }}</p>
+        <div class="planner-stat-row"><span>{{ i18n "home_available" }}</span><strong id="statFilled2">0</strong></div>
         <div class="planner-stat-bar"><div class="planner-stat-fill" id="statFillBar" style="width:0%"></div></div>
-        <div class="planner-stat-num"><span>0</span><span>96 plots</span></div>
+        <div class="planner-stat-num"><span>0</span><span>96 {{ i18n "home_plots" }}</span></div>
         <hr>
-        <div class="planner-stat-row"><span><span class="tool-icon soil"></span> Soil</span><strong id="statSoil">0</strong></div>
-        <div class="planner-stat-row"><span><span class="tool-icon crop"></span> Crops</span><strong id="statCrop">0</strong></div>
-        <div class="planner-stat-row"><span><span class="tool-icon building"></span> Buildings</span><strong id="statBuilding">0</strong></div>
-        <div class="planner-stat-row"><span><span class="tool-icon tree"></span> Trees</span><strong id="statTree">0</strong></div>
-        <div class="planner-stat-row"><span><span class="tool-icon path"></span> Paths</span><strong id="statPath">0</strong></div>
-        <div class="planner-stat-row"><span><span class="tool-icon water"></span> Nature + water</span><strong id="statWater">0</strong></div>
+        <div class="planner-stat-row"><span><span class="tool-icon soil"></span> {{ i18n "home_soil_stat" }}</span><strong id="statSoil">0</strong></div>
+        <div class="planner-stat-row"><span><span class="tool-icon crop"></span> {{ i18n "home_crops_stat" }}</span><strong id="statCrop">0</strong></div>
+        <div class="planner-stat-row"><span><span class="tool-icon building"></span> {{ i18n "home_buildings_stat" }}</span><strong id="statBuilding">0</strong></div>
+        <div class="planner-stat-row"><span><span class="tool-icon tree"></span> {{ i18n "home_trees_stat" }}</span><strong id="statTree">0</strong></div>
+        <div class="planner-stat-row"><span><span class="tool-icon path"></span> {{ i18n "home_paths_stat" }}</span><strong id="statPath">0</strong></div>
+        <div class="planner-stat-row"><span><span class="tool-icon water"></span> {{ i18n "home_water_stat" }}</span><strong id="statWater">0</strong></div>
         <div class="planner-note">
-          <strong>💡 Planning note</strong>
-          <p>Confirm exact footprints and collision rules in-game before building.</p>
+          <strong>{{ i18n "home_note_title" }}</strong>
+          <p>{{ i18n "home_note_p" }}</p>
         </div>
       </aside>
     </div>
@@ -82,7 +82,7 @@
       </div>
       <div class="planner-info-box">
         <h4>What it saves</h4>
-        <p>The MVP saves the plan name and tile map in your browser. Exporting JSON gives you a small portable backup without requiring an account or sending a farm file to a server.</p>
+        <p>{{ i18n "home_what_saves_p" }}</p>
       </div>
     </div>
     <p class="planner-type-link">Not sure which farm map to start with? Read our guide: <a href="/farm-types/">All Farm Types in Stardew Valley</a></p>
@@ -152,7 +152,7 @@
 
   document.getElementById('clearBtn').addEventListener('click', function(){
     saved = {}; localStorage.removeItem('svfarm'); render();
-    document.getElementById('saveStatus').textContent = 'Board cleared.';
+    document.getElementById('saveStatus').textContent = '{{ i18n "home_board_cleared" }}';
   });
 
   document.getElementById('saveBtn').addEventListener('click', function(){
@@ -160,7 +160,7 @@
     var d = new Date();
     var hh = String(d.getHours()).padStart(2,'0');
     var mm = String(d.getMinutes()).padStart(2,'0');
-    document.getElementById('saveStatus').textContent = 'Draft saved ' + (d.getMonth()+1) + '/' + d.getDate() + ' ' + hh + ':' + mm;
+    document.getElementById('saveStatus').textContent = '{{ i18n "home_draft_saved" }}' + (d.getMonth()+1) + '/' + d.getDate() + ' ' + hh + ':' + mm;
   });
 
   document.getElementById('planName').addEventListener('input', function(){

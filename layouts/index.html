@@ -2,20 +2,20 @@
 <section class="hero">
   <div class="container hero-inner">
     <div class="hero-text">
-      <p class="kicker">★ Stardew Valley Tool Hub</p>
-      <h1>Every Stardew Valley Guide,<br><span class="hl">One Data-Driven Place.</span></h1>
-      <p class="lead">NPC loved gifts, crop profit, fishing spots, community center bundles, boss fights and FAQs — all from open-source game data, auto-updated with every patch.</p>
-      <p class="hero-note">100% data-driven · auto-updated · unofficial fan resource</p>
+      <p class="kicker">{{ i18n "home_kicker" }}</p>
+      <h1>{{ i18n "home_h1_1" }}<br><span class="hl">{{ i18n "home_h1_2" }}</span></h1>
+      <p class="lead">{{ i18n "home_lead" }}</p>
+      <p class="hero-note">{{ i18n "home_hero_note" }}</p>
       <div class="hero-cards">
-        <a class="btn btn-primary" href="/npc/">Browse NPC Gifts</a>
-        <a class="btn btn-ghost" href="/crops/">Best Crops</a>
+        <a class="btn btn-primary" href="/npc/">{{ i18n "home_btn_npc" }}</a>
+        <a class="btn btn-ghost" href="/crops/">{{ i18n "home_btn_crops" }}</a>
       </div>
     </div>
     <div class="hero-visual">
       <div class="hero-farm-wrap"><img src="/images/farm-planner-hero-{{ if eq .Site.Language.Lang "zh-hans" }}zh-cn{{ else }}en{{ end }}.webp" alt="Farm planner preview" class="hero-farm-img"></div>
       <div class="hero-visual-caption">
-        <span>Farm planner / reference view</span>
-        <span class="hero-visual-tag">Sketch constraints</span>
+        <span>{{ i18n "home_hero_caption" }}</span>
+        <span class="hero-visual-tag">{{ i18n "home_hero_tag" }}</span>
       </div>
     </div>
   </div>
@@ -23,162 +23,162 @@
 
 <section class="container">
   <div class="section-head">
-    <h2 class="section-title">Stardew Valley Wiki</h2>
+    <h2 class="section-title">{{ i18n "home_sec_wiki" }}</h2>
     <div class="section-more-wrap">
-      <a href="/all-guides/" class="section-more">View more →</a>
-      <p class="section-more-sub">See all 8 guides including bosses, FAQ, updates and feedback.</p>
+      <a href="/all-guides/" class="section-more">{{ i18n "home_view_more" }}</a>
+      <p class="section-more-sub">{{ i18n "home_sec_wiki_sub" }}</p>
     </div>
   </div>
   <div class="card-grid home-grid">
     <a class="card big" href="/npc/">
       <div class="card-icon"><img src="/images/villagers/Abigail.png" alt=""></div>
-      <h3>NPC Gift Guides</h3>
-      <p>Loved, liked, neutral and hated gifts for all 34 villagers, including marriage candidates and birthdays.</p>
-      <div class="tags"><span class="tag">34 villagers</span><span class="tag gold">Marriage</span></div>
+      <h3>{{ i18n "home_card_npc" }}</h3>
+      <p>{{ i18n "home_card_npc_p" }}</p>
+      <div class="tags"><span class="tag">{{ i18n "home_tag_34" }}</span><span class="tag gold">{{ i18n "home_tag_marriage" }}</span></div>
     </a>
     <a class="card big" href="/crops/">
       <div class="card-icon"><img src="/images/crops/parsnip/crop.png" alt=""></div>
-      <h3>Crop Guides</h3>
-      <p>Season, growth time, seed source, sell price and profit for every crop.</p>
-      <div class="tags"><span class="tag">Profit / day</span><span class="tag gold">4 seasons</span></div>
+      <h3>{{ i18n "home_card_crops" }}</h3>
+      <p>{{ i18n "home_card_crops_p" }}</p>
+      <div class="tags"><span class="tag">{{ i18n "home_tag_profit" }}</span><span class="tag gold">{{ i18n "home_tag_seasons" }}</span></div>
     </a>
     <a class="card big" href="/fish/">
       <div class="card-icon"><img src="/images/fish/Legend.png" alt=""></div>
-      <h3>Fish Guides</h3>
-      <p>Where to catch every fish: season, weather, time, location, difficulty and sell price.</p>
-      <div class="tags"><span class="tag">77 fish</span><span class="tag pink">Legendary</span></div>
+      <h3>{{ i18n "home_card_fish" }}</h3>
+      <p>{{ i18n "home_card_fish_p" }}</p>
+      <div class="tags"><span class="tag">{{ i18n "home_tag_77" }}</span><span class="tag pink">{{ i18n "home_tag_legendary" }}</span></div>
     </a>
     <a class="card big" href="/bundles/">
       <div class="card-icon"><img src="/images/bundles/icons/Bundle Green.png" alt="" onerror="this.parentNode.style.display='none'"></div>
-      <h3>Community Center Bundles</h3>
-      <p>Complete bundle requirements, items, quantities and rewards for every room.</p>
-      <div class="tags"><span class="tag">5 rooms</span><span class="tag gold">Rewards</span></div>
+      <h3>{{ i18n "home_card_bundles" }}</h3>
+      <p>{{ i18n "home_card_bundles_p" }}</p>
+      <div class="tags"><span class="tag">{{ i18n "home_tag_rooms" }}</span><span class="tag gold">{{ i18n "home_tag_rewards" }}</span></div>
     </a>
   </div>
 
   <div class="section-head">
-    <h2 class="section-title">High-Priority Guides</h2>
+    <h2 class="section-title">{{ i18n "home_sec_high" }}</h2>
     <div class="section-more-wrap">
-      <a href="/high-priority/" class="section-more">View more →</a>
-      <p class="section-more-sub">See all 10 high-priority guides.</p>
+      <a href="/high-priority/" class="section-more">{{ i18n "home_view_more" }}</a>
+      <p class="section-more-sub">{{ i18n "home_sec_high_sub" }}</p>
     </div>
   </div>
   <div class="card-grid home-grid">
-    <a class="card" href="/tier/crop-profit/"><div class="card-icon"><img src="/images/crops/parsnip/crop.png" alt=""></div><h3>Crop Profit Tier List</h3><p>Ranked best crops by profit per day, S/A/B/C tiers.</p></a>
-    <a class="card" href="/tier/fish/"><div class="card-icon"><img src="/images/fish/Legend.png" alt=""></div><h3>Fish Tier List</h3><p>Ranked best fish by sell price, S/A/B/C tiers.</p></a>
-    <a class="card" href="/maps/"><div class="card-icon"><img src="/images/maps/icons/Standard Farm Map Icon.png" alt="" onerror="this.parentNode.style.display='none'"></div><h3>Farm Maps</h3><p>All 8 farm layouts with preview images and best use.</p></a>
-    <a class="card" href="/weapons/"><div class="card-icon"><img src="/images/weapons/swords/Rusty Sword.png" alt="" onerror="this.parentNode.style.display='none'"></div><h3>Weapon Database</h3><p>62 weapons with damage, crit chance and how to get them.</p></a>
+    <a class="card" href="/tier/crop-profit/"><div class="card-icon"><img src="/images/crops/parsnip/crop.png" alt=""></div><h3>{{ i18n "home_card_tier_crops" }}</h3><p>{{ i18n "home_card_tier_crops_p" }}</p></a>
+    <a class="card" href="/tier/fish/"><div class="card-icon"><img src="/images/fish/Legend.png" alt=""></div><h3>{{ i18n "home_card_tier_fish" }}</h3><p>{{ i18n "home_card_tier_fish_p" }}</p></a>
+    <a class="card" href="/maps/"><div class="card-icon"><img src="/images/maps/icons/Standard Farm Map Icon.png" alt="" onerror="this.parentNode.style.display='none'"></div><h3>{{ i18n "home_card_maps" }}</h3><p>{{ i18n "home_card_maps_p" }}</p></a>
+    <a class="card" href="/weapons/"><div class="card-icon"><img src="/images/weapons/swords/Rusty Sword.png" alt="" onerror="this.parentNode.style.display='none'"></div><h3>{{ i18n "home_card_weapons" }}</h3><p>{{ i18n "home_card_weapons_p" }}</p></a>
   </div>
 
   <div class="section-head">
-    <h2 class="section-title">More Guides</h2>
+    <h2 class="section-title">{{ i18n "home_sec_more" }}</h2>
     <div class="section-more-wrap">
-      <a href="/more-guides/" class="section-more">View more →</a>
-      <p class="section-more-sub">See all 10 additional guides: tools, buildings, achievements, orders and more.</p>
+      <a href="/more-guides/" class="section-more">{{ i18n "home_view_more" }}</a>
+      <p class="section-more-sub">{{ i18n "home_sec_more_sub" }}</p>
     </div>
   </div>
   <div class="card-grid home-grid">
-    <a class="card" href="/tools/"><div class="card-icon"><img src="/images/tools/axe/Axe.png" alt="" onerror="this.parentNode.style.display='none'"></div><h3>Tools</h3><p>17 tools with full upgrade costs and materials.</p></a>
-    <a class="card" href="/unlocks/"><div class="card-icon"><img src="/images/buildings/Silo.png" alt="" onerror="this.parentNode.style.display='none'"></div><h3>Buildings &amp; Unlocks</h3><p>24 farm buildings with cost, materials and upgrades.</p></a>
-    <a class="card" href="/achievements/"><div class="card-icon"><img src="/images/achievements/Achievement_Artisan.jpg" alt="" onerror="this.parentNode.style.display='none'"></div><h3>Achievements</h3><p>49 achievements with requirements and rewards.</p></a>
-    <a class="card" href="/orders/"><div class="card-icon"><img src="/images/villagers/Lewis.png" alt="" onerror="this.parentNode.style.display='none'"></div><h3>Special Orders</h3><p>28 special orders: requester, requirements and rewards.</p></a>
+    <a class="card" href="/tools/"><div class="card-icon"><img src="/images/tools/axe/Axe.png" alt="" onerror="this.parentNode.style.display='none'"></div><h3>{{ i18n "home_card_tools" }}</h3><p>{{ i18n "home_card_tools_p" }}</p></a>
+    <a class="card" href="/unlocks/"><div class="card-icon"><img src="/images/buildings/Silo.png" alt="" onerror="this.parentNode.style.display='none'"></div><h3>{{ i18n "home_card_unlocks" }}</h3><p>{{ i18n "home_card_unlocks_p" }}</p></a>
+    <a class="card" href="/achievements/"><div class="card-icon"><img src="/images/achievements/Achievement_Artisan.jpg" alt="" onerror="this.parentNode.style.display='none'"></div><h3>{{ i18n "home_card_ach" }}</h3><p>{{ i18n "home_card_ach_p" }}</p></a>
+    <a class="card" href="/orders/"><div class="card-icon"><img src="/images/villagers/Lewis.png" alt="" onerror="this.parentNode.style.display='none'"></div><h3>{{ i18n "home_card_orders" }}</h3><p>{{ i18n "home_card_orders_p" }}</p></a>
   </div>
 
   {{ $stats := site.Data.stardew }}
   {{ if $stats }}
   <section class="stats">
-    <a class="stat" href="/npc/"><strong>{{ $stats.npc }}</strong><span>NPC guides</span></a>
-    <a class="stat" href="/crops/"><strong>{{ $stats.crops }}</strong><span>Crop guides</span></a>
-    <a class="stat" href="/fish/"><strong>{{ $stats.fish }}</strong><span>Fish guides</span></a>
-    <a class="stat" href="/bundles/"><strong>{{ $stats.bundles }}</strong><span>Bundle guides</span></a>
-    <a class="stat" href="/boss/"><strong>{{ $stats.boss }}</strong><span>Boss guides</span></a>
-    <a class="stat" href="/recipes/"><strong>{{ $stats.recipes }}</strong><span>Recipes</span></a>
-    <a class="stat" href="/museum/"><strong>{{ $stats.museum }}</strong><span>Museum items</span></a>
-    <a class="stat" href="/events/"><strong>{{ $stats.events }}</strong><span>Event guides</span></a>
+    <a class="stat" href="/npc/"><strong>{{ $stats.npc }}</strong><span>{{ i18n "home_stat_npc" }}</span></a>
+    <a class="stat" href="/crops/"><strong>{{ $stats.crops }}</strong><span>{{ i18n "home_stat_crops" }}</span></a>
+    <a class="stat" href="/fish/"><strong>{{ $stats.fish }}</strong><span>{{ i18n "home_stat_fish" }}</span></a>
+    <a class="stat" href="/bundles/"><strong>{{ $stats.bundles }}</strong><span>{{ i18n "home_stat_bundles" }}</span></a>
+    <a class="stat" href="/boss/"><strong>{{ $stats.boss }}</strong><span>{{ i18n "home_stat_boss" }}</span></a>
+    <a class="stat" href="/recipes/"><strong>{{ $stats.recipes }}</strong><span>{{ i18n "home_stat_recipes" }}</span></a>
+    <a class="stat" href="/museum/"><strong>{{ $stats.museum }}</strong><span>{{ i18n "home_stat_museum" }}</span></a>
+    <a class="stat" href="/events/"><strong>{{ $stats.events }}</strong><span>{{ i18n "home_stat_events" }}</span></a>
   </section>
   {{ end }}
 
   <!-- 首页农场规划器 -->
   <section class="home-planner">
-    <h2>Farm Layout Planner</h2>
-    <p class="quick-sub">Sketch your farm layout right here — 12×8 grid, auto-saved in your browser. Use the grid as a quick planning board. It is a layout sketch, so you can change ideas without committing to a full in-game build.</p>
+    <h2>{{ i18n "home_planner_title" }}</h2>
+    <p class="quick-sub">{{ i18n "home_planner_sub" }}</p>
     <div class="planner-hero-row">
       <div class="planner-hero-img-wrap"><img src="/images/farm-planner-hero-{{ if eq .Site.Language.Lang "zh-hans" }}zh-cn{{ else }}en{{ end }}.webp" alt="Farm layout reference" class="planner-hero-img"></div>
       <div class="planner-hero-text">
-        <p class="planner-eyebrow">VISUAL REFERENCE</p>
-        <h3>Make the rough idea visible.</h3>
-        <p>Use the farm view as a reminder: a good layout is a set of relationships — rows need access, buildings need breathing room, and empty plots are part of the plan.</p>
+        <p class="planner-eyebrow">{{ i18n "home_planner_eyebrow" }}</p>
+        <h3>{{ i18n "home_planner_h3" }}</h3>
+        <p>{{ i18n "home_planner_p" }}</p>
       </div>
     </div>
     <div class="planner-wrap home-planner-wrap">
       <aside class="planner-tools">
-        <h3>BUILD PALETTE</h3>
-        <p class="planner-sub">Choose a tile <span class="planner-badge">7 TOOLS</span></p>
+        <h3>{{ i18n "home_palette" }}</h3>
+        <p class="planner-sub">{{ i18n "home_choose_tile" }} <span class="planner-badge">{{ i18n "home_tools_7" }}</span></p>
         <div class="planner-active-tool">
-          <div class="active-tool-box"><span class="active-tool-icon" id="activeToolIcon"></span><div><small>ACTIVE TOOL</small><strong id="activeToolName">Soil</strong></div></div>
+          <div class="active-tool-box"><span class="active-tool-icon" id="activeToolIcon"></span><div><small>{{ i18n "home_active_tool" }}</small><strong id="activeToolName">{{ i18n "home_soil" }}</strong></div></div>
         </div>
         <div class="planner-tools-grid">
-          <button class="tool-btn active" data-tool="soil"><span class="tool-icon soil"></span>Soil</button>
-          <button class="tool-btn" data-tool="crop"><span class="tool-icon crop"></span>Crop</button>
-          <button class="tool-btn" data-tool="building"><span class="tool-icon building"></span>Building</button>
-          <button class="tool-btn" data-tool="tree"><span class="tool-icon tree"></span>Tree</button>
-          <button class="tool-btn" data-tool="path"><span class="tool-icon path"></span>Path</button>
-          <button class="tool-btn" data-tool="water"><span class="tool-icon water"></span>Water</button>
-          <button class="tool-btn tool-erase" data-tool="erase"><span class="tool-icon erase"></span>Erase</button>
+          <button class="tool-btn active" data-tool="soil"><span class="tool-icon soil"></span>{{ i18n "home_soil" }}</button>
+          <button class="tool-btn" data-tool="crop"><span class="tool-icon crop"></span>{{ i18n "home_crop" }}</button>
+          <button class="tool-btn" data-tool="building"><span class="tool-icon building"></span>{{ i18n "home_building" }}</button>
+          <button class="tool-btn" data-tool="tree"><span class="tool-icon tree"></span>{{ i18n "home_tree" }}</button>
+          <button class="tool-btn" data-tool="path"><span class="tool-icon path"></span>{{ i18n "home_path" }}</button>
+          <button class="tool-btn" data-tool="water"><span class="tool-icon water"></span>{{ i18n "home_water" }}</button>
+          <button class="tool-btn tool-erase" data-tool="erase"><span class="tool-icon erase"></span>{{ i18n "home_erase" }}</button>
         </div>
         <div class="planner-planname">
-          <label>Plan name</label>
-          <input type="text" id="planName" value="Year 1 layout">
+          <label>{{ i18n "home_plan_name" }}</label>
+          <input type="text" id="planName" value="{{ i18n "home_plan_default" }}">
         </div>
-        <button class="planner-save" id="saveBtn">Save draft</button>
-        <button class="planner-clear" id="clearBtn">Clear board</button>
-        <p class="planner-save-status" id="saveStatus">No local save yet.</p>
+        <button class="planner-save" id="saveBtn">{{ i18n "home_save_draft" }}</button>
+        <button class="planner-clear" id="clearBtn">{{ i18n "home_clear_board" }}</button>
+        <p class="planner-save-status" id="saveStatus">{{ i18n "home_no_save" }}</p>
       </aside>
       <main class="planner-board">
         <div class="planner-board-head">
-          <div><span class="planner-badge">12 × 8</span><h2 id="boardTitle">Year 1 layout</h2></div>
+          <div><span class="planner-badge">12 × 8</span><h2 id="boardTitle">{{ i18n "home_board_title" }}</h2></div>
           <div class="planner-head-right">
-            <span class="planner-counter"><strong id="filledCount">0</strong> / 96 filled</span>
-            <button class="planner-export" id="exportBtn">↓ Export JSON</button>
+            <span class="planner-counter"><strong id="filledCount">0</strong> / 96 {{ i18n "home_filled" }}</span>
+            <button class="planner-export" id="exportBtn">{{ i18n "home_export" }}</button>
           </div>
         </div>
         <div class="planner-hint">
-          <span class="dot"></span> <strong id="toolLabel">Soil</strong> ACTIVE — Click a plot to place
+          <span class="dot"></span> <strong id="toolLabel">{{ i18n "home_soil" }}</strong> {{ i18n "home_active" }} — {{ i18n "home_click_place" }}
         </div>
-        <p class="planner-grid-label">FARM MAP <span>12 COLUMNS · 8 ROWS</span></p>
+        <p class="planner-grid-label">{{ i18n "home_farm_map" }} <span>{{ i18n "home_grid_label" }}</span></p>
         <div class="planner-grid" id="gridBoard"></div>
         <div class="planner-board-footer">
-          <span>⌨ Placement mode · <kbd>Arrow keys</kbd> move focus</span>
-          <span>◎ Sketch only</span>
+          <span>{{ i18n "home_placement" }} <kbd>{{ i18n "home_arrows" }}</kbd> {{ i18n "home_move_focus" }}</span>
+          <span>{{ i18n "home_sketch_only" }}</span>
         </div>
       </main>
       <aside class="planner-summary">
-        <h3>BOARD SUMMARY</h3>
-        <p class="planner-sub">Farm footprint</p>
-        <div class="planner-stat-row"><span>Available space</span><strong id="statFilled2">0</strong></div>
+        <h3>{{ i18n "home_summary" }}</h3>
+        <p class="planner-sub">{{ i18n "home_footprint" }}</p>
+        <div class="planner-stat-row"><span>{{ i18n "home_available" }}</span><strong id="statFilled2">0</strong></div>
         <div class="planner-stat-bar"><div class="planner-stat-fill" id="statFillBar" style="width:0%"></div></div>
-        <div class="planner-stat-num"><span>0</span><span>96 plots</span></div>
+        <div class="planner-stat-num"><span>0</span><span>96 {{ i18n "home_plots" }}</span></div>
         <hr>
-        <div class="planner-stat-row"><span><span class="tool-icon soil"></span> Soil</span><strong id="statSoil">0</strong></div>
-        <div class="planner-stat-row"><span><span class="tool-icon crop"></span> Crops</span><strong id="statCrop">0</strong></div>
-        <div class="planner-stat-row"><span><span class="tool-icon building"></span> Buildings</span><strong id="statBuilding">0</strong></div>
-        <div class="planner-stat-row"><span><span class="tool-icon tree"></span> Trees</span><strong id="statTree">0</strong></div>
-        <div class="planner-stat-row"><span><span class="tool-icon path"></span> Paths</span><strong id="statPath">0</strong></div>
-        <div class="planner-stat-row"><span><span class="tool-icon water"></span> Nature + water</span><strong id="statWater">0</strong></div>
+        <div class="planner-stat-row"><span><span class="tool-icon soil"></span> {{ i18n "home_soil_stat" }}</span><strong id="statSoil">0</strong></div>
+        <div class="planner-stat-row"><span><span class="tool-icon crop"></span> {{ i18n "home_crops_stat" }}</span><strong id="statCrop">0</strong></div>
+        <div class="planner-stat-row"><span><span class="tool-icon building"></span> {{ i18n "home_buildings_stat" }}</span><strong id="statBuilding">0</strong></div>
+        <div class="planner-stat-row"><span><span class="tool-icon tree"></span> {{ i18n "home_trees_stat" }}</span><strong id="statTree">0</strong></div>
+        <div class="planner-stat-row"><span><span class="tool-icon path"></span> {{ i18n "home_paths_stat" }}</span><strong id="statPath">0</strong></div>
+        <div class="planner-stat-row"><span><span class="tool-icon water"></span> {{ i18n "home_water_stat" }}</span><strong id="statWater">0</strong></div>
         <div class="planner-note">
-          <strong>💡 Planning note</strong>
-          <p>Confirm exact footprints and collision rules in-game before building.</p>
+          <strong>{{ i18n "home_note_title" }}</strong>
+          <p>{{ i18n "home_note_p" }}</p>
         </div>
       </aside>
     </div>
     <div class="planner-info-row">
       <div class="planner-info-box">
-        <h4>Why a grid first?</h4>
-        <p>A layout sketch is the fastest way to turn a vague farm idea into a visible constraint. It gives you a place to compare a crop block, a path, a building footprint, and a little breathing room before you spend in-game resources.</p>
+        <h4>{{ i18n "home_why_grid" }}</h4>
+        <p>{{ i18n "home_why_grid_p" }}</p>
       </div>
       <div class="planner-info-box">
-        <h4>What it saves</h4>
-        <p>The MVP saves the plan name and tile map in your browser. Exporting JSON gives you a small portable backup without requiring an account or sending a farm file to a server.</p>
+        <h4>{{ i18n "home_what_saves" }}</h4>
+        <p>{{ i18n "home_what_saves_p" }}</p>
       </div>
     </div>
   </section>
@@ -186,26 +186,26 @@
   <!-- 首页社区中心清单 -->
   <section class="home-cc-checklist">
     <div class="progress-tracker">
-      <p class="pt-eyebrow">Progress Tracker</p>
-      <h2>Community Center Checklist</h2>
-      <p class="pt-side">Use standard bundle groups as a versioned reference when planning your season.</p>
+      <p class="pt-eyebrow">{{ i18n "home_pt_eyebrow" }}</p>
+      <h2>{{ i18n "home_cc_title" }}</h2>
+      <p class="pt-side">{{ i18n "home_pt_side" }}</p>
     </div>
 
     <div class="bundle-layout">
       <div class="bundle-left">
         <div class="bundle-toolbar">
-          <label>Show
+          <label>{{ i18n "home_show" }}
             <select id="homeFilterType" class="pals-select">
-              <option value="">All bundles</option>
-              <option value="crafts-room">Crafts Room</option>
-              <option value="pantry">Pantry</option>
-              <option value="fish-tank">Fish Tank</option>
-              <option value="boiler-room">Boiler Room</option>
-              <option value="bulletin-board">Bulletin Board</option>
-              <option value="vault">Vault</option>
+              <option value="">{{ i18n "home_all_bundles" }}</option>
+              <option value="crafts-room">{{ i18n "home_crafts_room" }}</option>
+              <option value="pantry">{{ i18n "home_pantry" }}</option>
+              <option value="fish-tank">{{ i18n "home_fish_tank" }}</option>
+              <option value="boiler-room">{{ i18n "home_boiler_room" }}</option>
+              <option value="bulletin-board">{{ i18n "home_bulletin_board" }}</option>
+              <option value="vault">{{ i18n "home_vault" }}</option>
             </select>
           </label>
-          <span class="bundle-count">{{ len (site.GetPage "/bundles").Pages }} bundles</span>
+          <span class="bundle-count">{{ len (site.GetPage "/bundles").Pages }} {{ i18n "home_bundles_count" }}</span>
         </div>
 
         <div class="bundle-list" id="homeBundleList">
@@ -217,7 +217,7 @@
             <div class="bundle-row-body">
               <h4>{{ .Title | replaceRE " – Community Center.*" "" }}</h4>
               <p class="bundle-items">{{ $names := slice }}{{ range $items }}{{ $names = $names | append .name }}{{ end }}{{ delimit $names " / " }}</p>
-              <p class="bundle-meta">v1.6.15 · Verified 2026-08-11</p>
+              <p class="bundle-meta">{{ i18n "home_gift_verified" }}</p>
             </div>
             <span class="bundle-source-tag">{{ replace $proom "-" " " | title }}</span>
           </label>
@@ -225,18 +225,18 @@
         </div>
 
         <div class="bundle-progress">
-          <span><strong id="homeDoneCount">0</strong>% tracked</span>
-          <p class="bundle-version">Versioned reference: Stardew Valley 1.6.15 · Source: <a href="https://stardewvalleywiki.com/Bundles" target="_blank">Stardew Valley Wiki bundles page</a></p>
+          <span><strong id="homeDoneCount">0</strong>% {{ i18n "home_tracked" }}</span>
+          <p class="bundle-version">{{ i18n "home_versioned" }} <a href="https://stardewvalleywiki.com/Bundles" target="_blank">{{ i18n "home_wiki_bundles" }}</a></p>
         </div>
       </div>
 
       <div class="bundle-right">
         <img src="/images/community-center-hero.webp" alt="Community Center reference" class="bundle-ref-img" onerror="this.style.display='none'">
         <div class="bundle-right-text">
-          <p class="br-eyebrow">Seasonal reference</p>
-          <h3>≡ Plan by season</h3>
-          <p>Bundles naturally fit planning because the same item may be limited by season, weather, time, location, or another production chain.</p>
-          <p><a href="/bundles/">View full checklist →</a></p>
+          <p class="br-eyebrow">{{ i18n "home_ref_eyebrow" }}</p>
+          <h3>{{ i18n "home_plan_season" }}</h3>
+          <p>{{ i18n "home_plan_season_p" }}</p>
+          <p><a href="/bundles/">{{ i18n "home_view_full" }}</a></p>
         </div>
       </div>
     </div>
@@ -244,20 +244,20 @@
 
   <!-- Gift Lookup -->
   <section class="home-gift-lookup">
-    <p class="section-eyebrow">Quick Lookup</p>
-    <h2>Gift Lookup: Find Useful Gifts for Villagers</h2>
-    <p class="gift-side-note">Search by villager name or loved gift to build a complete gift list. This quick lookup does not include universal loved, liked or hated gifts.</p>
-    <p class="gift-full-link"><a href="/gift/">Read full gift guide →</a></p>
+    <p class="section-eyebrow">{{ i18n "home_quick_lookup" }}</p>
+    <h2>{{ i18n "home_gift_title" }}</h2>
+    <p class="gift-side-note">{{ i18n "home_gift_note" }}</p>
+    <p class="gift-full-link"><a href="/gift/">{{ i18n "home_read_full" }}</a></p>
 
     <div class="gift-layout">
       <div class="gift-left">
         <img src="/images/gift-lookup-card.webp" alt="Gift notes" class="gift-notes-img" onerror="this.style.display='none'">
-        <p class="gift-notes-label">Gift notes / lookup</p>
-        <label class="gift-search-label">Search villager or gift
+        <p class="gift-notes-label">{{ i18n "home_gift_notes" }}</p>
+        <label class="gift-search-label">{{ i18n "home_search_villager" }}
           <span class="gift-count">34 villagers</span>
         </label>
-        <input type="text" id="giftSearch" class="gift-search-input" placeholder="Try Caroline, 南瓜">
-        <p class="gift-search-hint">Search by villager name or loved gift to build a complete gift list. This quick lookup does not include universal loved, liked or hated gifts.</p>
+        <input type="text" id="giftSearch" class="gift-search-input" placeholder="Try Caroline, Pumpkin">
+        <p class="gift-search-hint">{{ i18n "home_gift_note" }}</p>
       </div>
 
       <div class="gift-right">
@@ -267,120 +267,120 @@
             <div class="gift-info">
               <h4>Abigail</h4>
               <p class="gift-items">Amethyst, Spicy Eel, Pufferfish, Purple Stone, Icy Root</p>
-              <p class="gift-meta">v1.6.15 · Verified 2026-08-11</p>
-              <p class="gift-source">Source: <a href="https://stardewvalleywiki.com/Abigail" target="_blank">Stardew Valley Wiki</a></p>
+              <p class="gift-meta">{{ i18n "home_gift_verified" }}</p>
+              <p class="gift-source">{{ i18n "home_gift_source" }} <a href="https://stardewvalleywiki.com/Abigail" target="_blank">{{ i18n "home_calc_wiki" }}</a></p>
             </div>
-            <span class="gift-tag loved">Loved example</span>
+            <span class="gift-tag loved">{{ i18n "home_loved_example" }}</span>
           </div>
           <div class="gift-card">
             <div class="gift-avatar"><img src="/images/villagers/Caroline.png" alt=""></div>
             <div class="gift-info">
               <h4>Caroline</h4>
               <p class="gift-items">Green Tea, Summer Spangle, Tropical Curry</p>
-              <p class="gift-meta">v1.6.15 · Verified 2026-08-11</p>
-              <p class="gift-source">Source: <a href="https://stardewvalleywiki.com/Caroline" target="_blank">Stardew Valley Wiki</a></p>
+              <p class="gift-meta">{{ i18n "home_gift_verified" }}</p>
+              <p class="gift-source">{{ i18n "home_gift_source" }} <a href="https://stardewvalleywiki.com/Caroline" target="_blank">{{ i18n "home_calc_wiki" }}</a></p>
             </div>
-            <span class="gift-tag liked">Liked example</span>
+            <span class="gift-tag liked">{{ i18n "home_liked_example" }}</span>
           </div>
           <div class="gift-card">
             <div class="gift-avatar"><img src="/images/villagers/Sebastian.png" alt=""></div>
             <div class="gift-info">
               <h4>Sebastian</h4>
               <p class="gift-items">Frozen Tear, Obsidian, Sashimi, Void Egg</p>
-              <p class="gift-meta">v1.6.15 · Verified 2026-08-11</p>
-              <p class="gift-source">Source: <a href="https://stardewvalleywiki.com/Sebastian" target="_blank">Stardew Valley Wiki</a></p>
+              <p class="gift-meta">{{ i18n "home_gift_verified" }}</p>
+              <p class="gift-source">{{ i18n "home_gift_source" }} <a href="https://stardewvalleywiki.com/Sebastian" target="_blank">{{ i18n "home_calc_wiki" }}</a></p>
             </div>
-            <span class="gift-tag loved">Loved example</span>
+            <span class="gift-tag loved">{{ i18n "home_loved_example" }}</span>
           </div>
           <div class="gift-card">
             <div class="gift-avatar"><img src="/images/villagers/Leah.png" alt=""></div>
             <div class="gift-info">
               <h4>Leah</h4>
               <p class="gift-items">Salad, Goat Cheese, Poppyseed Muffin, Stir Fry</p>
-              <p class="gift-meta">v1.6.15 · Verified 2026-08-11</p>
-              <p class="gift-source">Source: <a href="https://stardewvalleywiki.com/Leah" target="_blank">Stardew Valley Wiki</a></p>
+              <p class="gift-meta">{{ i18n "home_gift_verified" }}</p>
+              <p class="gift-source">{{ i18n "home_gift_source" }} <a href="https://stardewvalleywiki.com/Leah" target="_blank">{{ i18n "home_calc_wiki" }}</a></p>
             </div>
-            <span class="gift-tag loved">Loved example</span>
+            <span class="gift-tag loved">{{ i18n "home_loved_example" }}</span>
           </div>
           <div class="gift-card">
             <div class="gift-avatar"><img src="/images/villagers/Elliott.png" alt=""></div>
             <div class="gift-info">
               <h4>Elliott</h4>
               <p class="gift-items">Crab Cakes, Lobster, Pomegranate, Truffle</p>
-              <p class="gift-meta">v1.6.15 · Verified 2026-08-11</p>
-              <p class="gift-source">Source: <a href="https://stardewvalleywiki.com/Elliott" target="_blank">Stardew Valley Wiki</a></p>
+              <p class="gift-meta">{{ i18n "home_gift_verified" }}</p>
+              <p class="gift-source">{{ i18n "home_gift_source" }} <a href="https://stardewvalleywiki.com/Elliott" target="_blank">{{ i18n "home_calc_wiki" }}</a></p>
             </div>
-            <span class="gift-tag loved">Loved example</span>
+            <span class="gift-tag loved">{{ i18n "home_loved_example" }}</span>
           </div>
           <div class="gift-card">
             <div class="gift-avatar"><img src="/images/villagers/Haley.png" alt=""></div>
             <div class="gift-info">
               <h4>Haley</h4>
               <p class="gift-items">Coconut, Pink Cake, Fruit Salad, Sunflower</p>
-              <p class="gift-meta">v1.6.15 · Verified 2026-08-11</p>
-              <p class="gift-source">Source: <a href="https://stardewvalleywiki.com/Haley" target="_blank">Stardew Valley Wiki</a></p>
+              <p class="gift-meta">{{ i18n "home_gift_verified" }}</p>
+              <p class="gift-source">{{ i18n "home_gift_source" }} <a href="https://stardewvalleywiki.com/Haley" target="_blank">{{ i18n "home_calc_wiki" }}</a></p>
             </div>
-            <span class="gift-tag loved">Loved example</span>
+            <span class="gift-tag loved">{{ i18n "home_loved_example" }}</span>
           </div>
           <div class="gift-card">
             <div class="gift-avatar"><img src="/images/villagers/Harvey.png" alt=""></div>
             <div class="gift-info">
               <h4>Harvey</h4>
               <p class="gift-items">Coffee, Pickles, Super Meal, Lobster Bisque</p>
-              <p class="gift-meta">v1.6.15 · Verified 2026-08-11</p>
-              <p class="gift-source">Source: <a href="https://stardewvalleywiki.com/Harvey" target="_blank">Stardew Valley Wiki</a></p>
+              <p class="gift-meta">{{ i18n "home_gift_verified" }}</p>
+              <p class="gift-source">{{ i18n "home_gift_source" }} <a href="https://stardewvalleywiki.com/Harvey" target="_blank">{{ i18n "home_calc_wiki" }}</a></p>
             </div>
-            <span class="gift-tag loved">Loved example</span>
+            <span class="gift-tag loved">{{ i18n "home_loved_example" }}</span>
           </div>
           <div class="gift-card">
             <div class="gift-avatar"><img src="/images/villagers/Maru.png" alt=""></div>
             <div class="gift-info">
               <h4>Maru</h4>
               <p class="gift-items">Cauliflower, Cheese, Diamond, Gold Bar</p>
-              <p class="gift-meta">v1.6.15 · Verified 2026-08-11</p>
-              <p class="gift-source">Source: <a href="https://stardewvalleywiki.com/Maru" target="_blank">Stardew Valley Wiki</a></p>
+              <p class="gift-meta">{{ i18n "home_gift_verified" }}</p>
+              <p class="gift-source">{{ i18n "home_gift_source" }} <a href="https://stardewvalleywiki.com/Maru" target="_blank">{{ i18n "home_calc_wiki" }}</a></p>
             </div>
-            <span class="gift-tag liked">Liked example</span>
+            <span class="gift-tag liked">{{ i18n "home_liked_example" }}</span>
           </div>
           <div class="gift-card">
             <div class="gift-avatar"><img src="/images/villagers/Penny.png" alt=""></div>
             <div class="gift-info">
               <h4>Penny</h4>
               <p class="gift-items">Diamond, Melon, Poppy, Red Plate</p>
-              <p class="gift-meta">v1.6.15 · Verified 2026-08-11</p>
-              <p class="gift-source">Source: <a href="https://stardewvalleywiki.com/Penny" target="_blank">Stardew Valley Wiki</a></p>
+              <p class="gift-meta">{{ i18n "home_gift_verified" }}</p>
+              <p class="gift-source">{{ i18n "home_gift_source" }} <a href="https://stardewvalleywiki.com/Penny" target="_blank">{{ i18n "home_calc_wiki" }}</a></p>
             </div>
-            <span class="gift-tag loved">Loved example</span>
+            <span class="gift-tag loved">{{ i18n "home_loved_example" }}</span>
           </div>
           <div class="gift-card">
             <div class="gift-avatar"><img src="/images/villagers/Sam.png" alt=""></div>
             <div class="gift-info">
               <h4>Sam</h4>
               <p class="gift-items">Cactus Fruit, Maple Bar, Pizza, Ice Cream</p>
-              <p class="gift-meta">v1.6.15 · Verified 2026-08-11</p>
-              <p class="gift-source">Source: <a href="https://stardewvalleywiki.com/Sam" target="_blank">Stardew Valley Wiki</a></p>
+              <p class="gift-meta">{{ i18n "home_gift_verified" }}</p>
+              <p class="gift-source">{{ i18n "home_gift_source" }} <a href="https://stardewvalleywiki.com/Sam" target="_blank">{{ i18n "home_calc_wiki" }}</a></p>
             </div>
-            <span class="gift-tag loved">Loved example</span>
+            <span class="gift-tag loved">{{ i18n "home_loved_example" }}</span>
           </div>
           <div class="gift-card">
             <div class="gift-avatar"><img src="/images/villagers/Shane.png" alt=""></div>
             <div class="gift-info">
               <h4>Shane</h4>
               <p class="gift-items">Hot Pepper, Beer, Pizza, Pepper Poppers</p>
-              <p class="gift-meta">v1.6.15 · Verified 2026-08-11</p>
-              <p class="gift-source">Source: <a href="https://stardewvalleywiki.com/Shane" target="_blank">Stardew Valley Wiki</a></p>
+              <p class="gift-meta">{{ i18n "home_gift_verified" }}</p>
+              <p class="gift-source">{{ i18n "home_gift_source" }} <a href="https://stardewvalleywiki.com/Shane" target="_blank">{{ i18n "home_calc_wiki" }}</a></p>
             </div>
-            <span class="gift-tag loved">Loved example</span>
+            <span class="gift-tag loved">{{ i18n "home_loved_example" }}</span>
           </div>
           <div class="gift-card">
             <div class="gift-avatar"><img src="/images/villagers/Alex.png" alt=""></div>
             <div class="gift-info">
               <h4>Alex</h4>
               <p class="gift-items">Complete Breakfast, Salmon Dinner, Maple Bar</p>
-              <p class="gift-meta">v1.6.15 · Verified 2026-08-11</p>
-              <p class="gift-source">Source: <a href="https://stardewvalleywiki.com/Alex" target="_blank">Stardew Valley Wiki</a></p>
+              <p class="gift-meta">{{ i18n "home_gift_verified" }}</p>
+              <p class="gift-source">{{ i18n "home_gift_source" }} <a href="https://stardewvalleywiki.com/Alex" target="_blank">{{ i18n "home_calc_wiki" }}</a></p>
             </div>
-            <span class="gift-tag liked">Liked example</span>
+            <span class="gift-tag liked">{{ i18n "home_liked_example" }}</span>
           </div>
         </div>
       </div>
@@ -388,27 +388,27 @@
 
     <div class="gift-footnotes">
       <div class="fn-box">
-        <h4>Why gift lookup belongs next to the planner</h4>
-        <p>Gift timing is date-based friendship. It tells you which items are available in your current farm, which gifts you can harvest from your own crops, and which items can be bought at multiple shops.</p>
+        <h4>{{ i18n "home_gift_why" }}</h4>
+        <p>{{ i18n "home_gift_why_p" }}</p>
       </div>
       <div class="fn-box">
-        <h4>Limits you should know</h4>
-        <p>This first version covers universal loved gifts and profession bonuses. Mixed bundles and platform differences are not included. Check the full gift guide for exact heart requirements and modded crops.</p>
+        <h4>{{ i18n "home_gift_limits" }}</h4>
+        <p>{{ i18n "home_gift_limits_p" }}</p>
       </div>
     </div>
   </section>
 
-  <!-- Crop Profit Calculator -->
+  <!-- Crop {{ i18n "home_calc_eyebrow" }} -->
   <section class="home-crop-calculator">
-    <p class="section-eyebrow">Profit Calculator</p>
-    <h2>Crop Profit Calculator</h2>
-    <p class="calc-side-note">Input your own assumptions, or load a versioned base-game preset. Results come only from visible arithmetic, not hidden recommendations.</p>
+    <p class="section-eyebrow">{{ i18n "home_calc_eyebrow" }}</p>
+    <h2>{{ i18n "home_calc_title" }}</h2>
+    <p class="calc-side-note">{{ i18n "home_calc_note" }}</p>
 
     <div class="calc-layout">
       <div class="calc-left">
-        <label class="calc-label">Load reference crop
+        <label class="calc-label">{{ i18n "home_calc_load" }}
           <select id="cropSelect" class="calc-select">
-            <option value="manual">Manual input</option>
+            <option value="manual">{{ i18n "home_calc_manual" }}</option>
             <option data-seed="20" data-sell="100" data-days="4" data-harvest="1" data-extra="0">Parsnip</option>
             <option data-seed="80" data-sell="200" data-days="13" data-harvest="1" data-extra="0">Cauliflower</option>
             <option data-seed="50" data-sell="80" data-days="6" data-harvest="1" data-extra="0">Potato</option>
@@ -434,142 +434,142 @@
             <option data-seed="20" data-sell="40" data-days="4" data-harvest="1" data-extra="0">Fairy Rose</option>
           </select>
         </label>
-        <p class="calc-version">v1.6.15 · Verified 2026-08-11 · Source: <a href="https://stardewvalleywiki.com/Crops" target="_blank">Stardew Valley Wiki</a></p>
+        <p class="calc-version">{{ i18n "home_calc_version" }} <a href="https://stardewvalleywiki.com/Crops" target="_blank">{{ i18n "home_calc_wiki" }}</a></p>
 
         <div class="calc-inputs">
           <div class="calc-input">
-            <label>Seed cost</label>
+            <label>{{ i18n "home_seed_cost" }}</label>
             <input type="number" id="seedCost" value="80" min="0">
-            <span>g per crop</span>
+            <span>{{ i18n "home_g_per_crop" }}</span>
           </div>
           <div class="calc-input">
-            <label>Sell price</label>
+            <label>{{ i18n "home_sell_price" }}</label>
             <input type="number" id="sellPrice" value="200" min="0">
-            <span>g per harvest</span>
+            <span>{{ i18n "home_g_per_harvest" }}</span>
           </div>
           <div class="calc-input">
-            <label>Growth days</label>
+            <label>{{ i18n "home_growth_days" }}</label>
             <input type="number" id="growthDays" value="13" min="1">
-            <span>days to first harvest</span>
+            <span>{{ i18n "home_days_to_harvest" }}</span>
           </div>
           <div class="calc-input">
-            <label>Harvests</label>
+            <label>{{ i18n "home_harvests" }}</label>
             <input type="number" id="harvests" value="1" min="1">
-            <span>total harvests this season</span>
+            <span>{{ i18n "home_total_harvests" }}</span>
           </div>
           <div class="calc-input">
-            <label>Extra cost</label>
+            <label>{{ i18n "home_extra_cost" }}</label>
             <input type="number" id="extraCost" value="0" min="0">
-            <span>fertilizer or other</span>
+            <span>{{ i18n "home_fertilizer" }}</span>
           </div>
         </div>
 
-        <button class="calc-btn" onclick="calcProfit()">Calculate profit</button>
-        <p class="calc-hint">Visible input arithmetic only.</p>
+        <button class="calc-btn" onclick="calcProfit()">{{ i18n "home_calc_btn" }}</button>
+        <p class="calc-hint">{{ i18n "home_calc_hint" }}</p>
       </div>
 
       <div class="calc-right">
         <div class="calc-result-card">
-          <span class="calc-status">Ready</span>
-          <div class="calc-big-number"><span id="profitResult">0</span> <span class="calc-unit">g net profit</span></div>
+          <span class="calc-status">{{ i18n "home_calc_ready" }}</span>
+          <div class="calc-big-number"><span id="profitResult">0</span> <span class="calc-unit">{{ i18n "home_g_net" }}</span></div>
           <div class="calc-breakdown">
-            <div><span>Revenue</span><strong id="revenueOut">0g</strong></div>
-            <div><span>Costs</span><strong id="costOut">0g</strong></div>
-            <div><span>Per day</span><strong id="perDayOut">0.0g</strong></div>
+            <div><span>{{ i18n "home_revenue" }}</span><strong id="revenueOut">0g</strong></div>
+            <div><span>{{ i18n "home_costs" }}</span><strong id="costOut">0g</strong></div>
+            <div><span>{{ i18n "home_per_day" }}</span><strong id="perDayOut">0.0g</strong></div>
           </div>
-          <p class="calc-formula">Formula: revenue minus seed and extra costs; daily profit equals net profit divided by growth days. Excludes processing, profession, quality and repeat growth.</p>
+          <p class="calc-formula">{{ i18n "home_formula" }}</p>
         </div>
       </div>
     </div>
 
     <div class="calc-footnotes">
       <div class="fn-box">
-        <h4>Use it to compare</h4>
-        <p>Compare two crops by repeating this calculator twice. Confirm which assumptions matter before comparing expected profit per day.</p>
-        <p><a href="/tier/crop-profit/">See full crop tier list →</a></p>
+        <h4>{{ i18n "home_calc_compare" }}</h4>
+        <p>{{ i18n "home_calc_compare_p" }}</p>
+        <p><a href="/tier/crop-profit/">{{ i18n "home_calc_full" }}</a></p>
       </div>
       <div class="fn-box">
-        <h4>Know the bounds</h4>
-        <p>Results may change with profession, quality, artisan goods, processing and modded crops. This tool is a visible calculator, not a hidden recommendation.</p>
+        <h4>{{ i18n "home_calc_bounds" }}</h4>
+        <p>{{ i18n "home_calc_bounds_p" }}</p>
       </div>
     </div>
   </section>
 
   <!-- Workflow Steps -->
   <section class="home-workflow">
-    <p class="section-eyebrow">Designed for a play session</p>
-    <h2>A small workflow, not another tab maze.</h2>
-    <p class="workflow-side-note">Use the workspace in the order that a real farm decision tends to happen.</p>
+    <p class="section-eyebrow">{{ i18n "home_wf_eyebrow" }}</p>
+    <h2>{{ i18n "home_wf_title" }}</h2>
+    <p class="workflow-side-note">{{ i18n "home_wf_note" }}</p>
 
     <div class="workflow-grid">
       <div class="wf-card">
         <span class="wf-num">01</span>
-        <h4>Sketch the constraint</h4>
-        <p>Place fields, buildings, paths, trees, and water on the grid. Save the rough idea before you start optimizing.</p>
+        <h4>{{ i18n "home_wf1_h" }}</h4>
+        <p>{{ i18n "home_wf1_p" }}</p>
       </div>
       <div class="wf-card">
         <span class="wf-num">02</span>
-        <h4>Check the season</h4>
-        <p>Review the bundle sample and mark goals that compete for the same seasonal window of crop or crop.</p>
+        <h4>{{ i18n "home_wf2_h" }}</h4>
+        <p>{{ i18n "home_wf2_p" }}</p>
       </div>
       <div class="wf-card">
         <span class="wf-num">03</span>
-        <h4>Choose a useful gift</h4>
-        <p>Search the reference set by item or villagers and confirm the complete preference table before acting in game.</p>
+        <h4>{{ i18n "home_wf3_h" }}</h4>
+        <p>{{ i18n "home_wf3_p" }}</p>
       </div>
       <div class="wf-card">
         <span class="wf-num">04</span>
-        <h4>Test the margin</h4>
-        <p>Change the visible inputs, compare results, and keep the assumptions that match your own save.</p>
+        <h4>{{ i18n "home_wf4_h" }}</h4>
+        <p>{{ i18n "home_wf4_p" }}</p>
       </div>
     </div>
   </section>
 
   <!-- Trust and Scope -->
   <section class="home-trust">
-    <p class="section-eyebrow">Trust and scope</p>
-    <h2>What this MVP knows, and what it does not.</h2>
+    <p class="section-eyebrow">{{ i18n "home_trust_eyebrow" }}</p>
+    <h2>{{ i18n "home_trust_title" }}</h2>
     <div class="trust-grid">
       <div class="trust-card">
         <div class="trust-icon">📋</div>
-        <h4>Versioned reference data</h4>
-        <p>The bundle groups, dateable-villager gift examples, and crop presets are tied to Stardew Valley 1.6.15 PC references and verified on 2026-08-11. They remain a focused subset, not a complete automatically updated wiki.</p>
+        <h4>{{ i18n "home_trust1_h" }}</h4>
+        <p>{{ i18n "home_trust1_p" }}</p>
       </div>
       <div class="trust-card">
         <div class="trust-icon">📄</div>
-        <h4>Source before scale</h4>
-        <p>Each interactive record carries a source link, version boundary, and verification date. Remixed bundles, platform differences, and preference states outside the current scope are intentionally excluded.</p>
+        <h4>{{ i18n "home_trust2_h" }}</h4>
+        <p>{{ i18n "home_trust2_p" }}</p>
       </div>
       <div class="trust-card">
         <div class="trust-icon">🔒</div>
-        <h4>Local by default</h4>
-        <p>Planner and checklist state is stored locally. No save file upload, account, or remote farm data is part of this MVP.</p>
+        <h4>{{ i18n "home_trust3_h" }}</h4>
+        <p>{{ i18n "home_trust3_p" }}</p>
       </div>
     </div>
-    <p class="trust-foot">Background references: <a href="https://stardewvalleywiki.com" target="_blank">official Stardew Valley site</a>, <a href="https://store.steampowered.com/app/413150/Stardew_Valley/" target="_blank">Steam listing</a>, and community wiki.</p>
+    <p class="trust-foot">{{ i18n "home_trust_foot" }} <a href="https://stardewvalleywiki.com" target="_blank">official Stardew Valley site</a>, <a href="https://store.steampowered.com/app/413150/Stardew_Valley/" target="_blank">Steam listing</a>, and community wiki.</p>
   </section>
 
   <!-- FAQ -->
   <section class="home-faq">
     <div class="faq-layout">
       <div class="faq-left">
-        <p class="section-eyebrow">Questions</p>
-        <h2>Stardew Valley<br>Planner FAQ</h2>
-        <p class="faq-side-note">Short answers for the tool's current scope. Production pages should expand these with versioned data and route-specific examples.</p>
+        <p class="section-eyebrow">{{ i18n "home_faq_eyebrow" }}</p>
+        <h2>{{ i18n "home_faq_title_1" }}<br>{{ i18n "home_faq_title_2" }}</h2>
+        <p class="faq-side-note">{{ i18n "home_faq_note" }}</p>
       </div>
       <div class="faq-right">
-        <details class="faq-item"><summary>What does this Stardew Valley Planner do?</summary><p>It provides a farm layout grid, a community center bundle checklist, a gift lookup, and a crop profit calculator — all in one workspace for planning your run.</p></details>
-        <details class="faq-item"><summary>Does the farm planner know every in-game collision rule?</summary><p>No. The grid is a sketch tool. Confirm exact footprints and collision rules in-game before building.</p></details>
-        <details class="faq-item"><summary>Is the bundle checklist complete?</summary><p>It covers the standard 1.6.15 bundles. Mixed variants and platform differences are not included in this first version.</p></details>
-        <details class="faq-item"><summary>Can I save my Stardew Valley farm layout?</summary><p>Yes. Save draft stores your plan name and tile map in your browser. Export JSON gives you a portable backup.</p></details>
-        <details class="faq-item"><summary>How does the crop calculator work?</summary><p>Enter seed cost, sell price, growth days, harvest count, and extra cost. Net profit = (revenue − seed cost − extra cost) / growth days.</p></details>
-        <details class="faq-item"><summary>Does Valley Ledger belong to Stardew Valley?</summary><p>No. This is an unofficial fan resource built from open-source game data. Not affiliated with ConcernedApe.</p></details>
+        <details class="faq-item"><summary>{{ i18n "home_faq1_q" }}</summary><p>{{ i18n "home_faq1_a" }}</p></details>
+        <details class="faq-item"><summary>{{ i18n "home_faq2_q" }}</summary><p>{{ i18n "home_faq2_a" }}</p></details>
+        <details class="faq-item"><summary>{{ i18n "home_faq3_q" }}</summary><p>{{ i18n "home_faq3_a" }}</p></details>
+        <details class="faq-item"><summary>{{ i18n "home_faq4_q" }}</summary><p>{{ i18n "home_faq4_a" }}</p></details>
+        <details class="faq-item"><summary>{{ i18n "home_faq5_q" }}</summary><p>{{ i18n "home_faq5_a" }}</p></details>
+        <details class="faq-item"><summary>{{ i18n "home_faq6_q" }}</summary><p>{{ i18n "home_faq6_a" }}</p></details>
       </div>
     </div>
   </section>
 
   <section class="latest">
-    <h2>Latest Updates</h2>
+    <h2>{{ i18n "home_latest" }}</h2>
     <ul>
       {{ $updates := (where .Site.RegularPages "Section" "updates").ByDate.Reverse }}
       {{ range first 5 $updates }}
@@ -643,7 +643,7 @@
 
   document.getElementById('clearBtn').addEventListener('click', function(){
     saved = {}; localStorage.removeItem('svfarm'); render();
-    document.getElementById('saveStatus').textContent = 'Board cleared.';
+    document.getElementById('saveStatus').textContent = '{{ i18n "home_board_cleared" }}';
   });
 
   document.getElementById('saveBtn').addEventListener('click', function(){
@@ -651,7 +651,7 @@
     var d = new Date();
     var hh = String(d.getHours()).padStart(2,'0');
     var mm = String(d.getMinutes()).padStart(2,'0');
-    document.getElementById('saveStatus').textContent = 'Draft saved ' + (d.getMonth()+1) + '/' + d.getDate() + ' ' + hh + ':' + mm;
+    document.getElementById('saveStatus').textContent = '{{ i18n "home_draft_saved" }}' + (d.getMonth()+1) + '/' + d.getDate() + ' ' + hh + ':' + mm;
   });
 
   document.getElementById('planName').addEventListener('input', function(){

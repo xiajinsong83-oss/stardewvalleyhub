@@ -6,17 +6,17 @@
   <section class="home-gift-lookup">
     <p class="section-eyebrow">Quick Lookup</p>
     <h2>Gift Lookup: Find Useful Gifts for Villagers</h2>
-    <p class="gift-side-note">Search by villager name or loved gift to build a complete gift list. This quick lookup does not include universal loved, liked or hated gifts.</p>
+    <p class="gift-side-note">{{ i18n "home_gift_note" }}</p>
 
     <div class="gift-layout">
       <div class="gift-left">
         <img src="/images/gift-lookup-card.webp" alt="Gift notes" class="gift-notes-img" onerror="this.style.display='none'">
         <p class="gift-notes-label">Gift notes / lookup</p>
-        <label class="gift-search-label">Search villager or gift
+        <label class="gift-search-label">{{ i18n "home_search_villager" }}
           <span class="gift-count">34 villagers</span>
         </label>
-        <input type="text" id="giftSearch" class="gift-search-input" placeholder="Try Caroline, 南瓜">
-        <p class="gift-search-hint">Search by villager name or loved gift to build a complete gift list. This quick lookup does not include universal loved, liked or hated gifts.</p>
+        <input type="text" id="giftSearch" class="gift-search-input" placeholder="Try Caroline, Pumpkin">
+        <p class="gift-search-hint">{{ i18n "home_gift_note" }}</p>
       </div>
 
       <div class="gift-right">

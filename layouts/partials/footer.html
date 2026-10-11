@@ -1,13 +1,13 @@
 <footer class="site-footer">
   <div class="container footer-inner">
-    <p class="footer-note">Stardew Valley Hub is an <strong>unofficial fan resource</strong> built from open-source machine-readable game data. Not affiliated with or endorsed by ConcernedApe. Stardew Valley and related trademarks belong to their respective owners.</p>
-    <nav class="footer-nav" aria-label="Legal">
-      <a href="/privacy/">Privacy Policy</a>
-      <a href="/terms/">Terms of Service</a>
-      <a href="/dmca/">DMCA</a>
-      <a href="/about/">About Us</a>
-      <a href="/contact/">Contact Us</a>
-      <a href="/feedback/">Feedback</a>
+    <p class="footer-note">{{ i18n "footer_note" | safeHTML }}</p>
+    <nav class="footer-nav" aria-label="{{ i18n "footer_legal" }}">
+      <a href="{{ with site.GetPage "/privacy" }}{{ .RelPermalink }}{{ else }}/privacy/{{ end }}">{{ i18n "footer_privacy" }}</a>
+      <a href="{{ with site.GetPage "/terms" }}{{ .RelPermalink }}{{ else }}/terms/{{ end }}">{{ i18n "footer_terms" }}</a>
+      <a href="{{ with site.GetPage "/dmca" }}{{ .RelPermalink }}{{ else }}/dmca/{{ end }}">DMCA</a>
+      <a href="{{ with site.GetPage "/about" }}{{ .RelPermalink }}{{ else }}/about/{{ end }}">{{ i18n "footer_about" }}</a>
+      <a href="{{ with site.GetPage "/contact" }}{{ .RelPermalink }}{{ else }}/contact/{{ end }}">{{ i18n "footer_contact" }}</a>
+      <a href="{{ with site.GetPage "/feedback" }}{{ .RelPermalink }}{{ else }}/feedback/{{ end }}">{{ i18n "footer_feedback" }}</a>
     </nav>
     <p class="footer-meta">Email: <a href="mailto:{{ .Site.Params.email }}">{{ .Site.Params.email }}</a> | © {{ now.Year }} www.stardewvalleyhub.wiki</p>
   </div>

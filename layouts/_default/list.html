@@ -11,17 +11,17 @@
   <div class="pals-toolbar">
     <div class="pals-search">
       <span class="pals-search-icon">🔍</span>
-      <input type="search" id="cardSearch" placeholder="Search {{ .Title | lower }}…" aria-label="Search">
+      <input type="search" id="cardSearch" placeholder="{{ printf (i18n "tool_search_ph") .Title }}" aria-label="{{ i18n "tool_show" }}">
       <span class="pals-count"><span id="cardCount">{{ len $pages }}</span> / {{ len $pages }}</span>
     </div>
     {{ if eq .Type "npc" }}
     <select id="filterType" class="pals-select" aria-label="Filter by type">
-      <option value="">All villagers</option>
+      <option value="">{{ i18n "tool_all_villagers" }}</option>
       <option value="marriageable">Marriage candidates</option>
       <option value="normal">Regular villagers</option>
     </select>
     <select id="filterSeason" class="pals-select" aria-label="Filter by birthday season">
-      <option value="">All seasons</option>
+      <option value="">{{ i18n "tool_all_seasons" }}</option>
       <option value="spring">Spring birthdays</option>
       <option value="summer">Summer birthdays</option>
       <option value="fall">Fall birthdays</option>
@@ -30,7 +30,7 @@
     {{ end }}
     {{ if eq .Type "bundles" }}
     <select id="filterType" class="pals-select" aria-label="Filter by room">
-      <option value="">All rooms</option>
+      <option value="">{{ i18n "tool_all_rooms" }}</option>
       <option value="crafts-room">Crafts Room</option>
       <option value="pantry">Pantry</option>
       <option value="fish-tank">Fish Tank</option>
@@ -41,7 +41,7 @@
     {{ end }}
     {{ if eq .Type "weapons" }}
     <select id="filterType" class="pals-select" aria-label="Filter by weapon type">
-      <option value="">All types</option>
+      <option value="">{{ i18n "tool_all_types" }}</option>
       <option value="sword">Swords</option>
       <option value="dagger">Daggers</option>
       <option value="club">Clubs</option>
@@ -50,7 +50,7 @@
     {{ end }}
     {{ if eq .Type "crops" }}
     <select id="filterType" class="pals-select" aria-label="Filter by season">
-      <option value="">All seasons</option>
+      <option value="">{{ i18n "tool_all_seasons" }}</option>
       <option value="spring">Spring</option>
       <option value="summer">Summer</option>
       <option value="fall">Fall</option>
@@ -59,7 +59,7 @@
     {{ end }}
     {{ if eq .Type "fish" }}
     <select id="filterType" class="pals-select" aria-label="Filter by location">
-      <option value="">All locations</option>
+      <option value="">{{ i18n "tool_all_locations" }}</option>
       <option value="ocean">Ocean / Beach</option>
       <option value="river">River</option>
       <option value="lake">Lake / Pond</option>
@@ -67,7 +67,7 @@
       <option value="island">Ginger Island</option>
     </select>
     <select id="filterSeason" class="pals-select" aria-label="Filter by season">
-      <option value="">All seasons</option>
+      <option value="">{{ i18n "tool_all_seasons" }}</option>
       <option value="spring">Spring</option>
       <option value="summer">Summer</option>
       <option value="fall">Fall</option>
@@ -76,7 +76,7 @@
     {{ end }}
     {{ if eq .Type "monsters" }}
     <select id="filterType" class="pals-select" aria-label="Filter by location">
-      <option value="">All locations</option>
+      <option value="">{{ i18n "tool_all_locations" }}</option>
       <option value="mines">The Mines</option>
       <option value="skull-cavern">Skull Cavern</option>
       <option value="volcano">Volcano Dungeon</option>

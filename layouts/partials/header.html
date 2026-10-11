@@ -3,44 +3,44 @@
     <a class="logo" href="{{ .Site.Home.RelPermalink }}"><img src="/favicon.png" alt="" class="logo-icon">Stardew Valley <span>Hub</span></a>
     <nav class="main-nav" id="mainNav" aria-label="Main navigation">
       <div class="nav-dropdown" id="guidesDrop">
-        <button class="nav-drop-btn" onclick="toggleDrop('guidesDrop')">Guides ▾</button>
+        <button class="nav-drop-btn" onclick="toggleDrop('guidesDrop')">{{ i18n "nav_guides" }} ▾</button>
         <div class="nav-drop-menu">
-          <a href="/starter/"><b>Starter</b></a>
-          <a href="/npc/">NPC Gifts</a>
-          <a href="/crops/">Crops</a>
-          <a href="/fish/">Fish</a>
-          <a href="/bundles/">Bundles</a>
-          <a href="/boss/">Bosses</a>
-          <a href="/weapons/">Weapons</a>
-          <a href="/monsters/">Monsters</a>
-          <a href="/museum/">Museum</a>
-          <a href="/tier/crop-profit/">Tier</a>
+          <a href="{{ with site.GetPage "/starter" }}{{ .RelPermalink }}{{ else }}/starter/{{ end }}"><b>{{ i18n "nav_starter" }}</b></a>
+          <a href="{{ with site.GetPage "/npc" }}{{ .RelPermalink }}{{ else }}/npc/{{ end }}">{{ i18n "nav_npc_gifts" }}</a>
+          <a href="{{ with site.GetPage "/crops" }}{{ .RelPermalink }}{{ else }}/crops/{{ end }}">{{ i18n "nav_crops" }}</a>
+          <a href="{{ with site.GetPage "/fish" }}{{ .RelPermalink }}{{ else }}/fish/{{ end }}">{{ i18n "nav_fish" }}</a>
+          <a href="{{ with site.GetPage "/bundles" }}{{ .RelPermalink }}{{ else }}/bundles/{{ end }}">{{ i18n "nav_bundles" }}</a>
+          <a href="{{ with site.GetPage "/boss" }}{{ .RelPermalink }}{{ else }}/boss/{{ end }}">{{ i18n "nav_bosses" }}</a>
+          <a href="{{ with site.GetPage "/weapons" }}{{ .RelPermalink }}{{ else }}/weapons/{{ end }}">{{ i18n "nav_weapons" }}</a>
+          <a href="{{ with site.GetPage "/monsters" }}{{ .RelPermalink }}{{ else }}/monsters/{{ end }}">{{ i18n "nav_monsters" }}</a>
+          <a href="{{ with site.GetPage "/museum" }}{{ .RelPermalink }}{{ else }}/museum/{{ end }}">{{ i18n "nav_museum" }}</a>
+          <a href="{{ with site.GetPage "/tier/crop-profit" }}{{ .RelPermalink }}{{ else }}/tier/crop-profit/{{ end }}">{{ i18n "nav_tier" }}</a>
         </div>
       </div>
-      <a class="nav-link" href="/all-guides/">Guides Hub</a>
+      <a class="nav-link" href="{{ with site.GetPage "/all-guides" }}{{ .RelPermalink }}{{ else }}/all-guides/{{ end }}">{{ i18n "nav_guides_hub" }}</a>
       <!-- Farm Layout 下拉（桌面+手机共用） -->
       <div class="nav-dropdown" id="farmDrop">
-        <button class="nav-drop-btn" onclick="toggleDrop('farmDrop')">Farm Layout ▾</button>
+        <button class="nav-drop-btn" onclick="toggleDrop('farmDrop')">{{ i18n "nav_farm_layout" }} ▾</button>
         <div class="nav-drop-menu">
-          <a href="/maps/">Farm Maps</a>
-          <a href="/farm-types/">Farm Types</a>
+          <a href="{{ with site.GetPage "/maps" }}{{ .RelPermalink }}{{ else }}/maps/{{ end }}">{{ i18n "nav_farm_maps" }}</a>
+          <a href="{{ with site.GetPage "/farm-types" }}{{ .RelPermalink }}{{ else }}/farm-types/{{ end }}">{{ i18n "nav_farm_types" }}</a>
         </div>
       </div>
       <!-- Player Tools 下拉（桌面+手机共用） -->
       <div class="nav-dropdown" id="toolsDrop">
-        <button class="nav-drop-btn" onclick="toggleDrop('toolsDrop')">Player Tools ▾</button>
+        <button class="nav-drop-btn" onclick="toggleDrop('toolsDrop')">{{ i18n "nav_player_tools" }} ▾</button>
         <div class="nav-drop-menu">
-          <a href="/farmlayou/">Farm Layout Planner</a>
-          <a href="/gift/">Gift Lookup</a>
-          <a href="/calculator/">Crop Profit Calculator</a>
-          <a href="/bundles/">CC Checklist</a>
-          <a href="/fish-checklist/">Fish Check</a>
-          <a href="/sprinkler-layout-guide/">Sprinkler Planner</a>
-          <a href="/museum-checklist/">Museum Check</a>
+          <a href="{{ with site.GetPage "/farmlayou" }}{{ .RelPermalink }}{{ else }}/farmlayou/{{ end }}">{{ i18n "nav_farm_layout_planner" }}</a>
+          <a href="{{ with site.GetPage "/gift" }}{{ .RelPermalink }}{{ else }}/gift/{{ end }}">{{ i18n "nav_gift_lookup" }}</a>
+          <a href="{{ with site.GetPage "/calculator" }}{{ .RelPermalink }}{{ else }}/calculator/{{ end }}">{{ i18n "nav_crop_profit_calculator" }}</a>
+          <a href="{{ with site.GetPage "/bundles" }}{{ .RelPermalink }}{{ else }}/bundles/{{ end }}">{{ i18n "nav_cc_checklist" }}</a>
+          <a href="{{ with site.GetPage "/fish-checklist" }}{{ .RelPermalink }}{{ else }}/fish-checklist/{{ end }}">{{ i18n "nav_fish_check" }}</a>
+          <a href="{{ with site.GetPage "/sprinkler-layout-guide" }}{{ .RelPermalink }}{{ else }}/sprinkler-layout-guide/{{ end }}">{{ i18n "nav_sprinkler_planner" }}</a>
+          <a href="{{ with site.GetPage "/museum-checklist" }}{{ .RelPermalink }}{{ else }}/museum-checklist/{{ end }}">{{ i18n "nav_museum_check" }}</a>
         </div>
       </div>
-      <a href="/faq/">FAQ</a>
-      <a href="/updates/">Updates</a>
+      <a href="{{ with site.GetPage "/faq" }}{{ .RelPermalink }}{{ else }}/faq/{{ end }}">{{ i18n "nav_faq" }}</a>
+      <a href="{{ with site.GetPage "/updates" }}{{ .RelPermalink }}{{ else }}/updates/{{ end }}">{{ i18n "nav_updates" }}</a>
     </nav>
     {{ partial "lang-switch.html" . }}
   </div>
