@@ -16,6 +16,9 @@ cp data-src/package/data/fish.json data/fish.json
 cp data-src/package/data/artifacts.json data/artifacts.json
 cp data-src/package/data/minerals.json data/minerals.json
 
+echo "[2.6/3] 生成多语言页面（zh-hans/de 随英文自动同步）..."
+python3 scripts/gen_lang.py
+
 echo "[3/3] Hugo 静态构建..."
 hugo --minify
 
