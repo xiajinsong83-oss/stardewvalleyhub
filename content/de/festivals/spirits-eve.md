@@ -1,0 +1,20 @@
+---
+title: "Spirit's Eve – Festivaltermin & Leitfaden"
+description: "Spirit's Eve festival date in Stardew Valley: day 27 of Fall."
+date: 2026-10-04
+type: festivals
+faq:
+  - q: "When is the Spirit's Eve in Stardew Valley?"
+    a: "The Spirit's Eve takes place on day 27 of Fall (a fall festival)."
+  - q: "Is the Spirit's Eve on a specific day?"
+    a: "Yes, it starts on day 27 of the season."
+---
+
+The **Spirit's Eve** is a Fall festival in Stardew Valley.
+
+**When:** Day **27** of Fall (month lasts 28 days).
+
+## Tips
+
+- Festivals last from morning until evening (typically 9am–2pm in-game).
+- Bring gifts and tools: some festivals include contests, fishing and minigames.
