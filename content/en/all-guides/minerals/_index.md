@@ -7,6 +7,7 @@ title: Mineral & Artifact Guides - Stardew Valley Hub
 <div class="card-grid home-grid">
   <a class="card" href="/all-guides/minerals/amethyst/"><h3>Amethyst Guide: Where to Find It (Amethyst Node, 100g Value)</h3><p>Full guide with data, tips and tools.</p></a>
   <a class="card" href="/all-guides/minerals/aquamarine/"><h3>Aquamarine Guide: Where to Find It (Aquamarine Node, 180g Value)</h3><p>Full guide with data, tips and tools.</p></a>
+  <a class="card" href="/all-guides/minerals/bone-fragment/"><h3>A small piece of bone.</h3><p>Full guide with data, tips and tools.</p></a>
   <a class="card" href="/all-guides/minerals/earth-crystal/"><h3>Earth Crystal Guide: Where to Find It (The Mines (Floors 1-39), 50g Value)</h3><p>Full guide with data, tips and tools.</p></a>
   <a class="card" href="/all-guides/minerals/emerald/"><h3>Emerald Guide: Where to Find It (Emerald Node, 250g Value)</h3><p>Full guide with data, tips and tools.</p></a>
   <a class="card" href="/all-guides/minerals/fire-quartz/"><h3>Fire Quartz Guide: Where to Find It (The Mines (Floors 80-120), 100g Value)</h3><p>Full guide with data, tips and tools.</p></a>
