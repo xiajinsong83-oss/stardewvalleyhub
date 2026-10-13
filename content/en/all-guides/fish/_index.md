@@ -10,6 +10,7 @@ title: Fish Guides - Stardew Valley Hub
   <a class="card" href="/all-guides/fish/glacierfish-jr/"><h3>Glacierfish Jr. Guide: Where to Catch It in Winter (Forest (Arrowhead Island), 6:00 AM – 8:00 PM)</h3><p>Full guide with data, tips and tools.</p></a>
   <a class="card" href="/all-guides/fish/largemouth-bass/"><h3>Largemouth Bass Guide: Where to Catch It in Spring, Summer, Fall, Winter (Mountain Lake, 6:00 AM – 7:00 PM)</h3><p>Full guide with data, tips and tools.</p></a>
   <a class="card" href="/all-guides/fish/legend-ii/"><h3>The Legend II is a legendary-2 fish in Stardew Valley. The successor to the original Legend.</h3><p>Full guide with data, tips and tools.</p></a>
+  <a class="card" href="/all-guides/fish/ms-angler/"><h3>The Ms. Angler is a legendary-2 fish in Stardew Valley. Uses a bioluminescent dangler to attract prey.</h3><p>Full guide with data, tips and tools.</p></a>
   <a class="card" href="/all-guides/fish/pufferfish/"><h3>Pufferfish Guide: Where to Catch, Seasons & Tips</h3><p>Full guide with data, tips and tools.</p></a>
   <a class="card" href="/all-guides/fish/radioactive-carp/"><h3>The Radioactive Carp is a legendary-2 fish in Stardew Valley. A carp that spent one too many years in toxic sludge.</h3><p>Full guide with data, tips and tools.</p></a>
   <a class="card" href="/all-guides/fish/rainbow-trout/"><h3>Rainbow Trout Guide: Where to Catch It in Summer (River, Mountain Lake, 6:00 AM – 7:00 PM)</h3><p>Full guide with data, tips and tools.</p></a>
