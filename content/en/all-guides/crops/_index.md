@@ -6,6 +6,7 @@ title: Crop Guides - Stardew Valley Hub
 
 <div class="card-grid home-grid">
   <a class="card" href="/all-guides/crops/cauliflower/"><h3>Cauliflower Guide: How to Grow Cauliflower in Spring (12-Day Growth, Profit & Tips)</h3><p>Full guide with data, tips and tools.</p></a>
+  <a class="card" href="/all-guides/crops/fiber/"><h3>The Fiber is a resource crop in Stardew Valley. Plant these in any season. Does not require watering. Harvest with the scythe. It grows in Spring, Summer, Fall, Winter and is one of the most reliable ways to build early-season income, so it belongs in almost every farm plan.</h3><p>Full guide with data, tips and tools.</p></a>
   <a class="card" href="/all-guides/crops/garlic/"><h3>Garlic Guide: How to Grow Garlic in Spring (4-Day Growth, Profit & Tips)</h3><p>Full guide with data, tips and tools.</p></a>
   <a class="card" href="/all-guides/crops/green-bean/"><h3>Green Bean Guide: How to Grow Green Bean in Spring (10-Day Growth, Profit & Tips)</h3><p>Full guide with data, tips and tools.</p></a>
   <a class="card" href="/all-guides/crops/kale/"><h3>Kale Guide: How to Grow Kale in Spring (6-Day Growth, Profit & Tips)</h3><p>Full guide with data, tips and tools.</p></a>
