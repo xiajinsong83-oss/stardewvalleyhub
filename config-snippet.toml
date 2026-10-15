@@ -1,0 +1,23 @@
+# Hugo 配置片段（备用）
+# 用途：仅当你的 Hugo 版本较老 / 未启用多语言自动 sitemapindex 时，按此启用。
+# 若你的站点当前已能自动生成顶层 sitemapindex（线上文件引用 en/zh-hans/de 即证明已生效），
+# 则【不需要】应用本片段，直接跳过。
+#
+# 用法：合并进你的 config.toml / config.yaml / config.json
+
+# --- config.toml 示例 ---
+# [outputs]
+#   home = ["HTML", "RSS", "sitemapindex"]
+#
+# [outputFormats.sitemapindex]
+#   baseName = "sitemap"
+#   isPlainText = false
+#   mediaType = "application/xml"
+#
+# [sitemap]
+#   defaultTemplate = "sitemap.xml"
+
+# --- 说明 ---
+# - sitemapindex 负责生成顶层 /sitemap.xml（索引，引用各语言子 sitemap）
+# - 各语言目录下的 sitemap 继续使用默认 sitemap.xml 模板（urlset，放页面 URL）
+# - 模板文件使用本包 layouts/_default/sitemapindex.xml

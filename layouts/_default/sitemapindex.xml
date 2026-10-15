@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+{{ range .Site.Languages }}
+{{- $langRoot := printf "%s/%s/" site.BaseURL .Lang }}
+{{- $smapUrl := printf "%ssitemap.xml" $langRoot }}
+{{- if ne $smapUrl (printf "%s" site.BaseURL) }}
+  <sitemap>
+    <loc>{{ $smapUrl }}</loc>
+  </sitemap>
+{{- end }}
+{{ end }}
+</sitemapindex>
