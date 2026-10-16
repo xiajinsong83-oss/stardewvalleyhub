@@ -19,4 +19,5 @@ title: Mineral & Artifact Guides - Stardew Valley Hub
   <a class="card" href="/all-guides/minerals/radioactive-bar/"><h3>Radioactive Bar Guide: Where to Find It (The Mines & Geodes, 3000g Value)</h3><p>Full guide with data, tips and tools.</p></a>
   <a class="card" href="/all-guides/minerals/radioactive-ore/"><h3>It's glowing with dangerous energy... Can be smelted into bars.</h3><p>Full guide with data, tips and tools.</p></a>
   <a class="card" href="/all-guides/minerals/ruby/"><h3>Ruby Guide: Where to Find It (Ruby Node, 250g Value)</h3><p>Full guide with data, tips and tools.</p></a>
+  <a class="card" href="/all-guides/minerals/star-shards/"><h3>No one knows how these form. Microscopic structure displays unnatural regularity.</h3><p>Full guide with data, tips and tools.</p></a>
 </div>
