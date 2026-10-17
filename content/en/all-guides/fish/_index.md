@@ -19,5 +19,6 @@ title: Fish Guides - Stardew Valley Hub
   <a class="card" href="/all-guides/fish/sardine/"><h3>Sardine Guide: Where to Catch It in Spring, Summer, Fall, Winter (Ocean, 6:00 AM – 7:00 PM)</h3><p>Full guide with data, tips and tools.</p></a>
   <a class="card" href="/all-guides/fish/smallmouth-bass/"><h3>Smallmouth Bass Guide: Where to Catch It in Spring, Fall (River, Forest Pond, 6:00 AM – 2:00 AM)</h3><p>Full guide with data, tips and tools.</p></a>
   <a class="card" href="/all-guides/fish/son-of-crimsonfish/"><h3>The Son of Crimsonfish is a legendary-2 fish in Stardew Valley. He hatched in the warm summer water, and followed in the footsteps of his father.</h3><p>Full guide with data, tips and tools.</p></a>
+  <a class="card" href="/all-guides/fish/stingray/"><h3>The Stingray is a regular fish in Stardew Valley. Despite having a toxic stinger, these fish are shy and prefer to avoid humans.</h3><p>Full guide with data, tips and tools.</p></a>
   <a class="card" href="/all-guides/fish/tuna/"><h3>Tuna Guide: Where to Catch It in Summer, Winter (Ocean, Ginger Island, 6:00 AM – 7:00 PM)</h3><p>Full guide with data, tips and tools.</p></a>
 </div>

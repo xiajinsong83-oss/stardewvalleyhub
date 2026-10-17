@@ -11,6 +11,7 @@ title: Mineral & Artifact Guides - Stardew Valley Hub
   <a class="card" href="/all-guides/minerals/cinder-shard/"><h3>You can feel a warm glow from within this stone.</h3><p>Full guide with data, tips and tools.</p></a>
   <a class="card" href="/all-guides/minerals/earth-crystal/"><h3>Earth Crystal Guide: Where to Find It (The Mines (Floors 1-39), 50g Value)</h3><p>Full guide with data, tips and tools.</p></a>
   <a class="card" href="/all-guides/minerals/emerald/"><h3>Emerald Guide: Where to Find It (Emerald Node, 250g Value)</h3><p>Full guide with data, tips and tools.</p></a>
+  <a class="card" href="/all-guides/minerals/fairy-stone/"><h3>An old miner's song suggests these are made from ancient fairy bones.</h3><p>Full guide with data, tips and tools.</p></a>
   <a class="card" href="/all-guides/minerals/fire-quartz/"><h3>Fire Quartz Guide: Where to Find It (The Mines (Floors 80-120), 100g Value)</h3><p>Full guide with data, tips and tools.</p></a>
   <a class="card" href="/all-guides/minerals/frozen-tear/"><h3>Frozen Tear Guide: Where to Find It (The Mines (Floors 40-79), 75g Value)</h3><p>Full guide with data, tips and tools.</p></a>
   <a class="card" href="/all-guides/minerals/golden-coconut/"><h3>A blacksmith can crack this open. The first one always yields a Golden Walnut.</h3><p>Full guide with data, tips and tools.</p></a>
