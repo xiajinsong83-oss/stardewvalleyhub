@@ -1,49 +1,50 @@
 ---
-title: "Garlic Guide: How to Grow Garlic in Spring (4-Day Growth, Profit & Tips)"
-description: "Garlic Guide: How to Grow Garlic in Spring (4-Day Growth, Profit & Tips) — A pungent herb used in cooking. The aroma is known to keep monsters at bay."
-date: 2026-10-10
-cover: "/images/guide-covers/crops-alt.jpg"
+title: "Garlic 种植攻略：春季 成熟 4 天 | 星露谷物语"
+description: "Garlic 种植攻略：春季 成熟 4 天 | 星露谷物语 — A pungent herb used in cooking. The aroma is known to keep monsters at bay."
+date: 2026-10-19
 draft: false
 type: guide
 icon: "/images/crops/garlic/crop.png"
-related: [{"title": "Farm Layout Planner", "url": "/farmlayou/"}, {"title": "Crop Profit Calculator", "url": "/calculator/"}]
+related: [{"title": "农场布局规划器", "url": "/zh-hans/farmlayou/"}, {"title": "作物利润计算器", "url": "/zh-hans/calculator/"}]
+cover: "/images/guide-covers/crops.jpg"
 ---
-The Garlic is a vegetable crop in Stardew Valley. A pungent herb used in cooking. The aroma is known to keep monsters at bay. It grows in Spring and is one of the most reliable ways to build early-season income, so it belongs in almost every farm plan.
+**Garlic** 是星露谷物语中的一种 vegetable 作物。A pungent herb used in cooking. The aroma is known to keep monsters at bay.可在 **春季** 种植，是早期最稳定的收入来源之一，几乎所有农场规划都应种植。
 
-## At a Glance
+## 一览
 
-| Detail | Value |
+| 项目 | 数值 |
 |---|---|
-| Season | Spring |
-| Growth time | 4 days |
-| Regrow | No |
-| Seed cost | Pierre's (40g); JojaMart (50g) |
-| Sell price | 60g |
-| Max quality | Iridium |
-| Category | vegetable |
-| Trellis | No |
-| Giant crop | No |
-| Farming XP | 12 |
+| 季节 | 春季 |
+| 生长时间 | 4 天 |
+| 重复结果 | 否 |
+| 种子成本 | Pierre's (40g); JojaMart (50g) |
+| 售价 | 60g |
+| 最高品质 | 铱星 |
+| 类别 | vegetable |
+| 支架 | 否 |
+| 巨型作物 | 否 |
+| 种植经验 | 12 |
 
-## How to Grow
+## 如何种植
 
-Plant Garlic Seeds in tilled, watered soil at the start of the season. The crop takes **4 days** to mature. Water every morning (or set up a sprinkler) so the growth timer never pauses.
+在季节初把 Garlic Seeds 种在翻过并浇过水的土壤里。作物需要 **4 天**成熟。每天早晨浇水（或布置洒水器），不要让生长计时暂停。
 
-**Harvest strategy**: This is a single-harvest crop — replant after each harvest to keep the field productive.
+**收获策略**：这是单次收获作物——每次收获后重新播种，保持田地产出。
 
-## Profit Analysis
+## 收益分析
 
-| Metric | Value |
+| 指标 | 数值 |
 |---|---|
-| Net profit per plant | 20g |
-| Harvests per season | ~7 |
-| Approx. season profit per plant | 140g |
+| 每株净利润 | 20g |
+| 每季收获次数 | ~7 |
+| 每季每株大致收益 | 140g |
 
-With the **Tiller** profession, crop sell prices increase by 10%, lifting the season profit per plant to about **182g**. Multiplied across a 12×8 field, this crop becomes a solid seasonal income source.
+选择 **农业家（Tiller）** 职业后，作物售价提高 10%，每季每株收益提升到约 **182g**。按 12×8 地块规模种植，是稳定的季节收入来源。
 
-## Tips & Pairings
+## 技巧与搭配
 
-- **Artisan processing**: this crop can be processed into Juice, Pickles for even higher value.
-- **Sprinklers**: pair it with a sprinkler layout in the [Farm Layout Planner](/farmlayou/) to automate watering from day one.
-- **Quality**: with higher Farming skill and fertilizer, silver/gold/iridium quality harvests raise the sell price well above the base 60g.
-- **Season end**: crops wither at season change — time plantings so the final harvest lands before the 28th.
+- **工匠加工**：可加工为 Juice, Pickles，价值更高。
+- **洒水器**：在[农场布局规划器](/zh-hans/farmlayou/)中搭配洒水器布局，从第一天起自动浇水。
+- **品质**：种植技能提升和肥料会让银星/金星/铱星品质收获的售价远高于基础价 60g。
+- **季末**：换季时作物枯萎——安排种植，确保最后一次收获在 28 日之前。
+

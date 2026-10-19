@@ -402,8 +402,9 @@ def process():
         n_new, n_manual, n_pattern = 0, 0, 0
         for f in sorted(glob.glob(os.path.join(EN, "**", "*.md"), recursive=True)):
             rel = os.path.relpath(f, EN)
-            # 鱼类攻略详情页：gen_guides.py 已生成中文正文，不覆盖
-            if rel.startswith("all-guides/fish/"):
+            # 攻略详情页（crops/fish/minerals/villagers）：gen_guides.py 已生成中文正文，不覆盖
+            if rel.startswith(("all-guides/crops/", "all-guides/fish/",
+                               "all-guides/minerals/", "all-guides/villagers/")):
                 continue
             s = open(f, encoding="utf-8").read()
             m = re.match(r"^---\n(.*?)\n---\n(.*)$", s, re.S)

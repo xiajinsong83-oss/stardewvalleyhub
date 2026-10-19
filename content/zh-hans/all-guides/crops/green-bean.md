@@ -1,49 +1,50 @@
 ---
-title: "Green Bean Guide: How to Grow Green Bean in Spring (10-Day Growth, Profit & Tips)"
-description: "Green Bean Guide: How to Grow Green Bean in Spring (10-Day Growth, Profit & Tips) — A young, tender bean in the pod."
-date: 2026-10-10
-cover: "/images/guide-covers/crops.jpg"
+title: "Green Bean 种植攻略：春季 成熟 10 天 | 星露谷物语"
+description: "Green Bean 种植攻略：春季 成熟 10 天 | 星露谷物语 — A young, tender bean in the pod."
+date: 2026-10-19
 draft: false
 type: guide
 icon: "/images/crops/green-bean/crop.png"
-related: [{"title": "Farm Layout Planner", "url": "/farmlayou/"}, {"title": "Crop Profit Calculator", "url": "/calculator/"}]
+related: [{"title": "农场布局规划器", "url": "/zh-hans/farmlayou/"}, {"title": "作物利润计算器", "url": "/zh-hans/calculator/"}]
+cover: "/images/guide-covers/crops-alt.jpg"
 ---
-The Green Bean is a vegetable crop in Stardew Valley. A young, tender bean in the pod. It grows in Spring and is one of the most reliable ways to build early-season income, so it belongs in almost every farm plan.
+**Green Bean** 是星露谷物语中的一种 vegetable 作物。A young, tender bean in the pod.可在 **春季** 种植，是早期最稳定的收入来源之一，几乎所有农场规划都应种植。
 
-## At a Glance
+## 一览
 
-| Detail | Value |
+| 项目 | 数值 |
 |---|---|
-| Season | Spring |
-| Growth time | 10 days then regrows every 3 days |
-| Regrow | Yes (3 days) |
-| Seed cost | Pierre's (60g); JojaMart (75g) |
-| Sell price | 40g |
-| Max quality | Iridium |
-| Category | vegetable |
-| Trellis | Yes |
-| Giant crop | No |
-| Farming XP | 9 |
+| 季节 | 春季 |
+| 生长时间 | 10 天，之后每 3 天重复收获 |
+| 重复结果 | 是（每 3 天） |
+| 种子成本 | Pierre's (60g); JojaMart (75g) |
+| 售价 | 40g |
+| 最高品质 | 铱星 |
+| 类别 | vegetable |
+| 支架 | 是 |
+| 巨型作物 | 否 |
+| 种植经验 | 9 |
 
-## How to Grow
+## 如何种植
 
-Plant Bean Starter in tilled, watered soil at the start of the season. The crop takes **10 days** to mature and then produces again every 3 days after the first harvest. Water every morning (or set up a sprinkler) so the growth timer never pauses.
+在季节初把 Bean Starter 种在翻过并浇过水的土壤里。作物需要 **10 天**成熟，首次收获后每 3 天再次产出。每天早晨浇水（或布置洒水器），不要让生长计时暂停。
 
-**Harvest strategy**: This is a multi-harvest crop — plan to keep it planted all season and collect repeatedly. It needs a trellis, so leave a row gap between planting lines to walk through.
+**收获策略**：这是多次收获作物——整季持续种植，反复采收。 需要支架，种植行之间留出通道。
 
-## Profit Analysis
+## 收益分析
 
-| Metric | Value |
+| 指标 | 数值 |
 |---|---|
-| Net profit per plant | -20g |
-| Harvests per season | ~7 |
-| Approx. season profit per plant | 220g |
+| 每株净利润 | -20g |
+| 每季收获次数 | ~7 |
+| 每季每株大致收益 | 220g |
 
-With the **Tiller** profession, crop sell prices increase by 10%, lifting the season profit per plant to about **248g**. Multiplied across a 12×8 field, this crop becomes a solid seasonal income source.
+选择 **农业家（Tiller）** 职业后，作物售价提高 10%，每季每株收益提升到约 **248g**。按 12×8 地块规模种植，是稳定的季节收入来源。
 
-## Tips & Pairings
+## 技巧与搭配
 
-- **Artisan processing**: this crop can be processed into Juice, Pickles for even higher value.
-- **Sprinklers**: pair it with a sprinkler layout in the [Farm Layout Planner](/farmlayou/) to automate watering from day one.
-- **Quality**: with higher Farming skill and fertilizer, silver/gold/iridium quality harvests raise the sell price well above the base 40g.
-- **Season end**: crops wither at season change — time plantings so the final harvest lands before the 28th.
+- **工匠加工**：可加工为 Juice, Pickles，价值更高。
+- **洒水器**：在[农场布局规划器](/zh-hans/farmlayou/)中搭配洒水器布局，从第一天起自动浇水。
+- **品质**：种植技能提升和肥料会让银星/金星/铱星品质收获的售价远高于基础价 40g。
+- **季末**：换季时作物枯萎——安排种植，确保最后一次收获在 28 日之前。
+

@@ -357,6 +357,180 @@ def fish_guide_zh(item):
     return slugify(name), body
 
 
+# ---------------- 作物攻略中文（zh-hans）版本 ----------------
+QUALITY_ZH = {"normal": "普通", "silver": "银星", "gold": "金星", "iridium": "铱星"}
+CAT_CROP_ZH = {"spring": "春季", "summer": "夏季", "fall": "秋季", "winter": "冬季"}
+
+
+def crop_title_zh(item):
+    name = item["name"]
+    seasons = season_label_zh(item.get("seasons", []))
+    grow = item.get("growDays", 0)
+    return "%s 种植攻略：%s 成熟 %d 天 | 星露谷物语" % (name, seasons, grow)
+
+
+def crop_guide_zh(item):
+    name = item["name"]
+    grow = item.get("growDays", 0)
+    regrow = item.get("regrowDays")
+    regrow_txt = "是（每 %d 天）" % regrow if regrow else "否"
+    sell = item.get("cropSellPrice", 0)
+    seed_min = min((p.get("price", 0) for p in item.get("seedBuyPrices") or []), default=0)
+    profit_each = sell - seed_min
+    if regrow:
+        harvests = 1 + max(0, (28 - grow) // regrow)
+        season_profit = harvests * sell - seed_min
+    else:
+        harvests = max(28 // grow, 1)
+        season_profit = harvests * (sell - seed_min)
+    giant = item.get("giant", False)
+    trellis = item.get("trellis", False)
+    desc = item.get("description", "")
+    seed_name = item.get("seedName") or (name + " Seeds")
+    seasons = season_label_zh(item.get("seasons", []))
+    quality = QUALITY_ZH.get(item.get("maxQuality", "normal"), item.get("maxQuality", ""))
+
+    intro = "**%s** 是星露谷物语中的一种 %s 作物。%s可在 **%s** 种植，是早期最稳定的收入来源之一，几乎所有农场规划都应种植。" % (
+        name, item.get("category", "crop"), desc, seasons)
+
+    body = [
+        intro,
+        "",
+        "## 一览",
+        "",
+        "| 项目 | 数值 |",
+        "|---|---|",
+        "| 季节 | %s |" % seasons,
+        "| 生长时间 | %d 天%s |" % (grow, "，之后每 %d 天重复收获" % regrow if regrow else ""),
+        "| 重复结果 | %s |" % regrow_txt,
+        "| 种子成本 | %s |" % seed_costs(item),
+        "| 售价 | %s |" % money(sell),
+        "| 最高品质 | %s |" % quality,
+        "| 类别 | %s |" % item.get("category", "crop"),
+        "| 支架 | %s |" % ("是" if trellis else "否"),
+        "| 巨型作物 | %s |" % ("是" if giant else "否"),
+        "| 种植经验 | %d |" % item.get("farmingXP", 0),
+        "",
+        "## 如何种植",
+        "",
+        "在季节初把 %s 种在翻过并浇过水的土壤里。作物需要 **%d 天**成熟%s。"
+        "每天早晨浇水（或布置洒水器），不要让生长计时暂停。" % (
+            seed_name, grow,
+            "，首次收获后每 %d 天再次产出" % regrow if regrow else ""),
+        "",
+        "**收获策略**：%s%s" % (
+            "这是多次收获作物——整季持续种植，反复采收。"
+            if regrow else
+            "这是单次收获作物——每次收获后重新播种，保持田地产出。",
+            (" 需要支架，种植行之间留出通道。" if trellis else "")),
+        "",
+        "## 收益分析",
+        "",
+        "| 指标 | 数值 |",
+        "|---|---|",
+        "| 每株净利润 | %s |" % money(profit_each),
+        "| 每季收获次数 | ~%d |" % harvests,
+        "| 每季每株大致收益 | %s |" % money(season_profit),
+        "",
+        "选择 **农业家（Tiller）** 职业后，作物售价提高 10%%，每季每株收益提升到约 **%s**。"
+        "按 12×8 地块规模种植，是稳定的季节收入来源。" % money(
+            int(sell * 1.1) * harvests - seed_min if regrow else (int(sell * 1.1) - seed_min) * harvests),
+        "",
+        "## 技巧与搭配",
+        "",
+        "- **工匠加工**：可加工为 %s，价值更高。" % artisan_label(item),
+        "- **洒水器**：在[农场布局规划器](/zh-hans/farmlayou/)中搭配洒水器布局，从第一天起自动浇水。",
+        "- **品质**：种植技能提升和肥料会让银星/金星/铱星品质收获的售价远高于基础价 %s。" % money(sell),
+        "- **季末**：换季时作物枯萎——安排种植，确保最后一次收获在 28 日之前。",
+        "",
+    ]
+    return slugify(name), body
+
+
+# ---------------- 矿物/文物攻略中文（zh-hans）版本 ----------------
+def mineral_title_zh(item):
+    name = item["name"]
+    kind = "artifact" if ("donationNotes" in item) else item.get("kind", "mineral")
+    return "%s 博物馆捐赠攻略 – 星露谷物语" % name
+
+
+def mineral_guide_zh(item):
+    name = item["name"]
+    kind = "artifact" if ("donationNotes" in item) else item.get("kind", "mineral")
+    locs = item.get("locations") or []
+    loc_txt = locs[0] if locs else "Mines & Geodes"
+    body = [
+        "%s" % item.get("description", ""),
+        "",
+        "## 哪里找",
+        "",
+        "| 项目 | 数值 |",
+        "|---|---|",
+        "| 类型 | %s |" % ("文物" if kind == "artifact" else "矿物"),
+        "| 售价 | %s |" % money(item.get("sellPrice", 0)),
+        "| 来源 | %s |" % ("<br>".join(item.get("locations", []))),
+        "",
+        "## 收集技巧",
+        "",
+        "- **%s** 是博物馆收藏的一部分——先捐赠第一份，多余的再出售。" % name,
+        "- %s" % (item.get("donationNotes", "下到更深的矿井层、敲开晶洞是最快的新藏品获取方式。")),
+    ]
+    if kind != "artifact":
+        body.append("- 选择**地质学家（Gemologist）**职业后，矿物售价提高 30%%（基础价 **%s** → **%s**）。"
+                    % (money(item.get("sellPrice", 0)), money(int(item.get("sellPrice", 0) * 1.3))))
+    else:
+        body.append("- 文物也可以通过锄地翻文物点获得——下矿井和去海滩时随身带把锄头。")
+    body += [
+        "- 用[博物馆清单](/zh-hans/museum-checklist/)追踪捐赠进度。",
+        "",
+    ]
+    return slugify(name), body
+
+
+# ---------------- 村民攻略中文（zh-hans）版本 ----------------
+BIRTHDAY_SEASON_ZH = {"spring": "春季", "summer": "夏季", "fall": "秋季", "winter": "冬季"}
+
+
+def villager_title_zh(item):
+    name = item["name"]
+    return "星露谷物语中 %s 的最爱礼物" % name
+
+
+def villager_guide_zh(item):
+    name = item["name"]
+    bday = item.get("birthday") or {}
+    bday_txt = "%s %d 日" % (BIRTHDAY_SEASON_ZH.get(bday.get("season", "?"), bday.get("season", "?")), bday.get("day", "?")) if bday else "—"
+    loves = item.get("loves") or []
+    likes = item.get("likes") or []
+    body = [
+        "%s" % item.get("description", ""),
+        "",
+        "## 一览",
+        "",
+        "| 项目 | 数值 |",
+        "|---|---|",
+        "| 居住 | %s |" % item.get("address", "—"),
+        "| 生日 | %s |" % bday_txt,
+        "| 可送礼 | 是（每日 1 份、每周 2 份） |",
+        "",
+        "## 最爱礼物",
+        "",
+        "%s" % ("<br>".join("- " + g for g in loves[:12]) if loves else "—"),
+        "",
+        "## 喜欢的礼物",
+        "",
+        "%s" % ("<br>".join("- " + g for g in likes[:10]) if likes else "—"),
+        "",
+        "## 关系技巧",
+        "",
+        "- **生日加成**：在 %s 当天送礼物可获得 8 倍友谊点——把最爱礼物留到那天送。" % bday_txt,
+        "- 每天对话、每周送两次最爱礼物，能更快触发下一个心动事件。",
+        "- 用[礼物查询工具](/zh-hans/gift/)规划要囤的礼物。",
+        "",
+    ]
+    return slugify(name), body
+
+
 def mineral_guide(item):
     name = item["name"]
     slug = slugify(name)
@@ -647,45 +821,69 @@ def main():
     patch_hub_section(hub_section(cat_summary))
     print("Updated Guides Hub home + category indexes.")
 
-    # ---- 同步鱼类攻略中文（zh-hans）版本：对每个已生成英文攻略的鱼写一份中文版 ----
-    zh_dir = os.path.join(ROOT, "content", "zh-hans", "all-guides", "fish")
-    en_fish_dir = os.path.join(GUIDES_DIR, "fish")
-    fish_data = load("fish.json")
-    zh_count = 0
-    zh_rows = []
-    if os.path.isdir(en_fish_dir):
-        existing = {fn[:-3] for fn in os.listdir(en_fish_dir) if fn.endswith(".md") and fn != "_index.md"}
-        for it in fish_data:
+    # ---- 同步各分类攻略中文（zh-hans）版本：对每个已生成英文攻略的条目写一份中文版 ----
+    ZH_REGISTRY = {
+        "fish": {
+            "data": lambda: load("fish.json"),
+            "gen": fish_guide_zh, "title": fish_title_zh,
+            "related": [("鱼类清单", "/zh-hans/fish-checklist/"), ("农场布局规划器", "/zh-hans/farmlayou/")],
+            "index_title": "鱼类攻略", "index_blurb": "每种鱼的垂钓季节、时间、天气、地点、难度与售价。",
+        },
+        "crops": {
+            "data": lambda: load("crops.json"),
+            "gen": crop_guide_zh, "title": crop_title_zh,
+            "related": [("农场布局规划器", "/zh-hans/farmlayou/"), ("作物利润计算器", "/zh-hans/calculator/")],
+            "index_title": "作物攻略", "index_blurb": "每种作物的季节、生长时间、种子成本、售价与利润。",
+        },
+        "minerals": {
+            "data": lambda: load("minerals.json") + load("artifacts.json"),
+            "gen": mineral_guide_zh, "title": mineral_title_zh,
+            "related": [("博物馆清单", "/zh-hans/museum-checklist/")],
+            "index_title": "矿物与文物攻略", "index_blurb": "每种矿物和文物的位置、来源、售价与博物馆捐赠建议。",
+        },
+        "villagers": {
+            "data": lambda: load("villagers.json"),
+            "gen": villager_guide_zh, "title": villager_title_zh,
+            "related": [("礼物查询", "/zh-hans/gift/")],
+            "index_title": "村民攻略", "index_blurb": "每位村民的最爱礼物、生日、居住地点与关系技巧。",
+        },
+    }
+    total_zh = 0
+    for cat, zr in ZH_REGISTRY.items():
+        zh_dir = os.path.join(ROOT, "content", "zh-hans", "all-guides", cat)
+        en_dir = os.path.join(GUIDES_DIR, cat)
+        if not os.path.isdir(en_dir):
+            continue
+        existing = {fn[:-3] for fn in os.listdir(en_dir) if fn.endswith(".md") and fn != "_index.md"}
+        zh_rows = []
+        for it in zr["data"]():
             try:
                 s = slugify(it["name"])
             except Exception:
                 continue
             if s not in existing:
                 continue
-            zslug, zbody = fish_guide_zh(it)
-            ztitle = fish_title_zh(it)
+            zslug, zbody = zr["gen"](it)
+            ztitle = zr["title"](it)
             zdesc = (ztitle + " — " + (it.get("description") or "")).strip()
             if len(zdesc) > 155:
                 zdesc = zdesc[:152].rstrip() + "…"
             icon = img_url(it)
             cover_count = len(zh_rows) + 1
-            cover = "/images/guide-covers/fish%s.jpg" % ("" if cover_count % 2 == 1 else "-alt")
-            md = front(ztitle, zdesc, icon,
-                       [("鱼类清单", "/zh-hans/fish-checklist/"), ("农场布局规划器", "/zh-hans/farmlayou/")],
-                       cover=cover) + "\n".join(zbody) + "\n"
+            cover = "/images/guide-covers/%s%s.jpg" % (cat, "" if cover_count % 2 == 1 else "-alt")
+            md = front(ztitle, zdesc, icon, zr["related"], cover=cover) + "\n".join(zbody) + "\n"
             w(os.path.join(zh_dir, zslug + ".md"), md)
             zh_rows.append((zslug, ztitle))
-            zh_count += 1
-    # 中文分类索引页
-    if zh_rows:
-        cards = "\n".join(
-            '  <a class="card" href="/zh-hans/all-guides/fish/%s/"><h3>%s</h3></a>' % (s, t)
-            for s, t in sorted(zh_rows))
-        idx = ["---", 'title: "鱼类攻略 - 星露谷物语攻略站"', "---", "",
-               '<div class="page-hero"><h1>鱼类攻略</h1><p>每种鱼的垂钓季节、时间、天气、地点、难度与售价。</p></div>', "",
-               '<div class="card-grid home-grid">', cards, "</div>", ""]
-        w(os.path.join(zh_dir, "_index.md"), "\n".join(idx))
-    print("Wrote %d Chinese fish guides to content/zh-hans/all-guides/fish/" % zh_count)
+            total_zh += 1
+        if zh_rows:
+            cards = "\n".join(
+                '  <a class="card" href="/zh-hans/all-guides/%s/%s/"><h3>%s</h3></a>' % (cat, s, t)
+                for s, t in sorted(zh_rows))
+            idx = ["---", 'title: "%s - 星露谷物语攻略站"' % zr["index_title"], "---", "",
+                   '<div class="page-hero"><h1>%s</h1><p>%s</p></div>' % (zr["index_title"], zr["index_blurb"]), "",
+                   '<div class="card-grid home-grid">', cards, "</div>", ""]
+            w(os.path.join(zh_dir, "_index.md"), "\n".join(idx))
+    print("Wrote %d Chinese guides across %d categories." % (total_zh, len(ZH_REGISTRY)))
 
     # 记录本次处理的数据版本（供下轮判断是否有新内容）
     record_processed_version(cur_ver)

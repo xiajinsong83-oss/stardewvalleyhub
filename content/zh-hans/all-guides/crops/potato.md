@@ -1,49 +1,50 @@
 ---
-title: "Potato Guide: How to Grow Potato in Spring (6-Day Growth, Profit & Tips)"
-description: "Potato Guide: How to Grow Potato in Spring (6-Day Growth, Profit & Tips) — A widely cultivated plant, the potato is one of the most important food crops…"
-date: 2026-10-10
-cover: "/images/guide-covers/crops-alt.jpg"
+title: "Potato 种植攻略：春季 成熟 6 天 | 星露谷物语"
+description: "Potato 种植攻略：春季 成熟 6 天 | 星露谷物语 — A widely cultivated plant, the potato is one of the most important food crops in the world."
+date: 2026-10-19
 draft: false
 type: guide
 icon: "/images/crops/potato/crop.png"
-related: [{"title": "Farm Layout Planner", "url": "/farmlayou/"}, {"title": "Crop Profit Calculator", "url": "/calculator/"}]
+related: [{"title": "农场布局规划器", "url": "/zh-hans/farmlayou/"}, {"title": "作物利润计算器", "url": "/zh-hans/calculator/"}]
+cover: "/images/guide-covers/crops-alt.jpg"
 ---
-The Potato is a vegetable crop in Stardew Valley. A widely cultivated plant, the potato is one of the most important food crops in the world. It grows in Spring and is one of the most reliable ways to build early-season income, so it belongs in almost every farm plan.
+**Potato** 是星露谷物语中的一种 vegetable 作物。A widely cultivated plant, the potato is one of the most important food crops in the world.可在 **春季** 种植，是早期最稳定的收入来源之一，几乎所有农场规划都应种植。
 
-## At a Glance
+## 一览
 
-| Detail | Value |
+| 项目 | 数值 |
 |---|---|
-| Season | Spring |
-| Growth time | 6 days |
-| Regrow | No |
-| Seed cost | Pierre's (50g); JojaMart (63g) |
-| Sell price | 80g |
-| Max quality | Iridium |
-| Category | vegetable |
-| Trellis | No |
-| Giant crop | No |
-| Farming XP | 14 |
+| 季节 | 春季 |
+| 生长时间 | 6 天 |
+| 重复结果 | 否 |
+| 种子成本 | Pierre's (50g); JojaMart (63g) |
+| 售价 | 80g |
+| 最高品质 | 铱星 |
+| 类别 | vegetable |
+| 支架 | 否 |
+| 巨型作物 | 否 |
+| 种植经验 | 14 |
 
-## How to Grow
+## 如何种植
 
-Plant Potato Seeds in tilled, watered soil at the start of the season. The crop takes **6 days** to mature. Water every morning (or set up a sprinkler) so the growth timer never pauses.
+在季节初把 Potato Seeds 种在翻过并浇过水的土壤里。作物需要 **6 天**成熟。每天早晨浇水（或布置洒水器），不要让生长计时暂停。
 
-**Harvest strategy**: This is a single-harvest crop — replant after each harvest to keep the field productive.
+**收获策略**：这是单次收获作物——每次收获后重新播种，保持田地产出。
 
-## Profit Analysis
+## 收益分析
 
-| Metric | Value |
+| 指标 | 数值 |
 |---|---|
-| Net profit per plant | 30g |
-| Harvests per season | ~4 |
-| Approx. season profit per plant | 120g |
+| 每株净利润 | 30g |
+| 每季收获次数 | ~4 |
+| 每季每株大致收益 | 120g |
 
-With the **Tiller** profession, crop sell prices increase by 10%, lifting the season profit per plant to about **152g**. Multiplied across a 12×8 field, this crop becomes a solid seasonal income source.
+选择 **农业家（Tiller）** 职业后，作物售价提高 10%，每季每株收益提升到约 **152g**。按 12×8 地块规模种植，是稳定的季节收入来源。
 
-## Tips & Pairings
+## 技巧与搭配
 
-- **Artisan processing**: this crop can be processed into Juice, Pickles for even higher value.
-- **Sprinklers**: pair it with a sprinkler layout in the [Farm Layout Planner](/farmlayou/) to automate watering from day one.
-- **Quality**: with higher Farming skill and fertilizer, silver/gold/iridium quality harvests raise the sell price well above the base 80g.
-- **Season end**: crops wither at season change — time plantings so the final harvest lands before the 28th.
+- **工匠加工**：可加工为 Juice, Pickles，价值更高。
+- **洒水器**：在[农场布局规划器](/zh-hans/farmlayou/)中搭配洒水器布局，从第一天起自动浇水。
+- **品质**：种植技能提升和肥料会让银星/金星/铱星品质收获的售价远高于基础价 80g。
+- **季末**：换季时作物枯萎——安排种植，确保最后一次收获在 28 日之前。
+

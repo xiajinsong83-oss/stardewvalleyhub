@@ -1,26 +1,27 @@
 ---
-title: "Aquamarine Guide: Where to Find It (Aquamarine Node, 180g Value)"
-description: "Aquamarine Guide: Where to Find It (Aquamarine Node, 180g Value) — A shimmery blue-green gem."
-date: 2026-10-10
-cover: "/images/guide-covers/minerals-alt.jpg"
+title: "Aquamarine 博物馆捐赠攻略 – 星露谷物语"
+description: "Aquamarine 博物馆捐赠攻略 – 星露谷物语 — A shimmery blue-green gem."
+date: 2026-10-19
 draft: false
 type: guide
 icon: "/images/minerals/gems/Aquamarine.png"
-related: [{"title": "Museum Checklist", "url": "/museum-checklist/"}]
+related: [{"title": "博物馆清单", "url": "/zh-hans/museum-checklist/"}]
+cover: "/images/guide-covers/minerals-alt.jpg"
 ---
 A shimmery blue-green gem.
 
-## Where to Find
+## 哪里找
 
-| Detail | Value |
+| 项目 | 数值 |
 |---|---|
-| Type | Mineral |
-| Sell price | 180g |
-| Sources | Aquamarine Node<br>Gem Node<br>Dwarvish Sentry<br>Panning<br>Fishing Treasure Chest |
+| 类型 | 矿物 |
+| 售价 | 180g |
+| 来源 | Aquamarine Node<br>Gem Node<br>Dwarvish Sentry<br>Panning<br>Fishing Treasure Chest |
 
-## Collection Tips
+## 收集技巧
 
-- **Aquamarine** is part of the Museum collection — donate your first copy before selling extras.
-- Mining deeper floors and cracking geodes are the fastest ways to find new pieces.
-- Gemologist profession raises mineral sell prices by 30% (base **180g** → **234g**).
-- Track donations with the [Museum Checklist](/museum-checklist/).
+- **Aquamarine** 是博物馆收藏的一部分——先捐赠第一份，多余的再出售。
+- 下到更深的矿井层、敲开晶洞是最快的新藏品获取方式。
+- 选择**地质学家（Gemologist）**职业后，矿物售价提高 30%（基础价 **180g** → **234g**）。
+- 用[博物馆清单](/zh-hans/museum-checklist/)追踪捐赠进度。
+

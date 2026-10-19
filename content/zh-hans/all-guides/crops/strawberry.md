@@ -1,49 +1,50 @@
 ---
-title: "Strawberry Guide: How to Grow Strawberry in Spring (8-Day Growth, Profit & Tips)"
-description: "Strawberry Guide: How to Grow Strawberry in Spring (8-Day Growth, Profit & Tips) — This plump, delicious berry will continue to produce after the first…"
-date: 2026-10-10
-cover: "/images/guide-covers/crops-alt.jpg"
+title: "Strawberry 种植攻略：春季 成熟 8 天 | 星露谷物语"
+description: "Strawberry 种植攻略：春季 成熟 8 天 | 星露谷物语 — This plump, delicious berry will continue to produce after the first harvest."
+date: 2026-10-19
 draft: false
 type: guide
 icon: "/images/crops/strawberry/crop.png"
-related: [{"title": "Farm Layout Planner", "url": "/farmlayou/"}, {"title": "Crop Profit Calculator", "url": "/calculator/"}]
+related: [{"title": "农场布局规划器", "url": "/zh-hans/farmlayou/"}, {"title": "作物利润计算器", "url": "/zh-hans/calculator/"}]
+cover: "/images/guide-covers/crops-alt.jpg"
 ---
-The Strawberry is a fruit crop in Stardew Valley. This plump, delicious berry will continue to produce after the first harvest. It grows in Spring and is one of the most reliable ways to build early-season income, so it belongs in almost every farm plan.
+**Strawberry** 是星露谷物语中的一种 fruit 作物。This plump, delicious berry will continue to produce after the first harvest.可在 **春季** 种植，是早期最稳定的收入来源之一，几乎所有农场规划都应种植。
 
-## At a Glance
+## 一览
 
-| Detail | Value |
+| 项目 | 数值 |
 |---|---|
-| Season | Spring |
-| Growth time | 8 days then regrows every 4 days |
-| Regrow | Yes (4 days) |
-| Seed cost | Egg Festival (100g) |
-| Sell price | 120g |
-| Max quality | Iridium |
-| Category | fruit |
-| Trellis | No |
-| Giant crop | No |
-| Farming XP | 18 |
+| 季节 | 春季 |
+| 生长时间 | 8 天，之后每 4 天重复收获 |
+| 重复结果 | 是（每 4 天） |
+| 种子成本 | Egg Festival (100g) |
+| 售价 | 120g |
+| 最高品质 | 铱星 |
+| 类别 | fruit |
+| 支架 | 否 |
+| 巨型作物 | 否 |
+| 种植经验 | 18 |
 
-## How to Grow
+## 如何种植
 
-Plant Strawberry Seeds in tilled, watered soil at the start of the season. The crop takes **8 days** to mature and then produces again every 4 days after the first harvest. Water every morning (or set up a sprinkler) so the growth timer never pauses.
+在季节初把 Strawberry Seeds 种在翻过并浇过水的土壤里。作物需要 **8 天**成熟，首次收获后每 4 天再次产出。每天早晨浇水（或布置洒水器），不要让生长计时暂停。
 
-**Harvest strategy**: This is a multi-harvest crop — plan to keep it planted all season and collect repeatedly.
+**收获策略**：这是多次收获作物——整季持续种植，反复采收。
 
-## Profit Analysis
+## 收益分析
 
-| Metric | Value |
+| 指标 | 数值 |
 |---|---|
-| Net profit per plant | 20g |
-| Harvests per season | ~6 |
-| Approx. season profit per plant | 620g |
+| 每株净利润 | 20g |
+| 每季收获次数 | ~6 |
+| 每季每株大致收益 | 620g |
 
-With the **Tiller** profession, crop sell prices increase by 10%, lifting the season profit per plant to about **692g**. Multiplied across a 12×8 field, this crop becomes a solid seasonal income source.
+选择 **农业家（Tiller）** 职业后，作物售价提高 10%，每季每株收益提升到约 **692g**。按 12×8 地块规模种植，是稳定的季节收入来源。
 
-## Tips & Pairings
+## 技巧与搭配
 
-- **Artisan processing**: this crop can be processed into Wine, Jelly, Dried Fruit for even higher value.
-- **Sprinklers**: pair it with a sprinkler layout in the [Farm Layout Planner](/farmlayou/) to automate watering from day one.
-- **Quality**: with higher Farming skill and fertilizer, silver/gold/iridium quality harvests raise the sell price well above the base 120g.
-- **Season end**: crops wither at season change — time plantings so the final harvest lands before the 28th.
+- **工匠加工**：可加工为 Wine, Jelly, Dried Fruit，价值更高。
+- **洒水器**：在[农场布局规划器](/zh-hans/farmlayou/)中搭配洒水器布局，从第一天起自动浇水。
+- **品质**：种植技能提升和肥料会让银星/金星/铱星品质收获的售价远高于基础价 120g。
+- **季末**：换季时作物枯萎——安排种植，确保最后一次收获在 28 日之前。
+

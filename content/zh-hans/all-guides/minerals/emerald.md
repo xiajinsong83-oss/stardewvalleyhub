@@ -1,26 +1,27 @@
 ---
-title: "Emerald Guide: Where to Find It (Emerald Node, 250g Value)"
-description: "Emerald Guide: Where to Find It (Emerald Node, 250g Value) — A precious stone with a brilliant green color."
-date: 2026-10-10
-cover: "/images/guide-covers/minerals-alt.jpg"
+title: "Emerald 博物馆捐赠攻略 – 星露谷物语"
+description: "Emerald 博物馆捐赠攻略 – 星露谷物语 — A precious stone with a brilliant green color."
+date: 2026-10-19
 draft: false
 type: guide
 icon: "/images/minerals/gems/Emerald.png"
-related: [{"title": "Museum Checklist", "url": "/museum-checklist/"}]
+related: [{"title": "博物馆清单", "url": "/zh-hans/museum-checklist/"}]
+cover: "/images/guide-covers/minerals.jpg"
 ---
 A precious stone with a brilliant green color.
 
-## Where to Find
+## 哪里找
 
-| Detail | Value |
+| 项目 | 数值 |
 |---|---|
-| Type | Mineral |
-| Sell price | 250g |
-| Sources | Emerald Node<br>Gem Node<br>Dwarvish Sentry<br>Panning<br>Fishing Treasure Chest |
+| 类型 | 矿物 |
+| 售价 | 250g |
+| 来源 | Emerald Node<br>Gem Node<br>Dwarvish Sentry<br>Panning<br>Fishing Treasure Chest |
 
-## Collection Tips
+## 收集技巧
 
-- **Emerald** is part of the Museum collection — donate your first copy before selling extras.
-- Mining deeper floors and cracking geodes are the fastest ways to find new pieces.
-- Gemologist profession raises mineral sell prices by 30% (base **250g** → **325g**).
-- Track donations with the [Museum Checklist](/museum-checklist/).
+- **Emerald** 是博物馆收藏的一部分——先捐赠第一份，多余的再出售。
+- 下到更深的矿井层、敲开晶洞是最快的新藏品获取方式。
+- 选择**地质学家（Gemologist）**职业后，矿物售价提高 30%（基础价 **250g** → **325g**）。
+- 用[博物馆清单](/zh-hans/museum-checklist/)追踪捐赠进度。
+
