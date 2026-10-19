@@ -4,14 +4,14 @@ description: "Nutzungsbedingungen für Stardew Valley Hub."
 date: 2026-10-04
 ---
 
-## Information accuracy
-All game data on this site comes from open-source machine-readable community data and is provided for reference only. Information may contain errors; we are not liable for any loss or damage resulting from its use.
+## Informationsrichtigkeit
+Alle Spieldaten auf dieser Website stammen aus maschinenlesbaren Open-Source-Gemeinschaftsdaten und dienen nur der Referenz. Informationen können Fehler enthalten; wir haften nicht für Verluste oder Schäden, die aus ihrer Nutzung entstehen.
 
-## Acceptable use
-Do not scrape or bulk-copy this site's content for republication without permission.
+## Nutzungsrichtlinien
+Das Abschaben oder massenhafte Kopieren von Inhalten dieser Website zur Weiterveröffentlichung ist ohne Genehmigung nicht gestattet.
 
-## Trademarks
-Stardew Valley and related names are trademarks of their respective owners. This is an unofficial fan resource and is not affiliated with or endorsed by the game developer.
+## Markenrecht
+Stardew Valley und zugehörige Namen sind Marken ihrer jeweiligen Inhaber. Dies ist eine inoffizielle Fan-Ressource, die nicht mit dem Spieleentwickler verbunden oder von diesem gebilligt ist.
 
-## Contact
-Email: merrysee888@qq.com
+## Kontakt
+E-Mail: merrysee888@qq.com

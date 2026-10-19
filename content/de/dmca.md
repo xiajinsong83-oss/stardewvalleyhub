@@ -4,21 +4,21 @@ description: "DMCA-Takedown- und Gegendarstellungsverfahren für Stardew Valley 
 date: 2026-10-04
 ---
 
-This website respects the intellectual property rights of others and complies with the Digital Millennium Copyright Act (DMCA). If you believe that any material available on this site infringes your copyright, please submit a written DMCA takedown notice to our designated agent via email: mailto:merrysee888@qq.com.
+Diese Website respektiert das geistige Eigentum Dritter und hält den Digital Millennium Copyright Act (DMCA) ein. Wenn du der Ansicht bist, dass Material auf dieser Website dein Urheberrecht verletzt, sende eine schriftliche DMCA-Takedown-Mitteilung per E-Mail an unseren designierten Vertreter: mailto:merrysee888@qq.com.
 
-Your DMCA notice must contain all of the following information:
-- Identification of the copyrighted work claimed to have been infringed.
-- Identification of the material that is claimed to be infringing and information reasonably sufficient to permit us to locate the material, including URL(s).
-- Your contact information: full name, mailing address, telephone number, and email address.
-- A statement that you have a good faith belief that the disputed use is not authorized by the copyright owner, its agent, or the law.
-- A statement, made under penalty of perjury, that the information in your notice is accurate and that you are the copyright owner or authorized to act on the copyright owner's behalf.
-- Your physical or electronic signature.
+Deine DMCA-Mitteilung muss alle folgenden Informationen enthalten:
+- Identifizierung des urheberrechtlich geschützten Werks, das angeblich verletzt wurde.
+- Identifizierung des Materials, das angeblich rechtsverletzend ist, sowie hinreichend genaue Angaben, damit wir das Material auffinden können, einschließlich der URL(s).
+- Deine Kontaktdaten: vollständiger Name, Postanschrift, Telefonnummer und E-Mail-Adresse.
+- Eine Erklärung, dass du in gutem Glauben davon ausgehst, dass die umstrittene Nutzung nicht vom Urheberrechtsinhaber, seinem Vertreter oder dem Gesetz autorisiert wurde.
+- Eine Erklärung unter Strafe des Meineids, dass die Angaben in deiner Mitteilung zutreffend sind und dass du der Urheberrechtsinhaber oder befugt bist, im Namen des Urheberrechtsinhabers zu handeln.
+- Deine eigenhändige oder elektronische Unterschrift.
 
-Upon receipt of a complete, valid DMCA takedown notice, we will: promptly remove or disable access to the allegedly infringing material; notify the user who uploaded the content of the takedown notice; and follow DMCA counter-notice procedures if a counter-notification is submitted.
+Nach Eingang einer vollständigen und gültigen DMCA-Takedown-Mitteilung werden wir: das angeblich rechtsverletzende Material umgehend entfernen oder den Zugriff darauf deaktivieren; den Nutzer, der den Inhalt hochgeladen hat, über die Takedown-Mitteilung informieren; und bei Eingang einer Gegendarstellung das DMCA-Gegendarstellungsverfahren einleiten.
 
-## Counter-Notification Procedure
-If you believe content was removed mistakenly, you may send a counter-notice to our DMCA agent. A valid counter-notice must include: your name, address, phone number, email address; identification of the material that was removed and the URL before removal; a statement under penalty of perjury that you have a good faith belief the material was removed by mistake; consent to the jurisdiction of a court in your area; and your physical or electronic signature.
+## Gegendarstellungsverfahren
+Wenn du der Ansicht bist, dass Inhalte irrtümlich entfernt wurden, kannst du unserem DMCA-Vertreter eine Gegendarstellung senden. Eine gültige Gegendarstellung muss enthalten: deinen Namen, Anschrift, Telefonnummer und E-Mail-Adresse; die Identifizierung des entfernten Materials und die URL vor der Entfernung; eine Erklärung unter Strafe des Meineids, dass du in gutem Glauben davon ausgehst, dass das Material irrtümlich entfernt wurde; die Zustimmung zur Zuständigkeit eines Gerichts in deinem Bereich; sowie deine eigenhändige oder elektronische Unterschrift.
 
-After receiving a valid counter-notice, we will forward it to the original complainant. The complainant has 10–14 business days to file a court action; if no legal action is filed, we may restore the removed content.
+Nach Eingang einer gültigen Gegendarstellung leiten wir diese an den ursprünglichen Beschwerdeführer weiter. Dieser hat 10–14 Werktage Zeit, eine Klage einzureichen; falls keine rechtlichen Schritte eingeleitet werden, können wir den entfernten Inhalt wiederherstellen.
 
-Disclaimer: This site only uses machine-readable raw game data from open-source community repositories. No original creative text, artwork, images or copyrighted narrative content is hosted on this website. Stardew Valley and related trademarks belong to their respective owners. This site is an unofficial fan resource and is not affiliated with the game developer.
+Haftungsausschluss: Diese Website verwendet nur maschinenlesbare Rohspieldaten aus Open-Source-Community-Repositories. Auf dieser Website werden keine Originaltexte, Kunstwerke, Bilder oder urheberrechtlich geschützten Inhalte gehostet. Stardew Valley und zugehörige Marken gehören ihren jeweiligen Inhabern. Dies ist eine inoffizielle Fan-Ressource, die nicht mit dem Spieleentwickler verbunden ist.

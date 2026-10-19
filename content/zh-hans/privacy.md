@@ -4,19 +4,19 @@ description: "星露谷物语 Hub 的隐私政策：广告、Cookie、GDPR 与 C
 date: 2026-10-04
 ---
 
-Stardew Valley Hub ("we") operates the unofficial fan website stardewvalleyhub.wiki.
+星露谷物语 Hub（"我们"）运营非官方粉丝网站 stardewvalleyhub.wiki。
 
-## Advertising & Cookies
-This site is supported by Google AdSense. We use cookies to serve and personalize ads. You may accept or decline non-essential cookies via the cookie banner. Declining does not reduce site functionality.
+## 广告与 Cookie
+本站由 Google AdSense 支持。我们使用 Cookie 投放和个性化广告。你可以通过 Cookie 横幅接受或拒绝非必要 Cookie，拒绝不会影响网站功能。
 
-## GDPR (EU visitors)
-If you are in the European Economic Area, you have the right to access, correct and delete personal data we process, and to object to or restrict processing. We do not collect personally identifiable information beyond what Google's advertising systems process.
+## GDPR（欧盟访客）
+如果你位于欧洲经济区，你有权访问、更正和删除我们处理的个人数据，并有权反对或限制处理。除 Google 广告系统处理的信息外，我们不收集可识别个人身份的信息。
 
-## CCPA (California residents)
-California residents may request disclosure of the personal information we hold about them, and request deletion. To exercise your rights, email us at mailto:merrysee888@qq.com.
+## CCPA（加利福尼亚州居民）
+加利福尼亚州居民可要求披露我们持有的个人信息，并要求删除。行使你的权利请邮件联系：mailto:merrysee888@qq.com。
 
-## Third-party cookies
-Google AdSense and Google Analytics may place cookies. You can opt out of personalized advertising via Google's Ads Settings: https://adssettings.google.com.
+## 第三方 Cookie
+Google AdSense 和 Google Analytics 可能会放置 Cookie。你可以通过 Google 广告设置退出个性化广告：https://adssettings.google.com。
 
-## Contact
-Email: merrysee888@qq.com
+## 联系方式
+邮箱：merrysee888@qq.com

@@ -4,14 +4,14 @@ description: "星露谷物语 Hub 的服务条款。"
 date: 2026-10-04
 ---
 
-## Information accuracy
-All game data on this site comes from open-source machine-readable community data and is provided for reference only. Information may contain errors; we are not liable for any loss or damage resulting from its use.
+## 信息准确性
+本站所有游戏数据来自开源机器可读的社区数据，仅供参考。信息可能包含错误，我们不对因使用本站信息造成的任何损失或损害负责。
 
-## Acceptable use
-Do not scrape or bulk-copy this site's content for republication without permission.
+## 使用规范
+未经许可，不得抓取或批量复制本站内容用于再发布。
 
-## Trademarks
-Stardew Valley and related names are trademarks of their respective owners. This is an unofficial fan resource and is not affiliated with or endorsed by the game developer.
+## 商标声明
+Stardew Valley 及相关名称均为其各自所有者的商标。本站为非官方粉丝资源，与游戏开发者无关联、未获其背书。
 
-## Contact
-Email: merrysee888@qq.com
+## 联系方式
+邮箱：merrysee888@qq.com

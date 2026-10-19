@@ -4,21 +4,21 @@ description: "星露谷物语 Hub 的 DMCA 下架与反通知流程。"
 date: 2026-10-04
 ---
 
-This website respects the intellectual property rights of others and complies with the Digital Millennium Copyright Act (DMCA). If you believe that any material available on this site infringes your copyright, please submit a written DMCA takedown notice to our designated agent via email: mailto:merrysee888@qq.com.
+本网站尊重他人知识产权，并遵守《数字千年版权法》（DMCA）。如果你认为本站任何材料侵犯了你的版权，请通过邮件向我们指定的代理人提交书面 DMCA 下架通知：mailto:merrysee888@qq.com。
 
-Your DMCA notice must contain all of the following information:
-- Identification of the copyrighted work claimed to have been infringed.
-- Identification of the material that is claimed to be infringing and information reasonably sufficient to permit us to locate the material, including URL(s).
-- Your contact information: full name, mailing address, telephone number, and email address.
-- A statement that you have a good faith belief that the disputed use is not authorized by the copyright owner, its agent, or the law.
-- A statement, made under penalty of perjury, that the information in your notice is accurate and that you are the copyright owner or authorized to act on the copyright owner's behalf.
-- Your physical or electronic signature.
+你的 DMCA 通知必须包含以下全部信息：
+- 被声称侵权的版权作品的识别信息。
+- 被声称侵权的材料的识别信息，以及足以让我们定位该材料的合理信息，包括 URL。
+- 你的联系方式：全名、邮寄地址、电话号码和电子邮箱。
+- 一份声明，说明你善意相信该争议使用未经版权所有者、其代理人或法律授权。
+- 一份在伪证处罚下作出的声明，说明通知中的信息准确，且你是版权所有者或被授权代表版权所有者行事。
+- 你的实体或电子签名。
 
-Upon receipt of a complete, valid DMCA takedown notice, we will: promptly remove or disable access to the allegedly infringing material; notify the user who uploaded the content of the takedown notice; and follow DMCA counter-notice procedures if a counter-notification is submitted.
+收到完整、有效的 DMCA 下架通知后，我们将：及时移除或禁用对被指控侵权材料的访问；通知上传该内容的用户收到了下架通知；如收到反通知，将按 DMCA 反通知程序处理。
 
-## Counter-Notification Procedure
-If you believe content was removed mistakenly, you may send a counter-notice to our DMCA agent. A valid counter-notice must include: your name, address, phone number, email address; identification of the material that was removed and the URL before removal; a statement under penalty of perjury that you have a good faith belief the material was removed by mistake; consent to the jurisdiction of a court in your area; and your physical or electronic signature.
+## 反通知程序
+如果你认为内容被错误移除，可以向我们的 DMCA 代理人提交反通知。一份有效的反通知必须包括：你的姓名、地址、电话、电子邮箱；被移除材料的识别信息及其被移除前的 URL；一份在伪证处罚下作出的声明，说明你善意相信材料被错误移除；同意你所在地法院的管辖；以及你的实体或电子签名。
 
-After receiving a valid counter-notice, we will forward it to the original complainant. The complainant has 10–14 business days to file a court action; if no legal action is filed, we may restore the removed content.
+收到有效反通知后，我们将把它转交给原始投诉人。投诉人有 10–14 个工作日提起诉讼；如未提起法律诉讼，我们可能恢复被移除的内容。
 
-Disclaimer: This site only uses machine-readable raw game data from open-source community repositories. No original creative text, artwork, images or copyrighted narrative content is hosted on this website. Stardew Valley and related trademarks belong to their respective owners. This site is an unofficial fan resource and is not affiliated with the game developer.
+免责声明：本站仅使用来自开源社区仓库的机器可读原始游戏数据。本网站不托管任何原创文字、美术、图片或受版权保护的叙事内容。Stardew Valley 及相关商标归其各自所有者所有。本站为非官方粉丝资源，与游戏开发者无关联。

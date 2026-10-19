@@ -4,19 +4,19 @@ description: "Datenschutzrichtlinie für Stardew Valley Hub: Werbung, Cookies, G
 date: 2026-10-04
 ---
 
-Stardew Valley Hub ("we") operates the unofficial fan website stardewvalleyhub.wiki.
+Stardew Valley Hub („wir") betreibt die inoffizielle Fan-Website stardewvalleyhub.wiki.
 
-## Advertising & Cookies
-This site is supported by Google AdSense. We use cookies to serve and personalize ads. You may accept or decline non-essential cookies via the cookie banner. Declining does not reduce site functionality.
+## Werbung & Cookies
+Diese Website wird durch Google AdSense unterstützt. Wir verwenden Cookies, um Werbung auszuspielen und zu personalisieren. Nicht notwendige Cookies kannst du über das Cookie-Banner akzeptieren oder ablehnen. Eine Ablehnung schränkt die Funktionalität der Website nicht ein.
 
-## GDPR (EU visitors)
-If you are in the European Economic Area, you have the right to access, correct and delete personal data we process, and to object to or restrict processing. We do not collect personally identifiable information beyond what Google's advertising systems process.
+## DSGVO (EU-Besucher)
+Wenn du im Europäischen Wirtschaftsraum ansässig bist, hast du das Recht, auf deine bei uns verarbeiteten personenbezogenen Daten zuzugreifen, sie berichtigen oder löschen zu lassen sowie der Verarbeitung zu widersprechen oder sie einzuschränken. Wir erheben keine personenbezogenen Daten über das hinaus, die Googles Werbesysteme verarbeiten.
 
-## CCPA (California residents)
-California residents may request disclosure of the personal information we hold about them, and request deletion. To exercise your rights, email us at mailto:merrysee888@qq.com.
+## CCPA (Kalifornien)
+Einwohner Kaliforniens können Auskunft über die bei uns gespeicherten personenbezogenen Daten und deren Löschung verlangen. Zur Ausübung deiner Rechte schreibe uns an: mailto:merrysee888@qq.com.
 
-## Third-party cookies
-Google AdSense and Google Analytics may place cookies. You can opt out of personalized advertising via Google's Ads Settings: https://adssettings.google.com.
+## Drittanbieter-Cookies
+Google AdSense und Google Analytics können Cookies setzen. Personalisierte Werbung kannst du in den Google-Werbeeinstellungen deaktivieren: https://adssettings.google.com.
 
-## Contact
-Email: merrysee888@qq.com
+## Kontakt
+E-Mail: merrysee888@qq.com
