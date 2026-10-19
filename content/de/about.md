@@ -10,4 +10,4 @@ The site is fully automated: data sync → page generation → build → deploy,
 
 This is not an official site. Stardew Valley is developed by ConcernedApe; all trademarks belong to their owners.
 
-Contact: 39918849@qq.com
+Contact: merrysee888@qq.com

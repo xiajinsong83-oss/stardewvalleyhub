@@ -853,13 +853,13 @@ This site is supported by Google AdSense. We use cookies to serve and personaliz
 If you are in the European Economic Area, you have the right to access, correct and delete personal data we process, and to object to or restrict processing. We do not collect personally identifiable information beyond what Google's advertising systems process.
 
 ## CCPA (California residents)
-California residents may request disclosure of the personal information we hold about them, and request deletion. To exercise your rights, email us at """ + "mailto:" + """39918849@qq.com.
+California residents may request disclosure of the personal information we hold about them, and request deletion. To exercise your rights, email us at """ + "mailto:" + """merrysee888@qq.com.
 
 ## Third-party cookies
 Google AdSense and Google Analytics may place cookies. You can opt out of personalized advertising via Google's Ads Settings: https://adssettings.google.com.
 
 ## Contact
-Email: 39918849@qq.com
+Email: merrysee888@qq.com
 """)
 
 w(os.path.join(CONTENT_EN, "terms.md"), front(
@@ -875,13 +875,13 @@ Do not scrape or bulk-copy this site's content for republication without permiss
 Stardew Valley and related names are trademarks of their respective owners. This is an unofficial fan resource and is not affiliated with or endorsed by the game developer.
 
 ## Contact
-Email: 39918849@qq.com
+Email: merrysee888@qq.com
 """)
 
 w(os.path.join(CONTENT_EN, "dmca.md"), front(
     "DMCA Copyright Policy", "DMCA takedown and counter-notice procedures for Stardew Valley Hub.",
     date="2026-10-04") + """
-This website respects the intellectual property rights of others and complies with the Digital Millennium Copyright Act (DMCA). If you believe that any material available on this site infringes your copyright, please submit a written DMCA takedown notice to our designated agent via email: mailto:39918849@qq.com.
+This website respects the intellectual property rights of others and complies with the Digital Millennium Copyright Act (DMCA). If you believe that any material available on this site infringes your copyright, please submit a written DMCA takedown notice to our designated agent via email: mailto:merrysee888@qq.com.
 
 Your DMCA notice must contain all of the following information:
 - Identification of the copyrighted work claimed to have been infringed.
@@ -910,13 +910,13 @@ The site is fully automated: data sync → page generation → build → deploy,
 
 This is not an official site. Stardew Valley is developed by ConcernedApe; all trademarks belong to their owners.
 
-Contact: 39918849@qq.com
+Contact: merrysee888@qq.com
 """)
 
 w(os.path.join(CONTENT_EN, "contact.md"), front(
     "Contact Us", "Contact Stardew Valley Hub for DMCA, privacy or advertising inquiries.",
     date="2026-10-04") + """
-For DMCA, privacy, advertising or other inquiries, email: **39918849@qq.com**
+For DMCA, privacy, advertising or other inquiries, email: **merrysee888@qq.com**
 
 We aim to respond within a few business days.
 """)

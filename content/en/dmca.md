@@ -4,7 +4,7 @@ description: "DMCA takedown and counter-notice procedures for Stardew Valley Hub
 date: 2026-10-04
 ---
 
-This website respects the intellectual property rights of others and complies with the Digital Millennium Copyright Act (DMCA). If you believe that any material available on this site infringes your copyright, please submit a written DMCA takedown notice to our designated agent via email: mailto:39918849@qq.com.
+This website respects the intellectual property rights of others and complies with the Digital Millennium Copyright Act (DMCA). If you believe that any material available on this site infringes your copyright, please submit a written DMCA takedown notice to our designated agent via email: mailto:merrysee888@qq.com.
 
 Your DMCA notice must contain all of the following information:
 - Identification of the copyrighted work claimed to have been infringed.

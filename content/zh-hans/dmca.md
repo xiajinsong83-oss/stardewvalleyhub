@@ -4,7 +4,7 @@ description: "星露谷物语 Hub 的 DMCA 下架与反通知流程。"
 date: 2026-10-04
 ---
 
-This website respects the intellectual property rights of others and complies with the Digital Millennium Copyright Act (DMCA). If you believe that any material available on this site infringes your copyright, please submit a written DMCA takedown notice to our designated agent via email: mailto:39918849@qq.com.
+This website respects the intellectual property rights of others and complies with the Digital Millennium Copyright Act (DMCA). If you believe that any material available on this site infringes your copyright, please submit a written DMCA takedown notice to our designated agent via email: mailto:merrysee888@qq.com.
 
 Your DMCA notice must contain all of the following information:
 - Identification of the copyrighted work claimed to have been infringed.
