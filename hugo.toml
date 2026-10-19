@@ -22,16 +22,22 @@ pygmentsUseClasses = true
   languageName = "English"
   contentDir = "content/en"
   title = "Stardew Valley Hub – Unofficial Fan Guides"
+  [languages.en.params]
+    dataSourceNote = "All game data on this site comes from machine-readable open-source community data. This is an unofficial fan resource, not affiliated with ConcernedApe."
 [languages.zh-hans]
   weight = 2
   languageName = "简体中文"
   contentDir = "content/zh-hans"
   title = "星露谷物语攻略站（非官方粉丝站）"
+  [languages.zh-hans.params]
+    dataSourceNote = "本页所有游戏数据来自开源机器可读的社区数据。本站为非官方粉丝资源，与 ConcernedApe 无关。"
 [languages.de]
   weight = 3
   languageName = "Deutsch"
   contentDir = "content/de"
   title = "Stardew Valley Hub – Inoffizielle Fan-Guides"
+  [languages.de.params]
+    dataSourceNote = "Alle Spieldaten auf dieser Website stammen aus maschinenlesbaren Open-Source-Gemeinschaftsdaten. Dies ist eine inoffizielle Fan-Ressource, nicht verbunden mit ConcernedApe."
 [params]
   description = "Data-driven unofficial Stardew Valley guides: NPC gifts, crops, fish, community center bundles, FAQs and update news. Powered by open-source game data."
   email = "39918849@qq.com"

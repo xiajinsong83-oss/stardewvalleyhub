@@ -1,42 +1,126 @@
-{{/* 全站相关内链：工具 + 指南分类 + 更多攻略（文章页/栏目页通用） */}}
-{{ $tools := slice
-  (dict "t" "Farm Layout Planner" "u" "/farmlayou/")
-  (dict "t" "Gift Lookup" "u" "/gift/")
-  (dict "t" "Crop Profit Calculator" "u" "/calculator/")
-  (dict "t" "CC Checklist" "u" "/bundles/")
-  (dict "t" "Fish Check" "u" "/fish-checklist/")
-  (dict "t" "Museum Check" "u" "/museum-checklist/")
-  (dict "t" "Sprinkler Layout Guide" "u" "/sprinkler-layout-guide/")
-  (dict "t" "Starter Planner" "u" "/starter/")
-}}
-{{ $cats := slice
-  (dict "t" "NPC Gift Guides" "u" "/npc/")
-  (dict "t" "Crop Guides" "u" "/crops/")
-  (dict "t" "Fish Guides" "u" "/fish/")
-  (dict "t" "Community Center Bundles" "u" "/bundles/")
-  (dict "t" "Bosses & Elite Enemies" "u" "/boss/")
-  (dict "t" "Weapons" "u" "/weapons/")
-  (dict "t" "Monsters" "u" "/monsters/")
-  (dict "t" "Museum" "u" "/museum/")
-  (dict "t" "Tier List" "u" "/tier/crop-profit/")
-  (dict "t" "Maps" "u" "/maps/")
-}}
-{{/* 按语言输出 h2 标题 */}}
+{{/* 全站相关内链：工具 + 指南分类 + 更多攻略（文章页/栏目页通用），链接文案按语言输出 */}}
 {{ $rlLang := .Site.Language.Lang }}
+{{/* 链接前缀：en 根路径；zh-hans / de 走子目录 */}}
+{{ $p := "/" }}
+{{ if eq $rlLang "zh-hans" }}{{ $p = "/zh-hans/" }}
+{{ else if eq $rlLang "de" }}{{ $p = "/de/" }}{{ end }}
+{{/* 工具链接文案（按语言） */}}
+{{ $tools := slice }}
+{{ if eq $rlLang "zh-hans" }}
+  {{ $tools = slice
+    (dict "t" "农场布局规划器" "u" (printf "%sfarmlayou/" $p))
+    (dict "t" "礼物查询" "u" (printf "%sgift/" $p))
+    (dict "t" "作物利润计算器" "u" (printf "%scalculator/" $p))
+    (dict "t" "社区中心清单" "u" (printf "%sbundles/" $p))
+    (dict "t" "鱼类清单" "u" (printf "%sfish-checklist/" $p))
+    (dict "t" "博物馆清单" "u" (printf "%smuseum-checklist/" $p))
+    (dict "t" "洒水器布局指南" "u" (printf "%ssprinkler-layout-guide/" $p))
+    (dict "t" "开局规划" "u" (printf "%sstarter/" $p))
+  }}
+{{ else if eq $rlLang "de" }}
+  {{ $tools = slice
+    (dict "t" "Farm-Layout-Planer" "u" (printf "%sfarmlayou/" $p))
+    (dict "t" "Geschenk-Suche" "u" (printf "%sgift/" $p))
+    (dict "t" "Gewinn-Rechner" "u" (printf "%scalculator/" $p))
+    (dict "t" "Community-Center-Checkliste" "u" (printf "%sbundles/" $p))
+    (dict "t" "Fisch-Checkliste" "u" (printf "%sfish-checklist/" $p))
+    (dict "t" "Museum-Checkliste" "u" (printf "%smuseum-checklist/" $p))
+    (dict "t" "Sprinkler-Layout-Guide" "u" (printf "%ssprinkler-layout-guide/" $p))
+    (dict "t" "Start-Planer" "u" (printf "%sstarter/" $p))
+  }}
+{{ else }}
+  {{ $tools = slice
+    (dict "t" "Farm Layout Planner" "u" "/farmlayou/")
+    (dict "t" "Gift Lookup" "u" "/gift/")
+    (dict "t" "Crop Profit Calculator" "u" "/calculator/")
+    (dict "t" "CC Checklist" "u" "/bundles/")
+    (dict "t" "Fish Check" "u" "/fish-checklist/")
+    (dict "t" "Museum Check" "u" "/museum-checklist/")
+    (dict "t" "Sprinkler Layout Guide" "u" "/sprinkler-layout-guide/")
+    (dict "t" "Starter Planner" "u" "/starter/")
+  }}
+{{ end }}
+{{/* 分类链接文案（按语言） */}}
+{{ $cats := slice }}
+{{ if eq $rlLang "zh-hans" }}
+  {{ $cats = slice
+    (dict "t" "NPC 礼物攻略" "u" (printf "%snpc/" $p))
+    (dict "t" "作物攻略" "u" (printf "%scrops/" $p))
+    (dict "t" "鱼类攻略" "u" (printf "%sfish/" $p))
+    (dict "t" "社区中心收集包" "u" (printf "%sbundles/" $p))
+    (dict "t" "Boss 与精英敌人" "u" (printf "%sboss/" $p))
+    (dict "t" "武器数据库" "u" (printf "%sweapons/" $p))
+    (dict "t" "怪物数据库" "u" (printf "%smonsters/" $p))
+    (dict "t" "博物馆捐赠" "u" (printf "%smuseum/" $p))
+    (dict "t" "强度排行" "u" (printf "%stier/crop-profit/" $p))
+    (dict "t" "农场地图" "u" (printf "%smaps/" $p))
+  }}
+{{ else if eq $rlLang "de" }}
+  {{ $cats = slice
+    (dict "t" "NPC-Geschenke-Guides" "u" (printf "%snpc/" $p))
+    (dict "t" "Pflanzen-Guides" "u" (printf "%scrops/" $p))
+    (dict "t" "Fisch-Guides" "u" (printf "%sfish/" $p))
+    (dict "t" "Gemeinschaftszentrum-Bündel" "u" (printf "%sbundles/" $p))
+    (dict "t" "Bosses & Elite-Gegner" "u" (printf "%sboss/" $p))
+    (dict "t" "Waffen" "u" (printf "%sweapons/" $p))
+    (dict "t" "Monster" "u" (printf "%smonsters/" $p))
+    (dict "t" "Museum" "u" (printf "%smuseum/" $p))
+    (dict "t" "Tier-Liste" "u" (printf "%stier/crop-profit/" $p))
+    (dict "t" "Farmkarten" "u" (printf "%smaps/" $p))
+  }}
+{{ else }}
+  {{ $cats = slice
+    (dict "t" "NPC Gift Guides" "u" "/npc/")
+    (dict "t" "Crop Guides" "u" "/crops/")
+    (dict "t" "Fish Guides" "u" "/fish/")
+    (dict "t" "Community Center Bundles" "u" "/bundles/")
+    (dict "t" "Bosses & Elite Enemies" "u" "/boss/")
+    (dict "t" "Weapons" "u" "/weapons/")
+    (dict "t" "Monsters" "u" "/monsters/")
+    (dict "t" "Museum" "u" "/museum/")
+    (dict "t" "Tier List" "u" "/tier/crop-profit/")
+    (dict "t" "Maps" "u" "/maps/")
+  }}
+{{ end }}
+{{/* 栏目标题 */}}
+{{ $colTools := "Player Tools" }}{{ $colGuides := "Guides" }}{{ $colMore := "More Guides Hub" }}
+{{ if eq $rlLang "zh-hans" }}{{ $colTools = "玩家工具" }}{{ $colGuides = "攻略分类" }}{{ $colMore = "更多攻略中心" }}
+{{ else if eq $rlLang "de" }}{{ $colTools = "Spielzeuge" }}{{ $colGuides = "Guides" }}{{ $colMore = "Mehr Guides-Hub" }}{{ end }}
+{{/* h2 大标题 */}}
 {{ $rlTitle := "Related Guides & Tools" }}
 {{ if eq $rlLang "zh-hans" }}{{ $rlTitle = "相关攻略与工具" }}
 {{ else if eq $rlLang "de" }}{{ $rlTitle = "Ähnliche Guides & Tools" }}{{ end }}
+{{/* 第三列链接文案（按语言） */}}
+{{ $allIn := "All guides in %s" }}{{ $hubAll := "Guides Hub — all articles" }}
+{{ $lcCrops := "Crop Guides" }}{{ $lcFish := "Fish Guides" }}
+{{ $lcMinerals := "Mineral & Artifact Guides" }}{{ $lcVillagers := "Villager Guides" }}
+{{ if eq $rlLang "zh-hans" }}
+  {{ $allIn = "查看 %s 分类全部攻略" }}{{ $hubAll = "攻略库 — 全部文章" }}
+  {{ $lcCrops = "作物攻略" }}{{ $lcFish = "鱼类攻略" }}
+  {{ $lcMinerals = "矿物与文物攻略" }}{{ $lcVillagers = "村民攻略" }}
+{{ else if eq $rlLang "de" }}
+  {{ $allIn = "Alle Guides in %s" }}{{ $hubAll = "Guides-Hub — alle Artikel" }}
+  {{ $lcCrops = "Pflanzen-Guides" }}{{ $lcFish = "Fisch-Guides" }}
+  {{ $lcMinerals = "Mineralien & Artefakte Guides" }}{{ $lcVillagers = "Dorfbewohner-Guides" }}
+{{ end }}
+{{/* 分类名（第三列 $sec 标题用） */}}
+{{ $secTitles := dict "crops" "Crops" "fish" "Fish" "minerals" "Minerals" "villagers" "Villagers" }}
+{{ if eq $rlLang "zh-hans" }}
+  {{ $secTitles = dict "crops" "作物" "fish" "鱼类" "minerals" "矿物与文物" "villagers" "村民" }}
+{{ else if eq $rlLang "de" }}
+  {{ $secTitles = dict "crops" "Pflanzen" "fish" "Fische" "minerals" "Mineralien" "villagers" "Dorfbewohner" }}
+{{ end }}
 <section class="related-links">
   <h2>{{ $rlTitle }}</h2>
   <div class="related-links-grid">
     <div class="rl-col">
-      <h3>Player Tools</h3>
+      <h3>{{ $colTools }}</h3>
       <ul>
         {{ range $tools }}<li><a href="{{ .u }}">{{ .t }}</a></li>{{ end }}
       </ul>
     </div>
     <div class="rl-col">
-      <h3>Guides</h3>
+      <h3>{{ $colGuides }}</h3>
       <ul>
         {{ range $cats }}<li><a href="{{ .u }}">{{ .t }}</a></li>{{ end }}
       </ul>
@@ -47,7 +131,7 @@
         {{ $parts := split .File.Path "/" }}
         {{ if ge (len $parts) 2 }}{{ $sec = index $parts 1 }}{{ end }}
       {{ end }}
-      <h3>{{ if eq .Type "guide" }}{{ $sec | title }} Guides{{ else }}More Guides Hub{{ end }}</h3>
+      <h3>{{ if eq .Type "guide" }}{{ index $secTitles $sec }}{{ else }}{{ $colMore }}{{ end }}</h3>
       <ul>
         {{ if eq .Type "guide" }}
           {{ $prefix := printf "all-guides/%s/" $sec }}
@@ -60,13 +144,13 @@
           {{ range first 5 $sibs }}
           <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
           {{ end }}
-          <li><a href="/all-guides/{{ $sec }}/">All guides in {{ $sec | title }}</a></li>
+          <li><a href="{{ $p }}all-guides/{{ $sec }}/">{{ printf $allIn (index $secTitles $sec) }}</a></li>
         {{ else }}
-          <li><a href="/all-guides/">Guides Hub — all articles</a></li>
-          <li><a href="/all-guides/crops/">Crop Guides</a></li>
-          <li><a href="/all-guides/fish/">Fish Guides</a></li>
-          <li><a href="/all-guides/minerals/">Mineral &amp; Artifact Guides</a></li>
-          <li><a href="/all-guides/villagers/">Villager Guides</a></li>
+          <li><a href="{{ $p }}all-guides/">{{ $hubAll }}</a></li>
+          <li><a href="{{ $p }}all-guides/crops/">{{ $lcCrops }}</a></li>
+          <li><a href="{{ $p }}all-guides/fish/">{{ $lcFish }}</a></li>
+          <li><a href="{{ $p }}all-guides/minerals/">{{ $lcMinerals }}</a></li>
+          <li><a href="{{ $p }}all-guides/villagers/">{{ $lcVillagers }}</a></li>
         {{ end }}
       </ul>
     </div>
