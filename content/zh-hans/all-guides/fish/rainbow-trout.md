@@ -1,37 +1,38 @@
 ---
-title: "Rainbow Trout Guide: Where to Catch It in Summer (River, Mountain Lake, 6:00 AM – 7:00 PM)"
-description: "Rainbow Trout Guide: Where to Catch It in Summer (River, Mountain Lake, 6:00 AM – 7:00 PM) — A freshwater trout with colorful markings."
-date: 2026-10-10
-cover: "/images/guide-covers/fish.jpg"
+title: "Rainbow Trout 攻略：夏季（River, Mountain Lake，6:00 AM – 7:00 PM）"
+description: "Rainbow Trout 攻略：夏季（River, Mountain Lake，6:00 AM – 7:00 PM） — A freshwater trout with colorful markings."
+date: 2026-10-19
 draft: false
 type: guide
 icon: "/images/fish/Rainbow Trout.png"
-related: [{"title": "Fish Checklist", "url": "/fish-checklist/"}, {"title": "Farm Layout Planner", "url": "/farmlayou/"}]
+related: [{"title": "鱼类清单", "url": "/zh-hans/fish-checklist/"}, {"title": "农场布局规划器", "url": "/zh-hans/farmlayou/"}]
+cover: "/images/guide-covers/fish-alt.jpg"
 ---
-The Rainbow Trout is a regular fish in Stardew Valley. A freshwater trout with colorful markings.
+**Rainbow Trout** 是星露谷物语中的普通鱼。A freshwater trout with colorful markings.
 
-## Catch Conditions
+## 垂钓条件
 
-| Detail | Value |
+| 项目 | 数值 |
 |---|---|
-| Season | Summer |
-| Time | 6:00 AM – 7:00 PM |
-| Weather | sunny |
-| Location | River, Mountain Lake |
-| Difficulty | 45 / 100 |
-| Sell price | 65g |
-| Catch type | rod |
+| 季节 | 夏季 |
+| 时间 | 6:00 AM – 7:00 PM |
+| 天气 | 晴天 |
+| 地点 | River, Mountain Lake |
+| 难度 | 45 / 100 |
+| 售价 | 65g |
+| 钓法 | 鱼竿 |
 
-## How to Catch
+## 如何垂钓
 
-Go to **River, Mountain Lake** during the right season and time window. The Rainbow Trout is Moderate — an upgraded rod and bait make it reliable..
+在对应季节和时段前往 **River, Mountain Lake**。Rainbow Trout 中等——搭配升级鱼竿和鱼饵就能稳定钓到。
 
-**Bait & tackle**: use Bait (or Magnet/Lure) and an upgraded rod to shrink the catch window. For hard fish, hold the bobber high and tap, don't hold — release pressure the instant the bar drops.
+**饵料与钓具**：使用鱼饵（或磁力/钩子）搭配升级后的鱼竿，缩小捕获窗口。对付难钓的鱼，让浮标保持高位、点按而非长按——进度条一下降就立刻松开。
 
-## Uses & Tips
+## 用途与技巧
 
-- **Sell value**: base price **65g** — with the Fisher/Angler professions it sells for **81g**.
-- **Cooking**: used in Maki Roll, Quality Fertilizer, Sashimi, Trout Soup.
-- **Smoking**: can be smoked in a Fish Smoker for extra value.
-- **Fish Pond**: keeps in a Fish Pond and produces Roe/items at population milestones.
-- Track your catches with the [Fish Checklist](/fish-checklist/).
+- **售价**：基础价格 **65g**——选择渔夫/垂钓大师职业后可卖到 **81g**。
+- **烹饪**：可用于 Maki Roll、Quality Fertilizer、Sashimi、Trout Soup。
+- **熏制**：可以放进熏鱼机熏制，价值更高。
+- **鱼塘**：可以养在鱼塘中，随鱼群规模产出鱼子/物品。
+- 用[鱼类清单](/zh-hans/fish-checklist/)追踪你的捕获记录。
+

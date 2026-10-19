@@ -1,37 +1,38 @@
 ---
-title: "Pufferfish Guide: Where to Catch, Seasons & Tips"
-description: "Inflates when threatened."
-date: 2026-10-10
-cover: "/images/guide-covers/fish-alt.jpg"
+title: "Pufferfish 攻略：夏季（Ocean, Ginger Island，12:00 PM – 4:00 PM）"
+description: "Pufferfish 攻略：夏季（Ocean, Ginger Island，12:00 PM – 4:00 PM） — Inflates when threatened."
+date: 2026-10-19
 draft: false
 type: guide
 icon: "/images/fish/Pufferfish.png"
-related: [{"title": "Fish Checklist", "url": "/fish-checklist/"}, {"title": "Farm Layout Planner", "url": "/farmlayou/"}]
+related: [{"title": "鱼类清单", "url": "/zh-hans/fish-checklist/"}, {"title": "农场布局规划器", "url": "/zh-hans/farmlayou/"}]
+cover: "/images/guide-covers/fish.jpg"
 ---
-The Pufferfish is a regular fish in Stardew Valley. Inflates when threatened.
+**Pufferfish** 是星露谷物语中的普通鱼。Inflates when threatened.
 
-## Catch Conditions
+## 垂钓条件
 
-| Detail | Value |
+| 项目 | 数值 |
 |---|---|
-| Season | Summer |
-| Time | 12:00 PM – 4:00 PM |
-| Weather | sunny |
-| Location | Ocean, Ginger Island |
-| Difficulty | 80 / 100 |
-| Sell price | 200g |
-| Catch type | rod |
+| 季节 | 夏季 |
+| 时间 | 12:00 PM – 4:00 PM |
+| 天气 | 晴天 |
+| 地点 | Ocean, Ginger Island |
+| 难度 | 80 / 100 |
+| 售价 | 200g |
+| 钓法 | 鱼竿 |
 
-## How to Catch
+## 如何垂钓
 
-Go to **Ocean, Ginger Island** during the right season and time window. The Pufferfish is Very hard — requires maxed fishing skill, quality bait and careful timing..
+在对应季节和时段前往 **Ocean, Ginger Island**。Pufferfish 极难——需要满级钓鱼技能、高级鱼饵和精准的时机把控。
 
-**Bait & tackle**: use Bait (or Magnet/Lure) and an upgraded rod to shrink the catch window. For hard fish, hold the bobber high and tap, don't hold — release pressure the instant the bar drops.
+**饵料与钓具**：使用鱼饵（或磁力/钩子）搭配升级后的鱼竿，缩小捕获窗口。对付难钓的鱼，让浮标保持高位、点按而非长按——进度条一下降就立刻松开。
 
-## Uses & Tips
+## 用途与技巧
 
-- **Sell value**: base price **200g** — with the Fisher/Angler professions it sells for **250g**.
-- **Cooking**: used in Maki Roll, Quality Fertilizer, Sashimi, Specialty Fish Bundle.
-- **Smoking**: can be smoked in a Fish Smoker for extra value.
-- **Fish Pond**: keeps in a Fish Pond and produces Roe/items at population milestones.
-- Track your catches with the [Fish Checklist](/fish-checklist/).
+- **售价**：基础价格 **200g**——选择渔夫/垂钓大师职业后可卖到 **250g**。
+- **烹饪**：可用于 Maki Roll、Quality Fertilizer、Sashimi、Specialty Fish Bundle。
+- **熏制**：可以放进熏鱼机熏制，价值更高。
+- **鱼塘**：可以养在鱼塘中，随鱼群规模产出鱼子/物品。
+- 用[鱼类清单](/zh-hans/fish-checklist/)追踪你的捕获记录。
+

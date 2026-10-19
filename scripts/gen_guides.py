@@ -280,6 +280,83 @@ def fish_guide(item):
     return slug, body
 
 
+# ---------------- 鱼类攻略中文（zh-hans）版本 ----------------
+SEASON_ZH = {"spring": "春季", "summer": "夏季", "fall": "秋季", "winter": "冬季"}
+WEATHER_ZH = {"rainy": "雨天", "sunny": "晴天", "both": "任意天气", "any": "任意天气"}
+CATCH_TYPE_ZH = {"rod": "鱼竿", "trap": "蟹笼"}
+
+
+def season_label_zh(seasons):
+    if not seasons:
+        return "全季节（温室）"
+    return "、".join(SEASON_ZH.get(s.lower(), s) for s in seasons)
+
+
+CATEGORY_ZH = {"regular": "普通", "legendary": "传奇",
+               "legendary-2": "传奇二代", "legendary-3": "传奇三代"}
+
+
+def fish_title_zh(item):
+    """中文 SEO title：<鱼名>攻略：季节/时间/地点"""
+    name = item["name"]
+    seasons = season_label_zh(item.get("seasons", []))
+    loc = item.get("location", "")
+    time_txt = item.get("time", "全天")
+    return "%s 攻略：%s（%s，%s）" % (name, seasons, loc, time_txt)
+
+
+def fish_guide_zh(item):
+    """生成中文正文 markdown（专名/数值保留英文原文）"""
+    name = item["name"]
+    diff = item.get("difficulty", 0)
+    diff_txt = ("极难——需要满级钓鱼技能、高级鱼饵和精准的时机把控。"
+                if diff >= 70 else
+                "中等——搭配升级鱼竿和鱼饵就能稳定钓到。"
+                if diff >= 40 else
+                "简单——新手用基础鱼竿在早期就能钓到。")
+    weather = item.get("weather") or "any"
+    weather_zh = WEATHER_ZH.get(weather.lower(), weather)
+    catch_type_zh = CATCH_TYPE_ZH.get(item.get("catchType", "rod"), item.get("catchType", "rod"))
+    time_txt = item.get("time", "全天")
+    loc = item.get("location", "—")
+    used_in = "、".join(item.get("usedIn", [])) if item.get("usedIn") else "无食谱"
+    smk = ("可以放进熏鱼机熏制，价值更高。" if item.get("canSmoke") else "无法熏制。")
+    pond = ("可以养在鱼塘中，随鱼群规模产出鱼子/物品。" if item.get("fishPond") else "不是鱼塘常驻鱼种。")
+    body = [
+        "**%s** 是星露谷物语中的%s鱼。%s" % (name, CATEGORY_ZH.get(item.get("category", ""), ""), item.get("description", "")),
+        "",
+        "## 垂钓条件",
+        "",
+        "| 项目 | 数值 |",
+        "|---|---|",
+        "| 季节 | %s |" % season_label_zh(item.get("seasons", [])),
+        "| 时间 | %s |" % time_txt,
+        "| 天气 | %s |" % weather_zh,
+        "| 地点 | %s |" % loc,
+        "| 难度 | %d / 100 |" % diff,
+        "| 售价 | %s |" % money(item.get("sellPrice", 0)),
+        "| 钓法 | %s |" % catch_type_zh,
+        "",
+        "## 如何垂钓",
+        "",
+        "在对应季节和时段前往 **%s**。%s %s" % (loc, name, diff_txt),
+        "",
+        "**饵料与钓具**：使用鱼饵（或磁力/钩子）搭配升级后的鱼竿，缩小捕获窗口。"
+        "对付难钓的鱼，让浮标保持高位、点按而非长按——进度条一下降就立刻松开。",
+        "",
+        "## 用途与技巧",
+        "",
+        "- **售价**：基础价格 **%s**——选择渔夫/垂钓大师职业后可卖到 **%s**。" % (
+            money(item.get("sellPrice", 0)), money(int(item.get("sellPrice", 0) * 1.25))),
+        "- **烹饪**：可用于 %s。" % used_in,
+        "- **熏制**：%s" % smk,
+        "- **鱼塘**：%s" % pond,
+        "- 用[鱼类清单](/zh-hans/fish-checklist/)追踪你的捕获记录。",
+        "",
+    ]
+    return slugify(name), body
+
+
 def mineral_guide(item):
     name = item["name"]
     slug = slugify(name)
@@ -569,6 +646,46 @@ def main():
         cat_summary[c]["emoji"] = emojis[c]
     patch_hub_section(hub_section(cat_summary))
     print("Updated Guides Hub home + category indexes.")
+
+    # ---- 同步鱼类攻略中文（zh-hans）版本：对每个已生成英文攻略的鱼写一份中文版 ----
+    zh_dir = os.path.join(ROOT, "content", "zh-hans", "all-guides", "fish")
+    en_fish_dir = os.path.join(GUIDES_DIR, "fish")
+    fish_data = load("fish.json")
+    zh_count = 0
+    zh_rows = []
+    if os.path.isdir(en_fish_dir):
+        existing = {fn[:-3] for fn in os.listdir(en_fish_dir) if fn.endswith(".md") and fn != "_index.md"}
+        for it in fish_data:
+            try:
+                s = slugify(it["name"])
+            except Exception:
+                continue
+            if s not in existing:
+                continue
+            zslug, zbody = fish_guide_zh(it)
+            ztitle = fish_title_zh(it)
+            zdesc = (ztitle + " — " + (it.get("description") or "")).strip()
+            if len(zdesc) > 155:
+                zdesc = zdesc[:152].rstrip() + "…"
+            icon = img_url(it)
+            cover_count = len(zh_rows) + 1
+            cover = "/images/guide-covers/fish%s.jpg" % ("" if cover_count % 2 == 1 else "-alt")
+            md = front(ztitle, zdesc, icon,
+                       [("鱼类清单", "/zh-hans/fish-checklist/"), ("农场布局规划器", "/zh-hans/farmlayou/")],
+                       cover=cover) + "\n".join(zbody) + "\n"
+            w(os.path.join(zh_dir, zslug + ".md"), md)
+            zh_rows.append((zslug, ztitle))
+            zh_count += 1
+    # 中文分类索引页
+    if zh_rows:
+        cards = "\n".join(
+            '  <a class="card" href="/zh-hans/all-guides/fish/%s/"><h3>%s</h3></a>' % (s, t)
+            for s, t in sorted(zh_rows))
+        idx = ["---", 'title: "鱼类攻略 - 星露谷物语攻略站"', "---", "",
+               '<div class="page-hero"><h1>鱼类攻略</h1><p>每种鱼的垂钓季节、时间、天气、地点、难度与售价。</p></div>', "",
+               '<div class="card-grid home-grid">', cards, "</div>", ""]
+        w(os.path.join(zh_dir, "_index.md"), "\n".join(idx))
+    print("Wrote %d Chinese fish guides to content/zh-hans/all-guides/fish/" % zh_count)
 
     # 记录本次处理的数据版本（供下轮判断是否有新内容）
     record_processed_version(cur_ver)
