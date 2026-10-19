@@ -394,6 +394,100 @@ def translate_title(lang, title):
             return re.sub(pat, repl, title)
     return None  # 未匹配 → 保留英文
 
+# ---------------- 数据详情页正文模板句翻译（zh-hans / de） ----------------
+# 只替换 100% 固定的表格行标签、表头、常见小标题；专名和数据数值不动
+TEMPLATE_ROWS = {
+    "zh-hans": [
+        ("| Attribute | Value |", "| 属性 | 数值 |"),
+        ("| Type |", "| 类型 |"),
+        ("| Damage |", "| 伤害 |"),
+        ("| Speed |", "| 速度 |"),
+        ("| Crit chance |", "| 暴击率 |"),
+        ("| Obtain |", "| 获取途径 |"),
+        ("| Sell price |", "| 售价 |"),
+        ("| XP |", "| 经验 |"),
+        ("| Locations |", "| 出现位置 |"),
+        ("| Season |", "| 季节 |"),
+        ("| Growth time |", "| 生长时间 |"),
+        ("| Seed source |", "| 种子来源 |"),
+        ("| Seed price |", "| 种子价格 |"),
+        ("| Base sell price |", "| 基础售价 |"),
+        ("| Harvest quantity |", "| 收获数量 |"),
+        ("| Trellis |", "| 需要支架 |"),
+        ("| Giant crop possible |", "| 可长成巨型作物 |"),
+        ("| Item |", "| 物品 |"),
+        ("| Quantity |", "| 数量 |"),
+        ("| Reward |", "| 奖励 |"),
+        ("## Tips", "## 小贴士"),
+        ("**Sell price:**", "**售价：**"),
+        ("**Found in:**", "**获取来源：**"),
+        ("**Donation note:**", "**捐赠提示：**"),
+        ("**Items required:**", "**所需物品：**"),
+        ("**Artisan uses:**", "**加工用途：**"),
+    ],
+    "de": [
+        ("| Attribute | Value |", "| Attribut | Wert |"),
+        ("| Type |", "| Typ |"),
+        ("| Damage |", "| Schaden |"),
+        ("| Speed |", "| Tempo |"),
+        ("| Crit chance |", "| Krit. Chance |"),
+        ("| Obtain |", "| Fundort |"),
+        ("| Sell price |", "| Verkaufspreis |"),
+        ("| XP |", "| Erfahrung |"),
+        ("| Locations |", "| Fundorte |"),
+        ("| Season |", "| Jahreszeit |"),
+        ("| Growth time |", "| Wachstumszeit |"),
+        ("| Seed source |", "| Samenquelle |"),
+        ("| Seed price |", "| Samenpreis |"),
+        ("| Base sell price |", "| Basis-Verkaufspreis |"),
+        ("| Harvest quantity |", "| Erntemenge |"),
+        ("| Trellis |", "| Rankhilfe |"),
+        ("| Giant crop possible |", "| Riesige Ernte möglich |"),
+        ("| Item |", "| Gegenstand |"),
+        ("| Quantity |", "| Menge |"),
+        ("| Reward |", "| Belohnung |"),
+        ("## Tips", "## Tipps"),
+        ("**Sell price:**", "**Verkaufspreis:**"),
+        ("**Found in:**", "**Gefunden in:**"),
+        ("**Donation note:**", "**Spendenhinweis:**"),
+        ("**Items required:**", "**Benötigte Gegenstände:**"),
+        ("**Artisan uses:**", "**Handwerksverwendung:**"),
+    ],
+}
+
+# 开头句正则（按页面类型）
+TEMPLATE_OPENING = {
+    "zh-hans": [
+        # "The **X** is a sword/club/dagger/slingshot/... in Stardew Valley."
+        (r"The \*\*(.+?)\*\* is a (.+?) in Stardew Valley\.", r"**\1** 是星露谷物语中的\2。"),
+        # "The **X** has **Y HP** and **Z damage**."
+        (r"The \*\*(.+?)\*\* has \*\*(.+?) HP\*\* and \*\*(.+?) damage\*\*\.", r"**\1** 有 **\2 HP** 和 **\3 点伤害**。"),
+        # "The **X** is a mineral that can be donated to the Stardew Valley Museum."
+        (r"The \*\*(.+?)\*\* is a mineral that can be donated to the Stardew Valley Museum\.", r"**\1** 是一种矿物，可以捐赠给星露谷物语博物馆。"),
+        # "Parsnip is a crop in Stardew Valley. Below is the complete growing data."
+        (r"is a crop in Stardew Valley\. Below is the complete growing data\.", r"是星露谷物语中的一种作物。以下是完整生长数据。"),
+        # "The **X** is a bundle in the **Y** room of the Community Center."
+        (r"The \*\*(.+?)\*\* is a bundle in the \*\*(.+?)\*\* room of the Community Center\.", r"**\1** 是社区中心 **\2** 房间的一个收集包。"),
+    ],
+    "de": [
+        (r"The \*\*(.+?)\*\* is a (.+?) in Stardew Valley\.", r"**\1** ist eine/n \2 in Stardew Valley."),
+        (r"The \*\*(.+?)\*\* has \*\*(.+?) HP\*\* and \*\*(.+?) damage\*\*\.", r"**\1** hat **\2 LP** und **\3 Schaden**."),
+        (r"The \*\*(.+?)\*\* is a mineral that can be donated to the Stardew Valley Museum\.", r"**\1** ist ein Mineral, das im Museum von Stardew Valley gespendet werden kann."),
+        (r"is a crop in Stardew Valley\. Below is the complete growing data\.", r"ist eine Feldfrucht in Stardew Valley. Hier sind die vollständigen Anbaudaten."),
+        (r"The \*\*(.+?)\*\* is a bundle in the \*\*(.+?)\*\* room of the Community Center\.", r"**\1** ist ein Bündel im Raum **\2** des Gemeindezentrums."),
+    ],
+}
+
+def apply_template_i18n(body, lang):
+    """对数据详情页正文应用固定模板句翻译（zh-hans / de）。专名和数据不动。"""
+    if lang not in TEMPLATE_ROWS:
+        return body
+    for old, new in TEMPLATE_ROWS[lang]:
+        body = body.replace(old, new)
+    for pat, repl in TEMPLATE_OPENING[lang]:
+        body = re.sub(pat, repl, body)
+    return body
+
 def process():
     total = 0
     for lang in ("zh-hans", "de"):
@@ -445,6 +539,8 @@ def process():
                     desc_done = True
                     continue
                 new_lines.append(ln)
+            # 数据详情页正文模板句翻译（zh-hans/de）
+            body = apply_template_i18n(body, lang)
             out = "---\n" + "\n".join(new_lines) + "\n---\n" + body
             out_path = os.path.join(dst, rel)
             os.makedirs(os.path.dirname(out_path), exist_ok=True)

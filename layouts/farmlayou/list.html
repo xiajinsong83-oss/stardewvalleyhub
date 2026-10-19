@@ -1,17 +1,34 @@
 {{ define "main" }}
+{{/* 按语言输出工具页硬编码文案 */}}
+{{ $flLang := .Site.Language.Lang }}
+{{ $flEyebrow := "Farm Tool" }}{{ $flH1 := "Farm Layout Planner" }}
+{{ $flSub := "Sketch your farm layout right here — 12×8 grid, auto-saved in your browser. Use the grid as a quick planning board. It is a layout sketch, so you can change ideas without committing to a full in-game build." }}
+{{ $flRefLabel := "VISUAL REFERENCE" }}{{ $flRefH3 := "Make the rough idea visible." }}
+{{ $flRefP := "Use the farm view as a reminder: a good layout is a set of relationships — rows need access, buildings need breathing room, and empty plots are part of the plan." }}
+{{ if eq $flLang "zh-hans" }}
+  {{ $flEyebrow = "农场工具" }}{{ $flH1 = "农场布局规划器" }}
+  {{ $flSub = "在浏览器里直接草拟你的农场布局——12×8 网格，自动保存在本地。把这张网格图当作快速规划板，随时调整想法，不用急着在游戏里动工。" }}
+  {{ $flRefLabel = "视觉参考" }}{{ $flRefH3 = "让粗略想法变成看得见的图。" }}
+  {{ $flRefP = "把农场视图当作一个提醒：好的布局是一组关系——作物行需要能走到，建筑之间要留呼吸空间，空地本身也是规划的一部分。" }}
+{{ else if eq $flLang "de" }}
+  {{ $flEyebrow = "Farm-Werkzeug" }}{{ $flH1 = "Farm-Layout-Planer" }}
+  {{ $flSub = "Skizziere deinen Farm-Layout direkt hier — 12×8 Raster, automatisch in deinem Browser gespeichert. Nutze das Raster als schnelles Planungsboard. Es ist eine Layout-Skizze, damit du Ideen ändern kannst, ohne sofort im Spiel zu bauen." }}
+  {{ $flRefLabel = "VISUELLE REFERENZ" }}{{ $flRefH3 = "Mache die grobe Idee sichtbar." }}
+  {{ $flRefP = "Nutze die Farm-Ansicht als Erinnerung: Ein gutes Layout ist eine Gruppe von Beziehungen — Felder brauchen Zugang, Gebäude brauchen Luft, und leere Flächen sind Teil des Plans." }}
+{{ end }}
 <div class="content-col">
   {{ partial "breadcrumb.html" . }}
 
   <section class="home-planner">
-    <p class="section-eyebrow">Farm Tool</p>
-    <h1>Farm Layout Planner</h1>
-    <p class="quick-sub">Sketch your farm layout right here — 12×8 grid, auto-saved in your browser. Use the grid as a quick planning board. It is a layout sketch, so you can change ideas without committing to a full in-game build.</p>
+    <p class="section-eyebrow">{{ $flEyebrow }}</p>
+    <h1>{{ $flH1 }}</h1>
+    <p class="quick-sub">{{ $flSub }}</p>
     <div class="planner-hero-row">
       <div class="planner-hero-img-wrap"><img src="/images/farm-planner-hero.webp" alt="Farm layout reference" class="planner-hero-img"></div>
       <div class="planner-hero-text">
-        <p class="planner-eyebrow">VISUAL REFERENCE</p>
-        <h3>Make the rough idea visible.</h3>
-        <p>Use the farm view as a reminder: a good layout is a set of relationships — rows need access, buildings need breathing room, and empty plots are part of the plan.</p>
+        <p class="planner-eyebrow">{{ $flRefLabel }}</p>
+        <h3>{{ $flRefH3 }}</h3>
+        <p>{{ $flRefP }}</p>
       </div>
     </div>
     <div class="planner-wrap home-planner-wrap">
