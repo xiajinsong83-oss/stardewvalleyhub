@@ -1,33 +1,34 @@
 ---
-title: "Dwarf Guide: Birthday (Summer 22), Loved Gifts & Best Gift Ideas"
-description: "Dwarf Guide: Birthday (Summer 22), Loved Gifts & Best Gift Ideas — The Dwarf is a valley resident who lives in the Mines. Access is initially blocked by…"
-date: 2026-10-10
-cover: "/images/guide-covers/villagers-alt.jpg"
+title: "Dwarf-Lieblingsgeschenke in Stardew Valley"
+description: "Dwarf-Lieblingsgeschenke in Stardew Valley — The Dwarf is a valley resident who lives in the Mines. Access is initially blocked by an unbreakable rock w…"
+date: 2026-10-19
 draft: false
 type: guide
 icon: "/images/villagers/Dwarf.png"
-related: [{"title": "Gift Lookup", "url": "/gift/"}]
+related: [{"title": "Geschenk-Suche", "url": "/de/gift/"}]
+cover: "/images/guide-covers/villagers-alt.jpg"
 ---
 The Dwarf is a valley resident who lives in the Mines. Access is initially blocked by an unbreakable rock which can be broken using a steel pickaxe or bombs.
 
-## At a Glance
+## Überblick
 
-| Detail | Value |
+| Detail | Wert |
 |---|---|
-| Lives at | The Mines |
-| Birthday | Summer 22 |
-| Giftable | Yes (daily, 2 per week) |
+| Wohnt | The Mines |
+| Geburtstag | Sommer 22 |
+| Beschenkbar | Ja (täglich 1, wöchentlich 2) |
 
-## Loved Gifts
+## Lieblingsgeschenke
 
 - Amethyst<br>- Aquamarine<br>- Emerald<br>- Jade<br>- Lava Eel<br>- Lemon Stone<br>- Omni Geode<br>- Ruby<br>- Topaz
 
-## Liked Gifts
+## Mag Geschenke
 
 - Cave Carrot<br>- Quartz
 
-## Relationship Tips
+## Beziehungstipps
 
-- **Birthday bonus**: gifts on Summer 22 give 8× friendship points — save a loved item for that day.
-- Talk daily and give a loved gift twice a week to reach the next heart event quickly.
-- Plan which items to stock with the [Gift Lookup](/gift/) tool.
+- **Geburtstagsbonus**: Geschenke am Sommer 22 geben 8× Freundschaftspunkte – hebe ein Lieblingsgeschenk für diesen Tag auf.
+- Täglich sprechen und zweimal wöchentlich ein Lieblingsgeschenk geben, um schnell zum nächsten Herz-Ereignis zu kommen.
+- Plane den Vorrat mit dem [Geschenk-Such-Tool](/de/gift/).
+

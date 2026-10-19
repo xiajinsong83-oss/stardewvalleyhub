@@ -1,33 +1,34 @@
 ---
-title: "Alex Guide: Birthday (Summer 13), Loved Gifts & Best Gift Ideas"
-description: "Alex Guide: Birthday (Summer 13), Loved Gifts & Best Gift Ideas — Alex is a villager who lives in the house southeast of Pierre's General Store. He is o…"
-date: 2026-10-10
-cover: "/images/guide-covers/villagers-alt.jpg"
+title: "Alex-Lieblingsgeschenke in Stardew Valley"
+description: "Alex-Lieblingsgeschenke in Stardew Valley — Alex is a villager who lives in the house southeast of Pierre's General Store. He is one of the twelve chara…"
+date: 2026-10-19
 draft: false
 type: guide
 icon: "/images/villagers/Alex.png"
-related: [{"title": "Gift Lookup", "url": "/gift/"}]
+related: [{"title": "Geschenk-Suche", "url": "/de/gift/"}]
+cover: "/images/guide-covers/villagers-alt.jpg"
 ---
 Alex is a villager who lives in the house southeast of Pierre's General Store. He is one of the twelve characters available to marry.
 
-## At a Glance
+## Überblick
 
-| Detail | Value |
+| Detail | Wert |
 |---|---|
-| Lives at | 1 River Road |
-| Birthday | Summer 13 |
-| Giftable | Yes (daily, 2 per week) |
+| Wohnt | 1 River Road |
+| Geburtstag | Sommer 13 |
+| Beschenkbar | Ja (täglich 1, wöchentlich 2) |
 
-## Loved Gifts
+## Lieblingsgeschenke
 
 - Complete Breakfast<br>- Jack Be Nimble Jack Be Thick<br>- Salmon Dinner
 
-## Liked Gifts
+## Mag Geschenke
 
 - Dinosaur Egg<br>- Field Snack<br>- Parrot Egg
 
-## Relationship Tips
+## Beziehungstipps
 
-- **Birthday bonus**: gifts on Summer 13 give 8× friendship points — save a loved item for that day.
-- Talk daily and give a loved gift twice a week to reach the next heart event quickly.
-- Plan which items to stock with the [Gift Lookup](/gift/) tool.
+- **Geburtstagsbonus**: Geschenke am Sommer 13 geben 8× Freundschaftspunkte – hebe ein Lieblingsgeschenk für diesen Tag auf.
+- Täglich sprechen und zweimal wöchentlich ein Lieblingsgeschenk geben, um schnell zum nächsten Herz-Ereignis zu kommen.
+- Plane den Vorrat mit dem [Geschenk-Such-Tool](/de/gift/).
+

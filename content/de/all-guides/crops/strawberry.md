@@ -1,49 +1,50 @@
 ---
-title: "Strawberry Guide: How to Grow Strawberry in Spring (8-Day Growth, Profit & Tips)"
-description: "Strawberry Guide: How to Grow Strawberry in Spring (8-Day Growth, Profit & Tips) — This plump, delicious berry will continue to produce after the first…"
-date: 2026-10-10
-cover: "/images/guide-covers/crops-alt.jpg"
+title: "Strawberry Anbau-Guide: Reife in 8 Tagen | Stardew Valley"
+description: "Strawberry Anbau-Guide: Reife in 8 Tagen | Stardew Valley — This plump, delicious berry will continue to produce after the first harvest."
+date: 2026-10-19
 draft: false
 type: guide
 icon: "/images/crops/strawberry/crop.png"
-related: [{"title": "Farm Layout Planner", "url": "/farmlayou/"}, {"title": "Crop Profit Calculator", "url": "/calculator/"}]
+related: [{"title": "Farm-Layout-Planer", "url": "/de/farmlayou/"}, {"title": "Gewinn-Rechner", "url": "/de/calculator/"}]
+cover: "/images/guide-covers/crops-alt.jpg"
 ---
-The Strawberry is a fruit crop in Stardew Valley. This plump, delicious berry will continue to produce after the first harvest. It grows in Spring and is one of the most reliable ways to build early-season income, so it belongs in almost every farm plan.
+**Strawberry** ist eine fruit-Pflanze in Stardew Valley. This plump, delicious berry will continue to produce after the first harvest. Anbaubar in **Frühling** – eine der zuverlässigsten Einnahmequellen early, gehört in fast jeden Farmplan.
 
-## At a Glance
+## Übersicht
 
-| Detail | Value |
+| Detail | Wert |
 |---|---|
-| Season | Spring |
-| Growth time | 8 days then regrows every 4 days |
-| Regrow | Yes (4 days) |
-| Seed cost | Egg Festival (100g) |
-| Sell price | 120g |
-| Max quality | Iridium |
-| Category | fruit |
-| Trellis | No |
-| Giant crop | No |
-| Farming XP | 18 |
+| Jahreszeit | Frühling |
+| Wachstumszeit | 8 Tage dann alle 4 Tage Nachwuchs |
+| Nachwuchs | Ja (alle 4 Tage) |
+| Samenkosten | Egg Festival (100g) |
+| Verkaufspreis | 120g |
+| Max. Qualität | Iridium |
+| Kategorie | fruit |
+| Rankhilfe | Nein |
+| Riesenpflanze | Nein |
+| Anbau-EP | 18 |
 
-## How to Grow
+## Anbau
 
-Plant Strawberry Seeds in tilled, watered soil at the start of the season. The crop takes **8 days** to mature and then produces again every 4 days after the first harvest. Water every morning (or set up a sprinkler) so the growth timer never pauses.
+Pflanze Strawberry Seeds zu Saisonbeginn in gegrabene, bewässerte Erde. Die Pflanze braucht **8 Tage** zur Reife, danach erneut alle 4 Tage Ertrag nach der ersten Ernte. Jeden Morgen gießen (oder Sprinkler aufstellen), damit die Wachstumszeit nie pausiert.
 
-**Harvest strategy**: This is a multi-harvest crop — plan to keep it planted all season and collect repeatedly.
+**Erntestrategie**: Mehrfachernte-Pflanze – die ganze Saison stehen lassen und wiederholt ernten.
 
-## Profit Analysis
+## Gewinnanalyse
 
-| Metric | Value |
+| Kennzahl | Wert |
 |---|---|
-| Net profit per plant | 20g |
-| Harvests per season | ~6 |
-| Approx. season profit per plant | 620g |
+| Nettogewinn pro Pflanze | 20g |
+| Ernten pro Saison | ~6 |
+| Ca. Gewinn pro Pflanze/Saison | 620g |
 
-With the **Tiller** profession, crop sell prices increase by 10%, lifting the season profit per plant to about **692g**. Multiplied across a 12×8 field, this crop becomes a solid seasonal income source.
+Mit der **Ackerbau (Tiller)**-Beruf steigen die Crop-Verkaufspreise um 10% – Gewinn pro Pflanze/Saison auf etwa **692g**. Bei einem 12×8-Feld eine solide saisonale Einnahmequelle.
 
-## Tips & Pairings
+## Tipps & Kombinationen
 
-- **Artisan processing**: this crop can be processed into Wine, Jelly, Dried Fruit for even higher value.
-- **Sprinklers**: pair it with a sprinkler layout in the [Farm Layout Planner](/farmlayou/) to automate watering from day one.
-- **Quality**: with higher Farming skill and fertilizer, silver/gold/iridium quality harvests raise the sell price well above the base 120g.
-- **Season end**: crops wither at season change — time plantings so the final harvest lands before the 28th.
+- **Weiterveredelung**: diese Pflanze kann zu Wine, Jelly, Dried Fruit veredelt werden für höheren Wert.
+- **Sprinkler**: kombiniere sie mit einem Sprinkler-Layout im [Farm-Layout-Planer](/de/farmlayou/), um ab Tag 1 automatisch zu gießen.
+- **Qualität**: mit höherem Anbau-Skill und Dünger heben Silber/Gold/Iridium-Qualität den Verkaufspreis deutlich über den Grundwert 120g.
+- **Saisonende**: Pflanzen verwelken bei Saisonswechsel – plane die letzte Ernte vor den 28. Tag.
+

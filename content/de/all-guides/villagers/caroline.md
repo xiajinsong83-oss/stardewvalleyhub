@@ -1,33 +1,34 @@
 ---
-title: "Caroline Guide: Birthday (Winter 7), Loved Gifts & Best Gift Ideas"
-description: "Caroline Guide: Birthday (Winter 7), Loved Gifts & Best Gift Ideas — Caroline is a villager who lives in Pelican Town. She is married to Pierre and is t…"
-date: 2026-10-10
-cover: "/images/guide-covers/villagers.jpg"
+title: "Caroline-Lieblingsgeschenke in Stardew Valley"
+description: "Caroline-Lieblingsgeschenke in Stardew Valley — Caroline is a villager who lives in Pelican Town. She is married to Pierre and is the mother of Abigail."
+date: 2026-10-19
 draft: false
 type: guide
 icon: "/images/villagers/Caroline.png"
-related: [{"title": "Gift Lookup", "url": "/gift/"}]
+related: [{"title": "Geschenk-Suche", "url": "/de/gift/"}]
+cover: "/images/guide-covers/villagers.jpg"
 ---
 Caroline is a villager who lives in Pelican Town. She is married to Pierre and is the mother of Abigail.
 
-## At a Glance
+## Überblick
 
-| Detail | Value |
+| Detail | Wert |
 |---|---|
-| Lives at | Pierre's General Store |
-| Birthday | Winter 7 |
-| Giftable | Yes (daily, 2 per week) |
+| Wohnt | Pierre's General Store |
+| Geburtstag | Winter 7 |
+| Beschenkbar | Ja (täglich 1, wöchentlich 2) |
 
-## Loved Gifts
+## Lieblingsgeschenke
 
 - Fish Taco<br>- Green Tea<br>- Summer Spangle<br>- Tropical Curry
 
-## Liked Gifts
+## Mag Geschenke
 
 - Daffodil<br>- Tea Leaves<br>- Wild Horseradish
 
-## Relationship Tips
+## Beziehungstipps
 
-- **Birthday bonus**: gifts on Winter 7 give 8× friendship points — save a loved item for that day.
-- Talk daily and give a loved gift twice a week to reach the next heart event quickly.
-- Plan which items to stock with the [Gift Lookup](/gift/) tool.
+- **Geburtstagsbonus**: Geschenke am Winter 7 geben 8× Freundschaftspunkte – hebe ein Lieblingsgeschenk für diesen Tag auf.
+- Täglich sprechen und zweimal wöchentlich ein Lieblingsgeschenk geben, um schnell zum nächsten Herz-Ereignis zu kommen.
+- Plane den Vorrat mit dem [Geschenk-Such-Tool](/de/gift/).
+

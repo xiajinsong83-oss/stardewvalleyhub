@@ -1,37 +1,38 @@
 ---
-title: "Rainbow Trout Guide: Where to Catch It in Summer (River, Mountain Lake, 6:00 AM – 7:00 PM)"
-description: "Rainbow Trout Guide: Where to Catch It in Summer (River, Mountain Lake, 6:00 AM – 7:00 PM) — A freshwater trout with colorful markings."
-date: 2026-10-10
-cover: "/images/guide-covers/fish.jpg"
+title: "Rainbow Trout Guide: Sommer (River, Mountain Lake, 6:00 AM – 7:00 PM)"
+description: "Rainbow Trout Guide: Sommer (River, Mountain Lake, 6:00 AM – 7:00 PM) — A freshwater trout with colorful markings."
+date: 2026-10-19
 draft: false
 type: guide
 icon: "/images/fish/Rainbow Trout.png"
-related: [{"title": "Fish Checklist", "url": "/fish-checklist/"}, {"title": "Farm Layout Planner", "url": "/farmlayou/"}]
+related: [{"title": "Fisch-Checkliste", "url": "/de/fish-checklist/"}, {"title": "Farm-Layout-Planer", "url": "/de/farmlayou/"}]
+cover: "/images/guide-covers/fish-alt.jpg"
 ---
-The Rainbow Trout is a regular fish in Stardew Valley. A freshwater trout with colorful markings.
+**Rainbow Trout** ist ein gewöhnlich-Fisch in Stardew Valley. A freshwater trout with colorful markings.
 
-## Catch Conditions
+## Fangbedingungen
 
-| Detail | Value |
+| Detail | Wert |
 |---|---|
-| Season | Summer |
-| Time | 6:00 AM – 7:00 PM |
-| Weather | sunny |
-| Location | River, Mountain Lake |
-| Difficulty | 45 / 100 |
-| Sell price | 65g |
-| Catch type | rod |
+| Jahreszeit | Sommer |
+| Uhrzeit | 6:00 AM – 7:00 PM |
+| Wetter | Sonne |
+| Ort | River, Mountain Lake |
+| Schwierigkeit | 45 / 100 |
+| Verkaufspreis | 65g |
+| Fangart | Angel |
 
-## How to Catch
+## So fängst du ihn
 
-Go to **River, Mountain Lake** during the right season and time window. The Rainbow Trout is Moderate — an upgraded rod and bait make it reliable..
+Gehe zur richtigen Jahreszeit und Uhrzeit an **River, Mountain Lake**. Rainbow Trout Mittel – mit verbesserter Angel und Köder zuverlässig zu fangen.
 
-**Bait & tackle**: use Bait (or Magnet/Lure) and an upgraded rod to shrink the catch window. For hard fish, hold the bobber high and tap, don't hold — release pressure the instant the bar drops.
+**Köder & Tackle**: benutze Köder (oder Magnet/Lok) mit einer verbesserten Angel, um das Fangfenster zu verkleinern. Bei schweren Fischen den Schwimmer hoch halten, tippen statt halten – Druck sofort loslassen, sobald die Leiste fällt.
 
-## Uses & Tips
+## Nutzung & Tipps
 
-- **Sell value**: base price **65g** — with the Fisher/Angler professions it sells for **81g**.
-- **Cooking**: used in Maki Roll, Quality Fertilizer, Sashimi, Trout Soup.
-- **Smoking**: can be smoked in a Fish Smoker for extra value.
-- **Fish Pond**: keeps in a Fish Pond and produces Roe/items at population milestones.
-- Track your catches with the [Fish Checklist](/fish-checklist/).
+- **Verkaufswert**: Grundpreis **65g** – mit Fischer-Angler-Beruf verkauft er sich für **81g**.
+- **Kochen**: verwendet in Maki Roll, Quality Fertilizer, Sashimi, Trout Soup.
+- **Räuchern**: kann in der Fischräucherei geräuchert werden für extra Wert.
+- **Fischteich**: lebt im Fischteich und produziert Roe/Gegenstände bei Bevölkerungs-Meilensteinen.
+- Verfolge deine Fänge mit der [Fisch-Checkliste](/de/fish-checklist/).
+

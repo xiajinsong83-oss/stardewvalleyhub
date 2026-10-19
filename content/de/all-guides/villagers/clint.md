@@ -1,33 +1,34 @@
 ---
-title: "Clint Guide: Birthday (Winter 26), Loved Gifts & Best Gift Ideas"
-description: "Clint Guide: Birthday (Winter 26), Loved Gifts & Best Gift Ideas — Clint is a villager who lives in Pelican Town and owns and runs the local Blacksmith."
-date: 2026-10-10
-cover: "/images/guide-covers/villagers-alt.jpg"
+title: "Clint-Lieblingsgeschenke in Stardew Valley"
+description: "Clint-Lieblingsgeschenke in Stardew Valley — Clint is a villager who lives in Pelican Town and owns and runs the local Blacksmith."
+date: 2026-10-19
 draft: false
 type: guide
 icon: "/images/villagers/Clint.png"
-related: [{"title": "Gift Lookup", "url": "/gift/"}]
+related: [{"title": "Geschenk-Suche", "url": "/de/gift/"}]
+cover: "/images/guide-covers/villagers-alt.jpg"
 ---
 Clint is a villager who lives in Pelican Town and owns and runs the local Blacksmith.
 
-## At a Glance
+## Überblick
 
-| Detail | Value |
+| Detail | Wert |
 |---|---|
-| Lives at | The Blacksmith |
-| Birthday | Winter 26 |
-| Giftable | Yes (daily, 2 per week) |
+| Wohnt | The Blacksmith |
+| Geburtstag | Winter 26 |
+| Beschenkbar | Ja (täglich 1, wöchentlich 2) |
 
-## Loved Gifts
+## Lieblingsgeschenke
 
 - Amethyst<br>- Aquamarine<br>- Artichoke Dip<br>- Emerald<br>- Fiddlehead Risotto<br>- Gold Bar<br>- Iridium Bar<br>- Jade<br>- Omni Geode<br>- Ruby<br>- Topaz
 
-## Liked Gifts
+## Mag Geschenke
 
 - Copper Bar<br>- Iron Bar<br>- Mining Monthly
 
-## Relationship Tips
+## Beziehungstipps
 
-- **Birthday bonus**: gifts on Winter 26 give 8× friendship points — save a loved item for that day.
-- Talk daily and give a loved gift twice a week to reach the next heart event quickly.
-- Plan which items to stock with the [Gift Lookup](/gift/) tool.
+- **Geburtstagsbonus**: Geschenke am Winter 26 geben 8× Freundschaftspunkte – hebe ein Lieblingsgeschenk für diesen Tag auf.
+- Täglich sprechen und zweimal wöchentlich ein Lieblingsgeschenk geben, um schnell zum nächsten Herz-Ereignis zu kommen.
+- Plane den Vorrat mit dem [Geschenk-Such-Tool](/de/gift/).
+

@@ -1,37 +1,38 @@
 ---
-title: "Tuna Guide: Where to Catch It in Summer, Winter (Ocean, Ginger Island, 6:00 AM – 7:00 PM)"
-description: "Tuna Guide: Where to Catch It in Summer, Winter (Ocean, Ginger Island, 6:00 AM – 7:00 PM) — A large fish that lives in the ocean."
-date: 2026-10-10
-cover: "/images/guide-covers/fish-alt.jpg"
+title: "Tuna Guide: Sommer, Winter (Ocean, Ginger Island, 6:00 AM – 7:00 PM)"
+description: "Tuna Guide: Sommer, Winter (Ocean, Ginger Island, 6:00 AM – 7:00 PM) — A large fish that lives in the ocean."
+date: 2026-10-19
 draft: false
 type: guide
 icon: "/images/fish/Tuna.png"
-related: [{"title": "Fish Checklist", "url": "/fish-checklist/"}, {"title": "Farm Layout Planner", "url": "/farmlayou/"}]
+related: [{"title": "Fisch-Checkliste", "url": "/de/fish-checklist/"}, {"title": "Farm-Layout-Planer", "url": "/de/farmlayou/"}]
+cover: "/images/guide-covers/fish.jpg"
 ---
-The Tuna is a regular fish in Stardew Valley. A large fish that lives in the ocean.
+**Tuna** ist ein gewöhnlich-Fisch in Stardew Valley. A large fish that lives in the ocean.
 
-## Catch Conditions
+## Fangbedingungen
 
-| Detail | Value |
+| Detail | Wert |
 |---|---|
-| Season | Summer, Winter |
-| Time | 6:00 AM – 7:00 PM |
-| Weather | both |
-| Location | Ocean, Ginger Island |
-| Difficulty | 70 / 100 |
-| Sell price | 100g |
-| Catch type | rod |
+| Jahreszeit | Sommer, Winter |
+| Uhrzeit | 6:00 AM – 7:00 PM |
+| Wetter | beliebig |
+| Ort | Ocean, Ginger Island |
+| Schwierigkeit | 70 / 100 |
+| Verkaufspreis | 100g |
+| Fangart | Angel |
 
-## How to Catch
+## So fängst du ihn
 
-Go to **Ocean, Ginger Island** during the right season and time window. The Tuna is Very hard — requires maxed fishing skill, quality bait and careful timing..
+Gehe zur richtigen Jahreszeit und Uhrzeit an **Ocean, Ginger Island**. Tuna Sehr schwer – Angelskill auf Maximalstufe, hochwertiger Köder und gutes Timing nötig.
 
-**Bait & tackle**: use Bait (or Magnet/Lure) and an upgraded rod to shrink the catch window. For hard fish, hold the bobber high and tap, don't hold — release pressure the instant the bar drops.
+**Köder & Tackle**: benutze Köder (oder Magnet/Lok) mit einer verbesserten Angel, um das Fangfenster zu verkleinern. Bei schweren Fischen den Schwimmer hoch halten, tippen statt halten – Druck sofort loslassen, sobald die Leiste fällt.
 
-## Uses & Tips
+## Nutzung & Tipps
 
-- **Sell value**: base price **100g** — with the Fisher/Angler professions it sells for **125g**.
-- **Cooking**: used in Fish Taco, Maki Roll, Quality Fertilizer, Sashimi, Ocean Fish Bundle.
-- **Smoking**: can be smoked in a Fish Smoker for extra value.
-- **Fish Pond**: keeps in a Fish Pond and produces Roe/items at population milestones.
-- Track your catches with the [Fish Checklist](/fish-checklist/).
+- **Verkaufswert**: Grundpreis **100g** – mit Fischer-Angler-Beruf verkauft er sich für **125g**.
+- **Kochen**: verwendet in Fish Taco, Maki Roll, Quality Fertilizer, Sashimi, Ocean Fish Bundle.
+- **Räuchern**: kann in der Fischräucherei geräuchert werden für extra Wert.
+- **Fischteich**: lebt im Fischteich und produziert Roe/Gegenstände bei Bevölkerungs-Meilensteinen.
+- Verfolge deine Fänge mit der [Fisch-Checkliste](/de/fish-checklist/).
+

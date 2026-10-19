@@ -1,49 +1,50 @@
 ---
-title: "Garlic Guide: How to Grow Garlic in Spring (4-Day Growth, Profit & Tips)"
-description: "Garlic Guide: How to Grow Garlic in Spring (4-Day Growth, Profit & Tips) — A pungent herb used in cooking. The aroma is known to keep monsters at bay."
-date: 2026-10-10
-cover: "/images/guide-covers/crops-alt.jpg"
+title: "Garlic Anbau-Guide: Reife in 4 Tagen | Stardew Valley"
+description: "Garlic Anbau-Guide: Reife in 4 Tagen | Stardew Valley — A pungent herb used in cooking. The aroma is known to keep monsters at bay."
+date: 2026-10-19
 draft: false
 type: guide
 icon: "/images/crops/garlic/crop.png"
-related: [{"title": "Farm Layout Planner", "url": "/farmlayou/"}, {"title": "Crop Profit Calculator", "url": "/calculator/"}]
+related: [{"title": "Farm-Layout-Planer", "url": "/de/farmlayou/"}, {"title": "Gewinn-Rechner", "url": "/de/calculator/"}]
+cover: "/images/guide-covers/crops.jpg"
 ---
-The Garlic is a vegetable crop in Stardew Valley. A pungent herb used in cooking. The aroma is known to keep monsters at bay. It grows in Spring and is one of the most reliable ways to build early-season income, so it belongs in almost every farm plan.
+**Garlic** ist eine vegetable-Pflanze in Stardew Valley. A pungent herb used in cooking. The aroma is known to keep monsters at bay. Anbaubar in **Frühling** – eine der zuverlässigsten Einnahmequellen early, gehört in fast jeden Farmplan.
 
-## At a Glance
+## Übersicht
 
-| Detail | Value |
+| Detail | Wert |
 |---|---|
-| Season | Spring |
-| Growth time | 4 days |
-| Regrow | No |
-| Seed cost | Pierre's (40g); JojaMart (50g) |
-| Sell price | 60g |
-| Max quality | Iridium |
-| Category | vegetable |
-| Trellis | No |
-| Giant crop | No |
-| Farming XP | 12 |
+| Jahreszeit | Frühling |
+| Wachstumszeit | 4 Tage |
+| Nachwuchs | Nein |
+| Samenkosten | Pierre's (40g); JojaMart (50g) |
+| Verkaufspreis | 60g |
+| Max. Qualität | Iridium |
+| Kategorie | vegetable |
+| Rankhilfe | Nein |
+| Riesenpflanze | Nein |
+| Anbau-EP | 12 |
 
-## How to Grow
+## Anbau
 
-Plant Garlic Seeds in tilled, watered soil at the start of the season. The crop takes **4 days** to mature. Water every morning (or set up a sprinkler) so the growth timer never pauses.
+Pflanze Garlic Seeds zu Saisonbeginn in gegrabene, bewässerte Erde. Die Pflanze braucht **4 Tage** zur Reife. Jeden Morgen gießen (oder Sprinkler aufstellen), damit die Wachstumszeit nie pausiert.
 
-**Harvest strategy**: This is a single-harvest crop — replant after each harvest to keep the field productive.
+**Erntestrategie**: Einzelernte-Pflanze – nach jeder Ernte neu pflanzen, damit das Feld produktiv bleibt.
 
-## Profit Analysis
+## Gewinnanalyse
 
-| Metric | Value |
+| Kennzahl | Wert |
 |---|---|
-| Net profit per plant | 20g |
-| Harvests per season | ~7 |
-| Approx. season profit per plant | 140g |
+| Nettogewinn pro Pflanze | 20g |
+| Ernten pro Saison | ~7 |
+| Ca. Gewinn pro Pflanze/Saison | 140g |
 
-With the **Tiller** profession, crop sell prices increase by 10%, lifting the season profit per plant to about **182g**. Multiplied across a 12×8 field, this crop becomes a solid seasonal income source.
+Mit der **Ackerbau (Tiller)**-Beruf steigen die Crop-Verkaufspreise um 10% – Gewinn pro Pflanze/Saison auf etwa **182g**. Bei einem 12×8-Feld eine solide saisonale Einnahmequelle.
 
-## Tips & Pairings
+## Tipps & Kombinationen
 
-- **Artisan processing**: this crop can be processed into Juice, Pickles for even higher value.
-- **Sprinklers**: pair it with a sprinkler layout in the [Farm Layout Planner](/farmlayou/) to automate watering from day one.
-- **Quality**: with higher Farming skill and fertilizer, silver/gold/iridium quality harvests raise the sell price well above the base 60g.
-- **Season end**: crops wither at season change — time plantings so the final harvest lands before the 28th.
+- **Weiterveredelung**: diese Pflanze kann zu Juice, Pickles veredelt werden für höheren Wert.
+- **Sprinkler**: kombiniere sie mit einem Sprinkler-Layout im [Farm-Layout-Planer](/de/farmlayou/), um ab Tag 1 automatisch zu gießen.
+- **Qualität**: mit höherem Anbau-Skill und Dünger heben Silber/Gold/Iridium-Qualität den Verkaufspreis deutlich über den Grundwert 60g.
+- **Saisonende**: Pflanzen verwelken bei Saisonswechsel – plane die letzte Ernte vor den 28. Tag.
+

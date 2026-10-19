@@ -1,37 +1,38 @@
 ---
-title: "Bream Guide: Where to Catch It in Spring, Summer, Fall, Winter (River, 6:00 PM – 2:00 AM)"
-description: "Bream Guide: Where to Catch It in Spring, Summer, Fall, Winter (River, 6:00 PM – 2:00 AM) — A fairly common river fish that becomes active at night."
-date: 2026-10-10
-cover: "/images/guide-covers/fish-alt.jpg"
+title: "Bream Guide: Frühling, Sommer, Herbst, Winter (River, 6:00 PM – 2:00 AM)"
+description: "Bream Guide: Frühling, Sommer, Herbst, Winter (River, 6:00 PM – 2:00 AM) — A fairly common river fish that becomes active at night."
+date: 2026-10-19
 draft: false
 type: guide
 icon: "/images/fish/Bream.png"
-related: [{"title": "Fish Checklist", "url": "/fish-checklist/"}, {"title": "Farm Layout Planner", "url": "/farmlayou/"}]
+related: [{"title": "Fisch-Checkliste", "url": "/de/fish-checklist/"}, {"title": "Farm-Layout-Planer", "url": "/de/farmlayou/"}]
+cover: "/images/guide-covers/fish.jpg"
 ---
-The Bream is a regular fish in Stardew Valley. A fairly common river fish that becomes active at night.
+**Bream** ist ein gewöhnlich-Fisch in Stardew Valley. A fairly common river fish that becomes active at night.
 
-## Catch Conditions
+## Fangbedingungen
 
-| Detail | Value |
+| Detail | Wert |
 |---|---|
-| Season | Spring, Summer, Fall, Winter |
-| Time | 6:00 PM – 2:00 AM |
-| Weather | both |
-| Location | River |
-| Difficulty | 35 / 100 |
-| Sell price | 45g |
-| Catch type | rod |
+| Jahreszeit | Frühling, Sommer, Herbst, Winter |
+| Uhrzeit | 6:00 PM – 2:00 AM |
+| Wetter | beliebig |
+| Ort | River |
+| Schwierigkeit | 35 / 100 |
+| Verkaufspreis | 45g |
+| Fangart | Angel |
 
-## How to Catch
+## So fängst du ihn
 
-Go to **River** during the right season and time window. The Bream is Easy — catchable with the basic rod early on..
+Gehe zur richtigen Jahreszeit und Uhrzeit an **River**. Bream Einfach – early mit der Basisangel fangbar.
 
-**Bait & tackle**: use Bait (or Magnet/Lure) and an upgraded rod to shrink the catch window. For hard fish, hold the bobber high and tap, don't hold — release pressure the instant the bar drops.
+**Köder & Tackle**: benutze Köder (oder Magnet/Lok) mit einer verbesserten Angel, um das Fangfenster zu verkleinern. Bei schweren Fischen den Schwimmer hoch halten, tippen statt halten – Druck sofort loslassen, sobald die Leiste fällt.
 
-## Uses & Tips
+## Nutzung & Tipps
 
-- **Sell value**: base price **45g** — with the Fisher/Angler professions it sells for **56g**.
-- **Cooking**: used in Baked Fish, Maki Roll, Quality Fertilizer, Sashimi, Night Fishing Bundle.
-- **Smoking**: can be smoked in a Fish Smoker for extra value.
-- **Fish Pond**: keeps in a Fish Pond and produces Roe/items at population milestones.
-- Track your catches with the [Fish Checklist](/fish-checklist/).
+- **Verkaufswert**: Grundpreis **45g** – mit Fischer-Angler-Beruf verkauft er sich für **56g**.
+- **Kochen**: verwendet in Baked Fish, Maki Roll, Quality Fertilizer, Sashimi, Night Fishing Bundle.
+- **Räuchern**: kann in der Fischräucherei geräuchert werden für extra Wert.
+- **Fischteich**: lebt im Fischteich und produziert Roe/Gegenstände bei Bevölkerungs-Meilensteinen.
+- Verfolge deine Fänge mit der [Fisch-Checkliste](/de/fish-checklist/).
+

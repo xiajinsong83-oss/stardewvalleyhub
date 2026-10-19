@@ -1,33 +1,34 @@
 ---
-title: "Demetrius Guide: Birthday (Summer 19), Loved Gifts & Best Gift Ideas"
-description: "Demetrius Guide: Birthday (Summer 19), Loved Gifts & Best Gift Ideas — Demetrius is a villager who resides at 24 Mountain Road with his wife Robin, daug…"
-date: 2026-10-10
-cover: "/images/guide-covers/villagers.jpg"
+title: "Demetrius-Lieblingsgeschenke in Stardew Valley"
+description: "Demetrius-Lieblingsgeschenke in Stardew Valley — Demetrius is a villager who resides at 24 Mountain Road with his wife Robin, daughter Maru, and step-so…"
+date: 2026-10-19
 draft: false
 type: guide
 icon: "/images/villagers/Demetrius.png"
-related: [{"title": "Gift Lookup", "url": "/gift/"}]
+related: [{"title": "Geschenk-Suche", "url": "/de/gift/"}]
+cover: "/images/guide-covers/villagers.jpg"
 ---
 Demetrius is a villager who resides at 24 Mountain Road with his wife Robin, daughter Maru, and step-son Sebastian.
 
-## At a Glance
+## Überblick
 
-| Detail | Value |
+| Detail | Wert |
 |---|---|
-| Lives at | 24 Mountain Road |
-| Birthday | Summer 19 |
-| Giftable | Yes (daily, 2 per week) |
+| Wohnt | 24 Mountain Road |
+| Geburtstag | Sommer 19 |
+| Beschenkbar | Ja (täglich 1, wöchentlich 2) |
 
-## Loved Gifts
+## Lieblingsgeschenke
 
 - Bean Hotpot<br>- Ice Cream<br>- Rice Pudding<br>- Strawberry
 
-## Liked Gifts
+## Mag Geschenke
 
 - Dinosaur Egg<br>- Purple Mushroom
 
-## Relationship Tips
+## Beziehungstipps
 
-- **Birthday bonus**: gifts on Summer 19 give 8× friendship points — save a loved item for that day.
-- Talk daily and give a loved gift twice a week to reach the next heart event quickly.
-- Plan which items to stock with the [Gift Lookup](/gift/) tool.
+- **Geburtstagsbonus**: Geschenke am Sommer 19 geben 8× Freundschaftspunkte – hebe ein Lieblingsgeschenk für diesen Tag auf.
+- Täglich sprechen und zweimal wöchentlich ein Lieblingsgeschenk geben, um schnell zum nächsten Herz-Ereignis zu kommen.
+- Plane den Vorrat mit dem [Geschenk-Such-Tool](/de/gift/).
+

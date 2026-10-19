@@ -1,26 +1,27 @@
 ---
-title: "Earth Crystal Guide: Where to Find It (The Mines (Floors 1-39), 50g Value)"
-description: "Earth Crystal Guide: Where to Find It (The Mines (Floors 1-39), 50g Value) — A resinous substance found near the surface."
-date: 2026-10-10
-cover: "/images/guide-covers/minerals.jpg"
+title: "Earth Crystal – Museums-Spendenleitfaden"
+description: "Earth Crystal – Museums-Spendenleitfaden — A resinous substance found near the surface."
+date: 2026-10-19
 draft: false
 type: guide
 icon: "/images/minerals/foraged-minerals/Earth Crystal.png"
-related: [{"title": "Museum Checklist", "url": "/museum-checklist/"}]
+related: [{"title": "Museum-Checkliste", "url": "/de/museum-checklist/"}]
+cover: "/images/guide-covers/minerals-alt.jpg"
 ---
 A resinous substance found near the surface.
 
-## Where to Find
+## Fundorte
 
-| Detail | Value |
+| Detail | Wert |
 |---|---|
-| Type | Mineral |
-| Sell price | 50g |
-| Sources | The Mines (Floors 1-39)<br>Duggy (10%)<br>Geode<br>Omni Geode<br>Panning |
+| Typ | Mineral |
+| Verkaufspreis | 50g |
+| Quellen | The Mines (Floors 1-39)<br>Duggy (10%)<br>Geode<br>Omni Geode<br>Panning |
 
-## Collection Tips
+## Sammeltipps
 
-- **Earth Crystal** is part of the Museum collection — donate your first copy before selling extras.
-- Mining deeper floors and cracking geodes are the fastest ways to find new pieces.
-- Gemologist profession raises mineral sell prices by 30% (base **50g** → **65g**).
-- Track donations with the [Museum Checklist](/museum-checklist/).
+- **Earth Crystal** ist Teil der Museumssammlung – spende das erste Exemplar, bevor du weitere verkaufst.
+- Tiefere Minenebenen und Geoden knacken sind die schnellsten Wege zu neuen Fundstücken.
+- Mit der **Geologe (Gemologist)**-Beruf steigen Mineral-Verkaufspreise um 30% (Grundpreis **50g** → **65g**).
+- Verfolge Spenden mit der [Museum-Checkliste](/de/museum-checklist/).
+

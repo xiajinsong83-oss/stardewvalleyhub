@@ -1,26 +1,27 @@
 ---
-title: "Aquamarine Guide: Where to Find It (Aquamarine Node, 180g Value)"
-description: "Aquamarine Guide: Where to Find It (Aquamarine Node, 180g Value) — A shimmery blue-green gem."
-date: 2026-10-10
-cover: "/images/guide-covers/minerals-alt.jpg"
+title: "Aquamarine – Museums-Spendenleitfaden"
+description: "Aquamarine – Museums-Spendenleitfaden — A shimmery blue-green gem."
+date: 2026-10-19
 draft: false
 type: guide
 icon: "/images/minerals/gems/Aquamarine.png"
-related: [{"title": "Museum Checklist", "url": "/museum-checklist/"}]
+related: [{"title": "Museum-Checkliste", "url": "/de/museum-checklist/"}]
+cover: "/images/guide-covers/minerals-alt.jpg"
 ---
 A shimmery blue-green gem.
 
-## Where to Find
+## Fundorte
 
-| Detail | Value |
+| Detail | Wert |
 |---|---|
-| Type | Mineral |
-| Sell price | 180g |
-| Sources | Aquamarine Node<br>Gem Node<br>Dwarvish Sentry<br>Panning<br>Fishing Treasure Chest |
+| Typ | Mineral |
+| Verkaufspreis | 180g |
+| Quellen | Aquamarine Node<br>Gem Node<br>Dwarvish Sentry<br>Panning<br>Fishing Treasure Chest |
 
-## Collection Tips
+## Sammeltipps
 
-- **Aquamarine** is part of the Museum collection — donate your first copy before selling extras.
-- Mining deeper floors and cracking geodes are the fastest ways to find new pieces.
-- Gemologist profession raises mineral sell prices by 30% (base **180g** → **234g**).
-- Track donations with the [Museum Checklist](/museum-checklist/).
+- **Aquamarine** ist Teil der Museumssammlung – spende das erste Exemplar, bevor du weitere verkaufst.
+- Tiefere Minenebenen und Geoden knacken sind die schnellsten Wege zu neuen Fundstücken.
+- Mit der **Geologe (Gemologist)**-Beruf steigen Mineral-Verkaufspreise um 30% (Grundpreis **180g** → **234g**).
+- Verfolge Spenden mit der [Museum-Checkliste](/de/museum-checklist/).
+

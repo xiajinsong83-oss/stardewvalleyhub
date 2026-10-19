@@ -1,37 +1,38 @@
 ---
-title: "Anchovy Guide: Where to Catch It in Spring, Fall (Ocean, 6:00 AM – 2:00 AM)"
-description: "Anchovy Guide: Where to Catch It in Spring, Fall (Ocean, 6:00 AM – 2:00 AM) — A small silver fish found in the ocean."
-date: 2026-10-10
-cover: "/images/guide-covers/fish.jpg"
+title: "Anchovy Guide: Frühling, Herbst (Ocean, 6:00 AM – 2:00 AM)"
+description: "Anchovy Guide: Frühling, Herbst (Ocean, 6:00 AM – 2:00 AM) — A small silver fish found in the ocean."
+date: 2026-10-19
 draft: false
 type: guide
 icon: "/images/fish/Anchovy.png"
-related: [{"title": "Fish Checklist", "url": "/fish-checklist/"}, {"title": "Farm Layout Planner", "url": "/farmlayou/"}]
+related: [{"title": "Fisch-Checkliste", "url": "/de/fish-checklist/"}, {"title": "Farm-Layout-Planer", "url": "/de/farmlayou/"}]
+cover: "/images/guide-covers/fish-alt.jpg"
 ---
-The Anchovy is a regular fish in Stardew Valley. A small silver fish found in the ocean.
+**Anchovy** ist ein gewöhnlich-Fisch in Stardew Valley. A small silver fish found in the ocean.
 
-## Catch Conditions
+## Fangbedingungen
 
-| Detail | Value |
+| Detail | Wert |
 |---|---|
-| Season | Spring, Fall |
-| Time | 6:00 AM – 2:00 AM |
-| Weather | both |
-| Location | Ocean |
-| Difficulty | 30 / 100 |
-| Sell price | 30g |
-| Catch type | rod |
+| Jahreszeit | Frühling, Herbst |
+| Uhrzeit | 6:00 AM – 2:00 AM |
+| Wetter | beliebig |
+| Ort | Ocean |
+| Schwierigkeit | 30 / 100 |
+| Verkaufspreis | 30g |
+| Fangart | Angel |
 
-## How to Catch
+## So fängst du ihn
 
-Go to **Ocean** during the right season and time window. The Anchovy is Easy — catchable with the basic rod early on..
+Gehe zur richtigen Jahreszeit und Uhrzeit an **Ocean**. Anchovy Einfach – early mit der Basisangel fangbar.
 
-**Bait & tackle**: use Bait (or Magnet/Lure) and an upgraded rod to shrink the catch window. For hard fish, hold the bobber high and tap, don't hold — release pressure the instant the bar drops.
+**Köder & Tackle**: benutze Köder (oder Magnet/Lok) mit einer verbesserten Angel, um das Fangfenster zu verkleinern. Bei schweren Fischen den Schwimmer hoch halten, tippen statt halten – Druck sofort loslassen, sobald die Leiste fällt.
 
-## Uses & Tips
+## Nutzung & Tipps
 
-- **Sell value**: base price **30g** — with the Fisher/Angler professions it sells for **37g**.
-- **Cooking**: used in Maki Roll, Quality Fertilizer, Sashimi.
-- **Smoking**: can be smoked in a Fish Smoker for extra value.
-- **Fish Pond**: keeps in a Fish Pond and produces Roe/items at population milestones.
-- Track your catches with the [Fish Checklist](/fish-checklist/).
+- **Verkaufswert**: Grundpreis **30g** – mit Fischer-Angler-Beruf verkauft er sich für **37g**.
+- **Kochen**: verwendet in Maki Roll, Quality Fertilizer, Sashimi.
+- **Räuchern**: kann in der Fischräucherei geräuchert werden für extra Wert.
+- **Fischteich**: lebt im Fischteich und produziert Roe/Gegenstände bei Bevölkerungs-Meilensteinen.
+- Verfolge deine Fänge mit der [Fisch-Checkliste](/de/fish-checklist/).
+

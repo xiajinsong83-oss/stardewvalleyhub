@@ -531,6 +531,242 @@ def villager_guide_zh(item):
     return slugify(name), body
 
 
+# ============================================================
+# 德语（de）版本
+# ============================================================
+SEASON_DE = {"spring": "Frühling", "summer": "Sommer", "fall": "Herbst", "winter": "Winter"}
+WEATHER_DE = {"rainy": "Regen", "sunny": "Sonne", "both": "beliebig", "any": "beliebig"}
+CATCH_TYPE_DE = {"rod": "Angel", "trap": "Krabbenfalle"}
+QUALITY_DE = {"normal": "Normal", "silver": "Silber", "gold": "Gold", "iridium": "Iridium"}
+CATEGORY_DE = {"regular": "gewöhnlich", "legendary": "legendär",
+               "legendary-2": "legendär II", "legendary-3": "legendär III"}
+BIRTHDAY_SEASON_DE = {"spring": "Frühling", "summer": "Sommer", "fall": "Herbst", "winter": "Winter"}
+
+
+def season_label_de(seasons):
+    if not seasons:
+        return "Ganzjährig (Gewächshaus)"
+    return ", ".join(SEASON_DE.get(s.lower(), s) for s in seasons)
+
+
+def fish_title_de(item):
+    name = item["name"]
+    seasons = season_label_de(item.get("seasons", []))
+    return "%s Guide: %s (%s, %s)" % (name, seasons, item.get("location", ""), item.get("time", "ganztags"))
+
+
+def fish_guide_de(item):
+    name = item["name"]
+    diff = item.get("difficulty", 0)
+    diff_txt = ("Sehr schwer – Angelskill auf Maximalstufe, hochwertiger Köder und gutes Timing nötig."
+                if diff >= 70 else
+                "Mittel – mit verbesserter Angel und Köder zuverlässig zu fangen."
+                if diff >= 40 else
+                "Einfach – early mit der Basisangel fangbar.")
+    weather = item.get("weather") or "any"
+    weather_de = WEATHER_DE.get(weather.lower(), weather)
+    catch_type_de = CATCH_TYPE_DE.get(item.get("catchType", "rod"), item.get("catchType", "rod"))
+    time_txt = item.get("time", "ganztags")
+    loc = item.get("location", "—")
+    used_in = ", ".join(item.get("usedIn", [])) if item.get("usedIn") else "keine Rezepte"
+    smk = ("kann in der Fischräucherei geräuchert werden für extra Wert." if item.get("canSmoke") else "kann nicht geräuchert werden.")
+    pond = ("lebt im Fischteich und produziert Roe/Gegenstände bei Bevölkerungs-Meilensteinen."
+            if item.get("fishPond") else "kein Fischteich-Bewohner.")
+    body = [
+        "**%s** ist ein %s-Fisch in Stardew Valley. %s" % (name, CATEGORY_DE.get(item.get("category", ""), ""), item.get("description", "")),
+        "",
+        "## Fangbedingungen",
+        "",
+        "| Detail | Wert |",
+        "|---|---|",
+        "| Jahreszeit | %s |" % season_label_de(item.get("seasons", [])),
+        "| Uhrzeit | %s |" % time_txt,
+        "| Wetter | %s |" % weather_de,
+        "| Ort | %s |" % loc,
+        "| Schwierigkeit | %d / 100 |" % diff,
+        "| Verkaufspreis | %s |" % money(item.get("sellPrice", 0)),
+        "| Fangart | %s |" % catch_type_de,
+        "",
+        "## So fängst du ihn",
+        "",
+        "Gehe zur richtigen Jahreszeit und Uhrzeit an **%s**. %s %s" % (loc, name, diff_txt),
+        "",
+        "**Köder & Tackle**: benutze Köder (oder Magnet/Lok) mit einer verbesserten Angel, um das Fangfenster zu verkleinern. "
+        "Bei schweren Fischen den Schwimmer hoch halten, tippen statt halten – Druck sofort loslassen, sobald die Leiste fällt.",
+        "",
+        "## Nutzung & Tipps",
+        "",
+        "- **Verkaufswert**: Grundpreis **%s** – mit Fischer-Angler-Beruf verkauft er sich für **%s**." % (
+            money(item.get("sellPrice", 0)), money(int(item.get("sellPrice", 0) * 1.25))),
+        "- **Kochen**: verwendet in %s." % used_in,
+        "- **Räuchern**: %s" % smk,
+        "- **Fischteich**: %s" % pond,
+        "- Verfolge deine Fänge mit der [Fisch-Checkliste](/de/fish-checklist/).",
+        "",
+    ]
+    return slugify(name), body
+
+
+def crop_title_de(item):
+    name = item["name"]
+    grow = item.get("growDays", 0)
+    seasons = season_label_de(item.get("seasons", []))
+    return "%s Anbau-Guide: Reife in %d Tagen | Stardew Valley" % (name, grow)
+
+
+def crop_guide_de(item):
+    name = item["name"]
+    grow = item.get("growDays", 0)
+    regrow = item.get("regrowDays")
+    regrow_txt = "Ja (alle %d Tage)" % regrow if regrow else "Nein"
+    sell = item.get("cropSellPrice", 0)
+    seed_min = min((p.get("price", 0) for p in item.get("seedBuyPrices") or []), default=0)
+    profit_each = sell - seed_min
+    if regrow:
+        harvests = 1 + max(0, (28 - grow) // regrow)
+        season_profit = harvests * sell - seed_min
+    else:
+        harvests = max(28 // grow, 1)
+        season_profit = harvests * (sell - seed_min)
+    giant = item.get("giant", False)
+    trellis = item.get("trellis", False)
+    desc = item.get("description", "")
+    seed_name = item.get("seedName") or (name + " Seeds")
+    seasons = season_label_de(item.get("seasons", []))
+    quality = QUALITY_DE.get(item.get("maxQuality", "normal"), item.get("maxQuality", ""))
+
+    intro = "**%s** ist eine %s-Pflanze in Stardew Valley. %s Anbaubar in **%s** – eine der zuverlässigsten Einnahmequellen early, gehört in fast jeden Farmplan." % (
+        name, item.get("category", "crop"), desc, seasons)
+
+    body = [
+        intro,
+        "",
+        "## Übersicht",
+        "",
+        "| Detail | Wert |",
+        "|---|---|",
+        "| Jahreszeit | %s |" % seasons,
+        "| Wachstumszeit | %d Tage%s |" % (grow, " dann alle %d Tage Nachwuchs" % regrow if regrow else ""),
+        "| Nachwuchs | %s |" % regrow_txt,
+        "| Samenkosten | %s |" % seed_costs(item),
+        "| Verkaufspreis | %s |" % money(sell),
+        "| Max. Qualität | %s |" % quality,
+        "| Kategorie | %s |" % item.get("category", "crop"),
+        "| Rankhilfe | %s |" % ("Ja" if trellis else "Nein"),
+        "| Riesenpflanze | %s |" % ("Ja" if giant else "Nein"),
+        "| Anbau-EP | %d |" % item.get("farmingXP", 0),
+        "",
+        "## Anbau",
+        "",
+        "Pflanze %s zu Saisonbeginn in gegrabene, bewässerte Erde. Die Pflanze braucht **%d Tage** zur Reife%s."
+        " Jeden Morgen gießen (oder Sprinkler aufstellen), damit die Wachstumszeit nie pausiert." % (
+            seed_name, grow,
+            ", danach erneut alle %d Tage Ertrag nach der ersten Ernte" % regrow if regrow else ""),
+        "",
+        "**Erntestrategie**: %s%s" % (
+            "Mehrfachernte-Pflanze – die ganze Saison stehen lassen und wiederholt ernten."
+            if regrow else
+            "Einzelernte-Pflanze – nach jeder Ernte neu pflanzen, damit das Feld produktiv bleibt.",
+            (" Braucht Rankhilfe, lasse zwischen den Pflanzreihen einen Gang." if trellis else "")),
+        "",
+        "## Gewinnanalyse",
+        "",
+        "| Kennzahl | Wert |",
+        "|---|---|",
+        "| Nettogewinn pro Pflanze | %s |" % money(profit_each),
+        "| Ernten pro Saison | ~%d |" % harvests,
+        "| Ca. Gewinn pro Pflanze/Saison | %s |" % money(season_profit),
+        "",
+        "Mit der **Ackerbau (Tiller)**-Beruf steigen die Crop-Verkaufspreise um 10%% – Gewinn pro Pflanze/Saison auf etwa **%s**. Bei einem 12×8-Feld eine solide saisonale Einnahmequelle." % money(
+            int(sell * 1.1) * harvests - seed_min if regrow else (int(sell * 1.1) - seed_min) * harvests),
+        "",
+        "## Tipps & Kombinationen",
+        "",
+        "- **Weiterveredelung**: diese Pflanze kann zu %s veredelt werden für höheren Wert." % artisan_label(item),
+        "- **Sprinkler**: kombiniere sie mit einem Sprinkler-Layout im [Farm-Layout-Planer](/de/farmlayou/), um ab Tag 1 automatisch zu gießen.",
+        "- **Qualität**: mit höherem Anbau-Skill und Dünger heben Silber/Gold/Iridium-Qualität den Verkaufspreis deutlich über den Grundwert %s." % money(sell),
+        "- **Saisonende**: Pflanzen verwelken bei Saisonswechsel – plane die letzte Ernte vor den 28. Tag.",
+        "",
+    ]
+    return slugify(name), body
+
+
+def mineral_title_de(item):
+    name = item["name"]
+    return "%s – Museums-Spendenleitfaden" % name
+
+
+def mineral_guide_de(item):
+    name = item["name"]
+    kind = "artifact" if ("donationNotes" in item) else item.get("kind", "mineral")
+    body = [
+        "%s" % item.get("description", ""),
+        "",
+        "## Fundorte",
+        "",
+        "| Detail | Wert |",
+        "|---|---|",
+        "| Typ | %s |" % ("Artefakt" if kind == "artifact" else "Mineral"),
+        "| Verkaufspreis | %s |" % money(item.get("sellPrice", 0)),
+        "| Quellen | %s |" % ("<br>".join(item.get("locations", []))),
+        "",
+        "## Sammeltipps",
+        "",
+        "- **%s** ist Teil der Museumssammlung – spende das erste Exemplar, bevor du weitere verkaufst." % name,
+        "- %s" % (item.get("donationNotes", "Tiefere Minenebenen und Geoden knacken sind die schnellsten Wege zu neuen Fundstücken.")),
+    ]
+    if kind != "artifact":
+        body.append("- Mit der **Geologe (Gemologist)**-Beruf steigen Mineral-Verkaufspreise um 30%% (Grundpreis **%s** → **%s**)."
+                    % (money(item.get("sellPrice", 0)), money(int(item.get("sellPrice", 0) * 1.3))))
+    else:
+        body.append("- Artefakte findet man auch durch Umgraben von Artefakt-Spots – halte eine Hacke in Minen und am Strand bereit.")
+    body += [
+        "- Verfolge Spenden mit der [Museum-Checkliste](/de/museum-checklist/).",
+        "",
+    ]
+    return slugify(name), body
+
+
+def villager_title_de(item):
+    name = item["name"]
+    return "%s-Lieblingsgeschenke in Stardew Valley" % name
+
+
+def villager_guide_de(item):
+    name = item["name"]
+    bday = item.get("birthday") or {}
+    bday_txt = "%s %d" % (BIRTHDAY_SEASON_DE.get(bday.get("season", "?"), bday.get("season", "?")), bday.get("day", "?")) if bday else "—"
+    loves = item.get("loves") or []
+    likes = item.get("likes") or []
+    body = [
+        "%s" % item.get("description", ""),
+        "",
+        "## Überblick",
+        "",
+        "| Detail | Wert |",
+        "|---|---|",
+        "| Wohnt | %s |" % item.get("address", "—"),
+        "| Geburtstag | %s |" % bday_txt,
+        "| Beschenkbar | Ja (täglich 1, wöchentlich 2) |",
+        "",
+        "## Lieblingsgeschenke",
+        "",
+        "%s" % ("<br>".join("- " + g for g in loves[:12]) if loves else "—"),
+        "",
+        "## Mag Geschenke",
+        "",
+        "%s" % ("<br>".join("- " + g for g in likes[:10]) if likes else "—"),
+        "",
+        "## Beziehungstipps",
+        "",
+        "- **Geburtstagsbonus**: Geschenke am %s geben 8× Freundschaftspunkte – hebe ein Lieblingsgeschenk für diesen Tag auf." % bday_txt,
+        "- Täglich sprechen und zweimal wöchentlich ein Lieblingsgeschenk geben, um schnell zum nächsten Herz-Ereignis zu kommen.",
+        "- Plane den Vorrat mit dem [Geschenk-Such-Tool](/de/gift/).",
+        "",
+    ]
+    return slugify(name), body
+
+
 def mineral_guide(item):
     name = item["name"]
     slug = slugify(name)
@@ -821,69 +1057,83 @@ def main():
     patch_hub_section(hub_section(cat_summary))
     print("Updated Guides Hub home + category indexes.")
 
-    # ---- 同步各分类攻略中文（zh-hans）版本：对每个已生成英文攻略的条目写一份中文版 ----
-    ZH_REGISTRY = {
-        "fish": {
-            "data": lambda: load("fish.json"),
-            "gen": fish_guide_zh, "title": fish_title_zh,
-            "related": [("鱼类清单", "/zh-hans/fish-checklist/"), ("农场布局规划器", "/zh-hans/farmlayou/")],
-            "index_title": "鱼类攻略", "index_blurb": "每种鱼的垂钓季节、时间、天气、地点、难度与售价。",
+    # ---- 同步各分类攻略多语言版本（zh-hans / de）：对每个已生成英文攻略的条目写对应语言版 ----
+    CAT_DATA = {
+        "fish": lambda: load("fish.json"),
+        "crops": lambda: load("crops.json"),
+        "minerals": lambda: load("minerals.json") + load("artifacts.json"),
+        "villagers": lambda: load("villagers.json"),
+    }
+    LANG_CFG = {
+        "zh-hans": {
+            "site_title_suffix": "星露谷物语攻略站",
+            "fish": {"gen": fish_guide_zh, "title": fish_title_zh,
+                     "related": [("鱼类清单", "/zh-hans/fish-checklist/"), ("农场布局规划器", "/zh-hans/farmlayou/")],
+                     "index_title": "鱼类攻略", "index_blurb": "每种鱼的垂钓季节、时间、天气、地点、难度与售价。"},
+            "crops": {"gen": crop_guide_zh, "title": crop_title_zh,
+                      "related": [("农场布局规划器", "/zh-hans/farmlayou/"), ("作物利润计算器", "/zh-hans/calculator/")],
+                      "index_title": "作物攻略", "index_blurb": "每种作物的季节、生长时间、种子成本、售价与利润。"},
+            "minerals": {"gen": mineral_guide_zh, "title": mineral_title_zh,
+                         "related": [("博物馆清单", "/zh-hans/museum-checklist/")],
+                         "index_title": "矿物与文物攻略", "index_blurb": "每种矿物和文物的位置、来源、售价与博物馆捐赠建议。"},
+            "villagers": {"gen": villager_guide_zh, "title": villager_title_zh,
+                          "related": [("礼物查询", "/zh-hans/gift/")],
+                          "index_title": "村民攻略", "index_blurb": "每位村民的最爱礼物、生日、居住地点与关系技巧。"},
         },
-        "crops": {
-            "data": lambda: load("crops.json"),
-            "gen": crop_guide_zh, "title": crop_title_zh,
-            "related": [("农场布局规划器", "/zh-hans/farmlayou/"), ("作物利润计算器", "/zh-hans/calculator/")],
-            "index_title": "作物攻略", "index_blurb": "每种作物的季节、生长时间、种子成本、售价与利润。",
-        },
-        "minerals": {
-            "data": lambda: load("minerals.json") + load("artifacts.json"),
-            "gen": mineral_guide_zh, "title": mineral_title_zh,
-            "related": [("博物馆清单", "/zh-hans/museum-checklist/")],
-            "index_title": "矿物与文物攻略", "index_blurb": "每种矿物和文物的位置、来源、售价与博物馆捐赠建议。",
-        },
-        "villagers": {
-            "data": lambda: load("villagers.json"),
-            "gen": villager_guide_zh, "title": villager_title_zh,
-            "related": [("礼物查询", "/zh-hans/gift/")],
-            "index_title": "村民攻略", "index_blurb": "每位村民的最爱礼物、生日、居住地点与关系技巧。",
+        "de": {
+            "site_title_suffix": "Stardew Valley Hub",
+            "fish": {"gen": fish_guide_de, "title": fish_title_de,
+                     "related": [("Fisch-Checkliste", "/de/fish-checklist/"), ("Farm-Layout-Planer", "/de/farmlayou/")],
+                     "index_title": "Fisch-Guides", "index_blurb": "Fangzeit, Wetter, Ort, Schwierigkeit und Verkaufspreis jedes Fisches."},
+            "crops": {"gen": crop_guide_de, "title": crop_title_de,
+                      "related": [("Farm-Layout-Planer", "/de/farmlayou/"), ("Gewinn-Rechner", "/de/calculator/")],
+                      "index_title": "Pflanzen-Guides", "index_blurb": "Jahreszeit, Wachstumszeit, Samenkosten, Preis und Gewinn jeder Pflanze."},
+            "minerals": {"gen": mineral_guide_de, "title": mineral_title_de,
+                         "related": [("Museum-Checkliste", "/de/museum-checklist/")],
+                         "index_title": "Mineralien & Artefakte Guides", "index_blurb": "Fundorte, Quellen, Verkaufspreis und Museums-Empfehlung jedes Minerals."},
+            "villagers": {"gen": villager_guide_de, "title": villager_title_de,
+                          "related": [("Geschenk-Suche", "/de/gift/")],
+                          "index_title": "Dorfbewohner-Guides", "index_blurb": "Lieblingsgeschenke, Geburtstag, Wohnort und Beziehungstipps jedes Dorfbewohners."},
         },
     }
-    total_zh = 0
-    for cat, zr in ZH_REGISTRY.items():
-        zh_dir = os.path.join(ROOT, "content", "zh-hans", "all-guides", cat)
-        en_dir = os.path.join(GUIDES_DIR, cat)
-        if not os.path.isdir(en_dir):
-            continue
-        existing = {fn[:-3] for fn in os.listdir(en_dir) if fn.endswith(".md") and fn != "_index.md"}
-        zh_rows = []
-        for it in zr["data"]():
-            try:
-                s = slugify(it["name"])
-            except Exception:
+    total_lang = 0
+    for lang, cfg in LANG_CFG.items():
+        for cat, data_fn in CAT_DATA.items():
+            lc = cfg[cat]
+            lang_dir = os.path.join(ROOT, "content", lang, "all-guides", cat)
+            en_dir = os.path.join(GUIDES_DIR, cat)
+            if not os.path.isdir(en_dir):
                 continue
-            if s not in existing:
-                continue
-            zslug, zbody = zr["gen"](it)
-            ztitle = zr["title"](it)
-            zdesc = (ztitle + " — " + (it.get("description") or "")).strip()
-            if len(zdesc) > 155:
-                zdesc = zdesc[:152].rstrip() + "…"
-            icon = img_url(it)
-            cover_count = len(zh_rows) + 1
-            cover = "/images/guide-covers/%s%s.jpg" % (cat, "" if cover_count % 2 == 1 else "-alt")
-            md = front(ztitle, zdesc, icon, zr["related"], cover=cover) + "\n".join(zbody) + "\n"
-            w(os.path.join(zh_dir, zslug + ".md"), md)
-            zh_rows.append((zslug, ztitle))
-            total_zh += 1
-        if zh_rows:
-            cards = "\n".join(
-                '  <a class="card" href="/zh-hans/all-guides/%s/%s/"><h3>%s</h3></a>' % (cat, s, t)
-                for s, t in sorted(zh_rows))
-            idx = ["---", 'title: "%s - 星露谷物语攻略站"' % zr["index_title"], "---", "",
-                   '<div class="page-hero"><h1>%s</h1><p>%s</p></div>' % (zr["index_title"], zr["index_blurb"]), "",
-                   '<div class="card-grid home-grid">', cards, "</div>", ""]
-            w(os.path.join(zh_dir, "_index.md"), "\n".join(idx))
-    print("Wrote %d Chinese guides across %d categories." % (total_zh, len(ZH_REGISTRY)))
+            existing = {fn[:-3] for fn in os.listdir(en_dir) if fn.endswith(".md") and fn != "_index.md"}
+            lang_rows = []
+            for it in data_fn():
+                try:
+                    s = slugify(it["name"])
+                except Exception:
+                    continue
+                if s not in existing:
+                    continue
+                lslug, lbody = lc["gen"](it)
+                ltitle = lc["title"](it)
+                ldesc = (ltitle + " — " + (it.get("description") or "")).strip()
+                if len(ldesc) > 155:
+                    ldesc = ldesc[:152].rstrip() + "…"
+                icon = img_url(it)
+                cover_count = len(lang_rows) + 1
+                cover = "/images/guide-covers/%s%s.jpg" % (cat, "" if cover_count % 2 == 1 else "-alt")
+                md = front(ltitle, ldesc, icon, lc["related"], cover=cover) + "\n".join(lbody) + "\n"
+                w(os.path.join(lang_dir, lslug + ".md"), md)
+                lang_rows.append((lslug, ltitle))
+                total_lang += 1
+            if lang_rows:
+                cards = "\n".join(
+                    '  <a class="card" href="/%s/all-guides/%s/%s/"><h3>%s</h3></a>' % (lang, cat, s, t)
+                    for s, t in sorted(lang_rows))
+                idx = ["---", 'title: "%s - %s"' % (lc["index_title"], cfg["site_title_suffix"]), "---", "",
+                       '<div class="page-hero"><h1>%s</h1><p>%s</p></div>' % (lc["index_title"], lc["index_blurb"]), "",
+                       '<div class="card-grid home-grid">', cards, "</div>", ""]
+                w(os.path.join(lang_dir, "_index.md"), "\n".join(idx))
+    print("Wrote %d guides across %d categories × %d languages." % (total_lang, len(CAT_DATA), len(LANG_CFG)))
 
     # 记录本次处理的数据版本（供下轮判断是否有新内容）
     record_processed_version(cur_ver)

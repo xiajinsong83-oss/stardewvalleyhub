@@ -1,49 +1,50 @@
 ---
-title: "Green Bean Guide: How to Grow Green Bean in Spring (10-Day Growth, Profit & Tips)"
-description: "Green Bean Guide: How to Grow Green Bean in Spring (10-Day Growth, Profit & Tips) — A young, tender bean in the pod."
-date: 2026-10-10
-cover: "/images/guide-covers/crops.jpg"
+title: "Green Bean Anbau-Guide: Reife in 10 Tagen | Stardew Valley"
+description: "Green Bean Anbau-Guide: Reife in 10 Tagen | Stardew Valley — A young, tender bean in the pod."
+date: 2026-10-19
 draft: false
 type: guide
 icon: "/images/crops/green-bean/crop.png"
-related: [{"title": "Farm Layout Planner", "url": "/farmlayou/"}, {"title": "Crop Profit Calculator", "url": "/calculator/"}]
+related: [{"title": "Farm-Layout-Planer", "url": "/de/farmlayou/"}, {"title": "Gewinn-Rechner", "url": "/de/calculator/"}]
+cover: "/images/guide-covers/crops-alt.jpg"
 ---
-The Green Bean is a vegetable crop in Stardew Valley. A young, tender bean in the pod. It grows in Spring and is one of the most reliable ways to build early-season income, so it belongs in almost every farm plan.
+**Green Bean** ist eine vegetable-Pflanze in Stardew Valley. A young, tender bean in the pod. Anbaubar in **Frühling** – eine der zuverlässigsten Einnahmequellen early, gehört in fast jeden Farmplan.
 
-## At a Glance
+## Übersicht
 
-| Detail | Value |
+| Detail | Wert |
 |---|---|
-| Season | Spring |
-| Growth time | 10 days then regrows every 3 days |
-| Regrow | Yes (3 days) |
-| Seed cost | Pierre's (60g); JojaMart (75g) |
-| Sell price | 40g |
-| Max quality | Iridium |
-| Category | vegetable |
-| Trellis | Yes |
-| Giant crop | No |
-| Farming XP | 9 |
+| Jahreszeit | Frühling |
+| Wachstumszeit | 10 Tage dann alle 3 Tage Nachwuchs |
+| Nachwuchs | Ja (alle 3 Tage) |
+| Samenkosten | Pierre's (60g); JojaMart (75g) |
+| Verkaufspreis | 40g |
+| Max. Qualität | Iridium |
+| Kategorie | vegetable |
+| Rankhilfe | Ja |
+| Riesenpflanze | Nein |
+| Anbau-EP | 9 |
 
-## How to Grow
+## Anbau
 
-Plant Bean Starter in tilled, watered soil at the start of the season. The crop takes **10 days** to mature and then produces again every 3 days after the first harvest. Water every morning (or set up a sprinkler) so the growth timer never pauses.
+Pflanze Bean Starter zu Saisonbeginn in gegrabene, bewässerte Erde. Die Pflanze braucht **10 Tage** zur Reife, danach erneut alle 3 Tage Ertrag nach der ersten Ernte. Jeden Morgen gießen (oder Sprinkler aufstellen), damit die Wachstumszeit nie pausiert.
 
-**Harvest strategy**: This is a multi-harvest crop — plan to keep it planted all season and collect repeatedly. It needs a trellis, so leave a row gap between planting lines to walk through.
+**Erntestrategie**: Mehrfachernte-Pflanze – die ganze Saison stehen lassen und wiederholt ernten. Braucht Rankhilfe, lasse zwischen den Pflanzreihen einen Gang.
 
-## Profit Analysis
+## Gewinnanalyse
 
-| Metric | Value |
+| Kennzahl | Wert |
 |---|---|
-| Net profit per plant | -20g |
-| Harvests per season | ~7 |
-| Approx. season profit per plant | 220g |
+| Nettogewinn pro Pflanze | -20g |
+| Ernten pro Saison | ~7 |
+| Ca. Gewinn pro Pflanze/Saison | 220g |
 
-With the **Tiller** profession, crop sell prices increase by 10%, lifting the season profit per plant to about **248g**. Multiplied across a 12×8 field, this crop becomes a solid seasonal income source.
+Mit der **Ackerbau (Tiller)**-Beruf steigen die Crop-Verkaufspreise um 10% – Gewinn pro Pflanze/Saison auf etwa **248g**. Bei einem 12×8-Feld eine solide saisonale Einnahmequelle.
 
-## Tips & Pairings
+## Tipps & Kombinationen
 
-- **Artisan processing**: this crop can be processed into Juice, Pickles for even higher value.
-- **Sprinklers**: pair it with a sprinkler layout in the [Farm Layout Planner](/farmlayou/) to automate watering from day one.
-- **Quality**: with higher Farming skill and fertilizer, silver/gold/iridium quality harvests raise the sell price well above the base 40g.
-- **Season end**: crops wither at season change — time plantings so the final harvest lands before the 28th.
+- **Weiterveredelung**: diese Pflanze kann zu Juice, Pickles veredelt werden für höheren Wert.
+- **Sprinkler**: kombiniere sie mit einem Sprinkler-Layout im [Farm-Layout-Planer](/de/farmlayou/), um ab Tag 1 automatisch zu gießen.
+- **Qualität**: mit höherem Anbau-Skill und Dünger heben Silber/Gold/Iridium-Qualität den Verkaufspreis deutlich über den Grundwert 40g.
+- **Saisonende**: Pflanzen verwelken bei Saisonswechsel – plane die letzte Ernte vor den 28. Tag.
+

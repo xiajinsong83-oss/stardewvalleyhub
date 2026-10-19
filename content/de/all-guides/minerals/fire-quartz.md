@@ -1,26 +1,27 @@
 ---
-title: "Fire Quartz Guide: Where to Find It (The Mines (Floors 80-120), 100g Value)"
-description: "Fire Quartz Guide: Where to Find It (The Mines (Floors 80-120), 100g Value) — A glowing red crystal commonly found near hot lava."
-date: 2026-10-10
-cover: "/images/guide-covers/minerals.jpg"
+title: "Fire Quartz – Museums-Spendenleitfaden"
+description: "Fire Quartz – Museums-Spendenleitfaden — A glowing red crystal commonly found near hot lava."
+date: 2026-10-19
 draft: false
 type: guide
 icon: "/images/minerals/foraged-minerals/Fire Quartz.png"
-related: [{"title": "Museum Checklist", "url": "/museum-checklist/"}]
+related: [{"title": "Museum-Checkliste", "url": "/de/museum-checklist/"}]
+cover: "/images/guide-covers/minerals-alt.jpg"
 ---
 A glowing red crystal commonly found near hot lava.
 
-## Where to Find
+## Fundorte
 
-| Detail | Value |
+| Detail | Wert |
 |---|---|
-| Type | Mineral |
-| Sell price | 100g |
-| Sources | The Mines (Floors 80-120)<br>Magma Geode<br>Omni Geode<br>Panning |
+| Typ | Mineral |
+| Verkaufspreis | 100g |
+| Quellen | The Mines (Floors 80-120)<br>Magma Geode<br>Omni Geode<br>Panning |
 
-## Collection Tips
+## Sammeltipps
 
-- **Fire Quartz** is part of the Museum collection — donate your first copy before selling extras.
-- Mining deeper floors and cracking geodes are the fastest ways to find new pieces.
-- Gemologist profession raises mineral sell prices by 30% (base **100g** → **130g**).
-- Track donations with the [Museum Checklist](/museum-checklist/).
+- **Fire Quartz** ist Teil der Museumssammlung – spende das erste Exemplar, bevor du weitere verkaufst.
+- Tiefere Minenebenen und Geoden knacken sind die schnellsten Wege zu neuen Fundstücken.
+- Mit der **Geologe (Gemologist)**-Beruf steigen Mineral-Verkaufspreise um 30% (Grundpreis **100g** → **130g**).
+- Verfolge Spenden mit der [Museum-Checkliste](/de/museum-checklist/).
+

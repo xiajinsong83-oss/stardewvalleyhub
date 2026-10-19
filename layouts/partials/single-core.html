@@ -4,6 +4,17 @@
   {{ $seed := add (len .Content) (len .RelPermalink) }}
   {{ if eq 1 (mod $seed 2) }}{{ $adType = "sidebar" }}{{ end }}
 {{ end }}
+{{/* 按语言取界面文案（Updated 日期前缀 / Related Guides 标题） */}}
+{{ $lang := .Site.Language.Lang }}
+{{ $updatedPrefix := "Updated" }}
+{{ $relatedTitle := "Related Guides" }}
+{{ if eq $lang "zh-hans" }}
+  {{ $updatedPrefix = "更新于" }}
+  {{ $relatedTitle = "相关攻略" }}
+{{ else if eq $lang "de" }}
+  {{ $updatedPrefix = "Aktualisiert" }}
+  {{ $relatedTitle = "Ähnliche Guides" }}
+{{ end }}
 
 {{ if ne $adType "sidebar" }}
 <div class="content-col">
@@ -16,7 +27,7 @@
       <div>
         <h1>{{ .Title }}</h1>
         <div class="page-meta">
-          {{ if .Date }}<time datetime="{{ .Date.Format "2006-01-02" }}">Updated: {{ .Date.Format "Jan 2, 2006" }}</time>{{ end }}
+          {{ if .Date }}<time datetime="{{ .Date.Format "2006-01-02" }}">{{ $updatedPrefix }} {{ .Date.Format "Jan 2, 2006" }}</time>{{ end }}
           <span class="data-note">{{ .Site.Params.dataSourceNote }}</span>
         </div>
       </div>
@@ -26,7 +37,7 @@
     {{ if .Params.faq }}{{ partial "faq.html" . }}{{ end }}
     {{ if .Params.related }}
     <section class="related">
-      <h2>Related Guides</h2>
+      <h2>{{ $relatedTitle }}</h2>
       <div class="card-grid">
         {{ range .Params.related }}
         <a class="card" href="{{ .url | relURL }}"><h3>{{ .title }}</h3></a>
@@ -50,7 +61,7 @@
         <div>
           <h1>{{ .Title }}</h1>
           <div class="page-meta">
-            {{ if .Date }}<time datetime="{{ .Date.Format "2006-01-02" }}">Updated: {{ .Date.Format "Jan 2, 2006" }}</time>{{ end }}
+            {{ if .Date }}<time datetime="{{ .Date.Format "2006-01-02" }}">{{ $updatedPrefix }} {{ .Date.Format "Jan 2, 2006" }}</time>{{ end }}
             <span class="data-note">{{ .Site.Params.dataSourceNote }}</span>
           </div>
         </div>
@@ -60,7 +71,7 @@
       {{ if .Params.faq }}{{ partial "faq.html" . }}{{ end }}
       {{ if .Params.related }}
       <section class="related">
-        <h2>Related Guides</h2>
+        <h2>{{ $relatedTitle }}</h2>
         <div class="card-grid">
           {{ range .Params.related }}
           <a class="card" href="{{ .url | relURL }}"><h3>{{ .title }}</h3></a>

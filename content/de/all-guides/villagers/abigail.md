@@ -1,33 +1,34 @@
 ---
-title: "Abigail Guide: Birthday (Fall 13), Loved Gifts & Best Gift Ideas"
-description: "Abigail Guide: Birthday (Fall 13), Loved Gifts & Best Gift Ideas — Abigail is a villager who lives at Pierre's General Store in Pelican Town. She is one…"
-date: 2026-10-10
-cover: "/images/guide-covers/villagers.jpg"
+title: "Abigail-Lieblingsgeschenke in Stardew Valley"
+description: "Abigail-Lieblingsgeschenke in Stardew Valley — Abigail is a villager who lives at Pierre's General Store in Pelican Town. She is one of the twelve chara…"
+date: 2026-10-19
 draft: false
 type: guide
 icon: "/images/villagers/Abigail.png"
-related: [{"title": "Gift Lookup", "url": "/gift/"}]
+related: [{"title": "Geschenk-Suche", "url": "/de/gift/"}]
+cover: "/images/guide-covers/villagers.jpg"
 ---
 Abigail is a villager who lives at Pierre's General Store in Pelican Town. She is one of the twelve characters available to marry.
 
-## At a Glance
+## Überblick
 
-| Detail | Value |
+| Detail | Wert |
 |---|---|
-| Lives at | Pierre's General Store |
-| Birthday | Fall 13 |
-| Giftable | Yes (daily, 2 per week) |
+| Wohnt | Pierre's General Store |
+| Geburtstag | Herbst 13 |
+| Beschenkbar | Ja (täglich 1, wöchentlich 2) |
 
-## Loved Gifts
+## Lieblingsgeschenke
 
 - Amethyst<br>- Banana Pudding<br>- Blackberry Cobbler<br>- Chocolate Cake<br>- Monster Compendium<br>- Pufferfish<br>- Pumpkin<br>- Spicy Eel
 
-## Liked Gifts
+## Mag Geschenke
 
 - Ancient Sword<br>- Basilisk Paw<br>- Bone Flute<br>- Combat Quarterly<br>- Quartz
 
-## Relationship Tips
+## Beziehungstipps
 
-- **Birthday bonus**: gifts on Fall 13 give 8× friendship points — save a loved item for that day.
-- Talk daily and give a loved gift twice a week to reach the next heart event quickly.
-- Plan which items to stock with the [Gift Lookup](/gift/) tool.
+- **Geburtstagsbonus**: Geschenke am Herbst 13 geben 8× Freundschaftspunkte – hebe ein Lieblingsgeschenk für diesen Tag auf.
+- Täglich sprechen und zweimal wöchentlich ein Lieblingsgeschenk geben, um schnell zum nächsten Herz-Ereignis zu kommen.
+- Plane den Vorrat mit dem [Geschenk-Such-Tool](/de/gift/).
+

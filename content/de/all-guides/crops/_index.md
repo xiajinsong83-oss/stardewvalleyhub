@@ -1,16 +1,18 @@
 ---
-title: Crop Guides - Stardew Valley Hub
+title: "Pflanzen-Guides - Stardew Valley Hub"
 ---
 
-<div class="page-hero"><h1>Crop Guides</h1><p>How to grow, harvest and profit from every crop.</p></div>
+<div class="page-hero"><h1>Pflanzen-Guides</h1><p>Jahreszeit, Wachstumszeit, Samenkosten, Preis und Gewinn jeder Pflanze.</p></div>
 
 <div class="card-grid home-grid">
-  <a class="card" href="/all-guides/crops/cauliflower/"><h3>Cauliflower Guide: How to Grow Cauliflower in Spring (12-Day Growth, Profit & Tips)</h3><p>Full guide with data, tips and tools.</p></a>
-  <a class="card" href="/all-guides/crops/garlic/"><h3>Garlic Guide: How to Grow Garlic in Spring (4-Day Growth, Profit & Tips)</h3><p>Full guide with data, tips and tools.</p></a>
-  <a class="card" href="/all-guides/crops/green-bean/"><h3>Green Bean Guide: How to Grow Green Bean in Spring (10-Day Growth, Profit & Tips)</h3><p>Full guide with data, tips and tools.</p></a>
-  <a class="card" href="/all-guides/crops/kale/"><h3>Kale Guide: How to Grow Kale in Spring (6-Day Growth, Profit & Tips)</h3><p>Full guide with data, tips and tools.</p></a>
-  <a class="card" href="/all-guides/crops/parsnip/"><h3>Parsnip Guide: How to Grow, Harvest & Profit</h3><p>Full guide with data, tips and tools.</p></a>
-  <a class="card" href="/all-guides/crops/potato/"><h3>Potato Guide: How to Grow Potato in Spring (6-Day Growth, Profit & Tips)</h3><p>Full guide with data, tips and tools.</p></a>
-  <a class="card" href="/all-guides/crops/rhubarb/"><h3>Rhubarb Guide: How to Grow Rhubarb in Spring (13-Day Growth, Profit & Tips)</h3><p>Full guide with data, tips and tools.</p></a>
-  <a class="card" href="/all-guides/crops/strawberry/"><h3>Strawberry Guide: How to Grow Strawberry in Spring (8-Day Growth, Profit & Tips)</h3><p>Full guide with data, tips and tools.</p></a>
+  <a class="card" href="/de/all-guides/crops/cauliflower/"><h3>Cauliflower Anbau-Guide: Reife in 12 Tagen | Stardew Valley</h3></a>
+  <a class="card" href="/de/all-guides/crops/garlic/"><h3>Garlic Anbau-Guide: Reife in 4 Tagen | Stardew Valley</h3></a>
+  <a class="card" href="/de/all-guides/crops/green-bean/"><h3>Green Bean Anbau-Guide: Reife in 10 Tagen | Stardew Valley</h3></a>
+  <a class="card" href="/de/all-guides/crops/kale/"><h3>Kale Anbau-Guide: Reife in 6 Tagen | Stardew Valley</h3></a>
+  <a class="card" href="/de/all-guides/crops/parsnip/"><h3>Parsnip Anbau-Guide: Reife in 4 Tagen | Stardew Valley</h3></a>
+  <a class="card" href="/de/all-guides/crops/pineapple/"><h3>Pineapple Anbau-Guide: Reife in 14 Tagen | Stardew Valley</h3></a>
+  <a class="card" href="/de/all-guides/crops/potato/"><h3>Potato Anbau-Guide: Reife in 6 Tagen | Stardew Valley</h3></a>
+  <a class="card" href="/de/all-guides/crops/qi-fruit/"><h3>Qi Fruit Anbau-Guide: Reife in 4 Tagen | Stardew Valley</h3></a>
+  <a class="card" href="/de/all-guides/crops/rhubarb/"><h3>Rhubarb Anbau-Guide: Reife in 13 Tagen | Stardew Valley</h3></a>
+  <a class="card" href="/de/all-guides/crops/strawberry/"><h3>Strawberry Anbau-Guide: Reife in 8 Tagen | Stardew Valley</h3></a>
 </div>

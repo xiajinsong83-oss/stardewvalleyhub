@@ -21,8 +21,13 @@
   (dict "t" "Tier List" "u" "/tier/crop-profit/")
   (dict "t" "Maps" "u" "/maps/")
 }}
+{{/* 按语言输出 h2 标题 */}}
+{{ $rlLang := .Site.Language.Lang }}
+{{ $rlTitle := "Related Guides & Tools" }}
+{{ if eq $rlLang "zh-hans" }}{{ $rlTitle = "相关攻略与工具" }}
+{{ else if eq $rlLang "de" }}{{ $rlTitle = "Ähnliche Guides & Tools" }}{{ end }}
 <section class="related-links">
-  <h2>Related Guides &amp; Tools</h2>
+  <h2>{{ $rlTitle }}</h2>
   <div class="related-links-grid">
     <div class="rl-col">
       <h3>Player Tools</h3>

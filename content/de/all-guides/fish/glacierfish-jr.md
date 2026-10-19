@@ -1,0 +1,38 @@
+---
+title: "Glacierfish Jr. Guide: Winter (Forest (Arrowhead Island), 6:00 AM – 8:00 PM)"
+description: "Glacierfish Jr. Guide: Winter (Forest (Arrowhead Island), 6:00 AM – 8:00 PM) — The original Glacierfish had a son..."
+date: 2026-10-19
+draft: false
+type: guide
+icon: "/images/fish/Glacierfish Jr.png"
+related: [{"title": "Fisch-Checkliste", "url": "/de/fish-checklist/"}, {"title": "Farm-Layout-Planer", "url": "/de/farmlayou/"}]
+cover: "/images/guide-covers/fish-alt.jpg"
+---
+**Glacierfish Jr.** ist ein legendär II-Fisch in Stardew Valley. The original Glacierfish had a son...
+
+## Fangbedingungen
+
+| Detail | Wert |
+|---|---|
+| Jahreszeit | Winter |
+| Uhrzeit | 6:00 AM – 8:00 PM |
+| Wetter | Sonne |
+| Ort | Forest (Arrowhead Island) |
+| Schwierigkeit | 100 / 100 |
+| Verkaufspreis | 1000g |
+| Fangart | Angel |
+
+## So fängst du ihn
+
+Gehe zur richtigen Jahreszeit und Uhrzeit an **Forest (Arrowhead Island)**. Glacierfish Jr. Sehr schwer – Angelskill auf Maximalstufe, hochwertiger Köder und gutes Timing nötig.
+
+**Köder & Tackle**: benutze Köder (oder Magnet/Lok) mit einer verbesserten Angel, um das Fangfenster zu verkleinern. Bei schweren Fischen den Schwimmer hoch halten, tippen statt halten – Druck sofort loslassen, sobald die Leiste fällt.
+
+## Nutzung & Tipps
+
+- **Verkaufswert**: Grundpreis **1000g** – mit Fischer-Angler-Beruf verkauft er sich für **1250g**.
+- **Kochen**: verwendet in Maki Roll, Quality Fertilizer, Sashimi.
+- **Räuchern**: kann in der Fischräucherei geräuchert werden für extra Wert.
+- **Fischteich**: lebt im Fischteich und produziert Roe/Gegenstände bei Bevölkerungs-Meilensteinen.
+- Verfolge deine Fänge mit der [Fisch-Checkliste](/de/fish-checklist/).
+

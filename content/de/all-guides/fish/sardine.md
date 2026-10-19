@@ -1,37 +1,38 @@
 ---
-title: "Sardine Guide: Where to Catch It in Spring, Summer, Fall, Winter (Ocean, 6:00 AM – 7:00 PM)"
-description: "Sardine Guide: Where to Catch It in Spring, Summer, Fall, Winter (Ocean, 6:00 AM – 7:00 PM) — A common ocean fish."
-date: 2026-10-10
-cover: "/images/guide-covers/fish-alt.jpg"
+title: "Sardine Guide: Frühling, Sommer, Herbst, Winter (Ocean, 6:00 AM – 7:00 PM)"
+description: "Sardine Guide: Frühling, Sommer, Herbst, Winter (Ocean, 6:00 AM – 7:00 PM) — A common ocean fish."
+date: 2026-10-19
 draft: false
 type: guide
 icon: "/images/fish/Sardine.png"
-related: [{"title": "Fish Checklist", "url": "/fish-checklist/"}, {"title": "Farm Layout Planner", "url": "/farmlayou/"}]
+related: [{"title": "Fisch-Checkliste", "url": "/de/fish-checklist/"}, {"title": "Farm-Layout-Planer", "url": "/de/farmlayou/"}]
+cover: "/images/guide-covers/fish-alt.jpg"
 ---
-The Sardine is a regular fish in Stardew Valley. A common ocean fish.
+**Sardine** ist ein gewöhnlich-Fisch in Stardew Valley. A common ocean fish.
 
-## Catch Conditions
+## Fangbedingungen
 
-| Detail | Value |
+| Detail | Wert |
 |---|---|
-| Season | Spring, Summer, Fall, Winter |
-| Time | 6:00 AM – 7:00 PM |
-| Weather | both |
-| Location | Ocean |
-| Difficulty | 30 / 100 |
-| Sell price | 40g |
-| Catch type | rod |
+| Jahreszeit | Frühling, Sommer, Herbst, Winter |
+| Uhrzeit | 6:00 AM – 7:00 PM |
+| Wetter | beliebig |
+| Ort | Ocean |
+| Schwierigkeit | 30 / 100 |
+| Verkaufspreis | 40g |
+| Fangart | Angel |
 
-## How to Catch
+## So fängst du ihn
 
-Go to **Ocean** during the right season and time window. The Sardine is Easy — catchable with the basic rod early on..
+Gehe zur richtigen Jahreszeit und Uhrzeit an **Ocean**. Sardine Einfach – early mit der Basisangel fangbar.
 
-**Bait & tackle**: use Bait (or Magnet/Lure) and an upgraded rod to shrink the catch window. For hard fish, hold the bobber high and tap, don't hold — release pressure the instant the bar drops.
+**Köder & Tackle**: benutze Köder (oder Magnet/Lok) mit einer verbesserten Angel, um das Fangfenster zu verkleinern. Bei schweren Fischen den Schwimmer hoch halten, tippen statt halten – Druck sofort loslassen, sobald die Leiste fällt.
 
-## Uses & Tips
+## Nutzung & Tipps
 
-- **Sell value**: base price **40g** — with the Fisher/Angler professions it sells for **50g**.
-- **Cooking**: used in Dish O' The Sea, Maki Roll, Quality Fertilizer, Sashimi, Ocean Fish Bundle.
-- **Smoking**: can be smoked in a Fish Smoker for extra value.
-- **Fish Pond**: keeps in a Fish Pond and produces Roe/items at population milestones.
-- Track your catches with the [Fish Checklist](/fish-checklist/).
+- **Verkaufswert**: Grundpreis **40g** – mit Fischer-Angler-Beruf verkauft er sich für **50g**.
+- **Kochen**: verwendet in Dish O' The Sea, Maki Roll, Quality Fertilizer, Sashimi, Ocean Fish Bundle.
+- **Räuchern**: kann in der Fischräucherei geräuchert werden für extra Wert.
+- **Fischteich**: lebt im Fischteich und produziert Roe/Gegenstände bei Bevölkerungs-Meilensteinen.
+- Verfolge deine Fänge mit der [Fisch-Checkliste](/de/fish-checklist/).
+
