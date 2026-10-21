@@ -9,7 +9,7 @@
     <p class="pt-side">{{ i18n "game_side" }}</p>
   </div>
   <div class="games-grid">
-    {{ range .Site.RegularPages }}
+    {{ range .Site.Pages }}
     {{ if .Params.game }}
     <a class="game-card" href="{{ .RelPermalink }}">
       <div class="game-card-icon">{{ .Params.icon }}</div>
