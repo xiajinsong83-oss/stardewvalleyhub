@@ -53,6 +53,8 @@
         </div>
         <button class="planner-save" id="saveBtn">{{ i18n "home_save_draft" }}</button>
         <button class="planner-clear" id="clearBtn">{{ i18n "home_clear_board" }}</button>
+        <button class="planner-check" id="checkBtn">{{ i18n "fl_check" }}</button>
+        <div class="check-report" id="checkReport"></div>
         <p class="planner-save-status" id="saveStatus">{{ i18n "home_no_save" }}</p>
       </aside>
       <main class="planner-board">
@@ -192,6 +194,84 @@
     a.download = 'farm-layout.json';
     a.click();
   });
+
+  /* ===== 碰撞与可达性检查（真实规则模拟） ===== */
+  var checkUI = {
+    pass: {{ i18n "fl_pass" | jsonify }},
+    issues: {{ i18n "fl_issues" | jsonify }},
+    collision: {{ i18n "fl_collision" | jsonify }},
+    isoPath: {{ i18n "fl_iso_path" | jsonify }},
+    unReachB: {{ i18n "fl_unreach_b" | jsonify }},
+    tile: {{ i18n "fl_tile" | jsonify }}
+  };
+  function checkLayout(){
+    var problems = [];
+    var passable = function(t){ return !t || t === 'path' || t === 'soil' || t === 'crop'; };
+
+    // 1) 建筑相邻冲突（上下左右 4 邻域）
+    Object.keys(saved).forEach(function(idx){
+      if (saved[idx] !== 'building') return;
+      var r = Math.floor(idx / COLS), c = idx % COLS;
+      [[-1,0],[1,0],[0,-1],[0,1]].forEach(function(d){
+        var nr = r + d[0], nc = c + d[1];
+        if (nr < 0 || nr >= ROWS || nc < 0 || nc >= COLS) return;
+        // 只报告一次（避免 (0,0)↔(0,1) 与 (0,1)↔(0,0) 重复）
+        if (nr < r || (nr === r && nc < c)) return;
+        if (saved[nr * COLS + nc] === 'building')
+          problems.push(checkUI.collision + ' (' + r + ',' + c + ') ↔ (' + nr + ',' + nc + ')');
+      });
+    });
+
+    // 2) BFS 可达性：锚点 = 左上农舍 + 底部中间出口
+    var reach = {};
+    [0, (ROWS - 1) * COLS + (COLS >> 1)].forEach(function(start){
+      if (!passable(saved[start])) return;
+      var q = [start]; reach[start] = true;
+      while (q.length){
+        var i = q.shift();
+        var r = Math.floor(i / COLS), c = i % COLS;
+        [[-1,0],[1,0],[0,-1],[0,1]].forEach(function(d){
+          var nr = r + d[0], nc = c + d[1];
+          if (nr < 0 || nr >= ROWS || nc < 0 || nc >= COLS) return;
+          var ni = nr * COLS + nc;
+          if (reach[ni] || !passable(saved[ni])) return;
+          reach[ni] = true; q.push(ni);
+        });
+      }
+    });
+
+    // 3) 孤立道路
+    var iso = 0;
+    Object.keys(saved).forEach(function(idx){
+      if (saved[idx] === 'path' && !reach[idx]) iso++;
+    });
+    if (iso) problems.push(checkUI.isoPath + ' (' + iso + ' ' + checkUI.tile + ')');
+
+    // 4) 建筑可达性（至少邻接一个可达格）
+    var ub = [];
+    Object.keys(saved).forEach(function(idx){
+      if (saved[idx] !== 'building') return;
+      var r = Math.floor(idx / COLS), c = idx % COLS, ok = false;
+      [[-1,0],[1,0],[0,-1],[0,1]].forEach(function(d){
+        var nr = r + d[0], nc = c + d[1];
+        if (nr < 0 || nr >= ROWS || nc < 0 || nc >= COLS) return;
+        if (reach[nr * COLS + nc]) ok = true;
+      });
+      if (!ok) ub.push('(' + r + ',' + c + ')');
+    });
+    if (ub.length) problems.push(checkUI.unReachB + ' (' + ub.join(' ') + ')');
+
+    var panel = document.getElementById('checkReport');
+    if (!problems.length){
+      panel.className = 'check-report ok';
+      panel.innerHTML = '<strong>✓</strong> ' + checkUI.pass;
+    } else {
+      panel.className = 'check-report warn';
+      panel.innerHTML = '<strong>' + problems.length + ' ' + checkUI.issues + '</strong><ul>' +
+        problems.map(function(p){ return '<li>' + p + '</li>'; }).join('') + '</ul>';
+    }
+  }
+  document.getElementById('checkBtn').addEventListener('click', checkLayout);
 
   render();
 })();

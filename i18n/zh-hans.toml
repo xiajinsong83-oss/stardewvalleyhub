@@ -348,3 +348,21 @@ ap_honey_note = "蜂蜜需要邻近的花——价格取决于花的品种。"
 ap_quality = "原料品质不影响加工品价格。"
 ap_artisan_applied = "已应用工匠职业 +40% 加成。"
 ap_units = "单件售价"
+
+# 节日与生日日历
+cal_eyebrow = "季节日历"
+cal_side = "一页查看全部节日与村民生日，按季节和日期排列。支持筛选节日、生日或全部。"
+cal_all = "全部"
+cal_festivals = "节日"
+cal_birthdays = "生日"
+cal_note = "星露谷物语 1.6 全部 12 个节日和 34 位村民生日 · 来源：星露谷官方维基"
+nav_calendar = "日历"
+
+# 农场布局碰撞检查
+fl_check = "检查布局"
+fl_pass = "布局检查通过——无建筑冲突、道路全部连通、所有建筑可达。"
+fl_issues = "个问题"
+fl_collision = "建筑冲突"
+fl_iso_path = "道路格未连通到农场入口"
+fl_unreach_b = "建筑不可达"
+fl_tile = "格"

@@ -348,3 +348,21 @@ ap_honey_note = "Honey needs a nearby flower — price depends on the flower."
 ap_quality = "Quality does not affect artisan goods."
 ap_artisan_applied = "Artisan profession +40% applied."
 ap_units = "Sell / unit"
+
+# Festival & birthday calendar
+cal_eyebrow = "Seasonal Calendar"
+cal_side = "Every festival and villager birthday on one page, by season and day. Filter festivals, birthdays, or both."
+cal_all = "All"
+cal_festivals = "Festivals"
+cal_birthdays = "Birthdays"
+cal_note = "All 12 festivals and 34 villager birthdays from Stardew Valley 1.6 · Source: Stardew Valley Wiki"
+nav_calendar = "Calendar"
+
+# Farm layout collision check
+fl_check = "Check Layout"
+fl_pass = "Layout check passed — no building collisions, all paths connected, all buildings reachable."
+fl_issues = "issue(s)"
+fl_collision = "Building collision"
+fl_iso_path = "Path tile(s) not connected to farm entrance"
+fl_unreach_b = "Building(s) unreachable"
+fl_tile = "tile(s)"

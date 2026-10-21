@@ -348,3 +348,21 @@ ap_honey_note = "Honig benötigt eine nahe Blume — der Preis hängt von der Bl
 ap_quality = "Qualität beeinflusst Handwerkswaren nicht."
 ap_artisan_applied = "Handwerks-Beruf +40% angewendet."
 ap_units = "Verkauf / Stück"
+
+# Fest- & Geburtstagskalender
+cal_eyebrow = "Jahreszeiten-Kalender"
+cal_side = "Alle Feste und Dorfbewohner-Geburtstage auf einer Seite, nach Jahreszeit und Tag. Filter für Feste, Geburtstage oder beides."
+cal_all = "Alle"
+cal_festivals = "Feste"
+cal_birthdays = "Geburtstage"
+cal_note = "Alle 12 Feste und 34 Geburtstage aus Stardew Valley 1.6 · Quelle: Stardew Valley Wiki"
+nav_calendar = "Kalender"
+
+# Farm-Layout-Kollisionsprüfung
+fl_check = "Layout prüfen"
+fl_pass = "Layout-Prüfung bestanden — keine Gebäudekollisionen, alle Wege verbunden, alle Gebäude erreichbar."
+fl_issues = "Problem(e)"
+fl_collision = "Gebäudekollision"
+fl_iso_path = "Wegfeld(er) nicht mit dem Farmeingang verbunden"
+fl_unreach_b = "Gebäude nicht erreichbar"
+fl_tile = "Feld(er)"

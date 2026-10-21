@@ -1,0 +1,85 @@
+{{ define "main" }}
+{{ $lang := site.Language.Lang }}
+{{ $prefix := site.LanguagePrefix }}
+{{ $seasonNames := dict "en" (dict "Spring" "Spring" "Summer" "Summer" "Fall" "Fall" "Winter" "Winter") "zh-hans" (dict "Spring" "春季" "Summer" "夏季" "Fall" "秋季" "Winter" "冬季") "de" (dict "Spring" "Frühling" "Summer" "Sommer" "Fall" "Herbst" "Winter" "Winter") }}
+{{ $seasonLocal := index $seasonNames $lang }}
+
+{{/* 展平节日表 */}}
+{{ $fests := slice }}
+{{ range site.Data.seasons }}
+  {{ $season := .name }}
+  {{ range .festivals }}
+    {{ $fests = $fests | append (dict "season" $season "day" (.startDay | int) "name" .name "url" (printf "%sfestivals/%s/" $prefix (.name | urlize))) }}
+  {{ end }}
+{{ end }}
+
+{{/* 展平生日表 */}}
+{{ $bdays := slice }}
+{{ range $slug, $npc := site.Data.npc }}
+  {{ $bdays = $bdays | append (dict "season" ($npc.birthday.season | string) "day" ($npc.birthday.day | int) "name" $npc.name) }}
+{{ end }}
+
+<div class="content-col">
+  {{ partial "breadcrumb.html" . }}
+
+  <div class="progress-tracker">
+    <div class="pt-title-block">
+      <p class="pt-eyebrow">{{ i18n "cal_eyebrow" }}</p>
+      <h1>{{ .Title }}</h1>
+    </div>
+    <p class="pt-side">{{ i18n "cal_side" }}</p>
+  </div>
+
+  <div class="cal-filters">
+    <button class="cal-filter-btn active" data-filter="all">{{ i18n "cal_all" }}</button>
+    <button class="cal-filter-btn" data-filter="fest">{{ i18n "cal_festivals" }}</button>
+    <button class="cal-filter-btn" data-filter="bday">{{ i18n "cal_birthdays" }}</button>
+  </div>
+
+  {{ range (slice "Spring" "Summer" "Fall" "Winter") }}
+  {{ $season := . }}
+  {{ $seasonFests := where $fests "season" $season }}
+  {{ $seasonBdays := where $bdays "season" $season }}
+  <section class="cal-season">
+    <h2 class="cal-season-title">{{ index $seasonLocal $season | default $season }}</h2>
+    <div class="cal-grid">
+      {{ range seq 1 28 }}
+        {{ $day := . }}
+        {{ $dayFests := where $seasonFests "day" $day }}
+        {{ $dayBdays := where $seasonBdays "day" $day }}
+        <div class="cal-day{{ if $dayFests }} has-fest{{ end }}{{ if $dayBdays }} has-bday{{ end }}" data-has="{{ if $dayFests }}fest {{ end }}{{ if $dayBdays }}bday {{ end }}">
+          <span class="cal-day-num">{{ $day }}</span>
+          {{ range $dayFests }}<a class="cal-fest" href="{{ .url }}">{{ .name }}</a>{{ end }}
+          {{ range $dayBdays }}<a class="cal-bday" href="{{ $prefix }}npc/{{ .name | urlize }}-loved-gifts/">🎂 {{ .name }}</a>{{ end }}
+        </div>
+      {{ end }}
+    </div>
+  </section>
+  {{ end }}
+
+  <p class="fish-version">{{ i18n "cal_note" }}</p>
+</div>
+  {{ partial "ad-inarticle.html" . }}
+  {{ partial "related-links.html" . }}
+{{ end }}
+
+{{ define "scripts" }}
+<script>
+(function(){
+  var btns = document.querySelectorAll('.cal-filter-btn');
+  if (!btns.length) return;
+  btns.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      btns.forEach(function(b){ b.classList.remove('active'); });
+      btn.classList.add('active');
+      var f = btn.dataset.filter;
+      document.querySelectorAll('.cal-day').forEach(function(d){
+        var has = d.dataset.has || '';
+        if (f === 'all') { d.classList.remove('hide'); return; }
+        d.classList.toggle('hide', has.indexOf(f) === -1);
+      });
+    });
+  });
+})();
+</script>
+{{ end }}
