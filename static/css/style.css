@@ -1053,3 +1053,24 @@ mark { background: #f0b429; color: #0d1a2d; border-radius: 2px; padding: 0 1px; 
   .pc-cell { height: 10px; }
   .pc-row:nth-child(n+2) .pc-axis { margin-top: 6px; }
 }
+
+/* ===== Browser games ===== */
+.games-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 8px 0 16px; }
+.game-card {
+  display: block; background: #141e30; border: 1px solid #2a3a55; border-radius: 12px;
+  padding: 22px; text-decoration: none; transition: border-color .15s, transform .15s;
+}
+.game-card:hover { border-color: #3ddc97; transform: translateY(-2px); }
+.game-card-icon { font-size: 40px; margin-bottom: 10px; }
+.game-card h3 { color: #fff; font-size: 16px; margin: 0 0 6px; }
+.game-card p { color: #9aa8bf; font-size: 13px; margin: 0; line-height: 1.5; }
+.game-canvas { width: 100%; max-width: 640px; margin: 10px auto 12px; background: #0d1a2d; border: 1px solid #2a3a55; border-radius: 12px; overflow: hidden; }
+.game-canvas canvas { display: block; margin: 0 auto; }
+.game-actions { text-align: center; margin: 0 0 10px; }
+.game-btn {
+  padding: 10px 24px; background: #3ddc97; color: #0d1a2d; border: none; border-radius: 8px;
+  font-size: 14px; font-weight: 700; cursor: pointer;
+}
+.game-btn:hover { background: #5be8ac; }
+.game-hint { color: #9aa8bf; font-size: 13px; line-height: 1.6; max-width: 640px; margin: 6px auto 0; }
+@media (max-width: 700px) { .games-grid { grid-template-columns: 1fr; } }

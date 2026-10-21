@@ -1,0 +1,24 @@
+{{ define "main" }}
+<div class="content-col">
+  {{ partial "breadcrumb.html" . }}
+  <div class="progress-tracker">
+    <div class="pt-title-block">
+      <p class="pt-eyebrow">{{ i18n "game_eyebrow" }}</p>
+      <h1>{{ .Title }}</h1>
+    </div>
+    <p class="pt-side">{{ i18n "game_side" }}</p>
+  </div>
+  <div class="games-grid">
+    {{ range .Site.RegularPages }}
+    {{ if .Params.game }}
+    <a class="game-card" href="{{ .RelPermalink }}">
+      <div class="game-card-icon">{{ .Params.icon }}</div>
+      <h3>{{ .Title }}</h3>
+      <p>{{ .Params.tagline }}</p>
+    </a>
+    {{ end }}
+    {{ end }}
+  </div>
+</div>
+  {{ partial "ad-inarticle.html" . }}
+{{ end }}
