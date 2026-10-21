@@ -1,0 +1,154 @@
+{{ define "main" }}
+<div class="content-col">
+  {{ partial "breadcrumb.html" . }}
+
+  <div class="progress-tracker">
+    <div class="pt-title-block">
+      <p class="pt-eyebrow">{{ i18n "tool_collection_tracker" }}</p>
+      <h1>{{ .Title }}</h1>
+    </div>
+    <p class="pt-side">{{ i18n "rec_tracker_side" }}</p>
+  </div>
+
+  <div class="fish-tracker-layout">
+    <!-- 左：筛选+列表 -->
+    <div class="fish-left">
+      <div class="fish-toolbar">
+        <label>{{ i18n "tool_show" }}
+          <select id="filterType" class="fish-select">
+            <option value="">{{ i18n "tool_all_items" }}</option>
+            <option value="buffs">{{ i18n "rec_with_buffs" }}</option>
+          </select>
+        </label>
+        <span class="fish-count" id="totalCount">{{ len .Site.Data.cooking }} {{ i18n "rec_recipes" }}</span>
+      </div>
+
+      <div class="fish-search-box">
+        <input type="text" id="fishSearch" class="fish-search-input" placeholder="{{ i18n "tool_search_item_ph" }}">
+      </div>
+
+      <div class="fish-list" id="fishList">
+        {{ range .Site.Data.cooking }}
+        <label class="fish-row" data-type="{{ if .buffs }}buffs{{ else }}plain{{ end }}" data-search="{{ .name | lower }} {{ range .ingredients }}{{ .name | lower }} {{ end }}" data-ingredients="{{ range .ingredients }}{{ .name }}~{{ .quantity }}|{{ end }}">
+          <input type="checkbox" class="rec-check" data-id="{{ .name | lower }}">
+          <div class="fish-row-icon">
+            <img src="/{{ .image }}" alt="{{ .name }}" onerror="this.style.display='none'">
+          </div>
+          <div class="fish-row-body">
+            <h4>{{ .name }}{{ if .buffs }} <span class="fish-season-tag">Buffs</span>{{ end }}</h4>
+            <p class="fish-meta">
+              {{ $ing := slice }}{{ range .ingredients }}{{ $ing = $ing | append (printf "%s×%v" .name .quantity) }}{{ end }}
+              {{ delimit $ing ", " }} · sell {{ .sellPrice }}g{{ if .energyHealth.energy }} · +{{ .energyHealth.energy }}E{{ end }}
+            </p>
+          </div>
+        </label>
+        {{ end }}
+      </div>
+
+      <div class="fish-progress">
+        <span><strong id="doneCount">0</strong>% {{ i18n "rec_learned" }}</span>
+        <p class="fish-version">{{ i18n "rec_version_note" }}</p>
+      </div>
+    </div>
+
+    <!-- 右：说明 + 材料汇总 -->
+    <div class="fish-right">
+      <div class="fish-hero-card">
+        <h3>{{ i18n "rec_about_title" }}</h3>
+        <p>{{ i18n "rec_about_body" }}</p>
+        <p><a href="/recipes/">{{ i18n "rec_see_list" }}</a></p>
+      </div>
+      <div class="fish-stats-card">
+        <h4>{{ i18n "tool_collection_progress" }}</h4>
+        <div class="fish-stat-row"><span>{{ i18n "rec_learned" }}</span><strong id="statCaught">0 / {{ len .Site.Data.cooking }}</strong></div>
+        <div class="fish-stat-row"><span>{{ i18n "tool_remaining" }}</span><strong id="statLeft">{{ len .Site.Data.cooking }}</strong></div>
+        <div class="fish-stat-row"><span>{{ i18n "rec_missing_ingredients" }}</span><strong id="statIng">—</strong></div>
+      </div>
+      <div class="fish-stats-card">
+        <h4>{{ i18n "rec_material_summary" }}</h4>
+        <div id="ingSummary" class="ing-summary"><p class="fish-meta">{{ i18n "rec_material_hint" }}</p></div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+  (function(){
+    var checks = document.querySelectorAll('.rec-check');
+    var done = document.getElementById('doneCount');
+    var caught = document.getElementById('statCaught');
+    var left = document.getElementById('statLeft');
+    var statIng = document.getElementById('statIng');
+    var ingBox = document.getElementById('ingSummary');
+    var saved = JSON.parse(localStorage.getItem('svrecipes') || '{}');
+
+    checks.forEach(function(c){
+      if (saved[c.dataset.id]) { c.checked = true; c.closest('.fish-row').classList.add('done'); }
+      c.addEventListener('change', function(){
+        saved[c.dataset.id] = c.checked;
+        localStorage.setItem('svrecipes', JSON.stringify(saved));
+        c.closest('.fish-row').classList.toggle('done', c.checked);
+        update();
+        updateIngredients();
+      });
+    });
+
+    function update(){
+      var n = document.querySelectorAll('.rec-check:checked').length;
+      done.textContent = Math.round(n/checks.length*100);
+      caught.textContent = n + ' / ' + checks.length;
+      left.textContent = checks.length - n;
+    }
+    update();
+
+    function updateIngredients(){
+      // 汇总已学食谱所需材料
+      var agg = {};
+      checks.forEach(function(c){
+        if (!c.checked) return;
+        var row = c.closest('.fish-row');
+        var meta = row.querySelector('.fish-meta').textContent;
+        // 从 data-search 重建材料：取 name 和 quantity（data 属性更稳）
+      });
+      // 直接遍历已勾选行，用 data-ingredients 属性
+      var agg2 = {};
+      checks.forEach(function(c){
+        if (!c.checked) return;
+        var row = c.closest('.fish-row');
+        var ings = (row.dataset.ingredients || '').split('|').filter(Boolean);
+        ings.forEach(function(p){
+          var kv = p.split('~');
+          var nm = kv[0], q = parseInt(kv[1] || '1', 10);
+          agg2[nm] = (agg2[nm] || 0) + q;
+        });
+      });
+      var keys = Object.keys(agg2);
+      statIng.textContent = keys.length;
+      if (!keys.length) { ingBox.innerHTML = '<p class="fish-meta">{{ i18n "rec_material_hint" }}</p>'; return; }
+      var rows = keys.sort().map(function(k){
+        return '<div class="ing-row"><span>' + k + '</span><strong>' + agg2[k] + '</strong></div>';
+      }).join('');
+      ingBox.innerHTML = '<div class="ing-list">' + rows + '</div>';
+    }
+
+    document.getElementById('filterType').addEventListener('change', function(){
+      var t = this.value;
+      checks.forEach(function(c){
+        var row = c.closest('.fish-row');
+        row.classList.toggle('hide', t && row.dataset.type !== t);
+      });
+    });
+
+    document.getElementById('fishSearch').addEventListener('input', function(){
+      var q = this.value.toLowerCase().trim();
+      checks.forEach(function(c){
+        var row = c.closest('.fish-row');
+        var text = row.dataset.search;
+        row.classList.toggle('hide', q && text.indexOf(q) === -1);
+      });
+    });
+  })();
+  </script>
+</div>
+  {{ partial "ad-inarticle.html" . }}
+  {{ partial "related-links.html" . }}
+{{ end }}

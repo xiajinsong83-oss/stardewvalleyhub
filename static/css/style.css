@@ -911,3 +911,54 @@ select { background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='h
 .pts-badge.unknown { color: #9aa8bf; background: rgba(154,168,191,.12); }
 .badge-unknown { color: #9aa8bf; }
 .best-target { margin-top: 14px; font-size: 14.5px; color: #e8eef7; background: rgba(240,180,41,.08); border: 1px solid rgba(240,180,41,.3); border-radius: 10px; padding: 10px 14px; }
+
+/* ===== Site Search（全站搜索页 + header） ===== */
+.header-search { margin-left: 8px; flex-shrink: 0; }
+.header-search input {
+  width: 150px; padding: 6px 10px; background: #0d1a2d; border: 1px solid #2a3a55;
+  border-radius: 6px; color: #fff; font-size: 13px;
+}
+.header-search input::placeholder { color: #6a7a95; }
+.header-search input:focus { outline: none; border-color: #3ddc97; }
+@media (max-width: 900px) { .header-search { display: none; } }
+
+.search-box-hero { margin: 8px 0 6px; }
+.search-box-hero input { font-size: 17px; padding: 14px 16px; border-radius: 10px; }
+.search-meta { color: #9aa8bf; font-size: 13px; margin: 4px 0 10px; }
+.search-results { margin-top: 8px; }
+.search-empty { color: #9aa8bf; font-size: 14px; padding: 18px 4px; }
+.search-group { margin-bottom: 22px; }
+.search-group h3 {
+  font-size: 15px; color: #3ddc97; margin: 0 0 8px; letter-spacing: .5px;
+  border-bottom: 1px solid #1e2a40; padding-bottom: 6px;
+}
+.sg-count { color: #6a7a95; font-size: 12px; margin-left: 6px; }
+.search-list { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 6px 14px; }
+.search-item {
+  display: block; padding: 8px 10px; background: #141e30; border: 1px solid #2a3a55;
+  border-radius: 8px; text-decoration: none; color: inherit;
+}
+.search-item:hover { border-color: #3ddc97; }
+.si-name { display: block; font-weight: 600; font-size: 14px; color: #fff; }
+.si-desc { display: block; color: #9aa8bf; font-size: 12px; margin-top: 2px; line-height: 1.45; }
+mark { background: #f0b429; color: #0d1a2d; border-radius: 2px; padding: 0 1px; }
+@media (max-width: 700px) { .search-list { grid-template-columns: 1fr; } }
+
+/* ===== 成就/食谱追踪器 & 工艺计算器 ===== */
+.ing-summary .ing-list { max-height: 260px; overflow-y: auto; }
+.ing-row { display: flex; justify-content: space-between; padding: 6px 0; border-bottom: 1px solid #1e2a40; font-size: 13px; }
+.ing-row span { color: #c9d4e6; }
+.ing-row strong { color: #3ddc97; }
+
+.ap-controls { display: flex; gap: 18px; align-items: center; flex-wrap: wrap; margin: 6px 0 14px; }
+.ap-label { font-size: 14px; color: #c9d4e6; display: inline-flex; align-items: center; gap: 8px; }
+.ap-toggle input { width: 16px; height: 16px; accent-color: #3ddc97; }
+.ap-toggle em { color: #6a7a95; font-style: normal; font-size: 12px; }
+.ap-crop-info p { color: #c9d4e6; font-size: 14px; margin: 0 0 10px; }
+.ap-crop-info strong { color: #f0b429; }
+.ap-table { width: 100%; border-collapse: collapse; background: #141e30; border: 1px solid #2a3a55; border-radius: 12px; overflow: hidden; }
+.ap-table th { background: #1a2740; color: #9aa8bf; font-size: 12px; text-transform: uppercase; letter-spacing: .5px; padding: 10px 12px; text-align: left; }
+.ap-table td { padding: 10px 12px; border-top: 1px solid #1e2a40; font-size: 14px; color: #c9d4e6; }
+.ap-table tr.ap-base td { background: #0f1b2c; color: #8fa3c0; }
+.ap-table td:last-child { color: #3ddc97; font-weight: 600; }
+.ap-need { color: #6a7a95; font-size: 11px; font-weight: normal; }

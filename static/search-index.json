@@ -1,0 +1,3922 @@
+[
+ {
+  "name": "A Big Help",
+  "type": "achievement",
+  "typeLabel": "Achievement",
+  "url": "/achievements/a-big-help/",
+  "desc": "Complete 40 'Help Wanted' requests. · reward: Chicken Mask"
+ },
+ {
+  "name": "A Complete Collection",
+  "type": "achievement",
+  "typeLabel": "Achievement",
+  "url": "/achievements/a-complete-collection/",
+  "desc": "Complete the museum collection. · reward: Cowboy Hat"
+ },
+ {
+  "name": "A Distant Shore",
+  "type": "achievement",
+  "typeLabel": "Achievement",
+  "url": "/achievements/a-distant-shore/",
+  "desc": "Reach Ginger Island. · reward: Paper Hat"
+ },
+ {
+  "name": "A New Friend",
+  "type": "achievement",
+  "typeLabel": "Achievement",
+  "url": "/achievements/a-new-friend/",
+  "desc": "Reach a 5-heart friend level with someone. · reward: Butterfly Bow"
+ },
+ {
+  "name": "Abby's Planchette",
+  "type": "weapon",
+  "typeLabel": "Weapon",
+  "url": "/weapons/abbys-planchette/",
+  "desc": "Damage ? · speed 0 · sell 200g"
+ },
+ {
+  "name": "Abigail",
+  "type": "villager",
+  "typeLabel": "NPC",
+  "url": "/npc/abigail-loved-gifts/",
+  "desc": "Abigail is a villager who lives at Pierre's General Store in Pelican Town. She is one of the twelve character…"
+ },
+ {
+  "name": "Adventurer's Bundle",
+  "type": "bundle",
+  "typeLabel": "Bundle",
+  "url": "/bundles/",
+  "desc": "boiler-room"
+ },
+ {
+  "name": "Adventurer's Bundle",
+  "type": "bundle",
+  "typeLabel": "Bundle",
+  "url": "/bundles/",
+  "desc": "boiler-room"
+ },
+ {
+  "name": "Aerinite",
+  "type": "museum",
+  "typeLabel": "Mineral",
+  "url": "/museum/aerinite/",
+  "desc": "mineral · Frozen Geode, Omni Geode · sell 125g"
+ },
+ {
+  "name": "Alamite",
+  "type": "museum",
+  "typeLabel": "Mineral",
+  "url": "/museum/alamite/",
+  "desc": "mineral · Geode, Omni Geode · sell 150g"
+ },
+ {
+  "name": "Albacore",
+  "type": "fish",
+  "typeLabel": "Fish",
+  "url": "/fish/albacore/",
+  "desc": "Various · sell 75g"
+ },
+ {
+  "name": "Alex",
+  "type": "villager",
+  "typeLabel": "NPC",
+  "url": "/npc/alex-loved-gifts/",
+  "desc": "Alex is a villager who lives in the house southeast of Pierre's General Store. He is one of the twelve charac…"
+ },
+ {
+  "name": "Alex's Bat",
+  "type": "weapon",
+  "typeLabel": "Weapon",
+  "url": "/weapons/alexs-bat/",
+  "desc": "Damage ? · speed -2 · sell 350g"
+ },
+ {
+  "name": "Algae Soup",
+  "type": "recipe",
+  "typeLabel": "Recipe",
+  "url": "/recipes/algae-soup/",
+  "desc": "Green Algae · sell 100g"
+ },
+ {
+  "name": "Amaranth",
+  "type": "crop",
+  "typeLabel": "Crop",
+  "url": "/crops/amaranth/",
+  "desc": "Fall · grow 7d · sell 150g · This grain has been cultivated by humans for thousands of years."
+ },
+ {
+  "name": "Amethyst",
+  "type": "museum",
+  "typeLabel": "Mineral",
+  "url": "/museum/amethyst/",
+  "desc": "mineral · Amethyst Node, Gem Node · sell 100g"
+ },
+ {
+  "name": "Amphibian Fossil",
+  "type": "museum",
+  "typeLabel": "Artifact",
+  "url": "/museum/amphibian-fossil/",
+  "desc": "Artifact · Forest (0.6%), Mountain (0.6%) · sell 150g"
+ },
+ {
+  "name": "An Unforgettable Soup",
+  "type": "achievement",
+  "typeLabel": "Achievement",
+  "url": "/achievements/an-unforgettable-soup/",
+  "desc": "Delight the Governor. · reward: Governor's Hat"
+ },
+ {
+  "name": "Anchor",
+  "type": "museum",
+  "typeLabel": "Artifact",
+  "url": "/museum/anchor/",
+  "desc": "Artifact · Beach (4%), Fishing Treasure Chest · sell 100g"
+ },
+ {
+  "name": "Anchovy",
+  "type": "fish",
+  "typeLabel": "Fish",
+  "url": "/fish/anchovy/",
+  "desc": "Various · sell 30g"
+ },
+ {
+  "name": "Ancient Doll",
+  "type": "museum",
+  "typeLabel": "Artifact",
+  "url": "/museum/ancient-doll/",
+  "desc": "Artifact · Mountain (3%), Forest (2.4%) · sell 60g"
+ },
+ {
+  "name": "Ancient Drum",
+  "type": "museum",
+  "typeLabel": "Artifact",
+  "url": "/museum/ancient-drum/",
+  "desc": "Artifact · Bus Stop (0.7%), Forest (0.7%) · sell 100g"
+ },
+ {
+  "name": "Ancient Fruit",
+  "type": "crop",
+  "typeLabel": "Crop",
+  "url": "/crops/ancient-fruit/",
+  "desc": "Spring/Summer/Fall · grow 28d · sell 550g · A very rare fruit that has survived since ancient times. It's ext…"
+ },
+ {
+  "name": "Ancient Seed",
+  "type": "museum",
+  "typeLabel": "Artifact",
+  "url": "/museum/ancient-seed/",
+  "desc": "Artifact · Forest (0.7%), Mountain (0.7%) · sell 5g"
+ },
+ {
+  "name": "Ancient Sword",
+  "type": "museum",
+  "typeLabel": "Artifact",
+  "url": "/museum/ancient-sword/",
+  "desc": "Artifact · Forest (0.7%), Mountain (0.6%) · sell 100g"
+ },
+ {
+  "name": "Angler",
+  "type": "fish",
+  "typeLabel": "Fish",
+  "url": "/fish/angler/",
+  "desc": "Various · sell 900g"
+ },
+ {
+  "name": "Animal Bundle",
+  "type": "bundle",
+  "typeLabel": "Bundle",
+  "url": "/bundles/",
+  "desc": "pantry"
+ },
+ {
+  "name": "Aquamarine",
+  "type": "museum",
+  "typeLabel": "Mineral",
+  "url": "/museum/aquamarine/",
+  "desc": "mineral · Aquamarine Node, Gem Node · sell 180g"
+ },
+ {
+  "name": "Arrowhead",
+  "type": "museum",
+  "typeLabel": "Artifact",
+  "url": "/museum/arrowhead/",
+  "desc": "Artifact · Mountain (1.6%), Forest (1.6%) · sell 40g"
+ },
+ {
+  "name": "Artichoke",
+  "type": "crop",
+  "typeLabel": "Crop",
+  "url": "/crops/artichoke/",
+  "desc": "Fall · grow 8d · sell 160g · A hearty crop that takes a while to grow, but the rewards are worth the wait."
+ },
+ {
+  "name": "Artichoke Dip",
+  "type": "recipe",
+  "typeLabel": "Recipe",
+  "url": "/recipes/artichoke-dip/",
+  "desc": "Artichoke, Any Milk · sell 210g"
+ },
+ {
+  "name": "Artisan",
+  "type": "achievement",
+  "typeLabel": "Achievement",
+  "url": "/achievements/artisan/",
+  "desc": "Craft 30 different items. · reward: Trucker Hat"
+ },
+ {
+  "name": "Artisan Bundle",
+  "type": "bundle",
+  "typeLabel": "Bundle",
+  "url": "/bundles/",
+  "desc": "pantry"
+ },
+ {
+  "name": "Auto-Grabber",
+  "type": "tool",
+  "typeLabel": "Tool",
+  "url": "/tools/auto-grabber/",
+  "desc": "Automatically collects animal products in a coop or barn each morning."
+ },
+ {
+  "name": "Auto-Petter",
+  "type": "tool",
+  "typeLabel": "Tool",
+  "url": "/tools/auto-petter/",
+  "desc": "Keeps animals content by automatically petting them each day when placed in a coop or barn."
+ },
+ {
+  "name": "Autumn's Bounty",
+  "type": "recipe",
+  "typeLabel": "Recipe",
+  "url": "/recipes/autumns-bounty/",
+  "desc": "Yam, Pumpkin · sell 350g"
+ },
+ {
+  "name": "Axe",
+  "type": "tool",
+  "typeLabel": "Tool",
+  "url": "/tools/axe/",
+  "desc": "Chop trees for wood and sap. Higher upgrades reduce hits required and unlock chopping hardwood stumps and log…"
+ },
+ {
+  "name": "Baked Fish",
+  "type": "recipe",
+  "typeLabel": "Recipe",
+  "url": "/recipes/baked-fish/",
+  "desc": "Sunfish, Bream, Wheat Flour · sell 100g"
+ },
+ {
+  "name": "Banana Pudding",
+  "type": "recipe",
+  "typeLabel": "Recipe",
+  "url": "/recipes/banana-pudding/",
+  "desc": "Banana, Any Milk, Sugar · sell 260g"
+ },
+ {
+  "name": "Baryte",
+  "type": "museum",
+  "typeLabel": "Mineral",
+  "url": "/museum/baryte/",
+  "desc": "mineral · Magma Geode, Omni Geode · sell 50g"
+ },
+ {
+  "name": "Basalt",
+  "type": "museum",
+  "typeLabel": "Mineral",
+  "url": "/museum/basalt/",
+  "desc": "mineral · Magma Geode, Omni Geode · sell 175g"
+ },
+ {
+  "name": "Bat",
+  "type": "monster",
+  "typeLabel": "Monster",
+  "url": "/monsters/bat/",
+  "desc": "HP 24 · damage 6 · XP 3"
+ },
+ {
+  "name": "Bean Hotpot",
+  "type": "recipe",
+  "typeLabel": "Recipe",
+  "url": "/recipes/bean-hotpot/",
+  "desc": "Green Bean · sell 100g"
+ },
+ {
+  "name": "Beet",
+  "type": "crop",
+  "typeLabel": "Crop",
+  "url": "/crops/beet/",
+  "desc": "Fall · grow 6d · sell 100g · A sweet root vegetable. Can be used at the mill to make sugar."
+ },
+ {
+  "name": "Best Friends",
+  "type": "achievement",
+  "typeLabel": "Achievement",
+  "url": "/achievements/best-friends/",
+  "desc": "Reach a 10-heart friend level with someone. · reward: Mouse Ears"
+ },
+ {
+  "name": "Big Slime",
+  "type": "monster",
+  "typeLabel": "Monster",
+  "url": "/monsters/big-slime/",
+  "desc": "HP 60 · damage 5 · XP 7"
+ },
+ {
+  "name": "Bixite",
+  "type": "museum",
+  "typeLabel": "Mineral",
+  "url": "/museum/bixite/",
+  "desc": "mineral · Magma Geode, Omni Geode · sell 300g"
+ },
+ {
+  "name": "Blackberry Cobbler",
+  "type": "recipe",
+  "typeLabel": "Recipe",
+  "url": "/recipes/blackberry-cobbler/",
+  "desc": "Blackberry, Sugar, Wheat Flour · sell 260g"
+ },
+ {
+  "name": "Blacksmith's Bundle",
+  "type": "bundle",
+  "typeLabel": "Bundle",
+  "url": "/bundles/",
+  "desc": "boiler-room"
+ },
+ {
+  "name": "Blobfish",
+  "type": "fish",
+  "typeLabel": "Fish",
+  "url": "/fish/blobfish/",
+  "desc": "Various · sell 500g"
+ },
+ {
+  "name": "Blue Discus",
+  "type": "fish",
+  "typeLabel": "Fish",
+  "url": "/fish/blue-discus/",
+  "desc": "Various · sell 120g"
+ },
+ {
+  "name": "Blue Jazz",
+  "type": "crop",
+  "typeLabel": "Crop",
+  "url": "/crops/blue-jazz/",
+  "desc": "Spring · grow 7d · sell 50g · A delicate flower with a lovely blue hue."
+ },
+ {
+  "name": "Blue Ribbon",
+  "type": "achievement",
+  "typeLabel": "Achievement",
+  "url": "/achievements/blue-ribbon/",
+  "desc": "Get 1st place in the Stardew Valley Fair competition. · reward: Blue Ribbon"
+ },
+ {
+  "name": "Blue Squid",
+  "type": "monster",
+  "typeLabel": "Monster",
+  "url": "/boss/blue-squid/",
+  "desc": "HP 80 · damage 18 · XP 15"
+ },
+ {
+  "name": "Blueberry",
+  "type": "crop",
+  "typeLabel": "Crop",
+  "url": "/crops/blueberry/",
+  "desc": "Summer · grow 13d · sell 50g · A popular berry among the residents of Stardew Valley."
+ },
+ {
+  "name": "Blueberry Tart",
+  "type": "recipe",
+  "typeLabel": "Recipe",
+  "url": "/recipes/blueberry-tart/",
+  "desc": "Blueberry, Wheat Flour, Sugar, Any Egg · sell 150g"
+ },
+ {
+  "name": "Bok Choy",
+  "type": "crop",
+  "typeLabel": "Crop",
+  "url": "/crops/bok-choy/",
+  "desc": "Fall · grow 4d · sell 80g · A type of cabbage with a firm texture and a mild, sweet flavor."
+ },
+ {
+  "name": "Bone Flute",
+  "type": "museum",
+  "typeLabel": "Artifact",
+  "url": "/museum/bone-flute/",
+  "desc": "Artifact · Forest (0.7%), Mountain (0.7%) · sell 100g"
+ },
+ {
+  "name": "Bone Sword",
+  "type": "weapon",
+  "typeLabel": "Weapon",
+  "url": "/weapons/bone-sword/",
+  "desc": "Damage ? · speed 4 · sell 250g"
+ },
+ {
+  "name": "Bread",
+  "type": "recipe",
+  "typeLabel": "Recipe",
+  "url": "/recipes/bread/",
+  "desc": "Wheat Flour · sell 60g"
+ },
+ {
+  "name": "Bream",
+  "type": "fish",
+  "typeLabel": "Fish",
+  "url": "/fish/bream/",
+  "desc": "Various · sell 45g"
+ },
+ {
+  "name": "Brewer's Bundle",
+  "type": "bundle",
+  "typeLabel": "Bundle",
+  "url": "/bundles/",
+  "desc": "pantry"
+ },
+ {
+  "name": "Broccoli",
+  "type": "crop",
+  "typeLabel": "Crop",
+  "url": "/crops/broccoli/",
+  "desc": "Fall · grow 8d · sell 70g · A dark green vegetable with many densely-packed florets."
+ },
+ {
+  "name": "Broken Trident",
+  "type": "weapon",
+  "typeLabel": "Weapon",
+  "url": "/weapons/broken-trident/",
+  "desc": "Damage ? · speed 0 · sell 250g"
+ },
+ {
+  "name": "Bruschetta",
+  "type": "recipe",
+  "typeLabel": "Recipe",
+  "url": "/recipes/bruschetta/",
+  "desc": "Bread, Oil, Tomato · sell 210g"
+ },
+ {
+  "name": "Bug",
+  "type": "monster",
+  "typeLabel": "Monster",
+  "url": "/monsters/bug/",
+  "desc": "HP 1 · damage 8 · XP 1"
+ },
+ {
+  "name": "Bullhead",
+  "type": "fish",
+  "typeLabel": "Fish",
+  "url": "/fish/bullhead/",
+  "desc": "Various · sell 75g"
+ },
+ {
+  "name": "Burglar's Shank",
+  "type": "weapon",
+  "typeLabel": "Weapon",
+  "url": "/weapons/burglars-shank/",
+  "desc": "Damage ? · speed 0 · sell 200g"
+ },
+ {
+  "name": "Cactus Fruit",
+  "type": "crop",
+  "typeLabel": "Crop",
+  "url": "/crops/cactus-fruit/",
+  "desc": "Spring/Summer/Fall/Winter · grow 12d · sell 75g · The sweet fruit of a cactus. Grows year-round indoors or on…"
+ },
+ {
+  "name": "Calcite",
+  "type": "museum",
+  "typeLabel": "Mineral",
+  "url": "/museum/calcite/",
+  "desc": "mineral · Geode, Omni Geode · sell 75g"
+ },
+ {
+  "name": "Carbon Ghost",
+  "type": "monster",
+  "typeLabel": "Monster",
+  "url": "/monsters/carbon-ghost/",
+  "desc": "HP 190 · damage 25 · XP 20"
+ },
+ {
+  "name": "Caroline",
+  "type": "villager",
+  "typeLabel": "NPC",
+  "url": "/npc/caroline-loved-gifts/",
+  "desc": "Caroline is a villager who lives in Pelican Town. She is married to Pierre and is the mother of Abigail."
+ },
+ {
+  "name": "Carp",
+  "type": "fish",
+  "typeLabel": "Fish",
+  "url": "/fish/carp/",
+  "desc": "Various · sell 30g"
+ },
+ {
+  "name": "Carp Surprise",
+  "type": "recipe",
+  "typeLabel": "Recipe",
+  "url": "/recipes/carp-surprise/",
+  "desc": "Carp · sell 150g"
+ },
+ {
+  "name": "Carrot",
+  "type": "crop",
+  "typeLabel": "Crop",
+  "url": "/crops/carrot/",
+  "desc": "Spring · grow 3d · sell 35g · A bright orange root vegetable. Good for your eyesight."
+ },
+ {
+  "name": "Carving Knife",
+  "type": "weapon",
+  "typeLabel": "Weapon",
+  "url": "/weapons/carving-knife/",
+  "desc": "Damage ? · speed 0 · sell 50g"
+ },
+ {
+  "name": "Catfish",
+  "type": "fish",
+  "typeLabel": "Fish",
+  "url": "/fish/catfish/",
+  "desc": "Various · sell 200g"
+ },
+ {
+  "name": "Cauliflower",
+  "type": "crop",
+  "typeLabel": "Crop",
+  "url": "/crops/cauliflower/",
+  "desc": "Spring · grow 12d · sell 175g · It's actually a type of flower! A massive head of tightly packed white floret…"
+ },
+ {
+  "name": "Cave Fly",
+  "type": "monster",
+  "typeLabel": "Monster",
+  "url": "/monsters/cave-fly/",
+  "desc": "HP 22 · damage 6 · XP 10"
+ },
+ {
+  "name": "Cave Jelly",
+  "type": "fish",
+  "typeLabel": "Fish",
+  "url": "/fish/cave-jelly/",
+  "desc": "Various · sell 180g"
+ },
+ {
+  "name": "Celestine",
+  "type": "museum",
+  "typeLabel": "Mineral",
+  "url": "/museum/celestine/",
+  "desc": "mineral · Geode, Omni Geode · sell 125g"
+ },
+ {
+  "name": "Cheese Cauliflower",
+  "type": "recipe",
+  "typeLabel": "Recipe",
+  "url": "/recipes/cheese-cauliflower/",
+  "desc": "Cauliflower, Cheese · sell 300g"
+ },
+ {
+  "name": "Chef's Bundle",
+  "type": "bundle",
+  "typeLabel": "Bundle",
+  "url": "/bundles/",
+  "desc": "bulletin-board"
+ },
+ {
+  "name": "Chewing Stick",
+  "type": "museum",
+  "typeLabel": "Artifact",
+  "url": "/museum/chewing-stick/",
+  "desc": "Artifact · Mountain (1.5%), Forest (1.5%) · sell 50g"
+ },
+ {
+  "name": "Chicken Statue",
+  "type": "museum",
+  "typeLabel": "Artifact",
+  "url": "/museum/chicken-statue/",
+  "desc": "Artifact · Farm (9%), Fishing Treasure Chest · sell 50g"
+ },
+ {
+  "name": "Children's Bundle",
+  "type": "bundle",
+  "typeLabel": "Bundle",
+  "url": "/bundles/",
+  "desc": "bulletin-board"
+ },
+ {
+  "name": "Chipped Amphora",
+  "type": "museum",
+  "typeLabel": "Artifact",
+  "url": "/museum/chipped-amphora/",
+  "desc": "Artifact · Town (3%), Artifact Trove (3.6%) · sell 40g"
+ },
+ {
+  "name": "Chocolate Cake",
+  "type": "recipe",
+  "typeLabel": "Recipe",
+  "url": "/recipes/chocolate-cake/",
+  "desc": "Wheat Flour, Sugar, Any Egg · sell 200g"
+ },
+ {
+  "name": "Chowder",
+  "type": "recipe",
+  "typeLabel": "Recipe",
+  "url": "/recipes/chowder/",
+  "desc": "Clam, Any Milk · sell 135g"
+ },
+ {
+  "name": "Chub",
+  "type": "fish",
+  "typeLabel": "Fish",
+  "url": "/fish/chub/",
+  "desc": "Various · sell 50g"
+ },
+ {
+  "name": "Clam",
+  "type": "fish",
+  "typeLabel": "Fish",
+  "url": "/fish/clam/",
+  "desc": "Various · sell 50g"
+ },
+ {
+  "name": "Claymore",
+  "type": "weapon",
+  "typeLabel": "Weapon",
+  "url": "/weapons/claymore/",
+  "desc": "Damage ? · speed -4 · sell 250g"
+ },
+ {
+  "name": "Clint",
+  "type": "villager",
+  "typeLabel": "NPC",
+  "url": "/npc/clint-loved-gifts/",
+  "desc": "Clint is a villager who lives in Pelican Town and owns and runs the local Blacksmith."
+ },
+ {
+  "name": "Cliques",
+  "type": "achievement",
+  "typeLabel": "Achievement",
+  "url": "/achievements/cliques/",
+  "desc": "Reach a 5-heart friend level with 4 people. · reward: Tiara"
+ },
+ {
+  "name": "Cockle",
+  "type": "fish",
+  "typeLabel": "Fish",
+  "url": "/fish/cockle/",
+  "desc": "Various · sell 50g"
+ },
+ {
+  "name": "Coffee Bean",
+  "type": "crop",
+  "typeLabel": "Crop",
+  "url": "/crops/coffee-bean/",
+  "desc": "Spring/Summer · grow 10d · sell 15g · It'll keep you buzzin'. Plant in spring or summer to harvest more beans."
+ },
+ {
+  "name": "Coleslaw",
+  "type": "recipe",
+  "typeLabel": "Recipe",
+  "url": "/recipes/coleslaw/",
+  "desc": "Red Cabbage, Vinegar, Mayonnaise · sell 345g"
+ },
+ {
+  "name": "Complete Breakfast",
+  "type": "recipe",
+  "typeLabel": "Recipe",
+  "url": "/recipes/complete-breakfast/",
+  "desc": "Fried Egg, Any Milk, Hashbrowns, Pancakes · sell 350g"
+ },
+ {
+  "name": "Construction Bundle",
+  "type": "bundle",
+  "typeLabel": "Bundle",
+  "url": "/bundles/",
+  "desc": "crafts-room"
+ },
+ {
+  "name": "Cook",
+  "type": "achievement",
+  "typeLabel": "Achievement",
+  "url": "/achievements/cook/",
+  "desc": "Cook 10 different recipes. · reward: Delicate Bow"
+ },
+ {
+  "name": "Cookie",
+  "type": "recipe",
+  "typeLabel": "Recipe",
+  "url": "/recipes/cookie/",
+  "desc": "Wheat Flour, Sugar, Any Egg · sell 140g"
+ },
+ {
+  "name": "Corn",
+  "type": "crop",
+  "typeLabel": "Crop",
+  "url": "/crops/corn/",
+  "desc": "Summer/Fall · grow 14d · sell 50g · A sweet and filling crop that grows in both summer and fall."
+ },
+ {
+  "name": "Cowpoke",
+  "type": "achievement",
+  "typeLabel": "Achievement",
+  "url": "/achievements/cowpoke/",
+  "desc": "Earn 50,000g. · reward: Lucky Bow"
+ },
+ {
+  "name": "Crab",
+  "type": "fish",
+  "typeLabel": "Fish",
+  "url": "/fish/crab/",
+  "desc": "Various · sell 100g"
+ },
+ {
+  "name": "Crab Cakes",
+  "type": "recipe",
+  "typeLabel": "Recipe",
+  "url": "/recipes/crab-cakes/",
+  "desc": "Crab, Wheat Flour, Any Egg, Oil · sell 275g"
+ },
+ {
+  "name": "Crab Pot Bundle",
+  "type": "bundle",
+  "typeLabel": "Bundle",
+  "url": "/bundles/",
+  "desc": "fish-tank"
+ },
+ {
+  "name": "Craft Master",
+  "type": "achievement",
+  "typeLabel": "Achievement",
+  "url": "/achievements/craft-master/",
+  "desc": "Craft every item. · reward: Gnome's Cap"
+ },
+ {
+  "name": "Cranberries",
+  "type": "crop",
+  "typeLabel": "Crop",
+  "url": "/crops/cranberries/",
+  "desc": "Fall · grow 7d · sell 75g · A sharp, tangy red berry often used in fall cooking. Each plant bears multiple fr…"
+ },
+ {
+  "name": "Cranberry Candy",
+  "type": "recipe",
+  "typeLabel": "Recipe",
+  "url": "/recipes/cranberry-candy/",
+  "desc": "Cranberries, Apple, Sugar · sell 175g"
+ },
+ {
+  "name": "Cranberry Sauce",
+  "type": "recipe",
+  "typeLabel": "Recipe",
+  "url": "/recipes/cranberry-sauce/",
+  "desc": "Cranberries, Sugar · sell 120g"
+ },
+ {
+  "name": "Crayfish",
+  "type": "fish",
+  "typeLabel": "Fish",
+  "url": "/fish/crayfish/",
+  "desc": "Various · sell 75g"
+ },
+ {
+  "name": "Crimsonfish",
+  "type": "fish",
+  "typeLabel": "Fish",
+  "url": "/fish/crimsonfish/",
+  "desc": "Various · sell 1500g"
+ },
+ {
+  "name": "Crispy Bass",
+  "type": "recipe",
+  "typeLabel": "Recipe",
+  "url": "/recipes/crispy-bass/",
+  "desc": "Largemouth Bass, Wheat Flour, Oil · sell 150g"
+ },
+ {
+  "name": "Crystal Dagger",
+  "type": "weapon",
+  "typeLabel": "Weapon",
+  "url": "/weapons/crystal-dagger/",
+  "desc": "Damage ? · speed 0 · sell 200g"
+ },
+ {
+  "name": "Cutlass",
+  "type": "weapon",
+  "typeLabel": "Weapon",
+  "url": "/weapons/cutlass/",
+  "desc": "Damage ? · speed 2 · sell 150g"
+ },
+ {
+  "name": "D.I.Y.",
+  "type": "achievement",
+  "typeLabel": "Achievement",
+  "url": "/achievements/d-i-y/",
+  "desc": "Craft 15 different items. · reward: Daisy"
+ },
+ {
+  "name": "Danger In The Deep",
+  "type": "achievement",
+  "typeLabel": "Achievement",
+  "url": "/achievements/danger-in-the-deep/",
+  "desc": "Reach the bottom of the 'dangerous' mines. · reward: Space Helmet"
+ },
+ {
+  "name": "Dark Sword",
+  "type": "weapon",
+  "typeLabel": "Weapon",
+  "url": "/weapons/dark-sword/",
+  "desc": "Damage ? · speed -5 · sell 450g"
+ },
+ {
+  "name": "Deluxe Pack",
+  "type": "tool",
+  "typeLabel": "Tool",
+  "url": "/tools/deluxe-pack/",
+  "desc": "Expands your inventory to 36 slots."
+ },
+ {
+  "name": "Demetrius",
+  "type": "villager",
+  "typeLabel": "NPC",
+  "url": "/npc/demetrius-loved-gifts/",
+  "desc": "Demetrius is a villager who resides at 24 Mountain Road with his wife Robin, daughter Maru, and step-son Seba…"
+ },
+ {
+  "name": "Diamond",
+  "type": "museum",
+  "typeLabel": "Mineral",
+  "url": "/museum/diamond/",
+  "desc": "mineral · Diamond Node, Gem Node · sell 750g"
+ },
+ {
+  "name": "Dinosaur Egg",
+  "type": "museum",
+  "typeLabel": "Artifact",
+  "url": "/museum/dinosaur-egg/",
+  "desc": "Artifact · Mountain (0.6%), Fishing Treasure Chest · sell 350g"
+ },
+ {
+  "name": "Dish O' The Sea",
+  "type": "recipe",
+  "typeLabel": "Recipe",
+  "url": "/recipes/dish-o-the-sea/",
+  "desc": "Sardine, Hashbrowns · sell 220g"
+ },
+ {
+  "name": "Dolomite",
+  "type": "museum",
+  "typeLabel": "Mineral",
+  "url": "/museum/dolomite/",
+  "desc": "mineral · Magma Geode, Omni Geode · sell 300g"
+ },
+ {
+  "name": "Dorado",
+  "type": "fish",
+  "typeLabel": "Fish",
+  "url": "/fish/dorado/",
+  "desc": "Various · sell 100g"
+ },
+ {
+  "name": "Dragontooth Club",
+  "type": "weapon",
+  "typeLabel": "Weapon",
+  "url": "/weapons/dragontooth-club/",
+  "desc": "Damage ? · speed 0 · sell 700g"
+ },
+ {
+  "name": "Dragontooth Cutlass",
+  "type": "weapon",
+  "typeLabel": "Weapon",
+  "url": "/weapons/dragontooth-cutlass/",
+  "desc": "Damage ? · speed 0 · sell 650g"
+ },
+ {
+  "name": "Dragontooth Shiv",
+  "type": "weapon",
+  "typeLabel": "Weapon",
+  "url": "/weapons/dragontooth-shiv/",
+  "desc": "Damage ? · speed 0 · sell 600g"
+ },
+ {
+  "name": "Dried Starfish",
+  "type": "museum",
+  "typeLabel": "Artifact",
+  "url": "/museum/dried-starfish/",
+  "desc": "Artifact · Beach (8%), Fishing Treasure Chest · sell 40g"
+ },
+ {
+  "name": "Duggy",
+  "type": "monster",
+  "typeLabel": "Monster",
+  "url": "/monsters/duggy/",
+  "desc": "HP 40 · damage 6 · XP 10"
+ },
+ {
+  "name": "Dust Sprite",
+  "type": "monster",
+  "typeLabel": "Monster",
+  "url": "/monsters/dust-sprite/",
+  "desc": "HP 40 · damage 6 · XP 2"
+ },
+ {
+  "name": "Dwarf",
+  "type": "villager",
+  "typeLabel": "NPC",
+  "url": "/npc/dwarf-loved-gifts/",
+  "desc": "The Dwarf is a valley resident who lives in the Mines. Access is initially blocked by an unbreakable rock whi…"
+ },
+ {
+  "name": "Dwarf Dagger",
+  "type": "weapon",
+  "typeLabel": "Weapon",
+  "url": "/weapons/dwarf-dagger/",
+  "desc": "Damage ? · speed 1 · sell 550g"
+ },
+ {
+  "name": "Dwarf Gadget",
+  "type": "museum",
+  "typeLabel": "Artifact",
+  "url": "/museum/dwarf-gadget/",
+  "desc": "Artifact · Tilling in Mines (floor 40-79) (0.1%), Magma Geode (4%) · sell 200g"
+ },
+ {
+  "name": "Dwarf Hammer",
+  "type": "weapon",
+  "typeLabel": "Weapon",
+  "url": "/weapons/dwarf-hammer/",
+  "desc": "Damage ? · speed 0 · sell 650g"
+ },
+ {
+  "name": "Dwarf Scroll I",
+  "type": "museum",
+  "typeLabel": "Artifact",
+  "url": "/museum/dwarf-scroll-i/",
+  "desc": "Artifact · Tilling in Mines/Skull Cavern (any floor), Several monsters (0.5% each) · sell 1g"
+ },
+ {
+  "name": "Dwarf Scroll II",
+  "type": "museum",
+  "typeLabel": "Artifact",
+  "url": "/museum/dwarf-scroll-ii/",
+  "desc": "Artifact · Tilling in Mines (floor 1-39), Ghost, Frost Bat, Dust Sprite, Blue Slime drop (0.5%) · sell 1g"
+ },
+ {
+  "name": "Dwarf Scroll III",
+  "type": "museum",
+  "typeLabel": "Artifact",
+  "url": "/museum/dwarf-scroll-iii/",
+  "desc": "Artifact · Several monsters (0.5-1.5%) · sell 1g"
+ },
+ {
+  "name": "Dwarf Scroll IV",
+  "type": "museum",
+  "typeLabel": "Artifact",
+  "url": "/museum/dwarf-scroll-iv/",
+  "desc": "Artifact · Most monsters (0.1%), Tilling in Mines (floor 80+) (0.2%) · sell 1g"
+ },
+ {
+  "name": "Dwarf Sword",
+  "type": "weapon",
+  "typeLabel": "Weapon",
+  "url": "/weapons/dwarf-sword/",
+  "desc": "Damage ? · speed 2 · sell 650g"
+ },
+ {
+  "name": "Dwarvish Helm",
+  "type": "museum",
+  "typeLabel": "Artifact",
+  "url": "/museum/dwarvish-helm/",
+  "desc": "Artifact · Tilling in Mines (floor 1-39) (0.1%), Geode (3%) · sell 100g"
+ },
+ {
+  "name": "Dwarvish Sentry",
+  "type": "monster",
+  "typeLabel": "Monster",
+  "url": "/monsters/dwarvish-sentry/",
+  "desc": "HP 300 · damage 18 · XP 15"
+ },
+ {
+  "name": "Dye Bundle",
+  "type": "bundle",
+  "typeLabel": "Bundle",
+  "url": "/bundles/",
+  "desc": "bulletin-board"
+ },
+ {
+  "name": "Dye Bundle",
+  "type": "bundle",
+  "typeLabel": "Bundle",
+  "url": "/bundles/",
+  "desc": "bulletin-board"
+ },
+ {
+  "name": "Earth Crystal",
+  "type": "museum",
+  "typeLabel": "Mineral",
+  "url": "/museum/earth-crystal/",
+  "desc": "mineral · The Mines (Floors 1-39), Duggy (10%) · sell 50g"
+ },
+ {
+  "name": "Eel",
+  "type": "fish",
+  "typeLabel": "Fish",
+  "url": "/fish/eel/",
+  "desc": "Various · sell 85g"
+ },
+ {
+  "name": "Eggplant",
+  "type": "crop",
+  "typeLabel": "Crop",
+  "url": "/crops/eggplant/",
+  "desc": "Fall · grow 5d · sell 60g · A purple vegetable most often used in cooking."
+ },
+ {
+  "name": "Eggplant Parmesan",
+  "type": "recipe",
+  "typeLabel": "Recipe",
+  "url": "/recipes/eggplant-parmesan/",
+  "desc": "Eggplant, Tomato · sell 200g"
+ },
+ {
+  "name": "Elf Blade",
+  "type": "weapon",
+  "typeLabel": "Weapon",
+  "url": "/weapons/elf-blade/",
+  "desc": "Damage ? · speed 0 · sell 100g"
+ },
+ {
+  "name": "Elliott",
+  "type": "villager",
+  "typeLabel": "NPC",
+  "url": "/npc/elliott-loved-gifts/",
+  "desc": "Elliott lives alone in a cabin on the beach. He is a writer who dreams of one day writing a magnificent novel."
+ },
+ {
+  "name": "Elliott's Pencil",
+  "type": "weapon",
+  "typeLabel": "Weapon",
+  "url": "/weapons/elliotts-pencil/",
+  "desc": "Damage ? · speed 0 · sell 200g"
+ },
+ {
+  "name": "Elvish Jewelry",
+  "type": "museum",
+  "typeLabel": "Artifact",
+  "url": "/museum/elvish-jewelry/",
+  "desc": "Artifact · Forest (0.8%), Fishing Treasure Chest · sell 200g"
+ },
+ {
+  "name": "Emerald",
+  "type": "museum",
+  "typeLabel": "Mineral",
+  "url": "/museum/emerald/",
+  "desc": "mineral · Emerald Node, Gem Node · sell 250g"
+ },
+ {
+  "name": "Emily",
+  "type": "villager",
+  "typeLabel": "NPC",
+  "url": "/npc/emily-loved-gifts/",
+  "desc": "Emily is a villager who lives in Pelican Town and is one of twelve characters available to marry. She works e…"
+ },
+ {
+  "name": "Enchanter's Bundle",
+  "type": "bundle",
+  "typeLabel": "Bundle",
+  "url": "/bundles/",
+  "desc": "bulletin-board"
+ },
+ {
+  "name": "Engineer's Bundle",
+  "type": "bundle",
+  "typeLabel": "Bundle",
+  "url": "/bundles/",
+  "desc": "boiler-room"
+ },
+ {
+  "name": "Escargot",
+  "type": "recipe",
+  "typeLabel": "Recipe",
+  "url": "/recipes/escargot/",
+  "desc": "Snail, Garlic · sell 125g"
+ },
+ {
+  "name": "Esperite",
+  "type": "museum",
+  "typeLabel": "Mineral",
+  "url": "/museum/esperite/",
+  "desc": "mineral · Frozen Geode, Omni Geode · sell 100g"
+ },
+ {
+  "name": "Evelyn",
+  "type": "villager",
+  "typeLabel": "NPC",
+  "url": "/npc/evelyn-loved-gifts/",
+  "desc": "Evelyn has lived in Pelican Town her entire life. Always hopeful and optimistic, Granny spends her days tendi…"
+ },
+ {
+  "name": "Exotic Foraging Bundle",
+  "type": "bundle",
+  "typeLabel": "Bundle",
+  "url": "/bundles/",
+  "desc": "crafts-room"
+ },
+ {
+  "name": "Fairy Rose",
+  "type": "crop",
+  "typeLabel": "Crop",
+  "url": "/crops/fairy-rose/",
+  "desc": "Fall · grow 12d · sell 290g · An extremely rare flower with a powerful, sweet perfume."
+ },
+ {
+  "name": "Fairy Stone",
+  "type": "museum",
+  "typeLabel": "Mineral",
+  "url": "/museum/fairy-stone/",
+  "desc": "mineral · Frozen Geode, Omni Geode · sell 250g"
+ },
+ {
+  "name": "Fall Crops Bundle",
+  "type": "bundle",
+  "typeLabel": "Bundle",
+  "url": "/bundles/",
+  "desc": "pantry"
+ },
+ {
+  "name": "Fall Crops Bundle",
+  "type": "bundle",
+  "typeLabel": "Bundle",
+  "url": "/bundles/",
+  "desc": "pantry"
+ },
+ {
+  "name": "Fall Foraging Bundle",
+  "type": "bundle",
+  "typeLabel": "Bundle",
+  "url": "/bundles/",
+  "desc": "crafts-room"
+ },
+ {
+  "name": "False Magma Cap",
+  "type": "monster",
+  "typeLabel": "Monster",
+  "url": "/monsters/false-magma-cap/",
+  "desc": "HP 290 · damage 15 · XP 14"
+ },
+ {
+  "name": "Farmer's Lunch",
+  "type": "recipe",
+  "typeLabel": "Recipe",
+  "url": "/recipes/farmers-lunch/",
+  "desc": "Omelet, Parsnip · sell 150g"
+ },
+ {
+  "name": "Fector's Challenge",
+  "type": "achievement",
+  "typeLabel": "Achievement",
+  "url": "/achievements/fectors-challenge/",
+  "desc": "Beat 'Journey Of The Prairie King' without dying. · reward: None"
+ },
+ {
+  "name": "Femur",
+  "type": "weapon",
+  "typeLabel": "Weapon",
+  "url": "/weapons/femur/",
+  "desc": "Damage ? · speed 2 · sell 100g"
+ },
+ {
+  "name": "Fiber",
+  "type": "crop",
+  "typeLabel": "Crop",
+  "url": "/crops/fiber/",
+  "desc": "Spring/Summer/Fall/Winter · grow 7d · sell 1g · Plant these in any season. Does not require watering. Harvest…"
+ },
+ {
+  "name": "Fiddlehead Risotto",
+  "type": "recipe",
+  "typeLabel": "Recipe",
+  "url": "/recipes/fiddlehead-risotto/",
+  "desc": "Oil, Fiddlehead Fern, Garlic · sell 350g"
+ },
+ {
+  "name": "Field Research Bundle",
+  "type": "bundle",
+  "typeLabel": "Bundle",
+  "url": "/bundles/",
+  "desc": "bulletin-board"
+ },
+ {
+  "name": "Fire Opal",
+  "type": "museum",
+  "typeLabel": "Mineral",
+  "url": "/museum/fire-opal/",
+  "desc": "mineral · Magma Geode, Omni Geode · sell 350g"
+ },
+ {
+  "name": "Fire Quartz",
+  "type": "museum",
+  "typeLabel": "Mineral",
+  "url": "/museum/fire-quartz/",
+  "desc": "mineral · The Mines (Floors 80-120), Magma Geode · sell 100g"
+ },
+ {
+  "name": "Fish Farmer's Bundle",
+  "type": "bundle",
+  "typeLabel": "Bundle",
+  "url": "/bundles/",
+  "desc": "pantry"
+ },
+ {
+  "name": "Fish Stew",
+  "type": "recipe",
+  "typeLabel": "Recipe",
+  "url": "/recipes/fish-stew/",
+  "desc": "Crayfish, Mussel, Periwinkle, Tomato · sell 175g"
+ },
+ {
+  "name": "Fish Taco",
+  "type": "recipe",
+  "typeLabel": "Recipe",
+  "url": "/recipes/fish-taco/",
+  "desc": "Tuna, Tortilla, Red Cabbage, Mayonnaise · sell 500g"
+ },
+ {
+  "name": "Fisherman",
+  "type": "achievement",
+  "typeLabel": "Achievement",
+  "url": "/achievements/fisherman/",
+  "desc": "Catch 10 different fish. · reward: Sou'wester"
+ },
+ {
+  "name": "Fishing Rod",
+  "type": "tool",
+  "typeLabel": "Tool",
+  "url": "/tools/fishing-rod/",
+  "desc": "Fishing rods for catching fish. Higher tiers unlock bait and tackle support."
+ },
+ {
+  "name": "Flounder",
+  "type": "fish",
+  "typeLabel": "Fish",
+  "url": "/fish/flounder/",
+  "desc": "Various · sell 100g"
+ },
+ {
+  "name": "Fluorapatite",
+  "type": "museum",
+  "typeLabel": "Mineral",
+  "url": "/museum/fluorapatite/",
+  "desc": "mineral · Frozen Geode, Omni Geode · sell 200g"
+ },
+ {
+  "name": "Fodder Bundle",
+  "type": "bundle",
+  "typeLabel": "Bundle",
+  "url": "/bundles/",
+  "desc": "bulletin-board"
+ },
+ {
+  "name": "Forager's Bundle",
+  "type": "bundle",
+  "typeLabel": "Bundle",
+  "url": "/bundles/",
+  "desc": "bulletin-board"
+ },
+ {
+  "name": "Forest Bundle",
+  "type": "bundle",
+  "typeLabel": "Bundle",
+  "url": "/bundles/",
+  "desc": "crafts-room"
+ },
+ {
+  "name": "Forest Sword",
+  "type": "weapon",
+  "typeLabel": "Weapon",
+  "url": "/weapons/forest-sword/",
+  "desc": "Damage ? · speed 2 · sell 150g"
+ },
+ {
+  "name": "Fried Calamari",
+  "type": "recipe",
+  "typeLabel": "Recipe",
+  "url": "/recipes/fried-calamari/",
+  "desc": "Squid, Wheat Flour, Oil · sell 150g"
+ },
+ {
+  "name": "Fried Eel",
+  "type": "recipe",
+  "typeLabel": "Recipe",
+  "url": "/recipes/fried-eel/",
+  "desc": "Eel, Oil · sell 120g"
+ },
+ {
+  "name": "Fried Egg",
+  "type": "recipe",
+  "typeLabel": "Recipe",
+  "url": "/recipes/fried-egg/",
+  "desc": "Any Egg · sell 35g"
+ },
+ {
+  "name": "Fried Mushroom",
+  "type": "recipe",
+  "typeLabel": "Recipe",
+  "url": "/recipes/fried-mushroom/",
+  "desc": "Common Mushroom, Morel, Oil · sell 200g"
+ },
+ {
+  "name": "Frost Bat",
+  "type": "monster",
+  "typeLabel": "Monster",
+  "url": "/monsters/frost-bat/",
+  "desc": "HP 36 · damage 7 · XP 7"
+ },
+ {
+  "name": "Frost Jelly",
+  "type": "monster",
+  "typeLabel": "Monster",
+  "url": "/monsters/frost-jelly/",
+  "desc": "HP 106 · damage 7 · XP 6"
+ },
+ {
+  "name": "Frozen Tear",
+  "type": "museum",
+  "typeLabel": "Mineral",
+  "url": "/museum/frozen-tear/",
+  "desc": "mineral · The Mines (Floors 40-79), Frozen Geode · sell 75g"
+ },
+ {
+  "name": "Fruit Salad",
+  "type": "recipe",
+  "typeLabel": "Recipe",
+  "url": "/recipes/fruit-salad/",
+  "desc": "Blueberry, Melon, Apricot · sell 450g"
+ },
+ {
+  "name": "Full House",
+  "type": "achievement",
+  "typeLabel": "Achievement",
+  "url": "/achievements/full-house/",
+  "desc": "Get married and have two kids. · reward: None"
+ },
+ {
+  "name": "Full Shipment",
+  "type": "achievement",
+  "typeLabel": "Achievement",
+  "url": "/achievements/full-shipment/",
+  "desc": "Ship every item. · reward: Goblin Mask"
+ },
+ {
+  "name": "Galaxy Dagger",
+  "type": "weapon",
+  "typeLabel": "Weapon",
+  "url": "/weapons/galaxy-dagger/",
+  "desc": "Damage ? · speed 1 · sell 400g"
+ },
+ {
+  "name": "Galaxy Hammer",
+  "type": "weapon",
+  "typeLabel": "Weapon",
+  "url": "/weapons/galaxy-hammer/",
+  "desc": "Damage ? · speed 2 · sell 600g"
+ },
+ {
+  "name": "Galaxy Sword",
+  "type": "weapon",
+  "typeLabel": "Weapon",
+  "url": "/weapons/galaxy-sword/",
+  "desc": "Damage ? · speed 4 · sell 650g"
+ },
+ {
+  "name": "Garden Bundle",
+  "type": "bundle",
+  "typeLabel": "Bundle",
+  "url": "/bundles/",
+  "desc": "pantry"
+ },
+ {
+  "name": "Garlic",
+  "type": "crop",
+  "typeLabel": "Crop",
+  "url": "/crops/garlic/",
+  "desc": "Spring · grow 4d · sell 60g · A pungent herb used in cooking. The aroma is known to keep monsters at bay."
+ },
+ {
+  "name": "Geminite",
+  "type": "museum",
+  "typeLabel": "Mineral",
+  "url": "/museum/geminite/",
+  "desc": "mineral · Frozen Geode, Omni Geode · sell 150g"
+ },
+ {
+  "name": "Geologist's Bundle",
+  "type": "bundle",
+  "typeLabel": "Bundle",
+  "url": "/bundles/",
+  "desc": "boiler-room"
+ },
+ {
+  "name": "George",
+  "type": "villager",
+  "typeLabel": "NPC",
+  "url": "/npc/george-loved-gifts/",
+  "desc": "George is a villager who lives in Pelican Town. He is an elderly man who uses a wheelchair and lives with his…"
+ },
+ {
+  "name": "Ghost",
+  "type": "monster",
+  "typeLabel": "Monster",
+  "url": "/monsters/ghost/",
+  "desc": "HP 96 · damage 10 · XP 15"
+ },
+ {
+  "name": "Ghost Crystal",
+  "type": "museum",
+  "typeLabel": "Mineral",
+  "url": "/museum/ghost-crystal/",
+  "desc": "mineral · Frozen Geode, Omni Geode · sell 200g"
+ },
+ {
+  "name": "Ghostfish",
+  "type": "fish",
+  "typeLabel": "Fish",
+  "url": "/fish/ghostfish/",
+  "desc": "Various · sell 45g"
+ },
+ {
+  "name": "Ginger Ale",
+  "type": "recipe",
+  "typeLabel": "Recipe",
+  "url": "/recipes/ginger-ale/",
+  "desc": "Ginger, Sugar · sell 200g"
+ },
+ {
+  "name": "Glacierfish",
+  "type": "fish",
+  "typeLabel": "Fish",
+  "url": "/fish/glacierfish/",
+  "desc": "Various · sell 1000g"
+ },
+ {
+  "name": "Glacierfish Jr.",
+  "type": "fish",
+  "typeLabel": "Fish",
+  "url": "/fish/glacierfish-jr/",
+  "desc": "Various · sell 1000g"
+ },
+ {
+  "name": "Glass Shards",
+  "type": "museum",
+  "typeLabel": "Artifact",
+  "url": "/museum/glass-shards/",
+  "desc": "Artifact · Beach (7%), Fishing Treasure Chest · sell 20g"
+ },
+ {
+  "name": "Glazed Yams",
+  "type": "recipe",
+  "typeLabel": "Recipe",
+  "url": "/recipes/glazed-yams/",
+  "desc": "Yam, Sugar · sell 200g"
+ },
+ {
+  "name": "Goby",
+  "type": "fish",
+  "typeLabel": "Fish",
+  "url": "/fish/goby/",
+  "desc": "Various · sell 150g"
+ },
+ {
+  "name": "Gofer",
+  "type": "achievement",
+  "typeLabel": "Achievement",
+  "url": "/achievements/gofer/",
+  "desc": "Complete 10 'Help Wanted' requests. · reward: Polka Bow"
+ },
+ {
+  "name": "Golden Mask",
+  "type": "museum",
+  "typeLabel": "Artifact",
+  "url": "/museum/golden-mask/",
+  "desc": "Artifact · Desert (3%), Artifact Trove (3.6%) · sell 500g"
+ },
+ {
+  "name": "Golden Relic",
+  "type": "museum",
+  "typeLabel": "Artifact",
+  "url": "/museum/golden-relic/",
+  "desc": "Artifact · Desert (6%), Artifact Trove (3.6%) · sell 250g"
+ },
+ {
+  "name": "Golden Scythe",
+  "type": "tool",
+  "typeLabel": "Tool",
+  "url": "/tools/golden-scythe/",
+  "desc": "More powerful scythe that collects more hay per swing and harvests a wider range of crops."
+ },
+ {
+  "name": "Good Neighbors",
+  "type": "achievement",
+  "typeLabel": "Achievement",
+  "url": "/achievements/good-neighbors/",
+  "desc": "Help your forest neighbors grow their family. · reward: White Bow"
+ },
+ {
+  "name": "Gourmet Chef",
+  "type": "achievement",
+  "typeLabel": "Achievement",
+  "url": "/achievements/gourmet-chef/",
+  "desc": "Cook every recipe. · reward: Archer's Cap, Chef Hat"
+ },
+ {
+  "name": "Granite",
+  "type": "museum",
+  "typeLabel": "Mineral",
+  "url": "/museum/granite/",
+  "desc": "mineral · Geode, Omni Geode · sell 75g"
+ },
+ {
+  "name": "Grape",
+  "type": "crop",
+  "typeLabel": "Crop",
+  "url": "/crops/grape/",
+  "desc": "Fall · grow 10d · sell 80g · A sweet fruit that grows on a vine trellis in the fall."
+ },
+ {
+  "name": "Green Algae",
+  "type": "fish",
+  "typeLabel": "Fish",
+  "url": "/fish/green-algae/",
+  "desc": "Various · sell 15g"
+ },
+ {
+  "name": "Green Bean",
+  "type": "crop",
+  "typeLabel": "Crop",
+  "url": "/crops/green-bean/",
+  "desc": "Spring · grow 10d · sell 40g · A young, tender bean in the pod."
+ },
+ {
+  "name": "Green Slime",
+  "type": "monster",
+  "typeLabel": "Monster",
+  "url": "/monsters/green-slime/",
+  "desc": "HP 24 · damage 5 · XP 3"
+ },
+ {
+  "name": "Greenhorn",
+  "type": "achievement",
+  "typeLabel": "Achievement",
+  "url": "/achievements/greenhorn/",
+  "desc": "Earn 15,000g. · reward: Good Ol' Cap"
+ },
+ {
+  "name": "Grub",
+  "type": "monster",
+  "typeLabel": "Monster",
+  "url": "/monsters/grub/",
+  "desc": "HP 20 · damage 4 · XP 2"
+ },
+ {
+  "name": "Gus",
+  "type": "villager",
+  "typeLabel": "NPC",
+  "url": "/npc/gus-loved-gifts/",
+  "desc": "Gus is a villager who lives and works at The Stardrop Saloon in Pelican Town. He owns the establishment."
+ },
+ {
+  "name": "Haley",
+  "type": "villager",
+  "typeLabel": "NPC",
+  "url": "/npc/haley-loved-gifts/",
+  "desc": "Haley is a villager who lives in Pelican Town and is one of twelve characters available to marry."
+ },
+ {
+  "name": "Haley's Iron",
+  "type": "weapon",
+  "typeLabel": "Weapon",
+  "url": "/weapons/haleys-iron/",
+  "desc": "Damage ? · speed -1 · sell 300g"
+ },
+ {
+  "name": "Halibut",
+  "type": "fish",
+  "typeLabel": "Fish",
+  "url": "/fish/halibut/",
+  "desc": "Various · sell 80g"
+ },
+ {
+  "name": "Harvey",
+  "type": "villager",
+  "typeLabel": "NPC",
+  "url": "/npc/harvey-loved-gifts/",
+  "desc": "Harvey is a villager who lives in Pelican Town. He runs the town's medical clinic and is one of the twelve ch…"
+ },
+ {
+  "name": "Harvey's Mallet",
+  "type": "weapon",
+  "typeLabel": "Weapon",
+  "url": "/weapons/harveys-mallet/",
+  "desc": "Damage ? · speed -2 · sell 350g"
+ },
+ {
+  "name": "Hashbrowns",
+  "type": "recipe",
+  "typeLabel": "Recipe",
+  "url": "/recipes/hashbrowns/",
+  "desc": "Potato, Oil · sell 120g"
+ },
+ {
+  "name": "Haunted Skull",
+  "type": "monster",
+  "typeLabel": "Monster",
+  "url": "/monsters/haunted-skull/",
+  "desc": "HP 160 · damage 15 · XP 15"
+ },
+ {
+  "name": "Heater",
+  "type": "tool",
+  "typeLabel": "Tool",
+  "url": "/tools/heater/",
+  "desc": "Keeps animals warm in winter, maintaining their mood without needing a pet."
+ },
+ {
+  "name": "Helper's Bundle",
+  "type": "bundle",
+  "typeLabel": "Bundle",
+  "url": "/bundles/",
+  "desc": "bulletin-board"
+ },
+ {
+  "name": "Helvite",
+  "type": "museum",
+  "typeLabel": "Mineral",
+  "url": "/museum/helvite/",
+  "desc": "mineral · Magma Geode, Omni Geode · sell 450g"
+ },
+ {
+  "name": "Hematite",
+  "type": "museum",
+  "typeLabel": "Mineral",
+  "url": "/museum/hematite/",
+  "desc": "mineral · Frozen Geode, Omni Geode · sell 150g"
+ },
+ {
+  "name": "Herring",
+  "type": "fish",
+  "typeLabel": "Fish",
+  "url": "/fish/herring/",
+  "desc": "Various · sell 30g"
+ },
+ {
+  "name": "Hoe",
+  "type": "tool",
+  "typeLabel": "Tool",
+  "url": "/tools/hoe/",
+  "desc": "Till soil for planting and dig up artifact spots. Higher upgrades allow charging to till multiple tiles at on…"
+ },
+ {
+  "name": "Holy Blade",
+  "type": "weapon",
+  "typeLabel": "Weapon",
+  "url": "/weapons/holy-blade/",
+  "desc": "Damage ? · speed 4 · sell 350g"
+ },
+ {
+  "name": "Home Cook's Bundle",
+  "type": "bundle",
+  "typeLabel": "Bundle",
+  "url": "/bundles/",
+  "desc": "bulletin-board"
+ },
+ {
+  "name": "Homesteader",
+  "type": "achievement",
+  "typeLabel": "Achievement",
+  "url": "/achievements/homesteader/",
+  "desc": "Earn 250,000g. · reward: Cool Cap"
+ },
+ {
+  "name": "Hops",
+  "type": "crop",
+  "typeLabel": "Crop",
+  "url": "/crops/hops/",
+  "desc": "Summer · grow 11d · sell 25g · The flower clusters of the hops plant are used to brew beer."
+ },
+ {
+  "name": "Hot Head",
+  "type": "monster",
+  "typeLabel": "Monster",
+  "url": "/monsters/hot-head/",
+  "desc": "HP 250 · damage 18 · XP 16"
+ },
+ {
+  "name": "Hot Pepper",
+  "type": "crop",
+  "typeLabel": "Crop",
+  "url": "/crops/hot-pepper/",
+  "desc": "Summer · grow 5d · sell 40g · Fiery hot! A perfect flavoring for spicy summer dishes."
+ },
+ {
+  "name": "Ice Cream",
+  "type": "recipe",
+  "typeLabel": "Recipe",
+  "url": "/recipes/ice-cream/",
+  "desc": "Any Milk, Sugar · sell 120g"
+ },
+ {
+  "name": "Ice Pip",
+  "type": "fish",
+  "typeLabel": "Fish",
+  "url": "/fish/ice-pip/",
+  "desc": "Various · sell 500g"
+ },
+ {
+  "name": "Infinite Power",
+  "type": "achievement",
+  "typeLabel": "Achievement",
+  "url": "/achievements/infinite-power/",
+  "desc": "Obtain the most powerful weapon. · reward: Infinity Crown"
+ },
+ {
+  "name": "Infinity Blade",
+  "type": "weapon",
+  "typeLabel": "Weapon",
+  "url": "/weapons/infinity-blade/",
+  "desc": "Damage ? · speed 4 · sell 850g"
+ },
+ {
+  "name": "Infinity Dagger",
+  "type": "weapon",
+  "typeLabel": "Weapon",
+  "url": "/weapons/infinity-dagger/",
+  "desc": "Damage ? · speed 1 · sell 800g"
+ },
+ {
+  "name": "Infinity Gavel",
+  "type": "weapon",
+  "typeLabel": "Weapon",
+  "url": "/weapons/infinity-gavel/",
+  "desc": "Damage ? · speed 2 · sell 850g"
+ },
+ {
+  "name": "Insect Head",
+  "type": "weapon",
+  "typeLabel": "Weapon",
+  "url": "/weapons/insect-head/",
+  "desc": "Damage ? · speed 2 · sell 200g"
+ },
+ {
+  "name": "Iridium Bat",
+  "type": "monster",
+  "typeLabel": "Monster",
+  "url": "/monsters/iridium-bat/",
+  "desc": "HP 300 · damage 30 · XP 22"
+ },
+ {
+  "name": "Iridium Crab",
+  "type": "monster",
+  "typeLabel": "Monster",
+  "url": "/monsters/iridium-crab/",
+  "desc": "HP 240 · damage 15 · XP 20"
+ },
+ {
+  "name": "Iridium Golem",
+  "type": "monster",
+  "typeLabel": "Monster",
+  "url": "/monsters/iridium-golem/",
+  "desc": "HP 30 · damage 5 · XP 5"
+ },
+ {
+  "name": "Iridium Needle",
+  "type": "weapon",
+  "typeLabel": "Weapon",
+  "url": "/weapons/iridium-needle/",
+  "desc": "Damage ? · speed 0 · sell 600g"
+ },
+ {
+  "name": "Iridium Scythe",
+  "type": "tool",
+  "typeLabel": "Tool",
+  "url": "/tools/iridium-scythe/",
+  "desc": "Automatically harvests any mature crop in its path."
+ },
+ {
+  "name": "Iron Dirk",
+  "type": "weapon",
+  "typeLabel": "Weapon",
+  "url": "/weapons/iron-dirk/",
+  "desc": "Damage ? · speed 0 · sell 50g"
+ },
+ {
+  "name": "Iron Edge",
+  "type": "weapon",
+  "typeLabel": "Weapon",
+  "url": "/weapons/iron-edge/",
+  "desc": "Damage ? · speed -2 · sell 150g"
+ },
+ {
+  "name": "Jade",
+  "type": "museum",
+  "typeLabel": "Mineral",
+  "url": "/museum/jade/",
+  "desc": "mineral · Jade Node, Gem Node · sell 200g"
+ },
+ {
+  "name": "Jagoite",
+  "type": "museum",
+  "typeLabel": "Mineral",
+  "url": "/museum/jagoite/",
+  "desc": "mineral · Geode, Omni Geode · sell 115g"
+ },
+ {
+  "name": "Jamborite",
+  "type": "museum",
+  "typeLabel": "Mineral",
+  "url": "/museum/jamborite/",
+  "desc": "mineral · Geode, Omni Geode · sell 150g"
+ },
+ {
+  "name": "Jas",
+  "type": "villager",
+  "typeLabel": "NPC",
+  "url": "/npc/jas-loved-gifts/",
+  "desc": "Jas is a villager who lives just outside Pelican Town. She is a young girl who can often be found with her be…"
+ },
+ {
+  "name": "Jasper",
+  "type": "museum",
+  "typeLabel": "Mineral",
+  "url": "/museum/jasper/",
+  "desc": "mineral · Magma Geode, Omni Geode · sell 150g"
+ },
+ {
+  "name": "Jodi",
+  "type": "villager",
+  "typeLabel": "NPC",
+  "url": "/npc/jodi-loved-gifts/",
+  "desc": "Jodi is a villager who lives in Pelican Town at 1 Willow Lane with her husband Kent and two sons, Sam and Vin…"
+ },
+ {
+  "name": "Joja Co. Member Of The Year",
+  "type": "achievement",
+  "typeLabel": "Achievement",
+  "url": "/achievements/joja-co-member-of-the-year/",
+  "desc": "Purchase all Joja Community Development projects. · reward: Soda Machine"
+ },
+ {
+  "name": "Kale",
+  "type": "crop",
+  "typeLabel": "Crop",
+  "url": "/crops/kale/",
+  "desc": "Spring · grow 6d · sell 110g · This dark leafy green is impressively healthy and grows quickly."
+ },
+ {
+  "name": "Kent",
+  "type": "villager",
+  "typeLabel": "NPC",
+  "url": "/npc/kent-loved-gifts/",
+  "desc": "Kent is a villager who lives in Pelican Town. He is away serving in the army throughout the first year and re…"
+ },
+ {
+  "name": "Krobus",
+  "type": "villager",
+  "typeLabel": "NPC",
+  "url": "/npc/krobus-loved-gifts/",
+  "desc": "Krobus is the only friendly monster players will encounter. He is a shadow person who lives in the Sewers."
+ },
+ {
+  "name": "Kudgel",
+  "type": "weapon",
+  "typeLabel": "Weapon",
+  "url": "/weapons/kudgel/",
+  "desc": "Damage ? · speed -1 · sell 250g"
+ },
+ {
+  "name": "Kyanite",
+  "type": "museum",
+  "typeLabel": "Mineral",
+  "url": "/museum/kyanite/",
+  "desc": "mineral · Frozen Geode, Omni Geode · sell 250g"
+ },
+ {
+  "name": "Lake Fish Bundle",
+  "type": "bundle",
+  "typeLabel": "Bundle",
+  "url": "/bundles/",
+  "desc": "fish-tank"
+ },
+ {
+  "name": "Large Pack",
+  "type": "tool",
+  "typeLabel": "Tool",
+  "url": "/tools/large-pack/",
+  "desc": "Expands your inventory to 24 slots."
+ },
+ {
+  "name": "Largemouth Bass",
+  "type": "fish",
+  "typeLabel": "Fish",
+  "url": "/fish/largemouth-bass/",
+  "desc": "Various · sell 100g"
+ },
+ {
+  "name": "Lava Bat",
+  "type": "monster",
+  "typeLabel": "Monster",
+  "url": "/monsters/lava-bat/",
+  "desc": "HP 80 · damage 15 · XP 15"
+ },
+ {
+  "name": "Lava Crab",
+  "type": "monster",
+  "typeLabel": "Monster",
+  "url": "/monsters/lava-crab/",
+  "desc": "HP 120 · damage 15 · XP 12"
+ },
+ {
+  "name": "Lava Eel",
+  "type": "fish",
+  "typeLabel": "Fish",
+  "url": "/fish/lava-eel/",
+  "desc": "Various · sell 700g"
+ },
+ {
+  "name": "Lava Katana",
+  "type": "weapon",
+  "typeLabel": "Weapon",
+  "url": "/weapons/lava-katana/",
+  "desc": "Damage ? · speed 0 · sell 500g"
+ },
+ {
+  "name": "Lava Lurk",
+  "type": "monster",
+  "typeLabel": "Monster",
+  "url": "/monsters/lava-lurk/",
+  "desc": "HP 220 · damage 15 · XP 12"
+ },
+ {
+  "name": "Lead Rod",
+  "type": "weapon",
+  "typeLabel": "Weapon",
+  "url": "/weapons/lead-rod/",
+  "desc": "Damage ? · speed -4 · sell 200g"
+ },
+ {
+  "name": "Leah",
+  "type": "villager",
+  "typeLabel": "NPC",
+  "url": "/npc/leah-loved-gifts/",
+  "desc": "Leah is a villager who lives in a small cottage outside Pelican Town. She is one of the twelve characters ava…"
+ },
+ {
+  "name": "Leah's Whittler",
+  "type": "weapon",
+  "typeLabel": "Weapon",
+  "url": "/weapons/leahs-whittler/",
+  "desc": "Damage ? · speed -1 · sell 300g"
+ },
+ {
+  "name": "Legend",
+  "type": "fish",
+  "typeLabel": "Fish",
+  "url": "/fish/legend/",
+  "desc": "Various · sell 5000g"
+ },
+ {
+  "name": "Legend",
+  "type": "achievement",
+  "typeLabel": "Achievement",
+  "url": "/achievements/legend/",
+  "desc": "Earn 10,000,000g. · reward: Sombrero"
+ },
+ {
+  "name": "Legend II",
+  "type": "fish",
+  "typeLabel": "Fish",
+  "url": "/fish/legend-ii/",
+  "desc": "Various · sell 5000g"
+ },
+ {
+  "name": "Lemon Stone",
+  "type": "museum",
+  "typeLabel": "Mineral",
+  "url": "/museum/lemon-stone/",
+  "desc": "mineral · Magma Geode, Omni Geode · sell 200g"
+ },
+ {
+  "name": "Leo",
+  "type": "villager",
+  "typeLabel": "NPC",
+  "url": "/npc/leo-loved-gifts/",
+  "desc": "Leo is a boy who initially lives on Ginger Island. His parents were lost at sea, and he considers the parrots…"
+ },
+ {
+  "name": "Lewis",
+  "type": "villager",
+  "typeLabel": "NPC",
+  "url": "/npc/lewis-loved-gifts/",
+  "desc": "Lewis is the mayor of Pelican Town. He greets the player upon arrival and has served as mayor for over twenty…"
+ },
+ {
+  "name": "Limestone",
+  "type": "museum",
+  "typeLabel": "Mineral",
+  "url": "/museum/limestone/",
+  "desc": "mineral · Geode, Omni Geode · sell 15g"
+ },
+ {
+  "name": "Lingcod",
+  "type": "fish",
+  "typeLabel": "Fish",
+  "url": "/fish/lingcod/",
+  "desc": "Various · sell 120g"
+ },
+ {
+  "name": "Linus",
+  "type": "villager",
+  "typeLabel": "NPC",
+  "url": "/npc/linus-loved-gifts/",
+  "desc": "Linus is a villager who lives in a small tent on the Mountains north of Pelican Town. He has chosen a solitar…"
+ },
+ {
+  "name": "Lionfish",
+  "type": "fish",
+  "typeLabel": "Fish",
+  "url": "/fish/lionfish/",
+  "desc": "Various · sell 100g"
+ },
+ {
+  "name": "Living Large",
+  "type": "achievement",
+  "typeLabel": "Achievement",
+  "url": "/achievements/living-large/",
+  "desc": "Upgrade your house to the maximum size. · reward: Hunter's Cap"
+ },
+ {
+  "name": "Lobster",
+  "type": "fish",
+  "typeLabel": "Fish",
+  "url": "/fish/lobster/",
+  "desc": "Various · sell 120g"
+ },
+ {
+  "name": "Lobster Bisque",
+  "type": "recipe",
+  "typeLabel": "Recipe",
+  "url": "/recipes/lobster-bisque/",
+  "desc": "Lobster, Any Milk · sell 205g"
+ },
+ {
+  "name": "Local Legend",
+  "type": "achievement",
+  "typeLabel": "Achievement",
+  "url": "/achievements/local-legend/",
+  "desc": "Restore the Pelican Town Community Center. · reward: Stardew Hero Trophy"
+ },
+ {
+  "name": "Lucky Lunch",
+  "type": "recipe",
+  "typeLabel": "Recipe",
+  "url": "/recipes/lucky-lunch/",
+  "desc": "Sea Cucumber, Tortilla, Blue Jazz · sell 250g"
+ },
+ {
+  "name": "Lunarite",
+  "type": "museum",
+  "typeLabel": "Mineral",
+  "url": "/museum/lunarite/",
+  "desc": "mineral · Frozen Geode, Omni Geode · sell 200g"
+ },
+ {
+  "name": "Magma Duggy",
+  "type": "monster",
+  "typeLabel": "Monster",
+  "url": "/monsters/magma-duggy/",
+  "desc": "HP 380 · damage 16 · XP 18"
+ },
+ {
+  "name": "Magma Sparker",
+  "type": "monster",
+  "typeLabel": "Monster",
+  "url": "/monsters/magma-sparker/",
+  "desc": "HP 310 · damage 15 · XP 17"
+ },
+ {
+  "name": "Magma Sprite",
+  "type": "monster",
+  "typeLabel": "Monster",
+  "url": "/monsters/magma-sprite/",
+  "desc": "HP 220 · damage 15 · XP 15"
+ },
+ {
+  "name": "Maki Roll",
+  "type": "recipe",
+  "typeLabel": "Recipe",
+  "url": "/recipes/maki-roll/",
+  "desc": "Any Fish, Seaweed, Rice · sell 220g"
+ },
+ {
+  "name": "Malachite",
+  "type": "museum",
+  "typeLabel": "Mineral",
+  "url": "/museum/malachite/",
+  "desc": "mineral · Geode, Omni Geode · sell 100g"
+ },
+ {
+  "name": "Mango Sticky Rice",
+  "type": "recipe",
+  "typeLabel": "Recipe",
+  "url": "/recipes/mango-sticky-rice/",
+  "desc": "Mango, Coconut, Rice · sell 250g"
+ },
+ {
+  "name": "Maple Bar",
+  "type": "recipe",
+  "typeLabel": "Recipe",
+  "url": "/recipes/maple-bar/",
+  "desc": "Maple Syrup, Sugar, Wheat Flour · sell 300g"
+ },
+ {
+  "name": "Marble",
+  "type": "museum",
+  "typeLabel": "Mineral",
+  "url": "/museum/marble/",
+  "desc": "mineral · Frozen Geode, Omni Geode · sell 110g"
+ },
+ {
+  "name": "Marnie",
+  "type": "villager",
+  "typeLabel": "NPC",
+  "url": "/npc/marnie-loved-gifts/",
+  "desc": "Marnie is a villager who lives at Marnie's Ranch in Cindersap Forest."
+ },
+ {
+  "name": "Maru",
+  "type": "villager",
+  "typeLabel": "NPC",
+  "url": "/npc/maru-loved-gifts/",
+  "desc": "Maru is a villager who lives in The Mountains north of Pelican Town. She is one of the twelve characters avai…"
+ },
+ {
+  "name": "Maru's Wrench",
+  "type": "weapon",
+  "typeLabel": "Weapon",
+  "url": "/weapons/marus-wrench/",
+  "desc": "Damage ? · speed -2 · sell 350g"
+ },
+ {
+  "name": "Master Angler",
+  "type": "achievement",
+  "typeLabel": "Achievement",
+  "url": "/achievements/master-angler/",
+  "desc": "Catch every fish. · reward: Eye Patch"
+ },
+ {
+  "name": "Master Fisher's Bundle",
+  "type": "bundle",
+  "typeLabel": "Bundle",
+  "url": "/bundles/",
+  "desc": "fish-tank"
+ },
+ {
+  "name": "Master Of The Five Ways",
+  "type": "achievement",
+  "typeLabel": "Achievement",
+  "url": "/achievements/master-of-the-five-ways/",
+  "desc": "Reach level 10 in every skill. · reward: None"
+ },
+ {
+  "name": "Master Slingshot",
+  "type": "weapon",
+  "typeLabel": "Weapon",
+  "url": "/weapons/master-slingshot/",
+  "desc": "Damage ? · speed ? · sell 50g"
+ },
+ {
+  "name": "Melon",
+  "type": "crop",
+  "typeLabel": "Crop",
+  "url": "/crops/melon/",
+  "desc": "Summer · grow 12d · sell 250g · A large sweet fruit that grows in summer. It's one of the most popular at fes…"
+ },
+ {
+  "name": "Meowmere",
+  "type": "weapon",
+  "typeLabel": "Weapon",
+  "url": "/weapons/meowmere/",
+  "desc": "Damage ? · speed 4 · sell 200g"
+ },
+ {
+  "name": "Metal Head",
+  "type": "monster",
+  "typeLabel": "Monster",
+  "url": "/monsters/metal-head/",
+  "desc": "HP 40 · damage 15 · XP 6"
+ },
+ {
+  "name": "Midnight Carp",
+  "type": "fish",
+  "typeLabel": "Fish",
+  "url": "/fish/midnight-carp/",
+  "desc": "Various · sell 150g"
+ },
+ {
+  "name": "Midnight Squid",
+  "type": "fish",
+  "typeLabel": "Fish",
+  "url": "/fish/midnight-squid/",
+  "desc": "Various · sell 100g"
+ },
+ {
+  "name": "Milk Pail",
+  "type": "tool",
+  "typeLabel": "Tool",
+  "url": "/tools/milk-pail/",
+  "desc": "Collect milk from cows and goats."
+ },
+ {
+  "name": "Millionaire",
+  "type": "achievement",
+  "typeLabel": "Achievement",
+  "url": "/achievements/millionaire/",
+  "desc": "Earn 1,000,000g. · reward: Bowler Hat"
+ },
+ {
+  "name": "Miner's Treat",
+  "type": "recipe",
+  "typeLabel": "Recipe",
+  "url": "/recipes/miners-treat/",
+  "desc": "Cave Carrot, Sugar, Any Milk · sell 200g"
+ },
+ {
+  "name": "Monoculture",
+  "type": "achievement",
+  "typeLabel": "Achievement",
+  "url": "/achievements/monoculture/",
+  "desc": "Ship 300 of one crop. · reward: Cowgal Hat"
+ },
+ {
+  "name": "Moss Soup",
+  "type": "recipe",
+  "typeLabel": "Recipe",
+  "url": "/recipes/moss-soup/",
+  "desc": "Moss · sell 80g"
+ },
+ {
+  "name": "Mother Catch",
+  "type": "achievement",
+  "typeLabel": "Achievement",
+  "url": "/achievements/mother-catch/",
+  "desc": "Catch 100 fish. · reward: Watermelon Band"
+ },
+ {
+  "name": "Moving Up",
+  "type": "achievement",
+  "typeLabel": "Achievement",
+  "url": "/achievements/moving-up/",
+  "desc": "Upgrade your house. · reward: Tropiclip"
+ },
+ {
+  "name": "Ms. Angler",
+  "type": "fish",
+  "typeLabel": "Fish",
+  "url": "/fish/ms-angler/",
+  "desc": "Various · sell 900g"
+ },
+ {
+  "name": "Mudstone",
+  "type": "museum",
+  "typeLabel": "Mineral",
+  "url": "/museum/mudstone/",
+  "desc": "mineral · Geode, Omni Geode · sell 25g"
+ },
+ {
+  "name": "Mummy",
+  "type": "monster",
+  "typeLabel": "Monster",
+  "url": "/monsters/mummy/",
+  "desc": "HP 260 · damage 30 · XP 20"
+ },
+ {
+  "name": "Mussel",
+  "type": "fish",
+  "typeLabel": "Fish",
+  "url": "/fish/mussel/",
+  "desc": "Various · sell 30g"
+ },
+ {
+  "name": "Mutant Carp",
+  "type": "fish",
+  "typeLabel": "Fish",
+  "url": "/fish/mutant-carp/",
+  "desc": "Various · sell 1000g"
+ },
+ {
+  "name": "Mystery Of The Stardrops",
+  "type": "achievement",
+  "typeLabel": "Achievement",
+  "url": "/achievements/mystery-of-the-stardrops/",
+  "desc": "Find every stardrop. · reward: None"
+ },
+ {
+  "name": "Nautilus Fossil",
+  "type": "museum",
+  "typeLabel": "Artifact",
+  "url": "/museum/nautilus-fossil/",
+  "desc": "Artifact · Beach (1.8%), Fishing Treasure Chest (3.1-3.4%) · sell 80g"
+ },
+ {
+  "name": "Nekoite",
+  "type": "museum",
+  "typeLabel": "Mineral",
+  "url": "/museum/nekoite/",
+  "desc": "mineral · Geode, Omni Geode · sell 80g"
+ },
+ {
+  "name": "Neptune's Glaive",
+  "type": "weapon",
+  "typeLabel": "Weapon",
+  "url": "/weapons/neptunes-glaive/",
+  "desc": "Damage ? · speed -1 · sell 250g"
+ },
+ {
+  "name": "Neptunite",
+  "type": "museum",
+  "typeLabel": "Mineral",
+  "url": "/museum/neptunite/",
+  "desc": "mineral · Magma Geode, Omni Geode · sell 400g"
+ },
+ {
+  "name": "Networking",
+  "type": "achievement",
+  "typeLabel": "Achievement",
+  "url": "/achievements/networking/",
+  "desc": "Reach a 5-heart friend level with 10 people. · reward: Santa Hat"
+ },
+ {
+  "name": "Night Fishing Bundle",
+  "type": "bundle",
+  "typeLabel": "Bundle",
+  "url": "/bundles/",
+  "desc": "fish-tank"
+ },
+ {
+  "name": "Obsidian",
+  "type": "museum",
+  "typeLabel": "Mineral",
+  "url": "/museum/obsidian/",
+  "desc": "mineral · Magma Geode, Omni Geode · sell 200g"
+ },
+ {
+  "name": "Obsidian Edge",
+  "type": "weapon",
+  "typeLabel": "Weapon",
+  "url": "/weapons/obsidian-edge/",
+  "desc": "Damage ? · speed -1 · sell 300g"
+ },
+ {
+  "name": "Ocean Fish Bundle",
+  "type": "bundle",
+  "typeLabel": "Bundle",
+  "url": "/bundles/",
+  "desc": "fish-tank"
+ },
+ {
+  "name": "Ocean Stone",
+  "type": "museum",
+  "typeLabel": "Mineral",
+  "url": "/museum/ocean-stone/",
+  "desc": "mineral · Frozen Geode, Omni Geode · sell 220g"
+ },
+ {
+  "name": "Octopus",
+  "type": "fish",
+  "typeLabel": "Fish",
+  "url": "/fish/octopus/",
+  "desc": "Various · sell 150g"
+ },
+ {
+  "name": "Ol' Mariner",
+  "type": "achievement",
+  "typeLabel": "Achievement",
+  "url": "/achievements/ol-mariner/",
+  "desc": "Catch 24 different fish. · reward: Official Cap"
+ },
+ {
+  "name": "Omelet",
+  "type": "recipe",
+  "typeLabel": "Recipe",
+  "url": "/recipes/omelet/",
+  "desc": "Any Egg, Any Milk · sell 125g"
+ },
+ {
+  "name": "Opal",
+  "type": "museum",
+  "typeLabel": "Mineral",
+  "url": "/museum/opal/",
+  "desc": "mineral · Frozen Geode, Omni Geode · sell 150g"
+ },
+ {
+  "name": "Ornamental Fan",
+  "type": "museum",
+  "typeLabel": "Artifact",
+  "url": "/museum/ornamental-fan/",
+  "desc": "Artifact · Beach (1.6%), Forest (0.7%) · sell 300g"
+ },
+ {
+  "name": "Orpiment",
+  "type": "museum",
+  "typeLabel": "Mineral",
+  "url": "/museum/orpiment/",
+  "desc": "mineral · Geode, Omni Geode · sell 80g"
+ },
+ {
+  "name": "Ossified Blade",
+  "type": "weapon",
+  "typeLabel": "Weapon",
+  "url": "/weapons/ossified-blade/",
+  "desc": "Damage ? · speed -2 · sell 300g"
+ },
+ {
+  "name": "Oyster",
+  "type": "fish",
+  "typeLabel": "Fish",
+  "url": "/fish/oyster/",
+  "desc": "Various · sell 40g"
+ },
+ {
+  "name": "Pale Broth",
+  "type": "recipe",
+  "typeLabel": "Recipe",
+  "url": "/recipes/pale-broth/",
+  "desc": "White Algae · sell 150g"
+ },
+ {
+  "name": "Palm Fossil",
+  "type": "museum",
+  "typeLabel": "Artifact",
+  "url": "/museum/palm-fossil/",
+  "desc": "Artifact · Desert (7%), Forest (0.6-5%) · sell 100g"
+ },
+ {
+  "name": "Pam",
+  "type": "villager",
+  "typeLabel": "NPC",
+  "url": "/npc/pam-loved-gifts/",
+  "desc": "Pam is a villager who lives in the trailer west of the river in Pelican Town. She drives the Pelican Town bus…"
+ },
+ {
+  "name": "Pan",
+  "type": "tool",
+  "typeLabel": "Tool",
+  "url": "/tools/pan/",
+  "desc": "Gather ore, gems, and other items from shimmering spots in water. Higher upgrades increase yield and chance f…"
+ },
+ {
+  "name": "Pancakes",
+  "type": "recipe",
+  "typeLabel": "Recipe",
+  "url": "/recipes/pancakes/",
+  "desc": "Wheat Flour, Any Egg · sell 80g"
+ },
+ {
+  "name": "Parsnip",
+  "type": "crop",
+  "typeLabel": "Crop",
+  "url": "/crops/parsnip/",
+  "desc": "Spring · grow 4d · sell 35g · A spring tuber closely related to the carrot. It has a sweet, fresh taste."
+ },
+ {
+  "name": "Parsnip Soup",
+  "type": "recipe",
+  "typeLabel": "Recipe",
+  "url": "/recipes/parsnip-soup/",
+  "desc": "Parsnip, Any Milk, Vinegar · sell 120g"
+ },
+ {
+  "name": "Penny",
+  "type": "villager",
+  "typeLabel": "NPC",
+  "url": "/npc/penny-loved-gifts/",
+  "desc": "Penny is a villager who lives in Pelican Town and is one of the twelve characters available to marry. She is…"
+ },
+ {
+  "name": "Penny's Fryer",
+  "type": "weapon",
+  "typeLabel": "Weapon",
+  "url": "/weapons/pennys-fryer/",
+  "desc": "Damage ? · speed -2 · sell 350g"
+ },
+ {
+  "name": "Pepper Poppers",
+  "type": "recipe",
+  "typeLabel": "Recipe",
+  "url": "/recipes/pepper-poppers/",
+  "desc": "Hot Pepper, Cheese · sell 200g"
+ },
+ {
+  "name": "Pepper Rex",
+  "type": "monster",
+  "typeLabel": "Monster",
+  "url": "/monsters/pepper-rex/",
+  "desc": "HP 300 · damage 15 · XP 7"
+ },
+ {
+  "name": "Perch",
+  "type": "fish",
+  "typeLabel": "Fish",
+  "url": "/fish/perch/",
+  "desc": "Various · sell 55g"
+ },
+ {
+  "name": "Perfection",
+  "type": "achievement",
+  "typeLabel": "Achievement",
+  "url": "/achievements/perfection/",
+  "desc": "Reach the summit. · reward: Junimo Hat"
+ },
+ {
+  "name": "Periwinkle",
+  "type": "fish",
+  "typeLabel": "Fish",
+  "url": "/fish/periwinkle/",
+  "desc": "Various · sell 20g"
+ },
+ {
+  "name": "Petrified Slime",
+  "type": "museum",
+  "typeLabel": "Mineral",
+  "url": "/museum/petrified-slime/",
+  "desc": "mineral · Geode, Omni Geode · sell 120g"
+ },
+ {
+  "name": "Pickaxe",
+  "type": "tool",
+  "typeLabel": "Tool",
+  "url": "/tools/pickaxe/",
+  "desc": "Break rocks and mine ore. Higher upgrades break tougher rocks and allow picking up placed items."
+ },
+ {
+  "name": "Pierre",
+  "type": "villager",
+  "typeLabel": "NPC",
+  "url": "/npc/pierre-loved-gifts/",
+  "desc": "Pierre is a villager who lives in Pelican Town. He owns and runs Pierre's General Store."
+ },
+ {
+  "name": "Pike",
+  "type": "fish",
+  "typeLabel": "Fish",
+  "url": "/fish/pike/",
+  "desc": "Various · sell 100g"
+ },
+ {
+  "name": "Pineapple",
+  "type": "crop",
+  "typeLabel": "Crop",
+  "url": "/crops/pineapple/",
+  "desc": "Summer/Ginger Island · grow 14d · sell 300g · A prickly, succulent fruit found in tropical climates."
+ },
+ {
+  "name": "Pink Cake",
+  "type": "recipe",
+  "typeLabel": "Recipe",
+  "url": "/recipes/pink-cake/",
+  "desc": "Melon, Wheat Flour, Sugar, Any Egg · sell 480g"
+ },
+ {
+  "name": "Pirate's Sword",
+  "type": "weapon",
+  "typeLabel": "Weapon",
+  "url": "/weapons/pirates-sword/",
+  "desc": "Damage ? · speed 2 · sell 100g"
+ },
+ {
+  "name": "Pizza",
+  "type": "recipe",
+  "typeLabel": "Recipe",
+  "url": "/recipes/pizza/",
+  "desc": "Wheat Flour, Tomato, Cheese · sell 300g"
+ },
+ {
+  "name": "Plum Pudding",
+  "type": "recipe",
+  "typeLabel": "Recipe",
+  "url": "/recipes/plum-pudding/",
+  "desc": "Wild Plum, Wheat Flour, Sugar · sell 260g"
+ },
+ {
+  "name": "Poi",
+  "type": "recipe",
+  "typeLabel": "Recipe",
+  "url": "/recipes/poi/",
+  "desc": "Taro Root · sell 400g"
+ },
+ {
+  "name": "Polyculture",
+  "type": "achievement",
+  "typeLabel": "Achievement",
+  "url": "/achievements/polyculture/",
+  "desc": "Ship 15 of each crop. · reward: Cowpoke Hat"
+ },
+ {
+  "name": "Poppy",
+  "type": "crop",
+  "typeLabel": "Crop",
+  "url": "/crops/poppy/",
+  "desc": "Summer · grow 7d · sell 140g · The poppy is a sweet, delicate flower with a bold and powerful flavor."
+ },
+ {
+  "name": "Poppyseed Muffin",
+  "type": "recipe",
+  "typeLabel": "Recipe",
+  "url": "/recipes/poppyseed-muffin/",
+  "desc": "Poppy, Wheat Flour, Sugar · sell 250g"
+ },
+ {
+  "name": "Popular",
+  "type": "achievement",
+  "typeLabel": "Achievement",
+  "url": "/achievements/popular/",
+  "desc": "Reach a 5-heart friend level with 20 people. · reward: Earmuffs"
+ },
+ {
+  "name": "Potato",
+  "type": "crop",
+  "typeLabel": "Crop",
+  "url": "/crops/potato/",
+  "desc": "Spring · grow 6d · sell 80g · A widely cultivated plant, the potato is one of the most important food crops i…"
+ },
+ {
+  "name": "Powdermelon",
+  "type": "crop",
+  "typeLabel": "Crop",
+  "url": "/crops/powdermelon/",
+  "desc": "Winter · grow 7d · sell 60g · A mysterious pale melon that flourishes in winter."
+ },
+ {
+  "name": "Prairie King",
+  "type": "achievement",
+  "typeLabel": "Achievement",
+  "url": "/achievements/prairie-king/",
+  "desc": "Beat 'Journey of the Prairie King'. · reward: Prairie King Arcade System"
+ },
+ {
+  "name": "Prehistoric Handaxe",
+  "type": "museum",
+  "typeLabel": "Artifact",
+  "url": "/museum/prehistoric-handaxe/",
+  "desc": "Artifact · Bus Stop (4%), Mountain (3%) · sell 50g"
+ },
+ {
+  "name": "Prehistoric Rib",
+  "type": "museum",
+  "typeLabel": "Artifact",
+  "url": "/museum/prehistoric-rib/",
+  "desc": "Artifact · Town (2-4%), Farm (0.8%) · sell 100g"
+ },
+ {
+  "name": "Prehistoric Scapula",
+  "type": "museum",
+  "typeLabel": "Artifact",
+  "url": "/museum/prehistoric-scapula/",
+  "desc": "Artifact · Forest (3-6%), Town (0.7%) · sell 100g"
+ },
+ {
+  "name": "Prehistoric Skull",
+  "type": "museum",
+  "typeLabel": "Artifact",
+  "url": "/museum/prehistoric-skull/",
+  "desc": "Artifact · Mountain (0.6-6%), Haunted Skull drop (1.3%) · sell 100g"
+ },
+ {
+  "name": "Prehistoric Tibia",
+  "type": "museum",
+  "typeLabel": "Artifact",
+  "url": "/museum/prehistoric-tibia/",
+  "desc": "Artifact · Railroad (4-8%), Forest (0.6%) · sell 100g"
+ },
+ {
+  "name": "Prehistoric Tool",
+  "type": "museum",
+  "typeLabel": "Artifact",
+  "url": "/museum/prehistoric-tool/",
+  "desc": "Artifact · Bus Stop (3%), Forest (2.1%) · sell 50g"
+ },
+ {
+  "name": "Prehistoric Vertebra",
+  "type": "museum",
+  "typeLabel": "Artifact",
+  "url": "/museum/prehistoric-vertebra/",
+  "desc": "Artifact · Bus Stop (0.7-5%), Pepper Rex drop (30%) · sell 100g"
+ },
+ {
+  "name": "Prismatic Shard",
+  "type": "museum",
+  "typeLabel": "Mineral",
+  "url": "/museum/prismatic-shard/",
+  "desc": "mineral · Iridium Node (4%), Mystic Stone (25%) · sell 2000g"
+ },
+ {
+  "name": "Prismatic Slime",
+  "type": "monster",
+  "typeLabel": "Monster",
+  "url": "/monsters/prismatic-slime/",
+  "desc": "HP 1000 · damage 35 · XP 10"
+ },
+ {
+  "name": "Protector Of The Valley",
+  "type": "achievement",
+  "typeLabel": "Achievement",
+  "url": "/achievements/protector-of-the-valley/",
+  "desc": "Complete all of the Adventure Guild Monster Slayer goals. · reward: None"
+ },
+ {
+  "name": "Pufferfish",
+  "type": "fish",
+  "typeLabel": "Fish",
+  "url": "/fish/pufferfish/",
+  "desc": "Various · sell 200g"
+ },
+ {
+  "name": "Pumpkin",
+  "type": "crop",
+  "typeLabel": "Crop",
+  "url": "/crops/pumpkin/",
+  "desc": "Fall · grow 13d · sell 320g · A fall favorite, grown for its flavor and its festive orange color."
+ },
+ {
+  "name": "Pumpkin Pie",
+  "type": "recipe",
+  "typeLabel": "Recipe",
+  "url": "/recipes/pumpkin-pie/",
+  "desc": "Pumpkin, Wheat Flour, Any Milk, Sugar · sell 385g"
+ },
+ {
+  "name": "Pumpkin Soup",
+  "type": "recipe",
+  "typeLabel": "Recipe",
+  "url": "/recipes/pumpkin-soup/",
+  "desc": "Pumpkin, Any Milk · sell 300g"
+ },
+ {
+  "name": "Putrid Ghost",
+  "type": "monster",
+  "typeLabel": "Monster",
+  "url": "/boss/putrid-ghost/",
+  "desc": "HP 500 · damage 25 · XP 25"
+ },
+ {
+  "name": "Pyrite",
+  "type": "museum",
+  "typeLabel": "Mineral",
+  "url": "/museum/pyrite/",
+  "desc": "mineral · Frozen Geode, Omni Geode · sell 120g"
+ },
+ {
+  "name": "Qi Fruit",
+  "type": "crop",
+  "typeLabel": "Crop",
+  "url": "/crops/qi-fruit/",
+  "desc": "Spring/Summer/Fall/Winter · grow 4d · sell 1g · A fruit imbued with the essence of Qi. Used to complete Qi's…"
+ },
+ {
+  "name": "Quality Crops Bundle",
+  "type": "bundle",
+  "typeLabel": "Bundle",
+  "url": "/bundles/",
+  "desc": "pantry"
+ },
+ {
+  "name": "Quality Crops Bundle",
+  "type": "bundle",
+  "typeLabel": "Bundle",
+  "url": "/bundles/",
+  "desc": "pantry"
+ },
+ {
+  "name": "Quality Fish Bundle",
+  "type": "bundle",
+  "typeLabel": "Bundle",
+  "url": "/bundles/",
+  "desc": "fish-tank"
+ },
+ {
+  "name": "Quartz",
+  "type": "museum",
+  "typeLabel": "Mineral",
+  "url": "/museum/quartz/",
+  "desc": "mineral · The Mines (Floors 1-120), Garbage Can · sell 25g"
+ },
+ {
+  "name": "Radioactive Carp",
+  "type": "fish",
+  "typeLabel": "Fish",
+  "url": "/fish/radioactive-carp/",
+  "desc": "Various · sell 1000g"
+ },
+ {
+  "name": "Radish",
+  "type": "crop",
+  "typeLabel": "Crop",
+  "url": "/crops/radish/",
+  "desc": "Summer · grow 6d · sell 90g · A crisp, peppery vegetable used in many summer salads and dishes."
+ },
+ {
+  "name": "Radish Salad",
+  "type": "recipe",
+  "typeLabel": "Recipe",
+  "url": "/recipes/radish-salad/",
+  "desc": "Oil, Vinegar, Radish · sell 300g"
+ },
+ {
+  "name": "Rainbow Trout",
+  "type": "fish",
+  "typeLabel": "Fish",
+  "url": "/fish/rainbow-trout/",
+  "desc": "Various · sell 65g"
+ },
+ {
+  "name": "Rare Crops Bundle",
+  "type": "bundle",
+  "typeLabel": "Bundle",
+  "url": "/bundles/",
+  "desc": "pantry"
+ },
+ {
+  "name": "Rare Disc",
+  "type": "museum",
+  "typeLabel": "Artifact",
+  "url": "/museum/rare-disc/",
+  "desc": "Artifact · Fishing Treasure Chest, Most Bats (0.1%) · sell 300g"
+ },
+ {
+  "name": "Red Cabbage",
+  "type": "crop",
+  "typeLabel": "Crop",
+  "url": "/crops/red-cabbage/",
+  "desc": "Summer · grow 9d · sell 260g · A blushing vegetable available from Pierre's starting in year two."
+ },
+ {
+  "name": "Red Mullet",
+  "type": "fish",
+  "typeLabel": "Fish",
+  "url": "/fish/red-mullet/",
+  "desc": "Various · sell 75g"
+ },
+ {
+  "name": "Red Plate",
+  "type": "recipe",
+  "typeLabel": "Recipe",
+  "url": "/recipes/red-plate/",
+  "desc": "Red Cabbage, Radish · sell 400g"
+ },
+ {
+  "name": "Red Snapper",
+  "type": "fish",
+  "typeLabel": "Fish",
+  "url": "/fish/red-snapper/",
+  "desc": "Various · sell 50g"
+ },
+ {
+  "name": "Rhubarb",
+  "type": "crop",
+  "typeLabel": "Crop",
+  "url": "/crops/rhubarb/",
+  "desc": "Spring · grow 13d · sell 220g · A spring crop sold at the Oasis Shop. It's tart but flavorful when cooked."
+ },
+ {
+  "name": "Rhubarb Pie",
+  "type": "recipe",
+  "typeLabel": "Recipe",
+  "url": "/recipes/rhubarb-pie/",
+  "desc": "Rhubarb, Wheat Flour, Sugar · sell 400g"
+ },
+ {
+  "name": "Rice Pudding",
+  "type": "recipe",
+  "typeLabel": "Recipe",
+  "url": "/recipes/rice-pudding/",
+  "desc": "Any Milk, Sugar, Rice · sell 260g"
+ },
+ {
+  "name": "River Fish Bundle",
+  "type": "bundle",
+  "typeLabel": "Bundle",
+  "url": "/bundles/",
+  "desc": "fish-tank"
+ },
+ {
+  "name": "River Jelly",
+  "type": "fish",
+  "typeLabel": "Fish",
+  "url": "/fish/river-jelly/",
+  "desc": "Various · sell 125g"
+ },
+ {
+  "name": "Roasted Hazelnuts",
+  "type": "recipe",
+  "typeLabel": "Recipe",
+  "url": "/recipes/roasted-hazelnuts/",
+  "desc": "Hazelnut · sell 270g"
+ },
+ {
+  "name": "Robin",
+  "type": "villager",
+  "typeLabel": "NPC",
+  "url": "/npc/robin-loved-gifts/",
+  "desc": "Robin is a villager who resides at 24 Mountain Road with her husband Demetrius, daughter Maru, and son Sebast…"
+ },
+ {
+  "name": "Rock Crab",
+  "type": "monster",
+  "typeLabel": "Monster",
+  "url": "/monsters/rock-crab/",
+  "desc": "HP 30 · damage 5 · XP 4"
+ },
+ {
+  "name": "Roots Platter",
+  "type": "recipe",
+  "typeLabel": "Recipe",
+  "url": "/recipes/roots-platter/",
+  "desc": "Cave Carrot, Winter Root · sell 100g"
+ },
+ {
+  "name": "Royal Serpent",
+  "type": "monster",
+  "typeLabel": "Monster",
+  "url": "/boss/royal-serpent/",
+  "desc": "HP 150 · damage 23 · XP 20"
+ },
+ {
+  "name": "Ruby",
+  "type": "museum",
+  "typeLabel": "Mineral",
+  "url": "/museum/ruby/",
+  "desc": "mineral · Ruby Node, Gem Node · sell 250g"
+ },
+ {
+  "name": "Rusty Cog",
+  "type": "museum",
+  "typeLabel": "Artifact",
+  "url": "/museum/rusty-cog/",
+  "desc": "Artifact · Mountain (4%), Tilling in Mines/Skull Cavern · sell 25g"
+ },
+ {
+  "name": "Rusty Spoon",
+  "type": "museum",
+  "typeLabel": "Artifact",
+  "url": "/museum/rusty-spoon/",
+  "desc": "Artifact · Town (4-11%), Fishing Treasure Chest · sell 25g"
+ },
+ {
+  "name": "Rusty Spur",
+  "type": "museum",
+  "typeLabel": "Artifact",
+  "url": "/museum/rusty-spur/",
+  "desc": "Artifact · Farm (10%), Fishing Treasure Chest · sell 25g"
+ },
+ {
+  "name": "Rusty Sword",
+  "type": "weapon",
+  "typeLabel": "Weapon",
+  "url": "/weapons/rusty-sword/",
+  "desc": "Damage ? · speed 0 · sell 50g"
+ },
+ {
+  "name": "Salad",
+  "type": "recipe",
+  "typeLabel": "Recipe",
+  "url": "/recipes/salad/",
+  "desc": "Leek, Dandelion, Vinegar · sell 110g"
+ },
+ {
+  "name": "Salmon",
+  "type": "fish",
+  "typeLabel": "Fish",
+  "url": "/fish/salmon/",
+  "desc": "Various · sell 75g"
+ },
+ {
+  "name": "Salmon Dinner",
+  "type": "recipe",
+  "typeLabel": "Recipe",
+  "url": "/recipes/salmon-dinner/",
+  "desc": "Salmon, Amaranth, Kale · sell 300g"
+ },
+ {
+  "name": "Sam",
+  "type": "villager",
+  "typeLabel": "NPC",
+  "url": "/npc/sam-loved-gifts/",
+  "desc": "Sam is a villager who lives in Pelican Town and is one of the twelve characters available to marry."
+ },
+ {
+  "name": "Sam's Old Guitar",
+  "type": "weapon",
+  "typeLabel": "Weapon",
+  "url": "/weapons/sams-old-guitar/",
+  "desc": "Damage ? · speed -2 · sell 350g"
+ },
+ {
+  "name": "Sandfish",
+  "type": "fish",
+  "typeLabel": "Fish",
+  "url": "/fish/sandfish/",
+  "desc": "Various · sell 75g"
+ },
+ {
+  "name": "Sandstone",
+  "type": "museum",
+  "typeLabel": "Mineral",
+  "url": "/museum/sandstone/",
+  "desc": "mineral · Geode, Omni Geode · sell 60g"
+ },
+ {
+  "name": "Sandy",
+  "type": "villager",
+  "typeLabel": "NPC",
+  "url": "/npc/sandy-loved-gifts/",
+  "desc": "Sandy is a villager who operates the Oasis shop in the Calico Desert."
+ },
+ {
+  "name": "Sardine",
+  "type": "fish",
+  "typeLabel": "Fish",
+  "url": "/fish/sardine/",
+  "desc": "Various · sell 40g"
+ },
+ {
+  "name": "Sashimi",
+  "type": "recipe",
+  "typeLabel": "Recipe",
+  "url": "/recipes/sashimi/",
+  "desc": "Any Fish · sell 75g"
+ },
+ {
+  "name": "Scorpion Carp",
+  "type": "fish",
+  "typeLabel": "Fish",
+  "url": "/fish/scorpion-carp/",
+  "desc": "Various · sell 150g"
+ },
+ {
+  "name": "Scythe",
+  "type": "tool",
+  "typeLabel": "Tool",
+  "url": "/tools/scythe/",
+  "desc": "Cuts grass into hay when a Silo is present. Harvests some crops."
+ },
+ {
+  "name": "Sea Cucumber",
+  "type": "fish",
+  "typeLabel": "Fish",
+  "url": "/fish/sea-cucumber/",
+  "desc": "Various · sell 75g"
+ },
+ {
+  "name": "Sea Jelly",
+  "type": "fish",
+  "typeLabel": "Fish",
+  "url": "/fish/sea-jelly/",
+  "desc": "Various · sell 200g"
+ },
+ {
+  "name": "Seafoam Pudding",
+  "type": "recipe",
+  "typeLabel": "Recipe",
+  "url": "/recipes/seafoam-pudding/",
+  "desc": "Flounder, Midnight Carp, Squid Ink · sell 300g"
+ },
+ {
+  "name": "Seaweed",
+  "type": "fish",
+  "typeLabel": "Fish",
+  "url": "/fish/seaweed/",
+  "desc": "Various · sell 20g"
+ },
+ {
+  "name": "Seb's Lost Mace",
+  "type": "weapon",
+  "typeLabel": "Weapon",
+  "url": "/weapons/sebs-lost-mace/",
+  "desc": "Damage ? · speed -2 · sell 350g"
+ },
+ {
+  "name": "Sebastian",
+  "type": "villager",
+  "typeLabel": "NPC",
+  "url": "/npc/sebastian-loved-gifts/",
+  "desc": "Sebastian is a villager who lives in the basement of 24 Mountain Road. He is one of the twelve characters ava…"
+ },
+ {
+  "name": "Serpent",
+  "type": "monster",
+  "typeLabel": "Monster",
+  "url": "/monsters/serpent/",
+  "desc": "HP 150 · damage 23 · XP 20"
+ },
+ {
+  "name": "Shad",
+  "type": "fish",
+  "typeLabel": "Fish",
+  "url": "/fish/shad/",
+  "desc": "Various · sell 60g"
+ },
+ {
+  "name": "Shadow Brute",
+  "type": "monster",
+  "typeLabel": "Monster",
+  "url": "/monsters/shadow-brute/",
+  "desc": "HP 160 · damage 18 · XP 15"
+ },
+ {
+  "name": "Shadow Dagger",
+  "type": "weapon",
+  "typeLabel": "Weapon",
+  "url": "/weapons/shadow-dagger/",
+  "desc": "Damage ? · speed 0 · sell 200g"
+ },
+ {
+  "name": "Shadow Shaman",
+  "type": "monster",
+  "typeLabel": "Monster",
+  "url": "/monsters/shadow-shaman/",
+  "desc": "HP 80 · damage 17 · XP 15"
+ },
+ {
+  "name": "Shadow Sniper",
+  "type": "monster",
+  "typeLabel": "Monster",
+  "url": "/boss/shadow-sniper/",
+  "desc": "HP 300 · damage 18 · XP 20"
+ },
+ {
+  "name": "Shane",
+  "type": "villager",
+  "typeLabel": "NPC",
+  "url": "/npc/shane-loved-gifts/",
+  "desc": "Shane is a villager who lives at Marnie's Ranch in Pelican Town. He is one of the twelve characters available…"
+ },
+ {
+  "name": "Shears",
+  "type": "tool",
+  "typeLabel": "Tool",
+  "url": "/tools/shears/",
+  "desc": "Collect wool from sheep and rabbits."
+ },
+ {
+  "name": "Shrimp",
+  "type": "fish",
+  "typeLabel": "Fish",
+  "url": "/fish/shrimp/",
+  "desc": "Various · sell 60g"
+ },
+ {
+  "name": "Shrimp Cocktail",
+  "type": "recipe",
+  "typeLabel": "Recipe",
+  "url": "/recipes/shrimp-cocktail/",
+  "desc": "Shrimp, Tomato, Wild Horseradish · sell 160g"
+ },
+ {
+  "name": "Silver Saber",
+  "type": "weapon",
+  "typeLabel": "Weapon",
+  "url": "/weapons/silver-saber/",
+  "desc": "Damage ? · speed 0 · sell 100g"
+ },
+ {
+  "name": "Singular Talent",
+  "type": "achievement",
+  "typeLabel": "Achievement",
+  "url": "/achievements/singular-talent/",
+  "desc": "Reach level 10 in a skill. · reward: None"
+ },
+ {
+  "name": "Skeletal Hand",
+  "type": "museum",
+  "typeLabel": "Artifact",
+  "url": "/museum/skeletal-hand/",
+  "desc": "Artifact · Backwoods (4-8%), Beach (0.6%) · sell 100g"
+ },
+ {
+  "name": "Skeletal Tail",
+  "type": "museum",
+  "typeLabel": "Artifact",
+  "url": "/museum/skeletal-tail/",
+  "desc": "Artifact · Tilling in Mines/Skull Cavern, Fishing Treasure Chest (3.1-3.4%) · sell 100g"
+ },
+ {
+  "name": "Skeleton",
+  "type": "monster",
+  "typeLabel": "Monster",
+  "url": "/monsters/skeleton/",
+  "desc": "HP 140 · damage 10 · XP 8"
+ },
+ {
+  "name": "Skeleton Mage",
+  "type": "monster",
+  "typeLabel": "Monster",
+  "url": "/boss/skeleton-mage/",
+  "desc": "HP 60 · damage 5 · XP 8"
+ },
+ {
+  "name": "Slate",
+  "type": "museum",
+  "typeLabel": "Mineral",
+  "url": "/museum/slate/",
+  "desc": "mineral · Geode, Omni Geode · sell 85g"
+ },
+ {
+  "name": "Slimejack",
+  "type": "fish",
+  "typeLabel": "Fish",
+  "url": "/fish/slimejack/",
+  "desc": "Various · sell 100g"
+ },
+ {
+  "name": "Slingshot",
+  "type": "weapon",
+  "typeLabel": "Weapon",
+  "url": "/weapons/slingshot/",
+  "desc": "Damage ? · speed ? · sell 50g"
+ },
+ {
+  "name": "Smallmouth Bass",
+  "type": "fish",
+  "typeLabel": "Fish",
+  "url": "/fish/smallmouth-bass/",
+  "desc": "Various · sell 50g"
+ },
+ {
+  "name": "Snail",
+  "type": "fish",
+  "typeLabel": "Fish",
+  "url": "/fish/snail/",
+  "desc": "Various · sell 65g"
+ },
+ {
+  "name": "Soapstone",
+  "type": "museum",
+  "typeLabel": "Mineral",
+  "url": "/museum/soapstone/",
+  "desc": "mineral · Frozen Geode, Omni Geode · sell 120g"
+ },
+ {
+  "name": "Son of Crimsonfish",
+  "type": "fish",
+  "typeLabel": "Fish",
+  "url": "/fish/son-of-crimsonfish/",
+  "desc": "Various · sell 1500g"
+ },
+ {
+  "name": "Sous Chef",
+  "type": "achievement",
+  "typeLabel": "Achievement",
+  "url": "/achievements/sous-chef/",
+  "desc": "Cook 25 different recipes. · reward: Plum Chapeau"
+ },
+ {
+  "name": "Spaghetti",
+  "type": "recipe",
+  "typeLabel": "Recipe",
+  "url": "/recipes/spaghetti/",
+  "desc": "Wheat Flour, Tomato · sell 120g"
+ },
+ {
+  "name": "Specialty Fish Bundle",
+  "type": "bundle",
+  "typeLabel": "Bundle",
+  "url": "/bundles/",
+  "desc": "fish-tank"
+ },
+ {
+  "name": "Spicy Eel",
+  "type": "recipe",
+  "typeLabel": "Recipe",
+  "url": "/recipes/spicy-eel/",
+  "desc": "Eel, Hot Pepper · sell 175g"
+ },
+ {
+  "name": "Spider",
+  "type": "monster",
+  "typeLabel": "Monster",
+  "url": "/boss/spider/",
+  "desc": "HP 200 · damage 15 · XP 15"
+ },
+ {
+  "name": "Spirit's Eve Bundle",
+  "type": "bundle",
+  "typeLabel": "Bundle",
+  "url": "/bundles/",
+  "desc": "bulletin-board"
+ },
+ {
+  "name": "Spook Fish",
+  "type": "fish",
+  "typeLabel": "Fish",
+  "url": "/fish/spook-fish/",
+  "desc": "Various · sell 220g"
+ },
+ {
+  "name": "Spring Crops Bundle",
+  "type": "bundle",
+  "typeLabel": "Bundle",
+  "url": "/bundles/",
+  "desc": "pantry"
+ },
+ {
+  "name": "Spring Crops Bundle",
+  "type": "bundle",
+  "typeLabel": "Bundle",
+  "url": "/bundles/",
+  "desc": "pantry"
+ },
+ {
+  "name": "Spring Foraging Bundle",
+  "type": "bundle",
+  "typeLabel": "Bundle",
+  "url": "/bundles/",
+  "desc": "crafts-room"
+ },
+ {
+  "name": "Spring Foraging Bundle",
+  "type": "bundle",
+  "typeLabel": "Bundle",
+  "url": "/bundles/",
+  "desc": "crafts-room"
+ },
+ {
+  "name": "Squid",
+  "type": "fish",
+  "typeLabel": "Fish",
+  "url": "/fish/squid/",
+  "desc": "Various · sell 80g"
+ },
+ {
+  "name": "Squid Ink Ravioli",
+  "type": "recipe",
+  "typeLabel": "Recipe",
+  "url": "/recipes/squid-ink-ravioli/",
+  "desc": "Squid Ink, Wheat Flour, Tomato · sell 150g"
+ },
+ {
+  "name": "Squid Kid",
+  "type": "monster",
+  "typeLabel": "Monster",
+  "url": "/monsters/squid-kid/",
+  "desc": "HP 1 · damage 18 · XP 15"
+ },
+ {
+  "name": "Star Shards",
+  "type": "museum",
+  "typeLabel": "Mineral",
+  "url": "/museum/star-shards/",
+  "desc": "mineral · Magma Geode, Omni Geode · sell 500g"
+ },
+ {
+  "name": "Starfruit",
+  "type": "crop",
+  "typeLabel": "Crop",
+  "url": "/crops/starfruit/",
+  "desc": "Summer · grow 13d · sell 750g · A delicious fruit that is said to be the sweetest thing you can grow."
+ },
+ {
+  "name": "Steel Falchion",
+  "type": "weapon",
+  "typeLabel": "Weapon",
+  "url": "/weapons/steel-falchion/",
+  "desc": "Damage ? · speed 4 · sell 400g"
+ },
+ {
+  "name": "Steel Smallsword",
+  "type": "weapon",
+  "typeLabel": "Weapon",
+  "url": "/weapons/steel-smallsword/",
+  "desc": "Damage ? · speed 2 · sell 50g"
+ },
+ {
+  "name": "Stick Bug",
+  "type": "monster",
+  "typeLabel": "Monster",
+  "url": "/boss/stick-bug/",
+  "desc": "HP 700 · damage 20 · XP 4"
+ },
+ {
+  "name": "Sticky Bundle",
+  "type": "bundle",
+  "typeLabel": "Bundle",
+  "url": "/bundles/",
+  "desc": "crafts-room"
+ },
+ {
+  "name": "Stingray",
+  "type": "fish",
+  "typeLabel": "Fish",
+  "url": "/fish/stingray/",
+  "desc": "Various · sell 180g"
+ },
+ {
+  "name": "Stir Fry",
+  "type": "recipe",
+  "typeLabel": "Recipe",
+  "url": "/recipes/stir-fry/",
+  "desc": "Cave Carrot, Common Mushroom, Kale, Oil · sell 335g"
+ },
+ {
+  "name": "Stone Golem",
+  "type": "monster",
+  "typeLabel": "Monster",
+  "url": "/monsters/stone-golem/",
+  "desc": "HP 45 · damage 5 · XP 5"
+ },
+ {
+  "name": "Stonefish",
+  "type": "fish",
+  "typeLabel": "Fish",
+  "url": "/fish/stonefish/",
+  "desc": "Various · sell 300g"
+ },
+ {
+  "name": "Strange Bun",
+  "type": "recipe",
+  "typeLabel": "Recipe",
+  "url": "/recipes/strange-bun/",
+  "desc": "Wheat Flour, Periwinkle, Void Mayonnaise · sell 225g"
+ },
+ {
+  "name": "Strange Doll (green)",
+  "type": "museum",
+  "typeLabel": "Artifact",
+  "url": "/museum/strange-doll-green/",
+  "desc": "Artifact · Various dig spots (very rare), Fishing Treasure Chest · sell 1000g"
+ },
+ {
+  "name": "Strange Doll (yellow)",
+  "type": "museum",
+  "typeLabel": "Artifact",
+  "url": "/museum/strange-doll-yellow/",
+  "desc": "Artifact · Various dig spots (very rare), Fishing Treasure Chest · sell 1000g"
+ },
+ {
+  "name": "Strawberry",
+  "type": "crop",
+  "typeLabel": "Crop",
+  "url": "/crops/strawberry/",
+  "desc": "Spring · grow 8d · sell 120g · This plump, delicious berry will continue to produce after the first harvest."
+ },
+ {
+  "name": "Stuffing",
+  "type": "recipe",
+  "typeLabel": "Recipe",
+  "url": "/recipes/stuffing/",
+  "desc": "Bread, Cranberries, Hazelnut · sell 165g"
+ },
+ {
+  "name": "Sturgeon",
+  "type": "fish",
+  "typeLabel": "Fish",
+  "url": "/fish/sturgeon/",
+  "desc": "Various · sell 200g"
+ },
+ {
+  "name": "Summer Crops Bundle",
+  "type": "bundle",
+  "typeLabel": "Bundle",
+  "url": "/bundles/",
+  "desc": "pantry"
+ },
+ {
+  "name": "Summer Crops Bundle",
+  "type": "bundle",
+  "typeLabel": "Bundle",
+  "url": "/bundles/",
+  "desc": "pantry"
+ },
+ {
+  "name": "Summer Foraging Bundle",
+  "type": "bundle",
+  "typeLabel": "Bundle",
+  "url": "/bundles/",
+  "desc": "crafts-room"
+ },
+ {
+  "name": "Summer Spangle",
+  "type": "crop",
+  "typeLabel": "Crop",
+  "url": "/crops/summer-spangle/",
+  "desc": "Summer · grow 8d · sell 90g · A tropical bloom that thrives in the summer heat."
+ },
+ {
+  "name": "Summer Squash",
+  "type": "crop",
+  "typeLabel": "Crop",
+  "url": "/crops/summer-squash/",
+  "desc": "Summer · grow 6d · sell 45g · A versatile summer squash that's great for cooking."
+ },
+ {
+  "name": "Sunfish",
+  "type": "fish",
+  "typeLabel": "Fish",
+  "url": "/fish/sunfish/",
+  "desc": "Various · sell 30g"
+ },
+ {
+  "name": "Sunflower",
+  "type": "crop",
+  "typeLabel": "Crop",
+  "url": "/crops/sunflower/",
+  "desc": "Summer/Fall · grow 8d · sell 80g · A giant, warming flower that also produces useful seeds."
+ },
+ {
+  "name": "Super Cucumber",
+  "type": "fish",
+  "typeLabel": "Fish",
+  "url": "/fish/super-cucumber/",
+  "desc": "Various · sell 250g"
+ },
+ {
+  "name": "Super Meal",
+  "type": "recipe",
+  "typeLabel": "Recipe",
+  "url": "/recipes/super-meal/",
+  "desc": "Bok Choy, Cranberries, Artichoke · sell 220g"
+ },
+ {
+  "name": "Survival Burger",
+  "type": "recipe",
+  "typeLabel": "Recipe",
+  "url": "/recipes/survival-burger/",
+  "desc": "Bread, Cave Carrot, Eggplant · sell 180g"
+ },
+ {
+  "name": "Sweet Gem Berry",
+  "type": "crop",
+  "typeLabel": "Crop",
+  "url": "/crops/sweet-gem-berry/",
+  "desc": "Fall · grow 24d · sell 3000g · The rarest of all gems in the known world. It's an extraordinary sweet fruit."
+ },
+ {
+  "name": "Taro Root",
+  "type": "crop",
+  "typeLabel": "Crop",
+  "url": "/crops/taro-root/",
+  "desc": "Summer/Ginger Island · grow 10d · sell 100g · A starchy root vegetable that grows best in wet, paddy conditio…"
+ },
+ {
+  "name": "Tea Leaves",
+  "type": "crop",
+  "typeLabel": "Crop",
+  "url": "/crops/tea-leaves/",
+  "desc": "Spring/Summer/Fall · grow 20d · sell 50g · The young leaves of the tea plant. Can be brewed into the popular,…"
+ },
+ {
+  "name": "Tempered Broadsword",
+  "type": "weapon",
+  "typeLabel": "Weapon",
+  "url": "/weapons/tempered-broadsword/",
+  "desc": "Damage ? · speed -3 · sell 350g"
+ },
+ {
+  "name": "Templar's Blade",
+  "type": "weapon",
+  "typeLabel": "Weapon",
+  "url": "/weapons/templars-blade/",
+  "desc": "Damage ? · speed 0 · sell 250g"
+ },
+ {
+  "name": "The Beloved Farmer",
+  "type": "achievement",
+  "typeLabel": "Achievement",
+  "url": "/achievements/the-beloved-farmer/",
+  "desc": "Reach a 10-heart friend level with 8 people. · reward: Cat Ears"
+ },
+ {
+  "name": "The Bottom",
+  "type": "achievement",
+  "typeLabel": "Achievement",
+  "url": "/achievements/the-bottom/",
+  "desc": "Reach the lowest level of the mines. · reward: Skull Key"
+ },
+ {
+  "name": "The Missing Bundle",
+  "type": "bundle",
+  "typeLabel": "Bundle",
+  "url": "/bundles/",
+  "desc": "abandoned-joja-mart"
+ },
+ {
+  "name": "The Slammer",
+  "type": "weapon",
+  "typeLabel": "Weapon",
+  "url": "/weapons/the-slammer/",
+  "desc": "Damage ? · speed -2 · sell 350g"
+ },
+ {
+  "name": "Thunder Egg",
+  "type": "museum",
+  "typeLabel": "Mineral",
+  "url": "/museum/thunder-egg/",
+  "desc": "mineral · Geode, Omni Geode · sell 100g"
+ },
+ {
+  "name": "Tiger Slime",
+  "type": "monster",
+  "typeLabel": "Monster",
+  "url": "/monsters/tiger-slime/",
+  "desc": "HP 415 · damage 23 · XP 20"
+ },
+ {
+  "name": "Tiger Trout",
+  "type": "fish",
+  "typeLabel": "Fish",
+  "url": "/fish/tiger-trout/",
+  "desc": "Various · sell 150g"
+ },
+ {
+  "name": "Tigerseye",
+  "type": "museum",
+  "typeLabel": "Mineral",
+  "url": "/museum/tigerseye/",
+  "desc": "mineral · Magma Geode, Omni Geode · sell 275g"
+ },
+ {
+  "name": "Tilapia",
+  "type": "fish",
+  "typeLabel": "Fish",
+  "url": "/fish/tilapia/",
+  "desc": "Various · sell 75g"
+ },
+ {
+  "name": "Tom Kha Soup",
+  "type": "recipe",
+  "typeLabel": "Recipe",
+  "url": "/recipes/tom-kha-soup/",
+  "desc": "Coconut, Shrimp, Common Mushroom · sell 250g"
+ },
+ {
+  "name": "Tomato",
+  "type": "crop",
+  "typeLabel": "Crop",
+  "url": "/crops/tomato/",
+  "desc": "Summer · grow 11d · sell 60g · A juicy, nutritious summer vegetable used in cooking worldwide."
+ },
+ {
+  "name": "Topaz",
+  "type": "museum",
+  "typeLabel": "Mineral",
+  "url": "/museum/topaz/",
+  "desc": "mineral · Topaz Node, Gem Node · sell 80g"
+ },
+ {
+  "name": "Tortilla",
+  "type": "recipe",
+  "typeLabel": "Recipe",
+  "url": "/recipes/tortilla/",
+  "desc": "Corn · sell 50g"
+ },
+ {
+  "name": "Trash Can",
+  "type": "tool",
+  "typeLabel": "Tool",
+  "url": "/tools/trash-can/",
+  "desc": "Discard items from your inventory. Higher upgrades refund a percentage of the item's sell value."
+ },
+ {
+  "name": "Treasure Hunter's Bundle",
+  "type": "bundle",
+  "typeLabel": "Bundle",
+  "url": "/bundles/",
+  "desc": "boiler-room"
+ },
+ {
+  "name": "Treasure Trove",
+  "type": "achievement",
+  "typeLabel": "Achievement",
+  "url": "/achievements/treasure-trove/",
+  "desc": "Donate 40 different items to the museum. · reward: Blue Bonnet"
+ },
+ {
+  "name": "Trilobite",
+  "type": "museum",
+  "typeLabel": "Artifact",
+  "url": "/museum/trilobite/",
+  "desc": "Artifact · Beach (1.7-5%), Forest (1.9%) · sell 50g"
+ },
+ {
+  "name": "Triple Shot Espresso",
+  "type": "recipe",
+  "typeLabel": "Recipe",
+  "url": "/recipes/triple-shot-espresso/",
+  "desc": "Coffee · sell 450g"
+ },
+ {
+  "name": "Tropical Curry",
+  "type": "recipe",
+  "typeLabel": "Recipe",
+  "url": "/recipes/tropical-curry/",
+  "desc": "Coconut, Pineapple, Hot Pepper · sell 500g"
+ },
+ {
+  "name": "Trout Soup",
+  "type": "recipe",
+  "typeLabel": "Recipe",
+  "url": "/recipes/trout-soup/",
+  "desc": "Rainbow Trout, Green Algae · sell 100g"
+ },
+ {
+  "name": "Truffle Crab",
+  "type": "monster",
+  "typeLabel": "Monster",
+  "url": "/monsters/truffle-crab/",
+  "desc": "HP 30 · damage 5 · XP 4"
+ },
+ {
+  "name": "Tulip",
+  "type": "crop",
+  "typeLabel": "Crop",
+  "url": "/crops/tulip/",
+  "desc": "Spring · grow 6d · sell 30g · A vivid spring flower that turns the meadow red and yellow."
+ },
+ {
+  "name": "Tuna",
+  "type": "fish",
+  "typeLabel": "Fish",
+  "url": "/fish/tuna/",
+  "desc": "Various · sell 100g"
+ },
+ {
+  "name": "Two Thumbs Up",
+  "type": "achievement",
+  "typeLabel": "Achievement",
+  "url": "/achievements/two-thumbs-up/",
+  "desc": "See a movie. · reward: Jester Hat"
+ },
+ {
+  "name": "Unmilled Rice",
+  "type": "crop",
+  "typeLabel": "Crop",
+  "url": "/crops/unmilled-rice/",
+  "desc": "Spring · grow 8d · sell 30g · Needs to be milled before eating. Thrives in paddy conditions near water."
+ },
+ {
+  "name": "Vegetable Medley",
+  "type": "recipe",
+  "typeLabel": "Recipe",
+  "url": "/recipes/vegetable-medley/",
+  "desc": "Tomato, Beet · sell 120g"
+ },
+ {
+  "name": "Vincent",
+  "type": "villager",
+  "typeLabel": "NPC",
+  "url": "/npc/vincent-loved-gifts/",
+  "desc": "Vincent is a young villager who lives in Pelican Town. He can often be found with his best friend Jas."
+ },
+ {
+  "name": "Void Salmon",
+  "type": "fish",
+  "typeLabel": "Fish",
+  "url": "/fish/void-salmon/",
+  "desc": "Various · sell 150g"
+ },
+ {
+  "name": "Walleye",
+  "type": "fish",
+  "typeLabel": "Fish",
+  "url": "/fish/walleye/",
+  "desc": "Various · sell 105g"
+ },
+ {
+  "name": "Watering Can",
+  "type": "tool",
+  "typeLabel": "Tool",
+  "url": "/tools/watering-can/",
+  "desc": "Water crops each day. Higher upgrades increase water capacity and allow watering multiple tiles at once when…"
+ },
+ {
+  "name": "Well-Read",
+  "type": "achievement",
+  "typeLabel": "Achievement",
+  "url": "/achievements/well-read/",
+  "desc": "Read every book. · reward: Pageboy Cap"
+ },
+ {
+  "name": "Wheat",
+  "type": "crop",
+  "typeLabel": "Crop",
+  "url": "/crops/wheat/",
+  "desc": "Summer/Fall · grow 4d · sell 25g · A common grain used to make flour. Harvest with a scythe."
+ },
+ {
+  "name": "White Algae",
+  "type": "fish",
+  "typeLabel": "Fish",
+  "url": "/fish/white-algae/",
+  "desc": "Various · sell 25g"
+ },
+ {
+  "name": "Wicked Kris",
+  "type": "weapon",
+  "typeLabel": "Weapon",
+  "url": "/weapons/wicked-kris/",
+  "desc": "Damage ? · speed 0 · sell 400g"
+ },
+ {
+  "name": "Wild Medicine Bundle",
+  "type": "bundle",
+  "typeLabel": "Bundle",
+  "url": "/bundles/",
+  "desc": "crafts-room"
+ },
+ {
+  "name": "Wilderness Golem",
+  "type": "monster",
+  "typeLabel": "Monster",
+  "url": "/monsters/wilderness-golem/",
+  "desc": "HP 30 · damage 5 · XP 5"
+ },
+ {
+  "name": "Willy",
+  "type": "villager",
+  "typeLabel": "NPC",
+  "url": "/npc/willy-loved-gifts/",
+  "desc": "Willy is a villager who lives south of Pelican Town on the beach. He operates a fishing supply shop."
+ },
+ {
+  "name": "Wind Spire",
+  "type": "weapon",
+  "typeLabel": "Weapon",
+  "url": "/weapons/wind-spire/",
+  "desc": "Damage ? · speed 0 · sell 50g"
+ },
+ {
+  "name": "Winter Foraging Bundle",
+  "type": "bundle",
+  "typeLabel": "Bundle",
+  "url": "/bundles/",
+  "desc": "crafts-room"
+ },
+ {
+  "name": "Winter Foraging Bundle",
+  "type": "bundle",
+  "typeLabel": "Bundle",
+  "url": "/bundles/",
+  "desc": "crafts-room"
+ },
+ {
+  "name": "Winter Star Bundle",
+  "type": "bundle",
+  "typeLabel": "Bundle",
+  "url": "/bundles/",
+  "desc": "bulletin-board"
+ },
+ {
+  "name": "Wizard",
+  "type": "villager",
+  "typeLabel": "NPC",
+  "url": "/npc/wizard-loved-gifts/",
+  "desc": "The Wizard, also known as M. Rasmodius, is a villager who lives in the Wizard's Tower to the far west of Cind…"
+ },
+ {
+  "name": "Wood Club",
+  "type": "weapon",
+  "typeLabel": "Weapon",
+  "url": "/weapons/wood-club/",
+  "desc": "Damage ? · speed 0 · sell 100g"
+ },
+ {
+  "name": "Wood Mallet",
+  "type": "weapon",
+  "typeLabel": "Weapon",
+  "url": "/weapons/wood-mallet/",
+  "desc": "Damage ? · speed 2 · sell 150g"
+ },
+ {
+  "name": "Wooden Blade",
+  "type": "weapon",
+  "typeLabel": "Weapon",
+  "url": "/weapons/wooden-blade/",
+  "desc": "Damage ? · speed 0 · sell 50g"
+ },
+ {
+  "name": "Woodskip",
+  "type": "fish",
+  "typeLabel": "Fish",
+  "url": "/fish/woodskip/",
+  "desc": "Various · sell 75g"
+ },
+ {
+  "name": "Yam",
+  "type": "crop",
+  "typeLabel": "Crop",
+  "url": "/crops/yam/",
+  "desc": "Fall · grow 10d · sell 160g · It's a starchy yam. Looks like food..."
+ },
+ {
+  "name": "Yeti Tooth",
+  "type": "weapon",
+  "typeLabel": "Weapon",
+  "url": "/weapons/yeti-tooth/",
+  "desc": "Damage ? · speed 0 · sell 350g"
+ }
+]

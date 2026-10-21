@@ -1,0 +1,28 @@
+{{ define "main" }}
+<div class="content-col">
+  {{ partial "breadcrumb.html" . }}
+
+  <div class="progress-tracker">
+    <div class="pt-title-block">
+      <p class="pt-eyebrow">{{ i18n "search_eyebrow" }}</p>
+      <h1>{{ .Title }}</h1>
+    </div>
+    <p class="pt-side">{{ i18n "search_side" }}</p>
+  </div>
+
+  <div class="search-box search-box-hero">
+    <input type="search" id="siteSearchInput" class="fish-search-input" placeholder="{{ i18n "search_placeholder" }}" autofocus>
+  </div>
+
+  <div class="search-meta" id="searchMeta"></div>
+  <div class="search-results" id="searchResults"></div>
+
+  <p class="fish-version">{{ i18n "search_index_note" }}</p>
+</div>
+  {{ partial "ad-inarticle.html" . }}
+  {{ partial "related-links.html" . }}
+{{ end }}
+
+{{ define "scripts" }}
+<script src="/js/site-search.js" defer></script>
+{{ end }}

@@ -12,6 +12,23 @@
 {{ range . }}<link rel="alternate" hreflang="{{ .Lang }}" href="{{ .Permalink }}">{{ end }}
 {{ end }}
 <link rel="alternate" hreflang="x-default" href="{{ .Site.Home.Permalink }}">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "{{ .Site.Title }}",
+  "url": "{{ .Site.Home.Permalink }}",
+  "description": "{{ .Site.Params.description }}",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": "{{ .Site.Home.Permalink }}search/?q={search_term_string}"
+    },
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
 <meta property="og:title" content="{{ .Title }}">
 <meta property="og:type" content="website">
 <meta property="og:url" content="{{ .Permalink }}">

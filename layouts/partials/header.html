@@ -37,11 +37,17 @@
           <a href="{{ with site.GetPage "/fish-checklist" }}{{ .RelPermalink }}{{ else }}/fish-checklist/{{ end }}">{{ i18n "nav_fish_check" }}</a>
           <a href="{{ with site.GetPage "/sprinkler-layout-guide" }}{{ .RelPermalink }}{{ else }}/sprinkler-layout-guide/{{ end }}">{{ i18n "nav_sprinkler_planner" }}</a>
           <a href="{{ with site.GetPage "/museum-checklist" }}{{ .RelPermalink }}{{ else }}/museum-checklist/{{ end }}">{{ i18n "nav_museum_check" }}</a>
+          <a href="{{ with site.GetPage "/artisan-profit" }}{{ .RelPermalink }}{{ else }}/artisan-profit/{{ end }}">{{ i18n "nav_artisan_profit" }}</a>
+          <a href="{{ with site.GetPage "/achievements-tracker" }}{{ .RelPermalink }}{{ else }}/achievements-tracker/{{ end }}">{{ i18n "nav_ach_tracker" }}</a>
+          <a href="{{ with site.GetPage "/recipes-tracker" }}{{ .RelPermalink }}{{ else }}/recipes-tracker/{{ end }}">{{ i18n "nav_rec_tracker" }}</a>
         </div>
       </div>
       <a href="{{ with site.GetPage "/faq" }}{{ .RelPermalink }}{{ else }}/faq/{{ end }}">{{ i18n "nav_faq" }}</a>
       <a href="{{ with site.GetPage "/updates" }}{{ .RelPermalink }}{{ else }}/updates/{{ end }}">{{ i18n "nav_updates" }}</a>
     </nav>
+    <form class="header-search" action="{{ with site.GetPage "/search" }}{{ .RelPermalink }}{{ else }}/search/{{ end }}" method="get" role="search">
+      <input type="search" name="q" placeholder="{{ i18n "header_search_ph" }}" aria-label="{{ i18n "search_placeholder" }}">
+    </form>
     {{ partial "lang-switch.html" . }}
   </div>
 </header>

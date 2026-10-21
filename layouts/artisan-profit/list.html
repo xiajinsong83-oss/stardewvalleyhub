@@ -1,0 +1,48 @@
+{{ define "main" }}
+<div class="content-col">
+  {{ partial "breadcrumb.html" . }}
+
+  <div class="progress-tracker">
+    <div class="pt-title-block">
+      <p class="pt-eyebrow">{{ i18n "ap_eyebrow" }}</p>
+      <h1>{{ .Title }}</h1>
+    </div>
+    <p class="pt-side">{{ i18n "ap_side" }}</p>
+  </div>
+
+  <div class="planner ap-controls">
+    <label class="ap-label">{{ i18n "ap_pick_crop" }}
+      <select id="apCrop" class="fish-select">
+        {{ range sort .Site.Data.crops "name" }}
+        <option value="{{ .name }}">{{ .name }}</option>
+        {{ end }}
+      </select>
+    </label>
+    <label class="ap-label ap-toggle">
+      <input type="checkbox" id="apArtisan" class="ap-check">
+      <span>{{ i18n "ap_artisan_profession" }} <em>(+40%)</em></span>
+    </label>
+  </div>
+
+  <div class="ap-crop-info" id="apCropInfo"></div>
+  <div class="table-wrap" id="apTableWrap"></div>
+  <p class="fish-version" id="apNote"></p>
+
+  <script>
+  window.__apCrops = {{ $c := dict }}{{ range .Site.Data.crops }}{{ $c = merge $c (dict .name (dict "name" .name "growDays" .growDays "regrowDays" (or .regrowDays 0) "cropSellPrice" .cropSellPrice "seedBuyPrices" .seedBuyPrices "artisanUses" (or .artisanUses (dict)))) }}{{ end }}{{ $c | jsonify | safeJS }};
+  window.__apUI = {
+    direct: {{ i18n "ap_direct" | jsonify }}, process: {{ i18n "ap_process" | jsonify }},
+    gain: {{ i18n "ap_gain" | jsonify }}, gainDay: {{ i18n "ap_gain_day" | jsonify }},
+    needs: {{ i18n "ap_needs" | jsonify }}, time: {{ i18n "ap_time" | jsonify }},
+    machine: {{ i18n "ap_machine" | jsonify }}, units: {{ i18n "ap_units" | jsonify }}, honeyNote: {{ i18n "ap_honey_note" | jsonify }},
+    quality: {{ i18n "ap_quality" | jsonify }}, artisanApplied: {{ i18n "ap_artisan_applied" | jsonify }}
+  };
+  </script>
+</div>
+  {{ partial "ad-inarticle.html" . }}
+  {{ partial "related-links.html" . }}
+{{ end }}
+
+{{ define "scripts" }}
+<script src="/js/artisan-profit.js" defer></script>
+{{ end }}
