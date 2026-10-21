@@ -1000,3 +1000,56 @@ mark { background: #f0b429; color: #0d1a2d; border-radius: 2px; padding: 0 1px; 
 .check-report.warn { background: #2b1c0f; border: 1px solid #f0b429; color: #f0b429; }
 .check-report ul { margin: 6px 0 0; padding-left: 18px; }
 .check-report li { font-size: 12px; color: #e8c47a; margin-bottom: 3px; }
+
+/* ===== Fishing Map ===== */
+.fm-map-legend { background: #141e30; border: 1px solid #2a3a55; border-radius: 12px; padding: 14px; margin: 4px 0 16px; }
+.fm-svg { width: 100%; height: auto; border-radius: 8px; display: block; }
+.fm-filters { display: flex; gap: 20px; flex-wrap: wrap; margin: 6px 0 10px; align-items: flex-start; }
+.fm-filter-group label { display: block; font-size: 12px; color: #6a7a95; margin-bottom: 6px; text-transform: uppercase; letter-spacing: .5px; }
+.fm-chips { display: flex; gap: 6px; flex-wrap: wrap; }
+.fm-chip {
+  padding: 6px 12px; background: #141e30; border: 1px solid #2a3a55; border-radius: 999px;
+  color: #c9d4e6; font-size: 12px; cursor: pointer;
+}
+.fm-chip.active { background: #3ddc97; border-color: #3ddc97; color: #0d1a2d; font-weight: 600; }
+.fm-meta { color: #3ddc97; font-size: 13px; margin: 4px 0 8px; }
+.fm-group { margin-bottom: 20px; }
+.fm-group h3 { font-size: 15px; color: #3ddc97; margin: 0 0 8px; border-bottom: 1px solid #1e2a40; padding-bottom: 6px; }
+.fm-list { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.fm-item { background: #141e30; border: 1px solid #2a3a55; border-radius: 8px; padding: 8px 12px; }
+.fm-item-head { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+.fm-item-head strong { color: #fff; font-size: 14px; }
+.fm-diff { color: #f0b429; font-size: 12px; white-space: nowrap; }
+.fm-diff em { color: #6a7a95; font-style: normal; font-size: 11px; margin-left: 3px; }
+.fm-item-meta { display: flex; flex-wrap: wrap; gap: 4px 14px; margin-top: 5px; color: #9aa8bf; font-size: 12px; }
+.fm-item-meta strong { color: #3ddc97; }
+@media (max-width: 700px) { .fm-list { grid-template-columns: 1fr; } }
+
+/* ===== Planting Calendar ===== */
+.pc-controls { display: flex; gap: 24px; flex-wrap: wrap; margin: 6px 0 12px; }
+.pc-legend { font-size: 12px; color: #9aa8bf; margin: 0 0 14px; display: flex; gap: 16px; flex-wrap: wrap; }
+.lg { font-size: 11px; }
+.lg-grow { color: #2e7d5b; }
+.lg-harvest { color: #f0b429; }
+.lg-regrow { color: #3ddc97; }
+.lg-late { color: #333d52; }
+.pc-season { margin-bottom: 24px; }
+.pc-rows { display: flex; flex-direction: column; gap: 8px; }
+.pc-row { background: #141e30; border: 1px solid #2a3a55; border-radius: 8px; padding: 8px 12px; }
+.pc-row.hide { display: none; }
+.pc-row-head { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap; margin-bottom: 6px; }
+.pc-name { color: #fff; font-size: 14px; }
+.pc-nums { color: #9aa8bf; font-size: 12px; }
+.pc-nums em { color: #3ddc97; font-style: normal; font-weight: 600; }
+.pc-axis { display: grid; grid-template-columns: repeat(28, 1fr); gap: 2px; position: relative; }
+.pc-cell { height: 14px; border-radius: 2px; background: #333d52; }
+.pc-cell.grow { background: #2e7d5b; }
+.pc-cell.harvest { background: #f0b429; }
+.pc-cell.regrow { background: #3ddc97; }
+.pc-cell.late { background: #333d52; }
+.pc-daynums { position: absolute; right: 0; top: 17px; font-size: 10px; color: #5a6a85; }
+@media (max-width: 700px) {
+  .pc-axis { grid-template-columns: repeat(14, 1fr); }
+  .pc-cell { height: 10px; }
+  .pc-row:nth-child(n+2) .pc-axis { margin-top: 6px; }
+}

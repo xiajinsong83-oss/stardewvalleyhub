@@ -1,0 +1,87 @@
+{{ define "main" }}
+<div class="content-col">
+  {{ partial "breadcrumb.html" . }}
+
+  <div class="progress-tracker">
+    <div class="pt-title-block">
+      <p class="pt-eyebrow">{{ i18n "fm_eyebrow" }}</p>
+      <h1>{{ .Title }}</h1>
+    </div>
+    <p class="pt-side">{{ i18n "fm_side" }}</p>
+  </div>
+
+  <div class="fm-map-legend">
+    <svg viewBox="0 0 640 260" role="img" aria-label="{{ i18n "fm_map_aria" }}" class="fm-svg">
+      <rect width="640" height="260" fill="#0d1a2d"/>
+      <text x="20" y="24" fill="#6a7a95" font-size="11">{{ i18n "fm_map_schematic" }}</text>
+      <!-- 山湖 -->
+      <ellipse cx="120" cy="70" rx="80" ry="38" fill="#1e5f8a" stroke="#3ddc97" stroke-width="1.5"/>
+      <text x="120" y="74" fill="#cfe8ff" font-size="12" text-anchor="middle">Mountain Lake</text>
+      <!-- 河流（山湖→左→下→海边） -->
+      <path d="M120 100 C 110 140 90 150 70 170 C 55 185 40 190 50 215 L 250 215 C 300 215 330 210 360 205" fill="none" stroke="#2a86c9" stroke-width="14" stroke-linecap="round"/>
+      <text x="120" y="190" fill="#cfe8ff" font-size="11">River</text>
+      <!-- 森林池塘 -->
+      <ellipse cx="520" cy="60" rx="52" ry="30" fill="#1e5f8a" stroke="#3ddc97" stroke-width="1.5"/>
+      <text x="520" y="64" fill="#cfe8ff" font-size="10" text-anchor="middle">Forest Pond</text>
+      <!-- 矿洞 -->
+      <rect x="34" y="112" width="46" height="34" rx="6" fill="#3a2b18" stroke="#f0b429" stroke-width="1.5"/>
+      <text x="57" y="133" fill="#f0d9a0" font-size="10" text-anchor="middle">Mines</text>
+      <!-- 城镇 -->
+      <rect x="160" y="120" width="58" height="34" rx="6" fill="#2a3a55" stroke="#9aa8bf" stroke-width="1.5"/>
+      <text x="189" y="141" fill="#c9d4e6" font-size="10" text-anchor="middle">Town</text>
+      <!-- 秘密森林 -->
+      <rect x="470" y="150" width="60" height="34" rx="6" fill="#1e3a1e" stroke="#3ddc97" stroke-width="1.5"/>
+      <text x="500" y="171" fill="#a8d8a8" font-size="10" text-anchor="middle">Secret Woods</text>
+      <!-- 下水道 -->
+      <rect x="330" y="150" width="58" height="34" rx="6" fill="#2a2a3a" stroke="#9aa8bf" stroke-width="1.5"/>
+      <text x="359" y="171" fill="#c9d4e6" font-size="10" text-anchor="middle">Sewers</text>
+      <!-- 海边 -->
+      <path d="M420 235 C 480 220 540 210 620 215 L 620 260 L 380 260 Z" fill="#1e5f8a" opacity="0.55"/>
+      <text x="540" y="244" fill="#cfe8ff" font-size="12">Ocean</text>
+      <!-- 沙漠 -->
+      <rect x="560" y="30" width="60" height="40" rx="6" fill="#6b5b2a" stroke="#f0b429" stroke-width="1.5"/>
+      <text x="590" y="54" fill="#f0d9a0" font-size="9" text-anchor="middle">Desert</text>
+    </svg>
+  </div>
+
+  <div class="fm-filters">
+    <div class="fm-filter-group">
+      <label>{{ i18n "fm_water" }}</label>
+      <select id="fmWater" class="fish-select">
+        <option value="">{{ i18n "fm_all_waters" }}</option>
+      </select>
+    </div>
+    <div class="fm-filter-group">
+      <label>{{ i18n "fm_season" }}</label>
+      <div class="fm-chips" id="fmSeason">
+        <button class="fm-chip active" data-v="">{{ i18n "fm_any" }}</button>
+        <button class="fm-chip" data-v="spring">{{ i18n "fm_spring" }}</button>
+        <button class="fm-chip" data-v="summer">{{ i18n "fm_summer" }}</button>
+        <button class="fm-chip" data-v="fall">{{ i18n "fm_fall" }}</button>
+        <button class="fm-chip" data-v="winter">{{ i18n "fm_winter" }}</button>
+      </div>
+    </div>
+    <div class="fm-filter-group">
+      <label>{{ i18n "fm_weather" }}</label>
+      <div class="fm-chips" id="fmWeather">
+        <button class="fm-chip active" data-v="">{{ i18n "fm_any" }}</button>
+        <button class="fm-chip" data-v="sunny">{{ i18n "fm_sunny" }}</button>
+        <button class="fm-chip" data-v="rainy">{{ i18n "fm_rainy" }}</button>
+      </div>
+    </div>
+  </div>
+
+  <p class="fm-meta" id="fmMeta"></p>
+  <div class="fm-results" id="fmResults"></div>
+  <p class="fish-version">{{ i18n "fm_note" }}</p>
+</div>
+  {{ partial "ad-inarticle.html" . }}
+  {{ partial "related-links.html" . }}
+{{ end }}
+
+{{ define "scripts" }}
+<script>
+window.__fishData = {{ $f := slice }}{{ range site.Data.fish }}{{ $f = $f | append (dict "name" .name "location" .location "seasons" .seasons "weather" (.weather | string) "time" (.time | string) "difficulty" (.difficulty | int) "sellPrice" (.sellPrice | int)) }}{{ end }}{{ $f | jsonify | safeJS }};
+</script>
+<script src="/js/fishing-map.js" defer></script>
+{{ end }}

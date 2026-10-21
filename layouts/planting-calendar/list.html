@@ -1,0 +1,141 @@
+{{ define "main" }}
+{{ $lang := site.Language.Lang }}
+{{ $seasonNames := dict "en" (dict "spring" "Spring" "summer" "Summer" "fall" "Fall" "winter" "Winter") "zh-hans" (dict "spring" "春季" "summer" "夏季" "fall" "秋季" "winter" "冬季") "de" (dict "spring" "Frühling" "summer" "Sommer" "fall" "Herbst" "winter" "Winter") }}
+{{ $seasonLocal := index $seasonNames $lang }}
+
+<div class="content-col">
+  {{ partial "breadcrumb.html" . }}
+
+  <div class="progress-tracker">
+    <div class="pt-title-block">
+      <p class="pt-eyebrow">{{ i18n "pc_eyebrow" }}</p>
+      <h1>{{ .Title }}</h1>
+    </div>
+    <p class="pt-side">{{ i18n "pc_side" }}</p>
+  </div>
+
+  <div class="pc-controls">
+    <div class="fm-chips" id="pcSeason">
+      <button class="fm-chip active" data-v="all">{{ i18n "pc_all" }}</button>
+      <button class="fm-chip" data-v="spring">{{ i18n "fm_spring" }}</button>
+      <button class="fm-chip" data-v="summer">{{ i18n "fm_summer" }}</button>
+      <button class="fm-chip" data-v="fall">{{ i18n "fm_fall" }}</button>
+    </div>
+    <div class="fm-chips" id="pcSort">
+      <button class="fm-chip active" data-v="gold">{{ i18n "pc_sort_gold" }}</button>
+      <button class="fm-chip" data-v="grow">{{ i18n "pc_sort_grow" }}</button>
+      <button class="fm-chip" data-v="name">{{ i18n "pc_sort_name" }}</button>
+    </div>
+  </div>
+
+  <p class="pc-legend">
+    <span class="lg lg-grow">■</span> {{ i18n "pc_legend_grow" }}
+    <span class="lg lg-harvest">■</span> {{ i18n "pc_legend_harvest" }}
+    <span class="lg lg-regrow">■</span> {{ i18n "pc_legend_regrow" }}
+    <span class="lg lg-late">■</span> {{ i18n "pc_legend_late" }}
+  </p>
+
+  {{ range (slice "spring" "summer" "fall") }}
+  {{ $season := . }}
+  {{ $seasonCrops := where site.Data.crops "seasons" "intersect" (slice $season) }}
+  <section class="pc-season">
+    <h2 class="cal-season-title">{{ index $seasonLocal $season | default $season }} (1–28)</h2>
+    <div class="pc-rows">
+      {{ range $seasonCrops }}
+        {{ $grow := .growDays | int }}
+        {{ $regrow := .regrowDays }}
+        {{ $qty := 1 }}
+        {{ if .harvestQuantity }}{{ $qty = .harvestQuantity.min | int }}{{ end }}
+        {{ $sell := .cropSellPrice | int }}
+        {{ $seed := 0 }}
+        {{ $seedFound := false }}
+        {{ range .seedBuyPrices }}{{ if eq .place "Pierre's" }}{{ $seed = .price | int }}{{ $seedFound = true }}{{ end }}{{ end }}
+        {{ if not $seedFound }}{{ range .seedBuyPrices }}{{ if or (eq $seed 0) (lt (.price | int) $seed) }}{{ $seed = .price | int }}{{ end }}{{ end }}{{ end }}
+        {{ $n := 1 }}
+        {{ if $regrow }}{{ $n = add 1 (div (sub 28 $grow) ($regrow | int)) }}{{ end }}
+        {{ if lt $n 1 }}{{ $n = 1 }}{{ end }}
+        {{ $total := mul (mul $n $qty) $sell }}
+        {{ $net := sub $total $seed }}
+        {{ $gold := 0 }}{{ if gt $grow 0 }}{{ $gold = div $net $grow }}{{ end }}
+        {{ $last := sub 29 $grow }}
+        {{ if $regrow }}{{ $last = sub 29 (add $grow (mul (sub $n 1) ($regrow | int))) }}{{ end }}
+        {{ $seasonsStr := delimit .seasons " " }}
+        <div class="pc-row" data-seasons="{{ $seasonsStr }}" data-gold="{{ $gold }}" data-grow="{{ $grow }}" data-name="{{ .name | lower }}">
+          <div class="pc-row-head">
+            <strong class="pc-name">{{ .name }}</strong>
+            <span class="pc-nums">
+              {{ i18n "pc_grow" }} {{ $grow }}{{ if $regrow }}+{{ $regrow }}{{ end }}
+              · {{ i18n "pc_harvests" }} {{ $n }}
+              · {{ i18n "pc_last" }} {{ $last }}
+              · <em>{{ $gold }}g/{{ i18n "pc_day" }}</em>
+            </span>
+          </div>
+          <div class="pc-axis">
+            {{ range seq 1 28 }}
+              {{ $day := . }}
+              {{ $isHarvest := false }}
+              {{ if $regrow }}
+                {{ if and (ge $day $grow) (eq (mod (sub $day $grow) ($regrow | int)) 0) }}{{ $isHarvest = true }}{{ end }}
+              {{ else }}
+                {{ if eq $day $grow }}{{ $isHarvest = true }}{{ end }}
+              {{ end }}
+              {{ $cls := "pc-cell" }}
+              {{ if $isHarvest }}{{ $cls = "pc-cell harvest" }}
+              {{ else if lt $day $grow }}{{ $cls = "pc-cell grow" }}
+              {{ else if $regrow }}{{ $cls = "pc-cell regrow" }}
+              {{ else }}{{ $cls = "pc-cell late" }}
+              {{ end }}
+              <span class="{{ $cls }}" title="{{ $day }}"></span>
+            {{ end }}
+            <span class="pc-daynums">1…28</span>
+          </div>
+        </div>
+      {{ end }}
+    </div>
+  </section>
+  {{ end }}
+
+  <p class="fish-version">{{ i18n "pc_note" }}</p>
+</div>
+  {{ partial "ad-inarticle.html" . }}
+  {{ partial "related-links.html" . }}
+{{ end }}
+
+{{ define "scripts" }}
+<script>
+(function(){
+  var seasonBtns = document.querySelectorAll("#pcSeason .fm-chip");
+  var sortBtns = document.querySelectorAll("#pcSort .fm-chip");
+  var rows = Array.prototype.slice.call(document.querySelectorAll(".pc-row"));
+  var curSeason = "all", curSort = "gold";
+
+  function apply(){
+    rows.forEach(function(r){
+      var ss = (r.dataset.seasons || "").split(" ");
+      var show = curSeason === "all" || ss.indexOf(curSeason) !== -1;
+      r.classList.toggle("hide", !show);
+    });
+    var vis = rows.filter(function(r){ return r.classList.contains("hide") === false; });
+    vis.sort(function(a, b){
+      if (curSort === "gold") return (parseInt(b.dataset.gold)||0) - (parseInt(a.dataset.gold)||0);
+      if (curSort === "grow") return (parseInt(a.dataset.grow)||0) - (parseInt(b.dataset.grow)||0);
+      return a.dataset.name.localeCompare(b.dataset.name);
+    });
+    vis.forEach(function(r){ r.parentNode.appendChild(r); });
+  }
+  seasonBtns.forEach(function(b){
+    b.addEventListener("click", function(){
+      seasonBtns.forEach(function(x){ x.classList.remove("active"); });
+      b.classList.add("active"); curSeason = b.dataset.v; apply();
+    });
+  });
+  sortBtns.forEach(function(b){
+    b.addEventListener("click", function(){
+      sortBtns.forEach(function(x){ x.classList.remove("active"); });
+      b.classList.add("active"); curSort = b.dataset.v; apply();
+    });
+  });
+  apply();
+})();
+</script>
+{{ end }}
