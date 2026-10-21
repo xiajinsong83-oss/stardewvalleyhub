@@ -1,0 +1,213 @@
+# ============================================================
+# NPC 数据：Clint（自动生成 scripts/gen_npc_yaml.py）
+# 基础/送礼数据来自开源 stardew-valley-data；行程来自 Stardew Valley Wiki。
+# ============================================================
+slug: "clint"
+name: 'Clint'
+display_name: 'Clint'
+birthday:
+  season: 'Winter'
+  day: 26
+lives_in: 'The Blacksmith'
+address: 'The Blacksmith'
+marriage: false
+marriageable_since: ""
+clinic_visit:
+  season: ""
+  day: 0
+family:
+  - relation: ""
+    name: ""
+bio: >
+  Clint is a villager who lives in Pelican Town and owns and runs the local Blacksmith.
+image: 'images/villagers/Clint.png'
+
+# ---------- 送礼偏好 ----------
+gifts:
+  loved:
+    universal_loves: false
+    universal_exception: ""
+    items:
+      - name: 'Amethyst'
+        uid: "amethyst"
+      - name: 'Aquamarine'
+        uid: "aquamarine"
+      - name: 'Artichoke Dip'
+        uid: "artichoke-dip"
+      - name: 'Emerald'
+        uid: "emerald"
+      - name: 'Fiddlehead Risotto'
+        uid: "fiddlehead-risotto"
+      - name: 'Gold Bar'
+        uid: "gold-bar"
+      - name: 'Iridium Bar'
+        uid: "iridium-bar"
+      - name: 'Jade'
+        uid: "jade"
+      - name: 'Omni Geode'
+        uid: "omni-geode"
+      - name: 'Ruby'
+        uid: "ruby"
+      - name: 'Topaz'
+        uid: "topaz"
+  liked:
+    universal_likes: false
+    universal_exception: ""
+    items:
+      - name: 'Copper Bar'
+        uid: "copper-bar"
+      - name: 'Iron Bar'
+        uid: "iron-bar"
+      - name: 'Mining Monthly'
+        uid: "mining-monthly"
+  neutral:
+    universal_neutrals: false
+    universal_exception: ""
+    items:
+      - name: 'All Eggs (except Void Egg)'
+        uid: "all-eggs-except-void-egg"
+      - name: 'All Fruit (except Fruit Tree Fruit & Salmonberry)'
+        uid: "all-fruit-except-fruit-tree-fruit-salmonberry"
+      - name: 'All Milk'
+        uid: "all-milk"
+      - name: 'Chanterelle'
+        uid: "chanterelle"
+      - name: 'Coal'
+        uid: "coal"
+      - name: 'Common Mushroom'
+        uid: "common-mushroom"
+      - name: 'Daffodil'
+        uid: "daffodil"
+      - name: 'Dandelion'
+        uid: "dandelion"
+      - name: 'Ginger'
+        uid: "ginger"
+      - name: 'Gold Ore'
+        uid: "gold-ore"
+      - name: 'Hazelnut'
+        uid: "hazelnut"
+      - name: 'Iridium Ore'
+        uid: "iridium-ore"
+      - name: 'Leek'
+        uid: "leek"
+      - name: 'Magma Cap'
+        uid: "magma-cap"
+      - name: 'Morel'
+        uid: "morel"
+      - name: 'Purple Mushroom'
+        uid: "purple-mushroom"
+      - name: 'Refined Quartz'
+        uid: "refined-quartz"
+      - name: 'Snow Yam'
+        uid: "snow-yam"
+      - name: 'Winter Root'
+        uid: "winter-root"
+  dislike:
+    universal_dislikes: false
+    universal_exception: ""
+    items:
+      - name: 'All Flowers (except Poppy)'
+        uid: "all-flowers-except-poppy"
+      - name: 'Quartz'
+        uid: "quartz"
+      - name: 'Salmonberry'
+        uid: "salmonberry"
+      - name: 'Wild Horseradish'
+        uid: "wild-horseradish"
+  hate:
+    universal_hates: false
+    universal_exception: ""
+    items:
+      - name: 'Holly'
+        uid: "holly"
+
+# ---------- 行程表 ----------
+schedules:
+  - season: 'Any'
+    label: 'Clint is unavailable for shopping, tool upgrades, or geode processing on Fridays after the Community Center is restored, unless it is raining.'
+    condition: 'Clint is unavailable for shopping, tool upgrades, or geode processing on Fridays after the Community Center is restored, unless it is raining.'
+    timeline:
+      - time: '11:20 AM'
+        location: 'Boards the bus to Calico Desert to attend the Desert Festival.'
+      - time: '11:40 AM'
+        location: 'Stands east of the Oasis.'
+      - time: '1:30 AM'
+        location: 'Boards the bus back to the Valley.'
+  - season: 'Any'
+    label: 'Desert Festival (As Vendor)'
+    condition: 'Desert Festival (As Vendor)'
+    timeline:
+      - time: '11:10 AM'
+        location: 'Boards the bus to Calico Desert.'
+      - time: '11:30 AM'
+        location: 'Arrives at his booth.'
+      - time: '12:00 AM'
+        location: 'Leaves booth and takes the bus back to the Valley.'
+  - season: 'Winter'
+    label: 'Winter 15'
+    condition: 'Winter 15'
+    timeline:
+      - time: '8:50 AM'
+        location: 'Behind the counter of the Blacksmith.'
+      - time: '5:00 PM'
+        location: 'Leaves the Blacksmith to attend the Night Market.'
+      - time: '12:00 AM'
+        location: 'Returns to the Blacksmith to sleep.'
+  - season: 'Winter'
+    label: 'Winter 16'
+    condition: 'Winter 16'
+    timeline:
+      - time: '9:00 AM'
+        location: 'Behind the counter of the Blacksmith.'
+      - time: '10:30 AM'
+        location: 'Leaves the Blacksmith to go to the waiting room of Harvey''s Clinic.'
+      - time: '1:30 PM'
+        location: 'Moves to the left examination room in the Clinic.'
+      - time: '4:00 PM'
+        location: 'Leaves the Clinic for The Saloon.'
+      - time: '12:00 AM'
+        location: 'Returns home to sleep.'
+  - season: 'Any'
+    label: 'Green Rain (Year 1)'
+    condition: 'Green Rain (Year 1)'
+    timeline:
+      - time: '6:00 AM'
+        location: 'Leaves home and heads to the Saloon.'
+      - time: '7:20 AM'
+        location: 'In the Saloon.'
+  - season: 'Any'
+    label: 'Rain'
+    condition: 'Rain'
+    timeline:
+      - time: '9:00 AM'
+        location: 'Behind the counter of the Blacksmith.'
+      - time: '5:00 PM'
+        location: 'Moves to work on the anvil.'
+      - time: '7:00 PM'
+        location: 'Heads to The Saloon.'
+      - time: '12:00 AM'
+        location: 'Returns home to sleep.'
+  - season: 'Any'
+    label: 'Friday (Community Center Restored)'
+    condition: 'Friday (Community Center Restored)'
+    timeline:
+      - time: '8:50 AM'
+        location: 'Leaves home, heads to the Community Center Boiler Room.'
+      - time: '5:00 PM'
+        location: 'Leaves the Community Center and heads to The Saloon.'
+      - time: '12:00 AM'
+        location: 'Returns home to sleep.'
+  - season: 'Any'
+    label: 'Regular Schedule'
+    condition: 'Regular Schedule'
+    timeline:
+      - time: '9:00 AM'
+        location: 'Behind the counter of the Blacksmith.'
+      - time: '5:00 PM'
+        location: 'Moves to work on the anvil.'
+      - time: '7:00 PM'
+        location: 'Heads to The Saloon.'
+      - time: '8:20 PM'
+        location: 'In the Saloon.'
+      - time: '12:00 AM'
+        location: 'Returns home to sleep.'

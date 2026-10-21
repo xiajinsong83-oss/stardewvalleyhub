@@ -1,0 +1,200 @@
+# ============================================================
+# NPC 数据：George（自动生成 scripts/gen_npc_yaml.py）
+# 基础/送礼数据来自开源 stardew-valley-data；行程来自 Stardew Valley Wiki。
+# ============================================================
+slug: "george"
+name: 'George'
+display_name: 'George'
+birthday:
+  season: 'Fall'
+  day: 24
+lives_in: '1 River Road'
+address: '1 River Road'
+marriage: false
+marriageable_since: ""
+clinic_visit:
+  season: ""
+  day: 0
+family:
+  - relation: ""
+    name: ""
+bio: >
+  George is a villager who lives in Pelican Town. He is an elderly man who uses a
+  wheelchair and lives with his wife Evelyn and grandson Alex.
+image: 'images/villagers/George.png'
+
+# ---------- 送礼偏好 ----------
+gifts:
+  loved:
+    universal_loves: false
+    universal_exception: ""
+    items:
+      - name: 'Fried Mushroom'
+        uid: "fried-mushroom"
+      - name: 'Leek'
+        uid: "leek"
+  liked:
+    universal_likes: false
+    universal_exception: ""
+    items:
+      - name: 'Daffodil'
+        uid: "daffodil"
+  neutral:
+    universal_neutrals: false
+    universal_exception: ""
+    items:
+      - name: 'All Eggs (except Void Egg)'
+        uid: "all-eggs-except-void-egg"
+      - name: 'All Fruit (except Fruit Tree Fruit & Salmonberry)'
+        uid: "all-fruit-except-fruit-tree-fruit-salmonberry"
+      - name: 'All Milk'
+        uid: "all-milk"
+      - name: 'Chanterelle'
+        uid: "chanterelle"
+      - name: 'Common Mushroom'
+        uid: "common-mushroom"
+      - name: 'Ginger'
+        uid: "ginger"
+      - name: 'Hazelnut'
+        uid: "hazelnut"
+      - name: 'Magma Cap'
+        uid: "magma-cap"
+      - name: 'Morel'
+        uid: "morel"
+      - name: 'Purple Mushroom'
+        uid: "purple-mushroom"
+      - name: 'Snow Yam'
+        uid: "snow-yam"
+      - name: 'Winter Root'
+        uid: "winter-root"
+  dislike:
+    universal_dislikes: false
+    universal_exception: ""
+    items:
+      - name: 'All Flowers (except Poppy)'
+        uid: "all-flowers-except-poppy"
+      - name: 'Salmonberry'
+        uid: "salmonberry"
+      - name: 'Wild Horseradish'
+        uid: "wild-horseradish"
+  hate:
+    universal_hates: false
+    universal_exception: ""
+    items:
+      - name: 'Clay'
+        uid: "clay"
+      - name: 'Dandelion'
+        uid: "dandelion"
+      - name: 'Holly'
+        uid: "holly"
+      - name: 'Quartz'
+        uid: "quartz"
+
+# ---------- 行程表 ----------
+schedules:
+  - season: 'Any'
+    label: 'The 23rd of every season, George has an appointment at Harvey''s Clinic , accompanied by Evelyn . George never visits the Beach Resort on Ginger Island.'
+    condition: 'The 23rd of every season, George has an appointment at Harvey''s Clinic , accompanied by Evelyn . George never visits the Beach Resort on Ginger Island.'
+    timeline:
+      - time: '9:40 AM'
+        location: 'Boards the bus to Calico Desert to attend the Desert Festival.'
+      - time: '9:50 AM'
+        location: 'With Evelyn , at the roadside near the bus.'
+      - time: '10:50 PM'
+        location: 'Boards the bus back to the Valley.'
+  - season: 'Any'
+    label: 'Desert Festival (As Vendor)'
+    condition: 'Desert Festival (As Vendor)'
+    timeline:
+      - time: '11:10 AM'
+        location: 'Boards the bus to Calico Desert.'
+      - time: '11:30 AM'
+        location: 'Arrives at his booth.'
+      - time: '12:00 AM'
+        location: 'Leaves booth and takes the bus back to the Valley.'
+  - season: 'Winter'
+    label: 'Winter 17'
+    condition: 'Winter 17'
+    timeline:
+      - time: '6:30 AM'
+        location: 'At home, watching TV.'
+      - time: '12:00 PM'
+        location: 'At his kitchen table.'
+      - time: '4:20 PM'
+        location: 'Leaves home to attend the Night Market.'
+      - time: '11:40 PM'
+        location: 'Leaves the Night Market to return home.'
+  - season: 'Any'
+    label: 'Green Rain (Year 1)'
+    condition: 'Green Rain (Year 1)'
+    timeline:
+      - time: '6:30 AM'
+        location: 'At home, at the kitchen table.'
+      - time: '10:30 AM'
+        location: 'Leaves home for the waiting room of Harvey''s Clinic.'
+      - time: '1:30 PM'
+        location: 'Moves to the left exam room inside the Clinic.'
+      - time: '4:00 PM'
+        location: 'Leaves the Clinic to watch TV at home.'
+      - time: '8:00 PM'
+        location: 'Goes to his bedroom for the night.'
+  - season: 'Any'
+    label: 'Rain'
+    condition: 'Rain'
+    timeline:
+      - time: '6:30 AM'
+        location: 'At home, watching TV.'
+      - time: '12:00 PM'
+        location: 'At his kitchen table.'
+      - time: '3:00 PM'
+        location: 'Goes to watch TV again.'
+      - time: '8:00 PM'
+        location: 'Goes to his bedroom for the night.'
+  - season: 'Summer'
+    label: 'Summer Friday'
+    condition: 'Summer Friday'
+    timeline:
+      - time: '6:30 AM'
+        location: 'At home, watching TV.'
+      - time: '12:00 PM'
+        location: 'Leaves home to sit outside, under the tree west of his house.'
+      - time: '3:00 PM'
+        location: 'Returns home to watch TV.'
+      - time: '8:00 PM'
+        location: 'Goes to his bedroom for the night.'
+  - season: 'Any'
+    label: 'Sunday (Alex''s 14 heart event seen)'
+    condition: 'Sunday (Alex''s 14 heart event seen)'
+    timeline:
+      - time: '6:30 AM'
+        location: 'At home, watching TV.'
+      - time: '11:00 AM'
+        location: 'Heads to the back room of the Saloon to watch sports.'
+      - time: '3:00 PM'
+        location: 'Returns home to watch TV.'
+      - time: '8:00 PM'
+        location: 'Goes to his bedroom for the night.'
+  - season: 'Any'
+    label: 'Sunday'
+    condition: 'Sunday'
+    timeline:
+      - time: '6:30 AM'
+        location: 'At home, watching TV.'
+      - time: '10:00 AM'
+        location: 'Leaves home and heads for the Statue of Yoba inside Pierre ''s home.'
+      - time: '2:00 PM'
+        location: 'Leaves the Statue of Yoba and heads home to watch TV.'
+      - time: '8:00 PM'
+        location: 'Goes to his bedroom for the night.'
+  - season: 'Any'
+    label: 'Regular Schedule'
+    condition: 'Regular Schedule'
+    timeline:
+      - time: '6:30 AM'
+        location: 'At home, watching TV.'
+      - time: '12:00 PM'
+        location: 'At his kitchen table.'
+      - time: '3:00 PM'
+        location: 'Goes to watch TV again.'
+      - time: '8:00 PM'
+        location: 'Goes to his bedroom for the night.'

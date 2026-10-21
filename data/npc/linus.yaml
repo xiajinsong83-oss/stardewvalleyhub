@@ -1,0 +1,182 @@
+# ============================================================
+# NPC 数据：Linus（自动生成 scripts/gen_npc_yaml.py）
+# 基础/送礼数据来自开源 stardew-valley-data；行程来自 Stardew Valley Wiki。
+# ============================================================
+slug: "linus"
+name: 'Linus'
+display_name: 'Linus'
+birthday:
+  season: 'Winter'
+  day: 3
+lives_in: 'Mountain Tent'
+address: 'Mountain Tent'
+marriage: false
+marriageable_since: ""
+clinic_visit:
+  season: ""
+  day: 0
+family:
+  - relation: ""
+    name: ""
+bio: >
+  Linus is a villager who lives in a small tent on the Mountains north of Pelican Town. He
+  has chosen a solitary lifestyle in nature.
+image: 'images/villagers/Linus.png'
+
+# ---------- 送礼偏好 ----------
+gifts:
+  loved:
+    universal_loves: false
+    universal_exception: ""
+    items:
+      - name: 'Blueberry Tart'
+        uid: "blueberry-tart"
+      - name: 'Cactus Fruit'
+        uid: "cactus-fruit"
+      - name: 'Coconut'
+        uid: "coconut"
+      - name: 'Dish O'' The Sea'
+        uid: "dish-o-the-sea"
+      - name: 'The Alleyway Buffet'
+        uid: "the-alleyway-buffet"
+      - name: 'Yam'
+        uid: "yam"
+  liked:
+    universal_likes: false
+    universal_exception: ""
+    items:
+  neutral:
+    universal_neutrals: false
+    universal_exception: ""
+    items:
+      - name: 'All Fish (except Snail)'
+        uid: "all-fish-except-snail"
+      - name: 'Wild Bait'
+        uid: "wild-bait"
+  dislike:
+    universal_dislikes: false
+    universal_exception: ""
+    items:
+      - name: 'Treasure Chest'
+        uid: "treasure-chest"
+  hate:
+    universal_hates: false
+    universal_exception: ""
+    items:
+
+# ---------- 行程表 ----------
+schedules:
+  - season: 'Spring'
+    label: 'Spring 16 (Bus Service Restored)'
+    condition: 'Spring 16 (Bus Service Restored)'
+    timeline:
+      - time: '9:50 AM'
+        location: 'Takes the bus to Calico Desert to attend the Desert Festival.'
+      - time: '10:20 AM'
+        location: 'Stands by a trash can behind the Calico Egg merchant.'
+      - time: '1:40 AM'
+        location: 'Heads back to the bus.'
+  - season: 'Any'
+    label: 'Green Rain (Year 1)'
+    condition: 'Green Rain (Year 1)'
+    timeline:
+      - time: '6:00 AM'
+        location: 'Stands at the cliff south of his tent.'
+      - time: '12:00 PM'
+        location: 'Moves to the cliff west of his tent.'
+      - time: '5:00 PM'
+        location: 'Stands by the campfire.'
+      - time: '10:00 PM'
+        location: 'Goes inside his tent to sleep.'
+  - season: 'Any'
+    label: 'Rain'
+    condition: 'Rain'
+    timeline:
+      - time: '6:00 AM'
+        location: 'Inside his tent.'
+      - time: '9:30 AM'
+        location: 'Exits tent, stands behind bush west of his tent.'
+      - time: '10:10 AM'
+        location: 'Returns to his tent.'
+      - time: '3:00 PM'
+        location: 'Exits tent, stands under tree west of his tent.'
+      - time: '7:00 PM'
+        location: 'Returns to his tent.'
+      - time: '11:30 PM'
+        location: 'Goes to bed.'
+  - season: 'Winter'
+    label: 'Winter 15'
+    condition: 'Winter 15'
+    timeline:
+      - time: '6:00 AM'
+        location: 'Inside his tent.'
+      - time: '11:00 AM'
+        location: 'Exits tent, stands west of campfire in front of his tent.'
+      - time: '4:00 PM'
+        location: 'Walks to beach to attend Night Market.'
+      - time: '11:30 PM'
+        location: 'Returns to his tent for the night.'
+  - season: 'Spring'
+    label: 'Regular Schedule'
+    condition: 'Regular Schedule'
+    timeline:
+      - time: '6:00 AM'
+        location: 'Inside his tent.'
+      - time: '6:30 AM'
+        location: 'Exits tent, stands behind bush west of his tent.'
+      - time: '7:00 AM'
+        location: 'Walks to west of campfire in front of his tent.'
+      - time: '9:30 AM'
+        location: 'Walks to west side of lake.'
+      - time: '2:00 PM'
+        location: 'Walks to west of campfire in front of his tent.'
+      - time: '7:00 PM'
+        location: 'Returns to his tent.'
+      - time: '11:00 PM'
+        location: 'Goes to bed.'
+  - season: 'Summer'
+    label: 'Regular Schedule'
+    condition: 'Regular Schedule'
+    timeline:
+      - time: '6:00 AM'
+        location: 'Inside his tent.'
+      - time: '6:30 AM'
+        location: 'Walks to cliff overlooking lake, east of his tent.'
+      - time: '9:40 AM'
+        location: 'Walks to south of fence, west of lake.'
+      - time: '1:00 PM'
+        location: 'Walks further south, west of lake.'
+      - time: '4:00 PM'
+        location: 'Walks to west of campfire in front of his tent.'
+      - time: '8:00 PM'
+        location: 'Walks behind bush west of his tent.'
+      - time: '8:20 PM'
+        location: 'Returns to his tent for the night.'
+  - season: 'Fall'
+    label: 'Regular Schedule'
+    condition: 'Regular Schedule'
+    timeline:
+      - time: '6:00 AM'
+        location: 'Inside his tent.'
+      - time: '7:00 AM'
+        location: 'Exits tent, stands behind bush west of his tent.'
+      - time: '7:40 AM'
+        location: 'Walks to west of campfire in front of his tent.'
+      - time: '9:00 AM'
+        location: 'Walks to Spa , stands at east side of building.'
+      - time: '2:00 PM'
+        location: 'Walks to west side of lake.'
+      - time: '6:00 PM'
+        location: 'Returns to his tent for the night.'
+  - season: 'Winter'
+    label: 'Regular Schedule'
+    condition: 'Regular Schedule'
+    timeline:
+      - time: '6:00 AM'
+        location: 'Inside his tent.'
+      - time: '11:00 AM'
+        location: 'Exits tent, stands west of campfire in front of his tent.'
+      - time: '2:00 PM'
+        location: 'Walks to Spa , stands inside entrance.'
+      - time: '6:00 PM'
+        location: 'Returns to his tent for the night.'

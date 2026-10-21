@@ -34,6 +34,10 @@
     </div>
     {{ partial "guide-header.html" . }}
     <div class="content">{{ .Content }}</div>
+    {{ if eq .Type "npc" }}
+      {{ $slug := strings.TrimSuffix "-loved-gifts" .File.BaseFileName }}
+      {{ with index .Site.Data.npc $slug }}{{ partial "npc-schedule.html" . }}{{ end }}
+    {{ end }}
     {{ if .Params.faq }}{{ partial "faq.html" . }}{{ end }}
     {{ if .Params.related }}
     <section class="related">
@@ -68,6 +72,10 @@
       </div>
       {{ partial "guide-header.html" . }}
     <div class="content">{{ .Content }}</div>
+      {{ if eq .Type "npc" }}
+        {{ $slug := strings.TrimSuffix "-loved-gifts" .File.BaseFileName }}
+        {{ with index .Site.Data.npc $slug }}{{ partial "npc-schedule.html" . }}{{ end }}
+      {{ end }}
       {{ if .Params.faq }}{{ partial "faq.html" . }}{{ end }}
       {{ if .Params.related }}
       <section class="related">

@@ -1,0 +1,103 @@
+{{ define "title" }}{{ .Title }} | {{ .Site.Title }}{{ end }}
+{{ define "main" }}
+{{ $lang := .Site.Language.Lang }}
+<article class="page">
+  {{ partial "breadcrumb.html" . }}
+  <div class="page-head-row">
+    {{ with .Params.icon }}
+    <div class="page-icon"><img src="{{ . | relURL }}" alt="{{ $.Title }}" loading="lazy"></div>
+    {{ end }}
+    <div>
+      <h1>{{ .Title }}</h1>
+      <div class="page-meta"><span class="data-note">{{ .Site.Params.dataSourceNote }}</span></div>
+    </div>
+  </div>
+
+  {{/* 三语界面文案 */}}
+  {{ $ui := dict }}
+  {{ if eq $lang "zh-hans" }}
+    {{ $ui = dict
+      "inputLabel" "已拥有 / 想送的物品"
+      "placeholder" "输入物品名（如 Amethyst、Pumpkin、Prismatic Shard）"
+      "button" "推荐能送给谁 →"
+      "hint" "提示：输入一个物品，工具会在全体村民中计算它能带来多少好感点（最爱+80 / 喜欢+45 / 中立+20 / 讨厌-20 / 最恨-40），并标出最佳目标。目标村民生日当天送礼好感 ×8。"
+      "resultsTitle" "送礼收益（按好感加成排序）"
+      "bday" "生日"
+      "bday8" "送礼 ×8"
+      "best" "最佳目标"
+      "bestText" "（该物品为其最爱，单次 +80；当天是其生日则 +640）"
+      "pts" "点"
+      "unknown" "未收录"
+      "none" "请输入物品名开始查询"
+      "tiers" (dict "love" "最爱" "like" "喜欢" "neutral" "中立" "dislike" "讨厌" "hate" "最恨" "unknown" "未收录")
+      "seasons" (dict "Spring" "春季" "Summer" "夏季" "Fall" "秋季" "Winter" "冬季")
+    }}
+  {{ else if eq $lang "de" }}
+    {{ $ui = dict
+      "inputLabel" "Gegenstand (besessen / zu verschenken)"
+      "placeholder" "Gegenstandsname eingeben (z. B. Amethyst, Pumpkin, Prismatic Shard)"
+      "button" "Empfehlung anzeigen →"
+      "hint" "Tipp: Gib einen Gegenstand ein – das Tool berechnet die Freundschaftspunkte bei allen Bewohnern (Liebling +80 / Mag +45 / Neutral +20 / Unmögen -20 / Hass -40) und zeigt das beste Ziel. Am Geburtstag ×8."
+      "resultsTitle" "Geschenk-Punkte (nach Bonus sortiert)"
+      "bday" "Geburtstag"
+      "bday8" "Geschenk ×8"
+      "best" "Bestes Ziel"
+      "bestText" "(Lieblingsgeschenk, +80 pro Stück; am Geburtstag +640)"
+      "pts" "Pkt."
+      "unknown" "unbekannt"
+      "none" "Gegenstand eingeben, um zu starten"
+      "tiers" (dict "love" "Liebling" "like" "Mag" "neutral" "Neutral" "dislike" "Unmögen" "hate" "Hass" "unknown" "unbekannt")
+      "seasons" (dict "Spring" "Frühling" "Summer" "Sommer" "Fall" "Herbst" "Winter" "Winter")
+    }}
+  {{ else }}
+    {{ $ui = dict
+      "inputLabel" "Item you own / want to give"
+      "placeholder" "Type an item name (e.g. Amethyst, Pumpkin, Prismatic Shard)"
+      "button" "Who loves it? →"
+      "hint" "Type an item and the tool calculates friendship points for every villager (Love +80 / Like +45 / Neutral +20 / Dislike -20 / Hate -40), then highlights the best target. Birthday gifts give ×8."
+      "resultsTitle" "Gift points (sorted by friendship bonus)"
+      "bday" "Birthday"
+      "bday8" "Gift ×8"
+      "best" "Best target"
+      "bestText" "(their loved gift, +80 each; +640 on their birthday)"
+      "pts" "pts"
+      "unknown" "unknown"
+      "none" "Type an item to get started"
+      "tiers" (dict "love" "Love" "like" "Like" "neutral" "Neutral" "dislike" "Dislike" "hate" "Hate" "unknown" "Unknown")
+      "seasons" (dict "Spring" "Spring" "Summer" "Summer" "Fall" "Fall" "Winter" "Winter")
+    }}
+  {{ end }}
+
+  <div class="content">
+    {{ .Content }}
+    <div id="gift-planner" class="planner" aria-live="polite">
+      <section class="planner__control">
+        <label for="planner-item">{{ index $ui "inputLabel" }}</label>
+        <input id="planner-item" type="text" list="planner-item-options" placeholder="{{ index $ui "placeholder" }}">
+        <datalist id="planner-item-options"></datalist>
+        <button id="planner-add" type="button">{{ index $ui "button" }}</button>
+      </section>
+      <section class="planner__hint"><p>{{ index $ui "hint" }}</p></section>
+      <section class="planner__results" id="planner-results"></section>
+    </div>
+
+    {{/* 精简数据注入：仅 gifts + birthday，不含行程（控制体积） */}}
+    {{ $light := dict }}
+    {{ range $slug, $npc := site.Data.npc }}
+      {{ $light = merge $light (dict $slug (dict "name" $npc.name "birthday" $npc.birthday "gifts" $npc.gifts)) }}
+    {{ end }}
+    {{ $lightJson := $light | jsonify | safeJS }}
+    {{ $universalData := index site.Data "universal-gifts" }}
+    {{ if not $universalData }}{{ $universalData = index site.Data "universal_gifts" }}{{ end }}
+    {{ $universalJson := $universalData | default dict | jsonify | safeJS }}
+    {{ $uiJson := $ui | jsonify | safeJS }}
+    <script id="planner-ui" type="application/json">{{ $uiJson }}</script>
+    <script id="npc-data" type="application/json">{{ $lightJson }}</script>
+    <script id="universal-data" type="application/json">{{ $universalJson }}</script>
+  </div>
+  {{ if .Params.faq }}{{ partial "faq.html" . }}{{ end }}
+</article>
+{{ end }}
+{{ define "scripts" }}
+<script src="{{ "js/gift-planner.js" | relURL }}" defer></script>
+{{ end }}

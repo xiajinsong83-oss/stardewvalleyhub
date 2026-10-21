@@ -1,0 +1,364 @@
+# ============================================================
+# NPC 数据：Elliott（自动生成 scripts/gen_npc_yaml.py）
+# 基础/送礼数据来自开源 stardew-valley-data；行程来自 Stardew Valley Wiki。
+# ============================================================
+slug: "elliott"
+name: 'Elliott'
+display_name: 'Elliott'
+birthday:
+  season: 'Fall'
+  day: 5
+lives_in: 'Elliott''s Cabin'
+address: 'Elliott''s Cabin'
+marriage: true
+marriageable_since: ""
+clinic_visit:
+  season: ""
+  day: 0
+family:
+  - relation: ""
+    name: ""
+bio: >
+  Elliott lives alone in a cabin on the beach. He is a writer who dreams of one day
+  writing a magnificent novel.
+image: 'images/villagers/Elliott.png'
+
+# ---------- 送礼偏好 ----------
+gifts:
+  loved:
+    universal_loves: false
+    universal_exception: ""
+    items:
+      - name: 'Crab Cakes'
+        uid: "crab-cakes"
+      - name: 'Duck Feather'
+        uid: "duck-feather"
+      - name: 'Lobster'
+        uid: "lobster"
+      - name: 'Pomegranate'
+        uid: "pomegranate"
+      - name: 'Squid Ink'
+        uid: "squid-ink"
+      - name: 'Tom Kha Soup'
+        uid: "tom-kha-soup"
+  liked:
+    universal_likes: false
+    universal_exception: ""
+    items:
+      - name: 'Octopus'
+        uid: "octopus"
+      - name: 'Squid'
+        uid: "squid"
+  neutral:
+    universal_neutrals: false
+    universal_exception: ""
+    items:
+      - name: 'All Eggs (except Void Egg)'
+        uid: "all-eggs-except-void-egg"
+      - name: 'All Fish (except Carp, Lobster, Octopus, Sea Cucumber, Snail, Squid)'
+        uid: "all-fish-except-carp-lobster-octopus-sea-cucumber-snail-squid"
+      - name: 'Rainbow Shell'
+        uid: "rainbow-shell"
+      - name: 'Sea Urchin'
+        uid: "sea-urchin"
+  dislike:
+    universal_dislikes: false
+    universal_exception: ""
+    items:
+      - name: 'All Milk'
+        uid: "all-milk"
+      - name: 'Chanterelle'
+        uid: "chanterelle"
+      - name: 'Common Mushroom'
+        uid: "common-mushroom"
+      - name: 'Daffodil'
+        uid: "daffodil"
+      - name: 'Dandelion'
+        uid: "dandelion"
+      - name: 'Ginger'
+        uid: "ginger"
+      - name: 'Hazelnut'
+        uid: "hazelnut"
+      - name: 'Holly'
+        uid: "holly"
+      - name: 'Leek'
+        uid: "leek"
+      - name: 'Magma Cap'
+        uid: "magma-cap"
+      - name: 'Morel'
+        uid: "morel"
+      - name: 'Pizza'
+        uid: "pizza"
+      - name: 'Purple Mushroom'
+        uid: "purple-mushroom"
+      - name: 'Snow Yam'
+        uid: "snow-yam"
+      - name: 'Wild Horseradish'
+        uid: "wild-horseradish"
+      - name: 'Winter Root'
+        uid: "winter-root"
+  hate:
+    universal_hates: false
+    universal_exception: ""
+    items:
+      - name: 'Amaranth'
+        uid: "amaranth"
+      - name: 'Quartz'
+        uid: "quartz"
+      - name: 'Salmonberry'
+        uid: "salmonberry"
+      - name: 'Sea Cucumber'
+        uid: "sea-cucumber"
+      - name: 'Super Cucumber'
+        uid: "super-cucumber"
+
+# ---------- 行程表 ----------
+schedules:
+  - season: 'Spring'
+    label: 'Spring 15 (Bus Service Restored)'
+    condition: 'Spring 15 (Bus Service Restored)'
+    timeline:
+      - time: '11:00 AM'
+        location: 'Boards the bus to Calico Desert to attend the Desert Festival.'
+      - time: '11:40 AM'
+        location: 'Stands at the cliffside south of the racing line.'
+      - time: '1:40 AM'
+        location: 'Boards bus back to the Valley.'
+  - season: 'Spring'
+    label: 'Desert Festival (As Vendor)'
+    condition: 'Desert Festival (As Vendor)'
+    timeline:
+      - time: '11:10 AM'
+        location: 'Boards the bus to Calico Desert.'
+      - time: '11:30 AM'
+        location: 'Arrives at his booth.'
+      - time: '12:00 AM'
+        location: 'Leaves booth and boards bus back to the Valley.'
+  - season: 'Spring'
+    label: 'Rain'
+    condition: 'Rain'
+    timeline:
+      - time: '8:00 AM'
+        location: 'At home.'
+      - time: '11:30 AM'
+        location: 'Leaves home and heads to Pierre''s General Store.'
+      - time: '5:30 PM'
+        location: 'Leaves Pierre''s and heads home for the night.'
+  - season: 'Spring'
+    label: 'Friday and Sunday (No player has 6 hearts with Leah)'
+    condition: 'Friday and Sunday (No player has 6 hearts with Leah)'
+    timeline:
+      - time: '8:00 AM'
+        location: 'At home.'
+      - time: '11:00 AM'
+        location: 'Leaves his cabin to stand on the docks next to Willy''s house.'
+      - time: '5:00 PM'
+        location: 'Leaves the docks to visit The Stardrop Saloon.'
+      - time: '11:40 PM'
+        location: 'Leaves the saloon to return home for the night.'
+  - season: 'Spring'
+    label: 'Regular Schedule'
+    condition: 'Regular Schedule'
+    timeline:
+      - time: '8:00 AM'
+        location: 'At home.'
+      - time: '12:00 PM'
+        location: 'Leaves his cabin to stand on the beach south of his house.'
+      - time: '1:30 PM'
+        location: 'Leaves the beach and returns to his cabin.'
+      - time: '3:00 PM'
+        location: 'Leaves his cabin to stand on the bridge just north of the beach.'
+      - time: '6:00 PM'
+        location: 'Leaves the bridge to return home for the night.'
+  - season: 'Summer'
+    label: 'Summer 9'
+    condition: 'Summer 9'
+    timeline:
+      - time: '10:30 AM'
+        location: 'Leaves his house and goes to the Clinic.'
+      - time: '1:30 PM'
+        location: 'Moves from waiting room to examination room inside Clinic.'
+      - time: '4:00 PM'
+        location: 'Leaves the clinic and returns home for the night.'
+  - season: 'Summer'
+    label: 'Green Rain (Year 1)'
+    condition: 'Green Rain (Year 1)'
+    timeline:
+      - time: '8:00 AM'
+        location: 'At home.'
+      - time: '11:30 AM'
+        location: 'Leaves home and heads to Pierre''s General Store.'
+      - time: '5:30 PM'
+        location: 'Leaves Pierre''s and heads home for the night.'
+  - season: 'Summer'
+    label: 'Friday and Sunday (No player has 6 hearts with Leah)'
+    condition: 'Friday and Sunday (No player has 6 hearts with Leah)'
+    timeline:
+      - time: '8:00 AM'
+        location: 'At home.'
+      - time: '11:00 AM'
+        location: 'Leaves his cabin to stand on the docks next to Willy''s house.'
+      - time: '5:00 PM'
+        location: 'Leaves the docks to visit The Stardrop Saloon.'
+      - time: '11:40 PM'
+        location: 'Leaves the saloon to return home for the night.'
+  - season: 'Summer'
+    label: 'Friday and Sunday'
+    condition: 'Friday and Sunday'
+    timeline:
+      - time: '8:00 AM'
+        location: 'At home.'
+      - time: '12:00 PM'
+        location: 'Leaves his cabin to stand on the beach south of his house.'
+      - time: '1:30 PM'
+        location: 'Leaves the beach and returns to his cabin.'
+      - time: '3:00 PM'
+        location: 'Leaves his cabin to stand on the bridge just north of the beach.'
+      - time: '6:00 PM'
+        location: 'Leaves the bridge to return home for the night.'
+  - season: 'Summer'
+    label: 'Regular Schedule'
+    condition: 'Regular Schedule'
+    timeline:
+      - time: '8:00 AM'
+        location: 'At home.'
+      - time: '11:30 AM'
+        location: 'Leaves home , heads to the forest south of Leah''s Cottage.'
+      - time: '6:00 PM'
+        location: 'Leaves the forest to return home for the night.'
+      - time: '7:40 PM'
+        location: 'Arrives home and goes to bed.'
+  - season: 'Fall'
+    label: 'Rain'
+    condition: 'Rain'
+    timeline:
+      - time: '8:00 AM'
+        location: 'At home.'
+      - time: '11:30 AM'
+        location: 'Leaves home and heads to Pierre''s General Store.'
+      - time: '5:30 PM'
+        location: 'Leaves Pierre''s and heads home for the night.'
+  - season: 'Fall'
+    label: 'Friday and Sunday (No player has 6 hearts with Leah)'
+    condition: 'Friday and Sunday (No player has 6 hearts with Leah)'
+    timeline:
+      - time: '8:00 AM'
+        location: 'At home.'
+      - time: '11:00 AM'
+        location: 'Leaves his cabin to stand on the docks next to Willy''s house.'
+      - time: '5:00 PM'
+        location: 'Leaves the docks to visit The Stardrop Saloon.'
+      - time: '11:40 PM'
+        location: 'Leaves the saloon to return home for the night.'
+  - season: 'Fall'
+    label: 'Friday and Sunday'
+    condition: 'Friday and Sunday'
+    timeline:
+      - time: '8:00 AM'
+        location: 'At home.'
+      - time: '12:00 PM'
+        location: 'Leaves his cabin to stand on the beach south of his house.'
+      - time: '1:30 PM'
+        location: 'Leaves the beach and returns to his cabin.'
+      - time: '3:00 PM'
+        location: 'Leaves his cabin to stand on the bridge just north of the beach.'
+      - time: '6:00 PM'
+        location: 'Leaves the bridge to return home for the night.'
+  - season: 'Fall'
+    label: 'Regular Schedule'
+    condition: 'Regular Schedule'
+    timeline:
+      - time: '8:00 AM'
+        location: 'At home.'
+      - time: '11:30 AM'
+        location: 'Leaves home , heads to the Library.'
+      - time: '5:30 PM'
+        location: 'Leaves the library to return home for the night.'
+      - time: '6:40 PM'
+        location: 'Returns home and stands by his bonsai tree.'
+      - time: '9:00 PM'
+        location: 'Leaves his bonsai tree and walks over to his writing desk.'
+  - season: 'Winter'
+    label: 'Rain'
+    condition: 'Rain'
+    timeline:
+      - time: '8:00 AM'
+        location: 'At home.'
+      - time: '11:30 AM'
+        location: 'Leaves home , heads to the Museum.'
+      - time: '4:50 PM'
+        location: 'Leaves the library to attend the Night Market.'
+      - time: '1:00 AM'
+        location: 'Leaves the Night Market and returns to his cabin.'
+  - season: 'Winter'
+    label: 'Winter 12 and 13'
+    condition: 'Winter 12 and 13'
+    timeline:
+      - time: '8:00 AM'
+        location: 'Leaves his cabin to stand on the docks next to Willy''s house.'
+      - time: '5:00 PM'
+        location: 'Leaves the docks to visit The Stardrop Saloon.'
+      - time: '12:00 AM'
+        location: 'Leaves the saloon to return home for the night.'
+  - season: 'Winter'
+    label: 'Thursday'
+    condition: 'Thursday'
+    timeline:
+      - time: '8:00 AM'
+        location: 'At home.'
+      - time: '11:30 AM'
+        location: 'Leaves home and heads to Pierre''s General Store.'
+      - time: '5:30 PM'
+        location: 'Leaves Pierre''s and heads home for the night.'
+  - season: 'Winter'
+    label: 'Friday and Sunday (No player has 6 hearts with Leah)'
+    condition: 'Friday and Sunday (No player has 6 hearts with Leah)'
+    timeline:
+      - time: '8:00 AM'
+        location: 'At home.'
+      - time: '11:00 AM'
+        location: 'Leaves his cabin to stand on the docks next to Willy''s house.'
+      - time: '5:00 PM'
+        location: 'Leaves the docks to visit The Stardrop Saloon.'
+      - time: '11:40 PM'
+        location: 'Leaves the saloon to return home for the night.'
+  - season: 'Winter'
+    label: 'Friday and Sunday'
+    condition: 'Friday and Sunday'
+    timeline:
+      - time: '8:00 AM'
+        location: 'At home.'
+      - time: '12:00 PM'
+        location: 'Leaves his cabin to stand on the beach south of his house.'
+      - time: '1:30 PM'
+        location: 'Leaves the beach and returns to his cabin.'
+      - time: '3:00 PM'
+        location: 'Leaves his cabin to stand on the bridge just north of the beach.'
+      - time: '6:00 PM'
+        location: 'Leaves the bridge to return home for the night.'
+  - season: 'Winter'
+    label: 'Regular Schedule'
+    condition: 'Regular Schedule'
+    timeline:
+      - time: '8:00 AM'
+        location: 'At home.'
+      - time: '11:30 AM'
+        location: 'Leaves home , heads to the Library.'
+      - time: '5:30 PM'
+        location: 'Leaves the library to return home for the night.'
+  - season: 'Marriage'
+    label: 'Spring 15 (Bus Service Restored)'
+    condition: 'Spring 15 (Bus Service Restored)'
+    timeline:
+      - time: '8:30 AM'
+        location: 'Leaves home to attend the Desert Festival and stand on the cliff overlooking the Oasis.'
+      - time: '12:30 AM'
+        location: 'Leaves the Desert Festival and heads home to the farm.'
+  - season: 'Marriage'
+    label: 'Monday'
+    condition: 'Monday'
+    timeline:
+      - time: '8:30 AM'
+        location: 'Leaves the Farmhouse and heads to the beach.'
+      - time: '5:00 PM'
+        location: 'Leaves the beach and heads home to the farm.'

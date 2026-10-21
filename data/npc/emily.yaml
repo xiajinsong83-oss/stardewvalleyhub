@@ -1,0 +1,275 @@
+# ============================================================
+# NPC 数据：Emily（自动生成 scripts/gen_npc_yaml.py）
+# 基础/送礼数据来自开源 stardew-valley-data；行程来自 Stardew Valley Wiki。
+# ============================================================
+slug: "emily"
+name: 'Emily'
+display_name: 'Emily'
+birthday:
+  season: 'Spring'
+  day: 27
+lives_in: '2 Willow Lane'
+address: '2 Willow Lane'
+marriage: true
+marriageable_since: ""
+clinic_visit:
+  season: ""
+  day: 0
+family:
+  - relation: ""
+    name: ""
+bio: >
+  Emily is a villager who lives in Pelican Town and is one of twelve characters available
+  to marry. She works evenings at The Stardrop Saloon and lives at 2 Willow Lane with her
+  sister Haley.
+image: 'images/villagers/Emily.png'
+
+# ---------- 送礼偏好 ----------
+gifts:
+  loved:
+    universal_loves: false
+    universal_exception: ""
+    items:
+      - name: 'Amethyst'
+        uid: "amethyst"
+      - name: 'Aquamarine'
+        uid: "aquamarine"
+      - name: 'Cloth'
+        uid: "cloth"
+      - name: 'Emerald'
+        uid: "emerald"
+      - name: 'Jade'
+        uid: "jade"
+      - name: 'Parrot Egg'
+        uid: "parrot-egg"
+      - name: 'Ruby'
+        uid: "ruby"
+      - name: 'Survival Burger'
+        uid: "survival-burger"
+      - name: 'Topaz'
+        uid: "topaz"
+      - name: 'Wool'
+        uid: "wool"
+  liked:
+    universal_likes: false
+    universal_exception: ""
+    items:
+      - name: 'Daffodil'
+        uid: "daffodil"
+      - name: 'Quartz'
+        uid: "quartz"
+  neutral:
+    universal_neutrals: false
+    universal_exception: ""
+    items:
+      - name: 'All Eggs (except Void Egg)'
+        uid: "all-eggs-except-void-egg"
+      - name: 'All Fruit (except Fruit Tree Fruit & Salmonberry)'
+        uid: "all-fruit-except-fruit-tree-fruit-salmonberry"
+      - name: 'All Milk'
+        uid: "all-milk"
+      - name: 'Chanterelle'
+        uid: "chanterelle"
+      - name: 'Common Mushroom'
+        uid: "common-mushroom"
+      - name: 'Dandelion'
+        uid: "dandelion"
+      - name: 'Ginger'
+        uid: "ginger"
+      - name: 'Hazelnut'
+        uid: "hazelnut"
+      - name: 'Leek'
+        uid: "leek"
+      - name: 'Magma Cap'
+        uid: "magma-cap"
+      - name: 'Morel'
+        uid: "morel"
+      - name: 'Purple Mushroom'
+        uid: "purple-mushroom"
+      - name: 'Snow Yam'
+        uid: "snow-yam"
+      - name: 'Wild Horseradish'
+        uid: "wild-horseradish"
+      - name: 'Winter Root'
+        uid: "winter-root"
+  dislike:
+    universal_dislikes: false
+    universal_exception: ""
+    items:
+      - name: 'Fried Eel'
+        uid: "fried-eel"
+      - name: 'Ice Cream'
+        uid: "ice-cream"
+      - name: 'Rice Pudding'
+        uid: "rice-pudding"
+      - name: 'Salmonberry'
+        uid: "salmonberry"
+      - name: 'Spicy Eel'
+        uid: "spicy-eel"
+  hate:
+    universal_hates: false
+    universal_exception: ""
+    items:
+      - name: 'Fish Taco'
+        uid: "fish-taco"
+      - name: 'Holly'
+        uid: "holly"
+      - name: 'Maki Roll'
+        uid: "maki-roll"
+      - name: 'Salmon Dinner'
+        uid: "salmon-dinner"
+      - name: 'Sashimi'
+        uid: "sashimi"
+
+# ---------- 行程表 ----------
+schedules:
+  - season: 'Any'
+    label: 'Desert Festival (As Vendor)'
+    condition: 'Desert Festival (As Vendor)'
+    timeline:
+      - time: '11:10 AM'
+        location: 'Boards bus to Calico Desert.'
+      - time: '11:30 AM'
+        location: 'Arrives at her booth.'
+      - time: '12:00 AM'
+        location: 'Leaves booth and boards bus back to the Valley.'
+  - season: 'Spring'
+    label: 'Spring 15, 16 and 17 (Bus Service Restored)'
+    condition: 'Spring 15, 16 and 17 (Bus Service Restored)'
+    timeline:
+      - time: '9:30 AM'
+        location: 'Boards bus to Calico Desert to attend the Desert Festival.'
+      - time: '10:00 AM'
+        location: 'Stands at her outfit services.'
+      - time: '12:30 AM'
+        location: 'Boards bus back to the Valley.'
+  - season: 'Fall'
+    label: 'Fall 15 (Bus Service Restored)'
+    condition: 'Fall 15 (Bus Service Restored)'
+    timeline:
+      - time: '9:00 AM'
+        location: 'In her bedroom.'
+      - time: '10:30 AM'
+        location: 'Leaves home for Calico Desert to visit Sandy on her birthday.'
+      - time: '12:00 AM'
+        location: 'Goes home for the night.'
+  - season: 'Winter'
+    label: 'Winter 11'
+    condition: 'Winter 11'
+    timeline:
+      - time: '9:00 AM'
+        location: 'In her bedroom.'
+      - time: '10:30 AM'
+        location: 'Leaves home for Harvey''s Clinic , waits in waiting room.'
+      - time: '1:30 PM'
+        location: 'Moves to exam room.'
+      - time: '4:00 PM'
+        location: 'Leaves clinic to work at The Stardrop Saloon.'
+      - time: '12:30 AM'
+        location: 'Goes home for the night.'
+  - season: 'Winter'
+    label: 'Winter 15'
+    condition: 'Winter 15'
+    timeline:
+      - time: '9:00 AM'
+        location: 'In her bedroom.'
+      - time: '12:00 PM'
+        location: 'Leaves bedroom to stand in living room.'
+      - time: '2:30 PM'
+        location: 'Leaves home to attend the Night Market.'
+      - time: '12:30 AM'
+        location: 'Goes home for the night.'
+  - season: 'Any'
+    label: 'Green Rain (Year 1)'
+    condition: 'Green Rain (Year 1)'
+    timeline:
+      - time: '9:00 AM'
+        location: 'In her bedroom.'
+      - time: '12:00 PM'
+        location: 'Leaves bedroom to stand in living room.'
+      - time: '3:30 PM'
+        location: 'Leaves home to work at The Stardrop Saloon.'
+      - time: '12:30 AM'
+        location: 'Goes home for the night.'
+  - season: 'Any'
+    label: 'Tuesday'
+    condition: 'Tuesday'
+    timeline:
+      - time: '9:00 AM'
+        location: 'In her bedroom.'
+      - time: '10:00 AM'
+        location: 'Leaves home to attend aerobics class at Pierre''s General Store.'
+      - time: '1:00 PM'
+        location: 'Aerobics class begins.'
+      - time: '4:00 PM'
+        location: 'Leaves Pierre''s to work at The Stardrop Saloon.'
+      - time: '12:30 AM'
+        location: 'Goes home for the night.'
+  - season: 'Any'
+    label: 'Friday (Community Center Restored)'
+    condition: 'Friday (Community Center Restored)'
+    timeline:
+      - time: '9:00 AM'
+        location: 'In her bedroom.'
+      - time: '10:00 AM'
+        location: 'Walks to Community Center , stands in Crafts Room.'
+      - time: '3:30 PM'
+        location: 'Leaves the Community Center to work at The Stardrop Saloon.'
+      - time: '12:30 AM'
+        location: 'Goes home for the night.'
+  - season: 'Any'
+    label: 'Regular Schedule'
+    condition: 'Regular Schedule'
+    timeline:
+      - time: '9:00 AM'
+        location: 'In her bedroom.'
+      - time: '12:00 PM'
+        location: 'Leaves bedroom to stand in living room.'
+      - time: '3:30 PM'
+        location: 'Leaves home to work at The Stardrop Saloon.'
+      - time: '12:30 AM'
+        location: 'Goes home for the night.'
+  - season: 'Marriage'
+    label: 'Spring 15, 16 and 17 (Bus Service Restored)'
+    condition: 'Spring 15, 16 and 17 (Bus Service Restored)'
+    timeline:
+      - time: '8:00 AM'
+        location: 'Leaves home to attend the Desert Festival and stand at her outfit services.'
+      - time: '12:30 AM'
+        location: 'Heads home.'
+  - season: 'Marriage'
+    label: 'Fall 15 (Bus Service Restored)'
+    condition: 'Fall 15 (Bus Service Restored)'
+    timeline:
+      - time: '6:00 AM'
+        location: 'At home.'
+      - time: '12:00 PM'
+        location: 'Arrives at the Oasis to visit Sandy on her birthday.'
+      - time: '1:00 PM'
+        location: 'Leaves the Oasis and walks around Calico Desert.'
+      - time: '12:00 AM'
+        location: 'Heads home for the night.'
+  - season: 'Marriage'
+    label: 'Monday'
+    condition: 'Monday'
+    timeline:
+      - time: '8:30 AM'
+        location: 'Leaves home to walk to 2 Willow Lane , stands in kitchen.'
+      - time: '11:00 AM'
+        location: 'Leaves 2 Willow Lane to go to town , stands east of Community Center and looks at the river.'
+      - time: '3:00 PM'
+        location: 'Heads for the Stardrop Saloon to work.'
+      - time: '10:00 PM'
+        location: 'Leaves the Saloon to return home.'
+  - season: 'Marriage'
+    label: 'Friday'
+    condition: 'Friday'
+    timeline:
+      - time: '8:30 AM'
+        location: 'Leaves house to go to docks west of Fish Shop.'
+      - time: '1:00 PM'
+        location: 'Leaves beach to go to Pierre''s General Store.'
+      - time: '3:00 PM'
+        location: 'Leaves Pierre''s to go to work at the Stardrop Saloon.'
+      - time: '10:00 PM'
+        location: 'Leaves the Saloon to return home.'

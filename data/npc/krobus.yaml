@@ -1,0 +1,110 @@
+# ============================================================
+# NPC 数据：Krobus（自动生成 scripts/gen_npc_yaml.py）
+# 基础/送礼数据来自开源 stardew-valley-data；行程来自 Stardew Valley Wiki。
+# ============================================================
+slug: "krobus"
+name: 'Krobus'
+display_name: 'Krobus'
+birthday:
+  season: 'Winter'
+  day: 1
+lives_in: 'The Sewers'
+address: 'The Sewers'
+marriage: true
+marriageable_since: ""
+clinic_visit:
+  season: ""
+  day: 0
+family:
+  - relation: ""
+    name: ""
+bio: >
+  Krobus is the only friendly monster players will encounter. He is a shadow person who
+  lives in the Sewers.
+image: 'images/villagers/Krobus.png'
+
+# ---------- 送礼偏好 ----------
+gifts:
+  loved:
+    universal_loves: false
+    universal_exception: ""
+    items:
+      - name: 'Diamond'
+        uid: "diamond"
+      - name: 'Iridium Bar'
+        uid: "iridium-bar"
+      - name: 'Monster Compendium'
+        uid: "monster-compendium"
+      - name: 'Monster Musk'
+        uid: "monster-musk"
+      - name: 'Pumpkin'
+        uid: "pumpkin"
+      - name: 'Void Egg'
+        uid: "void-egg"
+      - name: 'Void Mayonnaise'
+        uid: "void-mayonnaise"
+      - name: 'Wild Horseradish'
+        uid: "wild-horseradish"
+  liked:
+    universal_likes: false
+    universal_exception: ""
+    items:
+      - name: 'Gold Bar'
+        uid: "gold-bar"
+      - name: 'Quartz'
+        uid: "quartz"
+      - name: 'Seafoam Pudding'
+        uid: "seafoam-pudding"
+      - name: 'Strange Bun'
+        uid: "strange-bun"
+  neutral:
+    universal_neutrals: false
+    universal_exception: ""
+    items:
+  dislike:
+    universal_dislikes: false
+    universal_exception: ""
+    items:
+      - name: 'Chanterelle'
+        uid: "chanterelle"
+      - name: 'Common Mushroom'
+        uid: "common-mushroom"
+      - name: 'Daffodil'
+        uid: "daffodil"
+      - name: 'Dandelion'
+        uid: "dandelion"
+      - name: 'Ginger'
+        uid: "ginger"
+      - name: 'Hazelnut'
+        uid: "hazelnut"
+      - name: 'Holly'
+        uid: "holly"
+      - name: 'Leek'
+        uid: "leek"
+      - name: 'Life Elixir'
+        uid: "life-elixir"
+      - name: 'Magma Cap'
+        uid: "magma-cap"
+      - name: 'Morel'
+        uid: "morel"
+      - name: 'Purple Mushroom'
+        uid: "purple-mushroom"
+      - name: 'Salmonberry'
+        uid: "salmonberry"
+      - name: 'Snow Yam'
+        uid: "snow-yam"
+      - name: 'Winter Root'
+        uid: "winter-root"
+  hate:
+    universal_hates: false
+    universal_exception: ""
+    items:
+
+# ---------- 行程表 ----------
+schedules:
+  - season: 'All'
+    label: 'Always in the Sewers'
+    condition: 'Always'
+    timeline:
+      - time: 'All Day'
+        location: 'Stays in the Sewers.'

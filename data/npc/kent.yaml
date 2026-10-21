@@ -1,0 +1,198 @@
+# ============================================================
+# NPC 数据：Kent（自动生成 scripts/gen_npc_yaml.py）
+# 基础/送礼数据来自开源 stardew-valley-data；行程来自 Stardew Valley Wiki。
+# ============================================================
+slug: "kent"
+name: 'Kent'
+display_name: 'Kent'
+birthday:
+  season: 'Spring'
+  day: 4
+lives_in: '1 Willow Lane'
+address: '1 Willow Lane'
+marriage: false
+marriageable_since: ""
+clinic_visit:
+  season: ""
+  day: 0
+family:
+  - relation: ""
+    name: ""
+bio: >
+  Kent is a villager who lives in Pelican Town. He is away serving in the army throughout
+  the first year and returns to live in the town during spring of year two.
+image: 'images/villagers/Kent.png'
+
+# ---------- 送礼偏好 ----------
+gifts:
+  loved:
+    universal_loves: false
+    universal_exception: ""
+    items:
+      - name: 'Fiddlehead Risotto'
+        uid: "fiddlehead-risotto"
+      - name: 'Roasted Hazelnuts'
+        uid: "roasted-hazelnuts"
+  liked:
+    universal_likes: false
+    universal_exception: ""
+    items:
+      - name: 'Daffodil'
+        uid: "daffodil"
+      - name: 'Dwarvish Safety Manual'
+        uid: "dwarvish-safety-manual"
+  neutral:
+    universal_neutrals: false
+    universal_exception: ""
+    items:
+      - name: 'Chanterelle'
+        uid: "chanterelle"
+      - name: 'Common Mushroom'
+        uid: "common-mushroom"
+      - name: 'Dandelion'
+        uid: "dandelion"
+      - name: 'Ginger'
+        uid: "ginger"
+      - name: 'Hazelnut'
+        uid: "hazelnut"
+      - name: 'Leek'
+        uid: "leek"
+      - name: 'Magma Cap'
+        uid: "magma-cap"
+      - name: 'Morel'
+        uid: "morel"
+      - name: 'Purple Mushroom'
+        uid: "purple-mushroom"
+      - name: 'Wild Horseradish'
+        uid: "wild-horseradish"
+      - name: 'Winter Root'
+        uid: "winter-root"
+  dislike:
+    universal_dislikes: false
+    universal_exception: ""
+    items:
+      - name: 'Piña Colada'
+        uid: "pi-a-colada"
+      - name: 'Quartz'
+        uid: "quartz"
+      - name: 'Snow Yam'
+        uid: "snow-yam"
+  hate:
+    universal_hates: false
+    universal_exception: ""
+    items:
+      - name: 'Algae Soup'
+        uid: "algae-soup"
+      - name: 'All Milk'
+        uid: "all-milk"
+      - name: 'Holly'
+        uid: "holly"
+      - name: 'Sashimi'
+        uid: "sashimi"
+      - name: 'Tortilla'
+        uid: "tortilla"
+
+# ---------- 行程表 ----------
+schedules:
+  - season: 'Spring'
+    label: 'Spring 17 (Bus Service Restored)'
+    condition: 'Spring 17 (Bus Service Restored)'
+    timeline:
+      - time: '9:00 AM'
+        location: 'Leaves home to head to the Desert Festival and stand by one of the villager shops.'
+      - time: '12:00 AM'
+        location: 'Heads to bed.'
+  - season: 'Any'
+    label: 'Desert Festival (As Vendor)'
+    condition: 'Desert Festival (As Vendor)'
+    timeline:
+      - time: '11:10 AM'
+        location: 'Boards the bus to Calico Desert.'
+      - time: '11:30 AM'
+        location: 'Arrives at his booth.'
+      - time: '12:00 AM'
+        location: 'Leaves booth and takes the bus back to the Valley.'
+  - season: 'Any'
+    label: 'Rain'
+    condition: 'Rain'
+    timeline:
+      - time: '8:30 AM'
+        location: 'At home, standing in his living room.'
+      - time: '2:00 PM'
+        location: 'Leaves home, stands under a tree just north of his house.'
+      - time: '5:00 PM'
+        location: 'Returns home and stands in the entryway.'
+      - time: '7:00 PM'
+        location: 'Heads to the kitchen.'
+      - time: '9:00 PM'
+        location: 'Leaves home, stands under the tree in front of his house.'
+      - time: '11:00 PM'
+        location: 'Returns home to sleep.'
+  - season: 'Any'
+    label: 'Friday and Saturday'
+    condition: 'Friday and Saturday'
+    timeline:
+      - time: '7:00 AM'
+        location: 'Leaves home, stands under the tree between the sewer entrance and the bridge to the beach.'
+      - time: '10:30 AM'
+        location: 'Returns home to stand in his living room.'
+      - time: '2:00 PM'
+        location: 'Leaves home, stands under a tree just north of his house.'
+      - time: '5:00 PM'
+        location: 'Goes to The Stardrop Saloon.'
+      - time: '11:50 PM'
+        location: 'Leaves the Saloon and returns home to sleep.'
+  - season: 'Any'
+    label: 'Sunday (Alex''s 14 heart event seen)'
+    condition: 'Sunday (Alex''s 14 heart event seen)'
+    timeline:
+      - time: '8:00 AM'
+        location: 'At home, standing in the kitchen.'
+      - time: '8:30 AM'
+        location: 'Leaves home, heads to the altar room inside Pierre''s General Store.'
+      - time: '11:10 AM'
+        location: 'Leaves Pierre''s and heads to the back room of the Stardrop Saloon.'
+      - time: '3:00 PM'
+        location: 'Leaves the Saloon and heads home to stand in the entryway.'
+      - time: '7:00 PM'
+        location: 'Heads to the kitchen.'
+      - time: '9:00 PM'
+        location: 'Leaves home, stands under the tree in front of his house.'
+      - time: '11:00 PM'
+        location: 'Returns home to sleep.'
+  - season: 'Any'
+    label: 'Sunday'
+    condition: 'Sunday'
+    timeline:
+      - time: '8:00 AM'
+        location: 'At home, standing in the kitchen.'
+      - time: '10:10 AM'
+        location: 'Leaves home, heads to the altar room inside Pierre''s General Store.'
+      - time: '2:00 PM'
+        location: 'Leaves the altar room, moves to Pierre''s counter.'
+      - time: '4:00 PM'
+        location: 'Leaves Pierre''s and heads home to stand in the entryway.'
+      - time: '7:00 PM'
+        location: 'Heads to the kitchen.'
+      - time: '9:00 PM'
+        location: 'Leaves home, stands under the tree in front of his house.'
+      - time: '11:00 PM'
+        location: 'Returns home to sleep.'
+  - season: 'Any'
+    label: 'Regular Schedule'
+    condition: 'Regular Schedule'
+    timeline:
+      - time: '7:00 AM'
+        location: 'Leaves home, stands under the tree between the sewer entrance and the bridge to the beach.'
+      - time: '10:30 AM'
+        location: 'Returns home to stand in his living room.'
+      - time: '2:00 PM'
+        location: 'Leaves home, stands under a tree just north of his house.'
+      - time: '5:00 PM'
+        location: 'Returns home, stands in the entryway.'
+      - time: '7:00 PM'
+        location: 'Heads to the kitchen.'
+      - time: '9:00 PM'
+        location: 'Leaves home, stands under the tree in front of his house.'
+      - time: '11:00 PM'
+        location: 'Returns home to sleep.'

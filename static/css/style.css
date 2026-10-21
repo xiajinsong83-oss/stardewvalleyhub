@@ -880,3 +880,34 @@ select { background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='h
   .nav-drop-menu a { white-space: normal; word-break: break-word; }
   .breadcrumb { white-space: normal; word-break: break-word; overflow-wrap: anywhere; }
 }
+
+/* ---------- NPC 行程表（npc-schedule partial） ---------- */
+.npc-schedule { margin-top: 8px; }
+.npc-schedule h2 { margin: 28px 0 14px; font-size: 22px; color: #fff; }
+.npc-schedule .season-title { margin: 22px 0 8px; font-size: 18px; color: #f0b429; border-bottom: 1px solid #2a3a55; padding-bottom: 6px; }
+.npc-schedule .schedule-label { margin: 14px 0 6px; font-size: 15px; color: #3ddc97; }
+.npc-schedule .table-wrap { margin-bottom: 14px; }
+.npc-schedule td.nowrap { white-space: nowrap; font-variant-numeric: tabular-nums; }
+
+/* ---------- 送礼规划器（gift-planner） ---------- */
+.planner { margin: 22px 0; border: 1px solid #2a3a55; border-radius: 14px; padding: 20px; background: rgba(255,255,255,.02); }
+.planner__control { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin-bottom: 12px; }
+.planner__control label { font-weight: 700; color: #fff; font-size: 14px; width: 100%; }
+.planner__control input { flex: 1 1 260px; padding: 10px 12px; border-radius: 10px; border: 1px solid #2a3a55; background: #0d1a2d; color: #e8eef7; font-size: 14px; min-width: 200px; }
+.planner__control button { padding: 10px 16px; border-radius: 10px; border: 0; background: #3ddc97; color: #0d1a2d; font-weight: 700; font-size: 14px; cursor: pointer; }
+.planner__control button:hover { filter: brightness(1.08); }
+.planner__hint { font-size: 13px; color: #9aa8bf; margin-bottom: 8px; }
+.planner__results h3 { font-size: 17px; color: #fff; margin: 12px 0 10px; }
+.result-list { list-style: none; margin: 0; padding: 0; }
+.result-item { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 9px 12px; border-bottom: 1px solid rgba(255,255,255,.06); font-size: 14px; flex-wrap: wrap; }
+.result-item:nth-child(odd) { background: rgba(255,255,255,.02); }
+.badge-bday { display: inline-block; margin-left: 8px; font-size: 11.5px; color: #f0b429; background: rgba(240,180,41,.12); border: 1px solid rgba(240,180,41,.35); border-radius: 999px; padding: 2px 8px; }
+.pts-badge { font-weight: 700; border-radius: 8px; padding: 4px 10px; font-size: 12.5px; white-space: nowrap; }
+.pts-badge.love { color: #7cffb2; background: rgba(61,220,151,.15); }
+.pts-badge.like { color: #9fe3ff; background: rgba(80,170,255,.13); }
+.pts-badge.neutral { color: #e2dcc0; background: rgba(240,220,150,.12); }
+.pts-badge.dislike { color: #ffb3a0; background: rgba(255,120,90,.12); }
+.pts-badge.hate { color: #ff8fa3; background: rgba(255,80,110,.14); }
+.pts-badge.unknown { color: #9aa8bf; background: rgba(154,168,191,.12); }
+.badge-unknown { color: #9aa8bf; }
+.best-target { margin-top: 14px; font-size: 14.5px; color: #e8eef7; background: rgba(240,180,41,.08); border: 1px solid rgba(240,180,41,.3); border-radius: 10px; padding: 10px 14px; }

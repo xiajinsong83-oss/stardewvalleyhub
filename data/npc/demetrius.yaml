@@ -1,0 +1,350 @@
+# ============================================================
+# NPC 数据：Demetrius（自动生成 scripts/gen_npc_yaml.py）
+# 基础/送礼数据来自开源 stardew-valley-data；行程来自 Stardew Valley Wiki。
+# ============================================================
+slug: "demetrius"
+name: 'Demetrius'
+display_name: 'Demetrius'
+birthday:
+  season: 'Summer'
+  day: 19
+lives_in: '24 Mountain Road'
+address: '24 Mountain Road'
+marriage: false
+marriageable_since: ""
+clinic_visit:
+  season: ""
+  day: 0
+family:
+  - relation: ""
+    name: ""
+bio: >
+  Demetrius is a villager who resides at 24 Mountain Road with his wife Robin, daughter
+  Maru, and step-son Sebastian.
+image: 'images/villagers/Demetrius.png'
+
+# ---------- 送礼偏好 ----------
+gifts:
+  loved:
+    universal_loves: false
+    universal_exception: ""
+    items:
+      - name: 'Bean Hotpot'
+        uid: "bean-hotpot"
+      - name: 'Ice Cream'
+        uid: "ice-cream"
+      - name: 'Rice Pudding'
+        uid: "rice-pudding"
+      - name: 'Strawberry'
+        uid: "strawberry"
+  liked:
+    universal_likes: false
+    universal_exception: ""
+    items:
+      - name: 'Dinosaur Egg'
+        uid: "dinosaur-egg"
+      - name: 'Purple Mushroom'
+        uid: "purple-mushroom"
+  neutral:
+    universal_neutrals: false
+    universal_exception: ""
+    items:
+      - name: 'All Fish (except Carp & Snail)'
+        uid: "all-fish-except-carp-snail"
+      - name: 'All Milk'
+        uid: "all-milk"
+      - name: 'Chanterelle'
+        uid: "chanterelle"
+      - name: 'Common Mushroom'
+        uid: "common-mushroom"
+      - name: 'Daffodil'
+        uid: "daffodil"
+      - name: 'Dandelion'
+        uid: "dandelion"
+      - name: 'Ginger'
+        uid: "ginger"
+      - name: 'Hazelnut'
+        uid: "hazelnut"
+      - name: 'Leek'
+        uid: "leek"
+      - name: 'Magma Cap'
+        uid: "magma-cap"
+      - name: 'Morel'
+        uid: "morel"
+      - name: 'Snow Yam'
+        uid: "snow-yam"
+      - name: 'Wild Horseradish'
+        uid: "wild-horseradish"
+      - name: 'Winter Root'
+        uid: "winter-root"
+  dislike:
+    universal_dislikes: false
+    universal_exception: ""
+    items:
+      - name: 'Quartz'
+        uid: "quartz"
+  hate:
+    universal_hates: false
+    universal_exception: ""
+    items:
+      - name: 'Holly'
+        uid: "holly"
+
+# ---------- 行程表 ----------
+schedules:
+  - season: 'Spring'
+    label: 'Spring 16 (Bus Service Restored)'
+    condition: 'Spring 16 (Bus Service Restored)'
+    timeline:
+      - time: '11:30 AM'
+        location: 'Boards the bus to Calico Desert to attend the Desert Festival.'
+      - time: '11:40 AM'
+        location: 'Stands by the chef stand.'
+      - time: '1:20 AM'
+        location: 'Boards the bus back to the Valley.'
+  - season: 'Spring'
+    label: 'Desert Festival (As Vendor)'
+    condition: 'Desert Festival (As Vendor)'
+    timeline:
+      - time: '11:10 AM'
+        location: 'Boards the bus to Calico Desert.'
+      - time: '11:30 AM'
+        location: 'Arrives at his booth.'
+      - time: '12:00 AM'
+        location: 'Leaves booth and takes the bus back to the Valley.'
+  - season: 'Spring'
+    label: 'Rain'
+    condition: 'Rain'
+    timeline:
+      - time: '7:50 AM'
+        location: 'In his Home , reading a newspaper in the laboratory.'
+      - time: '11:00 AM'
+        location: 'Taking notes at the microscope.'
+      - time: '3:00 PM'
+        location: 'Behind the counter of the Carpenter''s Shop in the entryway.'
+      - time: '3:40 PM'
+        location: 'Moves back to the microscope in the laboratory.'
+      - time: '6:00 PM'
+        location: 'Stands in front of the fridge in his kitchen.'
+      - time: '7:20 PM'
+        location: 'Stands in front of the stove in his kitchen.'
+      - time: '8:00 PM'
+        location: 'Stands next to the bookshelf in his bedroom.'
+      - time: '10:00 PM'
+        location: 'Goes to bed.'
+  - season: 'Spring'
+    label: 'Friday'
+    condition: 'Friday'
+    timeline:
+      - time: '7:50 AM'
+        location: 'At home , taking notes at the microscope.'
+      - time: '4:00 PM'
+        location: 'Heads to The Saloon.'
+      - time: '5:50 PM'
+        location: 'In The Saloon standing next to Robin.'
+      - time: '7:20 PM'
+        location: 'Dances with Robin in the Saloon.'
+      - time: '9:00 PM'
+        location: 'Heads home from the Saloon to sleep.'
+  - season: 'Spring'
+    label: 'Regular Schedule'
+    condition: 'Regular Schedule'
+    timeline:
+      - time: '7:50 AM'
+        location: 'At home , standing in front of the sink in his kitchen.'
+      - time: '11:00 AM'
+        location: 'Taking notes at the microscope.'
+      - time: '2:30 PM'
+        location: 'Stands outside, next to the potted plant next to his garage.'
+      - time: '3:30 PM'
+        location: 'Stands at the cliff southeast of his house.'
+      - time: '7:00 PM'
+        location: 'Goes inside and stands in front of the fridge in his kitchen.'
+      - time: '8:40 PM'
+        location: 'Stands in front of the stove in his kitchen.'
+      - time: '9:00 PM'
+        location: 'Stands next to the bookshelf in his bedroom.'
+      - time: '10:30 PM'
+        location: 'Goes to bed.'
+  - season: 'Summer'
+    label: 'Green Rain (Year 1)'
+    condition: 'Green Rain (Year 1)'
+    timeline:
+      - time: '08:40 AM'
+        location: 'Leaves home for the Clinic.'
+      - time: '1:30 PM'
+        location: 'Moves to the left examination room in the Clinic.'
+      - time: '4:00 PM'
+        location: 'Leaves the Clinic to go home and stand next to the bookcase in his bedroom.'
+      - time: '10:00 PM'
+        location: 'Goes to bed.'
+  - season: 'Summer'
+    label: 'Rain'
+    condition: 'Rain'
+    timeline:
+      - time: '7:50 AM'
+        location: 'In his Home , reading a newspaper in the laboratory.'
+      - time: '11:00 AM'
+        location: 'Taking notes at the microscope.'
+      - time: '3:00 PM'
+        location: 'Behind the counter of the Carpenter''s Shop in the entryway.'
+      - time: '3:40 PM'
+        location: 'Moves back to the microscope in the laboratory.'
+      - time: '6:00 PM'
+        location: 'Stands in front of the fridge in his kitchen.'
+      - time: '7:20 PM'
+        location: 'Stands in front of the stove in his kitchen.'
+      - time: '8:00 PM'
+        location: 'Stands next to the bookshelf in his bedroom.'
+      - time: '10:00 PM'
+        location: 'Goes to bed.'
+  - season: 'Summer'
+    label: 'Friday'
+    condition: 'Friday'
+    timeline:
+      - time: '7:50 AM'
+        location: 'At home , taking notes at the microscope.'
+      - time: '4:00 PM'
+        location: 'Heads to The Saloon.'
+      - time: '5:50 PM'
+        location: 'In The Saloon standing next to Robin.'
+      - time: '7:20 PM'
+        location: 'Dances with Robin in the Saloon.'
+      - time: '9:00 PM'
+        location: 'Heads home from the Saloon to sleep.'
+      - time: '10:40 PM'
+        location: 'Arrives home with Robin.'
+  - season: 'Summer'
+    label: 'Regular Schedule'
+    condition: 'Regular Schedule'
+    timeline:
+      - time: '7:50 AM'
+        location: 'At home , standing in front of the sink in his kitchen.'
+      - time: '11:00 AM'
+        location: 'Goes to the fountain west of the Community Center.'
+      - time: '7:00 PM'
+        location: 'Heads home to stand in front of the fridge in his kitchen.'
+      - time: '8:40 PM'
+        location: 'Stands in front of the stove in his kitchen.'
+      - time: '9:00 PM'
+        location: 'Stands next to the bookshelf in his bedroom.'
+      - time: '10:30 PM'
+        location: 'Goes to bed.'
+  - season: 'Fall'
+    label: 'Rain'
+    condition: 'Rain'
+    timeline:
+      - time: '7:50 AM'
+        location: 'In his Home , reading a newspaper in the laboratory.'
+      - time: '11:00 AM'
+        location: 'Taking notes at the microscope.'
+      - time: '3:00 PM'
+        location: 'Behind the counter of the Carpenter''s Shop in the entryway.'
+      - time: '3:40 PM'
+        location: 'Moves back to the microscope in the laboratory.'
+      - time: '6:00 PM'
+        location: 'Stands in front of the fridge in his kitchen.'
+      - time: '7:20 PM'
+        location: 'Stands in front of the stove in his kitchen.'
+      - time: '8:00 PM'
+        location: 'Stands next to the bookshelf in his bedroom.'
+      - time: '10:00 PM'
+        location: 'Goes to bed.'
+  - season: 'Fall'
+    label: 'Friday'
+    condition: 'Friday'
+    timeline:
+      - time: '7:50 AM'
+        location: 'At home , taking notes at the microscope.'
+      - time: '4:00 PM'
+        location: 'Heads to The Saloon.'
+      - time: '5:50 PM'
+        location: 'In The Saloon standing next to Robin.'
+      - time: '7:20 PM'
+        location: 'Dances with Robin in the Saloon.'
+      - time: '9:00 PM'
+        location: 'Heads home from the Saloon to sleep.'
+  - season: 'Fall'
+    label: 'Regular Schedule'
+    condition: 'Regular Schedule'
+    timeline:
+      - time: '7:50 AM'
+        location: 'At home , standing in front of the sink in his kitchen.'
+      - time: '11:00 AM'
+        location: 'Heads outside to take notes by the northern end of the lake.'
+      - time: '7:00 PM'
+        location: 'Heads home to stand in front of the fridge in his kitchen.'
+      - time: '8:40 PM'
+        location: 'Stands in front of the stove in his kitchen.'
+      - time: '9:00 PM'
+        location: 'Stands next to the bookshelf in his bedroom.'
+      - time: '10:30 PM'
+        location: 'Goes to bed.'
+  - season: 'Winter'
+    label: 'Winter 16'
+    condition: 'Winter 16'
+    timeline:
+      - time: '7:50 AM'
+        location: 'In his Home , reading a newspaper in the laboratory.'
+      - time: '11:00 AM'
+        location: 'Taking notes at the microscope.'
+      - time: '3:00 PM'
+        location: 'Behind the counter of the Carpenter''s Shop in the entryway.'
+      - time: '3:40 PM'
+        location: 'Leaves home to attend the Night Market.'
+      - time: '11:30 PM'
+        location: 'Leaves Night Market to return home and sleep.'
+  - season: 'Winter'
+    label: 'Rain'
+    condition: 'Rain'
+    timeline:
+      - time: '7:50 AM'
+        location: 'In his Home , reading a newspaper in the laboratory.'
+      - time: '11:00 AM'
+        location: 'Taking notes at the microscope.'
+      - time: '3:00 PM'
+        location: 'Behind the counter of the Carpenter''s Shop in the entryway.'
+      - time: '3:40 PM'
+        location: 'Moves back to the microscope in the laboratory.'
+      - time: '6:00 PM'
+        location: 'Stands in front of the fridge in his kitchen.'
+      - time: '7:20 PM'
+        location: 'Stands in front of the stove in his kitchen.'
+      - time: '8:00 PM'
+        location: 'Stands next to the bookshelf in his bedroom.'
+      - time: '10:00 PM'
+        location: 'Goes to bed.'
+  - season: 'Winter'
+    label: 'Friday'
+    condition: 'Friday'
+    timeline:
+      - time: '7:50 AM'
+        location: 'At home , taking notes at the microscope.'
+      - time: '4:00 PM'
+        location: 'Heads to The Saloon.'
+      - time: '5:50 PM'
+        location: 'In The Saloon standing next to Robin.'
+      - time: '7:20 PM'
+        location: 'Dances with Robin in the Saloon.'
+      - time: '9:00 PM'
+        location: 'Heads home from the Saloon to sleep.'
+  - season: 'Winter'
+    label: 'Regular Schedule'
+    condition: 'Regular Schedule'
+    timeline:
+      - time: '7:50 AM'
+        location: 'In his Home , reading a newspaper in the laboratory.'
+      - time: '11:00 AM'
+        location: 'Taking notes at the microscope.'
+      - time: '3:00 PM'
+        location: 'Behind the counter of the Carpenter''s Shop in the entryway.'
+      - time: '3:40 PM'
+        location: 'Moves back to the microscope in the laboratory.'
+      - time: '6:00 PM'
+        location: 'Stands in front of the fridge in his kitchen.'
+      - time: '7:20 PM'
+        location: 'Stands in front of the stove in his kitchen.'
+      - time: '8:00 PM'
+        location: 'Stands next to the bookshelf in his bedroom.'
+      - time: '10:00 PM'
+        location: 'Goes to bed.'

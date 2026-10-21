@@ -1,0 +1,482 @@
+# ============================================================
+# NPC 数据：Maru（自动生成 scripts/gen_npc_yaml.py）
+# 基础/送礼数据来自开源 stardew-valley-data；行程来自 Stardew Valley Wiki。
+# ============================================================
+slug: "maru"
+name: 'Maru'
+display_name: 'Maru'
+birthday:
+  season: 'Summer'
+  day: 10
+lives_in: '24 Mountain Road'
+address: '24 Mountain Road'
+marriage: true
+marriageable_since: ""
+clinic_visit:
+  season: ""
+  day: 0
+family:
+  - relation: ""
+    name: ""
+bio: >
+  Maru is a villager who lives in The Mountains north of Pelican Town. She is one of the
+  twelve characters available to marry.
+image: 'images/villagers/Maru.png'
+
+# ---------- 送礼偏好 ----------
+gifts:
+  loved:
+    universal_loves: false
+    universal_exception: ""
+    items:
+      - name: 'Battery Pack'
+        uid: "battery-pack"
+      - name: 'Cauliflower'
+        uid: "cauliflower"
+      - name: 'Cheese Cauliflower'
+        uid: "cheese-cauliflower"
+      - name: 'Diamond'
+        uid: "diamond"
+      - name: 'Dwarf Gadget'
+        uid: "dwarf-gadget"
+      - name: 'Gold Bar'
+        uid: "gold-bar"
+      - name: 'Iridium Bar'
+        uid: "iridium-bar"
+      - name: 'Miner''s Treat'
+        uid: "miner-s-treat"
+      - name: 'Pepper Poppers'
+        uid: "pepper-poppers"
+      - name: 'Radioactive Bar'
+        uid: "radioactive-bar"
+      - name: 'Rhubarb Pie'
+        uid: "rhubarb-pie"
+      - name: 'Strawberry'
+        uid: "strawberry"
+  liked:
+    universal_likes: false
+    universal_exception: ""
+    items:
+      - name: 'Chanterelle'
+        uid: "chanterelle"
+      - name: 'Copper Bar'
+        uid: "copper-bar"
+      - name: 'Iron Bar'
+        uid: "iron-bar"
+      - name: 'Magma Cap'
+        uid: "magma-cap"
+      - name: 'Morel'
+        uid: "morel"
+      - name: 'Oak Resin'
+        uid: "oak-resin"
+      - name: 'Pine Tar'
+        uid: "pine-tar"
+      - name: 'Purple Mushroom'
+        uid: "purple-mushroom"
+      - name: 'Quartz'
+        uid: "quartz"
+      - name: 'Radioactive Ore'
+        uid: "radioactive-ore"
+  neutral:
+    universal_neutrals: false
+    universal_exception: ""
+    items:
+      - name: 'All Eggs (except Void Egg)'
+        uid: "all-eggs-except-void-egg"
+      - name: 'All Fruits (except Blackberry, Crystal Fruit, Fruit Tree Fruit, Salmonberry & Strawberry)'
+        uid: "all-fruits-except-blackberry-crystal-fruit-fruit-tree-fruit-salmonberry-strawberry"
+      - name: 'All Milk'
+        uid: "all-milk"
+      - name: 'Daffodil'
+        uid: "daffodil"
+      - name: 'Dandelion'
+        uid: "dandelion"
+      - name: 'Ginger'
+        uid: "ginger"
+      - name: 'Hazelnut'
+        uid: "hazelnut"
+      - name: 'Leek'
+        uid: "leek"
+      - name: 'Wild Horseradish'
+        uid: "wild-horseradish"
+      - name: 'Winter Root'
+        uid: "winter-root"
+  dislike:
+    universal_dislikes: false
+    universal_exception: ""
+    items:
+      - name: 'Blackberry'
+        uid: "blackberry"
+      - name: 'Common Mushroom'
+        uid: "common-mushroom"
+      - name: 'Crystal Fruit'
+        uid: "crystal-fruit"
+      - name: 'Maple Syrup'
+        uid: "maple-syrup"
+      - name: 'Salmonberry'
+        uid: "salmonberry"
+  hate:
+    universal_hates: false
+    universal_exception: ""
+    items:
+      - name: 'Holly'
+        uid: "holly"
+      - name: 'Honey'
+        uid: "honey"
+      - name: 'Pickles'
+        uid: "pickles"
+      - name: 'Snow Yam'
+        uid: "snow-yam"
+      - name: 'Truffle'
+        uid: "truffle"
+
+# ---------- 行程表 ----------
+schedules:
+  - season: 'Spring'
+    label: 'Spring 16 (Bus Service Restored)'
+    condition: 'Spring 16 (Bus Service Restored)'
+    timeline:
+      - time: '9:20 AM'
+        location: 'Boards the bus to Calico Desert to attend the Desert Festival.'
+      - time: '9:50 AM'
+        location: 'Watches the races near the finish line.'
+      - time: '12:20 AM'
+        location: 'Boards the bus back to the Valley.'
+  - season: 'Spring'
+    label: 'Desert Festival (As Vendor)'
+    condition: 'Desert Festival (As Vendor)'
+    timeline:
+      - time: '11:10 AM'
+        location: 'Boards the bus to Calico Desert.'
+      - time: '11:30 AM'
+        location: 'Arrives at her booth.'
+      - time: '12:00 AM'
+        location: 'Leaves booth and takes the bus back to the Valley.'
+  - season: 'Spring'
+    label: 'Rain'
+    condition: 'Rain'
+    timeline:
+      - time: '9:00 AM'
+        location: 'In her room.'
+      - time: '12:50 PM'
+        location: 'Stands in Entryway/Store (Home).'
+      - time: '2:40 PM'
+        location: 'In the lab.'
+      - time: '4:40 PM'
+        location: 'In her room.'
+      - time: '11:00 PM'
+        location: 'Goes to bed.'
+  - season: 'Spring'
+    label: 'Monday and Sunday'
+    condition: 'Monday and Sunday'
+    timeline:
+      - time: '9:00 AM'
+        location: 'In her room.'
+      - time: '10:20 AM'
+        location: 'In the lab.'
+      - time: '1:30 PM'
+        location: 'Heading to bench south of the Saloon.'
+      - time: '3:20 PM'
+        location: 'Sitting on bench south of the Saloon.'
+      - time: '6:30 PM'
+        location: 'Heading home.'
+      - time: '8:30 PM'
+        location: 'At home, in her room.'
+      - time: '11:00 PM'
+        location: 'Goes to bed.'
+  - season: 'Spring'
+    label: 'Tuesday and Thursday'
+    condition: 'Tuesday and Thursday'
+    timeline:
+      - time: '8:00 AM'
+        location: 'Leaves home and heads to Harvey''s.'
+      - time: '9:20 AM'
+        location: 'Working at Harvey''s clinic as a nurse.'
+      - time: '4:45 PM'
+        location: 'Leaves Harvey''s and heads home.'
+      - time: '6:30 PM'
+        location: 'At home, in the kitchen.'
+      - time: '10:20 PM'
+        location: 'In her room.'
+      - time: '12:00 AM'
+        location: 'Goes to bed.'
+  - season: 'Spring'
+    label: 'Regular Schedule'
+    condition: 'Regular Schedule'
+    timeline:
+      - time: '9:00 AM'
+        location: 'In her room.'
+      - time: '10:20 AM'
+        location: 'In the lab.'
+      - time: '2:00 PM'
+        location: 'Heads to bench east of the Community Center.'
+      - time: '3:00 PM'
+        location: 'Sitting on bench east of the Community Center.'
+      - time: '6:00 PM'
+        location: 'Heads home.'
+      - time: '7:00 PM'
+        location: 'At home, in her room.'
+      - time: '10:00 PM'
+        location: 'Goes to bed.'
+  - season: 'Summer'
+    label: 'Green Rain (Year 1)'
+    condition: 'Green Rain (Year 1)'
+    timeline:
+      - time: '9:00 AM'
+        location: 'In her room.'
+      - time: '12:30 PM'
+        location: 'Leaves her room to stand in the "store" part of the house.'
+      - time: '2:30 PM'
+        location: 'Goes to the lab in her house.'
+      - time: '4:30 PM'
+        location: 'At home, in her room.'
+      - time: '11:00 PM'
+        location: 'Goes to bed.'
+  - season: 'Summer'
+    label: 'Monday'
+    condition: 'Monday'
+    timeline:
+      - time: '9:00 AM'
+        location: 'In her room.'
+      - time: '10:20 AM'
+        location: 'In the lab.'
+      - time: '1:30 PM'
+        location: 'Leaving house to go stand next to the Community Center.'
+      - time: '6:30 PM'
+        location: 'Heads home.'
+      - time: '8:10 PM'
+        location: 'Arrives home.'
+  - season: 'Summer'
+    label: 'Tuesday and Thursday'
+    condition: 'Tuesday and Thursday'
+    timeline:
+      - time: '7:50 AM'
+        location: 'Leaving home to go to work at the clinic.'
+      - time: '9:40 AM'
+        location: 'Working at Harvey''s clinic as a nurse.'
+      - time: '4:45 PM'
+        location: 'Heads home.'
+      - time: '6:40 PM'
+        location: 'At home, in the kitchen.'
+      - time: '10:00 PM'
+        location: 'Goes to her room.'
+      - time: '12:00 AM'
+        location: 'Goes to bed.'
+  - season: 'Summer'
+    label: 'Sunday'
+    condition: 'Sunday'
+    timeline:
+      - time: '9:00 AM'
+        location: 'In her room.'
+      - time: '10:20 AM'
+        location: 'In the lab.'
+      - time: '12:30 PM'
+        location: 'Returns to her room, with Penny.'
+      - time: '11:00 PM'
+        location: 'Goes to bed.'
+  - season: 'Summer'
+    label: 'Regular Schedule'
+    condition: 'Regular Schedule'
+    timeline:
+      - time: '9:00 AM'
+        location: 'In her room.'
+      - time: '10:00 AM'
+        location: 'Leaves her room.'
+      - time: '10:20 AM'
+        location: 'In the lab.'
+      - time: '2:00 PM'
+        location: 'Leaving house to go to stand by lake, east of house.'
+      - time: '2:40 PM'
+        location: 'Standing by lake, east of house.'
+      - time: '7:00 PM'
+        location: 'Heads home.'
+      - time: '7:40 PM'
+        location: 'Outside house, looking through telescope.'
+      - time: '12:00 AM'
+        location: 'Heads inside and goes to bed.'
+  - season: 'Fall'
+    label: 'Rain'
+    condition: 'Rain'
+    timeline:
+      - time: '9:00 AM'
+        location: 'In her bedroom.'
+      - time: '12:30 PM'
+        location: 'Leaves her room to stand in the "store" part of the house.'
+      - time: '2:30 PM'
+        location: 'Goes to the lab in her house.'
+      - time: '4:30 PM'
+        location: 'Returns to her room.'
+      - time: '11:00 PM'
+        location: 'Goes to bed.'
+  - season: 'Fall'
+    label: 'Monday and Sunday'
+    condition: 'Monday and Sunday'
+    timeline:
+      - time: '9:00 AM'
+        location: 'In her bedroom.'
+      - time: '10:20 AM'
+        location: 'In the lab.'
+      - time: '1:30 PM'
+        location: 'Leaving house to go sit on a bench in front of the Saloon.'
+      - time: '3:20 PM'
+        location: 'Sitting on a bench in front of the Stardrop Saloon.'
+      - time: '6:30 PM'
+        location: 'Heads home.'
+      - time: '8:10 PM'
+        location: 'Arrives at home.'
+  - season: 'Fall'
+    label: 'Tuesday and Thursday'
+    condition: 'Tuesday and Thursday'
+    timeline:
+      - time: '7:50 AM'
+        location: 'Leaving home to go to work at the clinic.'
+      - time: '9:40 AM'
+        location: 'Working at Harvey''s clinic as a nurse.'
+      - time: '4:45 PM'
+        location: 'Heads home.'
+      - time: '6:40 PM'
+        location: 'At home, in the kitchen.'
+      - time: '10:00 PM'
+        location: 'Goes to her room.'
+      - time: '12:00 AM'
+        location: 'Goes to bed.'
+  - season: 'Fall'
+    label: 'Regular Schedule'
+    condition: 'Regular Schedule'
+    timeline:
+      - time: '9:00 AM'
+        location: 'In her room.'
+      - time: '10:20 AM'
+        location: 'In the lab.'
+      - time: '2:00 PM'
+        location: 'Leaving house to go sit on bench, east of Community Center.'
+      - time: '3:00 PM'
+        location: 'Sitting on bench, east of the Community Center.'
+      - time: '6:00 PM'
+        location: 'Heads home.'
+      - time: '7:10 PM'
+        location: 'At home, in her room.'
+      - time: '10:00 PM'
+        location: 'Goes to bed.'
+  - season: 'Winter'
+    label: 'Winter 16'
+    condition: 'Winter 16'
+    timeline:
+      - time: '9:00 AM'
+        location: 'Leaves her room.'
+      - time: '9:20 AM'
+        location: 'In lab at home.'
+      - time: '11:00 AM'
+        location: 'Goes to her room.'
+      - time: '3:40 PM'
+        location: 'Leaves home to attend Night Market.'
+      - time: '11:30 PM'
+        location: 'Leaves Night Market to return home.'
+  - season: 'Winter'
+    label: 'Monday and Sunday'
+    condition: 'Monday and Sunday'
+    timeline:
+      - time: '10:00 AM'
+        location: 'Leaves room.'
+      - time: '10:20 AM'
+        location: 'In lab at home.'
+      - time: '1:30 PM'
+        location: 'Leaves lab at home.'
+      - time: '3:30 PM'
+        location: 'Sits down on bench north of graveyard.'
+      - time: '6:30 PM'
+        location: 'Gets up from bench and walks home.'
+      - time: '8:00 PM'
+        location: 'Returns home.'
+  - season: 'Winter'
+    label: 'Tuesday and Thursday'
+    condition: 'Tuesday and Thursday'
+    timeline:
+      - time: '7:50 AM'
+        location: 'Leaving home to go to work at the clinic.'
+      - time: '9:40 AM'
+        location: 'Working at Harvey''s clinic as a nurse.'
+      - time: '4:45 PM'
+        location: 'Heads home.'
+      - time: '6:40 PM'
+        location: 'At home, in the kitchen.'
+      - time: '10:00 PM'
+        location: 'In bedroom.'
+  - season: 'Winter'
+    label: 'Community Center Restored'
+    condition: 'Community Center Restored'
+    timeline:
+      - time: '9:00 AM'
+        location: 'Leaves her room and goes to the lab in her house.'
+      - time: '11:00 AM'
+        location: 'Leaves house to visit the Community Center Crafts Room.'
+      - time: '4:00 PM'
+        location: 'Heads home.'
+      - time: '5:40 PM'
+        location: 'At home, in her room.'
+      - time: '10:00 PM'
+        location: 'Goes to bed.'
+  - season: 'Winter'
+    label: 'Regular Schedule'
+    condition: 'Regular Schedule'
+    timeline:
+      - time: '9:00 AM'
+        location: 'In her room.'
+      - time: '10:20 AM'
+        location: 'Goes to the lab in her house.'
+      - time: '2:40 PM'
+        location: 'Leaves to sit on the bench by the Community Center.'
+      - time: '6:00 PM'
+        location: 'Heads home.'
+      - time: '6:40 PM'
+        location: 'At home, in the kitchen.'
+      - time: '10:00 PM'
+        location: 'Goes to her room.'
+      - time: '12:00 AM'
+        location: 'Goes to bed.'
+  - season: 'Marriage'
+    label: 'Green Rain (Year 1)'
+    condition: 'Green Rain (Year 1)'
+    timeline:
+      - time: '6:10 AM'
+        location: 'Leaves home to walk to Sebastian''s room.'
+  - season: 'Marriage'
+    label: 'Spring 16 (Bus Service Restored)'
+    condition: 'Spring 16 (Bus Service Restored)'
+    timeline:
+      - time: '9:20 AM'
+        location: 'Boards the bus to Calico Desert to attend the Desert Festival.'
+      - time: '9:50 AM'
+        location: 'Watches the races near the finish line.'
+      - time: '12:10 AM'
+        location: 'Boards the bus back to the Valley.'
+  - season: 'Marriage'
+    label: 'Monday'
+    condition: 'Monday'
+    timeline:
+      - time: '6:00 AM'
+        location: 'At farmhouse.'
+      - time: '8:00 AM'
+        location: 'Walking to Carpenter''s Shop.'
+      - time: '10:00 AM'
+        location: 'Carpenter''s Shop.'
+      - time: '2:00 PM'
+        location: 'Walking to Community Center.'
+      - time: '3:00 PM'
+        location: 'Sits on bench to right of Community Center.'
+      - time: '6:00 PM'
+        location: 'Walking Home.'
+      - time: '7:30 PM'
+        location: 'At Home.'
+  - season: 'Marriage'
+    label: 'Tuesday and Thursday'
+    condition: 'Tuesday and Thursday'
+    timeline:
+      - time: '7:30 AM'
+        location: 'Leaves the farmhouse and heads to work at Harvey''s Clinic.'
+      - time: '9:00 AM'
+        location: 'Stands behind sales counter at the clinic.'
+      - time: '2:00 PM'
+        location: 'Leaves sales counter and stands in waiting area looking at file folders.'
+      - time: '4:40 PM'
+        location: 'Leaves work and heads home to the farm.'

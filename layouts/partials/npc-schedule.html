@@ -1,0 +1,53 @@
+{{/* npc-schedule.html — 渲染 data/npc/<slug>.yaml 的行程表（三语） */}}
+{{ $lang := site.Language.Lang }}
+{{ $seasonNames := dict
+  "Spring"  (dict "en" "Spring" "zh-hans" "春季" "de" "Frühling")
+  "Summer"  (dict "en" "Summer" "zh-hans" "夏季" "de" "Sommer")
+  "Fall"    (dict "en" "Fall" "zh-hans" "秋季" "de" "Herbst")
+  "Winter"  (dict "en" "Winter" "zh-hans" "冬季" "de" "Winter")
+  "Marriage" (dict "en" "Marriage" "zh-hans" "婚后" "de" "Verheiratet")
+  "Any"     (dict "en" "Special Days" "zh-hans" "特殊日子" "de" "Besondere Tage")
+  "All"     (dict "en" "All Year" "zh-hans" "全年" "de" "Ganzes Jahr")
+}}
+{{ $schedTitle := "Daily Schedule" }}
+{{ $timeCol := "Time" }}
+{{ $locCol := "Location" }}
+{{ if eq $lang "zh-hans" }}
+  {{ $schedTitle = "每日行程" }}
+  {{ $timeCol = "时间" }}
+  {{ $locCol = "地点" }}
+{{ else if eq $lang "de" }}
+  {{ $schedTitle = "Tagesablauf" }}
+  {{ $timeCol = "Zeit" }}
+  {{ $locCol = "Ort" }}
+{{ end }}
+{{ $schedules := .schedules | default slice }}
+{{ if $schedules }}
+<section class="npc-schedule">
+  <h2 id="schedule">{{ $schedTitle }}</h2>
+  {{ $order := slice "Spring" "Summer" "Fall" "Winter" "Marriage" "Any" "All" }}
+  {{ range $order }}
+    {{ $season := . }}
+    {{ $entries := where $schedules "season" $season }}
+    {{ if $entries }}
+    {{ $display := index $seasonNames $season | default (dict "en" $season "zh-hans" $season "de" $season) }}
+    <h3 class="season-title">{{ index $display $lang | default $season }}</h3>
+    {{ range $entries }}
+    <h4 class="schedule-label">{{ .label | default "Regular Schedule" }}</h4>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>{{ $timeCol }}</th><th>{{ $locCol }}</th></tr>
+        </thead>
+        <tbody>
+          {{ range .timeline }}
+          <tr><td class="nowrap">{{ .time }}</td><td>{{ .location }}</td></tr>
+          {{ end }}
+        </tbody>
+      </table>
+    </div>
+    {{ end }}
+    {{ end }}
+  {{ end }}
+</section>
+{{ end }}

@@ -1,0 +1,102 @@
+# ============================================================
+# NPC 数据：Wizard（自动生成 scripts/gen_npc_yaml.py）
+# 基础/送礼数据来自开源 stardew-valley-data；行程来自 Stardew Valley Wiki。
+# ============================================================
+slug: "wizard"
+name: 'Wizard'
+display_name: 'Wizard'
+birthday:
+  season: 'Winter'
+  day: 17
+lives_in: 'Wizard''s Tower'
+address: 'Wizard''s Tower'
+marriage: false
+marriageable_since: ""
+clinic_visit:
+  season: ""
+  day: 0
+family:
+  - relation: ""
+    name: ""
+bio: >
+  The Wizard, also known as M. Rasmodius, is a villager who lives in the Wizard's Tower to
+  the far west of Cindersap Forest.
+image: 'images/villagers/Wizard.png'
+
+# ---------- 送礼偏好 ----------
+gifts:
+  loved:
+    universal_loves: false
+    universal_exception: ""
+    items:
+      - name: 'Book of Mysteries'
+        uid: "book-of-mysteries"
+      - name: 'Purple Mushroom'
+        uid: "purple-mushroom"
+      - name: 'Solar Essence'
+        uid: "solar-essence"
+      - name: 'Super Cucumber'
+        uid: "super-cucumber"
+      - name: 'Void Essence'
+        uid: "void-essence"
+  liked:
+    universal_likes: false
+    universal_exception: ""
+    items:
+      - name: 'Iridium Bar'
+        uid: "iridium-bar"
+      - name: 'Quartz'
+        uid: "quartz"
+  neutral:
+    universal_neutrals: false
+    universal_exception: ""
+    items:
+      - name: 'All Fruits (except Fruit Tree Fruit & Salmonberry)'
+        uid: "all-fruits-except-fruit-tree-fruit-salmonberry"
+  dislike:
+    universal_dislikes: false
+    universal_exception: ""
+    items:
+      - name: 'Chanterelle'
+        uid: "chanterelle"
+      - name: 'Common Mushroom'
+        uid: "common-mushroom"
+      - name: 'Daffodil'
+        uid: "daffodil"
+      - name: 'Dandelion'
+        uid: "dandelion"
+      - name: 'Ginger'
+        uid: "ginger"
+      - name: 'Hazelnut'
+        uid: "hazelnut"
+      - name: 'Holly'
+        uid: "holly"
+      - name: 'Leek'
+        uid: "leek"
+      - name: 'Magma Cap'
+        uid: "magma-cap"
+      - name: 'Morel'
+        uid: "morel"
+      - name: 'Salmonberry'
+        uid: "salmonberry"
+      - name: 'Slime'
+        uid: "slime"
+      - name: 'Snow Yam'
+        uid: "snow-yam"
+      - name: 'Wild Horseradish'
+        uid: "wild-horseradish"
+      - name: 'Winter Root'
+        uid: "winter-root"
+  hate:
+    universal_hates: false
+    universal_exception: ""
+    items:
+
+# ---------- 行程表 ----------
+schedules:
+  - season: 'All'
+    label: 'Always in the Wizard''s Tower'
+    condition: 'Always'
+    timeline:
+      - time: 'All Day'
+        location: 'Stays inside the Wizard''s Tower.'

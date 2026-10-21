@@ -1,0 +1,118 @@
+# ============================================================
+# NPC 数据：Dwarf（自动生成 scripts/gen_npc_yaml.py）
+# 基础/送礼数据来自开源 stardew-valley-data；行程来自 Stardew Valley Wiki。
+# ============================================================
+slug: "dwarf"
+name: 'Dwarf'
+display_name: 'Dwarf'
+birthday:
+  season: 'Summer'
+  day: 22
+lives_in: 'The Mines'
+address: 'The Mines'
+marriage: false
+marriageable_since: ""
+clinic_visit:
+  season: ""
+  day: 0
+family:
+  - relation: ""
+    name: ""
+bio: >
+  The Dwarf is a valley resident who lives in the Mines. Access is initially blocked by an
+  unbreakable rock which can be broken using a steel pickaxe or bombs.
+image: 'images/villagers/Dwarf.png'
+
+# ---------- 送礼偏好 ----------
+gifts:
+  loved:
+    universal_loves: false
+    universal_exception: ""
+    items:
+      - name: 'Amethyst'
+        uid: "amethyst"
+      - name: 'Aquamarine'
+        uid: "aquamarine"
+      - name: 'Emerald'
+        uid: "emerald"
+      - name: 'Jade'
+        uid: "jade"
+      - name: 'Lava Eel'
+        uid: "lava-eel"
+      - name: 'Lemon Stone'
+        uid: "lemon-stone"
+      - name: 'Omni Geode'
+        uid: "omni-geode"
+      - name: 'Ruby'
+        uid: "ruby"
+      - name: 'Topaz'
+        uid: "topaz"
+  liked:
+    universal_likes: false
+    universal_exception: ""
+    items:
+      - name: 'Cave Carrot'
+        uid: "cave-carrot"
+      - name: 'Quartz'
+        uid: "quartz"
+  neutral:
+    universal_neutrals: false
+    universal_exception: ""
+    items:
+      - name: 'All Fruit (except Fruit Tree Fruit & Salmonberry)'
+        uid: "all-fruit-except-fruit-tree-fruit-salmonberry"
+      - name: 'All Milk'
+        uid: "all-milk"
+      - name: 'Solar Essence'
+        uid: "solar-essence"
+      - name: 'Void Essence'
+        uid: "void-essence"
+  dislike:
+    universal_dislikes: false
+    universal_exception: ""
+    items:
+      - name: 'All Eggs'
+        uid: "all-eggs"
+      - name: 'Chanterelle'
+        uid: "chanterelle"
+      - name: 'Common Mushroom'
+        uid: "common-mushroom"
+      - name: 'Daffodil'
+        uid: "daffodil"
+      - name: 'Dandelion'
+        uid: "dandelion"
+      - name: 'Ginger'
+        uid: "ginger"
+      - name: 'Hazelnut'
+        uid: "hazelnut"
+      - name: 'Holly'
+        uid: "holly"
+      - name: 'Leek'
+        uid: "leek"
+      - name: 'Magma Cap'
+        uid: "magma-cap"
+      - name: 'Morel'
+        uid: "morel"
+      - name: 'Purple Mushroom'
+        uid: "purple-mushroom"
+      - name: 'Salmonberry'
+        uid: "salmonberry"
+      - name: 'Snow Yam'
+        uid: "snow-yam"
+      - name: 'Wild Horseradish'
+        uid: "wild-horseradish"
+      - name: 'Winter Root'
+        uid: "winter-root"
+  hate:
+    universal_hates: false
+    universal_exception: ""
+    items:
+
+# ---------- 行程表 ----------
+schedules:
+  - season: 'All'
+    label: 'Always in the Mines'
+    condition: 'Always'
+    timeline:
+      - time: 'All Day'
+        location: 'Stands east of the entrance to the Mines.'

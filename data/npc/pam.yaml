@@ -1,0 +1,176 @@
+# ============================================================
+# NPC 数据：Pam（自动生成 scripts/gen_npc_yaml.py）
+# 基础/送礼数据来自开源 stardew-valley-data；行程来自 Stardew Valley Wiki。
+# ============================================================
+slug: "pam"
+name: 'Pam'
+display_name: 'Pam'
+birthday:
+  season: 'Spring'
+  day: 18
+lives_in: 'Trailer'
+address: 'Trailer'
+marriage: false
+marriageable_since: ""
+clinic_visit:
+  season: ""
+  day: 0
+family:
+  - relation: ""
+    name: ""
+bio: >
+  Pam is a villager who lives in the trailer west of the river in Pelican Town. She drives
+  the Pelican Town bus, enabling access to the Calico Desert.
+image: 'images/villagers/Pam.png'
+
+# ---------- 送礼偏好 ----------
+gifts:
+  loved:
+    universal_loves: false
+    universal_exception: ""
+    items:
+      - name: 'Beer'
+        uid: "beer"
+      - name: 'Cactus Fruit'
+        uid: "cactus-fruit"
+      - name: 'Glazed Yams'
+        uid: "glazed-yams"
+      - name: 'Mead'
+        uid: "mead"
+      - name: 'Pale Ale'
+        uid: "pale-ale"
+      - name: 'Parsnip'
+        uid: "parsnip"
+      - name: 'Parsnip Soup'
+        uid: "parsnip-soup"
+      - name: 'Piña Colada'
+        uid: "pi-a-colada"
+  liked:
+    universal_likes: false
+    universal_exception: ""
+    items:
+      - name: 'Daffodil'
+        uid: "daffodil"
+  neutral:
+    universal_neutrals: false
+    universal_exception: ""
+    items:
+      - name: 'All Fish (except Carp, Octopus, Snail & Squid)'
+        uid: "all-fish-except-carp-octopus-snail-squid"
+      - name: 'Chanterelle'
+        uid: "chanterelle"
+      - name: 'Common Mushroom'
+        uid: "common-mushroom"
+      - name: 'Dandelion'
+        uid: "dandelion"
+      - name: 'Ginger'
+        uid: "ginger"
+      - name: 'Hazelnut'
+        uid: "hazelnut"
+      - name: 'Joja Cola'
+        uid: "joja-cola"
+      - name: 'Leek'
+        uid: "leek"
+      - name: 'Magma Cap'
+        uid: "magma-cap"
+      - name: 'Morel'
+        uid: "morel"
+      - name: 'Purple Mushroom'
+        uid: "purple-mushroom"
+      - name: 'Snow Yam'
+        uid: "snow-yam"
+      - name: 'Winter Root'
+        uid: "winter-root"
+  dislike:
+    universal_dislikes: false
+    universal_exception: ""
+    items:
+      - name: 'All Eggs'
+        uid: "all-eggs"
+      - name: 'Quartz'
+        uid: "quartz"
+      - name: 'Wild Horseradish'
+        uid: "wild-horseradish"
+  hate:
+    universal_hates: false
+    universal_exception: ""
+    items:
+      - name: 'Holly'
+        uid: "holly"
+      - name: 'Octopus'
+        uid: "octopus"
+      - name: 'Squid'
+        uid: "squid"
+
+# ---------- 行程表 ----------
+schedules:
+  - season: 'Spring'
+    label: 'Spring 16 (Bus Service Restored)'
+    condition: 'Spring 16 (Bus Service Restored)'
+    timeline:
+      - time: '10:30 AM'
+        location: 'Boards the bus to Calico Desert to attend the Desert Festival.'
+      - time: '10:50 AM'
+        location: 'Stands in front of one of the villager shops.'
+      - time: '12:40 AM'
+        location: 'Boards the bus back to the Valley.'
+  - season: 'Any'
+    label: 'Desert Festival (As Vendor)'
+    condition: 'Desert Festival (As Vendor)'
+    timeline:
+      - time: '11:10 AM'
+        location: 'Boards the bus to Calico Desert.'
+      - time: '11:30 AM'
+        location: 'Arrives at her booth.'
+      - time: '12:00 AM'
+        location: 'Leaves booth and takes bus back to the Valley.'
+  - season: 'Spring'
+    label: 'Spring 15 and 17 (Bus Service Restored)'
+    condition: 'Spring 15 and 17 (Bus Service Restored)'
+    timeline:
+      - time: '7:20 AM'
+        location: 'Leaves her trailer.'
+      - time: '8:50 AM'
+        location: 'Arrives at the Bus Stop.'
+      - time: '12:50 AM'
+        location: 'Heads home.'
+  - season: 'Spring'
+    label: 'Spring 25'
+    condition: 'Spring 25'
+    timeline:
+      - time: '8:00 AM'
+        location: 'Lounges on her couch in the trailer.'
+      - time: '11:30 AM'
+        location: 'Leaves her trailer and heads to the medical clinic for her annual checkup.'
+      - time: '1:30 PM'
+        location: 'Continues her checkup at the clinic.'
+      - time: '4:00 PM'
+        location: 'Leaves the clinic and heads to the saloon.'
+      - time: '12:00 AM'
+        location: 'Leaves the saloon and heads home for the night.'
+  - season: 'Any'
+    label: 'Green Rain (Year 1)'
+    condition: 'Green Rain (Year 1)'
+    timeline:
+      - time: '8:00 AM'
+        location: 'Lounges on her couch in the trailer.'
+      - time: '12:00 PM'
+        location: 'Leaves the trailer and heads to JojaMart.'
+      - time: '4:00 PM'
+        location: 'Leaves JojaMart and heads to the saloon.'
+      - time: '12:00 AM'
+        location: 'Leaves the saloon and heads home.'
+  - season: 'Any'
+    label: 'Regular Schedule (Bus Service Restored)'
+    condition: 'Regular Schedule (Bus Service Restored)'
+    timeline:
+      - time: '8:00 AM'
+        location: 'Lounges on her couch in the trailer.'
+      - time: '8:30 AM'
+        location: 'Leaves the trailer to head to the bus stop just east of the farm.'
+      - time: '10:00 AM'
+        location: 'Arrives at the bus stop for the afternoon.'
+      - time: '5:00 PM'
+        location: 'Leaves the bus stop and heads to the saloon.'
+      - time: '12:00 AM'
+        location: 'Leaves the saloon and back home for the night.'

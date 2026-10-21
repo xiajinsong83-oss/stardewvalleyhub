@@ -1,0 +1,200 @@
+# ============================================================
+# NPC 数据：Gus（自动生成 scripts/gen_npc_yaml.py）
+# 基础/送礼数据来自开源 stardew-valley-data；行程来自 Stardew Valley Wiki。
+# ============================================================
+slug: "gus"
+name: 'Gus'
+display_name: 'Gus'
+birthday:
+  season: 'Summer'
+  day: 8
+lives_in: 'The Stardrop Saloon'
+address: 'The Stardrop Saloon'
+marriage: false
+marriageable_since: ""
+clinic_visit:
+  season: ""
+  day: 0
+family:
+  - relation: ""
+    name: ""
+bio: >
+  Gus is a villager who lives and works at The Stardrop Saloon in Pelican Town. He owns
+  the establishment.
+image: 'images/villagers/Gus.png'
+
+# ---------- 送礼偏好 ----------
+gifts:
+  loved:
+    universal_loves: false
+    universal_exception: ""
+    items:
+      - name: 'Diamond'
+        uid: "diamond"
+      - name: 'Escargot'
+        uid: "escargot"
+      - name: 'Fish Taco'
+        uid: "fish-taco"
+      - name: 'Orange'
+        uid: "orange"
+      - name: 'Tropical Curry'
+        uid: "tropical-curry"
+  liked:
+    universal_likes: false
+    universal_exception: ""
+    items:
+      - name: 'Daffodil'
+        uid: "daffodil"
+      - name: 'Truffle'
+        uid: "truffle"
+  neutral:
+    universal_neutrals: false
+    universal_exception: ""
+    items:
+      - name: 'All Eggs (except Void Egg)'
+        uid: "all-eggs-except-void-egg"
+      - name: 'All Fruit (except Fruit Tree Fruit & Salmonberry)'
+        uid: "all-fruit-except-fruit-tree-fruit-salmonberry"
+      - name: 'All Milk'
+        uid: "all-milk"
+      - name: 'Chanterelle'
+        uid: "chanterelle"
+      - name: 'Common Mushroom'
+        uid: "common-mushroom"
+      - name: 'Dandelion'
+        uid: "dandelion"
+      - name: 'Ginger'
+        uid: "ginger"
+      - name: 'Hazelnut'
+        uid: "hazelnut"
+      - name: 'Leek'
+        uid: "leek"
+      - name: 'Magma Cap'
+        uid: "magma-cap"
+      - name: 'Morel'
+        uid: "morel"
+      - name: 'Purple Mushroom'
+        uid: "purple-mushroom"
+      - name: 'Snow Yam'
+        uid: "snow-yam"
+      - name: 'Winter Root'
+        uid: "winter-root"
+  dislike:
+    universal_dislikes: false
+    universal_exception: ""
+    items:
+      - name: 'Salmonberry'
+        uid: "salmonberry"
+      - name: 'Wild Horseradish'
+        uid: "wild-horseradish"
+  hate:
+    universal_hates: false
+    universal_exception: ""
+    items:
+      - name: 'Coleslaw'
+        uid: "coleslaw"
+      - name: 'Holly'
+        uid: "holly"
+      - name: 'Quartz'
+        uid: "quartz"
+
+# ---------- 行程表 ----------
+schedules:
+  - season: 'Spring'
+    label: 'Spring 15 (Bus Service Restored)'
+    condition: 'Spring 15 (Bus Service Restored)'
+    timeline:
+      - time: '10:50 AM'
+        location: 'Boards the bus to Calico Desert to attend the Desert Festival.'
+      - time: '11:10 AM'
+        location: 'Stands at the pond near Willy ''s fishing challenge.'
+      - time: '12:50 AM'
+        location: 'Boards bus back to the Valley.'
+  - season: 'Any'
+    label: 'Desert Festival (As Vendor)'
+    condition: 'Desert Festival (As Vendor)'
+    timeline:
+      - time: '11:10 AM'
+        location: 'Boards the bus to Calico Desert.'
+      - time: '11:30 AM'
+        location: 'Arrives at his booth.'
+      - time: '12:00 AM'
+        location: 'Leaves booth and boards bus back to the Valley.'
+  - season: 'Any'
+    label: 'Green Rain (Year 1)'
+    condition: 'Green Rain (Year 1)'
+    timeline:
+      - time: '6:10 AM'
+        location: 'Stands in front of the bar in the Stardrop Saloon.'
+  - season: 'Fall'
+    label: 'Fall 4'
+    condition: 'Fall 4'
+    timeline:
+      - time: '8:00 AM'
+        location: 'In his room, sitting on the couch.'
+      - time: '10:30 AM'
+        location: 'Heads to the Clinic waiting room and looks at a poster.'
+      - time: '1:30 PM'
+        location: 'Moves to the left examination room in the clinic.'
+      - time: '4:00 PM'
+        location: 'Leaves the clinic to go tend the bar.'
+      - time: '12:00 AM'
+        location: 'Goes to his bedroom to sleep.'
+  - season: 'Any'
+    label: 'Rain'
+    condition: 'Rain'
+    timeline:
+      - time: '8:00 AM'
+        location: 'In his room, sitting on the couch.'
+      - time: '12:00 PM'
+        location: 'Cleans glasses behind the bar.'
+      - time: '4:30 PM'
+        location: 'Quits cleaning glasses and tends the bar.'
+      - time: '12:00 AM'
+        location: 'Goes to his bedroom to sleep.'
+  - season: 'Any'
+    label: 'Monday'
+    condition: 'Monday'
+    timeline:
+      - time: '8:30 AM'
+        location: 'Leaves home to go to Pierre''s General Store.'
+      - time: '11:00 AM'
+        location: 'Returns to the Saloon to tend the bar.'
+      - time: '12:00 AM'
+        location: 'Goes to his bedroom to sleep.'
+  - season: 'Any'
+    label: 'Tuesday (Community Center Restored)'
+    condition: 'Tuesday (Community Center Restored)'
+    timeline:
+      - time: '8:00 AM'
+        location: 'In his room, sitting on the couch.'
+      - time: '8:30 AM'
+        location: 'Goes to the kitchen in the Community Center.'
+      - time: '12:30 PM'
+        location: 'Returns to the Saloon to tend the bar.'
+      - time: '12:00 AM'
+        location: 'Goes to his bedroom to sleep.'
+  - season: 'Any'
+    label: 'Sunday (Alex''s 14 heart event seen)'
+    condition: 'Sunday (Alex''s 14 heart event seen)'
+    timeline:
+      - time: '8:00 AM'
+        location: 'In his room, sitting on the couch.'
+      - time: '11:40 AM'
+        location: 'Goes to the backroom of the Saloon.'
+      - time: '3:00 PM'
+        location: 'Goes to tend the bar.'
+      - time: '12:00 AM'
+        location: 'Goes to his bedroom to sleep.'
+  - season: 'Any'
+    label: 'Regular Schedule'
+    condition: 'Regular Schedule'
+    timeline:
+      - time: '8:00 AM'
+        location: 'In his room, sitting on the couch.'
+      - time: '12:00 PM'
+        location: 'Cleans glasses behind the bar.'
+      - time: '4:30 PM'
+        location: 'Quits cleaning glasses and tends the bar.'
+      - time: '12:00 AM'
+        location: 'Goes to his bedroom to sleep.'

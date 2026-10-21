@@ -1,0 +1,284 @@
+# ============================================================
+# NPC 数据：Willy（自动生成 scripts/gen_npc_yaml.py）
+# 基础/送礼数据来自开源 stardew-valley-data；行程来自 Stardew Valley Wiki。
+# ============================================================
+slug: "willy"
+name: 'Willy'
+display_name: 'Willy'
+birthday:
+  season: 'Summer'
+  day: 24
+lives_in: 'The Beach'
+address: 'The Beach'
+marriage: false
+marriageable_since: ""
+clinic_visit:
+  season: ""
+  day: 0
+family:
+  - relation: ""
+    name: ""
+bio: >
+  Willy is a villager who lives south of Pelican Town on the beach. He operates a fishing
+  supply shop.
+image: 'images/villagers/Willy.png'
+
+# ---------- 送礼偏好 ----------
+gifts:
+  loved:
+    universal_loves: false
+    universal_exception: ""
+    items:
+      - name: 'Catfish'
+        uid: "catfish"
+      - name: 'Diamond'
+        uid: "diamond"
+      - name: 'Gold Bar'
+        uid: "gold-bar"
+      - name: 'Iridium Bar'
+        uid: "iridium-bar"
+      - name: 'Jewels of the Sea'
+        uid: "jewels-of-the-sea"
+      - name: 'Mead'
+        uid: "mead"
+      - name: 'Octopus'
+        uid: "octopus"
+      - name: 'Pumpkin'
+        uid: "pumpkin"
+      - name: 'Sea Cucumber'
+        uid: "sea-cucumber"
+      - name: 'Sturgeon'
+        uid: "sturgeon"
+      - name: 'The Art O'' Crabbing'
+        uid: "the-art-o-crabbing"
+  liked:
+    universal_likes: false
+    universal_exception: ""
+    items:
+      - name: 'Coffee'
+        uid: "coffee"
+      - name: 'Quartz'
+        uid: "quartz"
+  neutral:
+    universal_neutrals: false
+    universal_exception: ""
+    items:
+      - name: 'All Eggs (except Void Egg)'
+        uid: "all-eggs-except-void-egg"
+      - name: 'All Fish (except Carp, Catfish, Lingcod, Octopus, Sea Cucumber, Snail, Sturgeon & Tiger Trout)'
+        uid: "all-fish-except-carp-catfish-lingcod-octopus-sea-cucumber-snail-sturgeon-tiger-trout"
+      - name: 'All Fruits (except Fruit Tree Fruit & Salmonberry)'
+        uid: "all-fruits-except-fruit-tree-fruit-salmonberry"
+      - name: 'All Milk'
+        uid: "all-milk"
+      - name: 'Dish O'' The Sea'
+        uid: "dish-o-the-sea"
+      - name: 'Maki Roll'
+        uid: "maki-roll"
+      - name: 'Mutant Carp'
+        uid: "mutant-carp"
+      - name: 'Sashimi'
+        uid: "sashimi"
+  dislike:
+    universal_dislikes: false
+    universal_exception: ""
+    items:
+      - name: 'Chanterelle'
+        uid: "chanterelle"
+      - name: 'Common Mushroom'
+        uid: "common-mushroom"
+      - name: 'Daffodil'
+        uid: "daffodil"
+      - name: 'Dandelion'
+        uid: "dandelion"
+      - name: 'Ginger'
+        uid: "ginger"
+      - name: 'Hazelnut'
+        uid: "hazelnut"
+      - name: 'Holly'
+        uid: "holly"
+      - name: 'Leek'
+        uid: "leek"
+      - name: 'Life Elixir'
+        uid: "life-elixir"
+      - name: 'Magma Cap'
+        uid: "magma-cap"
+      - name: 'Morel'
+        uid: "morel"
+      - name: 'Most Cooked Dishes (except Baked Fish, Bread, Carp Surprise, Chowder, Crab Cakes, Crispy Bass, Dish O'' The Sea, Escargot, Fish Stew, Fish Taco, Fried Calamari, Fried Eel, Fried Egg, Lobster Bisque, Maki Roll, Salmon Dinner, Sashimi, Strange Bun & Trout Soup)'
+        uid: "most-cooked-dishes-except-baked-fish-bread-carp-surprise-chowder-crab-cakes-crispy-bass-dish-o-the-sea-escargot-fish-stew-fish-taco-fried-calamari-fried-eel-fried-egg-lobster-bisque-maki-roll-salmon-dinner-sashimi-strange-bun-trout-soup"
+      - name: 'Purple Mushroom'
+        uid: "purple-mushroom"
+      - name: 'Salmonberry'
+        uid: "salmonberry"
+      - name: 'Snow Yam'
+        uid: "snow-yam"
+      - name: 'Wild Horseradish'
+        uid: "wild-horseradish"
+      - name: 'Winter Root'
+        uid: "winter-root"
+  hate:
+    universal_hates: false
+    universal_exception: ""
+    items:
+
+# ---------- 行程表 ----------
+schedules:
+  - season: 'Any'
+    label: 'Most days Willy fishes at the beach for a few hours before operating his fish shop between 9am and 5pm. During winter he''ll go to the saloon after work.'
+    condition: 'Most days Willy fishes at the beach for a few hours before operating his fish shop between 9am and 5pm. During winter he''ll go to the saloon after work.'
+    timeline:
+      - time: '6:10 AM'
+        location: 'Wakes up for the day, goes fishing outside his fish shop.'
+      - time: '8:50 AM'
+        location: 'Goes back inside fish shop from the beach.'
+      - time: '9:00 AM'
+        location: 'Starts working at the counter in the fish shop , goods are available for sale.'
+  - season: 'Any'
+    label: '"I have a doctor''s appointment today, so if you need to buy anything you''d better hurry."'
+    condition: '"I have a doctor''s appointment today, so if you need to buy anything you''d better hurry."'
+    timeline:
+      - time: '10:10 AM'
+        location: 'Leaves the fish shop , walks over to the Harvey''s Clinic.'
+  - season: 'Any'
+    label: '"Eh, I got a fish hook stuck in my thumb... the Doctor''s gonna cut it out."'
+    condition: '"Eh, I got a fish hook stuck in my thumb... the Doctor''s gonna cut it out."'
+    timeline:
+      - time: '1:30 PM'
+        location: 'Continues checkup at the Harvey''s Clinic.'
+  - season: 'Any'
+    label: '"Yowch! That hurt, Doc!"'
+    condition: '"Yowch! That hurt, Doc!"'
+    timeline:
+      - time: '5:00 PM'
+        location: 'Leaves the Harvey''s Clinic , walks over to the saloon.'
+  - season: 'Any'
+    label: '"I need a little warm-me-up to be ready for another cold night on the ocean."'
+    condition: '"I need a little warm-me-up to be ready for another cold night on the ocean."'
+    timeline:
+      - time: '11:20 PM'
+        location: 'Leaves the saloon to head home for the night.'
+  - season: 'Spring'
+    label: 'Spring 15, 16 and 17 (Bus Service Restored)'
+    condition: 'Spring 15, 16 and 17 (Bus Service Restored)'
+    timeline:
+      - time: '9:00 AM'
+        location: 'Boards the bus to Calico Desert to attend the Desert Festival.'
+      - time: '9:10 AM'
+        location: 'Stands at his fishing challenge.'
+  - season: 'Summer'
+    label: 'Summer 20 and 21'
+    condition: 'Summer 20 and 21'
+    timeline:
+      - time: '6:10 AM'
+        location: 'Wakes up for the day, goes fishing outside his fish shop.'
+      - time: '8:50 AM'
+        location: 'Returns to the fish shop.'
+      - time: '10:00 AM'
+        location: 'Leaves the beach , goes to Cindersap Forest to fish in the Trout Derby in the river to the southwest of Leah''s Cottage.'
+      - time: '11:20 PM'
+        location: 'Leaves Cindersap Forest to head home for the night.'
+  - season: 'Winter'
+    label: 'Winter 12 and 13'
+    condition: 'Winter 12 and 13'
+    timeline:
+      - time: '6:10 AM'
+        location: 'Wakes up for the day, goes fishing outside his fish shop.'
+      - time: '8:50 AM'
+        location: 'Returns to the fish shop.'
+      - time: '12:00 PM'
+        location: 'Heads out to the beach to fish in the SquidFest.'
+      - time: '11:20 PM'
+        location: 'Leaves the beach to head home for the night.'
+  - season: 'Winter'
+    label: 'Winter 15, 16 and 17'
+    condition: 'Winter 15, 16 and 17'
+    timeline:
+      - time: '4:30 PM'
+        location: 'At The Stardrop Saloon.'
+      - time: '12:20 AM'
+        location: 'Returns to the fish shop.'
+  - season: 'Any'
+    label: 'Green Rain (Year 1)'
+    condition: 'Green Rain (Year 1)'
+    timeline:
+      - time: '6:10 AM'
+        location: 'Wakes up for the day, goes fishing outside his fish shop.'
+      - time: '8:50 AM'
+        location: 'Goes back inside fish shop from the beach.'
+      - time: '9:00 AM'
+        location: 'Starts working at the counter in the fish shop , goods are available for sale.'
+      - time: '5:00 PM'
+        location: 'Leaves the fish shop , walks over to the saloon.'
+  - season: 'Any'
+    label: '"I need a little warm-me-up to be ready for another cold night on the ocean."'
+    condition: '"I need a little warm-me-up to be ready for another cold night on the ocean."'
+    timeline:
+      - time: '11:20 PM'
+        location: 'Leaves the saloon to head home for the night.'
+  - season: 'Any'
+    label: 'Friday'
+    condition: 'Friday'
+    timeline:
+      - time: '6:10 AM'
+        location: 'Wakes up for the day, goes fishing outside his fish shop.'
+      - time: '8:50 AM'
+        location: 'Goes back inside fish shop from the beach.'
+      - time: '9:00 AM'
+        location: 'Starts working at the counter in the fish shop , goods are available for sale.'
+      - time: '5:00 PM'
+        location: 'Leaves the fish shop , walks over to the saloon.'
+  - season: 'Any'
+    label: '"Handling salty fish all day makes me real thirsty."'
+    condition: '"Handling salty fish all day makes me real thirsty."'
+    timeline:
+      - time: '11:20 PM'
+        location: 'Leaves the saloon to head home for the night.'
+  - season: 'Any'
+    label: 'Saturday'
+    condition: 'Saturday'
+    timeline:
+      - time: '6:10 AM'
+        location: 'Wakes up for the day, walks through town to go fishing at the river outside Leah''s cottage.'
+      - time: '2:00 PM'
+        location: 'Leaves the river and heads into Pelican Town for more river fishing.'
+      - time: '7:00 PM'
+        location: 'Walks over to the saloon.'
+  - season: 'Any'
+    label: '"Ah... Nothing''s better than kicking back with a cold one after a relaxing day fishing."'
+    condition: '"Ah... Nothing''s better than kicking back with a cold one after a relaxing day fishing."'
+    timeline:
+      - time: '11:00 PM'
+        location: 'Leaves the saloon to head home for the night.'
+  - season: 'Winter'
+    label: 'Regular Schedule'
+    condition: 'Regular Schedule'
+    timeline:
+      - time: '6:10 AM'
+        location: 'Wakes up for the day, goes fishing outside his fish shop.'
+      - time: '8:50 AM'
+        location: 'Goes back inside fish shop from the beach.'
+      - time: '9:00 AM'
+        location: 'Starts working at the counter in the fish shop , goods are available for sale.'
+      - time: '5:00 PM'
+        location: 'Leaves the fish shop , walks over to the saloon.'
+  - season: 'Winter'
+    label: '"I need a little warm-me-up to be ready for another cold night on the ocean."'
+    condition: '"I need a little warm-me-up to be ready for another cold night on the ocean."'
+    timeline:
+      - time: '11:20 PM'
+        location: 'Leaves the saloon to head home for the night.'
+  - season: 'Winter'
+    label: 'Regular Schedule'
+    condition: 'Regular Schedule'
+    timeline:
+      - time: '6:10 AM'
+        location: 'Wakes up for the day, goes fishing outside his fish shop.'
+      - time: '8:50 AM'
+        location: 'Goes back inside fish shop from the beach.'
+      - time: '9:00 AM'
+        location: 'Starts working at the counter in the fish shop , goods are available for sale.'
+      - time: '5:00 PM'
+        location: 'Leaves the fish shop , goes out to fish on the beach.'
+      - time: '10:00 PM'
+        location: 'Leaves the beach to head home for the night.'

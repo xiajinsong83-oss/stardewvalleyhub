@@ -1,0 +1,202 @@
+# ============================================================
+# 通用礼物（Universal Gifts）—— 开源 stardew-valley-data
+# ============================================================
+version: "1.6.15"
+source: "https://www.npmjs.com/package/stardew-valley-data"
+points:
+  love: 80
+  like: 45
+  neutral: 20
+  dislike: -20
+  hate: -40
+loves:
+  label: "Universal Loves"
+  items:
+    - name: 'Golden Pumpkin'
+      uid: "golden-pumpkin"
+    - name: 'Magic Rock Candy'
+      uid: "magic-rock-candy"
+    - name: 'Pearl'
+      uid: "pearl"
+    - name: 'Prismatic Shard'
+      uid: "prismatic-shard"
+    - name: 'Rabbit''s Foot'
+      uid: "rabbit-s-foot"
+    - name: 'Stardrop Tea'
+      uid: "stardrop-tea"
+likes:
+  label: "Universal Likes"
+  items:
+    - name: 'All Artisan Goods (except Oil and Void Mayonnaise)'
+      uid: "all-artisan-goods-except-oil-and-void-mayonnaise"
+    - name: 'All Cooking (except Bread, Fried Egg, Seafoam Pudding, Strange Bun)'
+      uid: "all-cooking-except-bread-fried-egg-seafoam-pudding-strange-bun"
+    - name: 'All Flowers (except Poppy)'
+      uid: "all-flowers-except-poppy"
+    - name: 'All Foraged Minerals (except Quartz)'
+      uid: "all-foraged-minerals-except-quartz"
+    - name: 'All Fruit Tree Fruits (except Banana & Mango)'
+      uid: "all-fruit-tree-fruits-except-banana-mango"
+    - name: 'All Gems (except Prismatic Shard)'
+      uid: "all-gems-except-prismatic-shard"
+    - name: 'All Vegetables (except Hops, Tea Leaves, Unmilled Rice, Wheat)'
+      uid: "all-vegetables-except-hops-tea-leaves-unmilled-rice-wheat"
+    - name: 'Life Elixir'
+      uid: "life-elixir"
+    - name: 'Maple Syrup'
+      uid: "maple-syrup"
+    - name: 'Piña Colada'
+      uid: "pi-a-colada"
+    - name: 'Rainbow Shell'
+      uid: "rainbow-shell"
+    - name: 'Treasure Chest'
+      uid: "treasure-chest"
+neutrals:
+  label: "Universal Neutrals"
+  items:
+    - name: 'All Books (except Price Catalogue)'
+      uid: "all-books-except-price-catalogue"
+    - name: 'Bread'
+      uid: "bread"
+    - name: 'Coral'
+      uid: "coral"
+    - name: 'Duck Feather'
+      uid: "duck-feather"
+    - name: 'Fried Egg'
+      uid: "fried-egg"
+    - name: 'Hops'
+      uid: "hops"
+    - name: 'Mystic Syrup'
+      uid: "mystic-syrup"
+    - name: 'Nautilus Shell'
+      uid: "nautilus-shell"
+    - name: 'Roe'
+      uid: "roe"
+    - name: 'Squid Ink'
+      uid: "squid-ink"
+    - name: 'Sweet Gem Berry'
+      uid: "sweet-gem-berry"
+    - name: 'Tea Leaves'
+      uid: "tea-leaves"
+    - name: 'Truffle'
+      uid: "truffle"
+    - name: 'Wheat'
+      uid: "wheat"
+    - name: 'Wool'
+      uid: "wool"
+dislikes:
+  label: "Universal Dislikes"
+  items:
+    - name: 'All Artifacts'
+      uid: "all-artifacts"
+    - name: 'All Bombs'
+      uid: "all-bombs"
+    - name: 'All Building Materials'
+      uid: "all-building-materials"
+    - name: 'All Crafted Floors & Paths'
+      uid: "all-crafted-floors-paths"
+    - name: 'All Fences'
+      uid: "all-fences"
+    - name: 'All Fertilizer'
+      uid: "all-fertilizer"
+    - name: 'All Fish (except Carp & Snail)'
+      uid: "all-fish-except-carp-snail"
+    - name: 'All Geode Minerals'
+      uid: "all-geode-minerals"
+    - name: 'All Geodes'
+      uid: "all-geodes"
+    - name: 'All Seeds'
+      uid: "all-seeds"
+    - name: 'All Sprinklers'
+      uid: "all-sprinklers"
+    - name: 'All Tackle'
+      uid: "all-tackle"
+    - name: 'All Trinkets'
+      uid: "all-trinkets"
+    - name: 'Cave Carrot'
+      uid: "cave-carrot"
+    - name: 'Driftwood'
+      uid: "driftwood"
+    - name: 'Field Snack'
+      uid: "field-snack"
+    - name: 'Fireworks'
+      uid: "fireworks"
+    - name: 'Jack-O-Lantern'
+      uid: "jack-o-lantern"
+    - name: 'Oak Resin'
+      uid: "oak-resin"
+    - name: 'Oil'
+      uid: "oil"
+    - name: 'Pine Tar'
+      uid: "pine-tar"
+    - name: 'Price Catalogue'
+      uid: "price-catalogue"
+    - name: 'Qi Fruit'
+      uid: "qi-fruit"
+    - name: 'Solar Essence'
+      uid: "solar-essence"
+    - name: 'Spring Onion'
+      uid: "spring-onion"
+    - name: 'Tea Set'
+      uid: "tea-set"
+    - name: 'Unmilled Rice'
+      uid: "unmilled-rice"
+    - name: 'Vinegar'
+      uid: "vinegar"
+    - name: 'Void Egg'
+      uid: "void-egg"
+    - name: 'Void Essence'
+      uid: "void-essence"
+    - name: 'Wheat Flour'
+      uid: "wheat-flour"
+hates:
+  label: "Universal Hates"
+  items:
+    - name: 'All Bait'
+      uid: "all-bait"
+    - name: 'All Fossils'
+      uid: "all-fossils"
+    - name: 'All Monster Loot'
+      uid: "all-monster-loot"
+    - name: 'All Trash'
+      uid: "all-trash"
+    - name: 'Carp'
+      uid: "carp"
+    - name: 'Copper Ore'
+      uid: "copper-ore"
+    - name: 'Dragon Tooth'
+      uid: "dragon-tooth"
+    - name: 'Green Algae'
+      uid: "green-algae"
+    - name: 'Hay'
+      uid: "hay"
+    - name: 'Iron Ore'
+      uid: "iron-ore"
+    - name: 'Monster Musk'
+      uid: "monster-musk"
+    - name: 'Poppy'
+      uid: "poppy"
+    - name: 'Radioactive Bar'
+      uid: "radioactive-bar"
+    - name: 'Radioactive Ore'
+      uid: "radioactive-ore"
+    - name: 'Red Mushroom'
+      uid: "red-mushroom"
+    - name: 'Sap'
+      uid: "sap"
+    - name: 'Sea Urchin'
+      uid: "sea-urchin"
+    - name: 'Seafoam Pudding'
+      uid: "seafoam-pudding"
+    - name: 'Seaweed'
+      uid: "seaweed"
+    - name: 'Snail'
+      uid: "snail"
+    - name: 'Strange Bun'
+      uid: "strange-bun"
+    - name: 'Sugar'
+      uid: "sugar"
+    - name: 'Void Mayonnaise'
+      uid: "void-mayonnaise"
+    - name: 'White Algae'
+      uid: "white-algae"
