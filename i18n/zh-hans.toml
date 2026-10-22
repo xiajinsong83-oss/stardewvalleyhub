@@ -418,3 +418,8 @@ game_fishing_fail = "鱼跑了！"
 game_memory_howto = "玩法：点击两张卡片找出配对的图案。配齐全部 8 对即获胜。步数越少、用时越短，得分越高。"
 game_memory_win = "全部配对完成！"
 nav_games = "小游戏"
+
+ach_secret_tag = "隐藏"
+ach_reward = "奖励"
+rec_buffs_tag = "增益"
+rec_sell = "售价"

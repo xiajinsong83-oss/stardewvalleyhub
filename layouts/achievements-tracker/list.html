@@ -1,4 +1,7 @@
 {{ define "main" }}
+{{ $lang := site.Language.Lang }}{{ $sfx := "" }}{{ if eq $lang "zh-hans" }}{{ $sfx = "_zh" }}{{ else if eq $lang "de" }}{{ $sfx = "_de" }}{{ end }}
+{{ $secLabel := i18n "ach_secret_tag" | default "Secret" }}
+{{ $rwLabel := i18n "ach_reward" | default "Reward" }}
 <div class="content-col">
   {{ partial "breadcrumb.html" . }}
 
@@ -17,7 +20,7 @@
         <label>{{ i18n "tool_show" }}
           <select id="filterType" class="fish-select">
             <option value="">{{ i18n "tool_all_items" }}</option>
-            <option value="secret">Secret</option>
+            <option value="secret">{{ $secLabel }}</option>
           </select>
         </label>
         <span class="fish-count" id="totalCount">{{ len .Site.Data.achievements }} {{ i18n "ach_achievements" }}</span>
@@ -29,14 +32,17 @@
 
       <div class="fish-list" id="fishList">
         {{ range .Site.Data.achievements }}
-        <label class="fish-row" data-type="{{ if .secret }}secret{{ else }}normal{{ end }}" data-search="{{ .name | lower }} {{ .description | lower }}">
+        {{ $nm := index . (printf "name%s" $sfx) | default .name }}
+        {{ $ds := index . (printf "description%s" $sfx) | default .description }}
+        {{ $rw := index . (printf "reward%s" $sfx) | default .reward }}
+        <label class="fish-row" data-type="{{ if .secret }}secret{{ else }}normal{{ end }}" data-search="{{ $nm | lower }} {{ $ds | lower }} {{ .name | lower }}">
           <input type="checkbox" class="ach-check" data-id="{{ .name | lower }}">
           <div class="fish-row-icon">
-            <img src="/{{ .icon }}" alt="{{ .name }}" onerror="this.style.display='none'">
+            <img src="/{{ .icon }}" alt="{{ $nm }}" onerror="this.style.display='none'">
           </div>
           <div class="fish-row-body">
-            <h4>{{ .name }}{{ if .secret }} <span class="fish-season-tag">Secret</span>{{ end }}</h4>
-            <p class="fish-meta">{{ .description }}{{ if .reward }} · Reward: {{ .reward }}{{ end }}</p>
+            <h4>{{ $nm }}{{ if .secret }} <span class="fish-season-tag">{{ $secLabel }}</span>{{ end }}</h4>
+            <p class="fish-meta">{{ $ds }}{{ if .reward }} · {{ $rwLabel }}: {{ $rw }}{{ end }}</p>
           </div>
         </label>
         {{ end }}
@@ -60,7 +66,7 @@
         <h4>{{ i18n "tool_collection_progress" }}</h4>
         <div class="fish-stat-row"><span>{{ i18n "ach_unlocked" }}</span><strong id="statCaught">0 / {{ len .Site.Data.achievements }}</strong></div>
         <div class="fish-stat-row"><span>{{ i18n "tool_remaining" }}</span><strong id="statLeft">{{ len .Site.Data.achievements }}</strong></div>
-        <div class="fish-stat-row"><span>Secret</span><strong>{{ len (where .Site.Data.achievements "secret" true) }}</strong></div>
+        <div class="fish-stat-row"><span>{{ $secLabel }}</span><strong>{{ len (where .Site.Data.achievements "secret" true) }}</strong></div>
       </div>
     </div>
   </div>

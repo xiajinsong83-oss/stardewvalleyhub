@@ -37,7 +37,7 @@
 {{ with .Description }}<meta property="og:description" content="{{ . }}">{{ else }}<meta property="og:description" content="{{ .Site.Params.description }}">{{ end }}
 <meta name="twitter:card" content="summary_large_image">
 <meta name="robots" content="index, follow">
-<link rel="stylesheet" href="{{ "css/style.css" | relURL }}">
+<link rel="stylesheet" href="{{ "css/style.css" | relURL }}?v=20261021">
 
 <!-- Google AdSense：受 Cookie 同意控制（见 cookie-consent.js），未同意不加载 -->
 {{ if .Site.Params.adsenseClient }}

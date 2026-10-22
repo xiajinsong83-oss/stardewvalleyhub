@@ -6,7 +6,13 @@
     "image": "images/achievements/Achievement_Greenhorn.jpg",
     "icon": "images/achievements/Achievement_Star_12.png",
     "reward": "Good Ol' Cap",
-    "secret": false
+    "secret": false,
+    "name_zh": "新手",
+    "name_de": "Grünschnabel",
+    "description_zh": "赚到 15,000g。",
+    "description_de": "Verdiene 15.000g.",
+    "reward_zh": "旧棒球帽",
+    "reward_de": "Alter Hut"
   },
   {
     "id": "1",
@@ -15,7 +21,13 @@
     "image": "images/achievements/Achievement_Cowpoke.jpg",
     "icon": "images/achievements/Achievement_Star_02.png",
     "reward": "Lucky Bow",
-    "secret": false
+    "secret": false,
+    "name_zh": "牛仔",
+    "name_de": "Cowboy",
+    "description_zh": "赚到 50,000g。",
+    "description_de": "Verdiene 50.000g.",
+    "reward_zh": "幸运蝴蝶结",
+    "reward_de": "Glücksschleife"
   },
   {
     "id": "2",
@@ -24,7 +36,13 @@
     "image": "images/achievements/Achievement_Homesteader.jpg",
     "icon": "images/achievements/Achievement_Star_11.png",
     "reward": "Cool Cap",
-    "secret": false
+    "secret": false,
+    "name_zh": "自耕农",
+    "name_de": "Siedler",
+    "description_zh": "赚到 250,000g。",
+    "description_de": "Verdiene 250.000g.",
+    "reward_zh": "酷帽",
+    "reward_de": "Coole Mütze"
   },
   {
     "id": "3",
@@ -33,7 +51,13 @@
     "image": "images/achievements/Achievement_Millionaire.jpg",
     "icon": "images/achievements/Achievement_Star_09.png",
     "reward": "Bowler Hat",
-    "secret": false
+    "secret": false,
+    "name_zh": "百万富翁",
+    "name_de": "Millionär",
+    "description_zh": "赚到 1,000,000g。",
+    "description_de": "Verdiene 1.000.000g.",
+    "reward_zh": "圆顶礼帽",
+    "reward_de": "Melone"
   },
   {
     "id": "4",
@@ -42,7 +66,13 @@
     "image": "images/achievements/Achievement_Legend.jpg",
     "icon": "images/achievements/Achievement_Star_04.png",
     "reward": "Sombrero",
-    "secret": true
+    "secret": true,
+    "name_zh": "传奇",
+    "name_de": "Legende",
+    "description_zh": "赚到 10,000,000g。",
+    "description_de": "Verdiene 10.000.000g.",
+    "reward_zh": "宽边帽",
+    "reward_de": "Sombrero"
   },
   {
     "id": "5",
@@ -51,7 +81,13 @@
     "image": "images/achievements/Achievement_A_Complete_Collection.jpg",
     "icon": "images/achievements/Achievement_Star_02.png",
     "reward": "Cowboy Hat",
-    "secret": false
+    "secret": false,
+    "name_zh": "完整收藏",
+    "name_de": "Komplette Sammlung",
+    "description_zh": "完成博物馆收藏。",
+    "description_de": "Schließe die Museumssammlung ab.",
+    "reward_zh": "牛仔帽",
+    "reward_de": "Cowboyhut"
   },
   {
     "id": "6",
@@ -60,7 +96,13 @@
     "image": "images/achievements/Achievement_A_New_Friend.jpg",
     "icon": "images/achievements/Achievement_Star_02.png",
     "reward": "Butterfly Bow",
-    "secret": false
+    "secret": false,
+    "name_zh": "新朋友",
+    "name_de": "Ein neuer Freund",
+    "description_zh": "与某人达到 5 心好友等级。",
+    "description_de": "Erreiche 5 Herz Freundschaft mit jemandem.",
+    "reward_zh": "蝴蝶结",
+    "reward_de": "Schmetterlingsschleife"
   },
   {
     "id": "7",
@@ -69,7 +111,13 @@
     "image": "images/achievements/Achievement_Best_Friends.jpg",
     "icon": "images/achievements/Achievement_Star_04.png",
     "reward": "Mouse Ears",
-    "secret": false
+    "secret": false,
+    "name_zh": "挚友",
+    "name_de": "Beste Freunde",
+    "description_zh": "与某人达到 10 心好友等级。",
+    "description_de": "Erreiche 10 Herz Freundschaft mit jemandem.",
+    "reward_zh": "老鼠耳朵",
+    "reward_de": "Mauseohren"
   },
   {
     "id": "9",
@@ -78,7 +126,13 @@
     "image": "images/achievements/Achievement_The_Beloved_Farmer.jpg",
     "icon": "images/achievements/Achievement_Star_06.png",
     "reward": "Cat Ears",
-    "secret": false
+    "secret": false,
+    "name_zh": "受人爱戴的农夫",
+    "name_de": "Der geliebte Farmer",
+    "description_zh": "与 8 人达到 10 心好友等级。",
+    "description_de": "Erreiche 10 Herz Freundschaft mit 8 Personen.",
+    "reward_zh": "猫咪耳朵",
+    "reward_de": "Katzenohren"
   },
   {
     "id": "11",
@@ -87,7 +141,13 @@
     "image": "images/achievements/Achievement_Cliques.jpg",
     "icon": "images/achievements/Achievement_Star_10.png",
     "reward": "Tiara",
-    "secret": false
+    "secret": false,
+    "name_zh": "小圈子",
+    "name_de": "Cliquen",
+    "description_zh": "与 4 人达到 5 心好友等级。",
+    "description_de": "Erreiche 5 Herz Freundschaft mit 4 Personen.",
+    "reward_zh": "头冠",
+    "reward_de": "Tiara"
   },
   {
     "id": "12",
@@ -96,7 +156,13 @@
     "image": "images/achievements/Achievement_Networking.jpg",
     "icon": "images/achievements/Achievement_Star_04.png",
     "reward": "Santa Hat",
-    "secret": false
+    "secret": false,
+    "name_zh": "人脉广阔",
+    "name_de": "Vernetzt",
+    "description_zh": "与 10 人达到 5 心好友等级。",
+    "description_de": "Erreiche 5 Herz Freundschaft mit 10 Personen.",
+    "reward_zh": "圣诞帽",
+    "reward_de": "Weihnachtsmannmütze"
   },
   {
     "id": "13",
@@ -105,7 +171,13 @@
     "image": "images/achievements/Achievement_Popular.jpg",
     "icon": "images/achievements/Achievement_Star_09.png",
     "reward": "Earmuffs",
-    "secret": false
+    "secret": false,
+    "name_zh": "万人迷",
+    "name_de": "Beliebt",
+    "description_zh": "与 20 人达到 5 心好友等级。",
+    "description_de": "Erreiche 5 Herz Freundschaft mit 20 Personen.",
+    "reward_zh": "耳罩",
+    "reward_de": "Ohrenschützer"
   },
   {
     "id": "15",
@@ -114,7 +186,13 @@
     "image": "images/achievements/Achievement_Cook.jpg",
     "icon": "images/achievements/Achievement_Star_02.png",
     "reward": "Delicate Bow",
-    "secret": false
+    "secret": false,
+    "name_zh": "厨师",
+    "name_de": "Koch",
+    "description_zh": "烹饪 10 种不同食谱。",
+    "description_de": "Koche 10 verschiedene Rezepte.",
+    "reward_zh": "精致蝴蝶结",
+    "reward_de": "Feine Schleife"
   },
   {
     "id": "16",
@@ -123,7 +201,13 @@
     "image": "images/achievements/Achievement_Sous_Chef.jpg",
     "icon": "images/achievements/Achievement_Star_09.png",
     "reward": "Plum Chapeau",
-    "secret": false
+    "secret": false,
+    "name_zh": "副厨师长",
+    "name_de": "Sous-Chef",
+    "description_zh": "烹饪 25 种不同食谱。",
+    "description_de": "Koche 25 verschiedene Rezepte.",
+    "reward_zh": "李子帽",
+    "reward_de": "Pflaumenhut"
   },
   {
     "id": "17",
@@ -132,7 +216,11 @@
     "image": "images/achievements/Achievement_Gourmet_Chef.jpg",
     "icon": "images/achievements/Achievement_Star_08.png",
     "reward": "Archer's Cap, Chef Hat",
-    "secret": false
+    "secret": false,
+    "name_zh": "美食大厨",
+    "name_de": "Gourmet-Koch",
+    "description_zh": "烹饪全部食谱。",
+    "description_de": "Koche jedes Rezept."
   },
   {
     "id": "18",
@@ -141,7 +229,13 @@
     "image": "images/achievements/Achievement_Moving_Up.jpg",
     "icon": "images/achievements/Achievement_Star_01.png",
     "reward": "Tropiclip",
-    "secret": false
+    "secret": false,
+    "name_zh": "搬新家",
+    "name_de": "Umzug",
+    "description_zh": "升级你的房屋。",
+    "description_de": "Baue dein Haus aus.",
+    "reward_zh": "热带发夹",
+    "reward_de": "Tropenclip"
   },
   {
     "id": "19",
@@ -150,7 +244,13 @@
     "image": "images/achievements/Achievement_Living_Large.jpg",
     "icon": "images/achievements/Achievement_Star_09.png",
     "reward": "Hunter's Cap",
-    "secret": false
+    "secret": false,
+    "name_zh": "豪宅",
+    "name_de": "Großes Leben",
+    "description_zh": "将房屋升级到最大规模。",
+    "description_de": "Baue dein Haus zur maximalen Größe aus.",
+    "reward_zh": "猎人帽",
+    "reward_de": "Jägermütze"
   },
   {
     "id": "20",
@@ -159,7 +259,13 @@
     "image": "images/achievements/Achievement_DIY.jpg",
     "icon": "images/achievements/Achievement_Star_06.png",
     "reward": "Daisy",
-    "secret": false
+    "secret": false,
+    "name_zh": "手工达人",
+    "name_de": "Selbstgemacht",
+    "description_zh": "制作 15 种不同物品。",
+    "description_de": "Stelle 15 verschiedene Gegenstände her.",
+    "reward_zh": "雏菊",
+    "reward_de": "Gänseblümchen"
   },
   {
     "id": "21",
@@ -168,7 +274,13 @@
     "image": "images/achievements/Achievement_Artisan.jpg",
     "icon": "images/achievements/Achievement_Star_06.png",
     "reward": "Trucker Hat",
-    "secret": false
+    "secret": false,
+    "name_zh": "工匠",
+    "name_de": "Handwerker",
+    "description_zh": "制作 30 种不同物品。",
+    "description_de": "Stelle 30 verschiedene Gegenstände her.",
+    "reward_zh": "卡车司机帽",
+    "reward_de": "Trucker-Mütze"
   },
   {
     "id": "22",
@@ -177,7 +289,13 @@
     "image": "images/achievements/Achievement_Master_Craft.jpg",
     "icon": "images/achievements/Achievement_Star_10.png",
     "reward": "Gnome's Cap",
-    "secret": false
+    "secret": false,
+    "name_zh": "工匠大师",
+    "name_de": "Handwerksmeister",
+    "description_zh": "制作全部物品。",
+    "description_de": "Stelle jeden Gegenstand her.",
+    "reward_zh": "地精帽",
+    "reward_de": "Gnomenmütze"
   },
   {
     "id": "24",
@@ -186,7 +304,13 @@
     "image": "images/achievements/Achievement_Fisherman.jpg",
     "icon": "images/achievements/Achievement_Star_06.png",
     "reward": "Sou'wester",
-    "secret": false
+    "secret": false,
+    "name_zh": "渔夫",
+    "name_de": "Angler",
+    "description_zh": "钓起 10 种不同的鱼。",
+    "description_de": "Fange 10 verschiedene Fische.",
+    "reward_zh": "渔夫帽",
+    "reward_de": "Südwester"
   },
   {
     "id": "25",
@@ -195,7 +319,13 @@
     "image": "images/achievements/Achievement_Ol_Mariner.jpg",
     "icon": "images/achievements/Achievement_Star_06.png",
     "reward": "Official Cap",
-    "secret": false
+    "secret": false,
+    "name_zh": "老水手",
+    "name_de": "Alter Seemann",
+    "description_zh": "钓起 24 种不同的鱼。",
+    "description_de": "Fange 24 verschiedene Fische.",
+    "reward_zh": "制服帽",
+    "reward_de": "Offizielle Mütze"
   },
   {
     "id": "26",
@@ -204,7 +334,13 @@
     "image": "images/achievements/Achievement_Master_Angler.jpg",
     "icon": "images/achievements/Achievement_Star_07.png",
     "reward": "Eye Patch",
-    "secret": false
+    "secret": false,
+    "name_zh": "垂钓大师",
+    "name_de": "Angelmeister",
+    "description_zh": "钓起每一种鱼。",
+    "description_de": "Fange jeden Fisch.",
+    "reward_zh": "眼罩",
+    "reward_de": "Augenklappe"
   },
   {
     "id": "27",
@@ -213,7 +349,13 @@
     "image": "images/achievements/Achievement_Mother_Catch.jpg",
     "icon": "images/achievements/Achievement_Star_08.png",
     "reward": "Watermelon Band",
-    "secret": false
+    "secret": false,
+    "name_zh": "捕鱼高手",
+    "name_de": "Fischfang-Profi",
+    "description_zh": "钓起 100 条鱼。",
+    "description_de": "Fange 100 Fische.",
+    "reward_zh": "西瓜发带",
+    "reward_de": "Wassermelonenband"
   },
   {
     "id": "28",
@@ -222,7 +364,13 @@
     "image": "images/achievements/Achievement_Treasure_Trove.jpg",
     "icon": "images/achievements/Achievement_Star_08.png",
     "reward": "Blue Bonnet",
-    "secret": false
+    "secret": false,
+    "name_zh": "宝藏收藏家",
+    "name_de": "Schatzgrube",
+    "description_zh": "向博物馆捐赠 40 种不同物品。",
+    "description_de": "Spende 40 verschiedene Gegenstände ans Museum.",
+    "reward_zh": "蓝色软帽",
+    "reward_de": "Blaue Haube"
   },
   {
     "id": "29",
@@ -231,7 +379,13 @@
     "image": "images/achievements/Achievement_Gofer.jpg",
     "icon": "images/achievements/Achievement_Star_10.png",
     "reward": "Polka Bow",
-    "secret": false
+    "secret": false,
+    "name_zh": "跑腿专员",
+    "name_de": "Laufbursche",
+    "description_zh": "完成 10 个“求助”任务。",
+    "description_de": "Schließe 10 'Hilfe gesucht'-Aufträge ab.",
+    "reward_zh": "波点蝴蝶结",
+    "reward_de": "Punktschleife"
   },
   {
     "id": "30",
@@ -240,7 +394,13 @@
     "image": "images/achievements/Achievement_A_Big_Help.jpg",
     "icon": "images/achievements/Achievement_Star_06.png",
     "reward": "Chicken Mask",
-    "secret": false
+    "secret": false,
+    "name_zh": "大忙人",
+    "name_de": "Große Hilfe",
+    "description_zh": "完成 40 个“求助”任务。",
+    "description_de": "Schließe 40 'Hilfe gesucht'-Aufträge ab.",
+    "reward_zh": "鸡面具",
+    "reward_de": "Hühnermaske"
   },
   {
     "id": "31",
@@ -249,7 +409,13 @@
     "image": "images/achievements/Achievement_Polyculture.jpg",
     "icon": "images/achievements/Achievement_Star_12.png",
     "reward": "Cowpoke Hat",
-    "secret": false
+    "secret": false,
+    "name_zh": "多样化种植",
+    "name_de": "Vielfalt",
+    "description_zh": "出货 15 种作物各 15 个。",
+    "description_de": "Verschiffe 15 von jeder Feldfrucht.",
+    "reward_zh": "牛仔帽",
+    "reward_de": "Cowboyhut"
   },
   {
     "id": "32",
@@ -258,7 +424,13 @@
     "image": "images/achievements/Achievement_Monoculture.jpg",
     "icon": "images/achievements/Achievement_Star_01.png",
     "reward": "Cowgal Hat",
-    "secret": false
+    "secret": false,
+    "name_zh": "单一化种植",
+    "name_de": "Monokultur",
+    "description_zh": "出货 300 个同一种作物。",
+    "description_de": "Verschiffe 300 von einer Feldfrucht.",
+    "reward_zh": "女牛仔帽",
+    "reward_de": "Cowgirlhut"
   },
   {
     "id": "34",
@@ -267,7 +439,13 @@
     "image": "images/achievements/Achievement_Full_Shipment.jpg",
     "icon": "images/achievements/Achievement_Star_04.png",
     "reward": "Goblin Mask",
-    "secret": false
+    "secret": false,
+    "name_zh": "全部发货",
+    "name_de": "Kompletter Versand",
+    "description_zh": "出货每一种物品。",
+    "description_de": "Verschiffe jeden Gegenstand.",
+    "reward_zh": "哥布林面具",
+    "reward_de": "Goblinmaske"
   },
   {
     "id": "prairie-king",
@@ -276,7 +454,13 @@
     "image": "images/achievements/Achievement_Prarie_King.jpg",
     "icon": null,
     "reward": "Prairie King Arcade System",
-    "secret": false
+    "secret": false,
+    "name_zh": "草原之王",
+    "name_de": "Prärie-König",
+    "description_zh": "通关“草原王者大冒险”。",
+    "description_de": "Schlage 'Reise des Prärie-Königs'.",
+    "reward_zh": "草原之王街机",
+    "reward_de": "Prärie-König Arcade"
   },
   {
     "id": "the-bottom",
@@ -285,7 +469,13 @@
     "image": "images/achievements/Achievement_The_Bottom.jpg",
     "icon": null,
     "reward": "Skull Key",
-    "secret": false
+    "secret": false,
+    "name_zh": "地底深处",
+    "name_de": "Der Grund",
+    "description_zh": "到达矿洞最底层。",
+    "description_de": "Erreiche die tiefste Ebene der Minen.",
+    "reward_zh": "骷髅钥匙",
+    "reward_de": "Totenkopfschlüssel"
   },
   {
     "id": "local-legend",
@@ -294,7 +484,13 @@
     "image": "images/achievements/Achievement_Local_Legend.jpg",
     "icon": null,
     "reward": "Stardew Hero Trophy",
-    "secret": false
+    "secret": false,
+    "name_zh": "本地传奇",
+    "name_de": "Lokale Legende",
+    "description_zh": "修复鹈鹕镇社区中心。",
+    "description_de": "Stelle das Gemeinschaftszentrum von Pelikanstadt wieder her.",
+    "reward_zh": "星露谷英雄奖杯",
+    "reward_de": "Stardew-Heldentrophäe"
   },
   {
     "id": "joja-co-member-of-the-year",
@@ -303,7 +499,13 @@
     "image": "images/achievements/Achievement_Joja_Co._Member_Of_The_Year.jpg",
     "icon": null,
     "reward": "Soda Machine",
-    "secret": false
+    "secret": false,
+    "name_zh": "乔家年度员工",
+    "name_de": "Joja-Mitarbeiter des Jahres",
+    "description_zh": "购买全部乔家社区发展项目。",
+    "description_de": "Kaufe alle Joja-Gemeinschaftsprojekte.",
+    "reward_zh": "汽水机",
+    "reward_de": "Sodamaschine"
   },
   {
     "id": "mystery-of-the-stardrops",
@@ -312,7 +514,11 @@
     "image": "images/achievements/Achievement_Mystery_Of_The_Stardrops.jpg",
     "icon": null,
     "reward": null,
-    "secret": false
+    "secret": false,
+    "name_zh": "星露谷之谜",
+    "name_de": "Geheimnis der Sterntropfen",
+    "description_zh": "找到每一颗星之果实。",
+    "description_de": "Finde jeden Sterntropfen."
   },
   {
     "id": "full-house",
@@ -321,7 +527,11 @@
     "image": "images/achievements/Achievement_Full_House.jpg",
     "icon": null,
     "reward": null,
-    "secret": false
+    "secret": false,
+    "name_zh": "人丁兴旺",
+    "name_de": "Komplettes Haus",
+    "description_zh": "结婚并育有两个孩子。",
+    "description_de": "Heirate und habe zwei Kinder."
   },
   {
     "id": "singular-talent",
@@ -330,7 +540,11 @@
     "image": "images/achievements/Achievement_Singular_Talent.jpg",
     "icon": null,
     "reward": null,
-    "secret": false
+    "secret": false,
+    "name_zh": "天赋异禀",
+    "name_de": "Einziges Talent",
+    "description_zh": "在任意技能达到 10 级。",
+    "description_de": "Erreiche Stufe 10 in einer Fähigkeit."
   },
   {
     "id": "master-of-the-five-ways",
@@ -339,7 +553,11 @@
     "image": "images/achievements/Achievement_Master_Of_The_Five_Ways.jpg",
     "icon": null,
     "reward": null,
-    "secret": false
+    "secret": false,
+    "name_zh": "全能大师",
+    "name_de": "Meister der fünf Wege",
+    "description_zh": "所有技能都达到 10 级。",
+    "description_de": "Erreiche Stufe 10 in jeder Fähigkeit."
   },
   {
     "id": "protector-of-the-valley",
@@ -348,7 +566,11 @@
     "image": "images/achievements/Achievement_Protector_Of_The_Valley.jpg",
     "icon": null,
     "reward": null,
-    "secret": false
+    "secret": false,
+    "name_zh": "山谷守护者",
+    "name_de": "Beschützer des Tals",
+    "description_zh": "完成冒险者公会的全部怪物猎人目标。",
+    "description_de": "Schließe alle Monsterjäger-Ziele der Abenteuergilde ab."
   },
   {
     "id": "fectors-challenge",
@@ -357,7 +579,11 @@
     "image": "images/achievements/Achievement_Fectors_Challenge.jpg",
     "icon": null,
     "reward": null,
-    "secret": true
+    "secret": true,
+    "name_zh": "菲克托的挑战",
+    "name_de": "Fectors Herausforderung",
+    "description_zh": "无死亡通关“草原王者大冒险”。",
+    "description_de": "Schlage 'Reise des Prärie-Königs' ohne zu sterben."
   },
   {
     "id": "40",
@@ -366,7 +592,13 @@
     "image": "images/achievements/Achievement_A_Distant_Shore.jpg",
     "icon": "images/achievements/Achievement_Star_09.png",
     "reward": "Paper Hat",
-    "secret": false
+    "secret": false,
+    "name_zh": "遥远彼岸",
+    "name_de": "Ein fernes Ufer",
+    "description_zh": "抵达姜岛。",
+    "description_de": "Erreiche Ginger Island.",
+    "reward_zh": "纸帽",
+    "reward_de": "Papierhut"
   },
   {
     "id": "35",
@@ -375,7 +607,13 @@
     "image": "images/achievements/Achievement_Well-Read.jpg",
     "icon": "images/achievements/Achievement_Star_06.png",
     "reward": "Pageboy Cap",
-    "secret": false
+    "secret": false,
+    "name_zh": "博览群书",
+    "name_de": "Belesen",
+    "description_zh": "阅读每一本书。",
+    "description_de": "Lies jedes Buch.",
+    "reward_zh": "蘑菇头帽",
+    "reward_de": "Pagenmütze"
   },
   {
     "id": "36",
@@ -384,7 +622,13 @@
     "image": "images/achievements/Achievement_Two_Thumbs_Up.jpg",
     "icon": "images/achievements/Achievement_Star_08.png",
     "reward": "Jester Hat",
-    "secret": false
+    "secret": false,
+    "name_zh": "好评",
+    "name_de": "Daumen hoch",
+    "description_zh": "看一场电影。",
+    "description_de": "Sieh dir einen Film an.",
+    "reward_zh": "小丑帽",
+    "reward_de": "Narrenhut"
   },
   {
     "id": "37",
@@ -393,7 +637,13 @@
     "image": "images/achievements/Achievement_Blue_Ribbon.jpg",
     "icon": "images/achievements/Achievement_Star_08.png",
     "reward": "Blue Ribbon",
-    "secret": false
+    "secret": false,
+    "name_zh": "蓝丝带",
+    "name_de": "Blaues Band",
+    "description_zh": "在星露谷展销会中获得第一名。",
+    "description_de": "Gewinne den 1. Platz im Stardew Valley Wettbewerb.",
+    "reward_zh": "蓝丝带",
+    "reward_de": "Blaues Band"
   },
   {
     "id": "38",
@@ -402,7 +652,13 @@
     "image": "images/achievements/Achievement_An_Unforgettable_Soup.jpg",
     "icon": "images/achievements/Achievement_Star_02.png",
     "reward": "Governor's Hat",
-    "secret": false
+    "secret": false,
+    "name_zh": "难忘的汤",
+    "name_de": "Eine unvergessliche Suppe",
+    "description_zh": "让州长赞不绝口。",
+    "description_de": "Begeistere den Gouverneur.",
+    "reward_zh": "州长帽",
+    "reward_de": "Gouverneurshut"
   },
   {
     "id": "39",
@@ -411,7 +667,13 @@
     "image": "images/achievements/Achievement_Good_Neighbors.jpg",
     "icon": "images/achievements/Achievement_Star_11.png",
     "reward": "White Bow",
-    "secret": false
+    "secret": false,
+    "name_zh": "好邻居",
+    "name_de": "Gute Nachbarn",
+    "description_zh": "帮助你的森林邻居组建家庭。",
+    "description_de": "Hilf deinen Waldnachbarn, ihre Familie zu vergrößern.",
+    "reward_zh": "白色蝴蝶结",
+    "reward_de": "Weiße Schleife"
   },
   {
     "id": "41",
@@ -420,7 +682,13 @@
     "image": "images/achievements/Achievement_Danger_In_The_Deep.jpg",
     "icon": "images/achievements/Achievement_Star_03.png",
     "reward": "Space Helmet",
-    "secret": false
+    "secret": false,
+    "name_zh": "深海危机",
+    "name_de": "Gefahr in der Tiefe",
+    "description_zh": "到达“危险”矿洞的底部。",
+    "description_de": "Erreiche den Grund der 'gefährlichen' Minen.",
+    "reward_zh": "太空头盔",
+    "reward_de": "Raumhelm"
   },
   {
     "id": "42",
@@ -429,7 +697,13 @@
     "image": "images/achievements/Achievement_Infinite_Power.jpg",
     "icon": "images/achievements/Achievement_Star_07.png",
     "reward": "Infinity Crown",
-    "secret": false
+    "secret": false,
+    "name_zh": "无限力量",
+    "name_de": "Unendliche Macht",
+    "description_zh": "获得最强大的武器。",
+    "description_de": "Erhalte die mächtigste Waffe.",
+    "reward_zh": "无限皇冠",
+    "reward_de": "Krone der Unendlichkeit"
   },
   {
     "id": "44",
@@ -438,6 +712,12 @@
     "image": "images/achievements/Achievement_Perfection.jpg",
     "icon": "images/achievements/Achievement_Star_10.png",
     "reward": "Junimo Hat",
-    "secret": false
+    "secret": false,
+    "name_zh": "完美",
+    "name_de": "Perfektion",
+    "description_zh": "到达山顶。",
+    "description_de": "Erreiche den Gipfel.",
+    "reward_zh": "祝尼魔帽",
+    "reward_de": "Junimo-Hut"
   }
 ]

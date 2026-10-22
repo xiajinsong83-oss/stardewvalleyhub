@@ -418,3 +418,8 @@ game_fishing_fail = "Der Fisch ist entkommen!"
 game_memory_howto = "So spielst du: Klicke zwei Karten, um Paare zu finden. Finde alle 8 Paare, um zu gewinnen. Weniger Züge und weniger Zeit = besserer Score."
 game_memory_win = "Alle Paare gefunden!"
 nav_games = "Spiele"
+
+ach_secret_tag = "Geheim"
+ach_reward = "Belohnung"
+rec_buffs_tag = "Buffs"
+rec_sell = "Verkauf"

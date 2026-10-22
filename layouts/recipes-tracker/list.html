@@ -1,4 +1,7 @@
 {{ define "main" }}
+{{ $lang := site.Language.Lang }}{{ $sfx := "" }}{{ if eq $lang "zh-hans" }}{{ $sfx = "_zh" }}{{ else if eq $lang "de" }}{{ $sfx = "_de" }}{{ end }}
+{{ $buffLabel := i18n "rec_buffs_tag" | default "Buffs" }}
+{{ $sellLabel := i18n "rec_sell" | default "sell" }}
 <div class="content-col">
   {{ partial "breadcrumb.html" . }}
 
@@ -29,16 +32,24 @@
 
       <div class="fish-list" id="fishList">
         {{ range .Site.Data.cooking }}
-        <label class="fish-row" data-type="{{ if .buffs }}buffs{{ else }}plain{{ end }}" data-search="{{ .name | lower }} {{ range .ingredients }}{{ .name | lower }} {{ end }}" data-ingredients="{{ range .ingredients }}{{ .name }}~{{ .quantity }}|{{ end }}">
+        {{ $nm := index . (printf "name%s" $sfx) | default .name }}
+        {{ $ds := index . (printf "description%s" $sfx) | default .description }}
+        {{ $ingParts := slice }}{{ $searchParts := slice }}{{ range .ingredients }}
+          {{ $in := index . (printf "name%s" $sfx) | default .name }}
+          {{ $ingParts = $ingParts | append (printf "%s×%v" $in .quantity) }}
+          {{ $searchParts = $searchParts | append $in }}
+          {{ $searchParts = $searchParts | append .name }}
+        {{ end }}
+        {{ $ingsAttr := delimit $ingParts ", " }}
+        <label class="fish-row" data-type="{{ if .buffs }}buffs{{ else }}plain{{ end }}" data-search="{{ $nm | lower }} {{ delimit $searchParts " " | lower }}" data-ingredients="{{ range .ingredients }}{{ $in := index . (printf "name%s" $sfx) | default .name }}{{ $in }}~{{ .quantity }}|{{ end }}">
           <input type="checkbox" class="rec-check" data-id="{{ .name | lower }}">
           <div class="fish-row-icon">
-            <img src="/{{ .image }}" alt="{{ .name }}" onerror="this.style.display='none'">
+            <img src="/{{ .image }}" alt="{{ $nm }}" onerror="this.style.display='none'">
           </div>
           <div class="fish-row-body">
-            <h4>{{ .name }}{{ if .buffs }} <span class="fish-season-tag">Buffs</span>{{ end }}</h4>
+            <h4>{{ $nm }}{{ if .buffs }} <span class="fish-season-tag">{{ $buffLabel }}</span>{{ end }}</h4>
             <p class="fish-meta">
-              {{ $ing := slice }}{{ range .ingredients }}{{ $ing = $ing | append (printf "%s×%v" .name .quantity) }}{{ end }}
-              {{ delimit $ing ", " }} · sell {{ .sellPrice }}g{{ if .energyHealth.energy }} · +{{ .energyHealth.energy }}E{{ end }}
+              {{ $ingsAttr }} · {{ $sellLabel }} {{ .sellPrice }}g{{ if .energyHealth.energy }} · +{{ .energyHealth.energy }}E{{ end }}
             </p>
           </div>
         </label>

@@ -418,3 +418,8 @@ game_fishing_fail = "The fish got away!"
 game_memory_howto = "How to play: click two cards to find matching pairs. Match all 8 pairs to win. Fewer moves and less time = better score."
 game_memory_win = "All pairs found!"
 nav_games = "Games"
+
+ach_secret_tag = "Secret"
+ach_reward = "Reward"
+rec_buffs_tag = "Buffs"
+rec_sell = "sell"
