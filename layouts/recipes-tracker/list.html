@@ -44,7 +44,9 @@
         <label class="fish-row" data-type="{{ if .buffs }}buffs{{ else }}plain{{ end }}" data-search="{{ $nm | lower }} {{ delimit $searchParts " " | lower }}" data-ingredients="{{ range .ingredients }}{{ $in := index . (printf "name%s" $sfx) | default .name }}{{ $in }}~{{ .quantity }}|{{ end }}">
           <input type="checkbox" class="rec-check" data-id="{{ .name | lower }}">
           <div class="fish-row-icon">
-            <img src="/{{ .image }}" alt="{{ $nm }}" onerror="this.style.display='none'">
+            {{ $iconFile := path.Base .image }}
+            {{ $uri := index (index $.Site.Data "cooking-icons") $iconFile }}
+            {{ if $uri }}<img src="{{ $uri | safeURL }}" alt="{{ $nm }}" style="width:40px;height:40px;object-fit:contain">{{ else }}<img src="/{{ .image }}" alt="{{ $nm }}" style="width:40px;height:40px;object-fit:contain" onerror="this.style.display='none'">{{ end }}
           </div>
           <div class="fish-row-body">
             <h4>{{ $nm }}{{ if .buffs }} <span class="fish-season-tag">{{ $buffLabel }}</span>{{ end }}</h4>

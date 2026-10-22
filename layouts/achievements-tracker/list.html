@@ -38,7 +38,9 @@
         <label class="fish-row" data-type="{{ if .secret }}secret{{ else }}normal{{ end }}" data-search="{{ $nm | lower }} {{ $ds | lower }} {{ .name | lower }}">
           <input type="checkbox" class="ach-check" data-id="{{ .name | lower }}">
           <div class="fish-row-icon">
-            {{ if .icon }}<img src="/{{ .icon }}" alt="{{ $nm }}" style="width:40px;height:40px;object-fit:cover;border-radius:4px" onerror="this.outerHTML='<span class=\'ach-icon-fallback\'>⭐</span>'">{{ else }}<span class="ach-icon-fallback">⭐</span>{{ end }}
+            {{ $iconFile := path.Base .icon }}
+            {{ $uri := index (index $.Site.Data "achievements-icons") $iconFile }}
+            {{ if $uri }}<img src="{{ $uri | safeURL }}" alt="{{ $nm }}" style="width:40px;height:40px;object-fit:contain;border-radius:4px">{{ else }}<span class="ach-icon-fallback">⭐</span>{{ end }}
           </div>
           <div class="fish-row-body">
             <h4>{{ $nm }}{{ if .secret }} <span class="fish-season-tag">{{ $secLabel }}</span>{{ end }}</h4>
