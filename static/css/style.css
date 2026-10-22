@@ -1074,3 +1074,45 @@ mark { background: #f0b429; color: #0d1a2d; border-radius: 2px; padding: 0 1px; 
 .game-btn:hover { background: #5be8ac; }
 .game-hint { color: #9aa8bf; font-size: 13px; line-height: 1.6; max-width: 640px; margin: 6px auto 0; }
 @media (max-width: 700px) { .games-grid { grid-template-columns: 1fr; } }
+
+
+/* ===== Tracker pages (fish-checklist / achievements / recipes) ===== */
+.fish-tracker-layout { display: grid; grid-template-columns: 1.2fr 1fr; gap: 20px; margin-top: 40px; }
+.fish-left { background: #141e30; border: 1px solid #2a3a55; border-radius: 12px; padding: 16px; }
+.fish-toolbar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
+.fish-toolbar label { font-size: 13px; color: #9aa8bf; }
+.fish-select { padding: 6px 10px; background: #0d1a2d; border: 1px solid #2a3a55; border-radius: 6px; color: #fff; font-size: 13px; margin-left: 6px; }
+.fish-count { font-size: 13px; color: #3ddc97; }
+.fish-search-box { margin-bottom: 12px; }
+.fish-search-input { width: 100%; padding: 10px 12px; background: #0d1a2d; border: 1px solid #2a3a55; border-radius: 8px; color: #fff; font-size: 14px; box-sizing: border-box; }
+.fish-search-input::placeholder { color: #6a7a95; }
+.fish-list { max-height: 500px; overflow-y: auto; }
+.fish-row { display: flex; gap: 10px; align-items: center; padding: 10px; border-bottom: 1px solid #1e2a40; cursor: pointer; position: relative; padding-left: 36px; }
+.fish-row input[type=checkbox] { position: absolute; opacity: 0; width: 0; height: 0; }
+.fish-row::before { content: ""; position: absolute; left: 8px; top: 50%; transform: translateY(-50%); width: 18px; height: 18px; border: 2px solid #3ddc97; border-radius: 4px; background: #0d1a2d; }
+.fish-row.done::before { content: "✓"; background: #3ddc97; color: #0d1a2d; font-size: 13px; line-height: 18px; text-align: center; font-weight: bold; }
+.fish-row-icon { width: 40px; height: 40px; background: #0d1a2d; border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.fish-row-icon img { width: 32px; height: 32px; image-rendering: pixelated; }
+.fish-row-body { flex: 1; }
+.fish-row-body h4 { margin: 0 0 2px; font-size: 14px; }
+.fish-meta { color: #9aa8bf; font-size: 11px; margin: 0; }
+.fish-season-tag { font-size: 11px; color: #f0b429; white-space: nowrap; flex-shrink: 0; }
+.fish-row.done { opacity: 0.5; }
+.fish-row.done h4 { text-decoration: line-through; }
+.fish-row.hide { display: none; }
+.fish-progress { margin-top: 12px; padding-top: 12px; border-top: 1px solid #2a3a55; }
+.fish-progress span { color: #3ddc97; font-size: 13px; }
+.fish-version { color: #6a7a95; font-size: 11px; margin: 4px 0 0; }
+.fish-version a { color: #f0b429; }
+.fish-right { display: flex; flex-direction: column; gap: 16px; }
+.fish-hero-card { background: #141e30; border: 1px solid #2a3a55; border-radius: 12px; padding: 20px; }
+.fish-hero-img { width: 100%; border-radius: 8px; margin-bottom: 12px; max-height: 220px; object-fit: cover; border: 1px solid #2a3a55; display: block; }
+.fish-hero-card h3 { margin: 0 0 10px; font-size: 18px; }
+.fish-hero-card p { color: #9aa8bf; font-size: 13px; line-height: 1.6; margin: 0 0 10px; }
+.fish-hero-card a { color: #f0b429; }
+.fish-stats-card { background: #141e30; border: 1px solid #2a3a55; border-radius: 12px; padding: 16px; }
+.fish-stats-card h4 { margin: 0 0 12px; font-size: 15px; }
+.fish-stat-row { display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid #1e2a40; }
+.fish-stat-row span { color: #9aa8bf; font-size: 13px; }
+.fish-stat-row strong { color: #fff; font-size: 14px; }
+@media (max-width: 900px) { .fish-tracker-layout { grid-template-columns: 1fr; } .progress-tracker { flex-direction: column; gap: 6px; } .pt-side { padding-top: 0; } }
