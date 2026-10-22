@@ -30,7 +30,9 @@ jobs:
             echo "No changes in guides, skipping commit."
             exit 0
           fi
-          git add content/en/all-guides/ data/.guides-version
+          git add -A content/en/all-guides/ data/
+          # gen_guides.py 可能还会改动其他文件（分类索引/其他数据），全部纳入，避免 rebase 报 unstaged changes
+          git add -A
           git commit -m "chore: auto-generate 3 data-driven guides ($(date +%F))"
           # 优先用 PAT（secrets.GH_TOKEN），未配置时回退 GITHUB_TOKEN
           TOKEN="${GH_TOKEN:-$GITHUB_TOKEN}"
@@ -38,14 +40,18 @@ jobs:
           for i in 1 2 3 4 5; do
             echo "--- attempt $i ---"
             git fetch origin main --quiet || { echo "FETCH FAILED (network / token?)"; sleep 15; continue; }
+            # rebase 要求工作区干净：有残留改动先 stash（脚本产物，下次运行会重新生成，丢弃无妨）
+            git stash --include-untracked 2>/dev/null || true
             if git rebase origin/main 2>/tmp/rebase.err; then
+              # 恢复 stash；若冲突则放弃残留改动
+              git stash pop 2>/dev/null || git checkout . 2>/dev/null || true
               if git push "$REMOTE" HEAD:main 2>/tmp/push.err; then
                 echo "Push succeeded on attempt $i."
                 exit 0
               fi
               echo "PUSH FAILED:"; cat /tmp/push.err
             else
-              echo "REBASE FAILED (conflict?):"; cat /tmp/rebase.err
+              echo "REBASE FAILED:"; cat /tmp/rebase.err
               git rebase --abort
             fi
             sleep 15
