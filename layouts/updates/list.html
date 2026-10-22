@@ -7,8 +7,9 @@
 
   {{ $pages := .Pages.ByDate.Reverse }}
   {{ if gt (len $pages) 0 }}
+  {{ $pag := .Paginate $pages 12 }}
   <div class="updates-list">
-    {{ range $pages }}
+    {{ range $pag.Pages }}
     <a class="update-item" href="{{ .RelPermalink }}">
       <time>{{ .Date.Format "2006-01-02" }}</time>
       <h3>{{ .Title }}</h3>
@@ -16,6 +17,7 @@
     </a>
     {{ end }}
   </div>
+  {{ template "_internal/pagination.html" . }}
   {{ end }}
   {{ partial "related-links.html" . }}
 </div>
