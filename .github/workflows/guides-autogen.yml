@@ -21,6 +21,8 @@ jobs:
         run: |
           python3 scripts/gen_guides.py --count 3
       - name: Commit and push (with rebase + retry)
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
@@ -30,16 +32,25 @@ jobs:
           fi
           git add content/en/all-guides/ data/.guides-version
           git commit -m "chore: auto-generate 3 data-driven guides ($(date +%F))"
-          # 并发冲突防护：pull --rebase 后重试 push（最多 3 次）
-          for i in 1 2 3; do
-            if git pull --rebase origin main 2>/dev/null && git push origin main; then
-              echo "Push succeeded on attempt $i."
-              exit 0
+          # 优先用 PAT（secrets.GH_TOKEN），未配置时回退 GITHUB_TOKEN
+          TOKEN="${GH_TOKEN:-$GITHUB_TOKEN}"
+          REMOTE="https://x-access-token:${TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+          for i in 1 2 3 4 5; do
+            echo "--- attempt $i ---"
+            git fetch origin main --quiet || { echo "FETCH FAILED (network / token?)"; sleep 15; continue; }
+            if git rebase origin/main 2>/tmp/rebase.err; then
+              if git push "$REMOTE" HEAD:main 2>/tmp/push.err; then
+                echo "Push succeeded on attempt $i."
+                exit 0
+              fi
+              echo "PUSH FAILED:"; cat /tmp/push.err
+            else
+              echo "REBASE FAILED (conflict?):"; cat /tmp/rebase.err
+              git rebase --abort
             fi
-            echo "Push attempt $i failed, retrying in 10s..."
-            sleep 10
+            sleep 15
           done
-          echo "Push failed after 3 attempts." >&2
+          echo "Push failed after 5 attempts." >&2
           exit 1
       # 说明：push 后由 Cloudflare Pages 自动执行 bash build.sh（含 sitemap 生成）。
       # GitHub Actions runner 不装 Hugo，不能在此步构建。
