@@ -1,7 +1,7 @@
 ---
 title: "Qi Fruit Anbau-Guide: Reife in 4 Tagen | Stardew Valley"
 description: "Qi Fruit Anbau-Guide: Reife in 4 Tagen | Stardew Valley — A fruit imbued with the essence of Qi. Used to complete Qi's special orders."
-date: 2026-10-19
+date: 2026-10-22
 draft: false
 type: guide
 icon: "/images/crops/qi-fruit/crop.png"

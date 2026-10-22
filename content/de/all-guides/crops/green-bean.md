@@ -1,7 +1,7 @@
 ---
 title: "Green Bean Anbau-Guide: Reife in 10 Tagen | Stardew Valley"
 description: "Green Bean Anbau-Guide: Reife in 10 Tagen | Stardew Valley — A young, tender bean in the pod."
-date: 2026-10-19
+date: 2026-10-22
 draft: false
 type: guide
 icon: "/images/crops/green-bean/crop.png"

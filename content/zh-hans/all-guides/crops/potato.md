@@ -1,7 +1,7 @@
 ---
 title: "Potato 种植攻略：春季 成熟 6 天 | 星露谷物语"
 description: "Potato 种植攻略：春季 成熟 6 天 | 星露谷物语 — A widely cultivated plant, the potato is one of the most important food crops in the world."
-date: 2026-10-19
+date: 2026-10-22
 draft: false
 type: guide
 icon: "/images/crops/potato/crop.png"

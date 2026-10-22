@@ -1,7 +1,7 @@
 ---
 title: "Alex-Lieblingsgeschenke in Stardew Valley"
 description: "Alex-Lieblingsgeschenke in Stardew Valley — Alex is a villager who lives in the house southeast of Pierre's General Store. He is one of the twelve chara…"
-date: 2026-10-19
+date: 2026-10-22
 draft: false
 type: guide
 icon: "/images/villagers/Alex.png"

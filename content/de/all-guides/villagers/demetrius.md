@@ -1,7 +1,7 @@
 ---
 title: "Demetrius-Lieblingsgeschenke in Stardew Valley"
 description: "Demetrius-Lieblingsgeschenke in Stardew Valley — Demetrius is a villager who resides at 24 Mountain Road with his wife Robin, daughter Maru, and step-so…"
-date: 2026-10-19
+date: 2026-10-22
 draft: false
 type: guide
 icon: "/images/villagers/Demetrius.png"

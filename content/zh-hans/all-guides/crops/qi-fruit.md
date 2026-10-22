@@ -1,7 +1,7 @@
 ---
 title: "Qi Fruit 种植攻略：春季、夏季、秋季、冬季 成熟 4 天 | 星露谷物语"
 description: "Qi Fruit 种植攻略：春季、夏季、秋季、冬季 成熟 4 天 | 星露谷物语 — A fruit imbued with the essence of Qi. Used to complete Qi's special orders."
-date: 2026-10-19
+date: 2026-10-22
 draft: false
 type: guide
 icon: "/images/crops/qi-fruit/crop.png"

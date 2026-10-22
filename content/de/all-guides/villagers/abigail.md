@@ -1,7 +1,7 @@
 ---
 title: "Abigail-Lieblingsgeschenke in Stardew Valley"
 description: "Abigail-Lieblingsgeschenke in Stardew Valley — Abigail is a villager who lives at Pierre's General Store in Pelican Town. She is one of the twelve chara…"
-date: 2026-10-19
+date: 2026-10-22
 draft: false
 type: guide
 icon: "/images/villagers/Abigail.png"

@@ -1,7 +1,7 @@
 ---
 title: "Kale Anbau-Guide: Reife in 6 Tagen | Stardew Valley"
 description: "Kale Anbau-Guide: Reife in 6 Tagen | Stardew Valley — This dark leafy green is impressively healthy and grows quickly."
-date: 2026-10-19
+date: 2026-10-22
 draft: false
 type: guide
 icon: "/images/crops/kale/crop.png"

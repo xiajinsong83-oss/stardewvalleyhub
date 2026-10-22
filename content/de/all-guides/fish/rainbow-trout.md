@@ -1,7 +1,7 @@
 ---
 title: "Rainbow Trout Guide: Sommer (River, Mountain Lake, 6:00 AM – 7:00 PM)"
 description: "Rainbow Trout Guide: Sommer (River, Mountain Lake, 6:00 AM – 7:00 PM) — A freshwater trout with colorful markings."
-date: 2026-10-19
+date: 2026-10-22
 draft: false
 type: guide
 icon: "/images/fish/Rainbow Trout.png"

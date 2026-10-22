@@ -1,7 +1,7 @@
 ---
 title: "Parsnip Anbau-Guide: Reife in 4 Tagen | Stardew Valley"
 description: "Parsnip Anbau-Guide: Reife in 4 Tagen | Stardew Valley — A spring tuber closely related to the carrot. It has a sweet, fresh taste."
-date: 2026-10-19
+date: 2026-10-22
 draft: false
 type: guide
 icon: "/images/crops/parsnip/crop.png"

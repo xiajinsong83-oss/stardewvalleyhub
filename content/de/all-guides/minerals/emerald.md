@@ -1,7 +1,7 @@
 ---
 title: "Emerald – Museums-Spendenleitfaden"
 description: "Emerald – Museums-Spendenleitfaden — A precious stone with a brilliant green color."
-date: 2026-10-19
+date: 2026-10-22
 draft: false
 type: guide
 icon: "/images/minerals/gems/Emerald.png"

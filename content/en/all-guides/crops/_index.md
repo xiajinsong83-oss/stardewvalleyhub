@@ -5,6 +5,7 @@ title: Crop Guides - Stardew Valley Hub
 <div class="page-hero"><h1>Crop Guides</h1><p>How to grow, harvest and profit from every crop.</p></div>
 
 <div class="card-grid home-grid">
+  <a class="card" href="/all-guides/crops/ancient-fruit/"><h3>The Ancient Fruit is a fruit crop in Stardew Valley. A very rare fruit that has survived since ancient times. It's extraordinarily sweet. It grows in Spring, Summer, Fall and is one of the most reliable ways to build early-season income, so it belongs in almost every farm plan.</h3><p>Full guide with data, tips and tools.</p></a>
   <a class="card" href="/all-guides/crops/blue-jazz/"><h3>The Blue Jazz is a flower crop in Stardew Valley. A delicate flower with a lovely blue hue. It grows in Spring and is one of the most reliable ways to build early-season income, so it belongs in almost every farm plan.</h3><p>Full guide with data, tips and tools.</p></a>
   <a class="card" href="/all-guides/crops/cauliflower/"><h3>Cauliflower Guide: How to Grow Cauliflower in Spring (12-Day Growth, Profit & Tips)</h3><p>Full guide with data, tips and tools.</p></a>
   <a class="card" href="/all-guides/crops/fairy-rose/"><h3>The Fairy Rose is a flower crop in Stardew Valley. An extremely rare flower with a powerful, sweet perfume. It grows in Fall and is one of the most reliable ways to build early-season income, so it belongs in almost every farm plan.</h3><p>Full guide with data, tips and tools.</p></a>

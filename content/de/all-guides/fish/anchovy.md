@@ -1,7 +1,7 @@
 ---
 title: "Anchovy Guide: Frühling, Herbst (Ocean, 6:00 AM – 2:00 AM)"
 description: "Anchovy Guide: Frühling, Herbst (Ocean, 6:00 AM – 2:00 AM) — A small silver fish found in the ocean."
-date: 2026-10-19
+date: 2026-10-22
 draft: false
 type: guide
 icon: "/images/fish/Anchovy.png"

@@ -1,7 +1,7 @@
 ---
 title: "Frozen Tear 博物馆捐赠攻略 – 星露谷物语"
 description: "Frozen Tear 博物馆捐赠攻略 – 星露谷物语 — A crystal fabled to be the frozen tears of a yeti."
-date: 2026-10-19
+date: 2026-10-22
 draft: false
 type: guide
 icon: "/images/minerals/foraged-minerals/Frozen Tear.png"

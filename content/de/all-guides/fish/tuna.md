@@ -1,7 +1,7 @@
 ---
 title: "Tuna Guide: Sommer, Winter (Ocean, Ginger Island, 6:00 AM – 7:00 PM)"
 description: "Tuna Guide: Sommer, Winter (Ocean, Ginger Island, 6:00 AM – 7:00 PM) — A large fish that lives in the ocean."
-date: 2026-10-19
+date: 2026-10-22
 draft: false
 type: guide
 icon: "/images/fish/Tuna.png"

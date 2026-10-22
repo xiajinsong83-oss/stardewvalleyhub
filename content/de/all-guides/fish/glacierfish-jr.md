@@ -1,7 +1,7 @@
 ---
 title: "Glacierfish Jr. Guide: Winter (Forest (Arrowhead Island), 6:00 AM – 8:00 PM)"
 description: "Glacierfish Jr. Guide: Winter (Forest (Arrowhead Island), 6:00 AM – 8:00 PM) — The original Glacierfish had a son..."
-date: 2026-10-19
+date: 2026-10-22
 draft: false
 type: guide
 icon: "/images/fish/Glacierfish Jr.png"

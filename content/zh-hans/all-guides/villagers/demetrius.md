@@ -1,7 +1,7 @@
 ---
 title: "星露谷物语中 Demetrius 的最爱礼物"
 description: "星露谷物语中 Demetrius 的最爱礼物 — Demetrius is a villager who resides at 24 Mountain Road with his wife Robin, daughter Maru, and step-son Sebastian."
-date: 2026-10-19
+date: 2026-10-22
 draft: false
 type: guide
 icon: "/images/villagers/Demetrius.png"

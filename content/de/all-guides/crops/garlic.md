@@ -1,7 +1,7 @@
 ---
 title: "Garlic Anbau-Guide: Reife in 4 Tagen | Stardew Valley"
 description: "Garlic Anbau-Guide: Reife in 4 Tagen | Stardew Valley — A pungent herb used in cooking. The aroma is known to keep monsters at bay."
-date: 2026-10-19
+date: 2026-10-22
 draft: false
 type: guide
 icon: "/images/crops/garlic/crop.png"

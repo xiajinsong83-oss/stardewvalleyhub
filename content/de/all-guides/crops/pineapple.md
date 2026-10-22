@@ -1,7 +1,7 @@
 ---
 title: "Pineapple Anbau-Guide: Reife in 14 Tagen | Stardew Valley"
 description: "Pineapple Anbau-Guide: Reife in 14 Tagen | Stardew Valley — A prickly, succulent fruit found in tropical climates."
-date: 2026-10-19
+date: 2026-10-22
 draft: false
 type: guide
 icon: "/images/crops/pineapple/crop.png"

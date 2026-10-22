@@ -1,7 +1,7 @@
 ---
 title: "Pineapple 种植攻略：夏季、ginger island 成熟 14 天 | 星露谷物语"
 description: "Pineapple 种植攻略：夏季、ginger island 成熟 14 天 | 星露谷物语 — A prickly, succulent fruit found in tropical climates."
-date: 2026-10-19
+date: 2026-10-22
 draft: false
 type: guide
 icon: "/images/crops/pineapple/crop.png"

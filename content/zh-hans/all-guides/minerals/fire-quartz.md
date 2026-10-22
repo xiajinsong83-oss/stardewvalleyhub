@@ -1,7 +1,7 @@
 ---
 title: "Fire Quartz 博物馆捐赠攻略 – 星露谷物语"
 description: "Fire Quartz 博物馆捐赠攻略 – 星露谷物语 — A glowing red crystal commonly found near hot lava."
-date: 2026-10-19
+date: 2026-10-22
 draft: false
 type: guide
 icon: "/images/minerals/foraged-minerals/Fire Quartz.png"

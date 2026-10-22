@@ -1,7 +1,7 @@
 ---
 title: "Bream Guide: Frühling, Sommer, Herbst, Winter (River, 6:00 PM – 2:00 AM)"
 description: "Bream Guide: Frühling, Sommer, Herbst, Winter (River, 6:00 PM – 2:00 AM) — A fairly common river fish that becomes active at night."
-date: 2026-10-19
+date: 2026-10-22
 draft: false
 type: guide
 icon: "/images/fish/Bream.png"

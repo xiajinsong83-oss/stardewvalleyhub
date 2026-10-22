@@ -1,7 +1,7 @@
 ---
 title: "Ruby – Museums-Spendenleitfaden"
 description: "Ruby – Museums-Spendenleitfaden — A precious stone sought after for its rich color and beautiful luster."
-date: 2026-10-19
+date: 2026-10-22
 draft: false
 type: guide
 icon: "/images/minerals/gems/Ruby.png"

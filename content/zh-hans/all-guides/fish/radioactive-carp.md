@@ -1,7 +1,7 @@
 ---
 title: "Radioactive Carp 攻略：春季、夏季、秋季、冬季（Sewers，6:00 AM – 2:00 AM）"
 description: "Radioactive Carp 攻略：春季、夏季、秋季、冬季（Sewers，6:00 AM – 2:00 AM） — A carp that spent one too many years in toxic sludge."
-date: 2026-10-19
+date: 2026-10-22
 draft: false
 type: guide
 icon: "/images/fish/Radioactive Carp.png"

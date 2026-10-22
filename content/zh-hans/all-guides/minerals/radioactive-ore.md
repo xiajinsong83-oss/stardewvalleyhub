@@ -1,12 +1,12 @@
 ---
 title: "Radioactive Ore 博物馆捐赠攻略 – 星露谷物语"
 description: "Radioactive Ore 博物馆捐赠攻略 – 星露谷物语 — It's glowing with dangerous energy... Can be smelted into bars."
-date: 2026-10-19
+date: 2026-10-22
 draft: false
 type: guide
 icon: "/images/minerals/ore/Radioactive Ore.png"
 related: [{"title": "博物馆清单", "url": "/zh-hans/museum-checklist/"}]
-cover: "/images/guide-covers/minerals.jpg"
+cover: "/images/guide-covers/minerals-alt.jpg"
 ---
 It's glowing with dangerous energy... Can be smelted into bars.
 

@@ -1,7 +1,7 @@
 ---
 title: "星露谷物语中 Clint 的最爱礼物"
 description: "星露谷物语中 Clint 的最爱礼物 — Clint is a villager who lives in Pelican Town and owns and runs the local Blacksmith."
-date: 2026-10-19
+date: 2026-10-22
 draft: false
 type: guide
 icon: "/images/villagers/Clint.png"

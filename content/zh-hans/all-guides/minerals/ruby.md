@@ -1,7 +1,7 @@
 ---
 title: "Ruby 博物馆捐赠攻略 – 星露谷物语"
 description: "Ruby 博物馆捐赠攻略 – 星露谷物语 — A precious stone sought after for its rich color and beautiful luster."
-date: 2026-10-19
+date: 2026-10-22
 draft: false
 type: guide
 icon: "/images/minerals/gems/Ruby.png"
