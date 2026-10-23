@@ -1,7 +1,7 @@
 ---
 title: "Strawberry 种植攻略：春季 成熟 8 天 | 星露谷物语"
 description: "Strawberry 种植攻略：春季 成熟 8 天 | 星露谷物语 — This plump, delicious berry will continue to produce after the first harvest."
-date: 2026-10-22
+date: 2026-10-23
 draft: false
 type: guide
 icon: "/images/crops/strawberry/crop.png"

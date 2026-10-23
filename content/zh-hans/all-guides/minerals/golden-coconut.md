@@ -1,12 +1,12 @@
 ---
 title: "Golden Coconut 博物馆捐赠攻略 – 星露谷物语"
 description: "Golden Coconut 博物馆捐赠攻略 – 星露谷物语 — A blacksmith can crack this open. The first one always yields a Golden Walnut."
-date: 2026-10-22
+date: 2026-10-23
 draft: false
 type: guide
 icon: "/images/minerals/geodes/Golden Coconut.png"
 related: [{"title": "博物馆清单", "url": "/zh-hans/museum-checklist/"}]
-cover: "/images/guide-covers/minerals-alt.jpg"
+cover: "/images/guide-covers/minerals.jpg"
 ---
 A blacksmith can crack this open. The first one always yields a Golden Walnut.
 

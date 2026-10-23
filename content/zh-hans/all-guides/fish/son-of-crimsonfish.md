@@ -1,12 +1,12 @@
 ---
 title: "Son of Crimsonfish 攻略：冬季（Ocean，6:00 AM – 8:00 PM）"
 description: "Son of Crimsonfish 攻略：冬季（Ocean，6:00 AM – 8:00 PM） — He hatched in the warm summer water, and followed in the footsteps of his father."
-date: 2026-10-22
+date: 2026-10-23
 draft: false
 type: guide
 icon: "/images/fish/Son of Crimsonfish.png"
 related: [{"title": "鱼类清单", "url": "/zh-hans/fish-checklist/"}, {"title": "农场布局规划器", "url": "/zh-hans/farmlayou/"}]
-cover: "/images/guide-covers/fish-alt.jpg"
+cover: "/images/guide-covers/fish.jpg"
 ---
 **Son of Crimsonfish** 是星露谷物语中的传奇二代鱼。He hatched in the warm summer water, and followed in the footsteps of his father.
 

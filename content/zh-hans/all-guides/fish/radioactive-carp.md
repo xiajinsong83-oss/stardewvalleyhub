@@ -1,12 +1,12 @@
 ---
 title: "Radioactive Carp 攻略：春季、夏季、秋季、冬季（Sewers，6:00 AM – 2:00 AM）"
 description: "Radioactive Carp 攻略：春季、夏季、秋季、冬季（Sewers，6:00 AM – 2:00 AM） — A carp that spent one too many years in toxic sludge."
-date: 2026-10-22
+date: 2026-10-23
 draft: false
 type: guide
 icon: "/images/fish/Radioactive Carp.png"
 related: [{"title": "鱼类清单", "url": "/zh-hans/fish-checklist/"}, {"title": "农场布局规划器", "url": "/zh-hans/farmlayou/"}]
-cover: "/images/guide-covers/fish.jpg"
+cover: "/images/guide-covers/fish-alt.jpg"
 ---
 **Radioactive Carp** 是星露谷物语中的传奇二代鱼。A carp that spent one too many years in toxic sludge.
 

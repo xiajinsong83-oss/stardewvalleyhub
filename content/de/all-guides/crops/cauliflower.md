@@ -1,7 +1,7 @@
 ---
 title: "Cauliflower Anbau-Guide: Reife in 12 Tagen | Stardew Valley"
 description: "Cauliflower Anbau-Guide: Reife in 12 Tagen | Stardew Valley — It's actually a type of flower! A massive head of tightly packed white florets."
-date: 2026-10-22
+date: 2026-10-23
 draft: false
 type: guide
 icon: "/images/crops/cauliflower/crop.png"

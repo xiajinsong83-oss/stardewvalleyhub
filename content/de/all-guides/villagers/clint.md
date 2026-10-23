@@ -1,7 +1,7 @@
 ---
 title: "Clint-Lieblingsgeschenke in Stardew Valley"
 description: "Clint-Lieblingsgeschenke in Stardew Valley — Clint is a villager who lives in Pelican Town and owns and runs the local Blacksmith."
-date: 2026-10-22
+date: 2026-10-23
 draft: false
 type: guide
 icon: "/images/villagers/Clint.png"

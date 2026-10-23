@@ -1,7 +1,7 @@
 ---
 title: "星露谷物语中 Alex 的最爱礼物"
 description: "星露谷物语中 Alex 的最爱礼物 — Alex is a villager who lives in the house southeast of Pierre's General Store. He is one of the twelve characters available to marry."
-date: 2026-10-22
+date: 2026-10-23
 draft: false
 type: guide
 icon: "/images/villagers/Alex.png"

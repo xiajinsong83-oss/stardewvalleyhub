@@ -1,12 +1,12 @@
 ---
 title: "Taro Root 种植攻略：夏季、ginger island 成熟 10 天 | 星露谷物语"
 description: "Taro Root 种植攻略：夏季、ginger island 成熟 10 天 | 星露谷物语 — A starchy root vegetable that grows best in wet, paddy conditions."
-date: 2026-10-22
+date: 2026-10-23
 draft: false
 type: guide
 icon: "/images/crops/taro-root/crop.png"
 related: [{"title": "农场布局规划器", "url": "/zh-hans/farmlayou/"}, {"title": "作物利润计算器", "url": "/zh-hans/calculator/"}]
-cover: "/images/guide-covers/crops-alt.jpg"
+cover: "/images/guide-covers/crops.jpg"
 ---
 **Taro Root** 是星露谷物语中的一种 vegetable 作物。A starchy root vegetable that grows best in wet, paddy conditions.可在 **夏季、ginger island** 种植，是早期最稳定的收入来源之一，几乎所有农场规划都应种植。
 

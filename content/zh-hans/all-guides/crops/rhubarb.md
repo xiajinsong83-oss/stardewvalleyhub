@@ -1,7 +1,7 @@
 ---
 title: "Rhubarb 种植攻略：春季 成熟 13 天 | 星露谷物语"
 description: "Rhubarb 种植攻略：春季 成熟 13 天 | 星露谷物语 — A spring crop sold at the Oasis Shop. It's tart but flavorful when cooked."
-date: 2026-10-22
+date: 2026-10-23
 draft: false
 type: guide
 icon: "/images/crops/rhubarb/crop.png"

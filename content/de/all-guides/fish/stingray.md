@@ -1,12 +1,12 @@
 ---
 title: "Stingray Guide: Frühling, Sommer, Herbst, Winter (Ginger Island (Pirate Cove), 6:00 AM – 2:00 AM)"
 description: "Stingray Guide: Frühling, Sommer, Herbst, Winter (Ginger Island (Pirate Cove), 6:00 AM – 2:00 AM) — Despite having a toxic stinger, these fish are shy a…"
-date: 2026-10-22
+date: 2026-10-23
 draft: false
 type: guide
 icon: "/images/fish/Stingray.png"
 related: [{"title": "Fisch-Checkliste", "url": "/de/fish-checklist/"}, {"title": "Farm-Layout-Planer", "url": "/de/farmlayou/"}]
-cover: "/images/guide-covers/fish.jpg"
+cover: "/images/guide-covers/fish-alt.jpg"
 ---
 **Stingray** ist ein gewöhnlich-Fisch in Stardew Valley. Despite having a toxic stinger, these fish are shy and prefer to avoid humans.
 

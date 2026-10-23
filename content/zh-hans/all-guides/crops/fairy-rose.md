@@ -1,12 +1,12 @@
 ---
 title: "Fairy Rose 种植攻略：秋季 成熟 12 天 | 星露谷物语"
 description: "Fairy Rose 种植攻略：秋季 成熟 12 天 | 星露谷物语 — An extremely rare flower with a powerful, sweet perfume."
-date: 2026-10-22
+date: 2026-10-23
 draft: false
 type: guide
 icon: "/images/crops/fairy-rose/crop.png"
 related: [{"title": "农场布局规划器", "url": "/zh-hans/farmlayou/"}, {"title": "作物利润计算器", "url": "/zh-hans/calculator/"}]
-cover: "/images/guide-covers/crops.jpg"
+cover: "/images/guide-covers/crops-alt.jpg"
 ---
 **Fairy Rose** 是星露谷物语中的一种 flower 作物。An extremely rare flower with a powerful, sweet perfume.可在 **秋季** 种植，是早期最稳定的收入来源之一，几乎所有农场规划都应种植。
 

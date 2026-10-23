@@ -1,12 +1,12 @@
 ---
 title: "Taro Root Anbau-Guide: Reife in 10 Tagen | Stardew Valley"
 description: "Taro Root Anbau-Guide: Reife in 10 Tagen | Stardew Valley — A starchy root vegetable that grows best in wet, paddy conditions."
-date: 2026-10-22
+date: 2026-10-23
 draft: false
 type: guide
 icon: "/images/crops/taro-root/crop.png"
 related: [{"title": "Farm-Layout-Planer", "url": "/de/farmlayou/"}, {"title": "Gewinn-Rechner", "url": "/de/calculator/"}]
-cover: "/images/guide-covers/crops-alt.jpg"
+cover: "/images/guide-covers/crops.jpg"
 ---
 **Taro Root** ist eine vegetable-Pflanze in Stardew Valley. A starchy root vegetable that grows best in wet, paddy conditions. Anbaubar in **Sommer, ginger island** – eine der zuverlässigsten Einnahmequellen early, gehört in fast jeden Farmplan.
 

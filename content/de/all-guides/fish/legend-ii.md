@@ -1,12 +1,12 @@
 ---
 title: "Legend II Guide: Frühling, Sommer, Herbst, Winter (Mountain Lake, 6:00 AM – 8:00 PM)"
 description: "Legend II Guide: Frühling, Sommer, Herbst, Winter (Mountain Lake, 6:00 AM – 8:00 PM) — The successor to the original Legend."
-date: 2026-10-22
+date: 2026-10-23
 draft: false
 type: guide
 icon: "/images/fish/Legend II.png"
 related: [{"title": "Fisch-Checkliste", "url": "/de/fish-checklist/"}, {"title": "Farm-Layout-Planer", "url": "/de/farmlayou/"}]
-cover: "/images/guide-covers/fish-alt.jpg"
+cover: "/images/guide-covers/fish.jpg"
 ---
 **Legend II** ist ein legendär II-Fisch in Stardew Valley. The successor to the original Legend.
 

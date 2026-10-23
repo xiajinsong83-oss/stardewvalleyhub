@@ -1,7 +1,7 @@
 ---
 title: "星露谷物语中 Caroline 的最爱礼物"
 description: "星露谷物语中 Caroline 的最爱礼物 — Caroline is a villager who lives in Pelican Town. She is married to Pierre and is the mother of Abigail."
-date: 2026-10-22
+date: 2026-10-23
 draft: false
 type: guide
 icon: "/images/villagers/Caroline.png"

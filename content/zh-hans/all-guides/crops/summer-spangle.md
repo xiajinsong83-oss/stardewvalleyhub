@@ -1,12 +1,12 @@
 ---
 title: "Summer Spangle 种植攻略：夏季 成熟 8 天 | 星露谷物语"
 description: "Summer Spangle 种植攻略：夏季 成熟 8 天 | 星露谷物语 — A tropical bloom that thrives in the summer heat."
-date: 2026-10-22
+date: 2026-10-23
 draft: false
 type: guide
 icon: "/images/crops/summer-spangle/crop.png"
 related: [{"title": "农场布局规划器", "url": "/zh-hans/farmlayou/"}, {"title": "作物利润计算器", "url": "/zh-hans/calculator/"}]
-cover: "/images/guide-covers/crops.jpg"
+cover: "/images/guide-covers/crops-alt.jpg"
 ---
 **Summer Spangle** 是星露谷物语中的一种 flower 作物。A tropical bloom that thrives in the summer heat.可在 **夏季** 种植，是早期最稳定的收入来源之一，几乎所有农场规划都应种植。
 

@@ -1,12 +1,12 @@
 ---
 title: "Son of Crimsonfish Guide: Winter (Ocean, 6:00 AM – 8:00 PM)"
 description: "Son of Crimsonfish Guide: Winter (Ocean, 6:00 AM – 8:00 PM) — He hatched in the warm summer water, and followed in the footsteps of his father."
-date: 2026-10-22
+date: 2026-10-23
 draft: false
 type: guide
 icon: "/images/fish/Son of Crimsonfish.png"
 related: [{"title": "Fisch-Checkliste", "url": "/de/fish-checklist/"}, {"title": "Farm-Layout-Planer", "url": "/de/farmlayou/"}]
-cover: "/images/guide-covers/fish-alt.jpg"
+cover: "/images/guide-covers/fish.jpg"
 ---
 **Son of Crimsonfish** ist ein legendär II-Fisch in Stardew Valley. He hatched in the warm summer water, and followed in the footsteps of his father.
 

@@ -1,12 +1,12 @@
 ---
 title: "Fiber Anbau-Guide: Reife in 7 Tagen | Stardew Valley"
 description: "Fiber Anbau-Guide: Reife in 7 Tagen | Stardew Valley — Plant these in any season. Does not require watering. Harvest with the scythe."
-date: 2026-10-22
+date: 2026-10-23
 draft: false
 type: guide
 icon: "/images/crops/fiber/crop.png"
 related: [{"title": "Farm-Layout-Planer", "url": "/de/farmlayou/"}, {"title": "Gewinn-Rechner", "url": "/de/calculator/"}]
-cover: "/images/guide-covers/crops-alt.jpg"
+cover: "/images/guide-covers/crops.jpg"
 ---
 **Fiber** ist eine resource-Pflanze in Stardew Valley. Plant these in any season. Does not require watering. Harvest with the scythe. Anbaubar in **Frühling, Sommer, Herbst, Winter** – eine der zuverlässigsten Einnahmequellen early, gehört in fast jeden Farmplan.
 

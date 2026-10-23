@@ -1,7 +1,7 @@
 ---
 title: "Fire Quartz – Museums-Spendenleitfaden"
 description: "Fire Quartz – Museums-Spendenleitfaden — A glowing red crystal commonly found near hot lava."
-date: 2026-10-22
+date: 2026-10-23
 draft: false
 type: guide
 icon: "/images/minerals/foraged-minerals/Fire Quartz.png"

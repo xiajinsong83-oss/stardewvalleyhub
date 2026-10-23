@@ -1,7 +1,7 @@
 ---
 title: "Anchovy 攻略：春季、秋季（Ocean，6:00 AM – 2:00 AM）"
 description: "Anchovy 攻略：春季、秋季（Ocean，6:00 AM – 2:00 AM） — A small silver fish found in the ocean."
-date: 2026-10-22
+date: 2026-10-23
 draft: false
 type: guide
 icon: "/images/fish/Anchovy.png"

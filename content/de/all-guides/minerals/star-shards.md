@@ -1,12 +1,12 @@
 ---
 title: "Star Shards – Museums-Spendenleitfaden"
 description: "Star Shards – Museums-Spendenleitfaden — No one knows how these form. Microscopic structure displays unnatural regularity."
-date: 2026-10-22
+date: 2026-10-23
 draft: false
 type: guide
 icon: "/images/minerals/geode-minerals/Star Shards.png"
 related: [{"title": "Museum-Checkliste", "url": "/de/museum-checklist/"}]
-cover: "/images/guide-covers/minerals-alt.jpg"
+cover: "/images/guide-covers/minerals.jpg"
 ---
 No one knows how these form. Microscopic structure displays unnatural regularity.
 

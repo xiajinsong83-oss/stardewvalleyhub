@@ -1,12 +1,12 @@
 ---
 title: "Glacierfish Jr. Guide: Winter (Forest (Arrowhead Island), 6:00 AM – 8:00 PM)"
 description: "Glacierfish Jr. Guide: Winter (Forest (Arrowhead Island), 6:00 AM – 8:00 PM) — The original Glacierfish had a son..."
-date: 2026-10-22
+date: 2026-10-23
 draft: false
 type: guide
 icon: "/images/fish/Glacierfish Jr.png"
 related: [{"title": "Fisch-Checkliste", "url": "/de/fish-checklist/"}, {"title": "Farm-Layout-Planer", "url": "/de/farmlayou/"}]
-cover: "/images/guide-covers/fish-alt.jpg"
+cover: "/images/guide-covers/fish.jpg"
 ---
 **Glacierfish Jr.** ist ein legendär II-Fisch in Stardew Valley. The original Glacierfish had a son...
 

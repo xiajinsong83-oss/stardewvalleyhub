@@ -13,6 +13,7 @@ title: "Fisch-Guides - Stardew Valley Hub"
   <a class="card" href="/de/all-guides/fish/largemouth-bass/"><h3>Largemouth Bass Guide: Frühling, Sommer, Herbst, Winter (Mountain Lake, 6:00 AM – 7:00 PM)</h3></a>
   <a class="card" href="/de/all-guides/fish/legend-ii/"><h3>Legend II Guide: Frühling, Sommer, Herbst, Winter (Mountain Lake, 6:00 AM – 8:00 PM)</h3></a>
   <a class="card" href="/de/all-guides/fish/lionfish/"><h3>Lionfish Guide: Frühling, Sommer, Herbst, Winter (Ginger Island, 6:00 AM – 2:00 AM)</h3></a>
+  <a class="card" href="/de/all-guides/fish/midnight-squid/"><h3>Midnight Squid Guide: Frühling, Sommer, Herbst, Winter (Night Market submarine, 6:00 AM – 2:00 AM)</h3></a>
   <a class="card" href="/de/all-guides/fish/ms-angler/"><h3>Ms. Angler Guide: Frühling, Sommer, Herbst, Winter (River, 6:00 AM – 2:00 AM)</h3></a>
   <a class="card" href="/de/all-guides/fish/pufferfish/"><h3>Pufferfish Guide: Sommer (Ocean, Ginger Island, 12:00 PM – 4:00 PM)</h3></a>
   <a class="card" href="/de/all-guides/fish/radioactive-carp/"><h3>Radioactive Carp Guide: Frühling, Sommer, Herbst, Winter (Sewers, 6:00 AM – 2:00 AM)</h3></a>

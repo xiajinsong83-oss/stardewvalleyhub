@@ -1,12 +1,12 @@
 ---
 title: "Summer Spangle Anbau-Guide: Reife in 8 Tagen | Stardew Valley"
 description: "Summer Spangle Anbau-Guide: Reife in 8 Tagen | Stardew Valley — A tropical bloom that thrives in the summer heat."
-date: 2026-10-22
+date: 2026-10-23
 draft: false
 type: guide
 icon: "/images/crops/summer-spangle/crop.png"
 related: [{"title": "Farm-Layout-Planer", "url": "/de/farmlayou/"}, {"title": "Gewinn-Rechner", "url": "/de/calculator/"}]
-cover: "/images/guide-covers/crops.jpg"
+cover: "/images/guide-covers/crops-alt.jpg"
 ---
 **Summer Spangle** ist eine flower-Pflanze in Stardew Valley. A tropical bloom that thrives in the summer heat. Anbaubar in **Sommer** – eine der zuverlässigsten Einnahmequellen early, gehört in fast jeden Farmplan.
 

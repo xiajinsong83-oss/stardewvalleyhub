@@ -1,7 +1,7 @@
 ---
 title: "Quartz 博物馆捐赠攻略 – 星露谷物语"
 description: "Quartz 博物馆捐赠攻略 – 星露谷物语 — A clear crystal commonly found in caves and mines."
-date: 2026-10-22
+date: 2026-10-23
 draft: false
 type: guide
 icon: "/images/minerals/foraged-minerals/Quartz.png"

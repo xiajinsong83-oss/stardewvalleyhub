@@ -1,7 +1,7 @@
 ---
 title: "Kale 种植攻略：春季 成熟 6 天 | 星露谷物语"
 description: "Kale 种植攻略：春季 成熟 6 天 | 星露谷物语 — This dark leafy green is impressively healthy and grows quickly."
-date: 2026-10-22
+date: 2026-10-23
 draft: false
 type: guide
 icon: "/images/crops/kale/crop.png"

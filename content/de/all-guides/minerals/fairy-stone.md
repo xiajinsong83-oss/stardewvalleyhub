@@ -1,12 +1,12 @@
 ---
 title: "Fairy Stone – Museums-Spendenleitfaden"
 description: "Fairy Stone – Museums-Spendenleitfaden — An old miner's song suggests these are made from ancient fairy bones."
-date: 2026-10-22
+date: 2026-10-23
 draft: false
 type: guide
 icon: "/images/minerals/geode-minerals/Fairy Stone.png"
 related: [{"title": "Museum-Checkliste", "url": "/de/museum-checklist/"}]
-cover: "/images/guide-covers/minerals.jpg"
+cover: "/images/guide-covers/minerals-alt.jpg"
 ---
 An old miner's song suggests these are made from ancient fairy bones.
 

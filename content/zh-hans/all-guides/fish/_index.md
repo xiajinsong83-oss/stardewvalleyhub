@@ -13,6 +13,7 @@ title: "鱼类攻略 - 星露谷物语攻略站"
   <a class="card" href="/zh-hans/all-guides/fish/largemouth-bass/"><h3>Largemouth Bass 攻略：春季、夏季、秋季、冬季（Mountain Lake，6:00 AM – 7:00 PM）</h3></a>
   <a class="card" href="/zh-hans/all-guides/fish/legend-ii/"><h3>Legend II 攻略：春季、夏季、秋季、冬季（Mountain Lake，6:00 AM – 8:00 PM）</h3></a>
   <a class="card" href="/zh-hans/all-guides/fish/lionfish/"><h3>Lionfish 攻略：春季、夏季、秋季、冬季（Ginger Island，6:00 AM – 2:00 AM）</h3></a>
+  <a class="card" href="/zh-hans/all-guides/fish/midnight-squid/"><h3>Midnight Squid 攻略：春季、夏季、秋季、冬季（Night Market submarine，6:00 AM – 2:00 AM）</h3></a>
   <a class="card" href="/zh-hans/all-guides/fish/ms-angler/"><h3>Ms. Angler 攻略：春季、夏季、秋季、冬季（River，6:00 AM – 2:00 AM）</h3></a>
   <a class="card" href="/zh-hans/all-guides/fish/pufferfish/"><h3>Pufferfish 攻略：夏季（Ocean, Ginger Island，12:00 PM – 4:00 PM）</h3></a>
   <a class="card" href="/zh-hans/all-guides/fish/radioactive-carp/"><h3>Radioactive Carp 攻略：春季、夏季、秋季、冬季（Sewers，6:00 AM – 2:00 AM）</h3></a>

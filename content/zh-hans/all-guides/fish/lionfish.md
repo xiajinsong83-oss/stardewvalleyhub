@@ -1,12 +1,12 @@
 ---
 title: "Lionfish 攻略：春季、夏季、秋季、冬季（Ginger Island，6:00 AM – 2:00 AM）"
 description: "Lionfish 攻略：春季、夏季、秋季、冬季（Ginger Island，6:00 AM – 2:00 AM） — An aggressive, predatory fish with venomous spines."
-date: 2026-10-22
+date: 2026-10-23
 draft: false
 type: guide
 icon: "/images/fish/Lionfish.png"
 related: [{"title": "鱼类清单", "url": "/zh-hans/fish-checklist/"}, {"title": "农场布局规划器", "url": "/zh-hans/farmlayou/"}]
-cover: "/images/guide-covers/fish-alt.jpg"
+cover: "/images/guide-covers/fish.jpg"
 ---
 **Lionfish** 是星露谷物语中的普通鱼。An aggressive, predatory fish with venomous spines.
 

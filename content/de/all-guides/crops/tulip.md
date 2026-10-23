@@ -1,7 +1,7 @@
 ---
 title: "Tulip Anbau-Guide: Reife in 6 Tagen | Stardew Valley"
 description: "Tulip Anbau-Guide: Reife in 6 Tagen | Stardew Valley — A vivid spring flower that turns the meadow red and yellow."
-date: 2026-10-22
+date: 2026-10-23
 draft: false
 type: guide
 icon: "/images/crops/tulip/crop.png"

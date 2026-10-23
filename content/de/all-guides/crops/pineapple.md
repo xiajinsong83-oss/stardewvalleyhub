@@ -1,12 +1,12 @@
 ---
 title: "Pineapple Anbau-Guide: Reife in 14 Tagen | Stardew Valley"
 description: "Pineapple Anbau-Guide: Reife in 14 Tagen | Stardew Valley — A prickly, succulent fruit found in tropical climates."
-date: 2026-10-22
+date: 2026-10-23
 draft: false
 type: guide
 icon: "/images/crops/pineapple/crop.png"
 related: [{"title": "Farm-Layout-Planer", "url": "/de/farmlayou/"}, {"title": "Gewinn-Rechner", "url": "/de/calculator/"}]
-cover: "/images/guide-covers/crops.jpg"
+cover: "/images/guide-covers/crops-alt.jpg"
 ---
 **Pineapple** ist eine fruit-Pflanze in Stardew Valley. A prickly, succulent fruit found in tropical climates. Anbaubar in **Sommer, ginger island** – eine der zuverlässigsten Einnahmequellen early, gehört in fast jeden Farmplan.
 

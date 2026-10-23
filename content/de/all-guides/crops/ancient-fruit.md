@@ -1,12 +1,12 @@
 ---
 title: "Ancient Fruit Anbau-Guide: Reife in 28 Tagen | Stardew Valley"
 description: "Ancient Fruit Anbau-Guide: Reife in 28 Tagen | Stardew Valley — A very rare fruit that has survived since ancient times. It's extraordinarily sweet."
-date: 2026-10-22
+date: 2026-10-23
 draft: false
 type: guide
 icon: "/images/crops/ancient-fruit/crop.png"
 related: [{"title": "Farm-Layout-Planer", "url": "/de/farmlayou/"}, {"title": "Gewinn-Rechner", "url": "/de/calculator/"}]
-cover: "/images/guide-covers/crops-alt.jpg"
+cover: "/images/guide-covers/crops.jpg"
 ---
 **Ancient Fruit** ist eine fruit-Pflanze in Stardew Valley. A very rare fruit that has survived since ancient times. It's extraordinarily sweet. Anbaubar in **Frühling, Sommer, Herbst** – eine der zuverlässigsten Einnahmequellen early, gehört in fast jeden Farmplan.
 

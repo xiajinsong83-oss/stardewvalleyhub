@@ -8,6 +8,7 @@ title: "作物攻略 - 星露谷物语攻略站"
   <a class="card" href="/zh-hans/all-guides/crops/ancient-fruit/"><h3>Ancient Fruit 种植攻略：春季、夏季、秋季 成熟 28 天 | 星露谷物语</h3></a>
   <a class="card" href="/zh-hans/all-guides/crops/blue-jazz/"><h3>Blue Jazz 种植攻略：春季 成熟 7 天 | 星露谷物语</h3></a>
   <a class="card" href="/zh-hans/all-guides/crops/cauliflower/"><h3>Cauliflower 种植攻略：春季 成熟 12 天 | 星露谷物语</h3></a>
+  <a class="card" href="/zh-hans/all-guides/crops/coffee-bean/"><h3>Coffee Bean 种植攻略：春季、夏季 成熟 10 天 | 星露谷物语</h3></a>
   <a class="card" href="/zh-hans/all-guides/crops/fairy-rose/"><h3>Fairy Rose 种植攻略：秋季 成熟 12 天 | 星露谷物语</h3></a>
   <a class="card" href="/zh-hans/all-guides/crops/fiber/"><h3>Fiber 种植攻略：春季、夏季、秋季、冬季 成熟 7 天 | 星露谷物语</h3></a>
   <a class="card" href="/zh-hans/all-guides/crops/garlic/"><h3>Garlic 种植攻略：春季 成熟 4 天 | 星露谷物语</h3></a>

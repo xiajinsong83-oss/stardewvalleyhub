@@ -1,12 +1,12 @@
 ---
 title: "Golden Coconut – Museums-Spendenleitfaden"
 description: "Golden Coconut – Museums-Spendenleitfaden — A blacksmith can crack this open. The first one always yields a Golden Walnut."
-date: 2026-10-22
+date: 2026-10-23
 draft: false
 type: guide
 icon: "/images/minerals/geodes/Golden Coconut.png"
 related: [{"title": "Museum-Checkliste", "url": "/de/museum-checklist/"}]
-cover: "/images/guide-covers/minerals-alt.jpg"
+cover: "/images/guide-covers/minerals.jpg"
 ---
 A blacksmith can crack this open. The first one always yields a Golden Walnut.
 

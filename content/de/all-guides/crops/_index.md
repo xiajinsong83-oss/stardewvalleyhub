@@ -8,6 +8,7 @@ title: "Pflanzen-Guides - Stardew Valley Hub"
   <a class="card" href="/de/all-guides/crops/ancient-fruit/"><h3>Ancient Fruit Anbau-Guide: Reife in 28 Tagen | Stardew Valley</h3></a>
   <a class="card" href="/de/all-guides/crops/blue-jazz/"><h3>Blue Jazz Anbau-Guide: Reife in 7 Tagen | Stardew Valley</h3></a>
   <a class="card" href="/de/all-guides/crops/cauliflower/"><h3>Cauliflower Anbau-Guide: Reife in 12 Tagen | Stardew Valley</h3></a>
+  <a class="card" href="/de/all-guides/crops/coffee-bean/"><h3>Coffee Bean Anbau-Guide: Reife in 10 Tagen | Stardew Valley</h3></a>
   <a class="card" href="/de/all-guides/crops/fairy-rose/"><h3>Fairy Rose Anbau-Guide: Reife in 12 Tagen | Stardew Valley</h3></a>
   <a class="card" href="/de/all-guides/crops/fiber/"><h3>Fiber Anbau-Guide: Reife in 7 Tagen | Stardew Valley</h3></a>
   <a class="card" href="/de/all-guides/crops/garlic/"><h3>Garlic Anbau-Guide: Reife in 4 Tagen | Stardew Valley</h3></a>

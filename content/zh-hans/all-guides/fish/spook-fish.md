@@ -1,12 +1,12 @@
 ---
 title: "Spook Fish 攻略：春季、夏季、秋季、冬季（Night Market submarine，6:00 AM – 2:00 AM）"
 description: "Spook Fish 攻略：春季、夏季、秋季、冬季（Night Market submarine，6:00 AM – 2:00 AM） — The huge eyes can detect the faint silhouettes of prey."
-date: 2026-10-22
+date: 2026-10-23
 draft: false
 type: guide
 icon: "/images/fish/Spook Fish.png"
 related: [{"title": "鱼类清单", "url": "/zh-hans/fish-checklist/"}, {"title": "农场布局规划器", "url": "/zh-hans/farmlayou/"}]
-cover: "/images/guide-covers/fish.jpg"
+cover: "/images/guide-covers/fish-alt.jpg"
 ---
 **Spook Fish** 是星露谷物语中的鱼。The huge eyes can detect the faint silhouettes of prey.
 

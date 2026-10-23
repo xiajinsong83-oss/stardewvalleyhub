@@ -1,7 +1,7 @@
 ---
 title: "Earth Crystal 博物馆捐赠攻略 – 星露谷物语"
 description: "Earth Crystal 博物馆捐赠攻略 – 星露谷物语 — A resinous substance found near the surface."
-date: 2026-10-22
+date: 2026-10-23
 draft: false
 type: guide
 icon: "/images/minerals/foraged-minerals/Earth Crystal.png"

@@ -15,6 +15,7 @@ title: "矿物与文物攻略 - 星露谷物语攻略站"
   <a class="card" href="/zh-hans/all-guides/minerals/fire-quartz/"><h3>Fire Quartz 博物馆捐赠攻略 – 星露谷物语</h3></a>
   <a class="card" href="/zh-hans/all-guides/minerals/frozen-tear/"><h3>Frozen Tear 博物馆捐赠攻略 – 星露谷物语</h3></a>
   <a class="card" href="/zh-hans/all-guides/minerals/golden-coconut/"><h3>Golden Coconut 博物馆捐赠攻略 – 星露谷物语</h3></a>
+  <a class="card" href="/zh-hans/all-guides/minerals/mudstone/"><h3>Mudstone 博物馆捐赠攻略 – 星露谷物语</h3></a>
   <a class="card" href="/zh-hans/all-guides/minerals/obsidian/"><h3>Obsidian 博物馆捐赠攻略 – 星露谷物语</h3></a>
   <a class="card" href="/zh-hans/all-guides/minerals/omni-geode/"><h3>Omni Geode 博物馆捐赠攻略 – 星露谷物语</h3></a>
   <a class="card" href="/zh-hans/all-guides/minerals/quartz/"><h3>Quartz 博物馆捐赠攻略 – 星露谷物语</h3></a>

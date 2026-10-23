@@ -1,7 +1,7 @@
 ---
 title: "Bream 攻略：春季、夏季、秋季、冬季（River，6:00 PM – 2:00 AM）"
 description: "Bream 攻略：春季、夏季、秋季、冬季（River，6:00 PM – 2:00 AM） — A fairly common river fish that becomes active at night."
-date: 2026-10-22
+date: 2026-10-23
 draft: false
 type: guide
 icon: "/images/fish/Bream.png"

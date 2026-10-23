@@ -1,12 +1,12 @@
 ---
 title: "Obsidian – Museums-Spendenleitfaden"
 description: "Obsidian – Museums-Spendenleitfaden — A volcanic glass that forms when lava cools rapidly."
-date: 2026-10-22
+date: 2026-10-23
 draft: false
 type: guide
 icon: "/images/minerals/geode-minerals/Obsidian.png"
 related: [{"title": "Museum-Checkliste", "url": "/de/museum-checklist/"}]
-cover: "/images/guide-covers/minerals.jpg"
+cover: "/images/guide-covers/minerals-alt.jpg"
 ---
 A volcanic glass that forms when lava cools rapidly.
 

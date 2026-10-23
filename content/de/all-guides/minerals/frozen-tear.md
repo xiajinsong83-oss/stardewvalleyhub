@@ -1,7 +1,7 @@
 ---
 title: "Frozen Tear – Museums-Spendenleitfaden"
 description: "Frozen Tear – Museums-Spendenleitfaden — A crystal fabled to be the frozen tears of a yeti."
-date: 2026-10-22
+date: 2026-10-23
 draft: false
 type: guide
 icon: "/images/minerals/foraged-minerals/Frozen Tear.png"

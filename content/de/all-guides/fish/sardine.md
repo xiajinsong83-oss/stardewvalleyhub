@@ -1,7 +1,7 @@
 ---
 title: "Sardine Guide: Frühling, Sommer, Herbst, Winter (Ocean, 6:00 AM – 7:00 PM)"
 description: "Sardine Guide: Frühling, Sommer, Herbst, Winter (Ocean, 6:00 AM – 7:00 PM) — A common ocean fish."
-date: 2026-10-22
+date: 2026-10-23
 draft: false
 type: guide
 icon: "/images/fish/Sardine.png"

@@ -1,12 +1,12 @@
 ---
 title: "Radioactive Ore – Museums-Spendenleitfaden"
 description: "Radioactive Ore – Museums-Spendenleitfaden — It's glowing with dangerous energy... Can be smelted into bars."
-date: 2026-10-22
+date: 2026-10-23
 draft: false
 type: guide
 icon: "/images/minerals/ore/Radioactive Ore.png"
 related: [{"title": "Museum-Checkliste", "url": "/de/museum-checklist/"}]
-cover: "/images/guide-covers/minerals-alt.jpg"
+cover: "/images/guide-covers/minerals.jpg"
 ---
 It's glowing with dangerous energy... Can be smelted into bars.
 

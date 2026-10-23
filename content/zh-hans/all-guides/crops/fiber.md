@@ -1,12 +1,12 @@
 ---
 title: "Fiber 种植攻略：春季、夏季、秋季、冬季 成熟 7 天 | 星露谷物语"
 description: "Fiber 种植攻略：春季、夏季、秋季、冬季 成熟 7 天 | 星露谷物语 — Plant these in any season. Does not require watering. Harvest with the scythe."
-date: 2026-10-22
+date: 2026-10-23
 draft: false
 type: guide
 icon: "/images/crops/fiber/crop.png"
 related: [{"title": "农场布局规划器", "url": "/zh-hans/farmlayou/"}, {"title": "作物利润计算器", "url": "/zh-hans/calculator/"}]
-cover: "/images/guide-covers/crops-alt.jpg"
+cover: "/images/guide-covers/crops.jpg"
 ---
 **Fiber** 是星露谷物语中的一种 resource 作物。Plant these in any season. Does not require watering. Harvest with the scythe.可在 **春季、夏季、秋季、冬季** 种植，是早期最稳定的收入来源之一，几乎所有农场规划都应种植。
 

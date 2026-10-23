@@ -1,12 +1,12 @@
 ---
 title: "Cinder Shard 博物馆捐赠攻略 – 星露谷物语"
 description: "Cinder Shard 博物馆捐赠攻略 – 星露谷物语 — You can feel a warm glow from within this stone."
-date: 2026-10-22
+date: 2026-10-23
 draft: false
 type: guide
 icon: "/images/minerals/foraged-minerals/Cinder Shard.png"
 related: [{"title": "博物馆清单", "url": "/zh-hans/museum-checklist/"}]
-cover: "/images/guide-covers/minerals-alt.jpg"
+cover: "/images/guide-covers/minerals.jpg"
 ---
 You can feel a warm glow from within this stone.
 

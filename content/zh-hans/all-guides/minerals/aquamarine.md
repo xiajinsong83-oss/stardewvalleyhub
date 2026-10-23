@@ -1,7 +1,7 @@
 ---
 title: "Aquamarine 博物馆捐赠攻略 – 星露谷物语"
 description: "Aquamarine 博物馆捐赠攻略 – 星露谷物语 — A shimmery blue-green gem."
-date: 2026-10-22
+date: 2026-10-23
 draft: false
 type: guide
 icon: "/images/minerals/gems/Aquamarine.png"

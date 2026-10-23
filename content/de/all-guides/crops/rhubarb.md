@@ -1,7 +1,7 @@
 ---
 title: "Rhubarb Anbau-Guide: Reife in 13 Tagen | Stardew Valley"
 description: "Rhubarb Anbau-Guide: Reife in 13 Tagen | Stardew Valley — A spring crop sold at the Oasis Shop. It's tart but flavorful when cooked."
-date: 2026-10-22
+date: 2026-10-23
 draft: false
 type: guide
 icon: "/images/crops/rhubarb/crop.png"

@@ -1,7 +1,7 @@
 ---
 title: "Amethyst – Museums-Spendenleitfaden"
 description: "Amethyst – Museums-Spendenleitfaden — A purple variant of quartz."
-date: 2026-10-22
+date: 2026-10-23
 draft: false
 type: guide
 icon: "/images/minerals/gems/Amethyst.png"

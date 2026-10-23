@@ -1,7 +1,7 @@
 ---
 title: "Garlic 种植攻略：春季 成熟 4 天 | 星露谷物语"
 description: "Garlic 种植攻略：春季 成熟 4 天 | 星露谷物语 — A pungent herb used in cooking. The aroma is known to keep monsters at bay."
-date: 2026-10-22
+date: 2026-10-23
 draft: false
 type: guide
 icon: "/images/crops/garlic/crop.png"

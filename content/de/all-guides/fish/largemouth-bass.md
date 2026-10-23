@@ -1,7 +1,7 @@
 ---
 title: "Largemouth Bass Guide: Frühling, Sommer, Herbst, Winter (Mountain Lake, 6:00 AM – 7:00 PM)"
 description: "Largemouth Bass Guide: Frühling, Sommer, Herbst, Winter (Mountain Lake, 6:00 AM – 7:00 PM) — A popular fish that lives in lakes."
-date: 2026-10-22
+date: 2026-10-23
 draft: false
 type: guide
 icon: "/images/fish/Largemouth Bass.png"

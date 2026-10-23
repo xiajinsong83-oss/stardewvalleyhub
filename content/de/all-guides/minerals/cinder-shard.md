@@ -1,12 +1,12 @@
 ---
 title: "Cinder Shard – Museums-Spendenleitfaden"
 description: "Cinder Shard – Museums-Spendenleitfaden — You can feel a warm glow from within this stone."
-date: 2026-10-22
+date: 2026-10-23
 draft: false
 type: guide
 icon: "/images/minerals/foraged-minerals/Cinder Shard.png"
 related: [{"title": "Museum-Checkliste", "url": "/de/museum-checklist/"}]
-cover: "/images/guide-covers/minerals-alt.jpg"
+cover: "/images/guide-covers/minerals.jpg"
 ---
 You can feel a warm glow from within this stone.
 

@@ -1,7 +1,7 @@
 ---
 title: "Dwarf-Lieblingsgeschenke in Stardew Valley"
 description: "Dwarf-Lieblingsgeschenke in Stardew Valley — The Dwarf is a valley resident who lives in the Mines. Access is initially blocked by an unbreakable rock w…"
-date: 2026-10-22
+date: 2026-10-23
 draft: false
 type: guide
 icon: "/images/villagers/Dwarf.png"
