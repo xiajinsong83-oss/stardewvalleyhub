@@ -59,12 +59,14 @@
     <!-- 右：说明 -->
     <div class="fish-right">
       <div class="fish-hero-card">
+        <img src="/images/achievements/how-it-works.png" alt="" style="width:72px;height:72px;image-rendering:pixelated;border-radius:10px;border:1px solid #2a3a55;background:#0d1a2d;display:block;margin-bottom:12px;">
         <h3>{{ i18n "ach_about_title" }}</h3>
         <p>{{ i18n "ach_about_body" }}</p>
         <p>{{ i18n "ach_secret_note" }}</p>
         <p><a href="/achievements/">{{ i18n "ach_see_list" }}</a></p>
       </div>
       <div class="fish-stats-card">
+        <img src="/images/achievements/progress-trophy.png" alt="" style="width:72px;height:72px;image-rendering:pixelated;border-radius:10px;border:1px solid #2a3a55;background:#0d1a2d;display:block;margin-bottom:12px;">
         <h4>{{ i18n "tool_collection_progress" }}</h4>
         <div class="fish-stat-row"><span>{{ i18n "ach_unlocked" }}</span><strong id="statCaught">0 / {{ len .Site.Data.achievements }}</strong></div>
         <div class="fish-stat-row"><span>{{ i18n "tool_remaining" }}</span><strong id="statLeft">{{ len .Site.Data.achievements }}</strong></div>
