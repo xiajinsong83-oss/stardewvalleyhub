@@ -19,6 +19,7 @@ title: "鱼类攻略 - 星露谷物语攻略站"
   <a class="card" href="/zh-hans/all-guides/fish/radioactive-carp/"><h3>Radioactive Carp 攻略：春季、夏季、秋季、冬季（Sewers，6:00 AM – 2:00 AM）</h3></a>
   <a class="card" href="/zh-hans/all-guides/fish/rainbow-trout/"><h3>Rainbow Trout 攻略：夏季（River, Mountain Lake，6:00 AM – 7:00 PM）</h3></a>
   <a class="card" href="/zh-hans/all-guides/fish/sardine/"><h3>Sardine 攻略：春季、夏季、秋季、冬季（Ocean，6:00 AM – 7:00 PM）</h3></a>
+  <a class="card" href="/zh-hans/all-guides/fish/slimejack/"><h3>Slimejack 攻略：春季、夏季、秋季、冬季（Mutant Bug Lair，6:00 AM – 2:00 AM）</h3></a>
   <a class="card" href="/zh-hans/all-guides/fish/smallmouth-bass/"><h3>Smallmouth Bass 攻略：春季、秋季（River, Forest Pond，6:00 AM – 2:00 AM）</h3></a>
   <a class="card" href="/zh-hans/all-guides/fish/son-of-crimsonfish/"><h3>Son of Crimsonfish 攻略：冬季（Ocean，6:00 AM – 8:00 PM）</h3></a>
   <a class="card" href="/zh-hans/all-guides/fish/spook-fish/"><h3>Spook Fish 攻略：春季、夏季、秋季、冬季（Night Market submarine，6:00 AM – 2:00 AM）</h3></a>

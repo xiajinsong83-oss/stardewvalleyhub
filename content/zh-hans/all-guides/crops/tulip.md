@@ -1,7 +1,7 @@
 ---
 title: "Tulip 种植攻略：春季 成熟 6 天 | 星露谷物语"
 description: "Tulip 种植攻略：春季 成熟 6 天 | 星露谷物语 — A vivid spring flower that turns the meadow red and yellow."
-date: 2026-10-23
+date: 2026-10-24
 draft: false
 type: guide
 icon: "/images/crops/tulip/crop.png"

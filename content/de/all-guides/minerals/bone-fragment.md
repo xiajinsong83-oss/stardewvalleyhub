@@ -1,12 +1,12 @@
 ---
 title: "Bone Fragment – Museums-Spendenleitfaden"
 description: "Bone Fragment – Museums-Spendenleitfaden — A small piece of bone."
-date: 2026-10-23
+date: 2026-10-24
 draft: false
 type: guide
 icon: "/images/minerals/resources/Bone Fragment.png"
 related: [{"title": "Museum-Checkliste", "url": "/de/museum-checklist/"}]
-cover: "/images/guide-covers/minerals-alt.jpg"
+cover: "/images/guide-covers/minerals.jpg"
 ---
 A small piece of bone.
 

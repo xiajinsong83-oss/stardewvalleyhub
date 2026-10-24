@@ -1,12 +1,12 @@
 ---
 title: "Lionfish Guide: Frühling, Sommer, Herbst, Winter (Ginger Island, 6:00 AM – 2:00 AM)"
 description: "Lionfish Guide: Frühling, Sommer, Herbst, Winter (Ginger Island, 6:00 AM – 2:00 AM) — An aggressive, predatory fish with venomous spines."
-date: 2026-10-23
+date: 2026-10-24
 draft: false
 type: guide
 icon: "/images/fish/Lionfish.png"
 related: [{"title": "Fisch-Checkliste", "url": "/de/fish-checklist/"}, {"title": "Farm-Layout-Planer", "url": "/de/farmlayou/"}]
-cover: "/images/guide-covers/fish.jpg"
+cover: "/images/guide-covers/fish-alt.jpg"
 ---
 **Lionfish** ist ein gewöhnlich-Fisch in Stardew Valley. An aggressive, predatory fish with venomous spines.
 

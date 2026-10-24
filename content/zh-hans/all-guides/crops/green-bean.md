@@ -1,7 +1,7 @@
 ---
 title: "Green Bean 种植攻略：春季 成熟 10 天 | 星露谷物语"
 description: "Green Bean 种植攻略：春季 成熟 10 天 | 星露谷物语 — A young, tender bean in the pod."
-date: 2026-10-23
+date: 2026-10-24
 draft: false
 type: guide
 icon: "/images/crops/green-bean/crop.png"

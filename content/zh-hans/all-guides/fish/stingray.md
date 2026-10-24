@@ -1,12 +1,12 @@
 ---
 title: "Stingray 攻略：春季、夏季、秋季、冬季（Ginger Island (Pirate Cove)，6:00 AM – 2:00 AM）"
 description: "Stingray 攻略：春季、夏季、秋季、冬季（Ginger Island (Pirate Cove)，6:00 AM – 2:00 AM） — Despite having a toxic stinger, these fish are shy and prefer to avoid humans."
-date: 2026-10-23
+date: 2026-10-24
 draft: false
 type: guide
 icon: "/images/fish/Stingray.png"
 related: [{"title": "鱼类清单", "url": "/zh-hans/fish-checklist/"}, {"title": "农场布局规划器", "url": "/zh-hans/farmlayou/"}]
-cover: "/images/guide-covers/fish-alt.jpg"
+cover: "/images/guide-covers/fish.jpg"
 ---
 **Stingray** 是星露谷物语中的普通鱼。Despite having a toxic stinger, these fish are shy and prefer to avoid humans.
 

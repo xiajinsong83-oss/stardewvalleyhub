@@ -1,7 +1,7 @@
 ---
 title: "Rainbow Trout 攻略：夏季（River, Mountain Lake，6:00 AM – 7:00 PM）"
 description: "Rainbow Trout 攻略：夏季（River, Mountain Lake，6:00 AM – 7:00 PM） — A freshwater trout with colorful markings."
-date: 2026-10-23
+date: 2026-10-24
 draft: false
 type: guide
 icon: "/images/fish/Rainbow Trout.png"

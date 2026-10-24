@@ -1,7 +1,7 @@
 ---
 title: "Parsnip 种植攻略：春季 成熟 4 天 | 星露谷物语"
 description: "Parsnip 种植攻略：春季 成熟 4 天 | 星露谷物语 — A spring tuber closely related to the carrot. It has a sweet, fresh taste."
-date: 2026-10-23
+date: 2026-10-24
 draft: false
 type: guide
 icon: "/images/crops/parsnip/crop.png"

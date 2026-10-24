@@ -1,12 +1,12 @@
 ---
 title: "Fairy Rose Anbau-Guide: Reife in 12 Tagen | Stardew Valley"
 description: "Fairy Rose Anbau-Guide: Reife in 12 Tagen | Stardew Valley — An extremely rare flower with a powerful, sweet perfume."
-date: 2026-10-23
+date: 2026-10-24
 draft: false
 type: guide
 icon: "/images/crops/fairy-rose/crop.png"
 related: [{"title": "Farm-Layout-Planer", "url": "/de/farmlayou/"}, {"title": "Gewinn-Rechner", "url": "/de/calculator/"}]
-cover: "/images/guide-covers/crops-alt.jpg"
+cover: "/images/guide-covers/crops.jpg"
 ---
 **Fairy Rose** ist eine flower-Pflanze in Stardew Valley. An extremely rare flower with a powerful, sweet perfume. Anbaubar in **Herbst** – eine der zuverlässigsten Einnahmequellen early, gehört in fast jeden Farmplan.
 

@@ -1,7 +1,7 @@
 ---
 title: "Quartz – Museums-Spendenleitfaden"
 description: "Quartz – Museums-Spendenleitfaden — A clear crystal commonly found in caves and mines."
-date: 2026-10-23
+date: 2026-10-24
 draft: false
 type: guide
 icon: "/images/minerals/foraged-minerals/Quartz.png"

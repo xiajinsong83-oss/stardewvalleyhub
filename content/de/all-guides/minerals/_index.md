@@ -15,6 +15,7 @@ title: "Mineralien & Artefakte Guides - Stardew Valley Hub"
   <a class="card" href="/de/all-guides/minerals/fire-quartz/"><h3>Fire Quartz – Museums-Spendenleitfaden</h3></a>
   <a class="card" href="/de/all-guides/minerals/frozen-tear/"><h3>Frozen Tear – Museums-Spendenleitfaden</h3></a>
   <a class="card" href="/de/all-guides/minerals/golden-coconut/"><h3>Golden Coconut – Museums-Spendenleitfaden</h3></a>
+  <a class="card" href="/de/all-guides/minerals/hematite/"><h3>Hematite – Museums-Spendenleitfaden</h3></a>
   <a class="card" href="/de/all-guides/minerals/mudstone/"><h3>Mudstone – Museums-Spendenleitfaden</h3></a>
   <a class="card" href="/de/all-guides/minerals/obsidian/"><h3>Obsidian – Museums-Spendenleitfaden</h3></a>
   <a class="card" href="/de/all-guides/minerals/omni-geode/"><h3>Omni Geode – Museums-Spendenleitfaden</h3></a>

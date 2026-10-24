@@ -1,7 +1,7 @@
 ---
 title: "Coffee Bean 种植攻略：春季、夏季 成熟 10 天 | 星露谷物语"
 description: "Coffee Bean 种植攻略：春季、夏季 成熟 10 天 | 星露谷物语 — It'll keep you buzzin'. Plant in spring or summer to harvest more beans."
-date: 2026-10-23
+date: 2026-10-24
 draft: false
 type: guide
 icon: "/images/crops/coffee-bean/crop.png"

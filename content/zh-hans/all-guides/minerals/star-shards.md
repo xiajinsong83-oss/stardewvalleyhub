@@ -1,12 +1,12 @@
 ---
 title: "Star Shards 博物馆捐赠攻略 – 星露谷物语"
 description: "Star Shards 博物馆捐赠攻略 – 星露谷物语 — No one knows how these form. Microscopic structure displays unnatural regularity."
-date: 2026-10-23
+date: 2026-10-24
 draft: false
 type: guide
 icon: "/images/minerals/geode-minerals/Star Shards.png"
 related: [{"title": "博物馆清单", "url": "/zh-hans/museum-checklist/"}]
-cover: "/images/guide-covers/minerals.jpg"
+cover: "/images/guide-covers/minerals-alt.jpg"
 ---
 No one knows how these form. Microscopic structure displays unnatural regularity.
 

@@ -1,12 +1,12 @@
 ---
 title: "Qi Fruit Anbau-Guide: Reife in 4 Tagen | Stardew Valley"
 description: "Qi Fruit Anbau-Guide: Reife in 4 Tagen | Stardew Valley — A fruit imbued with the essence of Qi. Used to complete Qi's special orders."
-date: 2026-10-23
+date: 2026-10-24
 draft: false
 type: guide
 icon: "/images/crops/qi-fruit/crop.png"
 related: [{"title": "Farm-Layout-Planer", "url": "/de/farmlayou/"}, {"title": "Gewinn-Rechner", "url": "/de/calculator/"}]
-cover: "/images/guide-covers/crops.jpg"
+cover: "/images/guide-covers/crops-alt.jpg"
 ---
 **Qi Fruit** ist eine fruit-Pflanze in Stardew Valley. A fruit imbued with the essence of Qi. Used to complete Qi's special orders. Anbaubar in **Frühling, Sommer, Herbst, Winter** – eine der zuverlässigsten Einnahmequellen early, gehört in fast jeden Farmplan.
 

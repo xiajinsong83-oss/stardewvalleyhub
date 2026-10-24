@@ -1,12 +1,12 @@
 ---
 title: "Pineapple 种植攻略：夏季、ginger island 成熟 14 天 | 星露谷物语"
 description: "Pineapple 种植攻略：夏季、ginger island 成熟 14 天 | 星露谷物语 — A prickly, succulent fruit found in tropical climates."
-date: 2026-10-23
+date: 2026-10-24
 draft: false
 type: guide
 icon: "/images/crops/pineapple/crop.png"
 related: [{"title": "农场布局规划器", "url": "/zh-hans/farmlayou/"}, {"title": "作物利润计算器", "url": "/zh-hans/calculator/"}]
-cover: "/images/guide-covers/crops-alt.jpg"
+cover: "/images/guide-covers/crops.jpg"
 ---
 **Pineapple** 是星露谷物语中的一种 fruit 作物。A prickly, succulent fruit found in tropical climates.可在 **夏季、ginger island** 种植，是早期最稳定的收入来源之一，几乎所有农场规划都应种植。
 

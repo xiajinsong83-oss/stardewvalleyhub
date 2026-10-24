@@ -1,7 +1,7 @@
 ---
 title: "Summer Spangle Anbau-Guide: Reife in 8 Tagen | Stardew Valley"
 description: "Summer Spangle Anbau-Guide: Reife in 8 Tagen | Stardew Valley — A tropical bloom that thrives in the summer heat."
-date: 2026-10-23
+date: 2026-10-24
 draft: false
 type: guide
 icon: "/images/crops/summer-spangle/crop.png"

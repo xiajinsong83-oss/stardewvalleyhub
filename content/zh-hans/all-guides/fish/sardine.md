@@ -1,7 +1,7 @@
 ---
 title: "Sardine 攻略：春季、夏季、秋季、冬季（Ocean，6:00 AM – 7:00 PM）"
 description: "Sardine 攻略：春季、夏季、秋季、冬季（Ocean，6:00 AM – 7:00 PM） — A common ocean fish."
-date: 2026-10-23
+date: 2026-10-24
 draft: false
 type: guide
 icon: "/images/fish/Sardine.png"

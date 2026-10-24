@@ -1,12 +1,12 @@
 ---
 title: "Legend II 攻略：春季、夏季、秋季、冬季（Mountain Lake，6:00 AM – 8:00 PM）"
 description: "Legend II 攻略：春季、夏季、秋季、冬季（Mountain Lake，6:00 AM – 8:00 PM） — The successor to the original Legend."
-date: 2026-10-23
+date: 2026-10-24
 draft: false
 type: guide
 icon: "/images/fish/Legend II.png"
 related: [{"title": "鱼类清单", "url": "/zh-hans/fish-checklist/"}, {"title": "农场布局规划器", "url": "/zh-hans/farmlayou/"}]
-cover: "/images/guide-covers/fish.jpg"
+cover: "/images/guide-covers/fish-alt.jpg"
 ---
 **Legend II** 是星露谷物语中的传奇二代鱼。The successor to the original Legend.
 

@@ -1,7 +1,7 @@
 ---
 title: "Aquamarine – Museums-Spendenleitfaden"
 description: "Aquamarine – Museums-Spendenleitfaden — A shimmery blue-green gem."
-date: 2026-10-23
+date: 2026-10-24
 draft: false
 type: guide
 icon: "/images/minerals/gems/Aquamarine.png"

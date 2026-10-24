@@ -1,12 +1,12 @@
 ---
 title: "Blobfish 攻略：春季、夏季、秋季、冬季（Night Market submarine，6:00 AM – 2:00 AM）"
 description: "Blobfish 攻略：春季、夏季、秋季、冬季（Night Market submarine，6:00 AM – 2:00 AM） — This odd creature floats above the ocean floor, consuming any edible material in its…"
-date: 2026-10-23
+date: 2026-10-24
 draft: false
 type: guide
 icon: "/images/fish/Blobfish.png"
 related: [{"title": "鱼类清单", "url": "/zh-hans/fish-checklist/"}, {"title": "农场布局规划器", "url": "/zh-hans/farmlayou/"}]
-cover: "/images/guide-covers/fish.jpg"
+cover: "/images/guide-covers/fish-alt.jpg"
 ---
 **Blobfish** 是星露谷物语中的鱼。This odd creature floats above the ocean floor, consuming any edible material in its path.
 

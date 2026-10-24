@@ -1,7 +1,7 @@
 ---
 title: "Pufferfish Guide: Sommer (Ocean, Ginger Island, 12:00 PM – 4:00 PM)"
 description: "Pufferfish Guide: Sommer (Ocean, Ginger Island, 12:00 PM – 4:00 PM) — Inflates when threatened."
-date: 2026-10-23
+date: 2026-10-24
 draft: false
 type: guide
 icon: "/images/fish/Pufferfish.png"

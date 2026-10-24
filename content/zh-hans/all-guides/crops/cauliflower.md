@@ -1,7 +1,7 @@
 ---
 title: "Cauliflower 种植攻略：春季 成熟 12 天 | 星露谷物语"
 description: "Cauliflower 种植攻略：春季 成熟 12 天 | 星露谷物语 — It's actually a type of flower! A massive head of tightly packed white florets."
-date: 2026-10-23
+date: 2026-10-24
 draft: false
 type: guide
 icon: "/images/crops/cauliflower/crop.png"

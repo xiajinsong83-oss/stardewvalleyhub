@@ -1,7 +1,7 @@
 ---
 title: "Smallmouth Bass 攻略：春季、秋季（River, Forest Pond，6:00 AM – 2:00 AM）"
 description: "Smallmouth Bass 攻略：春季、秋季（River, Forest Pond，6:00 AM – 2:00 AM） — A freshwater fish that is very sensitive to pollution."
-date: 2026-10-23
+date: 2026-10-24
 draft: false
 type: guide
 icon: "/images/fish/Smallmouth Bass.png"

@@ -1,7 +1,7 @@
 ---
 title: "Taro Root 种植攻略：夏季、ginger island 成熟 10 天 | 星露谷物语"
 description: "Taro Root 种植攻略：夏季、ginger island 成熟 10 天 | 星露谷物语 — A starchy root vegetable that grows best in wet, paddy conditions."
-date: 2026-10-23
+date: 2026-10-24
 draft: false
 type: guide
 icon: "/images/crops/taro-root/crop.png"

@@ -1,12 +1,12 @@
 ---
 title: "Radioactive Bar 博物馆捐赠攻略 – 星露谷物语"
 description: "Radioactive Bar 博物馆捐赠攻略 – 星露谷物语 — Known by the Zuzu City Safety Commission to cause irreversible bodily harm."
-date: 2026-10-23
+date: 2026-10-24
 draft: false
 type: guide
 icon: "/images/minerals/bars/Radioactive Bar.png"
 related: [{"title": "博物馆清单", "url": "/zh-hans/museum-checklist/"}]
-cover: "/images/guide-covers/minerals-alt.jpg"
+cover: "/images/guide-covers/minerals.jpg"
 ---
 Known by the Zuzu City Safety Commission to cause irreversible bodily harm.
 

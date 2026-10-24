@@ -1,7 +1,7 @@
 ---
 title: "Largemouth Bass 攻略：春季、夏季、秋季、冬季（Mountain Lake，6:00 AM – 7:00 PM）"
 description: "Largemouth Bass 攻略：春季、夏季、秋季、冬季（Mountain Lake，6:00 AM – 7:00 PM） — A popular fish that lives in lakes."
-date: 2026-10-23
+date: 2026-10-24
 draft: false
 type: guide
 icon: "/images/fish/Largemouth Bass.png"

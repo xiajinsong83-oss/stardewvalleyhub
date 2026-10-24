@@ -1,7 +1,7 @@
 ---
 title: "Coffee Bean Anbau-Guide: Reife in 10 Tagen | Stardew Valley"
 description: "Coffee Bean Anbau-Guide: Reife in 10 Tagen | Stardew Valley — It'll keep you buzzin'. Plant in spring or summer to harvest more beans."
-date: 2026-10-23
+date: 2026-10-24
 draft: false
 type: guide
 icon: "/images/crops/coffee-bean/crop.png"

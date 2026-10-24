@@ -21,6 +21,7 @@ title: "作物攻略 - 星露谷物语攻略站"
   <a class="card" href="/zh-hans/all-guides/crops/rhubarb/"><h3>Rhubarb 种植攻略：春季 成熟 13 天 | 星露谷物语</h3></a>
   <a class="card" href="/zh-hans/all-guides/crops/strawberry/"><h3>Strawberry 种植攻略：春季 成熟 8 天 | 星露谷物语</h3></a>
   <a class="card" href="/zh-hans/all-guides/crops/summer-spangle/"><h3>Summer Spangle 种植攻略：夏季 成熟 8 天 | 星露谷物语</h3></a>
+  <a class="card" href="/zh-hans/all-guides/crops/sunflower/"><h3>Sunflower 种植攻略：夏季、秋季 成熟 8 天 | 星露谷物语</h3></a>
   <a class="card" href="/zh-hans/all-guides/crops/taro-root/"><h3>Taro Root 种植攻略：夏季、ginger island 成熟 10 天 | 星露谷物语</h3></a>
   <a class="card" href="/zh-hans/all-guides/crops/tea-leaves/"><h3>Tea Leaves 种植攻略：春季、夏季、秋季 成熟 20 天 | 星露谷物语</h3></a>
   <a class="card" href="/zh-hans/all-guides/crops/tulip/"><h3>Tulip 种植攻略：春季 成熟 6 天 | 星露谷物语</h3></a>

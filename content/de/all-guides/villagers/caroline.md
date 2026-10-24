@@ -1,7 +1,7 @@
 ---
 title: "Caroline-Lieblingsgeschenke in Stardew Valley"
 description: "Caroline-Lieblingsgeschenke in Stardew Valley — Caroline is a villager who lives in Pelican Town. She is married to Pierre and is the mother of Abigail."
-date: 2026-10-23
+date: 2026-10-24
 draft: false
 type: guide
 icon: "/images/villagers/Caroline.png"

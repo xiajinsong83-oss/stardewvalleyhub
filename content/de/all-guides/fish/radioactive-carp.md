@@ -1,12 +1,12 @@
 ---
 title: "Radioactive Carp Guide: Frühling, Sommer, Herbst, Winter (Sewers, 6:00 AM – 2:00 AM)"
 description: "Radioactive Carp Guide: Frühling, Sommer, Herbst, Winter (Sewers, 6:00 AM – 2:00 AM) — A carp that spent one too many years in toxic sludge."
-date: 2026-10-23
+date: 2026-10-24
 draft: false
 type: guide
 icon: "/images/fish/Radioactive Carp.png"
 related: [{"title": "Fisch-Checkliste", "url": "/de/fish-checklist/"}, {"title": "Farm-Layout-Planer", "url": "/de/farmlayou/"}]
-cover: "/images/guide-covers/fish-alt.jpg"
+cover: "/images/guide-covers/fish.jpg"
 ---
 **Radioactive Carp** ist ein legendär II-Fisch in Stardew Valley. A carp that spent one too many years in toxic sludge.
 

@@ -21,6 +21,7 @@ title: "Pflanzen-Guides - Stardew Valley Hub"
   <a class="card" href="/de/all-guides/crops/rhubarb/"><h3>Rhubarb Anbau-Guide: Reife in 13 Tagen | Stardew Valley</h3></a>
   <a class="card" href="/de/all-guides/crops/strawberry/"><h3>Strawberry Anbau-Guide: Reife in 8 Tagen | Stardew Valley</h3></a>
   <a class="card" href="/de/all-guides/crops/summer-spangle/"><h3>Summer Spangle Anbau-Guide: Reife in 8 Tagen | Stardew Valley</h3></a>
+  <a class="card" href="/de/all-guides/crops/sunflower/"><h3>Sunflower Anbau-Guide: Reife in 8 Tagen | Stardew Valley</h3></a>
   <a class="card" href="/de/all-guides/crops/taro-root/"><h3>Taro Root Anbau-Guide: Reife in 10 Tagen | Stardew Valley</h3></a>
   <a class="card" href="/de/all-guides/crops/tea-leaves/"><h3>Tea Leaves Anbau-Guide: Reife in 20 Tagen | Stardew Valley</h3></a>
   <a class="card" href="/de/all-guides/crops/tulip/"><h3>Tulip Anbau-Guide: Reife in 6 Tagen | Stardew Valley</h3></a>

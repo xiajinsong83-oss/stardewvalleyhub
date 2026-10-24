@@ -1,12 +1,12 @@
 ---
 title: "Radioactive Bar – Museums-Spendenleitfaden"
 description: "Radioactive Bar – Museums-Spendenleitfaden — Known by the Zuzu City Safety Commission to cause irreversible bodily harm."
-date: 2026-10-23
+date: 2026-10-24
 draft: false
 type: guide
 icon: "/images/minerals/bars/Radioactive Bar.png"
 related: [{"title": "Museum-Checkliste", "url": "/de/museum-checklist/"}]
-cover: "/images/guide-covers/minerals-alt.jpg"
+cover: "/images/guide-covers/minerals.jpg"
 ---
 Known by the Zuzu City Safety Commission to cause irreversible bodily harm.
 

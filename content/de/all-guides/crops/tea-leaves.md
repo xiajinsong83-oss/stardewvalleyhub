@@ -1,12 +1,12 @@
 ---
 title: "Tea Leaves Anbau-Guide: Reife in 20 Tagen | Stardew Valley"
 description: "Tea Leaves Anbau-Guide: Reife in 20 Tagen | Stardew Valley — The young leaves of the tea plant. Can be brewed into the popular, energizing beverage."
-date: 2026-10-23
+date: 2026-10-24
 draft: false
 type: guide
 icon: "/images/crops/tea-leaves/crop.png"
 related: [{"title": "Farm-Layout-Planer", "url": "/de/farmlayou/"}, {"title": "Gewinn-Rechner", "url": "/de/calculator/"}]
-cover: "/images/guide-covers/crops-alt.jpg"
+cover: "/images/guide-covers/crops.jpg"
 ---
 **Tea Leaves** ist eine vegetable-Pflanze in Stardew Valley. The young leaves of the tea plant. Can be brewed into the popular, energizing beverage. Anbaubar in **Frühling, Sommer, Herbst** – eine der zuverlässigsten Einnahmequellen early, gehört in fast jeden Farmplan.
 

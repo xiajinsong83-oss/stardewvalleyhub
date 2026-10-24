@@ -1,12 +1,12 @@
 ---
 title: "Fairy Stone 博物馆捐赠攻略 – 星露谷物语"
 description: "Fairy Stone 博物馆捐赠攻略 – 星露谷物语 — An old miner's song suggests these are made from ancient fairy bones."
-date: 2026-10-23
+date: 2026-10-24
 draft: false
 type: guide
 icon: "/images/minerals/geode-minerals/Fairy Stone.png"
 related: [{"title": "博物馆清单", "url": "/zh-hans/museum-checklist/"}]
-cover: "/images/guide-covers/minerals-alt.jpg"
+cover: "/images/guide-covers/minerals.jpg"
 ---
 An old miner's song suggests these are made from ancient fairy bones.
 

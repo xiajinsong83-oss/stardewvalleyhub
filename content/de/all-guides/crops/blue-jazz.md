@@ -1,7 +1,7 @@
 ---
 title: "Blue Jazz Anbau-Guide: Reife in 7 Tagen | Stardew Valley"
 description: "Blue Jazz Anbau-Guide: Reife in 7 Tagen | Stardew Valley — A delicate flower with a lovely blue hue."
-date: 2026-10-23
+date: 2026-10-24
 draft: false
 type: guide
 icon: "/images/crops/blue-jazz/crop.png"

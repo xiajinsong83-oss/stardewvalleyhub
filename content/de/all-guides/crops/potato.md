@@ -1,7 +1,7 @@
 ---
 title: "Potato Anbau-Guide: Reife in 6 Tagen | Stardew Valley"
 description: "Potato Anbau-Guide: Reife in 6 Tagen | Stardew Valley — A widely cultivated plant, the potato is one of the most important food crops in the world."
-date: 2026-10-23
+date: 2026-10-24
 draft: false
 type: guide
 icon: "/images/crops/potato/crop.png"

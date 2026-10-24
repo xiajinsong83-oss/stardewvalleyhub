@@ -1,12 +1,12 @@
 ---
 title: "Slate – Museums-Spendenleitfaden"
 description: "Slate – Museums-Spendenleitfaden — It's extremely resistant to water, making it a good roofing material."
-date: 2026-10-23
+date: 2026-10-24
 draft: false
 type: guide
 icon: "/images/minerals/geode-minerals/Slate.png"
 related: [{"title": "Museum-Checkliste", "url": "/de/museum-checklist/"}]
-cover: "/images/guide-covers/minerals.jpg"
+cover: "/images/guide-covers/minerals-alt.jpg"
 ---
 It's extremely resistant to water, making it a good roofing material.
 

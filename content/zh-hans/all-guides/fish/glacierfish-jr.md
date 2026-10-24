@@ -1,12 +1,12 @@
 ---
 title: "Glacierfish Jr. 攻略：冬季（Forest (Arrowhead Island)，6:00 AM – 8:00 PM）"
 description: "Glacierfish Jr. 攻略：冬季（Forest (Arrowhead Island)，6:00 AM – 8:00 PM） — The original Glacierfish had a son..."
-date: 2026-10-23
+date: 2026-10-24
 draft: false
 type: guide
 icon: "/images/fish/Glacierfish Jr.png"
 related: [{"title": "鱼类清单", "url": "/zh-hans/fish-checklist/"}, {"title": "农场布局规划器", "url": "/zh-hans/farmlayou/"}]
-cover: "/images/guide-covers/fish.jpg"
+cover: "/images/guide-covers/fish-alt.jpg"
 ---
 **Glacierfish Jr.** 是星露谷物语中的传奇二代鱼。The original Glacierfish had a son...
 

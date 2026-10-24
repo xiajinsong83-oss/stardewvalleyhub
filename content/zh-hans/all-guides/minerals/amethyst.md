@@ -1,7 +1,7 @@
 ---
 title: "Amethyst 博物馆捐赠攻略 – 星露谷物语"
 description: "Amethyst 博物馆捐赠攻略 – 星露谷物语 — A purple variant of quartz."
-date: 2026-10-23
+date: 2026-10-24
 draft: false
 type: guide
 icon: "/images/minerals/gems/Amethyst.png"

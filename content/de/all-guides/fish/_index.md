@@ -19,6 +19,7 @@ title: "Fisch-Guides - Stardew Valley Hub"
   <a class="card" href="/de/all-guides/fish/radioactive-carp/"><h3>Radioactive Carp Guide: Frühling, Sommer, Herbst, Winter (Sewers, 6:00 AM – 2:00 AM)</h3></a>
   <a class="card" href="/de/all-guides/fish/rainbow-trout/"><h3>Rainbow Trout Guide: Sommer (River, Mountain Lake, 6:00 AM – 7:00 PM)</h3></a>
   <a class="card" href="/de/all-guides/fish/sardine/"><h3>Sardine Guide: Frühling, Sommer, Herbst, Winter (Ocean, 6:00 AM – 7:00 PM)</h3></a>
+  <a class="card" href="/de/all-guides/fish/slimejack/"><h3>Slimejack Guide: Frühling, Sommer, Herbst, Winter (Mutant Bug Lair, 6:00 AM – 2:00 AM)</h3></a>
   <a class="card" href="/de/all-guides/fish/smallmouth-bass/"><h3>Smallmouth Bass Guide: Frühling, Herbst (River, Forest Pond, 6:00 AM – 2:00 AM)</h3></a>
   <a class="card" href="/de/all-guides/fish/son-of-crimsonfish/"><h3>Son of Crimsonfish Guide: Winter (Ocean, 6:00 AM – 8:00 PM)</h3></a>
   <a class="card" href="/de/all-guides/fish/spook-fish/"><h3>Spook Fish Guide: Frühling, Sommer, Herbst, Winter (Night Market submarine, 6:00 AM – 2:00 AM)</h3></a>

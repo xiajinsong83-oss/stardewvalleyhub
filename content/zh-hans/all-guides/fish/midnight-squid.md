@@ -1,12 +1,12 @@
 ---
 title: "Midnight Squid 攻略：春季、夏季、秋季、冬季（Night Market submarine，6:00 AM – 2:00 AM）"
 description: "Midnight Squid 攻略：春季、夏季、秋季、冬季（Night Market submarine，6:00 AM – 2:00 AM） — A strange and mysterious denizen of the ocean's twilight depths."
-date: 2026-10-23
+date: 2026-10-24
 draft: false
 type: guide
 icon: "/images/fish/Midnight Squid.png"
 related: [{"title": "鱼类清单", "url": "/zh-hans/fish-checklist/"}, {"title": "农场布局规划器", "url": "/zh-hans/farmlayou/"}]
-cover: "/images/guide-covers/fish.jpg"
+cover: "/images/guide-covers/fish-alt.jpg"
 ---
 **Midnight Squid** 是星露谷物语中的鱼。A strange and mysterious denizen of the ocean's twilight depths.
 

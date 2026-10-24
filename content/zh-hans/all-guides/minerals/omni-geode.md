@@ -1,12 +1,12 @@
 ---
 title: "Omni Geode 博物馆捐赠攻略 – 星露谷物语"
 description: "Omni Geode 博物馆捐赠攻略 – 星露谷物语 — A blacksmith can break this open for you. Contains a wide variety of minerals."
-date: 2026-10-23
+date: 2026-10-24
 draft: false
 type: guide
 icon: "/images/minerals/geodes/Omni Geode.png"
 related: [{"title": "博物馆清单", "url": "/zh-hans/museum-checklist/"}]
-cover: "/images/guide-covers/minerals-alt.jpg"
+cover: "/images/guide-covers/minerals.jpg"
 ---
 A blacksmith can break this open for you. Contains a wide variety of minerals.
 

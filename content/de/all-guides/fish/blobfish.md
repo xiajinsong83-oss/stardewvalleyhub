@@ -1,12 +1,12 @@
 ---
 title: "Blobfish Guide: Frühling, Sommer, Herbst, Winter (Night Market submarine, 6:00 AM – 2:00 AM)"
 description: "Blobfish Guide: Frühling, Sommer, Herbst, Winter (Night Market submarine, 6:00 AM – 2:00 AM) — This odd creature floats above the ocean floor, consuming…"
-date: 2026-10-23
+date: 2026-10-24
 draft: false
 type: guide
 icon: "/images/fish/Blobfish.png"
 related: [{"title": "Fisch-Checkliste", "url": "/de/fish-checklist/"}, {"title": "Farm-Layout-Planer", "url": "/de/farmlayou/"}]
-cover: "/images/guide-covers/fish.jpg"
+cover: "/images/guide-covers/fish-alt.jpg"
 ---
 **Blobfish** ist ein -Fisch in Stardew Valley. This odd creature floats above the ocean floor, consuming any edible material in its path.
 

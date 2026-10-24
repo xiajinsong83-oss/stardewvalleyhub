@@ -1,7 +1,7 @@
 ---
 title: "Blue Jazz 种植攻略：春季 成熟 7 天 | 星露谷物语"
 description: "Blue Jazz 种植攻略：春季 成熟 7 天 | 星露谷物语 — A delicate flower with a lovely blue hue."
-date: 2026-10-23
+date: 2026-10-24
 draft: false
 type: guide
 icon: "/images/crops/blue-jazz/crop.png"

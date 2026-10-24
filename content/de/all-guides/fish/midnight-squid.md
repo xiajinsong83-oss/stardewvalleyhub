@@ -1,12 +1,12 @@
 ---
 title: "Midnight Squid Guide: Frühling, Sommer, Herbst, Winter (Night Market submarine, 6:00 AM – 2:00 AM)"
 description: "Midnight Squid Guide: Frühling, Sommer, Herbst, Winter (Night Market submarine, 6:00 AM – 2:00 AM) — A strange and mysterious denizen of the ocean's twi…"
-date: 2026-10-23
+date: 2026-10-24
 draft: false
 type: guide
 icon: "/images/fish/Midnight Squid.png"
 related: [{"title": "Fisch-Checkliste", "url": "/de/fish-checklist/"}, {"title": "Farm-Layout-Planer", "url": "/de/farmlayou/"}]
-cover: "/images/guide-covers/fish.jpg"
+cover: "/images/guide-covers/fish-alt.jpg"
 ---
 **Midnight Squid** ist ein -Fisch in Stardew Valley. A strange and mysterious denizen of the ocean's twilight depths.
 

@@ -1,12 +1,12 @@
 ---
 title: "Ancient Fruit 种植攻略：春季、夏季、秋季 成熟 28 天 | 星露谷物语"
 description: "Ancient Fruit 种植攻略：春季、夏季、秋季 成熟 28 天 | 星露谷物语 — A very rare fruit that has survived since ancient times. It's extraordinarily sweet."
-date: 2026-10-23
+date: 2026-10-24
 draft: false
 type: guide
 icon: "/images/crops/ancient-fruit/crop.png"
 related: [{"title": "农场布局规划器", "url": "/zh-hans/farmlayou/"}, {"title": "作物利润计算器", "url": "/zh-hans/calculator/"}]
-cover: "/images/guide-covers/crops.jpg"
+cover: "/images/guide-covers/crops-alt.jpg"
 ---
 **Ancient Fruit** 是星露谷物语中的一种 fruit 作物。A very rare fruit that has survived since ancient times. It's extraordinarily sweet.可在 **春季、夏季、秋季** 种植，是早期最稳定的收入来源之一，几乎所有农场规划都应种植。
 

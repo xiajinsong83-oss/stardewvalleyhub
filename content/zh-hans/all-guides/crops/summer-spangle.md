@@ -1,7 +1,7 @@
 ---
 title: "Summer Spangle 种植攻略：夏季 成熟 8 天 | 星露谷物语"
 description: "Summer Spangle 种植攻略：夏季 成熟 8 天 | 星露谷物语 — A tropical bloom that thrives in the summer heat."
-date: 2026-10-23
+date: 2026-10-24
 draft: false
 type: guide
 icon: "/images/crops/summer-spangle/crop.png"

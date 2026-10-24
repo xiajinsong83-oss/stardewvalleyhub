@@ -15,6 +15,7 @@ title: Mineral & Artifact Guides - Stardew Valley Hub
   <a class="card" href="/all-guides/minerals/fire-quartz/"><h3>Fire Quartz Guide: Where to Find It (The Mines (Floors 80-120), 100g Value)</h3><p>Full guide with data, tips and tools.</p></a>
   <a class="card" href="/all-guides/minerals/frozen-tear/"><h3>Frozen Tear Guide: Where to Find It (The Mines (Floors 40-79), 75g Value)</h3><p>Full guide with data, tips and tools.</p></a>
   <a class="card" href="/all-guides/minerals/golden-coconut/"><h3>A blacksmith can crack this open. The first one always yields a Golden Walnut.</h3><p>Full guide with data, tips and tools.</p></a>
+  <a class="card" href="/all-guides/minerals/hematite/"><h3>An iron-based Mineral with interesting magnetic properties.</h3><p>Full guide with data, tips and tools.</p></a>
   <a class="card" href="/all-guides/minerals/mudstone/"><h3>A fine-grained rock made from ancient clay or mud.</h3><p>Full guide with data, tips and tools.</p></a>
   <a class="card" href="/all-guides/minerals/obsidian/"><h3>A volcanic glass that forms when lava cools rapidly.</h3><p>Full guide with data, tips and tools.</p></a>
   <a class="card" href="/all-guides/minerals/omni-geode/"><h3>A blacksmith can break this open for you. Contains a wide variety of minerals.</h3><p>Full guide with data, tips and tools.</p></a>

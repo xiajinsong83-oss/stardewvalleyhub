@@ -1,12 +1,12 @@
 ---
 title: "Ms. Angler Guide: Frühling, Sommer, Herbst, Winter (River, 6:00 AM – 2:00 AM)"
 description: "Ms. Angler Guide: Frühling, Sommer, Herbst, Winter (River, 6:00 AM – 2:00 AM) — Uses a bioluminescent dangler to attract prey."
-date: 2026-10-23
+date: 2026-10-24
 draft: false
 type: guide
 icon: "/images/fish/Ms. Angler.png"
 related: [{"title": "Fisch-Checkliste", "url": "/de/fish-checklist/"}, {"title": "Farm-Layout-Planer", "url": "/de/farmlayou/"}]
-cover: "/images/guide-covers/fish-alt.jpg"
+cover: "/images/guide-covers/fish.jpg"
 ---
 **Ms. Angler** ist ein legendär II-Fisch in Stardew Valley. Uses a bioluminescent dangler to attract prey.
 

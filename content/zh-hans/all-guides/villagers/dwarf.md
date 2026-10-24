@@ -1,7 +1,7 @@
 ---
 title: "星露谷物语中 Dwarf 的最爱礼物"
 description: "星露谷物语中 Dwarf 的最爱礼物 — The Dwarf is a valley resident who lives in the Mines. Access is initially blocked by an unbreakable rock which can be broken using…"
-date: 2026-10-23
+date: 2026-10-24
 draft: false
 type: guide
 icon: "/images/villagers/Dwarf.png"
